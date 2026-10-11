@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-11T06:49:01+00:00",
-  "ci_head": "1eb14ff65aa62af44c9fcffe8d34d210d6ba8491",
+  "updated": "2026-10-11T12:43:52+00:00",
+  "ci_head": "59856668af4d58c4c0b373f7dc8da9cc33cbd419",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "3877b888e22e105b4cbe4ff1e540be0070814532",
+      "head": "9d1de8baa2ee2584bb7fd3aed5e8a53fd5e6a00b",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -6478,6 +6478,300 @@
           "url": "https://github.com/jmgasper/haiku/commit/3877b888e22e105b4cbe4ff1e540be0070814532",
           "date": "2026-10-11T06:35:45Z",
           "subject": "Merge WX5100 owned ATC access and permission checkpoint"
+        },
+        {
+          "sha": "d98506d17c3ef1531dfd9420f8c92235e23ccedd",
+          "url": "https://github.com/jmgasper/haiku/commit/d98506d17c3ef1531dfd9420f8c92235e23ccedd",
+          "date": "2026-10-11T06:44:21Z",
+          "subject": "amdgpu: add bounded GDS allocation and containment probes"
+        },
+        {
+          "sha": "3f67331ce04aadaaa30ab723256cfd1585d805e3",
+          "url": "https://github.com/jmgasper/haiku/commit/3f67331ce04aadaaa30ab723256cfd1585d805e3",
+          "date": "2026-10-11T06:48:17Z",
+          "subject": "amdgpu: constrain GDS positive control M0 window"
+        },
+        {
+          "sha": "09b075c7b235d946d3c43cbf499ba5760c4f2ff4",
+          "url": "https://github.com/jmgasper/haiku/commit/09b075c7b235d946d3c43cbf499ba5760c4f2ff4",
+          "date": "2026-10-11T06:50:20Z",
+          "subject": "amdgpu: record GDS bounds and zero-allocation qualification"
+        },
+        {
+          "sha": "f804a7d65ddf54677378fe22329bd54d68f05024",
+          "url": "https://github.com/jmgasper/haiku/commit/f804a7d65ddf54677378fe22329bd54d68f05024",
+          "date": "2026-10-11T06:51:11Z",
+          "subject": "Merge WX5100 bounded GDS qualification"
+        },
+        {
+          "sha": "463bb7b9c26248ef14be896aefa1df9b6b2c20b3",
+          "url": "https://github.com/jmgasper/haiku/commit/463bb7b9c26248ef14be896aefa1df9b6b2c20b3",
+          "date": "2026-10-11T07:02:52Z",
+          "subject": "amdgpu: add bounded GWS allocation and resource-state qualification"
+        },
+        {
+          "sha": "19eba9fff6dfbfe72faaaaddb233a8737d414097",
+          "url": "https://github.com/jmgasper/haiku/commit/19eba9fff6dfbfe72faaaaddb233a8737d414097",
+          "date": "2026-10-11T07:08:35Z",
+          "subject": "amdgpu: qualify all GWS operations with safe wait preconditions"
+        },
+        {
+          "sha": "81e743158f19f95e283ce37bfc8282863dc6942c",
+          "url": "https://github.com/jmgasper/haiku/commit/81e743158f19f95e283ce37bfc8282863dc6942c",
+          "date": "2026-10-11T07:10:40Z",
+          "subject": "amdgpu: record GWS resource isolation qualification"
+        },
+        {
+          "sha": "1727611ae468233e63ca862108f9a04f7accde44",
+          "url": "https://github.com/jmgasper/haiku/commit/1727611ae468233e63ca862108f9a04f7accde44",
+          "date": "2026-10-11T07:11:01Z",
+          "subject": "Merge WX5100 bounded GWS qualification"
+        },
+        {
+          "sha": "5fa1fe724bff70a8e2a4a888c98f67b71841113f",
+          "url": "https://github.com/jmgasper/haiku/commit/5fa1fe724bff70a8e2a4a888c98f67b71841113f",
+          "date": "2026-10-11T07:22:42Z",
+          "subject": "amdgpu: add ordered-append state and reset prerequisite probes"
+        },
+        {
+          "sha": "a630b54a95903181dd87e9667432cf3c01b7b28b",
+          "url": "https://github.com/jmgasper/haiku/commit/a630b54a95903181dd87e9667432cf3c01b7b28b",
+          "date": "2026-10-11T07:26:36Z",
+          "subject": "amdgpu: distinguish OA allocation mask from resource capacity"
+        },
+        {
+          "sha": "c1e17f9b8f9afe2d1e5ff806a7e8157e4d5be15a",
+          "url": "https://github.com/jmgasper/haiku/commit/c1e17f9b8f9afe2d1e5ff806a7e8157e4d5be15a",
+          "date": "2026-10-11T07:33:29Z",
+          "subject": "amdgpu: add owned GDS ordered-append control probe"
+        },
+        {
+          "sha": "0d8428796133757a53b0ff0a03ad78bbc65a3c3f",
+          "url": "https://github.com/jmgasper/haiku/commit/0d8428796133757a53b0ff0a03ad78bbc65a3c3f",
+          "date": "2026-10-11T07:37:05Z",
+          "subject": "amdgpu: extend owned ordered-append access and bounds probes"
+        },
+        {
+          "sha": "c27fc8b0443dde4716f05d35f5232f8bbe09a74b",
+          "url": "https://github.com/jmgasper/haiku/commit/c27fc8b0443dde4716f05d35f5232f8bbe09a74b",
+          "date": "2026-10-11T07:42:55Z",
+          "subject": "amdgpu: test ordered counters against GDS grants with explicit wave reset"
+        },
+        {
+          "sha": "77f9b115f5e1addb4be323d2c503af5641836f57",
+          "url": "https://github.com/jmgasper/haiku/commit/77f9b115f5e1addb4be323d2c503af5641836f57",
+          "date": "2026-10-11T07:46:09Z",
+          "subject": "amdgpu: qualify ordered-count relocated GDS window boundaries"
+        },
+        {
+          "sha": "ce0384f1f39d90c687c1623a55f5aab1df48a724",
+          "url": "https://github.com/jmgasper/haiku/commit/ce0384f1f39d90c687c1623a55f5aab1df48a724",
+          "date": "2026-10-11T07:48:05Z",
+          "subject": "amdgpu: record ordered-count containment and stale-wave timeout evidence"
+        },
+        {
+          "sha": "8d8f85527bcb2f1c7d693c1b693d90fb1bb80669",
+          "url": "https://github.com/jmgasper/haiku/commit/8d8f85527bcb2f1c7d693c1b693d90fb1bb80669",
+          "date": "2026-10-11T07:48:19Z",
+          "subject": "Merge WX5100 ordered-count containment qualification"
+        },
+        {
+          "sha": "e9edb1185c3bf266c40d7c62a7e45e8c9bb6363e",
+          "url": "https://github.com/jmgasper/haiku/commit/e9edb1185c3bf266c40d7c62a7e45e8c9bb6363e",
+          "date": "2026-10-11T08:09:41Z",
+          "subject": "amdgpu: add explicit quiescent graphics recovery qualification path"
+        },
+        {
+          "sha": "32bca37e88dfe2b235b68826b5da95b788f7e2c0",
+          "url": "https://github.com/jmgasper/haiku/commit/32bca37e88dfe2b235b68826b5da95b788f7e2c0",
+          "date": "2026-10-11T08:13:23Z",
+          "subject": "amdgpu: clear disabled interrupt ring pointers before reset idle check"
+        },
+        {
+          "sha": "20964c12ad5e2b736dd0bf17e98ad29a4a29095d",
+          "url": "https://github.com/jmgasper/haiku/commit/20964c12ad5e2b736dd0bf17e98ad29a4a29095d",
+          "date": "2026-10-11T08:23:34Z",
+          "subject": "amdgpu: record five native graphics fault recovery cycles"
+        },
+        {
+          "sha": "75ce7101c129796e534a97f2def5005792b15103",
+          "url": "https://github.com/jmgasper/haiku/commit/75ce7101c129796e534a97f2def5005792b15103",
+          "date": "2026-10-11T08:23:55Z",
+          "subject": "Merge WX5100 explicit graphics fault recovery qualification"
+        },
+        {
+          "sha": "e1163cf3926d1ed08f715804fef5c7e70818767c",
+          "url": "https://github.com/jmgasper/haiku/commit/e1163cf3926d1ed08f715804fef5c7e70818767c",
+          "date": "2026-10-11T08:31:05Z",
+          "subject": "amdgpu: keep failed queues lost across graphics recovery"
+        },
+        {
+          "sha": "fc6c777466882af77d73892569f97c9fa8b4680d",
+          "url": "https://github.com/jmgasper/haiku/commit/fc6c777466882af77d73892569f97c9fa8b4680d",
+          "date": "2026-10-11T08:39:17Z",
+          "subject": "amdgpu: recheck lost allocation clients after draining work"
+        },
+        {
+          "sha": "0fa2d917b27a30998a1afdef15e0fe922c0f2c78",
+          "url": "https://github.com/jmgasper/haiku/commit/0fa2d917b27a30998a1afdef15e0fe922c0f2c78",
+          "date": "2026-10-11T08:43:49Z",
+          "subject": "amdgpu: record queued and ordered-wave recovery qualification"
+        },
+        {
+          "sha": "4a1acb6a1d91f942017c6d590a3db20943d53fb2",
+          "url": "https://github.com/jmgasper/haiku/commit/4a1acb6a1d91f942017c6d590a3db20943d53fb2",
+          "date": "2026-10-11T08:44:20Z",
+          "subject": "Merge WX5100 queued and ordered-wave recovery qualification"
+        },
+        {
+          "sha": "d229757e9efecf833ea11ac24352278df9364288",
+          "url": "https://github.com/jmgasper/haiku/commit/d229757e9efecf833ea11ac24352278df9364288",
+          "date": "2026-10-11T08:58:35Z",
+          "subject": "amdgpu: preserve client loss and recover with retained live allocations"
+        },
+        {
+          "sha": "b5390685c4a134c1a5e8651f3a958355da0c973d",
+          "url": "https://github.com/jmgasper/haiku/commit/b5390685c4a134c1a5e8651f3a958355da0c973d",
+          "date": "2026-10-11T09:08:41Z",
+          "subject": "docs: record retained live-client graphics recovery qualification"
+        },
+        {
+          "sha": "094492b10014bec51fd87f8ea140ad87e6fe9253",
+          "url": "https://github.com/jmgasper/haiku/commit/094492b10014bec51fd87f8ea140ad87e6fe9253",
+          "date": "2026-10-11T09:08:50Z",
+          "subject": "Merge WX5100 retained live-client recovery qualification"
+        },
+        {
+          "sha": "e8425eecbd8e79709fce96022da2f03ae5a17804",
+          "url": "https://github.com/jmgasper/haiku/commit/e8425eecbd8e79709fce96022da2f03ae5a17804",
+          "date": "2026-10-11T09:25:36Z",
+          "subject": "amdgpu: automatically recover terminal graphics faults after draining work"
+        },
+        {
+          "sha": "b4df8b4cf4f0b650126171a0def949e00618e970",
+          "url": "https://github.com/jmgasper/haiku/commit/b4df8b4cf4f0b650126171a0def949e00618e970",
+          "date": "2026-10-11T09:35:03Z",
+          "subject": "docs: record automatic GFX and robust EGL recovery qualification"
+        },
+        {
+          "sha": "3c2463fbe5269841a31ec0980df7a99abfadecfc",
+          "url": "https://github.com/jmgasper/haiku/commit/3c2463fbe5269841a31ec0980df7a99abfadecfc",
+          "date": "2026-10-11T09:35:06Z",
+          "subject": "Merge WX5100 automatic graphics recovery and robust application qualification"
+        },
+        {
+          "sha": "a85f33f027519c0bf63f8f49917611b1d0e5b982",
+          "url": "https://github.com/jmgasper/haiku/commit/a85f33f027519c0bf63f8f49917611b1d0e5b982",
+          "date": "2026-10-11T09:51:27Z",
+          "subject": "amdgpu: retain and retire idle video sessions across GFX recovery"
+        },
+        {
+          "sha": "9be4e55bac9e3b516a0561c895227e2ffca60093",
+          "url": "https://github.com/jmgasper/haiku/commit/9be4e55bac9e3b516a0561c895227e2ffca60093",
+          "date": "2026-10-11T09:59:17Z",
+          "subject": "amdgpu: qualify video ownership waits and active decode during reset"
+        },
+        {
+          "sha": "399de27eea0e665820955d186359228110b6e812",
+          "url": "https://github.com/jmgasper/haiku/commit/399de27eea0e665820955d186359228110b6e812",
+          "date": "2026-10-11T10:02:11Z",
+          "subject": "docs: record WX5100 retained video recovery qualification"
+        },
+        {
+          "sha": "481e50105fcab4f2925c7fe2889257920bdb3a0f",
+          "url": "https://github.com/jmgasper/haiku/commit/481e50105fcab4f2925c7fe2889257920bdb3a0f",
+          "date": "2026-10-11T10:03:51Z",
+          "subject": "Merge WX5100 retained video recovery qualification"
+        },
+        {
+          "sha": "ea05c891db290a51008a59bccc5cea88577664e0",
+          "url": "https://github.com/jmgasper/haiku/commit/ea05c891db290a51008a59bccc5cea88577664e0",
+          "date": "2026-10-11T10:20:27Z",
+          "subject": "amdgpu: reset failed UVD firmware and invalidate old sessions"
+        },
+        {
+          "sha": "8010d0fc3208cdbd44582b338ffa0c50eebed0f7",
+          "url": "https://github.com/jmgasper/haiku/commit/8010d0fc3208cdbd44582b338ffa0c50eebed0f7",
+          "date": "2026-10-11T10:33:14Z",
+          "subject": "amdgpu: preserve qualified UVD playback clocks during firmware restart"
+        },
+        {
+          "sha": "b4190fb346c9c0aad8210363a750ad27bc84b84f",
+          "url": "https://github.com/jmgasper/haiku/commit/b4190fb346c9c0aad8210363a750ad27bc84b84f",
+          "date": "2026-10-11T10:47:19Z",
+          "subject": "docs: qualify WX5100 UVD firmware and concurrent fault recovery"
+        },
+        {
+          "sha": "0b2359f62d4ef816aa14995256bfab92375dc926",
+          "url": "https://github.com/jmgasper/haiku/commit/0b2359f62d4ef816aa14995256bfab92375dc926",
+          "date": "2026-10-11T10:47:27Z",
+          "subject": "Merge WX5100 UVD firmware recovery qualification"
+        },
+        {
+          "sha": "05c75a689dfa28d2719d4396a013b45af1ea75c3",
+          "url": "https://github.com/jmgasper/haiku/commit/05c75a689dfa28d2719d4396a013b45af1ea75c3",
+          "date": "2026-10-11T10:59:06Z",
+          "subject": "amdgpu: recover SDMA0 before restarting graphics and video clients"
+        },
+        {
+          "sha": "68d81dcff38e54b4d2b30c719b9dc12c8e3e7171",
+          "url": "https://github.com/jmgasper/haiku/commit/68d81dcff38e54b4d2b30c719b9dc12c8e3e7171",
+          "date": "2026-10-11T11:01:47Z",
+          "subject": "amdgpu: judge stalled DMA by its fence rather than fetch pointer"
+        },
+        {
+          "sha": "b81de4a555ae5f42d4e5fbe5291bb02a13eea37b",
+          "url": "https://github.com/jmgasper/haiku/commit/b81de4a555ae5f42d4e5fbe5291bb02a13eea37b",
+          "date": "2026-10-11T11:17:59Z",
+          "subject": "docs: qualify WX5100 SDMA recovery with retained clients"
+        },
+        {
+          "sha": "faf57cd9e3ad4854109591394f39093ad75d2cd3",
+          "url": "https://github.com/jmgasper/haiku/commit/faf57cd9e3ad4854109591394f39093ad75d2cd3",
+          "date": "2026-10-11T11:18:13Z",
+          "subject": "Merge WX5100 SDMA recovery qualification"
+        },
+        {
+          "sha": "433dfca29df8c596dbd730433c81d148bff5c1f3",
+          "url": "https://github.com/jmgasper/haiku/commit/433dfca29df8c596dbd730433c81d148bff5c1f3",
+          "date": "2026-10-11T11:24:55Z",
+          "subject": "amdgpu: qualify decoder DMA boundary failures and queued cancellation"
+        },
+        {
+          "sha": "9c0475a773cb0c59f562f50726be94cff76e0241",
+          "url": "https://github.com/jmgasper/haiku/commit/9c0475a773cb0c59f562f50726be94cff76e0241",
+          "date": "2026-10-11T11:31:17Z",
+          "subject": "docs: qualify decoder DMA failures and combined recovery"
+        },
+        {
+          "sha": "304a748b89d6efcfb6ee9c0d847546a062a36b14",
+          "url": "https://github.com/jmgasper/haiku/commit/304a748b89d6efcfb6ee9c0d847546a062a36b14",
+          "date": "2026-10-11T11:31:45Z",
+          "subject": "Merge WX5100 decoder DMA recovery qualification"
+        },
+        {
+          "sha": "2e500953729883b60da440cc47b6d691e8dbea22",
+          "url": "https://github.com/jmgasper/haiku/commit/2e500953729883b60da440cc47b6d691e8dbea22",
+          "date": "2026-10-11T11:38:30Z",
+          "subject": "amduvd: add test-only real GPU timeout injection for application recovery"
+        },
+        {
+          "sha": "1fd65e58f7287c85eac45e61b3927728f5c5d3b7",
+          "url": "https://github.com/jmgasper/haiku/commit/1fd65e58f7287c85eac45e61b3927728f5c5d3b7",
+          "date": "2026-10-11T11:42:30Z",
+          "subject": "amduvd tests: intercept calls after the Haiku inline ioctl definition"
+        },
+        {
+          "sha": "7cfd4d52e0f5b2b13c82a76f3fec7cc91af4a629",
+          "url": "https://github.com/jmgasper/haiku/commit/7cfd4d52e0f5b2b13c82a76f3fec7cc91af4a629",
+          "date": "2026-10-11T12:03:10Z",
+          "subject": "docs: qualify airTime GPU recovery and record Summit context-loss failures"
+        },
+        {
+          "sha": "9d1de8baa2ee2584bb7fd3aed5e8a53fd5e6a00b",
+          "url": "https://github.com/jmgasper/haiku/commit/9d1de8baa2ee2584bb7fd3aed5e8a53fd5e6a00b",
+          "date": "2026-10-11T12:03:35Z",
+          "subject": "Merge WX5100 real application recovery fixtures and qualification"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -6488,8 +6782,44 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "1eb14ff65aa62af44c9fcffe8d34d210d6ba8491",
+      "head": "59856668af4d58c4c0b373f7dc8da9cc33cbd419",
       "commits": [
+        {
+          "sha": "59856668af4d58c4c0b373f7dc8da9cc33cbd419",
+          "url": "https://github.com/jmgasper/airos-ci/commit/59856668af4d58c4c0b373f7dc8da9cc33cbd419",
+          "date": "2026-10-11T08:54:42Z",
+          "subject": "Summit deps: hash a release's pkg-config files in C order"
+        },
+        {
+          "sha": "6c18ab9c7cd7a58ea0e55494e45587fcd494c53f",
+          "url": "https://github.com/jmgasper/airos-ci/commit/6c18ab9c7cd7a58ea0e55494e45587fcd494c53f",
+          "date": "2026-10-11T08:43:53Z",
+          "subject": "Release SDK: hand the extracted files to the group too"
+        },
+        {
+          "sha": "5ce1edd511378819c1e2acbea19dbb9118819b0b",
+          "url": "https://github.com/jmgasper/airos-ci/commit/5ce1edd511378819c1e2acbea19dbb9118819b0b",
+          "date": "2026-10-11T08:35:49Z",
+          "subject": "Shared trees: give the group read access too, not only write"
+        },
+        {
+          "sha": "295ebba052dceecafe4180527771f95b56a5f997",
+          "url": "https://github.com/jmgasper/airos-ci/commit/295ebba052dceecafe4180527771f95b56a5f997",
+          "date": "2026-10-11T08:23:09Z",
+          "subject": "publish.sh: give the README rebase a committer"
+        },
+        {
+          "sha": "9812994ccd2489cec32acb99095024a73fabdb34",
+          "url": "https://github.com/jmgasper/airos-ci/commit/9812994ccd2489cec32acb99095024a73fabdb34",
+          "date": "2026-10-11T07:58:20Z",
+          "subject": "Build Summit for stock Haiku R1/beta6 after every air/OS build"
+        },
+        {
+          "sha": "8b907e8d08b7b00861e785c7743719ef6ea26bde",
+          "url": "https://github.com/jmgasper/airos-ci/commit/8b907e8d08b7b00861e785c7743719ef6ea26bde",
+          "date": "2026-10-11T07:58:09Z",
+          "subject": "Summit for Haiku R1/beta6 links the release's own libraries"
+        },
         {
           "sha": "1eb14ff65aa62af44c9fcffe8d34d210d6ba8491",
           "url": "https://github.com/jmgasper/airos-ci/commit/1eb14ff65aa62af44c9fcffe8d34d210d6ba8491",
@@ -19477,13 +19807,127 @@
       "branch": "main",
       "description": "A native web browser with a modern WebKit engine, extensions and developer tools.",
       "group": "Applications",
-      "head": "8fdfb35ec54c265cc1f3b7fff19ce8d90020ddd4",
+      "head": "6502b41f9d38e314219b0bd6a025f149ab118b1e",
       "commits": [
+        {
+          "sha": "6502b41f9d38e314219b0bd6a025f149ab118b1e",
+          "url": "https://github.com/jmgasper/summit/commit/6502b41f9d38e314219b0bd6a025f149ab118b1e",
+          "date": "2026-10-11T12:41:52Z",
+          "subject": "README: latest Haiku R1/beta6 builds (51d2bde) [skip ci]"
+        },
+        {
+          "sha": "672f70b358a7dfad3de6c7479038f59563670786",
+          "url": "https://github.com/jmgasper/summit/commit/672f70b358a7dfad3de6c7479038f59563670786",
+          "date": "2026-10-11T12:41:38Z",
+          "subject": "README: latest air/OS builds (51d2bde) [skip ci]"
+        },
+        {
+          "sha": "51d2bde97a327cdc574d9733cd4973c4a4511f5c",
+          "url": "https://github.com/jmgasper/summit/commit/51d2bde97a327cdc574d9733cd4973c4a4511f5c",
+          "date": "2026-10-11T12:33:03Z",
+          "subject": "Merge WX5100 decoder recreation and EGL reset-notification groundwork"
+        },
+        {
+          "sha": "f7a8105702d8381bdb07ad49a5fa18aa76c6d45d",
+          "url": "https://github.com/jmgasper/summit/commit/f7a8105702d8381bdb07ad49a5fa18aa76c6d45d",
+          "date": "2026-10-11T12:32:31Z",
+          "subject": "Record same-page AMD decoder recovery and compositor cleanup failure"
+        },
+        {
+          "sha": "79a22a1bd31bbae33bbff3726d29b392b7b265fa",
+          "url": "https://github.com/jmgasper/summit/commit/79a22a1bd31bbae33bbff3726d29b392b7b265fa",
+          "date": "2026-10-11T12:30:52Z",
+          "subject": "Compare recovered video against separate software and hardware references"
+        },
+        {
+          "sha": "e82970cc552cf348155b99c5f3ff0e86a11bf7f5",
+          "url": "https://github.com/jmgasper/summit/commit/e82970cc552cf348155b99c5f3ff0e86a11bf7f5",
+          "date": "2026-10-11T12:12:20Z",
+          "subject": "Exercise decoder recreation in one page and detect delayed crash reporters"
+        },
+        {
+          "sha": "4f2a0a69e6ef03eb9977db05f702aa82e91ed137",
+          "url": "https://github.com/jmgasper/summit/commit/4f2a0a69e6ef03eb9977db05f702aa82e91ed137",
+          "date": "2026-10-11T12:09:36Z",
+          "subject": "Request EGL reset notification and allow fresh AMD decoder sessions"
+        },
+        {
+          "sha": "d81f12adcd83268920fd1777ff6d97aa407aa9bc",
+          "url": "https://github.com/jmgasper/summit/commit/d81f12adcd83268920fd1777ff6d97aa407aa9bc",
+          "date": "2026-10-11T09:48:44Z",
+          "subject": "README: latest Haiku R1/beta6 builds (51e49bb) [skip ci]"
+        },
+        {
+          "sha": "598f83551e6c777855d409fb30e7067b88154fc5",
+          "url": "https://github.com/jmgasper/summit/commit/598f83551e6c777855d409fb30e7067b88154fc5",
+          "date": "2026-10-11T09:48:32Z",
+          "subject": "README: latest air/OS builds (51e49bb) [skip ci]"
+        },
+        {
+          "sha": "51e49bbd76938703952801f17ac413c6e19ce961",
+          "url": "https://github.com/jmgasper/summit/commit/51e49bbd76938703952801f17ac413c6e19ce961",
+          "date": "2026-10-11T08:56:10Z",
+          "subject": "README: latest air/OS builds (c355e6d) [skip ci]"
+        },
+        {
+          "sha": "c355e6d15f6c0d99eb24cf3a2fd1df7948aed884",
+          "url": "https://github.com/jmgasper/summit/commit/c355e6d15f6c0d99eb24cf3a2fd1df7948aed884",
+          "date": "2026-10-11T08:42:35Z",
+          "subject": "README: latest air/OS builds (35f1bfa) [skip ci]"
+        },
+        {
+          "sha": "35f1bfa467834a703928a402673004dc7f29245f",
+          "url": "https://github.com/jmgasper/summit/commit/35f1bfa467834a703928a402673004dc7f29245f",
+          "date": "2026-10-11T08:34:33Z",
+          "subject": "README: latest air/OS builds (1a3ff01) [skip ci]"
+        },
+        {
+          "sha": "1a3ff015651fbd3fc96d3fc54bfdb7aff6812b6a",
+          "url": "https://github.com/jmgasper/summit/commit/1a3ff015651fbd3fc96d3fc54bfdb7aff6812b6a",
+          "date": "2026-10-11T07:58:44Z",
+          "subject": "Document and distribute the Haiku R1/beta6 build next to the air/OS one"
+        },
+        {
+          "sha": "833cd3d6cf28963eba8d94cb14d5bc31f16ae617",
+          "url": "https://github.com/jmgasper/summit/commit/833cd3d6cf28963eba8d94cb14d5bc31f16ae617",
+          "date": "2026-10-11T06:55:09Z",
+          "subject": "Add a stock Haiku test machine for the Haiku build"
+        },
+        {
+          "sha": "cd2160a55b890ed0790c014259396ca31f0a78b0",
+          "url": "https://github.com/jmgasper/summit/commit/cd2160a55b890ed0790c014259396ca31f0a78b0",
+          "date": "2026-10-11T06:55:09Z",
+          "subject": "Leave the cached FFmpeg archive readable to other build users"
+        },
+        {
+          "sha": "b289e03aa26e83504ebb93c09063f8690cb09f6d",
+          "url": "https://github.com/jmgasper/summit/commit/b289e03aa26e83504ebb93c09063f8690cb09f6d",
+          "date": "2026-10-11T06:55:09Z",
+          "subject": "Build the browser for air/OS or for a stock Haiku release"
+        },
+        {
+          "sha": "4203713757b22e69a496d050697f18b75b3a7717",
+          "url": "https://github.com/jmgasper/summit/commit/4203713757b22e69a496d050697f18b75b3a7717",
+          "date": "2026-10-11T06:54:05Z",
+          "subject": "Compile the Web Bluetooth transport against stock Haiku headers"
+        },
         {
           "sha": "8fdfb35ec54c265cc1f3b7fff19ce8d90020ddd4",
           "url": "https://github.com/jmgasper/summit/commit/8fdfb35ec54c265cc1f3b7fff19ce8d90020ddd4",
           "date": "2026-10-11T06:30:12Z",
           "subject": "Drop the JavaScriptCore hunks the main engine patch now carries from the arm64 patch"
+        },
+        {
+          "sha": "227835979dd948d8c224855268ada79192acb998",
+          "url": "https://github.com/jmgasper/summit/commit/227835979dd948d8c224855268ada79192acb998",
+          "date": "2026-10-11T05:22:58Z",
+          "subject": "bench: attribute explicitly reserved kernel workers during isolated probes"
+        },
+        {
+          "sha": "79f211a97a1a6101a2887aca340e893bd8df16c9",
+          "url": "https://github.com/jmgasper/summit/commit/79f211a97a1a6101a2887aca340e893bd8df16c9",
+          "date": "2026-10-11T05:20:10Z",
+          "subject": "bench: report non-idle kernel worker CPU separately"
         },
         {
           "sha": "6fae858f4754dab8915f8bf9651d8df544645a9d",
@@ -24209,8 +24653,38 @@
       "branch": "main",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "group": "Applications",
-      "head": "f1c1d599996cf06729ca664bec071297b17dc911",
+      "head": "f97a848bc6b0dc86b54a2dec7cc4410523c67731",
       "commits": [
+        {
+          "sha": "f97a848bc6b0dc86b54a2dec7cc4410523c67731",
+          "url": "https://github.com/jmgasper/airTime/commit/f97a848bc6b0dc86b54a2dec7cc4410523c67731",
+          "date": "2026-10-11T11:58:58Z",
+          "subject": "README: latest air/OS builds (39e8b2d) [skip ci]"
+        },
+        {
+          "sha": "39e8b2d009b91ab34e598893ba456f2810a8cd8c",
+          "url": "https://github.com/jmgasper/airTime/commit/39e8b2d009b91ab34e598893ba456f2810a8cd8c",
+          "date": "2026-10-11T11:58:21Z",
+          "subject": "Merge WX5100 decoder recovery, seek synchronization and final-frame fixes"
+        },
+        {
+          "sha": "ab5dd46cc4bee326a7328e3770396febdcc07cf6",
+          "url": "https://github.com/jmgasper/airTime/commit/ab5dd46cc4bee326a7328e3770396febdcc07cf6",
+          "date": "2026-10-11T11:57:49Z",
+          "subject": "Record real WX5100 decoder recovery and completion qualification"
+        },
+        {
+          "sha": "335c8fe9cf1ed5b3aa62f71d8b058cb00e3a94d7",
+          "url": "https://github.com/jmgasper/airTime/commit/335c8fe9cf1ed5b3aa62f71d8b058cb00e3a94d7",
+          "date": "2026-10-11T11:50:18Z",
+          "subject": "Bound hardware catch-up by the video packets actually available"
+        },
+        {
+          "sha": "59d4e984c1c05285d1c72c4be5c46b2a4d0852e5",
+          "url": "https://github.com/jmgasper/airTime/commit/59d4e984c1c05285d1c72c4be5c46b2a4d0852e5",
+          "date": "2026-10-11T11:45:56Z",
+          "subject": "Wait for the seek flush before a replacement video decoder reads packets"
+        },
         {
           "sha": "f1c1d599996cf06729ca664bec071297b17dc911",
           "url": "https://github.com/jmgasper/airTime/commit/f1c1d599996cf06729ca664bec071297b17dc911",
@@ -26260,31 +26734,31 @@
       "description": "A native web browser with a modern WebKit engine, extensions and developer tools.",
       "note": "Install both Summit and summit_webkit for your architecture.",
       "release": "https://github.com/jmgasper/summit/releases/tag/latest",
-      "published": "2026-10-07T22:50:50Z",
+      "published": "2026-10-11T12:41:37Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261007.2231-1-arm64.hpkg",
-          "size": 4017416,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261007.2231-1-arm64.hpkg",
-          "digest": "sha256:8e0100fac9f83a8d6ea5d6bdb4a8629dc1471089a48bb465a2309344e62ed897"
+          "name": "summit-0.1.0.git20261011.1233-1-arm64.hpkg",
+          "size": 4050225,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261011.1233-1-arm64.hpkg",
+          "digest": "sha256:57d34379506a8472254412c0e9d7e644b229ae925b2d3090b597e67d83b66235"
         },
         {
-          "name": "summit-0.1.0.git20261007.2231-1-x86_64.hpkg",
-          "size": 3956956,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261007.2231-1-x86_64.hpkg",
-          "digest": "sha256:6814d87b361ad0fa882270dd6ab99a44d40cacc7eb267f146292945d3dd21521"
+          "name": "summit-0.1.0.git20261011.1233-1-x86_64.hpkg",
+          "size": 3986532,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261011.1233-1-x86_64.hpkg",
+          "digest": "sha256:1778c32183809ab20e9e696a0b8e4ba99a69a5bd347c16d9980cf7c3eeaa3977"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261007.2231-1-arm64.hpkg",
-          "size": 89505281,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261007.2231-1-arm64.hpkg",
-          "digest": "sha256:e1b6b40d81d4bba7ed5a41e3094ea6d747c8dfc235e33b94a664325e89f94d04"
+          "name": "summit_webkit-1.10.1.git20261011.1233-1-arm64.hpkg",
+          "size": 89690308,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261011.1233-1-arm64.hpkg",
+          "digest": "sha256:01310c078ebc8aad84a0e1076d9108093b74c4fd318e85afc685a47f674bfea3"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261007.2231-1-x86_64.hpkg",
-          "size": 89392860,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261007.2231-1-x86_64.hpkg",
-          "digest": "sha256:1c3a7dec6d91150fe41f2697edd93978913d35a6cf6803045905aae4580a89a9"
+          "name": "summit_webkit-1.10.1.git20261011.1233-1-x86_64.hpkg",
+          "size": 89574021,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261011.1233-1-x86_64.hpkg",
+          "digest": "sha256:f45cc9a4ff0390acef0158dfb8af8cb8a759aebd6bca1d65bcbde5572218fe06"
         }
       ]
     },
@@ -26314,19 +26788,19 @@
       "repo": "airTime",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "release": "https://github.com/jmgasper/airTime/releases/tag/latest",
-      "published": "2026-10-10T18:33:43Z",
+      "published": "2026-10-11T11:58:58Z",
       "assets": [
         {
           "name": "airtime-1.0.0-18-arm64.hpkg",
-          "size": 237495,
+          "size": 238145,
           "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-18-arm64.hpkg",
-          "digest": "sha256:2d368701cfd120444512676e794b5b71e81de4620093862513b28f23a41b8073"
+          "digest": "sha256:3aa5bbe9572fa9b6dc7a6bfd4edc8fc4474dbe4c9b5b96db8012146298188e97"
         },
         {
           "name": "airtime-1.0.0-18-x86_64.hpkg",
-          "size": 236512,
+          "size": 237407,
           "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-18-x86_64.hpkg",
-          "digest": "sha256:ae6e20736058ecd7116ec80a611c8d62276e327bea659162ef6b29b8c5524641"
+          "digest": "sha256:f76533df9bc7a1b9cbf495d8fbba583daa4521af188c25b8204691cc21a8d8b3"
         }
       ]
     },
@@ -26418,76 +26892,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261011063718-fc8a54835a",
-      "published": "2026-10-11T06:39:25Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261011121803-9d1de8baa2",
+      "published": "2026-10-11T12:20:07Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 749844892,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011063718-fc8a54835a/airos-x86_64.iso.xz",
-          "digest": "sha256:210542031a585e989b3464e630a55e4b562fcbb2442cb1ba509f882139bec74d"
+          "size": 750002624,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011121803-9d1de8baa2/airos-x86_64.iso.xz",
+          "digest": "sha256:832b6fee920e8d9a2567fad21d9370856ca1b2690fc0ac161e86e396d4e38a08"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011063718-fc8a54835a/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:d5fd03cd6744e471fb9be764cff47aef3857741b55fe1e7ebb58f34efa5a2d27"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011121803-9d1de8baa2/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:f61a78f74990a6443abf144e3c049304554d350b6b4a1ddc1e9f172d8fb5e0ad"
         },
         {
           "name": "manifest.json",
           "size": 4208,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011063718-fc8a54835a/manifest.json",
-          "digest": "sha256:a326516f60e323688b0b616688a091d77a6cf24e14028413fac76b2733a41359"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011121803-9d1de8baa2/manifest.json",
+          "digest": "sha256:662f86d59ef497a8e861abe154eaa70fe4937a1a6335e6e051e5ae8ad0d731d4"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261011064245-3877b888e2",
-      "published": "2026-10-11T06:45:08Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261011120611-9d1de8baa2",
+      "published": "2026-10-11T12:08:30Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 258904752,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011064245-3877b888e2/airos-arm64.iso.xz",
-          "digest": "sha256:7cceed29e2397604cc8758070d774c46db12a4d913e4e42f4fa460a5334b2dd1"
+          "size": 259170924,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011120611-9d1de8baa2/airos-arm64.iso.xz",
+          "digest": "sha256:c09dc1044e0ce7a91647f763e7f1e1f5742cc59cfc077e024fcc6cff58996a18"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011064245-3877b888e2/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:77086c95528754b4f7645a3b19f09cd879db3d27cc3212b97ac914c0d595157f"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011120611-9d1de8baa2/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:dd2617655653612399e607fe5a55d0226413a134a0b03535861f6143af8a61f4"
         },
         {
           "name": "manifest.json",
           "size": 4414,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011064245-3877b888e2/manifest.json",
-          "digest": "sha256:7b6c68eed5a8546839bab330334c9d08613715fc03ebeb94aa62f76668cbb114"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011120611-9d1de8baa2/manifest.json",
+          "digest": "sha256:1c426479a74a7a1363d55dc76b649bb63c4e697a7b0c89e7a13da56e678071dc"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261011063017-fc8a54835a",
-      "published": "2026-10-11T06:31:08Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261011121117-9d1de8baa2",
+      "published": "2026-10-11T12:12:09Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 261311264,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011063017-fc8a54835a/airos-rpi4.img.xz",
-          "digest": "sha256:7c905b8283a25b4ddbf9eae47c2d9778cf31ef930ee177674cf6022bc0fb61aa"
+          "size": 261529984,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011121117-9d1de8baa2/airos-rpi4.img.xz",
+          "digest": "sha256:7264a99bea570bb1188ff9b218c0efc753aca569fec1294b3652f2bcde6c09af"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011063017-fc8a54835a/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:b293786e3f2df694d0ad188c3c6eec11fb18d689d12d6a869cf67623b3258e8f"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011121117-9d1de8baa2/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:dbbd13e78e3c5f8e7c7d413c7532fcdd1b57c34f0d4dd31e0ddf05f75eb4c9a3"
         },
         {
           "name": "manifest.json",
           "size": 4548,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011063017-fc8a54835a/manifest.json",
-          "digest": "sha256:ddaafe9872388e5af72d42e9955c1813596ff8944bb4f09ce4b6af2f8eac31ca"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011121117-9d1de8baa2/manifest.json",
+          "digest": "sha256:624ef00744477f61055f478b7c1700e94492d621fef6b4d2f979bf9c601d03fd"
         }
       ]
     }
