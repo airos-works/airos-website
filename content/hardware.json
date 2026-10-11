@@ -36,7 +36,17 @@
         "label": "SD image build instructions",
         "path": "tools/cubie-a7s/build-sd-image.sh"
       }
-    ]
+    ],
+    "image": {
+      "file": "cubie-a7s.webp",
+      "alt": "Radxa Cubie A7S board shown from the front, back and side",
+      "width": 2400,
+      "height": 762,
+      "source": "https://docs.radxa.com/en/cubie/a7s#product-views",
+      "credit": "Radxa",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
   },
   {
     "name": "Raspberry Pi 4",

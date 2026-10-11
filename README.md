@@ -53,6 +53,11 @@ with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime capture includes Big Buck Bunny, © Blender Foundation,
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
 
+The Cubie A7S board photo is reproduced unchanged from [Radxa Docs](https://docs.radxa.com/en/cubie/a7s#product-views),
+© Radxa Computer (Shenzhen) Co.,Ltd., under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The [source image](https://github.com/radxa-docs/docs/blob/bfb1f40a31d62ee504951a0b93155bb5a481e752/static/img/cubie/a7s/cubie-a7s-view.webp)
+is stored locally in `static/assets/hardware/` and credited on the hardware page.
+
 ## Keeping Git history current
 
 The Pages workflow runs on every main-branch push, every six hours, manually,
