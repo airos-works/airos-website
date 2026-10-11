@@ -46,6 +46,10 @@ native dialog, and the changelog searches its full local archive.
 Curated content lives in `content/`. `static/assets/` holds the logo, original
 captures, CSS and JavaScript. The build produces `dist/`. Screenshots are
 unaltered captures; historical development images can show earlier branding.
+The Summit website capture was taken from a running Haiku test VM on
+11 October 2026, showing a local preview of this site. The favicon uses the
+[square airOS mark](https://github.com/jmgasper/haiku/blob/master/data/artwork/airos/airos-mark.svg),
+with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime capture includes Big Buck Bunny, © Blender Foundation,
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
 

@@ -32,14 +32,14 @@ def page(path, title, description, body):
 <link rel="canonical" href="{canonical}"><meta property="og:title" content="{e(title)} · airOS">
 <meta property="og:description" content="{e(description, quote=True)}"><meta property="og:type" content="website">
 <meta property="og:url" content="{canonical}"><meta property="og:image" content="{ORIGIN}/assets/logo.png">
-<link rel="icon" href="{url('assets/logo.png')}"><link rel="stylesheet" href="{url('assets/site.css')}">
+<link rel="icon" href="{url('favicon.ico')}" sizes="16x16 32x32 48x48"><link rel="icon" type="image/svg+xml" href="{url('assets/favicon.svg')}" sizes="any"><link rel="stylesheet" href="{url('assets/site.css')}">
 <script src="{url('assets/site.js')}" defer></script></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="{url()}" aria-label="airOS home"><img src="{url('assets/logo.png')}" width="191" height="64" alt="air/OS"></a>
 <nav aria-label="Main navigation">{nav}</nav></div></header>
 <main id="main" class="wrap">{body}</main>
-<footer class="wrap"><div class="footer-brand">A little more possibility.<span>airOS · An independent Haiku-based project.</span></div>
-<div>{link('https://www.haiku-os.org/', 'Discover Haiku ↗')} {link('https://github.com/jmgasper/airos-website', 'Website source ↗')}<span>Build data refreshed {UPDATED} UTC</span></div></footer></body></html>'''
+<footer class="wrap"><div class="footer-brand">A little more possibility.</div>
+<div>{link('https://www.haiku-os.org/', 'Discover Haiku ↗')}<span>Build data refreshed {UPDATED} UTC</span></div></footer></body></html>'''
     target = OUT / path / 'index.html'
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(html)
@@ -49,32 +49,37 @@ def intro(kicker, title, text):
 
 def home():
     body = f'''<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="dot"></span> A new horizon for a familiar desktop</p>
-<h1>Built on Haiku.<br>Open to <em>more.</em></h1>
+<h1>Build on Haiku.<br>Extended with <em>AI.</em></h1>
 <p class="lead">airOS is an independent, AI-assisted exploration of what Haiku can do — on more devices, with more native apps, and with the same love for a responsive, personal desktop.</p>
 <div class="actions">{link(url('downloads/'), 'Explore the downloads <span aria-hidden="true">↗</span>', 'button primary')}{link(url('screenshots/'), 'See it in action <span aria-hidden="true">→</span>', 'text-link')}</div>
-</div><div class="hero-art" aria-hidden="true"><div class="orbit"></div><img src="{url('assets/mark.png')}" alt=""><span class="art-note">Curiosity. Craft. A wider horizon.</span></div></section>
-<div class="project-strip"><span>ROOTED IN OPEN SOURCE</span><span>ARM64</span><span>x86-64</span><span>Raspberry Pi 4</span></div>
-<section class="about-section"><div><p class="eyebrow">The foundation</p><h2>Haiku made<br> this possible.</h2></div><div class="prose"><p>Haiku’s contributors have spent decades building an open-source operating system inspired by BeOS: fast, coherent and thoughtfully designed for personal computing. Its kernel, desktop, native APIs and community are the foundation of everything here.</p><p>airOS builds on that work with device support, desktop improvements and applications. It is an independent fork, with its own development approach.</p>{link('https://www.haiku-os.org/', 'Meet the Haiku project ↗', 'text-link')}</div></section>
+</div><div class="hero-art" aria-hidden="true"><div class="orbit"></div><img src="{url('assets/mark.png')}" alt=""></div></section>
+<div class="project-strip"><span>ARM64</span><span>x86-64</span><span>Raspberry Pi 4</span></div>
+<section class="about-section"><div><p class="eyebrow">The foundation</p><h2>Haiku made<br> this possible.</h2></div><div class="prose"><p>Haiku’s contributors have spent decades building an open-source operating system inspired by BeOS: fast, coherent and thoughtfully designed for personal computing. Its kernel, desktop, native APIs and community are the foundation of everything here.</p><p>airOS builds on that work with device support, desktop improvements and applications. It is an independent fork, with its own development approach.</p>{link('https://www.haiku-os.org/', 'Haiku Project ↗', 'text-link')}</div></section>
 <section class="principles"><article><span class="section-number">01 / EXPLORE</span><h3>More hardware.</h3><p>From ARM boards to a desktop workstation, new drivers and ports bring Haiku’s desktop to more places.</p>{link(url('hardware/'), 'See what works →')}</article><article><span class="section-number">02 / MAKE</span><h3>More everyday apps.</h3><p>Browse, listen, watch, capture and create with native applications that feel at home on the desktop.</p>{link(url('screenshots/'), 'Take a look →')}</article><article><span class="section-number">03 / ITERATE</span><h3>A faster feedback loop.</h3><p>AI helps investigate unfamiliar code, develop ports and test ideas quickly. Builds, hardware checks and public Git history make progress inspectable.</p>{link(url('changelog/'), 'Follow the changes →')}</article></section>
 <section class="closing"><p class="eyebrow">An experiment you can explore</p><h2>Open source. Ongoing work.<br>A desktop with room to grow.</h2><p>Development builds are available now. Check the hardware notes, try the apps, or follow along in the source.</p>{link(url('source/'), 'Explore the code ↗', 'button')}</section>'''
-    page('', 'Built on Haiku. Open to more.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
+    page('', 'Build on Haiku. Extended with AI.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
 
 def screenshots():
     shots = json.loads((ROOT / 'content/screenshots.json').read_text())
-    body = intro('A look around', 'A desktop that feels like home.', 'Real captures from our applications and development machines. Select an image to see the full-size capture.')
-    body += '<div class="filter-bar" data-gallery-filters hidden><button class="selected" data-filter="All">All captures</button><button data-filter="Apps">Applications</button><button data-filter="Features">Desktop & features</button></div><div class="gallery">'
+    body = intro('A look around', 'Screenshots', 'Real captures from our applications and development machines.')
+    categories = list(dict.fromkeys(shot['category'] for shot in shots))
+    if len(categories) > 1:
+        body += '<div class="filter-bar" data-gallery-filters hidden><button class="selected" data-filter="All">All captures</button>'
+        body += ''.join(f'<button data-filter="{e(category, quote=True)}">{e(category)}</button>' for category in categories) + '</div>'
+    body += '<div class="gallery">'
     for i, shot in enumerate(shots):
         image = url('assets/screenshots/' + shot['file'])
-        body += f'''<figure data-category="{shot['category']}"><a class="screenshot-link" href="{image}" data-caption="{e(shot['title'])}"><img src="{image}" alt="{e(shot['title'] + ': ' + shot['description'], quote=True)}" loading="lazy"></a><figcaption><span class="section-number">{i+1:02d} / {shot['category']}</span><h2>{shot['title']}</h2><p>{shot['description']}</p>{link(shot['source'], 'About this capture ↗', 'subtle') if 'turbo_chook' not in shot['source'] or any(s['repo'] == 'jmgasper/turbo_chook' for s in D['sources']) else '<span class="subtle">Development capture</span>'}</figcaption></figure>'''
+        body += f'''<figure data-category="{shot['category']}"><a class="screenshot-link" href="{image}" data-caption="{e(shot['title'])}"><img src="{image}" alt="{e(shot['title'] + ': ' + shot['description'], quote=True)}" loading="lazy"></a><figcaption><span class="section-number">{i+1:02d} / {shot['category']}</span><h2>{shot['title']}</h2><p>{shot['description']}</p>{link(shot['source'], 'About this capture ↗', 'subtle')}</figcaption></figure>'''
     body += '</div><dialog id="lightbox"><form method="dialog"><button aria-label="Close full-size screenshot">Close ×</button></form><img alt=""><p></p></dialog>'
+    body += '<details class="capture-credits"><summary>Capture credits</summary><p>The AirTime capture includes <a href="https://peach.blender.org/about/">Big Buck Bunny</a>, © Blender Foundation, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p></details>'
     page('screenshots/', 'Screenshots', 'Explore real airOS application and desktop screenshots.', body)
 
 def hardware():
     body = intro('New hardware', 'New places for Haiku.', 'Device support built in the airOS forks. These notes describe tested configurations, with the remaining gaps alongside them.')
     for i, device in enumerate(json.loads((ROOT / 'content/hardware.json').read_text())):
-        body += f'''<article class="hardware-row"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span></div><div><h3>What’s working</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}</div></article>'''
-    body += '<aside class="note">Hardware notes reviewed 6 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
-    page('hardware/', 'New hardware', 'Tested airOS support for ROCK 5 ITX, Raspberry Pi 4 and the X399 workstation.', body)
+        body += f'''<article class="hardware-row"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span></div><div><h3>What’s working</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
+    body += '<aside class="note">Hardware notes reviewed 11 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
+    page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Raspberry Pi 4 and x86-64 PCs.', body)
 
 def size(n):
     return f'{n / 1048576:.1f} MB' if n >= 1048576 else f'{n / 1024:.0f} KB'

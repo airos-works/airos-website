@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T01:16:31+00:00",
+  "updated": "2026-10-11T06:05:21+00:00",
   "ci_head": "0802072803e232bdbfd2371f2b5cb6d27e30af8e",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "7da45d45ebe547ca6284bea716971ca6c37d9e98",
+      "head": "10cf1eaad238b0c450b3eea2fce1523ca21a5e98",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -6202,6 +6202,186 @@
           "url": "https://github.com/jmgasper/haiku/commit/7da45d45ebe547ca6284bea716971ca6c37d9e98",
           "date": "2026-10-11T00:46:44Z",
           "subject": "Merge WX5100 concurrent graphics and zero-drop GPU media qualification"
+        },
+        {
+          "sha": "ef908702af73f137652e4e26c666eb9c4207c211",
+          "url": "https://github.com/jmgasper/haiku/commit/ef908702af73f137652e4e26c666eb9c4207c211",
+          "date": "2026-10-11T01:03:36Z",
+          "subject": "amdgpu: add private copied IBs and validate embedded user pointers"
+        },
+        {
+          "sha": "a5df921b96448cb252683bdcf1e3e3062476f440",
+          "url": "https://github.com/jmgasper/haiku/commit/a5df921b96448cb252683bdcf1e3e3062476f440",
+          "date": "2026-10-11T01:07:37Z",
+          "subject": "amdgpu: verify partial CPU copies clear private command storage"
+        },
+        {
+          "sha": "a254cb57fcdec727fd5499dabe07b80a697aa4bf",
+          "url": "https://github.com/jmgasper/haiku/commit/a254cb57fcdec727fd5499dabe07b80a697aa4bf",
+          "date": "2026-10-11T01:24:56Z",
+          "subject": "amdgpu: add shader write and execute permission fault probes"
+        },
+        {
+          "sha": "554994a6e7f3064ea19700604c00ff5f22e0ead4",
+          "url": "https://github.com/jmgasper/haiku/commit/554994a6e7f3064ea19700604c00ff5f22e0ead4",
+          "date": "2026-10-11T01:27:35Z",
+          "subject": "docs: qualify private copied GPU commands and sustained playback"
+        },
+        {
+          "sha": "0230816516e33fccf7011edda28d7c583c1cf1f1",
+          "url": "https://github.com/jmgasper/haiku/commit/0230816516e33fccf7011edda28d7c583c1cf1f1",
+          "date": "2026-10-11T01:27:54Z",
+          "subject": "Merge WX5100 private command copies and pointer validation"
+        },
+        {
+          "sha": "9225515c6edd9561bb3403144550783e083da238",
+          "url": "https://github.com/jmgasper/haiku/commit/9225515c6edd9561bb3403144550783e083da238",
+          "date": "2026-10-11T01:32:27Z",
+          "subject": "docs: record native shader permission faults and cold recovery"
+        },
+        {
+          "sha": "1ed9785dba56133b9274af049c7c374b88e5d4b2",
+          "url": "https://github.com/jmgasper/haiku/commit/1ed9785dba56133b9274af049c7c374b88e5d4b2",
+          "date": "2026-10-11T02:07:06Z",
+          "subject": "docs: record complete native Mesa command coverage"
+        },
+        {
+          "sha": "1d8e5249b16c61c0beb5c5d672b07951db054abb",
+          "url": "https://github.com/jmgasper/haiku/commit/1d8e5249b16c61c0beb5c5d672b07951db054abb",
+          "date": "2026-10-11T02:08:04Z",
+          "subject": "Merge WX5100 shader permission and command coverage qualification"
+        },
+        {
+          "sha": "9822ddcca145927c4247cd255b0264be8c6392aa",
+          "url": "https://github.com/jmgasper/haiku/commit/9822ddcca145927c4247cd255b0264be8c6392aa",
+          "date": "2026-10-11T02:37:17Z",
+          "subject": "docs: record public BGLView and automatic RadeonSI qualification"
+        },
+        {
+          "sha": "e8dbaf091d0045bc8c7970e58db53d2f38e5b913",
+          "url": "https://github.com/jmgasper/haiku/commit/e8dbaf091d0045bc8c7970e58db53d2f38e5b913",
+          "date": "2026-10-11T02:38:20Z",
+          "subject": "Merge WX5100 public OpenGL and automatic renderer qualification"
+        },
+        {
+          "sha": "6b9d39ebe6495a4932ec0f661b0ec726d044405a",
+          "url": "https://github.com/jmgasper/haiku/commit/6b9d39ebe6495a4932ec0f661b0ec726d044405a",
+          "date": "2026-10-11T02:59:08Z",
+          "subject": "amdgpu: add a root-only checked private command submission policy"
+        },
+        {
+          "sha": "a12f0d3643c53e644931d0c4c3643aef5124eeeb",
+          "url": "https://github.com/jmgasper/haiku/commit/a12f0d3643c53e644931d0c4c3643aef5124eeeb",
+          "date": "2026-10-11T03:13:14Z",
+          "subject": "Document initial checked GPU commands and sustained playback qualification"
+        },
+        {
+          "sha": "ab468991490ee8f6b9c3b9b2740ae32e348ebd61",
+          "url": "https://github.com/jmgasper/haiku/commit/ab468991490ee8f6b9c3b9b2740ae32e348ebd61",
+          "date": "2026-10-11T03:13:59Z",
+          "subject": "Merge WX5100 checked command submission and native qualification"
+        },
+        {
+          "sha": "c38286c7bff4ac5e6d37931bef121f5cc4c75a03",
+          "url": "https://github.com/jmgasper/haiku/commit/c38286c7bff4ac5e6d37931bef121f5cc4c75a03",
+          "date": "2026-10-11T03:18:34Z",
+          "subject": "Add checked shader privilege and trap-register qualification"
+        },
+        {
+          "sha": "5f1afdc2cc4e3e477379eb96926eecd94a209b3d",
+          "url": "https://github.com/jmgasper/haiku/commit/5f1afdc2cc4e3e477379eb96926eecd94a209b3d",
+          "date": "2026-10-11T03:21:20Z",
+          "subject": "Record native shader privilege isolation evidence"
+        },
+        {
+          "sha": "c584e8c81f7abdb66866d3a29d82f0d3c4c2166b",
+          "url": "https://github.com/jmgasper/haiku/commit/c584e8c81f7abdb66866d3a29d82f0d3c4c2166b",
+          "date": "2026-10-11T03:22:01Z",
+          "subject": "Merge WX5100 shader privilege qualification"
+        },
+        {
+          "sha": "3c1d83b21ac41cbddb5607b13001903bdecaa72a",
+          "url": "https://github.com/jmgasper/haiku/commit/3c1d83b21ac41cbddb5607b13001903bdecaa72a",
+          "date": "2026-10-11T03:32:58Z",
+          "subject": "Queue copied graphics commands with retained VMs and ordered fences"
+        },
+        {
+          "sha": "b891e978d5d3374e45078cf1fda156a66787b366",
+          "url": "https://github.com/jmgasper/haiku/commit/b891e978d5d3374e45078cf1fda156a66787b366",
+          "date": "2026-10-11T04:32:10Z",
+          "subject": "Exercise queued graphics fault cancellation and quarantine"
+        },
+        {
+          "sha": "10711669494fdfad6564f5a78bcda9a907f7eb76",
+          "url": "https://github.com/jmgasper/haiku/commit/10711669494fdfad6564f5a78bcda9a907f7eb76",
+          "date": "2026-10-11T04:36:02Z",
+          "subject": "Distinguish faulting GPU retirement from successful queue fences"
+        },
+        {
+          "sha": "a5e0a48e3fdb2719da5a95b7c712f2d1bda5c702",
+          "url": "https://github.com/jmgasper/haiku/commit/a5e0a48e3fdb2719da5a95b7c712f2d1bda5c702",
+          "date": "2026-10-11T04:45:38Z",
+          "subject": "amdgpu: record queued graphics and fault recovery qualification"
+        },
+        {
+          "sha": "e24cd04f2301a21fe9649c426e696eff8c798681",
+          "url": "https://github.com/jmgasper/haiku/commit/e24cd04f2301a21fe9649c426e696eff8c798681",
+          "date": "2026-10-11T04:45:54Z",
+          "subject": "Merge WX5100 queued graphics and fault recovery"
+        },
+        {
+          "sha": "df29063bad52baa8e779477b34967c963e43fcf8",
+          "url": "https://github.com/jmgasper/haiku/commit/df29063bad52baa8e779477b34967c963e43fcf8",
+          "date": "2026-10-11T05:13:46Z",
+          "subject": "amdgpu: let video decode overlap previously queued graphics"
+        },
+        {
+          "sha": "bf3e8116fbc007eef0c7edf05c39a45bcf803fc5",
+          "url": "https://github.com/jmgasper/haiku/commit/bf3e8116fbc007eef0c7edf05c39a45bcf803fc5",
+          "date": "2026-10-11T05:25:16Z",
+          "subject": "amdgpu: document asynchronous Mesa and video queue ordering evidence"
+        },
+        {
+          "sha": "e1808b0dc1f7eef4b161456d834fbf4fe88c52d9",
+          "url": "https://github.com/jmgasper/haiku/commit/e1808b0dc1f7eef4b161456d834fbf4fe88c52d9",
+          "date": "2026-10-11T05:25:34Z",
+          "subject": "Merge WX5100 queued Mesa/video ordering qualification"
+        },
+        {
+          "sha": "41b16b13ff0955a85fb760874f352add0c9f2d22",
+          "url": "https://github.com/jmgasper/haiku/commit/41b16b13ff0955a85fb760874f352add0c9f2d22",
+          "date": "2026-10-11T05:31:48Z",
+          "subject": "amdgpu: record sustained queued H264 and HEVC qualification"
+        },
+        {
+          "sha": "09718fcd20fb62509d7d451f4c29b0d91e9da56a",
+          "url": "https://github.com/jmgasper/haiku/commit/09718fcd20fb62509d7d451f4c29b0d91e9da56a",
+          "date": "2026-10-11T05:32:03Z",
+          "subject": "Merge sustained WX5100 queued playback qualification"
+        },
+        {
+          "sha": "4c662b496d916c2bb3a4595bfb60910f7b52087b",
+          "url": "https://github.com/jmgasper/haiku/commit/4c662b496d916c2bb3a4595bfb60910f7b52087b",
+          "date": "2026-10-11T05:45:30Z",
+          "subject": "amdgpu: expose bounded shader memory state and probe resource bounds"
+        },
+        {
+          "sha": "205368f4443b8674df8ccfcb0ee71c5422450cfe",
+          "url": "https://github.com/jmgasper/haiku/commit/205368f4443b8674df8ccfcb0ee71c5422450cfe",
+          "date": "2026-10-11T05:53:08Z",
+          "subject": "amdgpu: correct resource descriptor and reserve scalar VCC registers"
+        },
+        {
+          "sha": "9aff551b30a80a7f11476413608d77c58cf70ed7",
+          "url": "https://github.com/jmgasper/haiku/commit/9aff551b30a80a7f11476413608d77c58cf70ed7",
+          "date": "2026-10-11T05:56:28Z",
+          "subject": "amdgpu: record shader resource bounds and translation readback"
+        },
+        {
+          "sha": "10cf1eaad238b0c450b3eea2fce1523ca21a5e98",
+          "url": "https://github.com/jmgasper/haiku/commit/10cf1eaad238b0c450b3eea2fce1523ca21a5e98",
+          "date": "2026-10-11T05:56:54Z",
+          "subject": "Merge WX5100 shader resource isolation checkpoint"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -24357,10 +24537,123 @@
       "url": "https://github.com/jmgasper/burrow/tree/master"
     },
     {
+      "name": "Turbo Chook",
+      "repo": "jmgasper/turbo_chook",
+      "branch": "main",
+      "description": "A native Git client with a branch graph, line-by-line staging, undo and GitHub pull requests.",
+      "group": "Applications",
+      "head": "8a71f9c8eb323a35f461b712f56666386338420b",
+      "commits": [
+        {
+          "sha": "8a71f9c8eb323a35f461b712f56666386338420b",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/8a71f9c8eb323a35f461b712f56666386338420b",
+          "date": "2026-10-05T07:08:56Z",
+          "subject": "README: latest air/OS builds (ebe230b) [skip ci]"
+        },
+        {
+          "sha": "ebe230b70319464430dd9b39ee921041a522864e",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/ebe230b70319464430dd9b39ee921041a522864e",
+          "date": "2026-10-05T07:07:58Z",
+          "subject": "CI: build air/OS packages for x86_64 and arm64 on the build server"
+        },
+        {
+          "sha": "e4e104e06a9e16caa5322cf3304b96cd02b8f965",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/e4e104e06a9e16caa5322cf3304b96cd02b8f965",
+          "date": "2026-09-17T03:13:54Z",
+          "subject": "Bump to 0.1.2 alpha"
+        },
+        {
+          "sha": "0769f8c4f5e3cd57a838c02569f740aee7103e11",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/0769f8c4f5e3cd57a838c02569f740aee7103e11",
+          "date": "2026-09-17T03:13:41Z",
+          "subject": "Rebuild the history graph layout around stable lane columns"
+        },
+        {
+          "sha": "d2a01dff9d726dadfbcdaad5472e2515d4bda150",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/d2a01dff9d726dadfbcdaad5472e2515d4bda150",
+          "date": "2026-09-17T02:01:55Z",
+          "subject": "Point the package at the turbo_chook repository"
+        },
+        {
+          "sha": "ce557919de5db07ad6b0095eccfca3b7d9899ff7",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/ce557919de5db07ad6b0095eccfca3b7d9899ff7",
+          "date": "2026-09-17T02:01:41Z",
+          "subject": "Bump to 0.1.1 alpha"
+        },
+        {
+          "sha": "a605cd8708e21d0be8121406063aa9caa8b39c8a",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/a605cd8708e21d0be8121406063aa9caa8b39c8a",
+          "date": "2026-09-17T01:59:31Z",
+          "subject": "Document the first round of fixes"
+        },
+        {
+          "sha": "ee97e2b995975aa78f0743c5a74ddf456bdb1ba8",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/ee97e2b995975aa78f0743c5a74ddf456bdb1ba8",
+          "date": "2026-09-17T01:59:06Z",
+          "subject": "Redraw the application icon to hold up from 16 to 128 pixels"
+        },
+        {
+          "sha": "3801404090aeed3ca078a0863d237d29b3b8ff4e",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/3801404090aeed3ca078a0863d237d29b3b8ff4e",
+          "date": "2026-09-17T01:58:02Z",
+          "subject": "Add a Look & Feel preferences tab with fonts and themes"
+        },
+        {
+          "sha": "0fc76ef20a171dc085546aa4817374e911c3cfcb",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/0fc76ef20a171dc085546aa4817374e911c3cfcb",
+          "date": "2026-09-17T01:45:38Z",
+          "subject": "Draw the history graph as rails with curved merge links"
+        },
+        {
+          "sha": "3ec09dffeb0676b03e0210b0498afcf929bdc3f3",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/3ec09dffeb0676b03e0210b0498afcf929bdc3f3",
+          "date": "2026-09-17T01:43:59Z",
+          "subject": "Render pull request descriptions and comments as Markdown"
+        },
+        {
+          "sha": "f4f0d8ad7cffef7f64dbb72e8ff7fd603b99bcd0",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/f4f0d8ad7cffef7f64dbb72e8ff7fd603b99bcd0",
+          "date": "2026-09-17T01:30:15Z",
+          "subject": "Repaint the diff view correctly when scrolling horizontally"
+        },
+        {
+          "sha": "6b6312b91f690a25c207739a419bee0e31182276",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/6b6312b91f690a25c207739a419bee0e31182276",
+          "date": "2026-09-17T01:25:57Z",
+          "subject": "Let the sidebar be resized freely and start it wider"
+        },
+        {
+          "sha": "eb26d67df5a324ff2a53e22e170ddca113788b5f",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/eb26d67df5a324ff2a53e22e170ddca113788b5f",
+          "date": "2026-09-17T01:14:49Z",
+          "subject": "Keep remote branch lists collapsed when the sidebar rebuilds"
+        },
+        {
+          "sha": "3a74ac5067f32426ed273ee3005f455d22a051c9",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/3a74ac5067f32426ed273ee3005f455d22a051c9",
+          "date": "2026-09-17T01:13:59Z",
+          "subject": "Keep the history scroll position across refreshes"
+        },
+        {
+          "sha": "63231a7698658a74ed01d3fdab9cfa332458c247",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/63231a7698658a74ed01d3fdab9cfa332458c247",
+          "date": "2026-09-17T01:13:02Z",
+          "subject": "Stop the pull request list from reloading on every refresh"
+        },
+        {
+          "sha": "692d57169f6d634e077d3cead2b532e74729aabd",
+          "url": "https://github.com/jmgasper/turbo_chook/commit/692d57169f6d634e077d3cead2b532e74729aabd",
+          "date": "2026-09-17T00:43:34Z",
+          "subject": "Turbo Chook 0.1.0 alpha: native Git client for Haiku"
+        }
+      ],
+      "url": "https://github.com/jmgasper/turbo_chook/tree/main"
+    },
+    {
       "name": "Clipper",
       "repo": "jmgasper/clipper",
       "branch": "main",
-      "description": "Clipboard history at your fingertips, running quietly in the Deskbar.",
+      "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images.",
       "group": "Applications",
       "head": "9d01777ee41be809b9cc91b0057ba23e36d9fb08",
       "commits": [
@@ -25974,15 +26267,28 @@
     {
       "name": "Turbo Chook",
       "repo": "turbo_chook",
-      "description": "A native Git client for working copies, branches, history, diffs and everyday development.",
-      "release": null,
-      "assets": [],
-      "private": true
+      "description": "A native Git client with a branch graph, line-by-line staging, undo and GitHub pull requests.",
+      "release": "https://github.com/jmgasper/turbo_chook/releases/tag/latest",
+      "published": "2026-10-05T07:08:55Z",
+      "assets": [
+        {
+          "name": "turbochook-0.1.2.alpha-1-arm64.hpkg",
+          "size": 922633,
+          "browser_download_url": "https://github.com/jmgasper/turbo_chook/releases/download/latest/turbochook-0.1.2.alpha-1-arm64.hpkg",
+          "digest": "sha256:f10dff45283bb56da7ded059db6eb749e950526effd65d2fc5d4dda4807549b9"
+        },
+        {
+          "name": "turbochook-0.1.2.alpha-1-x86_64.hpkg",
+          "size": 910674,
+          "browser_download_url": "https://github.com/jmgasper/turbo_chook/releases/download/latest/turbochook-0.1.2.alpha-1-x86_64.hpkg",
+          "digest": "sha256:829937ff5f5a9c06185e402c82ab92371d113e952f05914cfbb689df862f89b8"
+        }
+      ]
     },
     {
       "name": "Clipper",
       "repo": "clipper",
-      "description": "Clipboard history at your fingertips, running quietly in the Deskbar.",
+      "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images.",
       "release": "https://github.com/jmgasper/clipper/releases/tag/latest",
       "published": "2026-10-06T02:11:48Z",
       "assets": [
@@ -26004,76 +26310,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261011010558-7da45d45eb",
-      "published": "2026-10-11T01:08:06Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261011053955-e1808b0dc1",
+      "published": "2026-10-11T05:42:00Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 749842608,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011010558-7da45d45eb/airos-x86_64.iso.xz",
-          "digest": "sha256:38b1aced22612138c24bed1e2a07fdb6e32d5291338b02008ac33aeb956638f5"
+          "size": 749850696,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011053955-e1808b0dc1/airos-x86_64.iso.xz",
+          "digest": "sha256:9da21afe901a9f70b98ce1c777f1ff0be6e1caa34cb66f2c633381831aceaa7b"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011010558-7da45d45eb/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:293f59609df9cf345f3fff6b30e1d962c9319d3cb8ae7f55e0687119e17a9d21"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011053955-e1808b0dc1/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:3821a6922c32087aef9213e1a4c7d5240b07274745beb906c0eea0a94465747f"
         },
         {
           "name": "manifest.json",
           "size": 4208,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011010558-7da45d45eb/manifest.json",
-          "digest": "sha256:1637f1c348b700e870d139b0cba3b425f08744c32527b4d0f860fa2d8c7c7854"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011053955-e1808b0dc1/manifest.json",
+          "digest": "sha256:9e877dabde951383a80fbd7505cf24294076d275b83f547fb86578fd641338c6"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261011011045-7da45d45eb",
-      "published": "2026-10-11T01:12:58Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261011055929-10cf1eaad2",
+      "published": "2026-10-11T06:01:49Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 258902608,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011011045-7da45d45eb/airos-arm64.iso.xz",
-          "digest": "sha256:28b507c2859b5d606a7ea8c6e9d556dfc9b26009d44934632893816bd8d4cf15"
+          "size": 258901692,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011055929-10cf1eaad2/airos-arm64.iso.xz",
+          "digest": "sha256:5d9db5651cfab9e5b00a39b060494f3f2e7dfdac1816f4de86f1e69733353c46"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011011045-7da45d45eb/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:18cad88c8f3bd784a36eca7a2847094169232734d6f9aaed38dd4a14fc498684"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011055929-10cf1eaad2/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:7e5376d930b66f724f69471bbe648a4e95607c12bab07f654d7defc34623a90c"
         },
         {
           "name": "manifest.json",
           "size": 4414,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011011045-7da45d45eb/manifest.json",
-          "digest": "sha256:8cc54378b7ae6a43adffd9d5ba2a78205a3aec50579ea3ed606b95f926503899"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011055929-10cf1eaad2/manifest.json",
+          "digest": "sha256:bca97a1f396534343a3c52500df748f3f3234c7dd6f90aed484b9324dab32223"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261011004615-419c356b47",
-      "published": "2026-10-11T00:47:06Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261011053310-e1808b0dc1",
+      "published": "2026-10-11T05:33:59Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 261313124,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011004615-419c356b47/airos-rpi4.img.xz",
-          "digest": "sha256:6c30d3320b2caf0ec89d0e22075a815d0bd3c45a67f66f701262b012fb02995c"
+          "size": 261310656,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011053310-e1808b0dc1/airos-rpi4.img.xz",
+          "digest": "sha256:ec8803b8892e45413d5665c4c844998ef7fe57ec7ba207b6aa93e44d3a028ba7"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011004615-419c356b47/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:b51e618d6e4039532dbbee5f2b8a7c35a7820d92e5231b691e5c3bccc3292b2c"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011053310-e1808b0dc1/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:9c9721e7d30034acdc046ed5ffa1a62951ba24e676464179119a6d28c7f303b4"
         },
         {
           "name": "manifest.json",
           "size": 4548,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011004615-419c356b47/manifest.json",
-          "digest": "sha256:d9ca5cf738fdbfe4a07fc5beecae8d5b1500aea4050eae0ce87122666b1641a5"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011053310-e1808b0dc1/manifest.json",
+          "digest": "sha256:2620b3acd72bedcd27fa84cee06c34f41a390f30d13d27132efe74af52d8e6c5"
         }
       ]
     }
