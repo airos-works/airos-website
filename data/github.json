@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T18:37:29+00:00",
+  "updated": "2026-10-11T01:16:31+00:00",
   "ci_head": "0802072803e232bdbfd2371f2b5cb6d27e30af8e",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "3dda01cfc994673dec5b45a0a26532fe41b76605",
+      "head": "7da45d45ebe547ca6284bea716971ca6c37d9e98",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -5148,6 +5148,12 @@
           "subject": "amdgpu: authenticate Polaris firmware and execute SDMA copy and fill"
         },
         {
+          "sha": "a54d0eebcf2398d48d26113728fc4f645a53b69a",
+          "url": "https://github.com/jmgasper/haiku/commit/a54d0eebcf2398d48d26113728fc4f645a53b69a",
+          "date": "2026-10-10T06:19:25Z",
+          "subject": "powervr: job timeouts and GPU resets"
+        },
+        {
           "sha": "4b770f33de13dbfd4ddcf8e05768cd5b7160a7ac",
           "url": "https://github.com/jmgasper/haiku/commit/4b770f33de13dbfd4ddcf8e05768cd5b7160a7ac",
           "date": "2026-10-10T06:38:34Z",
@@ -5182,6 +5188,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/6bad9f0792780512fe44a8980e6d395d7b689764",
           "date": "2026-10-10T07:51:08Z",
           "subject": "amdgpu: wait for GFX cache completion and ring retirement"
+        },
+        {
+          "sha": "d68e7b892106eb500c9b2b2eb27090dd9d116511",
+          "url": "https://github.com/jmgasper/haiku/commit/d68e7b892106eb500c9b2b2eb27090dd9d116511",
+          "date": "2026-10-10T07:57:50Z",
+          "subject": "powervr: zeroed job arrays, no queued jobs of a guilty context"
         },
         {
           "sha": "d504d39aa8db4a5f6c9377b43d96eee8d860b600",
@@ -5238,6 +5250,24 @@
           "subject": "Merge cubie-a7s: GPU, video engine, Wi-Fi and Bluetooth on the Cubie A7S"
         },
         {
+          "sha": "3921da0bf385cd6653fabaf58fd80516f9ca2622",
+          "url": "https://github.com/jmgasper/haiku/commit/3921da0bf385cd6653fabaf58fd80516f9ca2622",
+          "date": "2026-10-10T08:38:33Z",
+          "subject": "runtime_loader: a new thread's TLS vector starts at the current generation"
+        },
+        {
+          "sha": "3a203ea0728b4be5c5699de3a1b768cc902a286c",
+          "url": "https://github.com/jmgasper/haiku/commit/3a203ea0728b4be5c5699de3a1b768cc902a286c",
+          "date": "2026-10-10T08:38:33Z",
+          "subject": "cubie-a7s: Mesa device-lost handling, TLS workaround, hang and bench tests"
+        },
+        {
+          "sha": "836e7452d92a3413f6c6776ae82c1312c364356e",
+          "url": "https://github.com/jmgasper/haiku/commit/836e7452d92a3413f6c6776ae82c1312c364356e",
+          "date": "2026-10-10T08:38:33Z",
+          "subject": "Merge remote-tracking branch 'origin/cubie-a7s' into powervr-m2"
+        },
+        {
           "sha": "14474c83d707d89c011914f22aaff7b8c05696f2",
           "url": "https://github.com/jmgasper/haiku/commit/14474c83d707d89c011914f22aaff7b8c05696f2",
           "date": "2026-10-10T08:46:04Z",
@@ -5250,10 +5280,58 @@
           "subject": "amdgpu: trace context load state and confirm repeated native shader execution"
         },
         {
+          "sha": "5fa2af97ddad8e160ad758d3c1463c074973310a",
+          "url": "https://github.com/jmgasper/haiku/commit/5fa2af97ddad8e160ad758d3c1463c074973310a",
+          "date": "2026-10-10T08:52:14Z",
+          "subject": "ehci: split isochronous transfers (siTDs) through a hub's TT"
+        },
+        {
+          "sha": "512be1e50c72227b4401abcdb862b0af9a650952",
+          "url": "https://github.com/jmgasper/haiku/commit/512be1e50c72227b4401abcdb862b0af9a650952",
+          "date": "2026-10-10T08:52:14Z",
+          "subject": "usb: free a transfer's isochronous data with it"
+        },
+        {
+          "sha": "b16bbb6ec71cc101250a9b75c29ac672a34baf80",
+          "url": "https://github.com/jmgasper/haiku/commit/b16bbb6ec71cc101250a9b75c29ac672a34baf80",
+          "date": "2026-10-10T08:52:14Z",
+          "subject": "usb_audio: exact packet sizes, buffers that fit EHCI, small fixes"
+        },
+        {
+          "sha": "8b33209cc1159413998531cb9dfd347b58814ba1",
+          "url": "https://github.com/jmgasper/haiku/commit/8b33209cc1159413998531cb9dfd347b58814ba1",
+          "date": "2026-10-10T08:52:14Z",
+          "subject": "cubie-a7s: host test of the EHCI split isochronous arithmetic"
+        },
+        {
           "sha": "954e71d8d2b4ec3d0c0b1227cbfd34eadf37c391",
           "url": "https://github.com/jmgasper/haiku/commit/954e71d8d2b4ec3d0c0b1227cbfd34eadf37c391",
           "date": "2026-10-10T08:54:55Z",
           "subject": "docs: record clean WX5100 recovery after verified compute shader trials"
+        },
+        {
+          "sha": "779a9b8af856403671fe8768242916d428ebc703",
+          "url": "https://github.com/jmgasper/haiku/commit/779a9b8af856403671fe8768242916d428ebc703",
+          "date": "2026-10-10T08:56:50Z",
+          "subject": "sunxi_cedar: Main 10 two-bit chroma rows follow the coded height"
+        },
+        {
+          "sha": "38c0a16ac4bbffd1c705163423df7637346bb2ad",
+          "url": "https://github.com/jmgasper/haiku/commit/38c0a16ac4bbffd1c705163423df7637346bb2ad",
+          "date": "2026-10-10T08:56:53Z",
+          "subject": "Merge remote-tracking branch 'origin/cubie-a7s' into cubie-video"
+        },
+        {
+          "sha": "0a700130c27690c1855f647098773ea660e9ff2a",
+          "url": "https://github.com/jmgasper/haiku/commit/0a700130c27690c1855f647098773ea660e9ff2a",
+          "date": "2026-10-10T09:07:44Z",
+          "subject": "usb_audio: set the sampling rate only where the endpoint has the control"
+        },
+        {
+          "sha": "b30b80017967fd042a2506711f31d127518cf77d",
+          "url": "https://github.com/jmgasper/haiku/commit/b30b80017967fd042a2506711f31d127518cf77d",
+          "date": "2026-10-10T09:07:44Z",
+          "subject": "cubie-a7s: cubie_audio_test and a QEMU USB audio test"
         },
         {
           "sha": "04dbd4bdf39b2a35649c1f70db54489c1a658f10",
@@ -5266,6 +5344,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/6b2a6cb2c1fbe2e95b7f8cbc83496efa4cc8f29f",
           "date": "2026-10-10T09:17:11Z",
           "subject": "docs: record inconclusive WX5100 constant-engine halt trial"
+        },
+        {
+          "sha": "28fe5fa2dc9b75429e0cca6906ff58f3d5f33c40",
+          "url": "https://github.com/jmgasper/haiku/commit/28fe5fa2dc9b75429e0cca6906ff58f3d5f33c40",
+          "date": "2026-10-10T09:24:27Z",
+          "subject": "Merge cubie-usb-audio: split isochronous transfers in EHCI, usb_audio fixes"
         },
         {
           "sha": "b2a494de8338d757e9ff99fbe54a29027fd20e1d",
@@ -5286,6 +5370,30 @@
           "subject": "docs: record clean native recovery after WX5100 rendering tests"
         },
         {
+          "sha": "d00033576d47264de19e903bac3b8ecd3b3d94e0",
+          "url": "https://github.com/jmgasper/haiku/commit/d00033576d47264de19e903bac3b8ecd3b3d94e0",
+          "date": "2026-10-10T09:44:22Z",
+          "subject": "sunxi_cedar: tell the H.264 engine which references are long-term"
+        },
+        {
+          "sha": "3c1cef9091a37fca34fbf79afbb6dd896f188e99",
+          "url": "https://github.com/jmgasper/haiku/commit/3c1cef9091a37fca34fbf79afbb6dd896f188e99",
+          "date": "2026-10-10T09:44:22Z",
+          "subject": "sunxi_cedar: refuse SP/SI slices, data partitioning and Extended profile"
+        },
+        {
+          "sha": "7add9743e9560799c1b65e56cbda91f29f305459",
+          "url": "https://github.com/jmgasper/haiku/commit/7add9743e9560799c1b65e56cbda91f29f305459",
+          "date": "2026-10-10T09:44:22Z",
+          "subject": "cedar_decode: -k stops after some pictures, -M hashes all of them"
+        },
+        {
+          "sha": "c7ca62d8c90b99ce70c48947ea9fe99c2cea6936",
+          "url": "https://github.com/jmgasper/haiku/commit/c7ca62d8c90b99ce70c48947ea9fe99c2cea6936",
+          "date": "2026-10-10T09:46:13Z",
+          "subject": "Merge cubie-video: Main 10, long-term references, SP/SI refusal"
+        },
+        {
           "sha": "59874255f63709164bbacbfbc5022503f27ba816",
           "url": "https://github.com/jmgasper/haiku/commit/59874255f63709164bbacbfbc5022503f27ba816",
           "date": "2026-10-10T09:52:06Z",
@@ -5304,6 +5412,24 @@
           "subject": "docs: record clean WX5100 recovery after private VM shader trials"
         },
         {
+          "sha": "2b3ca7520e092afab2734245478e125df889c37b",
+          "url": "https://github.com/jmgasper/haiku/commit/2b3ca7520e092afab2734245478e125df889c37b",
+          "date": "2026-10-10T10:17:16Z",
+          "subject": "powervr: page tables without page runs, a correct preallocation count"
+        },
+        {
+          "sha": "3c8cc36217b05dd4da0820f0adbdde38828d6269",
+          "url": "https://github.com/jmgasper/haiku/commit/3c8cc36217b05dd4da0820f0adbdde38828d6269",
+          "date": "2026-10-10T10:17:16Z",
+          "subject": "cubie-a7s: Mesa reuses dynamic-rendering render states"
+        },
+        {
+          "sha": "ac1af371ee0d8420e0826b41ad68cf66b1ef935a",
+          "url": "https://github.com/jmgasper/haiku/commit/ac1af371ee0d8420e0826b41ad68cf66b1ef935a",
+          "date": "2026-10-10T10:17:17Z",
+          "subject": "cubie-a7s: the GPU in the air/OS image, not only in lab images"
+        },
+        {
           "sha": "772d7f9a8ce5bfe3a86698cb35808519400e0faa",
           "url": "https://github.com/jmgasper/haiku/commit/772d7f9a8ce5bfe3a86698cb35808519400e0faa",
           "date": "2026-10-10T10:19:16Z",
@@ -5316,6 +5442,12 @@
           "subject": "docs: verify installed WX5100 firmware startup across two cold boots"
         },
         {
+          "sha": "93944f1a7e9a7de8396b1172b3d0e21000e60114",
+          "url": "https://github.com/jmgasper/haiku/commit/93944f1a7e9a7de8396b1172b3d0e21000e60114",
+          "date": "2026-10-10T10:28:53Z",
+          "subject": "cubie-a7s: lab-run's end marker matches the display's new log line"
+        },
+        {
           "sha": "79b312726830cd8a23046e1f02a57ee619db5d86",
           "url": "https://github.com/jmgasper/haiku/commit/79b312726830cd8a23046e1f02a57ee619db5d86",
           "date": "2026-10-10T10:34:52Z",
@@ -5326,6 +5458,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/0a2efcbe425d9acb649eb63662bfb96e8e0ccc14",
           "date": "2026-10-10T10:36:45Z",
           "subject": "docs: record healthy WX5100 recovery after GMC checkpoint trial"
+        },
+        {
+          "sha": "15a7931eb1df42cee21fb2b0791cfbbc70bb7f55",
+          "url": "https://github.com/jmgasper/haiku/commit/15a7931eb1df42cee21fb2b0791cfbbc70bb7f55",
+          "date": "2026-10-10T10:38:23Z",
+          "subject": "Merge remote-tracking branch 'origin/cubie-a7s' into powervr-m2"
         },
         {
           "sha": "c2856b79f89251a329c5dc1439d0d78685ae7273",
@@ -5352,6 +5490,12 @@
           "subject": "media: reject truncated and unbounded H264 parser syntax"
         },
         {
+          "sha": "bb3e38a4f2dacfa93b7137b4a39fe2af8de4a1fc",
+          "url": "https://github.com/jmgasper/haiku/commit/bb3e38a4f2dacfa93b7137b4a39fe2af8de4a1fc",
+          "date": "2026-10-10T11:11:42Z",
+          "subject": "Merge powervr-m2: the GPU in the air/OS image, job timeouts and GPU resets"
+        },
+        {
           "sha": "593e525af660260eef5f1210040080160b38e338",
           "url": "https://github.com/jmgasper/haiku/commit/593e525af660260eef5f1210040080160b38e338",
           "date": "2026-10-10T11:27:55Z",
@@ -5362,6 +5506,18 @@
           "url": "https://github.com/jmgasper/haiku/commit/3994d3271398474a492e2562f12ef00c753e50db",
           "date": "2026-10-10T11:41:52Z",
           "subject": "amdgpu: decode H264 streams with reference metadata and exact frame checks"
+        },
+        {
+          "sha": "895612e7f641fc73cbac9ccdb24f08ec3f37ec8c",
+          "url": "https://github.com/jmgasper/haiku/commit/895612e7f641fc73cbac9ccdb24f08ec3f37ec8c",
+          "date": "2026-10-10T11:48:48Z",
+          "subject": "powervr: cached CPU mappings of buffers, long syncobj waits logged"
+        },
+        {
+          "sha": "ebebd0ebf9b5b9129af8bda132762026665c3af3",
+          "url": "https://github.com/jmgasper/haiku/commit/ebebd0ebf9b5b9129af8bda132762026665c3af3",
+          "date": "2026-10-10T11:48:48Z",
+          "subject": "cubie-a7s: a cached host memory type for pvr, zink reads back from it"
         },
         {
           "sha": "5723efbe7ee357dd46dca5f53efeee0301550897",
@@ -5380,6 +5536,24 @@
           "url": "https://github.com/jmgasper/haiku/commit/e8d218a1b2e6b0ba5e2bcb2778ffb854a52a2552",
           "date": "2026-10-10T12:25:07Z",
           "subject": "amdgpu: measure UVD phases without per-picture debug output"
+        },
+        {
+          "sha": "01575705f0a5914eb043ef93c83e5b59320a2480",
+          "url": "https://github.com/jmgasper/haiku/commit/01575705f0a5914eb043ef93c83e5b59320a2480",
+          "date": "2026-10-10T12:29:17Z",
+          "subject": "powervr: import a team's own memory as a buffer object"
+        },
+        {
+          "sha": "1f293dd9c5ad23512d443d3a08acaa843cde45ac",
+          "url": "https://github.com/jmgasper/haiku/commit/1f293dd9c5ad23512d443d3a08acaa843cde45ac",
+          "date": "2026-10-10T12:40:20Z",
+          "subject": "cubie-a7s: zink retires batches after a lost device, so GL programs quit"
+        },
+        {
+          "sha": "6aa5140dacd2350feebb6cdaffc9e05db7548f8a",
+          "url": "https://github.com/jmgasper/haiku/commit/6aa5140dacd2350feebb6cdaffc9e05db7548f8a",
+          "date": "2026-10-10T12:40:20Z",
+          "subject": "powervr: count imports of team memory in the object dump"
         },
         {
           "sha": "3325cfc78444d796c69b5e6c982379574c2b6573",
@@ -5578,6 +5752,456 @@
           "url": "https://github.com/jmgasper/haiku/commit/3dda01cfc994673dec5b45a0a26532fe41b76605",
           "date": "2026-10-10T18:18:42Z",
           "subject": "Merge WX5100: qualified UVD media, DMA and device VRAM; GFX/display remain open"
+        },
+        {
+          "sha": "b2df85fe26479929bb59dec0d4a1f010f503467d",
+          "url": "https://github.com/jmgasper/haiku/commit/b2df85fe26479929bb59dec0d4a1f010f503467d",
+          "date": "2026-10-10T18:22:35Z",
+          "subject": "amdgpu: isolate constant-engine indirect fetch before draw IBs"
+        },
+        {
+          "sha": "762e5ec2da3ba044d689b7cd5b4aab6ca411e620",
+          "url": "https://github.com/jmgasper/haiku/commit/762e5ec2da3ba044d689b7cd5b4aab6ca411e620",
+          "date": "2026-10-10T18:25:53Z",
+          "subject": "amdgpu: verify CE indirect execution with its own memory marker"
+        },
+        {
+          "sha": "a53b60e3ba46b2ca7a99b27539f50f9aa0ac42d8",
+          "url": "https://github.com/jmgasper/haiku/commit/a53b60e3ba46b2ca7a99b27539f50f9aa0ac42d8",
+          "date": "2026-10-10T18:31:11Z",
+          "subject": "docs: record CE indirect success and remaining draw-IB fault"
+        },
+        {
+          "sha": "80b7f719b0598f9a6e46905d31374692c5703a61",
+          "url": "https://github.com/jmgasper/haiku/commit/80b7f719b0598f9a6e46905d31374692c5703a61",
+          "date": "2026-10-10T18:33:25Z",
+          "subject": "amdgpu: exercise default-size GFX ring with separate startup retirement"
+        },
+        {
+          "sha": "e124c130111bc08aef668fc493662b363a4c333a",
+          "url": "https://github.com/jmgasper/haiku/commit/e124c130111bc08aef668fc493662b363a4c333a",
+          "date": "2026-10-10T18:35:03Z",
+          "subject": "amdgpu: include kernel and explicit media decoder in x86_64 images"
+        },
+        {
+          "sha": "da6af9aaf5900e2edb32acd8c1c2bba0a48a1aa5",
+          "url": "https://github.com/jmgasper/haiku/commit/da6af9aaf5900e2edb32acd8c1c2bba0a48a1aa5",
+          "date": "2026-10-10T18:45:01Z",
+          "subject": "amdgpu: record ring trial and regular-package VM qualification"
+        },
+        {
+          "sha": "7febf0c210f64e07d2f33d5edee0fa6a4ed9b86f",
+          "url": "https://github.com/jmgasper/haiku/commit/7febf0c210f64e07d2f33d5edee0fa6a4ed9b86f",
+          "date": "2026-10-10T18:49:09Z",
+          "subject": "amdgpu: expose bounded read-only DCE timing and scanout snapshot"
+        },
+        {
+          "sha": "296276def7ff4c35f902e24858bad3a5a7d9a68c",
+          "url": "https://github.com/jmgasper/haiku/commit/296276def7ff4c35f902e24858bad3a5a7d9a68c",
+          "date": "2026-10-10T18:54:28Z",
+          "subject": "amdgpu: record native DCE scanout and timing qualification"
+        },
+        {
+          "sha": "58945d38d68009118c2f3c9314295b4ebcea463b",
+          "url": "https://github.com/jmgasper/haiku/commit/58945d38d68009118c2f3c9314295b4ebcea463b",
+          "date": "2026-10-10T19:01:17Z",
+          "subject": "amdgpu: separate DE indirect entry from fetch-ahead with a long gated IB"
+        },
+        {
+          "sha": "cd134d57a1ec827d9bc380ba8976ce79a8093e30",
+          "url": "https://github.com/jmgasper/haiku/commit/cd134d57a1ec827d9bc380ba8976ce79a8093e30",
+          "date": "2026-10-10T19:08:32Z",
+          "subject": "amdgpu: record long-IB fault checkpoint and verified cold recovery"
+        },
+        {
+          "sha": "772279719399280171f1575dba9c9452bd985067",
+          "url": "https://github.com/jmgasper/haiku/commit/772279719399280171f1575dba9c9452bd985067",
+          "date": "2026-10-10T19:11:15Z",
+          "subject": "amdgpu: withhold outer-ring postlude until indirect checkpoints"
+        },
+        {
+          "sha": "00b9987de470e9f8d69c68c6e6a36846422234dd",
+          "url": "https://github.com/jmgasper/haiku/commit/00b9987de470e9f8d69c68c6e6a36846422234dd",
+          "date": "2026-10-10T19:17:37Z",
+          "subject": "amdgpu: record deferred-postlude trial and refresh remaining acceptance work"
+        },
+        {
+          "sha": "754b22643ce0c29598af9fcc1c35e3ae1c65f3c4",
+          "url": "https://github.com/jmgasper/haiku/commit/754b22643ce0c29598af9fcc1c35e3ae1c65f3c4",
+          "date": "2026-10-10T19:31:01Z",
+          "subject": "x399: prepare one-time Linux reference boot with verified Haiku recovery"
+        },
+        {
+          "sha": "c7eb097183dd6033b6b06efddc25f4f7e05cc43b",
+          "url": "https://github.com/jmgasper/haiku/commit/c7eb097183dd6033b6b06efddc25f4f7e05cc43b",
+          "date": "2026-10-10T19:41:45Z",
+          "subject": "amdgpu: disable legacy AGP aperture before enabling GART"
+        },
+        {
+          "sha": "801165678ed845cda7cb1143fc5b90ef6d9ebca9",
+          "url": "https://github.com/jmgasper/haiku/commit/801165678ed845cda7cb1143fc5b90ef6d9ebca9",
+          "date": "2026-10-10T19:43:35Z",
+          "subject": "x399: record native Linux indirect execution and verified Haiku return"
+        },
+        {
+          "sha": "da6ed64804e23a7af2bb7b7d244ba25b060002f8",
+          "url": "https://github.com/jmgasper/haiku/commit/da6ed64804e23a7af2bb7b7d244ba25b060002f8",
+          "date": "2026-10-10T19:46:45Z",
+          "subject": "x399: record AGP aperture trial and cold recovery"
+        },
+        {
+          "sha": "1fda9c0a33d062cd0e0b0c0e79349b1103644227",
+          "url": "https://github.com/jmgasper/haiku/commit/1fda9c0a33d062cd0e0b0c0e79349b1103644227",
+          "date": "2026-10-10T19:50:56Z",
+          "subject": "amdgpu: isolate basic CP execution before clear-state startup"
+        },
+        {
+          "sha": "a048687ea65bd04101efce15e7db4b7b8bc784bc",
+          "url": "https://github.com/jmgasper/haiku/commit/a048687ea65bd04101efce15e7db4b7b8bc784bc",
+          "date": "2026-10-10T19:52:04Z",
+          "subject": "x399: locate feature-49 firmware stall in clear-state startup"
+        },
+        {
+          "sha": "8372b1d930cb8dd0522cc7b02771e9f32b44c996",
+          "url": "https://github.com/jmgasper/haiku/commit/8372b1d930cb8dd0522cc7b02771e9f32b44c996",
+          "date": "2026-10-10T19:55:11Z",
+          "subject": "x399: isolate feature-49 failure before clear-state packets"
+        },
+        {
+          "sha": "e62af4757c21641fb4f36e8db1ad65a0512f53c1",
+          "url": "https://github.com/jmgasper/haiku/commit/e62af4757c21641fb4f36e8db1ad65a0512f53c1",
+          "date": "2026-10-10T19:59:36Z",
+          "subject": "x399: verify firmware control and restore qualified native and VM defaults"
+        },
+        {
+          "sha": "0aa45ee2cfe3bd74d36e5369066a7332e7069a20",
+          "url": "https://github.com/jmgasper/haiku/commit/0aa45ee2cfe3bd74d36e5369066a7332e7069a20",
+          "date": "2026-10-10T20:06:18Z",
+          "subject": "amdgpu: add guarded MEC firmware loading to GFX diagnostics"
+        },
+        {
+          "sha": "bcd168104d4b5685952b56e79a1fe747644ed695",
+          "url": "https://github.com/jmgasper/haiku/commit/bcd168104d4b5685952b56e79a1fe747644ed695",
+          "date": "2026-10-10T20:13:20Z",
+          "subject": "amdgpu: record fault-free GFX and MEC native diagnostic"
+        },
+        {
+          "sha": "b8a9097a4e99926f7bb6973f7fa5192c7e807c31",
+          "url": "https://github.com/jmgasper/haiku/commit/b8a9097a4e99926f7bb6973f7fa5192c7e807c31",
+          "date": "2026-10-10T20:17:09Z",
+          "subject": "amdgpu: package matching graphics firmware and add installed diagnostic"
+        },
+        {
+          "sha": "d7de111a8f5fd671283a2b2956c190b0aca5cc6d",
+          "url": "https://github.com/jmgasper/haiku/commit/d7de111a8f5fd671283a2b2956c190b0aca5cc6d",
+          "date": "2026-10-10T20:19:10Z",
+          "subject": "amdgpu: distinguish continued diagnostics after device reopen"
+        },
+        {
+          "sha": "f785f411640bb967b22cbfe1f55727a07e19475f",
+          "url": "https://github.com/jmgasper/haiku/commit/f785f411640bb967b22cbfe1f55727a07e19475f",
+          "date": "2026-10-10T20:23:10Z",
+          "subject": "amdgpu: qualify GFX alongside DMA and hardware media"
+        },
+        {
+          "sha": "07394982f2a6125aee2570b0aacc9eed4eba963c",
+          "url": "https://github.com/jmgasper/haiku/commit/07394982f2a6125aee2570b0aacc9eed4eba963c",
+          "date": "2026-10-10T20:26:26Z",
+          "subject": "amdgpu: qualify installed graphics firmware startup on X399"
+        },
+        {
+          "sha": "366745ef2119b2e655d69661e97becb18da56d13",
+          "url": "https://github.com/jmgasper/haiku/commit/366745ef2119b2e655d69661e97becb18da56d13",
+          "date": "2026-10-10T20:26:42Z",
+          "subject": "Merge WX5100: fault-free GFX/MEC diagnostics, installed firmware and media coexistence"
+        },
+        {
+          "sha": "7e4cef11db763cab74e0317f04b26e378c30031f",
+          "url": "https://github.com/jmgasper/haiku/commit/7e4cef11db763cab74e0317f04b26e378c30031f",
+          "date": "2026-10-10T20:46:18Z",
+          "subject": "amdgpu: add owned client GPU virtual address spaces"
+        },
+        {
+          "sha": "3bdb7b5433c0988219ea43b65fb587028fa6c81e",
+          "url": "https://github.com/jmgasper/haiku/commit/3bdb7b5433c0988219ea43b65fb587028fa6c81e",
+          "date": "2026-10-10T20:54:01Z",
+          "subject": "amdgpu: record native client address-space qualification"
+        },
+        {
+          "sha": "a74cf361b6c22ad1bfb9934597918a07e3064d1c",
+          "url": "https://github.com/jmgasper/haiku/commit/a74cf361b6c22ad1bfb9934597918a07e3064d1c",
+          "date": "2026-10-10T20:57:22Z",
+          "subject": "amdgpu: add root-only userspace command submission bring-up"
+        },
+        {
+          "sha": "724160f24bb6bfbd1b7a6f1e553a4a17c4d90c0f",
+          "url": "https://github.com/jmgasper/haiku/commit/724160f24bb6bfbd1b7a6f1e553a4a17c4d90c0f",
+          "date": "2026-10-10T20:59:53Z",
+          "subject": "amdgpu: qualify client VM and media coexistence on second boot"
+        },
+        {
+          "sha": "be774d959e8452893712e1e8dcdbc325b9317df6",
+          "url": "https://github.com/jmgasper/haiku/commit/be774d959e8452893712e1e8dcdbc325b9317df6",
+          "date": "2026-10-10T21:02:18Z",
+          "subject": "amdgpu: exercise userspace rasterization in owned GPU VMs"
+        },
+        {
+          "sha": "f52c5e2658e455412f5dd37c883abed24da72db8",
+          "url": "https://github.com/jmgasper/haiku/commit/f52c5e2658e455412f5dd37c883abed24da72db8",
+          "date": "2026-10-10T21:04:38Z",
+          "subject": "amdgpu: record native userspace command and shader execution"
+        },
+        {
+          "sha": "2e1241c69d15436a15c62184023c92090130d38e",
+          "url": "https://github.com/jmgasper/haiku/commit/2e1241c69d15436a15c62184023c92090130d38e",
+          "date": "2026-10-10T21:07:47Z",
+          "subject": "amdgpu: qualify owned userspace compute and raster on two boots"
+        },
+        {
+          "sha": "b62bebe749d3867ca647cb16f6dc4de0a7b5d303",
+          "url": "https://github.com/jmgasper/haiku/commit/b62bebe749d3867ca647cb16f6dc4de0a7b5d303",
+          "date": "2026-10-10T21:07:47Z",
+          "subject": "Merge WX5100: owned GPU VMs and native userspace compute/raster bring-up"
+        },
+        {
+          "sha": "83f5a5264e4e5fa8ff1955416bcdbe957df78947",
+          "url": "https://github.com/jmgasper/haiku/commit/83f5a5264e4e5fa8ff1955416bcdbe957df78947",
+          "date": "2026-10-10T21:11:35Z",
+          "subject": "amdgpu: keep diagnostic command pages private to each client"
+        },
+        {
+          "sha": "8a3ad8f6cfba85bbe5f6cbf627d317a6e907d580",
+          "url": "https://github.com/jmgasper/haiku/commit/8a3ad8f6cfba85bbe5f6cbf627d317a6e907d580",
+          "date": "2026-10-10T21:18:20Z",
+          "subject": "amdgpu: verify private command pages against shared-page control"
+        },
+        {
+          "sha": "a68876f9b7896b20e055eb1baedb2de7d75f90d4",
+          "url": "https://github.com/jmgasper/haiku/commit/a68876f9b7896b20e055eb1baedb2de7d75f90d4",
+          "date": "2026-10-10T21:20:37Z",
+          "subject": "amdgpu: qualify private commands and unprivileged cold startup"
+        },
+        {
+          "sha": "ce69e048ee2655330c1c96064c5ee4729457ff33",
+          "url": "https://github.com/jmgasper/haiku/commit/ce69e048ee2655330c1c96064c5ee4729457ff33",
+          "date": "2026-10-10T21:20:37Z",
+          "subject": "Merge WX5100: per-client diagnostic commands and two-boot isolation evidence"
+        },
+        {
+          "sha": "cfe137eb228f5930cf4c3f7c1680873f3fe88b96",
+          "url": "https://github.com/jmgasper/haiku/commit/cfe137eb228f5930cf4c3f7c1680873f3fe88b96",
+          "date": "2026-10-10T21:31:53Z",
+          "subject": "amdgpu: add IH3 MSI completion waits and fault notification"
+        },
+        {
+          "sha": "52be757b58ed203a16dcafdb7724176711dfae7a",
+          "url": "https://github.com/jmgasper/haiku/commit/52be757b58ed203a16dcafdb7724176711dfae7a",
+          "date": "2026-10-10T21:36:42Z",
+          "subject": "amdgpu: complete IRQ waits only after observing the job fence"
+        },
+        {
+          "sha": "4d59effa474345b27e50ef115a441efed325a365",
+          "url": "https://github.com/jmgasper/haiku/commit/4d59effa474345b27e50ef115a441efed325a365",
+          "date": "2026-10-10T21:46:37Z",
+          "subject": "powervr: per-ioctl calls and time, and buffers made, in the dump"
+        },
+        {
+          "sha": "c9a5d221a20341620d7092e5f5f56a02ad08aebf",
+          "url": "https://github.com/jmgasper/haiku/commit/c9a5d221a20341620d7092e5f5f56a02ad08aebf",
+          "date": "2026-10-10T21:46:47Z",
+          "subject": "amdgpu: preserve first IRQ error and validate every producer pointer"
+        },
+        {
+          "sha": "9f4be320ab34efe7ff5bff679c1a19efebcffa64",
+          "url": "https://github.com/jmgasper/haiku/commit/9f4be320ab34efe7ff5bff679c1a19efebcffa64",
+          "date": "2026-10-10T21:56:52Z",
+          "subject": "amdgpu: qualify MSI fences, ring wraps and hardware fault quarantine"
+        },
+        {
+          "sha": "8716c3810325c1ae45d4fe70c1529a3d2723e7df",
+          "url": "https://github.com/jmgasper/haiku/commit/8716c3810325c1ae45d4fe70c1529a3d2723e7df",
+          "date": "2026-10-10T21:56:56Z",
+          "subject": "Merge WX5100: MSI completion fences and native fault qualification"
+        },
+        {
+          "sha": "68df93d4f9398f5fc1d41b3a4a6891047997bf5c",
+          "url": "https://github.com/jmgasper/haiku/commit/68df93d4f9398f5fc1d41b3a4a6891047997bf5c",
+          "date": "2026-10-10T22:10:40Z",
+          "subject": "powervr: import wired areas through their cache, not their mapping"
+        },
+        {
+          "sha": "34aa2b85a04517fe8898a61e42c2022868a5afe1",
+          "url": "https://github.com/jmgasper/haiku/commit/34aa2b85a04517fe8898a61e42c2022868a5afe1",
+          "date": "2026-10-10T22:10:40Z",
+          "subject": "cubie-a7s: Summit's direct present on PowerVR"
+        },
+        {
+          "sha": "27d977b42251df7064294d0bb7d419411d3beb0e",
+          "url": "https://github.com/jmgasper/haiku/commit/27d977b42251df7064294d0bb7d419411d3beb0e",
+          "date": "2026-10-10T22:12:33Z",
+          "subject": "amdgpu: expose bounded native render geometry and limits"
+        },
+        {
+          "sha": "60d268cc41d8c242799e434bea6238e443ecb7c5",
+          "url": "https://github.com/jmgasper/haiku/commit/60d268cc41d8c242799e434bea6238e443ecb7c5",
+          "date": "2026-10-10T22:17:48Z",
+          "subject": "amdgpu: qualify native render metadata and Mesa port baseline"
+        },
+        {
+          "sha": "a689b3da1aeadbe17cce7919e95fa44f64bfe2ec",
+          "url": "https://github.com/jmgasper/haiku/commit/a689b3da1aeadbe17cce7919e95fa44f64bfe2ec",
+          "date": "2026-10-10T22:18:12Z",
+          "subject": "Merge WX5100: native render metadata qualification for Mesa"
+        },
+        {
+          "sha": "6aab78a6cd64fa5d9063c14ef56ab25e16df4af2",
+          "url": "https://github.com/jmgasper/haiku/commit/6aab78a6cd64fa5d9063c14ef56ab25e16df4af2",
+          "date": "2026-10-10T22:32:45Z",
+          "subject": "powervr: reuse page-table pages, and no second clearing of buffers"
+        },
+        {
+          "sha": "044f8b1cd09a8ffd8978b6e81541be3b5d2e2a41",
+          "url": "https://github.com/jmgasper/haiku/commit/044f8b1cd09a8ffd8978b6e81541be3b5d2e2a41",
+          "date": "2026-10-10T22:56:25Z",
+          "subject": "powervr: per job type, time from run_job() to done, in the dump"
+        },
+        {
+          "sha": "30d7c8697959f45ccfae1c449fb4d1f7c9d127bc",
+          "url": "https://github.com/jmgasper/haiku/commit/30d7c8697959f45ccfae1c449fb4d1f7c9d127bc",
+          "date": "2026-10-10T22:56:31Z",
+          "subject": "cubie-a7s: pvr keeps freed buffer objects and maps memory objects once"
+        },
+        {
+          "sha": "ead5796cccaa1283caeb37231df5d3ebcc0f9197",
+          "url": "https://github.com/jmgasper/haiku/commit/ead5796cccaa1283caeb37231df5d3ebcc0f9197",
+          "date": "2026-10-10T22:57:22Z",
+          "subject": "amdgpu: initialize and verify Polaris10 graphics tile tables"
+        },
+        {
+          "sha": "8e27225a91bc0796d5a4609d93fd1f15f62afdcf",
+          "url": "https://github.com/jmgasper/haiku/commit/8e27225a91bc0796d5a4609d93fd1f15f62afdcf",
+          "date": "2026-10-10T22:57:39Z",
+          "subject": "amdgpu: record native Mesa bring-up and tile-table qualification"
+        },
+        {
+          "sha": "182178d5e561e3a73973637b4a1ef7ae1d274254",
+          "url": "https://github.com/jmgasper/haiku/commit/182178d5e561e3a73973637b4a1ef7ae1d274254",
+          "date": "2026-10-10T22:57:51Z",
+          "subject": "Merge WX5100: qualified Polaris tile initialization and native Mesa bring-up"
+        },
+        {
+          "sha": "6abf669bf29c5b16f95123d30496e19ce67e56b8",
+          "url": "https://github.com/jmgasper/haiku/commit/6abf669bf29c5b16f95123d30496e19ce67e56b8",
+          "date": "2026-10-10T23:03:13Z",
+          "subject": "amdgpu: qualify native RadeonSI pixels and graphics media coexistence"
+        },
+        {
+          "sha": "8f9fbb35edd5513703e1855cf02a4d6970d68db2",
+          "url": "https://github.com/jmgasper/haiku/commit/8f9fbb35edd5513703e1855cf02a4d6970d68db2",
+          "date": "2026-10-10T23:04:04Z",
+          "subject": "Merge WX5100: first native RadeonSI pixel and coexistence qualification"
+        },
+        {
+          "sha": "54f683da324a0203cbcd07e197f14ca3326d1758",
+          "url": "https://github.com/jmgasper/haiku/commit/54f683da324a0203cbcd07e197f14ca3326d1758",
+          "date": "2026-10-10T23:18:58Z",
+          "subject": "docs: qualify WX5100 native Mesa compositor scenes"
+        },
+        {
+          "sha": "10fecc88550b6953339766419484e84e00977555",
+          "url": "https://github.com/jmgasper/haiku/commit/10fecc88550b6953339766419484e84e00977555",
+          "date": "2026-10-10T23:19:43Z",
+          "subject": "Merge WX5100: native RadeonSI compositor and media coexistence qualification"
+        },
+        {
+          "sha": "d984d181be468c637f24cbcb8924405d96b4d3c3",
+          "url": "https://github.com/jmgasper/haiku/commit/d984d181be468c637f24cbcb8924405d96b4d3c3",
+          "date": "2026-10-10T23:25:54Z",
+          "subject": "docs: qualify WX5100 GPU-rendered EGL windows"
+        },
+        {
+          "sha": "4a9f989b39c722dcf032e8a82d1e2fe8234297fb",
+          "url": "https://github.com/jmgasper/haiku/commit/4a9f989b39c722dcf032e8a82d1e2fe8234297fb",
+          "date": "2026-10-10T23:26:55Z",
+          "subject": "Merge WX5100: GPU-rendered EGL window pixel qualification"
+        },
+        {
+          "sha": "2a0fb0cd949b6ace9d96d568773e8a20b00e9211",
+          "url": "https://github.com/jmgasper/haiku/commit/2a0fb0cd949b6ace9d96d568773e8a20b00e9211",
+          "date": "2026-10-10T23:33:36Z",
+          "subject": "docs: record Summit native GPU and combined media trial limits"
+        },
+        {
+          "sha": "1586ce702db212186388529f160e847f676a9f80",
+          "url": "https://github.com/jmgasper/haiku/commit/1586ce702db212186388529f160e847f676a9f80",
+          "date": "2026-10-10T23:33:55Z",
+          "subject": "Merge WX5100: Summit native GPU trial and HD media limitation"
+        },
+        {
+          "sha": "ef0bc16cdf87945415126a81df7ed7a7e244a83f",
+          "url": "https://github.com/jmgasper/haiku/commit/ef0bc16cdf87945415126a81df7ed7a7e244a83f",
+          "date": "2026-10-10T23:51:39Z",
+          "subject": "amdgpu: allow initialized graphics during private video decode"
+        },
+        {
+          "sha": "71f8ef71a45ec6d68508c6dc243e1ba934a6d23a",
+          "url": "https://github.com/jmgasper/haiku/commit/71f8ef71a45ec6d68508c6dc243e1ba934a6d23a",
+          "date": "2026-10-10T23:55:00Z",
+          "subject": "amdgpu: leave the shared GFX selector untouched during DMA"
+        },
+        {
+          "sha": "94b959ca9c7f543a3bdd763597b495a2d9a5c6b0",
+          "url": "https://github.com/jmgasper/haiku/commit/94b959ca9c7f543a3bdd763597b495a2d9a5c6b0",
+          "date": "2026-10-11T00:01:35Z",
+          "subject": "amdgpu: batch video guard readback into cached RAM"
+        },
+        {
+          "sha": "2b5a4206892369ae913257fc066d48b890a269e6",
+          "url": "https://github.com/jmgasper/haiku/commit/2b5a4206892369ae913257fc066d48b890a269e6",
+          "date": "2026-10-11T00:17:53Z",
+          "subject": "docs: qualify concurrent WX5100 video and cached guard readback"
+        },
+        {
+          "sha": "7d79170f831694161673a72e0a5a98f35166dcf9",
+          "url": "https://github.com/jmgasper/haiku/commit/7d79170f831694161673a72e0a5a98f35166dcf9",
+          "date": "2026-10-11T00:18:08Z",
+          "subject": "Merge WX5100: concurrent video/rendering and cached guard validation"
+        },
+        {
+          "sha": "f2e2ab7060f751fb6f3cdf026b9d916337e16e7d",
+          "url": "https://github.com/jmgasper/haiku/commit/f2e2ab7060f751fb6f3cdf026b9d916337e16e7d",
+          "date": "2026-10-11T00:30:36Z",
+          "subject": "cubie-a7s: merged uniform loads in pco, memory cache, GPU benches"
+        },
+        {
+          "sha": "dc3989d579681afa18cebfe16f743d110d392703",
+          "url": "https://github.com/jmgasper/haiku/commit/dc3989d579681afa18cebfe16f743d110d392703",
+          "date": "2026-10-11T00:30:49Z",
+          "subject": "amdgpu: release the driver mutex during owned graphics execution"
+        },
+        {
+          "sha": "50d3b06588f179d47c59894f1d50cc34552367de",
+          "url": "https://github.com/jmgasper/haiku/commit/50d3b06588f179d47c59894f1d50cc34552367de",
+          "date": "2026-10-11T00:40:03Z",
+          "subject": "Merge powervr-m2: interactive WebGL in Summit on the PowerVR GPU"
+        },
+        {
+          "sha": "419c356b47ac96dbf6126cd54a09a23a14980c32",
+          "url": "https://github.com/jmgasper/haiku/commit/419c356b47ac96dbf6126cd54a09a23a14980c32",
+          "date": "2026-10-11T00:42:05Z",
+          "subject": "Merge cubie-a7s: WebGL on the Cubie's GPU, USB audio, video round 2"
+        },
+        {
+          "sha": "322c4514aaa70590371a943d362f1969d9e942e0",
+          "url": "https://github.com/jmgasper/haiku/commit/322c4514aaa70590371a943d362f1969d9e942e0",
+          "date": "2026-10-11T00:46:36Z",
+          "subject": "docs: qualify zero-drop WX5100 GPU-composited media playback"
+        },
+        {
+          "sha": "7da45d45ebe547ca6284bea716971ca6c37d9e98",
+          "url": "https://github.com/jmgasper/haiku/commit/7da45d45ebe547ca6284bea716971ca6c37d9e98",
+          "date": "2026-10-11T00:46:44Z",
+          "subject": "Merge WX5100 concurrent graphics and zero-drop GPU media qualification"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -18571,8 +19195,224 @@
       "branch": "main",
       "description": "A native web browser with a modern WebKit engine, extensions and developer tools.",
       "group": "Applications",
-      "head": "ba951ac54c3efd83ca180b382a35c02fd2f62859",
+      "head": "6fae858f4754dab8915f8bf9651d8df544645a9d",
       "commits": [
+        {
+          "sha": "6fae858f4754dab8915f8bf9651d8df544645a9d",
+          "url": "https://github.com/jmgasper/summit/commit/6fae858f4754dab8915f8bf9651d8df544645a9d",
+          "date": "2026-10-10T21:49:32Z",
+          "subject": "Keep extension hosts at normal CPU priority before their URL commits"
+        },
+        {
+          "sha": "3422c5d8851b3e6ae56c8e9a06b4cb3b4a14a52b",
+          "url": "https://github.com/jmgasper/summit/commit/3422c5d8851b3e6ae56c8e9a06b4cb3b4a14a52b",
+          "date": "2026-10-10T21:49:27Z",
+          "subject": "Let webmail blob PDFs through CSP frame-ancestors"
+        },
+        {
+          "sha": "031872c5b2f0a007094c03c125910ee28f28780e",
+          "url": "https://github.com/jmgasper/summit/commit/031872c5b2f0a007094c03c125910ee28f28780e",
+          "date": "2026-10-10T21:49:21Z",
+          "subject": "Drop the Go button and accept Tracker's reply when opening Downloads"
+        },
+        {
+          "sha": "562a7a8a5ec69b16a0d62ae4c278724ab7f24247",
+          "url": "https://github.com/jmgasper/summit/commit/562a7a8a5ec69b16a0d62ae4c278724ab7f24247",
+          "date": "2026-10-10T21:49:21Z",
+          "subject": "Replace toolbar artwork with Font Awesome native vectors"
+        },
+        {
+          "sha": "c74554e520956da32b366247b814b7bb3be14c0f",
+          "url": "https://github.com/jmgasper/summit/commit/c74554e520956da32b366247b814b7bb3be14c0f",
+          "date": "2026-10-10T17:54:01Z",
+          "subject": "Record sustained HEVC playback and software recovery"
+        },
+        {
+          "sha": "28456dba29fbbbd32bf794855df15f95f7a3702f",
+          "url": "https://github.com/jmgasper/summit/commit/28456dba29fbbbd32bf794855df15f95f7a3702f",
+          "date": "2026-10-10T17:47:28Z",
+          "subject": "Qualify direct RGB HEVC playback, file seeks and H264 regression"
+        },
+        {
+          "sha": "9649ad55cd9e5334fc647ab7e1680f5058695be4",
+          "url": "https://github.com/jmgasper/summit/commit/9649ad55cd9e5334fc647ab7e1680f5058695be4",
+          "date": "2026-10-10T17:35:17Z",
+          "subject": "Decode matching native RGB layouts directly into the owned video frame"
+        },
+        {
+          "sha": "6e3222c9f612b0c94eba2084216b2c499dfe20bd",
+          "url": "https://github.com/jmgasper/summit/commit/6e3222c9f612b0c94eba2084216b2c499dfe20bd",
+          "date": "2026-10-10T17:17:32Z",
+          "subject": "Enable named HEVC decoders and recovery in MSE"
+        },
+        {
+          "sha": "efaa9b922dce2261ca3c9b456f5d655290d9334d",
+          "url": "https://github.com/jmgasper/summit/commit/efaa9b922dce2261ca3c9b456f5d655290d9334d",
+          "date": "2026-10-10T17:08:50Z",
+          "subject": "Select the AMD HEVC decoder for Main and Main 10 streams"
+        },
+        {
+          "sha": "cd3e32acacbad45b76684b748c7c98c564c8c221",
+          "url": "https://github.com/jmgasper/summit/commit/cd3e32acacbad45b76684b748c7c98c564c8c221",
+          "date": "2026-10-10T16:50:04Z",
+          "subject": "Qualify sustained HD and queued-output recovery in the browser"
+        },
+        {
+          "sha": "f268255a4c23e69f82c7e2a184e59fcfab8129da",
+          "url": "https://github.com/jmgasper/summit/commit/f268255a4c23e69f82c7e2a184e59fcfab8129da",
+          "date": "2026-10-10T16:42:22Z",
+          "subject": "Let browser media probes require a maximum drop count"
+        },
+        {
+          "sha": "3c739a4d65f8a854ac3a8d7e98cea8c478cc2e65",
+          "url": "https://github.com/jmgasper/summit/commit/3c739a4d65f8a854ac3a8d7e98cea8c478cc2e65",
+          "date": "2026-10-10T16:39:44Z",
+          "subject": "Buffer MSE video output independently of presentation timing"
+        },
+        {
+          "sha": "8b5369e23d1929e01459638fa88ee252903e49c0",
+          "url": "https://github.com/jmgasper/summit/commit/8b5369e23d1929e01459638fa88ee252903e49c0",
+          "date": "2026-10-10T16:11:14Z",
+          "subject": "Start MSE software fallback when hardware has consumed no input"
+        },
+        {
+          "sha": "9521f708eebfe67e38ea7f222703c0315d2ee546",
+          "url": "https://github.com/jmgasper/summit/commit/9521f708eebfe67e38ea7f222703c0315d2ee546",
+          "date": "2026-10-10T16:06:57Z",
+          "subject": "Apply seek frame boundaries to native software time counters"
+        },
+        {
+          "sha": "13e31c7ae2380f8731180c7feef7ed1f6fbb3968",
+          "url": "https://github.com/jmgasper/summit/commit/13e31c7ae2380f8731180c7feef7ed1f6fbb3968",
+          "date": "2026-10-10T16:01:48Z",
+          "subject": "Finish file seek preroll after the target frame boundary"
+        },
+        {
+          "sha": "fc1f631a301b9a5c04190975baa912458874a6d2",
+          "url": "https://github.com/jmgasper/summit/commit/fc1f631a301b9a5c04190975baa912458874a6d2",
+          "date": "2026-10-10T15:56:58Z",
+          "subject": "Check file seeks without unavailable playback counters"
+        },
+        {
+          "sha": "7d3cb49fd28c4b0bbe258e8a53b99b17015009c6",
+          "url": "https://github.com/jmgasper/summit/commit/7d3cb49fd28c4b0bbe258e8a53b99b17015009c6",
+          "date": "2026-10-10T15:45:46Z",
+          "subject": "Use the media probe for ordinary file playback as well as MSE"
+        },
+        {
+          "sha": "d537e54c1c9ecb4967bba00c5751137f987fed05",
+          "url": "https://github.com/jmgasper/summit/commit/d537e54c1c9ecb4967bba00c5751137f987fed05",
+          "date": "2026-10-10T14:42:46Z",
+          "subject": "Record native H264 state-transition qualification"
+        },
+        {
+          "sha": "5c1003e19a657e854bd9e5a6a183b3bcf593d85f",
+          "url": "https://github.com/jmgasper/summit/commit/5c1003e19a657e854bd9e5a6a183b3bcf593d85f",
+          "date": "2026-10-10T14:32:56Z",
+          "subject": "Capture paused MSE pictures for native RGB comparison"
+        },
+        {
+          "sha": "c96cb9cf87beaf0085603fd4941138e11d16bb3e",
+          "url": "https://github.com/jmgasper/summit/commit/c96cb9cf87beaf0085603fd4941138e11d16bb3e",
+          "date": "2026-10-10T14:23:41Z",
+          "subject": "Recover hardware seek failures and latch rejected output formats"
+        },
+        {
+          "sha": "44a0d474481bb610fa6d595a9db01cb750f2bfc8",
+          "url": "https://github.com/jmgasper/summit/commit/44a0d474481bb610fa6d595a9db01cb750f2bfc8",
+          "date": "2026-10-10T14:01:59Z",
+          "subject": "Reject overflowing SPS scaling deltas and cancel cached MSE replay"
+        },
+        {
+          "sha": "35f82ad97273f7ba0c96d6d20da9e5b2ca49d4d1",
+          "url": "https://github.com/jmgasper/summit/commit/35f82ad97273f7ba0c96d6d20da9e5b2ca49d4d1",
+          "date": "2026-10-10T13:52:06Z",
+          "subject": "Record Summit software selection and native seek verification"
+        },
+        {
+          "sha": "fc9cd5a4f3b93c829975bb221576194c3e54b863",
+          "url": "https://github.com/jmgasper/summit/commit/fc9cd5a4f3b93c829975bb221576194c3e54b863",
+          "date": "2026-10-10T13:49:28Z",
+          "subject": "Select AMD UVD video decoding with software recovery in Summit"
+        },
+        {
+          "sha": "a785a6d0500ce79d14e8dac267138d35c0564586",
+          "url": "https://github.com/jmgasper/summit/commit/a785a6d0500ce79d14e8dac267138d35c0564586",
+          "date": "2026-10-09T01:38:14Z",
+          "subject": "docs: record latest Summit deployment to Raspberry Pi"
+        },
+        {
+          "sha": "918dcbdef8d5eb494a839022adfd56abf705f08f",
+          "url": "https://github.com/jmgasper/summit/commit/918dcbdef8d5eb494a839022adfd56abf705f08f",
+          "date": "2026-10-08T21:36:54Z",
+          "subject": "Record twelve-hour Summit performance and hardening results"
+        },
+        {
+          "sha": "561c3782cbf985bac59a01179536ab59c3290d69",
+          "url": "https://github.com/jmgasper/summit/commit/561c3782cbf985bac59a01179536ab59c3290d69",
+          "date": "2026-10-08T20:48:23Z",
+          "subject": "Drain due MSE video frames and retain H.264 presentation times"
+        },
+        {
+          "sha": "c1e8634188eae7e80eed991eebcc19c5637baf66",
+          "url": "https://github.com/jmgasper/summit/commit/c1e8634188eae7e80eed991eebcc19c5637baf66",
+          "date": "2026-10-08T20:08:10Z",
+          "subject": "Check paused MSE pictures and resumption in the media fixture"
+        },
+        {
+          "sha": "c73b0b31fa9354acb36c96fa9d5f3d0918b215a6",
+          "url": "https://github.com/jmgasper/summit/commit/c73b0b31fa9354acb36c96fa9d5f3d0918b215a6",
+          "date": "2026-10-08T19:50:04Z",
+          "subject": "Preserve the graphics library prefix in native close tests"
+        },
+        {
+          "sha": "ee6b608730338a9ba06c195d764b442338baab8c",
+          "url": "https://github.com/jmgasper/summit/commit/ee6b608730338a9ba06c195d764b442338baab8c",
+          "date": "2026-10-08T19:40:08Z",
+          "subject": "Validate readback pixels within the requested native window"
+        },
+        {
+          "sha": "d411dfe79a7b8acdd0d0167f7f4706817cec8b2e",
+          "url": "https://github.com/jmgasper/summit/commit/d411dfe79a7b8acdd0d0167f7f4706817cec8b2e",
+          "date": "2026-10-08T19:36:47Z",
+          "subject": "Wait for asynchronous session saves in native close tests"
+        },
+        {
+          "sha": "2a0c4fdf0af2f730c63ddce81e407e76ee1f80ae",
+          "url": "https://github.com/jmgasper/summit/commit/2a0c4fdf0af2f730c63ddce81e407e76ee1f80ae",
+          "date": "2026-10-08T11:14:03Z",
+          "subject": "Repair native CMake and extension-disabled engine builds"
+        },
+        {
+          "sha": "b3f53dba20f8269116a850875a2f3886b00e7201",
+          "url": "https://github.com/jmgasper/summit/commit/b3f53dba20f8269116a850875a2f3886b00e7201",
+          "date": "2026-10-08T10:49:57Z",
+          "subject": "Check decoded frame totals in the MSE playback probe"
+        },
+        {
+          "sha": "f5a58fd2c5ebfdfe63e5b36492c5d7fe1c2e059d",
+          "url": "https://github.com/jmgasper/summit/commit/f5a58fd2c5ebfdfe63e5b36492c5d7fe1c2e059d",
+          "date": "2026-10-08T10:49:04Z",
+          "subject": "Carry Haiku ARM64 JavaScriptCore support in the main engine patch"
+        },
+        {
+          "sha": "7edc7ed7881f2dd88902327e2933bc767b915aa6",
+          "url": "https://github.com/jmgasper/summit/commit/7edc7ed7881f2dd88902327e2933bc767b915aa6",
+          "date": "2026-10-08T10:32:26Z",
+          "subject": "Honor Mesa readback policy hints for newer V3D drivers"
+        },
+        {
+          "sha": "f32fa6e6f9f8dd7c455cdaf177b924c44138a0c3",
+          "url": "https://github.com/jmgasper/summit/commit/f32fa6e6f9f8dd7c455cdaf177b924c44138a0c3",
+          "date": "2026-10-08T10:21:32Z",
+          "subject": "Verify actual movement in native wheel benchmarks"
+        },
+        {
+          "sha": "4b231275ec7750674f98f056289e9fd01d38f1e5",
+          "url": "https://github.com/jmgasper/summit/commit/4b231275ec7750674f98f056289e9fd01d38f1e5",
+          "date": "2026-10-08T09:57:51Z",
+          "subject": "Preserve separated narrow damage during framebuffer readback"
+        },
         {
           "sha": "ba951ac54c3efd83ca180b382a35c02fd2f62859",
           "url": "https://github.com/jmgasper/summit/commit/ba951ac54c3efd83ca180b382a35c02fd2f62859",
@@ -25164,76 +26004,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261010183321-3dda01cfc9",
-      "published": "2026-10-10T18:35:23Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261011010558-7da45d45eb",
+      "published": "2026-10-11T01:08:06Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 749757572,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261010183321-3dda01cfc9/airos-x86_64.iso.xz",
-          "digest": "sha256:f9cf19a4f6894763ae4ffb812a19bf7fa35d954e1076a171b8c2cef44856d582"
+          "size": 749842608,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011010558-7da45d45eb/airos-x86_64.iso.xz",
+          "digest": "sha256:38b1aced22612138c24bed1e2a07fdb6e32d5291338b02008ac33aeb956638f5"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261010183321-3dda01cfc9/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:166d298826d2ca8df428c6473eb25fb848803c42afa910aa8203123dc07ec1fc"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011010558-7da45d45eb/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:293f59609df9cf345f3fff6b30e1d962c9319d3cb8ae7f55e0687119e17a9d21"
         },
         {
           "name": "manifest.json",
-          "size": 4206,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261010183321-3dda01cfc9/manifest.json",
-          "digest": "sha256:8f3ccaa10a0f6deb5e8912c2a1280c566eaf49a51d4b49d83e5096f78dee1b13"
+          "size": 4208,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011010558-7da45d45eb/manifest.json",
+          "digest": "sha256:1637f1c348b700e870d139b0cba3b425f08744c32527b4d0f860fa2d8c7c7854"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261010182506-3dda01cfc9",
-      "published": "2026-10-10T18:27:25Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261011011045-7da45d45eb",
+      "published": "2026-10-11T01:12:58Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 258887976,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261010182506-3dda01cfc9/airos-arm64.iso.xz",
-          "digest": "sha256:d2d376a2275019b5b658a6ff6c9129f4af85a8f9a969ee949e0ce7a76351f0d6"
+          "size": 258902608,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011011045-7da45d45eb/airos-arm64.iso.xz",
+          "digest": "sha256:28b507c2859b5d606a7ea8c6e9d556dfc9b26009d44934632893816bd8d4cf15"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261010182506-3dda01cfc9/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:b87095431b829095010e1f613b2d941a8afb03e6e2d42b19627fb6aea50bdbbc"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011011045-7da45d45eb/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:18cad88c8f3bd784a36eca7a2847094169232734d6f9aaed38dd4a14fc498684"
         },
         {
           "name": "manifest.json",
-          "size": 4413,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261010182506-3dda01cfc9/manifest.json",
-          "digest": "sha256:02eabc6532ed8b9203cc96c95090c58d8dde7b5456f4f37e6be9727feaf1687d"
+          "size": 4414,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011011045-7da45d45eb/manifest.json",
+          "digest": "sha256:8cc54378b7ae6a43adffd9d5ba2a78205a3aec50579ea3ed606b95f926503899"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261010182133-3dda01cfc9",
-      "published": "2026-10-10T18:22:29Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261011004615-419c356b47",
+      "published": "2026-10-11T00:47:06Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 261294392,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261010182133-3dda01cfc9/airos-rpi4.img.xz",
-          "digest": "sha256:27af7894dd111f42cc06f72784d6e75d43e3f485efe4924115343d8d0415fc35"
+          "size": 261313124,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011004615-419c356b47/airos-rpi4.img.xz",
+          "digest": "sha256:6c30d3320b2caf0ec89d0e22075a815d0bd3c45a67f66f701262b012fb02995c"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261010182133-3dda01cfc9/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:7b1c7b4b0763dda258e70caf69ce5c667e103ef46e30360886a8058d433095a8"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011004615-419c356b47/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:b51e618d6e4039532dbbee5f2b8a7c35a7820d92e5231b691e5c3bccc3292b2c"
         },
         {
           "name": "manifest.json",
-          "size": 4547,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261010182133-3dda01cfc9/manifest.json",
-          "digest": "sha256:08dd3e1f80962036ddf3d2bc7b95058b6c2a45320ed922809b6dd92fe34e41fe"
+          "size": 4548,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011004615-419c356b47/manifest.json",
+          "digest": "sha256:d9ca5cf738fdbfe4a07fc5beecae8d5b1500aea4050eae0ce87122666b1641a5"
         }
       ]
     }
