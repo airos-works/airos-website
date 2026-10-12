@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T01:19:41+00:00",
+  "updated": "2026-10-12T07:10:43+00:00",
   "ci_head": "042e9aa02961361e65beac178aa536084dc242a4",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "21c332b7ead7492670ab26bb7e01749811ae3854",
+      "head": "9ce84536f8f53b66a376e17f71419b10b78103e0",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -6882,6 +6882,42 @@
           "subject": "Merge cubie-a7s: A733 thermal management, MediaPlayer, Wi-Fi speed"
         },
         {
+          "sha": "0be2fa3e5aaff7a7fcc846631efe513e77929ed5",
+          "url": "https://github.com/jmgasper/haiku/commit/0be2fa3e5aaff7a7fcc846631efe513e77929ed5",
+          "date": "2026-10-11T22:15:23Z",
+          "subject": "app_server: honour B_WAIT_FOR_RETRACE"
+        },
+        {
+          "sha": "7dab837d9566367d956c42550626d2621c8733bb",
+          "url": "https://github.com/jmgasper/haiku/commit/7dab837d9566367d956c42550626d2621c8733bb",
+          "date": "2026-10-11T22:15:23Z",
+          "subject": "graphics: semaphores for the vertical blanks, and a frame counter follower"
+        },
+        {
+          "sha": "262f3c302198b88e2b452a15654dcd8a0c66a8b7",
+          "url": "https://github.com/jmgasper/haiku/commit/262f3c302198b88e2b452a15654dcd8a0c66a8b7",
+          "date": "2026-10-11T22:15:23Z",
+          "subject": "sunxi_display: vertical blank interrupt and retrace semaphore"
+        },
+        {
+          "sha": "415af4d5c234a7202d8d9b9e7172f478eb000436",
+          "url": "https://github.com/jmgasper/haiku/commit/415af4d5c234a7202d8d9b9e7172f478eb000436",
+          "date": "2026-10-11T22:15:23Z",
+          "subject": "rpi_display: retrace semaphore from the compositor's frame counter"
+        },
+        {
+          "sha": "8079881147495f418ddcfa60176ee8449ffb9693",
+          "url": "https://github.com/jmgasper/haiku/commit/8079881147495f418ddcfa60176ee8449ffb9693",
+          "date": "2026-10-11T22:15:24Z",
+          "subject": "amdgpu, framebuffer: the boot frame buffer's vertical blanks (WX 5100)"
+        },
+        {
+          "sha": "97b80a6a2c83d0d8a58322640593385dbf120437",
+          "url": "https://github.com/jmgasper/haiku/commit/97b80a6a2c83d0d8a58322640593385dbf120437",
+          "date": "2026-10-11T22:15:24Z",
+          "subject": "retrace_test: are B_WAIT_FOR_RETRACE copies timed to the display?"
+        },
+        {
           "sha": "315acd78b23b4508173d8fb69133d4a5175fa47c",
           "url": "https://github.com/jmgasper/haiku/commit/315acd78b23b4508173d8fb69133d4a5175fa47c",
           "date": "2026-10-11T23:49:47Z",
@@ -6910,6 +6946,24 @@
           "url": "https://github.com/jmgasper/haiku/commit/21c332b7ead7492670ab26bb7e01749811ae3854",
           "date": "2026-10-12T01:04:16Z",
           "subject": "Merge cubie-a7s: 802.11ac on the Cubie A7S, TCP receive window for receive-only connections"
+        },
+        {
+          "sha": "ec7bfd3d1ce3cea9d4221094a65c58317f75b8b8",
+          "url": "https://github.com/jmgasper/haiku/commit/ec7bfd3d1ce3cea9d4221094a65c58317f75b8b8",
+          "date": "2026-10-12T02:37:22Z",
+          "subject": "retrace_test: the Cubie's scan line is in bits 11..0 of the TCON's debug register"
+        },
+        {
+          "sha": "e7daa502409bf15e17e7962332be3e7354fc1692",
+          "url": "https://github.com/jmgasper/haiku/commit/e7daa502409bf15e17e7962332be3e7354fc1692",
+          "date": "2026-10-12T02:37:22Z",
+          "subject": "docs: vertical blank synchronization (RETRACE.md)"
+        },
+        {
+          "sha": "9ce84536f8f53b66a376e17f71419b10b78103e0",
+          "url": "https://github.com/jmgasper/haiku/commit/9ce84536f8f53b66a376e17f71419b10b78103e0",
+          "date": "2026-10-12T02:37:47Z",
+          "subject": "Merge retrace-sync: vertical blank sync for B_WAIT_FOR_RETRACE"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -19969,8 +20023,32 @@
       "branch": "main",
       "description": "A native web browser with a modern WebKit engine, extensions and developer tools.",
       "group": "Applications",
-      "head": "237292b3973b3689bc52aa7a1e0e8b3cd20e752b",
+      "head": "2400808c5fbf07efc1cccb9d6132f74bc5cd09ae",
       "commits": [
+        {
+          "sha": "2400808c5fbf07efc1cccb9d6132f74bc5cd09ae",
+          "url": "https://github.com/jmgasper/summit/commit/2400808c5fbf07efc1cccb9d6132f74bc5cd09ae",
+          "date": "2026-10-12T03:43:43Z",
+          "subject": "README: latest Haiku R1/beta6 builds (803d1c9) [skip ci]"
+        },
+        {
+          "sha": "a0c1393d02e26f187c5e988fc82f8e4d1d0950e5",
+          "url": "https://github.com/jmgasper/summit/commit/a0c1393d02e26f187c5e988fc82f8e4d1d0950e5",
+          "date": "2026-10-12T03:43:29Z",
+          "subject": "README: latest air/OS builds (803d1c9) [skip ci]"
+        },
+        {
+          "sha": "803d1c97ee83b91e1f9f593fbe26943777ad12c1",
+          "url": "https://github.com/jmgasper/summit/commit/803d1c97ee83b91e1f9f593fbe26943777ad12c1",
+          "date": "2026-10-12T03:34:03Z",
+          "subject": "Seek H.264 tracks the media kit gave no decoder through their extractor"
+        },
+        {
+          "sha": "d9521760c8fc70546d1d900499f5018fafc05af0",
+          "url": "https://github.com/jmgasper/summit/commit/d9521760c8fc70546d1d900499f5018fafc05af0",
+          "date": "2026-10-12T01:21:40Z",
+          "subject": "docs: the air/OS x86_64 engine links the image's libraries too"
+        },
         {
           "sha": "237292b3973b3689bc52aa7a1e0e8b3cd20e752b",
           "url": "https://github.com/jmgasper/summit/commit/237292b3973b3689bc52aa7a1e0e8b3cd20e752b",
@@ -26908,31 +26986,31 @@
       "description": "A native web browser with a modern WebKit engine, extensions and developer tools.",
       "note": "Install both Summit and summit_webkit for your architecture.",
       "release": "https://github.com/jmgasper/summit/releases/tag/latest",
-      "published": "2026-10-12T01:16:45Z",
+      "published": "2026-10-12T03:43:28Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261011.1241-1-arm64.hpkg",
-          "size": 4050190,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261011.1241-1-arm64.hpkg",
-          "digest": "sha256:543c0648ad27c6c5b9be24d8b854896ea70324ba79ed6f60149602e1ca4bf6b4"
+          "name": "summit-0.1.0.git20261012.0334-1-arm64.hpkg",
+          "size": 4050384,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261012.0334-1-arm64.hpkg",
+          "digest": "sha256:7e3697dcc5ca6a78076c3c52caa0f6726f3df0a0420eacf3af132b8a0cabcc5b"
         },
         {
-          "name": "summit-0.1.0.git20261011.1241-1-x86_64.hpkg",
-          "size": 3986547,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261011.1241-1-x86_64.hpkg",
-          "digest": "sha256:fabaf7ca3f1be0cbccf07ea2190f0c4f8f9649d1c8e84ff4f99f186512b24c44"
+          "name": "summit-0.1.0.git20261012.0334-1-x86_64.hpkg",
+          "size": 3986556,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261012.0334-1-x86_64.hpkg",
+          "digest": "sha256:6b65afb099c81607f13ad7588c73d01964cadb6b530f49a44aa92dd8b80e51c3"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261011.1241-1-arm64.hpkg",
-          "size": 89690313,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261011.1241-1-arm64.hpkg",
-          "digest": "sha256:e83619b2ed4375d1c6c512537da5edebe29edbac10ae034bff8bdb24737cc562"
+          "name": "summit_webkit-1.10.1.git20261012.0334-1-arm64.hpkg",
+          "size": 89689697,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261012.0334-1-arm64.hpkg",
+          "digest": "sha256:29d517191fdafa74af6598f173431762a83ecad747d7ed0d4f884c37fc4416f8"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261011.1241-1-x86_64.hpkg",
-          "size": 83521622,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261011.1241-1-x86_64.hpkg",
-          "digest": "sha256:224f900870a615373c80548320f9e41b245688d4e2ed1a6f96c051043150ea78"
+          "name": "summit_webkit-1.10.1.git20261012.0334-1-x86_64.hpkg",
+          "size": 83523533,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261012.0334-1-x86_64.hpkg",
+          "digest": "sha256:24bd74dde7a9799b9e956308c827ebb231f2b449836783383bea1e3e51712397"
         }
       ]
     },
@@ -27066,76 +27144,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261011191914-d5fc7dfd06",
-      "published": "2026-10-11T19:21:15Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261012025350-9ce84536f8",
+      "published": "2026-10-12T02:55:54Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 750080256,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011191914-d5fc7dfd06/airos-x86_64.iso.xz",
-          "digest": "sha256:a91bb5d00f23ee15de37ddf203be71061bcefa97812bf6cfe7f77bb103597e73"
+          "size": 743944356,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012025350-9ce84536f8/airos-x86_64.iso.xz",
+          "digest": "sha256:f8ddaa7b9a01361fde484fa1d3095e39d068097512ea05ad99622c4f9ee77a69"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011191914-d5fc7dfd06/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:43a2616699aefb27347f0e1081b243598f03065efe940f1e622b302694d0b32a"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012025350-9ce84536f8/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:f1e68d2fd40b3baf56b50e98eb9af5ca516ae4ac87824b3bba91e06b13503c02"
         },
         {
           "name": "manifest.json",
           "size": 4208,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261011191914-d5fc7dfd06/manifest.json",
-          "digest": "sha256:3d6682e1e32f3d4bde7297428bb6e0177427d2599305037162ff5bcbcb701bf4"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012025350-9ce84536f8/manifest.json",
+          "digest": "sha256:dec6588d205de8939b855efd8ae6a430d4d83a4ba818ed2dae1b451d24f054df"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261011192454-d5fc7dfd06",
-      "published": "2026-10-11T19:27:08Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261012024536-9ce84536f8",
+      "published": "2026-10-12T02:47:55Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 259172996,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011192454-d5fc7dfd06/airos-arm64.iso.xz",
-          "digest": "sha256:9d474ff8ff87c71a5d25e8fdb9401fe1c4755504fcd3bc1e19ad2e9910134cad"
+          "size": 259180440,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012024536-9ce84536f8/airos-arm64.iso.xz",
+          "digest": "sha256:5d215f0fdcf1c9ddfa154d170661213773117a14b5c51a467a039963ac5b39bd"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011192454-d5fc7dfd06/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:52157ee64ca8c37664599632b392a84c9d5b9878716cf755327ae6fab3dac54c"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012024536-9ce84536f8/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:d1eee110a6e896be5daf1cf273a2a91b28e861b6c0e63c6e3c90ddce644de29c"
         },
         {
           "name": "manifest.json",
           "size": 4414,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261011192454-d5fc7dfd06/manifest.json",
-          "digest": "sha256:f770801f99781ffc7f60f5f93031cac2907e64a5a3dba8e78eef982698672d43"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012024536-9ce84536f8/manifest.json",
+          "digest": "sha256:6a48374939e4f5f9ea30f10bdb831c77743e972958b3a07fac9a43d71310a653"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261011191226-d5fc7dfd06",
-      "published": "2026-10-11T19:13:18Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261012024211-9ce84536f8",
+      "published": "2026-10-12T02:43:02Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 261616336,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011191226-d5fc7dfd06/airos-rpi4.img.xz",
-          "digest": "sha256:8bd31c9e07f4f828d2788f06507af2b20937f26d221fc3d216d93cc1fed28366"
+          "size": 261589784,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012024211-9ce84536f8/airos-rpi4.img.xz",
+          "digest": "sha256:110c58d0d18db5e004d0faf545638ff42c7f1ba2b1698355c9a2aefd1f05af04"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011191226-d5fc7dfd06/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:fecd64975424968ec084644e128a657c09c22f0966a10f2079799a3b915c9669"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012024211-9ce84536f8/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:62004e69ca3d839845ceb8c01f721f614527a401336699eb656837eb2556b410"
         },
         {
           "name": "manifest.json",
           "size": 4548,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261011191226-d5fc7dfd06/manifest.json",
-          "digest": "sha256:65210366966dd353919a361c6dbee63dd7422552f4d397cb068eaed9bfae84f2"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012024211-9ce84536f8/manifest.json",
+          "digest": "sha256:c7087f006bf5f9310bc2d167e8d35ef58286d8024e768ed3ae48bcbf80477227"
         }
       ]
     }
