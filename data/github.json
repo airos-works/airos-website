@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T13:04:10+00:00",
+  "updated": "2026-10-12T18:41:02+00:00",
   "ci_head": "042e9aa02961361e65beac178aa536084dc242a4",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "7c06a1f7c3b0dfa605836609d32d0abe3c9ea8ce",
+      "head": "fa77b61606e0671b2fbe5803bf57bc5fc3358ce1",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -7000,6 +7000,150 @@
           "url": "https://github.com/jmgasper/haiku/commit/7c06a1f7c3b0dfa605836609d32d0abe3c9ea8ce",
           "date": "2026-10-12T12:44:21Z",
           "subject": "Merge amdgpu-drm: amdgpu_kms accelerant and VA-API decoding for amdgpu_drm (WX 5100)"
+        },
+        {
+          "sha": "3a1110eca0c770212f87fabbd4730763c3b4e24d",
+          "url": "https://github.com/jmgasper/haiku/commit/3a1110eca0c770212f87fabbd4730763c3b4e24d",
+          "date": "2026-10-12T12:50:42Z",
+          "subject": "x399 tools: install a build's system packages in place; amdgpu_drm swapped in at boot"
+        },
+        {
+          "sha": "492158888006a3ccfbe75db47035e545475ea96f",
+          "url": "https://github.com/jmgasper/haiku/commit/492158888006a3ccfbe75db47035e545475ea96f",
+          "date": "2026-10-12T13:25:32Z",
+          "subject": "amdgpu_va: read pictures into one VA image kept for the stream"
+        },
+        {
+          "sha": "cc2e78df3b7ce14857d4f7ae27137b51d4ef20cc",
+          "url": "https://github.com/jmgasper/haiku/commit/cc2e78df3b7ce14857d4f7ae27137b51d4ef20cc",
+          "date": "2026-10-12T14:03:51Z",
+          "subject": "docs/x399-workstation: AMDGPU-DRM.md, the WX 5100 on amdgpu_drm"
+        },
+        {
+          "sha": "ba095b43261326f4b4605f8dcf26bad50e7f77f8",
+          "url": "https://github.com/jmgasper/haiku/commit/ba095b43261326f4b4605f8dcf26bad50e7f77f8",
+          "date": "2026-10-12T14:04:00Z",
+          "subject": "Merge amdgpu-drm: faster VA-API readback, X399 install tools, AMDGPU-DRM.md"
+        },
+        {
+          "sha": "d9fef9e878833e179b5778885f1b03b396c81cfc",
+          "url": "https://github.com/jmgasper/haiku/commit/d9fef9e878833e179b5778885f1b03b396c81cfc",
+          "date": "2026-10-12T14:25:38Z",
+          "subject": "AMDGPU-DRM.md: 1080p decoding into system memory, Summit HEVC on the GPU"
+        },
+        {
+          "sha": "20ead573bc62de8c8a2b2b62b556daa1e18d2d9c",
+          "url": "https://github.com/jmgasper/haiku/commit/20ead573bc62de8c8a2b2b62b556daa1e18d2d9c",
+          "date": "2026-10-12T14:25:47Z",
+          "subject": "Merge amdgpu-drm: AMDGPU-DRM.md for 1080p decoding into system memory and Summit HEVC"
+        },
+        {
+          "sha": "7e011057e56861fc1b3eeb15a0da1444a123f9bf",
+          "url": "https://github.com/jmgasper/haiku/commit/7e011057e56861fc1b3eeb15a0da1444a123f9bf",
+          "date": "2026-10-12T14:38:26Z",
+          "subject": "AMDGPU-DRM.md: what the slow GPU writes into system memory are not"
+        },
+        {
+          "sha": "4c0f32670fbcb23dae35717dd13f2988451303ca",
+          "url": "https://github.com/jmgasper/haiku/commit/4c0f32670fbcb23dae35717dd13f2988451303ca",
+          "date": "2026-10-12T14:38:29Z",
+          "subject": "Merge amdgpu-drm: AMDGPU-DRM.md, GPU write bandwidth findings"
+        },
+        {
+          "sha": "1dffa29dc4f37eb1e39b920a57f437f34dd01f72",
+          "url": "https://github.com/jmgasper/haiku/commit/1dffa29dc4f37eb1e39b920a57f437f34dd01f72",
+          "date": "2026-10-12T14:41:18Z",
+          "subject": "check-workstation: the WX 5100 on amdgpu_drm; USB root hubs against the controllers present"
+        },
+        {
+          "sha": "9b30732108dfd65902a0ad8fc4e64f16f5b744a0",
+          "url": "https://github.com/jmgasper/haiku/commit/9b30732108dfd65902a0ad8fc4e64f16f5b744a0",
+          "date": "2026-10-12T14:41:21Z",
+          "subject": "Merge amdgpu-drm: check-workstation for the WX 5100"
+        },
+        {
+          "sha": "ccf006482484ad8011c16fc3102f57e5441f9f38",
+          "url": "https://github.com/jmgasper/haiku/commit/ccf006482484ad8011c16fc3102f57e5441f9f38",
+          "date": "2026-10-12T14:45:04Z",
+          "subject": "AMDGPU-DRM.md: Wayland clients and the in-process server's exit race"
+        },
+        {
+          "sha": "b8604111810e347143f88a7574f1a8396b488cf1",
+          "url": "https://github.com/jmgasper/haiku/commit/b8604111810e347143f88a7574f1a8396b488cf1",
+          "date": "2026-10-12T14:45:07Z",
+          "subject": "Merge amdgpu-drm: AMDGPU-DRM.md, Wayland exit race"
+        },
+        {
+          "sha": "b8f1a18638627d6e8044d184399b35d52e99419a",
+          "url": "https://github.com/jmgasper/haiku/commit/b8f1a18638627d6e8044d184399b35d52e99419a",
+          "date": "2026-10-12T14:56:13Z",
+          "subject": "amdgpu_va: NV12, I420 and P010 straight from the VA image; amduvd_decode test"
+        },
+        {
+          "sha": "0b23c738d29076f1dd56fb5e350d62c196273b46",
+          "url": "https://github.com/jmgasper/haiku/commit/0b23c738d29076f1dd56fb5e350d62c196273b46",
+          "date": "2026-10-12T14:58:01Z",
+          "subject": "AMDGPU-DRM.md: SDMA readback, 4K60 decoding"
+        },
+        {
+          "sha": "b5d1533d0ad4cc17285938fd516b82e2f21b7d56",
+          "url": "https://github.com/jmgasper/haiku/commit/b5d1533d0ad4cc17285938fd516b82e2f21b7d56",
+          "date": "2026-10-12T14:58:04Z",
+          "subject": "Merge amdgpu-drm: amdgpu_va direct plane copies (4K60 H.264), amduvd_decode test, docs"
+        },
+        {
+          "sha": "833b9fa90dfb0da85ab836a33691ac6e6291417b",
+          "url": "https://github.com/jmgasper/haiku/commit/833b9fa90dfb0da85ab836a33691ac6e6291417b",
+          "date": "2026-10-12T15:03:41Z",
+          "subject": "AMDGPU-DRM.md: installing amdgpu_drm on another machine"
+        },
+        {
+          "sha": "b845ce5571cabda1842dd55775a1b8f5a337067e",
+          "url": "https://github.com/jmgasper/haiku/commit/b845ce5571cabda1842dd55775a1b8f5a337067e",
+          "date": "2026-10-12T15:03:44Z",
+          "subject": "Merge amdgpu-drm: AMDGPU-DRM.md, installing on other machines"
+        },
+        {
+          "sha": "e2fae224e08c6032a73d32d7fe9dfe4e10f831a7",
+          "url": "https://github.com/jmgasper/haiku/commit/e2fae224e08c6032a73d32d7fe9dfe4e10f831a7",
+          "date": "2026-10-12T15:18:42Z",
+          "subject": "amdgpu_kms: only a different set of monitors changes the layout; hot plug while asleep is looked at on wake"
+        },
+        {
+          "sha": "c146b0756b5d1090f9343311715f4e81385b34ac",
+          "url": "https://github.com/jmgasper/haiku/commit/c146b0756b5d1090f9343311715f4e81385b34ac",
+          "date": "2026-10-12T15:27:18Z",
+          "subject": "AMDGPU-DRM.md: DPMS sleep and wake verified"
+        },
+        {
+          "sha": "556165b60ec3a745e8e03c2d39b7b3aad0c5de05",
+          "url": "https://github.com/jmgasper/haiku/commit/556165b60ec3a745e8e03c2d39b7b3aad0c5de05",
+          "date": "2026-10-12T15:27:21Z",
+          "subject": "Merge amdgpu-drm: amdgpu_kms ignores hot plug events that change no monitor"
+        },
+        {
+          "sha": "1725e458c09ea699845a01eaf7095599c7e69e8d",
+          "url": "https://github.com/jmgasper/haiku/commit/1725e458c09ea699845a01eaf7095599c7e69e8d",
+          "date": "2026-10-12T15:56:30Z",
+          "subject": "amdgpu_kms: unplugging a monitor keeps the others going"
+        },
+        {
+          "sha": "3126120a13f57d8e5e3805c6fd8fda0ad4047ce2",
+          "url": "https://github.com/jmgasper/haiku/commit/3126120a13f57d8e5e3805c6fd8fda0ad4047ce2",
+          "date": "2026-10-12T15:56:30Z",
+          "subject": "app_server: one main display"
+        },
+        {
+          "sha": "80d68c106a16a9d3fd65d442408e39d78f6cf3fe",
+          "url": "https://github.com/jmgasper/haiku/commit/80d68c106a16a9d3fd65d442408e39d78f6cf3fe",
+          "date": "2026-10-12T15:56:47Z",
+          "subject": "AMDGPU-DRM.md: monitors coming and going, the DCE cursor, kmsforce and drmparam"
+        },
+        {
+          "sha": "fa77b61606e0671b2fbe5803bf57bc5fc3358ce1",
+          "url": "https://github.com/jmgasper/haiku/commit/fa77b61606e0671b2fbe5803bf57bc5fc3358ce1",
+          "date": "2026-10-12T15:56:57Z",
+          "subject": "Merge amdgpu-drm: monitors coming and going on the WX 5100, one main display"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -20059,8 +20203,56 @@
       "branch": "main",
       "description": "A native web browser with a modern WebKit engine, extensions and developer tools.",
       "group": "Applications",
-      "head": "03106d6b4964fd305c07918650a4417ec9b360b5",
+      "head": "2f2b24e24d2613c42c0b74406c903b552b9a97d9",
       "commits": [
+        {
+          "sha": "2f2b24e24d2613c42c0b74406c903b552b9a97d9",
+          "url": "https://github.com/jmgasper/summit/commit/2f2b24e24d2613c42c0b74406c903b552b9a97d9",
+          "date": "2026-10-12T16:39:51Z",
+          "subject": "README: latest Haiku R1/beta6 builds (ce257e0) [skip ci]"
+        },
+        {
+          "sha": "4dc5fe9b7314784a5ffc33ee727d65963e418959",
+          "url": "https://github.com/jmgasper/summit/commit/4dc5fe9b7314784a5ffc33ee727d65963e418959",
+          "date": "2026-10-12T16:39:34Z",
+          "subject": "README: latest air/OS builds (ce257e0) [skip ci]"
+        },
+        {
+          "sha": "ce257e077f717525588a3c05509bf25c22d110d5",
+          "url": "https://github.com/jmgasper/summit/commit/ce257e077f717525588a3c05509bf25c22d110d5",
+          "date": "2026-10-12T16:31:16Z",
+          "subject": "WebGL again: ANGLE asks EGL 1.4 for robustness with the extension's token"
+        },
+        {
+          "sha": "8125d8a37cf661e38507e1221575e6db9a1f750a",
+          "url": "https://github.com/jmgasper/summit/commit/8125d8a37cf661e38507e1221575e6db9a1f750a",
+          "date": "2026-10-12T16:28:31Z",
+          "subject": "docs/wx5100-media: looping videos on bundle-ci1612 [skip ci]"
+        },
+        {
+          "sha": "c48ba6c33ccc59bcf890ccc354690a3f1a4123cd",
+          "url": "https://github.com/jmgasper/summit/commit/c48ba6c33ccc59bcf890ccc354690a3f1a4123cd",
+          "date": "2026-10-12T16:24:36Z",
+          "subject": "README: latest Haiku R1/beta6 builds (be9f736) [skip ci]"
+        },
+        {
+          "sha": "e2be095ade0dfd9799382675b94085c2c65deda6",
+          "url": "https://github.com/jmgasper/summit/commit/e2be095ade0dfd9799382675b94085c2c65deda6",
+          "date": "2026-10-12T16:24:22Z",
+          "subject": "README: latest air/OS builds (be9f736) [skip ci]"
+        },
+        {
+          "sha": "be9f736c1538f38d893a5b25b2148f65600da021",
+          "url": "https://github.com/jmgasper/summit/commit/be9f736c1538f38d893a5b25b2148f65600da021",
+          "date": "2026-10-12T16:12:56Z",
+          "subject": "Loop a <video> whose muted audio track never ends"
+        },
+        {
+          "sha": "c2f4a54498953fc4bd1ec91e386fea5546eb42b9",
+          "url": "https://github.com/jmgasper/summit/commit/c2f4a54498953fc4bd1ec91e386fea5546eb42b9",
+          "date": "2026-10-12T14:25:35Z",
+          "subject": "docs/wx5100-media: the workstation's Summit is the CI build of 803d1c9, HEVC on UVD [skip ci]"
+        },
         {
           "sha": "03106d6b4964fd305c07918650a4417ec9b360b5",
           "url": "https://github.com/jmgasper/summit/commit/03106d6b4964fd305c07918650a4417ec9b360b5",
@@ -27028,31 +27220,31 @@
       "description": "A native web browser with a modern WebKit engine, extensions and developer tools.",
       "note": "Install both Summit and summit_webkit for your architecture.",
       "release": "https://github.com/jmgasper/summit/releases/tag/latest",
-      "published": "2026-10-12T03:43:28Z",
+      "published": "2026-10-12T16:39:33Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261012.0334-1-arm64.hpkg",
-          "size": 4050384,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261012.0334-1-arm64.hpkg",
-          "digest": "sha256:7e3697dcc5ca6a78076c3c52caa0f6726f3df0a0420eacf3af132b8a0cabcc5b"
+          "name": "summit-0.1.0.git20261012.1631-1-arm64.hpkg",
+          "size": 4050067,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261012.1631-1-arm64.hpkg",
+          "digest": "sha256:5e602307a374f8e6158d00992ee125a29b4ac0f0e38c62d13fc258ce95abbf5b"
         },
         {
-          "name": "summit-0.1.0.git20261012.0334-1-x86_64.hpkg",
-          "size": 3986556,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261012.0334-1-x86_64.hpkg",
-          "digest": "sha256:6b65afb099c81607f13ad7588c73d01964cadb6b530f49a44aa92dd8b80e51c3"
+          "name": "summit-0.1.0.git20261012.1631-1-x86_64.hpkg",
+          "size": 3986516,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261012.1631-1-x86_64.hpkg",
+          "digest": "sha256:fd8e7cd51009c8996c480531fab2a97ab95d1e189d66c4e3dbef5644fca6170d"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261012.0334-1-arm64.hpkg",
-          "size": 89689697,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261012.0334-1-arm64.hpkg",
-          "digest": "sha256:29d517191fdafa74af6598f173431762a83ecad747d7ed0d4f884c37fc4416f8"
+          "name": "summit_webkit-1.10.1.git20261012.1631-1-arm64.hpkg",
+          "size": 89689570,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261012.1631-1-arm64.hpkg",
+          "digest": "sha256:a1851ac9215d219bf88de10a4d5d40b4f1a16c01f6964bf2858b4bfada101ec1"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261012.0334-1-x86_64.hpkg",
-          "size": 83523533,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261012.0334-1-x86_64.hpkg",
-          "digest": "sha256:24bd74dde7a9799b9e956308c827ebb231f2b449836783383bea1e3e51712397"
+          "name": "summit_webkit-1.10.1.git20261012.1631-1-x86_64.hpkg",
+          "size": 83516798,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261012.1631-1-x86_64.hpkg",
+          "digest": "sha256:d978dac3cccf8148779108cee6181182710f5540e5c6d7cdb7679d9bfa0b49cb"
         }
       ]
     },
@@ -27186,76 +27378,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261012125604-7c06a1f7c3",
-      "published": "2026-10-12T12:58:09Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261012160756-fa77b61606",
+      "published": "2026-10-12T16:10:08Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 743973716,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012125604-7c06a1f7c3/airos-x86_64.iso.xz",
-          "digest": "sha256:f0fedceacbded63689d5872ba7e124de0839de12beb51dec126bc91661a22f1b"
+          "size": 743992864,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012160756-fa77b61606/airos-x86_64.iso.xz",
+          "digest": "sha256:6e3787f5e66ca20ae52d94e9dddc7a2ab279f2fd602dd76bdb0e16fc4cff099a"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012125604-7c06a1f7c3/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:9578c8c760f13de4b7a7c8b904cff2f4774fd5f6f018e701953112ecd0315286"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012160756-fa77b61606/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:ee98c9d343ba59802268cc63c271994e2497f440b100c4f9202e22f7b6766e26"
         },
         {
           "name": "manifest.json",
           "size": 4208,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012125604-7c06a1f7c3/manifest.json",
-          "digest": "sha256:fd818f48d60e9daf09476a6cf7b3939f9e1a749f782ad0f3e02f9751f98b0ff0"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261012160756-fa77b61606/manifest.json",
+          "digest": "sha256:645e9e31e4c62082239e137b98d9b810ec973129ffab5eff2602ed0362502686"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261012130048-7c06a1f7c3",
-      "published": "2026-10-12T13:03:04Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261012161657-fa77b61606",
+      "published": "2026-10-12T16:19:11Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 259186708,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012130048-7c06a1f7c3/airos-arm64.iso.xz",
-          "digest": "sha256:c1902374c605e3a506dadb29f5cc35fd1d61371d9f5c9519dcf69b327b95670d"
+          "size": 259177048,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012161657-fa77b61606/airos-arm64.iso.xz",
+          "digest": "sha256:9af0761606fa59e5ec92351cb4ec95e8e89cf0aea5dd43d1a0889fd5a75ce663"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012130048-7c06a1f7c3/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:5671f03a89df58592c409e22f80e2422fc36b8855db2ccfab30f989a04004324"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012161657-fa77b61606/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:56f62a611b0e96a495b1fb83560bcf4084a3b675c028022956207fd91c39fc95"
         },
         {
           "name": "manifest.json",
           "size": 4414,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012130048-7c06a1f7c3/manifest.json",
-          "digest": "sha256:dbdc7f0ff79503d0e40d91e44885080fbb1c76bee92d30fae18212569c30b6d9"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261012161657-fa77b61606/manifest.json",
+          "digest": "sha256:9746482eba21d965dd25356142d62ce56efe2a5b2fbcd6487e9c45025adaa688"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261012124910-7c06a1f7c3",
-      "published": "2026-10-12T12:50:02Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261012161259-fa77b61606",
+      "published": "2026-10-12T16:13:55Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 261535404,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012124910-7c06a1f7c3/airos-rpi4.img.xz",
-          "digest": "sha256:9655848ddb16cbb4d692195cfd4bffaa74667b1934ef98cc7e928d0dabc85d95"
+          "size": 261532392,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012161259-fa77b61606/airos-rpi4.img.xz",
+          "digest": "sha256:ae55d9574bdb271cc399efac592be0bf64de556b9ff5b4347477a5638affaf98"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012124910-7c06a1f7c3/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:e3c720d88a1b87e515e5b6af04f1929c5c394e696fe96a6b94a0e931aeae676b"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012161259-fa77b61606/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:7510bfdb56cc73411229a0c1c14aa44dc13402d90c398e4cfa8dd8b45b9e2ef7"
         },
         {
           "name": "manifest.json",
           "size": 4548,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012124910-7c06a1f7c3/manifest.json",
-          "digest": "sha256:ffea840612c773ba361c468eafe423ca06e9c358ca730af7482a0f50db456194"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261012161259-fa77b61606/manifest.json",
+          "digest": "sha256:ceccf01cf7c00027b2e60a1398086fcc1a8e5551894d2520d8574dd01f0f5b05"
         }
       ]
     }
