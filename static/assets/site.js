@@ -62,12 +62,11 @@ if (search) {
 // If the public API is unavailable, the dated snapshot and release-page fallback
 // remain usable. No token or authenticated request is sent from the browser.
 document.querySelectorAll('.app-card[data-repo]').forEach(card => {
-  if (!card.querySelector('.package-link')) return;
   fetch(`https://api.github.com/repos/jmgasper/${encodeURIComponent(card.dataset.repo)}/releases/tags/latest`, {credentials:'omit'})
     .then(response => { if (!response.ok) throw new Error('Release lookup unavailable'); return response.json(); })
     .then(release => {
+      if (release.draft || !Array.isArray(release.assets)) return;
       const assets = release.assets.filter(a => a.state === 'uploaded' && a.name.endsWith('.hpkg'));
-      const existing = [...card.querySelectorAll('.package-link')];
       const replacements = [];
       for (const arch of ['x86_64','arm64']) {
         for (const asset of assets.filter(a => a.name.endsWith(arch+'.hpkg'))) {
@@ -83,8 +82,18 @@ document.querySelectorAll('.app-card[data-repo]').forEach(card => {
         }
       }
       if (!replacements.length) return;
-      existing[0].before(...replacements); existing.forEach(a => a.remove());
-      card.querySelector('.app-meta span').textContent = release.published_at.slice(0,10);
+      // A browser and engine must be published together for each Summit target.
+      if (card.dataset.repo === 'summit' && ['x86_64', 'arm64'].some(arch => {
+        const names = assets.filter(a => a.name.endsWith(arch+'.hpkg')).map(a => a.name);
+        return names.length && (!names.some(n => n.startsWith('summit-')) || !names.some(n => n.startsWith('summit_webkit-')));
+      })) return;
+      const releaseURL = new URL(release.html_url);
+      if (releaseURL.origin !== 'https://github.com') return;
+      const meta = document.createElement('div'); meta.className = 'app-meta';
+      const details = document.createElement('a'); details.href = releaseURL.href; details.textContent = 'Build details & checksums ↗';
+      const date = document.createElement('span'); date.textContent = release.published_at.slice(0,10);
+      meta.append(details, date);
+      card.querySelector('.app-packages').replaceChildren(...replacements, meta);
     }).catch(() => {});
 });
 

@@ -1,0 +1,83 @@
+{
+  "reviewed": "2026-10-18",
+  "office": [
+    {
+      "id": "wordcraft",
+      "title": "WordCraft",
+      "text": "A word processor for longer documents, everyday writing and page layout. The Haiku port keeps the Rust editor and adds native desktop integration.",
+      "features": [
+        "DOCX documents, styled text, tables, page layout and PDF export",
+        "Review tools and document recovery",
+        "Native Open/Save panels, clipboard and sharp text on scaled displays"
+      ],
+      "source": "https://github.com/jmgasper/wordcraft/blob/haiku/docs/haiku.md",
+      "screenshot": "wordcraft"
+    },
+    {
+      "id": "gridcraft",
+      "title": "GridCraft",
+      "text": "A spreadsheet for budgets, calculations and charts, with a familiar ribbon and formula bar.",
+      "features": [
+        "XLSX workbooks, formulas, number formats and charts",
+        "Native file panels and text/HTML clipboard integration",
+        "Tracker document handling and display-density support"
+      ],
+      "source": "https://github.com/jmgasper/gridcraft/blob/haiku/docs/haiku.md",
+      "screenshot": "gridcraft"
+    },
+    {
+      "id": "deckcraft",
+      "title": "DeckCraft",
+      "text": "Build a presentation, add speaker notes and take it fullscreen on your Haiku desktop.",
+      "features": [
+        "PPTX and DeckCraft documents, PDF and image export",
+        "Transitions, animations and a native fullscreen slide show",
+        "Media Kit audio, native file panels and recovery for unsaved work"
+      ],
+      "source": "https://github.com/jmgasper/deckcraft/blob/haiku/docs/haiku.md",
+      "screenshot": "deckcraft"
+    },
+    {
+      "id": "pdfcraft",
+      "title": "PDFCraft",
+      "text": "Read and work on PDFs in a native window, with the same Rust document engine used on the other platforms.",
+      "features": [
+        "Search and copy text, annotate, edit and organize pages",
+        "Fill forms, save changes and undo edits",
+        "Native file panels, document recovery and an included command-line tool"
+      ],
+      "source": "https://github.com/jmgasper/pdfcraft/blob/feat/airos-port/docs/haiku.md",
+      "screenshot": "pdfcraft"
+    }
+  ],
+  "media": [
+    {
+      "id": "media-preferences",
+      "title": "Media preferences",
+      "text": "Audio and video settings have been rebuilt around a sidebar and readable cards, so devices and everyday controls are easier to find.",
+      "features": [
+        "Choose input and output devices, adjust volume and play a test sound",
+        "Control individual applications in the audio mixer, with app icons and mute controls",
+        "Check a live recording level meter and camera preview",
+        "Choose a MIDI SoundFont and restart stopped media services"
+      ],
+      "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
+      "screenshot": "media-preferences"
+    },
+    {
+      "id": "mediaconverter",
+      "title": "MediaConverter",
+      "text": "A new conversion window and engine bring queues, previews and hardware-aware encoding to Haiku’s media toolbox.",
+      "features": [
+        "Queue video and audio files, preview sources and choose separate video or audio presets",
+        "Audio conversion keeps artwork, tags and chapters, with playback controls in the source preview",
+        "Use available GPU encoders, inspect video hardware and see when a job will use the CPU",
+        "Import DVD/Blu-ray sources and disc images, sidecar subtitles and embedded closed captions",
+        "Preserve HDR10 metadata where supported; conversions run in worker processes and retry on the CPU after a GPU crash",
+        "Use the mediaconvert command-line tool for scripted conversions"
+      ],
+      "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
+      "screenshot": "mediaconverter"
+    }
+  ]
+}

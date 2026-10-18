@@ -15,7 +15,7 @@ BASE = os.getenv('BASE_PATH', '').rstrip('/')
 ORIGIN = os.getenv('SITE_URL', 'https://airos.works').rstrip('/')
 D = json.loads((ROOT / 'data/github.json').read_text())
 UPDATED = D['updated'][:10]
-NAV = [('', 'Project'), ('screenshots/', 'Screenshots'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('changelog/', 'Changelog')]
+NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('screenshots/', 'Screenshots'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('changelog/', 'Changelog')]
 
 def url(path=''):
     return BASE + '/' + path
@@ -53,11 +53,57 @@ def home():
 <p class="lead">airOS is an independent, AI-assisted exploration of what Haiku can do — on more devices, with more native apps, and with the same love for a responsive, personal desktop.</p>
 <div class="actions">{link(url('downloads/'), 'Explore the downloads <span aria-hidden="true">↗</span>', 'button primary')}{link(url('screenshots/'), 'See it in action <span aria-hidden="true">→</span>', 'text-link')}</div>
 </div><div class="hero-art" aria-hidden="true"><div class="orbit"></div><img src="{url('assets/mark.png')}" alt=""></div></section>
-<div class="project-strip"><span>ARM64</span><span>x86-64</span><span>Raspberry Pi 4</span></div>
+<div class="project-strip"><span>AMD &amp; NVIDIA graphics</span><span>ROCK 5 ITX &amp; Cubie A7S</span><span>Raspberry Pi 4</span></div>
 <section class="about-section"><div><p class="eyebrow">The foundation</p><h2>Haiku made<br> this possible.</h2></div><div class="prose"><p>Haiku’s contributors have spent decades building an open-source operating system inspired by BeOS: fast, coherent and thoughtfully designed for personal computing. Its kernel, desktop, native APIs and community are the foundation of everything here.</p><p>airOS builds on that work with device support, desktop improvements and applications. It is an independent fork, with its own development approach.</p>{link('https://www.haiku-os.org/', 'Haiku Project ↗', 'text-link')}</div></section>
 <section class="principles"><article><span class="section-number">01 / EXPLORE</span><h3>More hardware.</h3><p>From ARM boards to a desktop workstation, new drivers and ports bring Haiku’s desktop to more places.</p>{link(url('hardware/'), 'See what works →')}</article><article><span class="section-number">02 / MAKE</span><h3>More everyday apps.</h3><p>Browse, listen, watch, capture and create with native applications that feel at home on the desktop.</p>{link(url('screenshots/'), 'Take a look →')}</article><article><span class="section-number">03 / ITERATE</span><h3>A faster feedback loop.</h3><p>AI helps investigate unfamiliar code, develop ports and test ideas quickly. Builds, hardware checks and public Git history make progress inspectable.</p>{link(url('changelog/'), 'Follow the changes →')}</article></section>
+<section class="release-highlights"><div class="section-heading"><h2>New on your desktop.</h2><span>October 2026</span></div><div class="highlight-grid">
+<article><a href="{url('apps/#office')}"><img src="{url('assets/screenshots/wordcraft.png')}" alt="WordCraft running on Haiku" loading="lazy"></a><p class="eyebrow">Write · calculate · present · read</p><h3>A new office suite.</h3><p>Meet WordCraft, GridCraft, DeckCraft and PDFCraft: four early native ports for documents, spreadsheets, presentations and PDFs.</p>{link(url('apps/#office'), 'Explore the Craft apps →')}</article>
+<article><a href="{url('summit/')}"><img src="{url('assets/screenshots/summit.png')}" alt="The Summit browser on Haiku" loading="lazy"></a><p class="eyebrow">A browser that keeps growing</p><h3>More Summit.</h3><p>Reader mode, PDFs, extensions, streaming media and native developer tools, with dedicated builds for airOS and stock Haiku.</p>{link(url('summit/'), 'Discover Summit →')}</article></div>
+<div class="update-links"><div><h3>Media, reworked.</h3><p>A clearer Media preferences app and a new MediaConverter with queues, previews and GPU encoding.</p>{link(url('apps/#media'), 'Explore the media tools →')}</div><div><h3>More of your hardware.</h3><p>AMD display and GPU acceleration, Cubie WebGL 2, and Raspberry Pi dual displays and DSI panels.</p>{link(url('hardware/'), 'See the tested configurations →')}</div></div></section>
 <section class="closing"><p class="eyebrow">An experiment you can explore</p><h2>Open source. Ongoing work.<br>A desktop with room to grow.</h2><p>Development builds are available now. Check the hardware notes, try the apps, or follow along in the source.</p>{link(url('source/'), 'Explore the code ↗', 'button')}</section>'''
     page('', 'Build on Haiku. Extended with AI.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
+
+def capture(id):
+    shots = json.loads((ROOT / 'content/screenshots.json').read_text())
+    shot = next((s for s in shots if s.get('id') == id), None)
+    if shot is None:
+        raise ValueError('Missing screenshot: '+id)
+    image = url('assets/screenshots/' + shot['file'])
+    return f'<figure class="feature-capture"><a href="{image}"><img src="{image}" alt="{e(shot["title"]+": "+shot["description"], quote=True)}" loading="lazy" width="{shot["width"]}" height="{shot["height"]}"></a><figcaption>{e(shot["title"])} · {e(shot["captured"])} · {link(url("screenshots/#"+id), "Capture details →")}</figcaption></figure>'
+
+def feature_row(item, download=None):
+    links = link(item['source'], 'Feature and port notes ↗', 'text-link')
+    if download:
+        links += link(url(download), 'Build availability →', 'text-link')
+    return f'''<article class="feature-row" id="{item['id']}"><div><h3>{e(item['title'])}</h3><p>{e(item['text'])}</p><ul class="checks">{''.join('<li>'+e(x)+'</li>' for x in item['features'])}</ul><div class="device-links">{links}</div></div>{capture(item['screenshot'])}</article>'''
+
+def applications():
+    data = json.loads((ROOT / 'content/apps.json').read_text())
+    body = intro('Made for your desktop', 'More ways to make.', 'Write, calculate, present, convert and create. New native ports and reworked Haiku tools bring more of your day onto the desktop.')
+    body += f'<nav class="jump-links" aria-label="Application sections">{link("#office", "Craft office suite")}{link("#media", "Media tools")}{link("#everyday", "Everyday apps")}{link(url("summit/"), "Summit browser →")}</nav>'
+    body += '<section id="office"><div class="section-heading"><h2>The Craft office suite</h2><span>Early native x86-64 ports</span></div><p class="section-lead">WordCraft, GridCraft, DeckCraft and PDFCraft bring the open-source Craft applications to airOS. Their Rust editors run inside native Haiku windows, with system file panels, clipboard support and display scaling.</p><aside class="note">These are early ports of alpha applications. They render on the CPU; native printing, IME composition and some desktop integrations remain unfinished. Document compatibility varies by app. The build links below state what is currently published.</aside>'
+    body += ''.join(feature_row(a, 'downloads/#'+a['id']) for a in data['office'])
+    body += '</section><section id="media"><div class="section-heading"><h2>A fresh look at media</h2><span>Included in airOS system builds</span></div>'
+    body += ''.join(feature_row(a, 'downloads/#system') for a in data['media'])
+    body += '<p class="note">GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use. Other codecs and devices may use the CPU. Check the app’s Video hardware window for the current machine.</p></section>'
+    body += '<section id="everyday"><div class="section-heading"><h2>And the everyday favourites</h2></div><div class="app-grid">'
+    for app in json.loads((ROOT / 'content/project.json').read_text())['apps']:
+        if app['repo'] in ('summit', 'wordcraft', 'gridcraft', 'deckcraft', 'pdfcraft'):
+            continue
+        body += f'<article class="app-card"><h3>{e(app["name"])}</h3><p>{e(app["description"])}</p>{link(url("downloads/#"+app["repo"].lower()), "Latest builds →")}</article>'
+    body += '</div></section><p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations.</p>'
+    page('apps/', 'Applications', 'Meet WordCraft, GridCraft, DeckCraft, PDFCraft, the new Media preferences and MediaConverter on airOS.', body)
+
+def summit():
+    data = json.loads((ROOT / 'content/summit.json').read_text())
+    body = intro('Summit · native WebKit browser', 'The web. At home on Haiku.', 'Native controls, a compact toolbar and a modern multiprocess WebKit engine. Summit keeps growing alongside the desktop it runs on.')
+    body += f'<div class="actions summit-downloads">{link(url("downloads/#summit"), "Get Summit for airOS ↓", "button primary")}{link("https://github.com/jmgasper/summit/releases/tag/latest-haiku", "Get Summit for Haiku R1/beta6 ↗", "button")}</div>'
+    body += '<p class="note">Install both the browser and its matching WebKit engine. airOS builds are available for x86-64 and ARM64; the stock Haiku R1/beta6 build is x86-64. Hardware acceleration, high-density displays and device integration depend on the system and driver.</p>'
+    body += capture('summit')
+    body += '<div class="section-heading"><h2>More than a page viewer.</h2><span>Development preview</span></div><p class="section-lead">Tabs, saved sessions, bookmarks, downloads, page find, configurable search and per-site zoom are joined by tools for reading, media, extensions and debugging.</p>'
+    body += ''.join(feature_row(f) for f in data['features'])
+    body += '<aside class="note">Web-platform and extension compatibility are still evolving. Verified examples do not establish support for every extension or streaming service. The <a href="https://github.com/jmgasper/summit">Summit feature notes</a> describe supported subsets and the build tables identify their source commits.</aside>'
+    page('summit/', 'Summit browser', 'Explore Summit reader mode, PDFs, extensions, streaming media, privacy controls and native developer tools for airOS and Haiku.', body)
 
 def screenshots():
     shots = json.loads((ROOT / 'content/screenshots.json').read_text())
@@ -69,9 +115,9 @@ def screenshots():
     body += '<div class="gallery">'
     for i, shot in enumerate(shots):
         image = url('assets/screenshots/' + shot['file'])
-        body += f'''<figure data-category="{shot['category']}"><a class="screenshot-link" href="{image}" data-caption="{e(shot['title'])}"><img src="{image}" alt="{e(shot['title'] + ': ' + shot['description'], quote=True)}" loading="lazy"></a><figcaption><span class="section-number">{i+1:02d} / {shot['category']}</span><h2>{shot['title']}</h2><p>{shot['description']}</p>{link(shot['source'], 'About this capture ↗', 'subtle')}</figcaption></figure>'''
+        body += f'''<figure id="{shot['id']}" data-category="{shot['category']}"><a class="screenshot-link" href="{image}" data-caption="{e(shot['title'])}"><img src="{image}" alt="{e(shot['title'] + ': ' + shot['description'], quote=True)}" loading="lazy" width="{shot['width']}" height="{shot['height']}"></a><figcaption><span class="section-number">{i+1:02d} / {shot['category']}</span><h2>{shot['title']}</h2><p>{shot['description']}</p><p class="capture-date">{e(shot['captured'])}</p>{link(shot['source'], 'About this capture ↗', 'subtle')}</figcaption></figure>'''
     body += '</div><dialog id="lightbox"><form method="dialog"><button aria-label="Close full-size screenshot">Close ×</button></form><img alt=""><p></p></dialog>'
-    body += '<details class="capture-credits"><summary>Capture credits</summary><p>The AirTime capture includes <a href="https://peach.blender.org/about/">Big Buck Bunny</a>, © Blender Foundation, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p></details>'
+    body += '<details class="capture-credits"><summary>Capture credits</summary><p>The AirTime and MediaConverter captures include <a href="https://peach.blender.org/about/">Big Buck Bunny</a>, © Blender Foundation, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. The Cubie capture shows <a href="https://github.com/WebGLSamples/WebGLSamples.github.io/tree/master/aquarium">WebGL Aquarium</a>, © Google Inc. and contributors ('+link(url('assets/screenshots/webgl-aquarium-LICENSE.txt'), 'BSD licence notice')+').</p></details>'
     page('screenshots/', 'Screenshots', 'Explore real airOS application and desktop screenshots.', body)
 
 def hardware():
@@ -81,8 +127,8 @@ def hardware():
         if image := device.get('image'):
             image_url = url('assets/hardware/' + image['file'])
             photo = f'''<figure class="device-photo"><a href="{e(image_url, quote=True)}"><img src="{e(image_url, quote=True)}" alt="{e(image['alt'], quote=True)}" width="{image['width']}" height="{image['height']}" loading="lazy"></a><figcaption>Photo: {link(image['source'], e(image['credit']))} · {link(image['license_url'], e(image['license']))}</figcaption></figure>'''
-        body += f'''<article class="hardware-row"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}</div><div><h3>What’s working</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
-    body += '<aside class="note">Hardware notes reviewed 11 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
+        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>What’s working</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
+    body += '<aside class="note">Hardware notes reviewed 18 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
     page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Raspberry Pi 4 and x86-64 PCs.', body)
 
 def size(n):
@@ -90,7 +136,7 @@ def size(n):
 
 def downloads():
     body = intro('Downloads', 'Make yourself at home.', 'Get an airOS development image, or pick up an individual app for your existing installation.')
-    body += '<div class="section-heading"><h2>The operating system</h2><span>Latest successful published builds</span></div><div class="image-grid">'
+    body += '<div class="section-heading"><h2 id="system">The operating system</h2><span>Latest successful published builds</span></div><div class="image-grid">'
     titles = {'x86_64': ('x86-64', 'Intel & AMD PCs', 'ISO image · UEFI / BIOS'), 'arm64': ('ARM64', 'ROCK 5 ITX & UEFI ARM64', 'ISO image · UEFI'), 'rpi4': ('Raspberry Pi 4', 'A desktop on an SD card', 'SD card image · Pi 4')}
     for im in D['images']:
         title, subtitle, format = titles[im['target']]
@@ -107,14 +153,17 @@ def downloads():
         else:
             body += '<p class="availability">Public image coming soon</p>' + link('https://github.com/jmgasper/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
         body += '</div></article>'
-    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. Extract the ISO images before writing them to USB. For Pi 4, flash the SD image with a tool that supports .xz, such as Etcher.</aside>'
+    body += '</div><p class="meta"><strong>Cubie A7S:</strong> no public SD image yet. The ARM64 ISO above is for UEFI machines; see the <a href="'+url('hardware/#cubie')+'">Cubie build notes</a>.</p><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. Extract the ISO images before writing them to USB. For Pi 4, flash the SD image with a tool that supports .xz, such as Etcher.</aside>'
     body += '<div class="section-heading apps-heading"><h2>Native applications</h2><span>Haiku .hpkg packages</span></div><div class="app-grid">'
-    for i, app in enumerate(D['apps']):
+    for i, entry in enumerate(D['apps']):
+        app = {**entry, **next(a for a in json.loads((ROOT / 'content/project.json').read_text())['apps'] if a['repo'] == entry['repo'])}
         body += f'<article class="app-card" data-repo="{app["repo"]}" id="{app["repo"].lower()}"><span class="app-number">{i+1:02d}</span><h3>{app["name"]}</h3><p>{app["description"]}</p>'
         if app.get('note'):
             body += f'<p class="package-note">{app["note"]}</p>'
+        body += '<div class="app-packages">'
         if not app['assets']:
-            body += '<p class="availability">Not yet available publicly.</p>'
+            body += '<p class="availability">No public package published yet.</p>'
+            body += link('https://github.com/jmgasper/'+app['repo']+'/releases', 'Follow public releases ↗', 'release-fallback')
         else:
             for arch, label in [('x86_64', 'x86-64'), ('arm64', 'ARM64')]:
                 assets = [a for a in app['assets'] if a['name'].endswith(arch+'.hpkg')]
@@ -124,8 +173,13 @@ def downloads():
                     kind = ' · WebKit engine' if a['name'].startswith('summit_webkit') else ''
                     body += link(a['browser_download_url'], f'<span>{label}{kind}</span><small>{size(a["size"])} ↓</small>', 'package-link')
             body += '<div class="app-meta">' + link(app['release'], 'Build details & checksums ↗') + f'<span>{app["published"][:10]}</span></div>'
+        body += '</div>'
+        if app['repo'] == 'summit':
+            body += '<p class="package-note">Using stock Haiku R1/beta6? '+link('https://github.com/jmgasper/summit/releases/tag/latest-haiku', 'Get the dedicated x86-64 browser and engine ↗')+'</p>'
+        if app['repo'] in ('wordcraft', 'gridcraft', 'deckcraft', 'pdfcraft'):
+            body += link(url('apps/#'+app['repo']), 'Features, screenshots and port notes →', 'subtle')
         body += '</article>'
-    body += '</div><section class="install"><h2>Installing an app</h2><div><p>Choose the package for your architecture. Open it with Haiku’s package installer, or run:</p><pre><code>pkgman install /path/to/package.hpkg</code></pre><p>Packages target the current airOS/Haiku builds. Follow each release’s dependency notes; Summit also needs its matching WebKit engine.</p></div></section>'
+    body += '</div><section class="install"><h2>Installing an app</h2><div><p>Choose the package for your architecture. Open it with Haiku’s package installer, or run:</p><pre><code>pkgman install /path/to/package.hpkg</code></pre><p>Packages target airOS unless their release notes say otherwise. For stock Haiku, use the dedicated Summit build. Follow dependency notes and install Summit together with its matching WebKit engine.</p></div></section>'
     page('downloads/', 'Downloads', 'Download airOS images and native app packages for ARM64 and x86-64.', body)
 
 def sources():
@@ -181,7 +235,7 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / 'static', OUT)
-    for build in [home, screenshots, hardware, downloads, sources, changelog]:
+    for build in [home, applications, summit, screenshots, hardware, downloads, sources, changelog]:
         build()
     page('404/', 'Page not found', 'This airOS page could not be found.', intro('404', 'A little off course.', 'This page has moved or does not exist.') + link(url(), 'Back to the project →', 'button primary'))
     shutil.copy(OUT / '404/index.html', OUT / '404.html')

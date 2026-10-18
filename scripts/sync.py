@@ -111,7 +111,7 @@ def main():
         if metadata is None or metadata['private']:
             print('Skipping nonpublic source: ' + repo, flush=True)
             continue
-        entry = dict(name=app['name'], repo=repo, branch=metadata['default_branch'],
+        entry = dict(name=app['name'], repo=repo, branch=app.get('branch', metadata['default_branch']),
                      description=app['description'], group='Applications')
         if app.get('upstream'):
             upstream = api(f"repos/{app['upstream']}")
@@ -122,7 +122,7 @@ def main():
     for component in manifest['components']:
         pin = lock[component['name']]
         sources.append(dict(name=component['name'], repo='jmgasper/' + pin['repo'],
-                            branch=pin['branch'], base=pin.get('base_commit'),
+                            branch=pin['branch'], base=CONFIG.get('history_bases', {}).get(component['name'], {}).get('base', pin.get('base_commit')),
                             group='Libraries & firmware', description=component['used_by'],
                             pinned=pin['commit'], upstream=pin.get('upstream')))
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:

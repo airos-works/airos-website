@@ -1,0 +1,65 @@
+{
+  "reviewed": "2026-10-18",
+  "features": [
+    {
+      "id": "reading",
+      "title": "A better place to read",
+      "text": "Reader mode clears away page furniture. A bundled PDF viewer keeps documents inside the browser.",
+      "features": [
+        "Reader mode keeps the original article address in history",
+        "PDF navigation, search, zoom, password entry and original-file downloads",
+        "Native color, date and time pickers"
+      ],
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
+      "screenshot": "summit-reader"
+    },
+    {
+      "id": "extensions",
+      "title": "Bring your browser tools",
+      "text": "Install from Chrome Web Store or Firefox Add-ons, or load a local extension package. Review permissions in native dialogs.",
+      "features": [
+        "Toolbar actions, popups and restoration across restarts",
+        "uBlock Origin and Dark Reader have passed native runtime suites",
+        "1Password sign-in, inline filling and passkey integration have been verified for tested versions"
+      ],
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
+      "screenshot": "summit-extensions"
+    },
+    {
+      "id": "media",
+      "title": "Video, streaming and graphics",
+      "text": "Modern WebKit works with airOS GPU drivers and video decoders, using software paths when acceleration is unavailable.",
+      "features": [
+        "WebGL 1/2 and accelerated page compositing on supported GPUs",
+        "MediaSource streaming and direct MPEG-DASH with seeking, adaptive quality and live refresh",
+        "Clear Key encrypted media with temporary sessions; Widevine, PlayReady and FairPlay are unsupported"
+      ],
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md",
+      "screenshot": "summit"
+    },
+    {
+      "id": "privacy",
+      "title": "Control over each site",
+      "text": "Private windows, browsing-data controls and native website permissions put common choices close to hand.",
+      "features": [
+        "Certificate warnings and connection details",
+        "Origin-scoped permission prompts for device access",
+        "WebUSB and Web Bluetooth implementations; physical transfer/GATT coverage remains limited"
+      ],
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
+      "screenshot": "summit-private"
+    },
+    {
+      "id": "developer",
+      "title": "See what a page is doing",
+      "text": "Inspect a page, read its JavaScript console and investigate network requests from native developer tools.",
+      "features": [
+        "Page inspector, console and network request views",
+        "Optional built-in MCP server for local debugging tools",
+        "Inspect tabs, processes, memory, rendering, media and extensions; MCP is off by default"
+      ],
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
+      "screenshot": "summit-devtools"
+    }
+  ]
+}

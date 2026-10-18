@@ -1,51 +1,213 @@
 [
   {
-    "title": "Summit · airOS website",
-    "file": "summit-airos.png",
-    "category": "Apps",
-    "description": "The airOS website in Summit, captured directly from a Haiku desktop.",
-    "source": "https://github.com/jmgasper/summit"
+    "id": "summit-reader",
+    "title": "Summit · reader mode",
+    "category": "Summit",
+    "file": "summit-reader.png",
+    "captured": "2026-10-18",
+    "description": "Reader mode displaying an original sample article in the current browser on the Framework laptop.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
+    "provenance": "Direct mcp_server BScreen capture of a local sample article on Framework 13.",
+    "width": 1212,
+    "height": 874
   },
   {
-    "title": "Summit",
+    "id": "summit-devtools",
+    "title": "Summit · developer tools",
+    "category": "Summit",
+    "file": "summit-devtools.png",
+    "description": "The native Network inspector showing the request for the sample reader article.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
+    "captured": "2026-10-18",
+    "width": 1051,
+    "height": 793,
+    "provenance": "Direct native window capture on Framework 13."
+  },
+  {
+    "id": "summit-extensions",
+    "title": "Summit · extensions",
+    "category": "Summit",
+    "file": "summit-extensions.png",
+    "captured": "2026-10-18",
+    "description": "The current Extensions manager, showing installed extensions and the Firefox Add-ons and Chrome Web Store entry points.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
+    "width": 701,
+    "height": 614,
+    "provenance": "Direct native window capture on Framework 13."
+  },
+  {
+    "id": "summit-private",
+    "title": "Summit · private window",
+    "category": "Summit",
+    "file": "summit-private.png",
+    "captured": "2026-10-18",
+    "description": "An original sample article in a private window, with the private-browsing indicator in the toolbar.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
+    "width": 1212,
+    "height": 874,
+    "provenance": "Direct native window capture on Framework 13."
+  },
+  {
+    "id": "deckcraft",
+    "title": "DeckCraft",
+    "category": "Office",
+    "file": "deckcraft.png",
+    "description": "Native Haiku port showing the sample slide deck, thumbnails, ribbon and speaker notes.",
+    "source": "https://github.com/jmgasper/deckcraft/blob/haiku/docs/haiku.md",
+    "captured": "2026-10-18",
+    "width": 2076,
+    "height": 1323,
+    "provenance": "/mnt/HaikuWork/apps/deckcraft/artifacts/validation/final-editor.png"
+  },
+  {
+    "id": "pdfcraft",
+    "title": "PDFCraft",
+    "category": "Office",
+    "file": "pdfcraft.png",
+    "description": "Native Haiku port displaying the synthetic three-page PDF used in its validation.",
+    "source": "https://github.com/jmgasper/pdfcraft/blob/feat/airos-port/docs/haiku.md",
+    "captured": "2026-10-18",
+    "width": 2076,
+    "height": 1323,
+    "provenance": "/mnt/HaikuWork/tmp/pdfcraft-final.png"
+  },
+  {
+    "id": "cubie-graphics",
+    "title": "Cubie A7S · accelerated graphics",
+    "category": "Hardware",
+    "file": "cubie-graphics.jpg",
+    "description": "Summit running the WebGL Aquarium on the Cubie A7S. This five-fish lab capture is an illustration, not a general performance benchmark.",
+    "source": "https://github.com/jmgasper/haiku/blob/master/tools/cubie-a7s/mesa/README.md",
+    "captured": "2026-10-11",
+    "width": 1920,
+    "height": 1080,
+    "provenance": "/mnt/HaikuWork/cubie/evidence/gpu/m5/final1-aquarium5.jpg"
+  },
+  {
+    "id": "rpi4-airtop",
+    "title": "Raspberry Pi 4 · AirTop",
+    "category": "Hardware",
+    "file": "rpi4-airtop.png",
+    "description": "AirTop on the Pi desktop, showing CPU, memory, network, thermal and process information after the performance update.",
+    "source": "https://github.com/jmgasper/haiku/blob/master/docs/rpi4/PERFORMANCE-20261008.md",
+    "captured": "2026-10-09",
+    "width": 1920,
+    "height": 1080,
+    "provenance": "/mnt/HaikuWork/rpi4/evidence/performance-20261008/airtop-process-demand/installed-ui/candidate-ui.png"
+  },
+  {
+    "id": "wordcraft",
+    "title": "WordCraft",
+    "category": "Office",
+    "file": "wordcraft.png",
+    "description": "The sample Open Studio Handbook in WordCraft, captured from the current native port on the Framework laptop.",
+    "source": "https://github.com/jmgasper/wordcraft/blob/haiku/docs/haiku.md",
+    "captured": "2026-10-18",
+    "width": 1292,
+    "height": 853,
+    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits."
+  },
+  {
+    "id": "gridcraft",
+    "title": "GridCraft",
+    "category": "Office",
+    "file": "gridcraft.png",
+    "description": "The sample quarterly sales workbook, with formulas, a table and charts, running on the Framework laptop.",
+    "source": "https://github.com/jmgasper/gridcraft/blob/haiku/docs/haiku.md",
+    "captured": "2026-10-18",
+    "width": 1197,
+    "height": 789,
+    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits."
+  },
+  {
+    "id": "media-preferences",
+    "title": "Media preferences",
+    "category": "Media",
+    "file": "media-preferences.png",
+    "description": "The new sound-output page, device sidebar, volume control and test-sound action on the Framework laptop.",
+    "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
+    "captured": "2026-10-18",
+    "width": 1042,
+    "height": 849,
+    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits."
+  },
+  {
+    "id": "mediaconverter",
+    "title": "MediaConverter",
+    "category": "Media",
+    "file": "mediaconverter.png",
+    "description": "A Big Buck Bunny clip in the new conversion queue, with a source preview and H.264 GPU encoding selected on the AMD Radeon 760M.",
+    "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
+    "captured": "2026-10-18",
+    "width": 1112,
+    "height": 949,
+    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits."
+  },
+  {
+    "title": "Summit · native browser",
     "file": "summit.png",
-    "category": "Apps",
-    "description": "The web, in a native browser. WebKit rendering with Haiku window controls.",
-    "source": "https://github.com/jmgasper/summit/tree/main/docs/screenshots"
+    "category": "Summit",
+    "description": "The refreshed airOS website in the current Summit browser, captured from a local preview on the Framework laptop.",
+    "source": "https://github.com/jmgasper/summit",
+    "id": "summit",
+    "width": 1212,
+    "height": 874,
+    "captured": "2026-10-18",
+    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region."
   },
   {
     "title": "AirShot",
     "file": "airshot.png",
     "category": "Apps",
     "description": "The capture editor, with drawing tools, colours, crop and clipboard export.",
-    "source": "https://github.com/jmgasper/airShot"
+    "source": "https://github.com/jmgasper/airShot",
+    "id": "airshot",
+    "width": 1020,
+    "height": 690,
+    "captured": "Earlier development capture"
   },
   {
     "title": "AirTime",
     "file": "airtime.jpg",
     "category": "Apps",
     "description": "HEVC 10-bit playback on Raspberry Pi 4.",
-    "source": "https://github.com/jmgasper/airTime"
+    "source": "https://github.com/jmgasper/airTime",
+    "id": "airtime",
+    "width": 1920,
+    "height": 1080,
+    "captured": "Earlier development capture"
   },
   {
     "title": "Amp",
     "file": "amp.png",
     "category": "Apps",
     "description": "A familiar music library, with playlists and Music Assistant integration.",
-    "source": "https://github.com/jmgasper/amp"
+    "source": "https://github.com/jmgasper/amp",
+    "id": "amp",
+    "width": 1280,
+    "height": 800,
+    "captured": "Earlier development capture"
   },
   {
     "title": "Burrow",
     "file": "burrow.png",
     "category": "Apps",
     "description": "A connected test VPN profile, with connection details, traffic and routes.",
-    "source": "https://github.com/jmgasper/burrow/tree/master/docs/screenshots"
+    "source": "https://github.com/jmgasper/burrow/tree/master/docs/screenshots",
+    "id": "burrow",
+    "width": 827,
+    "height": 490,
+    "captured": "Earlier development capture"
   },
   {
     "title": "Turbo Chook",
     "file": "turbo-chook.png",
     "category": "Apps",
     "description": "A branch graph and searchable history in a sample repository.",
-    "source": "https://github.com/jmgasper/turbo_chook"
+    "source": "https://github.com/jmgasper/turbo_chook",
+    "id": "turbo-chook",
+    "width": 1160,
+    "height": 722,
+    "captured": "Earlier development capture"
   }
 ]

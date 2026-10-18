@@ -11,7 +11,14 @@
       "Intel AX210 Wi-Fi, including tested 802.11ax association"
     ],
     "limits": "Wi-Fi 6 mode coverage and Bluetooth pairing remain incomplete. Results are specific to the ROCK 5 ITX lab board.",
-    "source": "docs/rock5-itx/STATUS.md"
+    "source": "docs/rock5-itx/STATUS.md",
+    "id": "rock5",
+    "links": [
+      {
+        "label": "GPU validation",
+        "path": "docs/rock5-itx/GPU.md"
+      }
+    ]
   },
   {
     "name": "Radxa Cubie A7S",
@@ -20,12 +27,12 @@
     "summary": "A compact ARM desktop with PowerVR graphics and onboard wireless.",
     "features": [
       "Bootable SD image and native Haiku desktop",
-      "PowerVR BXM-4-64 graphics with Mesa Zink: OpenGL 2.1 and OpenGL ES 2.0",
-      "Summit WebGL 1 rendering; software graphics fallback when GPU firmware is unavailable",
-      "Onboard AIC8800 Wi-Fi: 5 GHz WPA2, DHCP and automatic reconnection",
-      "Bluetooth adapter detection and Low Energy discovery"
+      "PowerVR BXM-4-64 graphics through Mesa Zink: OpenGL 3.2 and OpenGL ES 3.1",
+      "Summit WebGL 1 and 2, with transform feedback support",
+      "Onboard AIC8800 Wi-Fi: 5 GHz WPA2, 802.11ac, DHCP and reconnection",
+      "Bluetooth Low Energy discovery; an A2DP audio implementation is available for testing"
     ],
-    "limits": "WebGL 2 is unavailable with the current graphics stack. Bluetooth pairing and audio profiles are not established by the wireless tests. A public SD image has not yet been published.",
+    "limits": "Bluetooth speaker pairing and audio over the air remain unverified on this board. Cooling matters under sustained load. A public Cubie SD image has not yet been published; the generic ARM64 ISO is not its SD image.",
     "source": "tools/cubie-a7s/mesa/README.md",
     "links": [
       {
@@ -35,6 +42,14 @@
       {
         "label": "SD image build instructions",
         "path": "tools/cubie-a7s/build-sd-image.sh"
+      },
+      {
+        "label": "Bluetooth audio status",
+        "path": "docs/cubie-a7s/BLUETOOTH-AUDIO.md"
+      },
+      {
+        "label": "Thermal testing",
+        "path": "docs/cubie-a7s/THERMAL.md"
       }
     ],
     "image": {
@@ -46,7 +61,9 @@
       "credit": "Radxa",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
-    }
+    },
+    "id": "cubie",
+    "screenshot": "cubie-graphics"
   },
   {
     "name": "Raspberry Pi 4",
@@ -54,27 +71,77 @@
     "status": "Tested on hardware",
     "summary": "A bootable SD image for the small, familiar computer.",
     "features": [
-      "Desktop on HDMI0, Ethernet and onboard Wi-Fi",
-      "V3D accelerated OpenGL and WebGL",
-      "Hardware H.264 and HEVC video decoding",
-      "Bluetooth discovery and HDMI audio driver"
+      "SD-card first-run setup: expand the filesystem, set the timezone and synchronize the clock",
+      "Dual HDMI desktop with display arrangement and tested disconnect/reconnect recovery",
+      "V3D accelerated OpenGL and WebGL, with lower-copy EGL window presentation",
+      "Hardware H.264 and HEVC decoding, Ethernet and onboard Wi-Fi",
+      "Waveshare 3.5-inch DSI auxiliary display with AirTop CPU, network and temperature panels"
     ],
-    "limits": "Second HDMI output and Bluetooth pairing are not verified. Audio output has not been listened to. 4K HEVC presentation and H.264 playback have performance limits.",
-    "source": "docs/rpi4/STATUS.md"
+    "limits": "DSI touch and Bluetooth pairing are not verified. HDMI audio output has not been listened to. Video throughput depends on codec, resolution and presentation path; see the media tests.",
+    "source": "docs/rpi4/STATUS.md",
+    "links": [
+      {
+        "label": "Display and hotplug",
+        "path": "docs/rpi4/DISPLAY.md"
+      },
+      {
+        "label": "DSI panel",
+        "path": "docs/rpi4/DSI.md"
+      },
+      {
+        "label": "Media testing",
+        "path": "docs/rpi4/MEDIA.md"
+      }
+    ],
+    "id": "rpi4",
+    "screenshot": "rpi4-airtop"
   },
   {
-    "name": "x86",
-    "chip": "x86-64 · Intel & AMD PCs",
+    "name": "AMD Radeon Pro WX 5100",
+    "chip": "x86-64 · Polaris 10 · X399 workstation",
     "status": "Tested on hardware",
-    "summary": "Expanded graphics, wireless and peripheral support for 64-bit PCs.",
+    "summary": "An accelerated desktop on AMD: native display output, graphics and video.",
     "features": [
-      "NVMe boot, multicore CPUs and Intel I211 Ethernet on the tested AMD workstation",
-      "NVIDIA GTX 1070 / 1080 Ti: Vulkan, OpenGL 4.5 and H.264 NVDEC on the 1080 Ti",
-      "Two 4K displays with per-monitor scaling and arrangement on NVIDIA",
-      "USB 3 storage and gigabit adapters across AMD and ASMedia controllers",
-      "MediaTek MT7922 Wi-Fi, Bluetooth discovery and SMB 2/3 network shares"
+      "Linux 6.18 amdgpu driver port with DRM, memory management and Display Core integrated into Haiku",
+      "Two 3840 × 2160 displays at 60 Hz, with scaling, arrangement and tested DisplayPort hotplug",
+      "Mesa radeonsi for OpenGL, OpenGL ES and Summit GPU compositing",
+      "RADV Vulkan 1.4, including windowed Vulkan through the in-process Wayland server",
+      "UVD H.264, HEVC and Main 10 decoding; VCE H.264/HEVC encoding",
+      "airTime 4K H.264 at 60 fps and HEVC Main 10 at 30 fps without drops in the recorded trials"
     ],
-    "limits": "MediaTek Wi-Fi uses legacy rates; Bluetooth pairing and physical display hotplug are unverified. Radeon Pro WX 5100 GPU rendering and H.264/HEVC decoding pass private development trials, but native display, system graphics defaults and a complete release remain unfinished. Suspend resumes with storage and network issues.",
-    "source": "docs/x399-workstation/STATUS.md"
+    "limits": "These results apply to the tested WX 5100, not every AMD GPU. Mixed-scale layouts can use a software cursor. Sustained mixed video/Vulkan stress has exposed rare decode mismatches; the detailed record describes fixes and remaining limits.",
+    "source": "docs/x399-workstation/AMDGPU-DRM.md",
+    "id": "amd",
+    "links": [
+      {
+        "label": "Workstation support and earlier NVIDIA tests",
+        "path": "docs/x399-workstation/STATUS.md"
+      },
+      {
+        "label": "Fractional display scaling",
+        "path": "docs/x399-workstation/FRACTIONAL-SCALING.md"
+      }
+    ]
+  },
+  {
+    "id": "framework",
+    "name": "Framework Laptop 13",
+    "chip": "x86-64 · AMD Radeon 760M",
+    "status": "Tested on hardware",
+    "summary": "AMD graphics on a high-density laptop desktop.",
+    "features": [
+      "Native desktop output through amdgpu_drm",
+      "Scaled desktop and native application windows; the Craft ports have been checked at 175% density",
+      "MediaConverter detects the Radeon 760M and offers hardware H.264 encoding"
+    ],
+    "limits": "This is the tested Radeon 760M configuration, not a claim about every Framework model. Suspend and resume remain development work. See the driver source and current package notes for device-specific coverage.",
+    "source": "docs/x399-workstation/AMDGPU-DRM.md",
+    "screenshot": "mediaconverter",
+    "links": [
+      {
+        "label": "Hardware-aware conversion engine",
+        "path": "src/apps/mediaconverter/engine"
+      }
+    ]
   }
 ]
