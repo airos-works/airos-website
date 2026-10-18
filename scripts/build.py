@@ -28,8 +28,8 @@ def page(path, title, description, body):
     nav = ''.join(link(url(p), t, 'active' if (p == path or p == 'changelog/' and path.startswith(p)) else '') for p, t in NAV)
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)} · airOS</title><meta name="description" content="{e(description, quote=True)}">
-<link rel="canonical" href="{canonical}"><meta property="og:title" content="{e(title)} · airOS">
+<title>air/OS</title><meta name="description" content="{e(description, quote=True)}">
+<link rel="canonical" href="{canonical}"><meta property="og:title" content="air/OS">
 <meta property="og:description" content="{e(description, quote=True)}"><meta property="og:type" content="website">
 <meta property="og:url" content="{canonical}"><meta property="og:image" content="{ORIGIN}/assets/logo.png">
 <link rel="icon" href="{url('favicon.ico')}" sizes="16x16 32x32 48x48"><link rel="icon" type="image/svg+xml" href="{url('assets/favicon.svg')}" sizes="any"><link rel="stylesheet" href="{url('assets/site.css')}">
@@ -48,12 +48,11 @@ def intro(kicker, title, text):
     return f'<div class="page-intro"><p class="eyebrow">{kicker}</p><h1>{title}</h1><p class="lead">{text}</p></div>'
 
 def home():
-    body = f'''<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="dot"></span> A new horizon for a familiar desktop</p>
+    body = f'''<section class="hero"><div class="hero-copy">
 <h1>Build on Haiku.<br>Extended with <em>AI.</em></h1>
 <p class="lead">airOS is an independent, AI-assisted exploration of what Haiku can do — on more devices, with more native apps, and with the same love for a responsive, personal desktop.</p>
 <div class="actions">{link(url('downloads/'), 'Explore the downloads <span aria-hidden="true">↗</span>', 'button primary')}{link(url('screenshots/'), 'See it in action <span aria-hidden="true">→</span>', 'text-link')}</div>
 </div><div class="hero-art" aria-hidden="true"><div class="orbit"></div><img src="{url('assets/mark.png')}" alt=""></div></section>
-<div class="project-strip"><span>AMD &amp; NVIDIA graphics</span><span>ROCK 5 ITX &amp; Cubie A7S</span><span>Raspberry Pi 4</span></div>
 <section class="about-section"><div><p class="eyebrow">The foundation</p><h2>Haiku made<br> this possible.</h2></div><div class="prose"><p>Haiku’s contributors have spent decades building an open-source operating system inspired by BeOS: fast, coherent and thoughtfully designed for personal computing. Its kernel, desktop, native APIs and community are the foundation of everything here.</p><p>airOS builds on that work with device support, desktop improvements and applications. It is an independent fork, with its own development approach.</p>{link('https://www.haiku-os.org/', 'Haiku Project ↗', 'text-link')}</div></section>
 <section class="principles"><article><span class="section-number">01 / EXPLORE</span><h3>More hardware.</h3><p>From ARM boards to a desktop workstation, new drivers and ports bring Haiku’s desktop to more places.</p>{link(url('hardware/'), 'See what works →')}</article><article><span class="section-number">02 / MAKE</span><h3>More everyday apps.</h3><p>Browse, listen, watch, capture and create with native applications that feel at home on the desktop.</p>{link(url('screenshots/'), 'Take a look →')}</article><article><span class="section-number">03 / ITERATE</span><h3>A faster feedback loop.</h3><p>AI helps investigate unfamiliar code, develop ports and test ideas quickly. Builds, hardware checks and public Git history make progress inspectable.</p>{link(url('changelog/'), 'Follow the changes →')}</article></section>
 <section class="release-highlights"><div class="section-heading"><h2>New on your desktop.</h2><span>October 2026</span></div><div class="highlight-grid">
@@ -75,7 +74,13 @@ def feature_row(item, download=None):
     links = link(item['source'], 'Feature and port notes ↗', 'text-link')
     if download:
         links += link(url(download), 'Build availability →', 'text-link')
-    return f'''<article class="feature-row" id="{item['id']}"><div><h3>{e(item['title'])}</h3><p>{e(item['text'])}</p><ul class="checks">{''.join('<li>'+e(x)+'</li>' for x in item['features'])}</ul><div class="device-links">{links}</div></div>{capture(item['screenshot'])}</article>'''
+    heading = f'<h3>{e(item["title"])}</h3><p>{e(item["text"])}</p>'
+    details = f'<ul class="checks">{"".join("<li>"+e(x)+"</li>" for x in item["features"])}</ul><div class="device-links">{links}</div>'
+    if item.get('screenshot'):
+        columns = f'<div>{heading}{details}</div>{capture(item["screenshot"])}'
+    else:
+        columns = f'<div>{heading}</div><div>{details}</div>'
+    return f'<article class="feature-row" id="{item["id"]}">{columns}</article>'
 
 def applications():
     data = json.loads((ROOT / 'content/apps.json').read_text())
@@ -127,9 +132,9 @@ def hardware():
         if image := device.get('image'):
             image_url = url('assets/hardware/' + image['file'])
             photo = f'''<figure class="device-photo"><a href="{e(image_url, quote=True)}"><img src="{e(image_url, quote=True)}" alt="{e(image['alt'], quote=True)}" width="{image['width']}" height="{image['height']}" loading="lazy"></a><figcaption>Photo: {link(image['source'], e(image['credit']))} · {link(image['license_url'], e(image['license']))}</figcaption></figure>'''
-        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>What’s working</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
+        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
     body += '<aside class="note">Hardware notes reviewed 18 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
-    page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Raspberry Pi 4 and x86-64 PCs.', body)
+    page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Raspberry Pi 4, Framework 13, AMD graphics and NVIDIA graphics, NVDEC decoding and experimental NVENC encoding.', body)
 
 def size(n):
     return f'{n / 1048576:.1f} MB' if n >= 1048576 else f'{n / 1024:.0f} KB'

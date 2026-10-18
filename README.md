@@ -51,8 +51,8 @@ captures, CSS and JavaScript. The build produces `dist/`. Screenshots are real c
 13 on 18 October 2026; DeckCraft and PDFCraft use their same-day native validation
 captures. The Cubie and Raspberry Pi gallery entries are dated hardware-test
 captures. Earlier app images are explicitly labelled as development captures.
-No UI is reconstructed or generated. The sample article used for Summit reader
-mode was written for this capture. The favicon uses the
+No UI is reconstructed or generated. Summit is represented by a single capture
+of the airOS website, shared by its feature page and the gallery. The favicon uses the
 [square airOS mark](https://github.com/jmgasper/haiku/blob/master/data/artwork/airos/airos-mark.svg),
 with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime and MediaConverter captures include Big Buck Bunny, © Blender Foundation,
@@ -66,6 +66,21 @@ The Cubie A7S board photo is reproduced unchanged from [Radxa Docs](https://docs
 © Radxa Computer (Shenzhen) Co.,Ltd., under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 The [source image](https://github.com/radxa-docs/docs/blob/bfb1f40a31d62ee504951a0b93155bb5a481e752/static/img/cubie/a7s/cubie-a7s-view.webp)
 is stored locally in `static/assets/hardware/` and credited on the hardware page.
+
+The other hardware photos are stored in the same directory and credited beside
+each image. The Wikimedia images use the supplied 1280-pixel thumbnails, with
+no cropping or other edits; the ROCK 5 ITX image is reproduced unchanged.
+
+| Photo | Source | Credit and licence |
+| --- | --- | --- |
+| `rock-5-itx.webp` | [Radxa Docs](https://docs.radxa.com/en/rock5), [source image](https://docs.radxa.com/home/product-pictures/rock5itx.webp) | © Radxa Computer (Shenzhen) Co.,Ltd., [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `raspberry-pi-4.jpg` | [Raspberry Pi 4 Model B – Side](https://commons.wikimedia.org/wiki/File:Raspberry_Pi_4_Model_B_-_Side.jpg) | Michael H. (Laserlicht) / Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `framework-13.jpg` | [Framework laptop AMD 13](https://commons.wikimedia.org/wiki/File:Framework_laptop_AMD_13.jpg) | Thcipriani / Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+
+The NVIDIA hardware entry distinguishes the recorded Pascal graphics and NVDEC
+tests from the experimental NVENC implementation. Its sources are the
+[workstation test notes](https://github.com/jmgasper/haiku/blob/master/docs/x399-workstation/STATUS.md)
+and [MediaConverter NVENC notes](https://github.com/jmgasper/haiku/blob/master/docs/airos/MEDIACONVERTER.md#nvidia-nvenc).
 
 ## Keeping Git history current
 

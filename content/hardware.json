@@ -18,7 +18,17 @@
         "label": "GPU validation",
         "path": "docs/rock5-itx/GPU.md"
       }
-    ]
+    ],
+    "image": {
+      "file": "rock-5-itx.webp",
+      "alt": "Radxa ROCK 5 ITX motherboard viewed from above",
+      "width": 990,
+      "height": 450,
+      "source": "https://docs.radxa.com/en/rock5",
+      "credit": "Radxa",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
   },
   {
     "name": "Radxa Cubie A7S",
@@ -94,7 +104,17 @@
       }
     ],
     "id": "rpi4",
-    "screenshot": "rpi4-airtop"
+    "screenshot": "rpi4-airtop",
+    "image": {
+      "file": "raspberry-pi-4.jpg",
+      "alt": "Raspberry Pi 4 Model B board with its USB, Ethernet and HDMI ports visible",
+      "width": 1280,
+      "height": 753,
+      "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_4_Model_B_-_Side.jpg",
+      "credit": "Michael H. (Laserlicht) / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
   },
   {
     "name": "AMD Radeon Pro WX 5100",
@@ -124,6 +144,38 @@
     ]
   },
   {
+    "id": "nvidia",
+    "name": "NVIDIA GeForce GTX 1070 / GTX 1080 Ti",
+    "chip": "x86-64 · Pascal · X399 workstation",
+    "status": "Graphics & NVDEC tested · NVENC experimental",
+    "summary": "Native NVIDIA graphics and hardware video decoding, with an experimental encoding path.",
+    "features_title": "Graphics and video support",
+    "features": [
+      "Native display output through nvidia_rm, with dual 4K monitors, per-display scaling and desktop arrangement",
+      "Mesa NVK Vulkan and Zink OpenGL 4.5 on the tested Pascal cards",
+      "NVDEC hardware H.264 decoding through a system media add-on: tested GTX 1080 Ti streams match FFmpeg software decoding byte for byte",
+      "NVDEC decoded the recorded 1080p test at 232 frames per second; NVPlay provides playback with audio and seeking",
+      "Experimental NVENC integration in MediaConverter for H.264, HEVC Main and HEVC Main 10 on compatible encoder generations",
+      "NVENC must pass an encode/decode self-test for each card and format before use; failed or unavailable encoding paths use the CPU"
+    ],
+    "limits": "NVENC has not yet been validated on an NVIDIA card; its application integration was tested with a software stand-in. B-frame encoding is not implemented, and AV1 encoding uses the CPU, including on Ada and Blackwell. Verified NVDEC coverage is progressive 8-bit 4:2:0 H.264; interlaced, 4:2:2 and higher-bit-depth streams are unsupported and may fail to play instead of falling back. NVIDIA 2D drawing remains unaccelerated. These results describe the earlier Pascal workstation configuration, not every NVIDIA GPU.",
+    "source": "docs/x399-workstation/STATUS.md",
+    "links": [
+      {
+        "label": "NVENC implementation and limits",
+        "path": "docs/airos/MEDIACONVERTER.md#nvidia-nvenc"
+      },
+      {
+        "label": "NVENC encoder source",
+        "path": "src/add-ons/media/encoders/nvenc"
+      },
+      {
+        "label": "NVDEC decoder source",
+        "path": "src/add-ons/media/plugins/nvdec"
+      }
+    ]
+  },
+  {
     "id": "framework",
     "name": "Framework Laptop 13",
     "chip": "x86-64 · AMD Radeon 760M",
@@ -142,6 +194,16 @@
         "label": "Hardware-aware conversion engine",
         "path": "src/apps/mediaconverter/engine"
       }
-    ]
+    ],
+    "image": {
+      "file": "framework-13.jpg",
+      "alt": "A closed Framework Laptop 13 AMD with an Ethernet adapter and Framework screwdriver",
+      "width": 1280,
+      "height": 853,
+      "source": "https://commons.wikimedia.org/wiki/File:Framework_laptop_AMD_13.jpg",
+      "credit": "Thcipriani / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
   }
 ]

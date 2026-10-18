@@ -1,51 +1,15 @@
 [
   {
-    "id": "summit-reader",
-    "title": "Summit · reader mode",
+    "title": "Summit · airos.works",
+    "file": "summit.png",
     "category": "Summit",
-    "file": "summit-reader.png",
-    "captured": "2026-10-18",
-    "description": "Reader mode displaying an original sample article in the current browser on the Framework laptop.",
-    "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
-    "provenance": "Direct mcp_server BScreen capture of a local sample article on Framework 13.",
-    "width": 1212,
-    "height": 874
-  },
-  {
-    "id": "summit-devtools",
-    "title": "Summit · developer tools",
-    "category": "Summit",
-    "file": "summit-devtools.png",
-    "description": "The native Network inspector showing the request for the sample reader article.",
-    "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
-    "captured": "2026-10-18",
-    "width": 1051,
-    "height": 793,
-    "provenance": "Direct native window capture on Framework 13."
-  },
-  {
-    "id": "summit-extensions",
-    "title": "Summit · extensions",
-    "category": "Summit",
-    "file": "summit-extensions.png",
-    "captured": "2026-10-18",
-    "description": "The current Extensions manager, showing installed extensions and the Firefox Add-ons and Chrome Web Store entry points.",
-    "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
-    "width": 701,
-    "height": 614,
-    "provenance": "Direct native window capture on Framework 13."
-  },
-  {
-    "id": "summit-private",
-    "title": "Summit · private window",
-    "category": "Summit",
-    "file": "summit-private.png",
-    "captured": "2026-10-18",
-    "description": "An original sample article in a private window, with the private-browsing indicator in the toolbar.",
-    "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
+    "description": "The refreshed airOS website in the current Summit browser, captured from a local preview on the Framework laptop.",
+    "source": "https://github.com/jmgasper/summit",
+    "id": "summit",
     "width": 1212,
     "height": 874,
-    "provenance": "Direct native window capture on Framework 13."
+    "captured": "2026-10-18",
+    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region."
   },
   {
     "id": "deckcraft",
@@ -142,18 +106,6 @@
     "width": 1112,
     "height": 949,
     "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits."
-  },
-  {
-    "title": "Summit · native browser",
-    "file": "summit.png",
-    "category": "Summit",
-    "description": "The refreshed airOS website in the current Summit browser, captured from a local preview on the Framework laptop.",
-    "source": "https://github.com/jmgasper/summit",
-    "id": "summit",
-    "width": 1212,
-    "height": 874,
-    "captured": "2026-10-18",
-    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region."
   },
   {
     "title": "AirShot",

@@ -10,8 +10,7 @@
         "PDF navigation, search, zoom, password entry and original-file downloads",
         "Native color, date and time pickers"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
-      "screenshot": "summit-reader"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md"
     },
     {
       "id": "extensions",
@@ -22,8 +21,7 @@
         "uBlock Origin and Dark Reader have passed native runtime suites",
         "1Password sign-in, inline filling and passkey integration have been verified for tested versions"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
-      "screenshot": "summit-extensions"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md"
     },
     {
       "id": "media",
@@ -34,8 +32,7 @@
         "MediaSource streaming and direct MPEG-DASH with seeking, adaptive quality and live refresh",
         "Clear Key encrypted media with temporary sessions; Widevine, PlayReady and FairPlay are unsupported"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md",
-      "screenshot": "summit"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md"
     },
     {
       "id": "privacy",
@@ -46,8 +43,7 @@
         "Origin-scoped permission prompts for device access",
         "WebUSB and Web Bluetooth implementations; physical transfer/GATT coverage remains limited"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
-      "screenshot": "summit-private"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md"
     },
     {
       "id": "developer",
@@ -58,8 +54,7 @@
         "Optional built-in MCP server for local debugging tools",
         "Inspect tabs, processes, memory, rendering, media and extensions; MCP is off by default"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
-      "screenshot": "summit-devtools"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md"
     }
   ]
 }
