@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-18T00:10:10+00:00",
-  "ci_head": "91cb94eec8e825026e02d83e8d2dbbcd2c36dd95",
+  "updated": "2026-10-18T01:27:18+00:00",
+  "ci_head": "3e02433120733035305a401ff6347916fc2c12f4",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "8ac21bf43f93e874179559f2a03a0735c35389cc",
+      "head": "afa363cef3b53492e14aa361993aaa000c239398",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -4008,6 +4008,12 @@
           "subject": "AGENTS.md: master is the integration branch"
         },
         {
+          "sha": "e6ecc742c177359506a572769de7ea62b341a00c",
+          "url": "https://github.com/jmgasper/haiku/commit/e6ecc742c177359506a572769de7ea62b341a00c",
+          "date": "2026-10-05T06:00:14Z",
+          "subject": "ipv4: UnblockSource/DropSSM must remove the source address"
+        },
+        {
           "sha": "7ff51ba9d7984b2cc5ffeecfe64596172232cbc9",
           "url": "https://github.com/jmgasper/haiku/commit/7ff51ba9d7984b2cc5ffeecfe64596172232cbc9",
           "date": "2026-10-05T06:05:12Z",
@@ -4060,6 +4066,18 @@
           "url": "https://github.com/jmgasper/haiku/commit/6c37f3ed6804cbf781e96fabe4b7bc48fd01aea7",
           "date": "2026-10-05T13:51:10Z",
           "subject": "Merge branch 'airos-ci-demo-glob': image file globs without . and .."
+        },
+        {
+          "sha": "c134e8f922c00181749e3719021d27dcb310dcc1",
+          "url": "https://github.com/jmgasper/haiku/commit/c134e8f922c00181749e3719021d27dcb310dcc1",
+          "date": "2026-10-05T18:48:34Z",
+          "subject": "pkgman: be consistent in return code/message. Closes #20379."
+        },
+        {
+          "sha": "f6e670ae3cac1f646b47f23988c89fea55cf2e1f",
+          "url": "https://github.com/jmgasper/haiku/commit/f6e670ae3cac1f646b47f23988c89fea55cf2e1f",
+          "date": "2026-10-05T18:50:12Z",
+          "subject": "BSpinner: Inherit colors from parent view"
         },
         {
           "sha": "e19fd52191f1b3a08826cd7f7b9694433a19e433",
@@ -4206,6 +4224,12 @@
           "subject": "v3d: add explicit CPU ownership for cached texture buffers"
         },
         {
+          "sha": "7f32a78c620905d0c5fd10dcf4c28d68c1dc4c7e",
+          "url": "https://github.com/jmgasper/haiku/commit/7f32a78c620905d0c5fd10dcf4c28d68c1dc4c7e",
+          "date": "2026-10-06T06:13:04Z",
+          "subject": "radeon_hd: fix crtc control register state tracing on evergreen+"
+        },
+        {
           "sha": "ad2cc573029ce91507ad494a08eca9bc6962e9f4",
           "url": "https://github.com/jmgasper/haiku/commit/ad2cc573029ce91507ad494a08eca9bc6962e9f4",
           "date": "2026-10-06T06:19:56Z",
@@ -4242,10 +4266,22 @@
           "subject": "rpi_hevc: convert column surfaces in cache-sized row groups"
         },
         {
+          "sha": "d5ab584f8c517da9df96464e12e66373155988ae",
+          "url": "https://github.com/jmgasper/haiku/commit/d5ab584f8c517da9df96464e12e66373155988ae",
+          "date": "2026-10-06T07:30:56Z",
+          "subject": "XHCI: Style fixes: pointer style, indent switch blocks, initializer list."
+        },
+        {
           "sha": "efc88be7c0fca6a09c81dfcf9322982f88154a35",
           "url": "https://github.com/jmgasper/haiku/commit/efc88be7c0fca6a09c81dfcf9322982f88154a35",
           "date": "2026-10-06T07:39:18Z",
           "subject": "tcp: remove reused connections before changing their hash key"
+        },
+        {
+          "sha": "d0bea294e76bb48c10753b199faf0ec2683f0cc4",
+          "url": "https://github.com/jmgasper/haiku/commit/d0bea294e76bb48c10753b199faf0ec2683f0cc4",
+          "date": "2026-10-06T07:57:53Z",
+          "subject": "kernel/vm: fix memory range validation for last page"
         },
         {
           "sha": "bdcf783a0e5aedd9adeb436adfca156cf40656d5",
@@ -4254,16 +4290,40 @@
           "subject": "rpi4: accelerate large GPU readbacks and adapt Summit banding"
         },
         {
+          "sha": "07fa0d62bf371abb967c37b1e675514a5e75d786",
+          "url": "https://github.com/jmgasper/haiku/commit/07fa0d62bf371abb967c37b1e675514a5e75d786",
+          "date": "2026-10-06T08:01:58Z",
+          "subject": "usb: switch IsRootHub to Depth"
+        },
+        {
+          "sha": "fcdc4cb8289adc4fd1e45831e776f0c9fb9b260c",
+          "url": "https://github.com/jmgasper/haiku/commit/fcdc4cb8289adc4fd1e45831e776f0c9fb9b260c",
+          "date": "2026-10-06T08:13:31Z",
+          "subject": "build: add acpi_ac and acpi_lid to the regular image"
+        },
+        {
           "sha": "9946e4c4c8f50de2dab0439e2cd0c091386e80d5",
           "url": "https://github.com/jmgasper/haiku/commit/9946e4c4c8f50de2dab0439e2cd0c091386e80d5",
           "date": "2026-10-06T08:18:05Z",
           "subject": "arm64: accelerate user memory fills with guarded Arm implementation"
         },
         {
+          "sha": "31add1ce44bbe3d6ff00932112492c0d3d363ab7",
+          "url": "https://github.com/jmgasper/haiku/commit/31add1ce44bbe3d6ff00932112492c0d3d363ab7",
+          "date": "2026-10-06T08:32:25Z",
+          "subject": "usb: give ehci/uhci/ohci a spinlock per controller instance."
+        },
+        {
           "sha": "f412d6d0f323b86e3bad51362b1a196f941e922b",
           "url": "https://github.com/jmgasper/haiku/commit/f412d6d0f323b86e3bad51362b1a196f941e922b",
           "date": "2026-10-06T08:51:30Z",
           "subject": "rpi4: enable Zstandard packages for faster demand paging"
+        },
+        {
+          "sha": "4f6e4e7d3ab303359c1e714c6fd29055bdf321c5",
+          "url": "https://github.com/jmgasper/haiku/commit/4f6e4e7d3ab303359c1e714c6fd29055bdf321c5",
+          "date": "2026-10-06T08:53:51Z",
+          "subject": "Screenshot: Initialize fSelectArea to false"
         },
         {
           "sha": "81fa9945670d624bdf93f198321e35701ca2dd4b",
@@ -4326,6 +4386,12 @@
           "subject": "rpi4: qualify file-cache preparation in CPU clock comparisons"
         },
         {
+          "sha": "6f4c91ef779dff4e46642fd9b1ac855074fbd96c",
+          "url": "https://github.com/jmgasper/haiku/commit/6f4c91ef779dff4e46642fd9b1ac855074fbd96c",
+          "date": "2026-10-06T13:55:13Z",
+          "subject": "Icon-O-Matic: Draw drop indicator after last item."
+        },
+        {
           "sha": "0bcad604bc1eeed3ae60e893c2e8d8a7e0b405a6",
           "url": "https://github.com/jmgasper/haiku/commit/0bcad604bc1eeed3ae60e893c2e8d8a7e0b405a6",
           "date": "2026-10-06T13:57:43Z",
@@ -4354,6 +4420,24 @@
           "url": "https://github.com/jmgasper/haiku/commit/2f91ef68badc9ab4baa804a76bab988aab2487da",
           "date": "2026-10-06T15:11:49Z",
           "subject": "rpi4: verify traffic after Wi-Fi recovery and clarify validation scope"
+        },
+        {
+          "sha": "e8b29582b6a40db7259cd4bd7bd65246f41527ab",
+          "url": "https://github.com/jmgasper/haiku/commit/e8b29582b6a40db7259cd4bd7bd65246f41527ab",
+          "date": "2026-10-06T16:20:08Z",
+          "subject": "screen_savers: Fix building of SimpleClock"
+        },
+        {
+          "sha": "b01107d10ed34cfa6bc7c88f7b5fc6393ad000a2",
+          "url": "https://github.com/jmgasper/haiku/commit/b01107d10ed34cfa6bc7c88f7b5fc6393ad000a2",
+          "date": "2026-10-06T16:20:58Z",
+          "subject": "usb: handle usb3 hubs correctly"
+        },
+        {
+          "sha": "94fda64198a9465e710fc1a5710e3aeea1e3e6c5",
+          "url": "https://github.com/jmgasper/haiku/commit/94fda64198a9465e710fc1a5710e3aeea1e3e6c5",
+          "date": "2026-10-06T16:20:58Z",
+          "subject": "listusb: use the correct hub descriptor request"
         },
         {
           "sha": "91e65219dabf6e3a40931a496dd1d29aca190d38",
@@ -4396,6 +4480,30 @@
           "url": "https://github.com/jmgasper/haiku/commit/c2e8b8ece8efaccf9d28f40bd65bc75a1e56f2fa",
           "date": "2026-10-07T01:31:34Z",
           "subject": "Record the delivered image and latest Summit smoke test"
+        },
+        {
+          "sha": "d06377bab9561beafbadebc8edef53917539ad79",
+          "url": "https://github.com/jmgasper/haiku/commit/d06377bab9561beafbadebc8edef53917539ad79",
+          "date": "2026-10-07T06:33:19Z",
+          "subject": "ntfs: Fix corrupted and misplace $UpCase's  $Info attribute data"
+        },
+        {
+          "sha": "83b60057f1ce3278bd4f31cfee4a21c3b1572fec",
+          "url": "https://github.com/jmgasper/haiku/commit/83b60057f1ce3278bd4f31cfee4a21c3b1572fec",
+          "date": "2026-10-07T06:34:56Z",
+          "subject": "DiskUsage: display the size for current directory too, not just for top volume one."
+        },
+        {
+          "sha": "737c27b2c02edf9cac1ebca257f7423d2559e0b4",
+          "url": "https://github.com/jmgasper/haiku/commit/737c27b2c02edf9cac1ebca257f7423d2559e0b4",
+          "date": "2026-10-07T06:35:13Z",
+          "subject": "DiskUsage: fix Open with menu items icons in hiDPI."
+        },
+        {
+          "sha": "60e29589f83123ca4cb8e9fdcc83951d217af1e5",
+          "url": "https://github.com/jmgasper/haiku/commit/60e29589f83123ca4cb8e9fdcc83951d217af1e5",
+          "date": "2026-10-07T08:17:15Z",
+          "subject": "XHCI: Do not TRACE a speed string e.g. \"high\""
         },
         {
           "sha": "8d7617773f63502d000430b6929584ad47b0a4ad",
@@ -4656,6 +4764,24 @@
           "subject": "Merge rpi4: cumulative validation and AirTop fixed-label cache"
         },
         {
+          "sha": "82df65071e3dae32375fb490295c14c557d88c60",
+          "url": "https://github.com/jmgasper/haiku/commit/82df65071e3dae32375fb490295c14c557d88c60",
+          "date": "2026-10-08T20:33:11Z",
+          "subject": "usb: process only hub descriptor requests as class"
+        },
+        {
+          "sha": "1162c43a5b9accdf733584251f1bd77255589c27",
+          "url": "https://github.com/jmgasper/haiku/commit/1162c43a5b9accdf733584251f1bd77255589c27",
+          "date": "2026-10-08T20:40:28Z",
+          "subject": "package server: Allow closing ProblemWindow and ResultWindow with escape key"
+        },
+        {
+          "sha": "139a75d99e7f0699acf6c477aa178b88023b3a72",
+          "url": "https://github.com/jmgasper/haiku/commit/139a75d99e7f0699acf6c477aa178b88023b3a72",
+          "date": "2026-10-08T20:41:02Z",
+          "subject": "ProcessController: Show alerts in front of Deskbar"
+        },
+        {
           "sha": "523ad2ef7ff56a6fed5398b8015a2bad8c94f4f3",
           "url": "https://github.com/jmgasper/haiku/commit/523ad2ef7ff56a6fed5398b8015a2bad8c94f4f3",
           "date": "2026-10-08T20:50:03Z",
@@ -4678,6 +4804,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/c382028196e6325b402f4fb3e80cf1b4a4f0e74d",
           "date": "2026-10-08T21:23:45Z",
           "subject": "Merge completed Raspberry Pi performance validation"
+        },
+        {
+          "sha": "dd4eb22171ccfe716cd0e34521f9a294436c2002",
+          "url": "https://github.com/jmgasper/haiku/commit/dd4eb22171ccfe716cd0e34521f9a294436c2002",
+          "date": "2026-10-08T21:32:57Z",
+          "subject": "usb: stronger check on endpoint superspeed companion descriptor"
         },
         {
           "sha": "206f54fad9be69bb3fe2325de808d2b720ee7b8d",
@@ -5022,6 +5154,12 @@
           "subject": "cubie-a7s: lab images carry Mesa's PowerVR Vulkan driver and its tests"
         },
         {
+          "sha": "2ac9c411b1de3c83eb517c9537d963be1604512e",
+          "url": "https://github.com/jmgasper/haiku/commit/2ac9c411b1de3c83eb517c9537d963be1604512e",
+          "date": "2026-10-10T02:03:42Z",
+          "subject": "MediaPlayer: Fix crash on ESC and arrow keys when playlist is empty"
+        },
+        {
           "sha": "3238673f4024e1d0503651c63c43eabbf0790c7c",
           "url": "https://github.com/jmgasper/haiku/commit/3238673f4024e1d0503651c63c43eabbf0790c7c",
           "date": "2026-10-10T02:04:50Z",
@@ -5178,6 +5316,12 @@
           "subject": "sunxi_ve, sunxi_cedar: slice checks, several programs, Main 10, the Media Kit"
         },
         {
+          "sha": "c4d32b01422391efdb588c8b53dc82a21f8771bd",
+          "url": "https://github.com/jmgasper/haiku/commit/c4d32b01422391efdb588c8b53dc82a21f8771bd",
+          "date": "2026-10-10T07:34:41Z",
+          "subject": "HaikuDepot: install progress"
+        },
+        {
           "sha": "fbb6655b280e55c5cdf403a88a9131c6a6adc7b5",
           "url": "https://github.com/jmgasper/haiku/commit/fbb6655b280e55c5cdf403a88a9131c6a6adc7b5",
           "date": "2026-10-10T07:46:59Z",
@@ -5208,6 +5352,12 @@
           "subject": "docs: record WX5100 DMA recovery after GFX diagnostics"
         },
         {
+          "sha": "1f8ac7ba0fa13760c44dcb33d6b27fffe2085c7c",
+          "url": "https://github.com/jmgasper/haiku/commit/1f8ac7ba0fa13760c44dcb33d6b27fffe2085c7c",
+          "date": "2026-10-10T08:15:37Z",
+          "subject": "virtio_gpu: use the X8R8G8B8 format on big-endian."
+        },
+        {
           "sha": "3fb473a70e021f86d0b41ef45d988d28d3630c76",
           "url": "https://github.com/jmgasper/haiku/commit/3fb473a70e021f86d0b41ef45d988d28d3630c76",
           "date": "2026-10-10T08:16:57Z",
@@ -5218,6 +5368,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/2e8623b6d7c6a513060c5ed92d909b0abee6c6e7",
           "date": "2026-10-10T08:18:18Z",
           "subject": "cubie-a7s: the board lock serves waiters in the order they came"
+        },
+        {
+          "sha": "286864edca83272087d5ddc6ac10fec934309ba1",
+          "url": "https://github.com/jmgasper/haiku/commit/286864edca83272087d5ddc6ac10fec934309ba1",
+          "date": "2026-10-10T08:19:28Z",
+          "subject": "Update translations from Pootle"
         },
         {
           "sha": "c4905449da47cddf047642cdf36b1da1e0a6e702",
@@ -5818,6 +5974,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/54e68cb60e4b1b62dcdae0e3390c993f79906cca",
           "date": "2026-10-10T17:19:00Z",
           "subject": "Record airTime HEVC playback and paused seek qualification"
+        },
+        {
+          "sha": "2f2dd59e16cc40f496b738fed372e4cf14eb7150",
+          "url": "https://github.com/jmgasper/haiku/commit/2f2dd59e16cc40f496b738fed372e4cf14eb7150",
+          "date": "2026-10-10T17:21:20Z",
+          "subject": "tcp: destroy the endpoint lock after the timers exited."
         },
         {
           "sha": "d2decc47ec6637f63d30ab112a8df550c8888f14",
@@ -6858,6 +7020,12 @@
           "subject": "amdgpu: retain and retire idle video sessions across GFX recovery"
         },
         {
+          "sha": "f4c07c6f84699ac9b805d7fff743fc1bf2c4f45c",
+          "url": "https://github.com/jmgasper/haiku/commit/f4c07c6f84699ac9b805d7fff743fc1bf2c4f45c",
+          "date": "2026-10-11T09:52:14Z",
+          "subject": "Expander: Enable controls only if valid destination and source are given"
+        },
+        {
           "sha": "9be4e55bac9e3b516a0561c895227e2ffca60093",
           "url": "https://github.com/jmgasper/haiku/commit/9be4e55bac9e3b516a0561c895227e2ffca60093",
           "date": "2026-10-11T09:59:17Z",
@@ -7026,10 +7194,34 @@
           "subject": "sunxi_thermal: faster throttling when the SoC heats fast, hold after a trip"
         },
         {
+          "sha": "eb322f3ae95f5cd8465886506884c739ff41101e",
+          "url": "https://github.com/jmgasper/haiku/commit/eb322f3ae95f5cd8465886506884c739ff41101e",
+          "date": "2026-10-11T14:12:21Z",
+          "subject": "usb: promote hub devices definitions to public usb/USB_hub.h"
+        },
+        {
+          "sha": "b56dd2255e08e2290927ac0051b61a67661a0471",
+          "url": "https://github.com/jmgasper/haiku/commit/b56dd2255e08e2290927ac0051b61a67661a0471",
+          "date": "2026-10-11T15:54:22Z",
+          "subject": "test shell: improve status_t asserts"
+        },
+        {
+          "sha": "b52e0e4935aa749a857a0f6a649e91134a6538c8",
+          "url": "https://github.com/jmgasper/haiku/commit/b52e0e4935aa749a857a0f6a649e91134a6538c8",
+          "date": "2026-10-11T15:54:22Z",
+          "subject": "Refactor Storage Kit tests"
+        },
+        {
           "sha": "70b9bceceabdf176e1f410537974b454a7d1f4f4",
           "url": "https://github.com/jmgasper/haiku/commit/70b9bceceabdf176e1f410537974b454a7d1f4f4",
           "date": "2026-10-11T16:34:14Z",
           "subject": "sunxi_thermal: wait for every sensor's first conversion"
+        },
+        {
+          "sha": "3a93a9f6a03f12e89e7a700f41fc4f696e3709e8",
+          "url": "https://github.com/jmgasper/haiku/commit/3a93a9f6a03f12e89e7a700f41fc4f696e3709e8",
+          "date": "2026-10-11T16:41:36Z",
+          "subject": "Fix VT100/Xterm sequences for save/restore cursor, reset terminal, and others."
         },
         {
           "sha": "4e941b692a5b6215bdedbc377bbb0427808f8270",
@@ -7054,6 +7246,18 @@
           "url": "https://github.com/jmgasper/haiku/commit/d5fc7dfd06d9ed17f6261dbd5ced7ad7c4853271",
           "date": "2026-10-11T19:08:25Z",
           "subject": "Merge cubie-a7s: A733 thermal management, MediaPlayer, Wi-Fi speed"
+        },
+        {
+          "sha": "1335c6f8dd2aa62742b38fa838161206b0dfc537",
+          "url": "https://github.com/jmgasper/haiku/commit/1335c6f8dd2aa62742b38fa838161206b0dfc537",
+          "date": "2026-10-11T21:06:34Z",
+          "subject": "docs: record qualified Summit renderer recovery and snapshot gap"
+        },
+        {
+          "sha": "e3c6a5cbc7f9011aff9703002528b3eaaabb65e7",
+          "url": "https://github.com/jmgasper/haiku/commit/e3c6a5cbc7f9011aff9703002528b3eaaabb65e7",
+          "date": "2026-10-11T21:16:47Z",
+          "subject": "docs: map WX5100 ROM display paths to HPD and DDC resources"
         },
         {
           "sha": "0be2fa3e5aaff7a7fcc846631efe513e77929ed5",
@@ -7644,6 +7848,12 @@
           "subject": "Merge master: Bluetooth preferences list only LE devices they can pair"
         },
         {
+          "sha": "9e76032901f68b3fa33cdf11bcce8a6e16f77d06",
+          "url": "https://github.com/jmgasper/haiku/commit/9e76032901f68b3fa33cdf11bcce8a6e16f77d06",
+          "date": "2026-10-13T02:43:12Z",
+          "subject": "Expander: Fix Expand/Show contents control enabling logic"
+        },
+        {
           "sha": "08a75db478698cd9c1e35649b30bf57f08e6d4d8",
           "url": "https://github.com/jmgasper/haiku/commit/08a75db478698cd9c1e35649b30bf57f08e6d4d8",
           "date": "2026-10-13T04:22:23Z",
@@ -7654,6 +7864,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/a5ec39c09a4d84e682f5d9b09fbcaff4438dd51a",
           "date": "2026-10-13T05:57:34Z",
           "subject": "air/OS CI images: arm64 gets HaikuPorts' noto and CJK fonts"
+        },
+        {
+          "sha": "f6034cb66ee5beb1a59f0ded595dae76adb380c0",
+          "url": "https://github.com/jmgasper/haiku/commit/f6034cb66ee5beb1a59f0ded595dae76adb380c0",
+          "date": "2026-10-13T05:59:00Z",
+          "subject": "EFI loader diagnostics: log every disk and rejection, save the log to a file"
         },
         {
           "sha": "21c776240eab1e03eed3e6a72236b737ae31057a",
@@ -7680,10 +7896,58 @@
           "subject": "Merge master: libpng and FreeType 2.14.3 for arm64"
         },
         {
+          "sha": "5e32b4dc9d36d6bc82f7ec312cf498b3b2654b1a",
+          "url": "https://github.com/jmgasper/haiku/commit/5e32b4dc9d36d6bc82f7ec312cf498b3b2654b1a",
+          "date": "2026-10-13T07:15:49Z",
+          "subject": "input: Implement touchpad 2 and 3 finger tap gesture support"
+        },
+        {
+          "sha": "5e095f4c75c3d1cd86bb25831b030a826fb8fef8",
+          "url": "https://github.com/jmgasper/haiku/commit/5e095f4c75c3d1cd86bb25831b030a826fb8fef8",
+          "date": "2026-10-13T07:16:19Z",
+          "subject": "libshared: Use vsnprintf to truncate strings exceeding the buffer size"
+        },
+        {
           "sha": "fffb079c8f9fae836723ca97bd1f98ff3ff84908",
           "url": "https://github.com/jmgasper/haiku/commit/fffb079c8f9fae836723ca97bd1f98ff3ff84908",
           "date": "2026-10-13T07:28:24Z",
           "subject": "kernel: thread notifications name the thread and the team the right way"
+        },
+        {
+          "sha": "906e5c54622ddb3f763778aca47864a6e2e0e83f",
+          "url": "https://github.com/jmgasper/haiku/commit/906e5c54622ddb3f763778aca47864a6e2e0e83f",
+          "date": "2026-10-13T08:12:09Z",
+          "subject": "hid_shared: precision touchpads report contacts, not an absolute pointer"
+        },
+        {
+          "sha": "7cf6796ae5e2ba56eac08c1044d349d1e4a9c9ee",
+          "url": "https://github.com/jmgasper/haiku/commit/7cf6796ae5e2ba56eac08c1044d349d1e4a9c9ee",
+          "date": "2026-10-13T08:12:09Z",
+          "subject": "i2c_hid: interrupt driven, with proper feature reports"
+        },
+        {
+          "sha": "8afe77d380c5797c2b9f49cb1c4a1fccb3f0cb61",
+          "url": "https://github.com/jmgasper/haiku/commit/8afe77d380c5797c2b9f49cb1c4a1fccb3f0cb61",
+          "date": "2026-10-13T08:15:09Z",
+          "subject": "i2c_hid: in the image, for devices with an interrupt line it can use"
+        },
+        {
+          "sha": "787c0312646effbd71bcceb3fbf6bc23884063cb",
+          "url": "https://github.com/jmgasper/haiku/commit/787c0312646effbd71bcceb3fbf6bc23884063cb",
+          "date": "2026-10-13T08:18:57Z",
+          "subject": "amdgpu_kms: the built-in panel's brightness"
+        },
+        {
+          "sha": "e1997dc11d58789839970298d0d84a86ee68b4c2",
+          "url": "https://github.com/jmgasper/haiku/commit/e1997dc11d58789839970298d0d84a86ee68b4c2",
+          "date": "2026-10-13T09:50:39Z",
+          "subject": "bt_firmware: reset Intel controllers whose download failed, and try again"
+        },
+        {
+          "sha": "84a4654f7cadf1a814485e0eb65ae8670f5f2030",
+          "url": "https://github.com/jmgasper/haiku/commit/84a4654f7cadf1a814485e0eb65ae8670f5f2030",
+          "date": "2026-10-13T09:59:00Z",
+          "subject": "i2c_hid: keep the devices powered, as Linux does"
         },
         {
           "sha": "a063548811ae16b9d4338fe6cba7e32b1c2a85ff",
@@ -7722,6 +7986,54 @@
           "subject": "Merge fw13-verified: Framework 13 touchpad, I2C HID with interrupts, Intel Bluetooth download retry"
         },
         {
+          "sha": "f777e4cfd0f854492b5899e662bc43458baf40de",
+          "url": "https://github.com/jmgasper/haiku/commit/f777e4cfd0f854492b5899e662bc43458baf40de",
+          "date": "2026-10-13T09:59:44Z",
+          "subject": "kernel: shutdown hooks for drivers"
+        },
+        {
+          "sha": "7ce3d0a6dde833a7a25db09d483895d855f81dc7",
+          "url": "https://github.com/jmgasper/haiku/commit/7ce3d0a6dde833a7a25db09d483895d855f81dc7",
+          "date": "2026-10-13T17:13:30Z",
+          "subject": "bluetooth: fix spelling in SDP client"
+        },
+        {
+          "sha": "6e1386dc1cfe4712a001b97f93f3624048b18e12",
+          "url": "https://github.com/jmgasper/haiku/commit/6e1386dc1cfe4712a001b97f93f3624048b18e12",
+          "date": "2026-10-13T17:16:44Z",
+          "subject": "usb: remove PMA waiters duplicate count and fix a TOCTOU race issue"
+        },
+        {
+          "sha": "90864496c4268cc1790bccb2990102e07f52dd42",
+          "url": "https://github.com/jmgasper/haiku/commit/90864496c4268cc1790bccb2990102e07f52dd42",
+          "date": "2026-10-13T17:21:13Z",
+          "subject": "pkgkit: handling for source pkgs"
+        },
+        {
+          "sha": "3faf40b299687ed1269fd4b60fbb956d9691c5dc",
+          "url": "https://github.com/jmgasper/haiku/commit/3faf40b299687ed1269fd4b60fbb956d9691c5dc",
+          "date": "2026-10-13T17:24:07Z",
+          "subject": "AboutSystem: update FreeBSD and ACPICA copyright years"
+        },
+        {
+          "sha": "0c797f45029c105cda8347d3a2cd09742eca6315",
+          "url": "https://github.com/jmgasper/haiku/commit/0c797f45029c105cda8347d3a2cd09742eca6315",
+          "date": "2026-10-13T17:26:13Z",
+          "subject": "HaikuDepot: filter correction"
+        },
+        {
+          "sha": "d39ae60ca3437d05e1cdbea2939ba2ee6325622f",
+          "url": "https://github.com/jmgasper/haiku/commit/d39ae60ca3437d05e1cdbea2939ba2ee6325622f",
+          "date": "2026-10-13T17:36:14Z",
+          "subject": "time: fix spelling in error messages"
+        },
+        {
+          "sha": "e7e87385b6e00d2712d0f52f2b754e600e6d13d1",
+          "url": "https://github.com/jmgasper/haiku/commit/e7e87385b6e00d2712d0f52f2b754e600e6d13d1",
+          "date": "2026-10-13T18:15:23Z",
+          "subject": "icon-o-matic: fix spelling in exception message"
+        },
+        {
           "sha": "291b7188a75018b5f2233570bf28b275c6599240",
           "url": "https://github.com/jmgasper/haiku/commit/291b7188a75018b5f2233570bf28b275c6599240",
           "date": "2026-10-13T18:22:55Z",
@@ -7740,6 +8052,18 @@
           "subject": "Merge fw13-gpu: Framework 13 panel brightness on amdgpu, kernel shutdown hooks for drivers"
         },
         {
+          "sha": "0bb4e75a736a8c36d29f4b5406fee65f505f0f3d",
+          "url": "https://github.com/jmgasper/haiku/commit/0bb4e75a736a8c36d29f4b5406fee65f505f0f3d",
+          "date": "2026-10-13T18:24:45Z",
+          "subject": "Shortcuts: brightness keys by default"
+        },
+        {
+          "sha": "23150796f7a825d32e6144ce701e503bb20fac84",
+          "url": "https://github.com/jmgasper/haiku/commit/23150796f7a825d32e6144ce701e503bb20fac84",
+          "date": "2026-10-13T18:28:05Z",
+          "subject": "USB: Properly handle the \"Max Burst\" value for USB 2 devices."
+        },
+        {
           "sha": "6291626c502504e0943267feaa275596a1bbd285",
           "url": "https://github.com/jmgasper/haiku/commit/6291626c502504e0943267feaa275596a1bbd285",
           "date": "2026-10-13T18:37:05Z",
@@ -7750,6 +8074,18 @@
           "url": "https://github.com/jmgasper/haiku/commit/028fc11f992f45b41ee4739b47d7311e4f4fdef5",
           "date": "2026-10-13T18:37:05Z",
           "subject": "Merge fw13-keys: brightness keys by default"
+        },
+        {
+          "sha": "388ca6823493ae937134949782be1eac9f5343b9",
+          "url": "https://github.com/jmgasper/haiku/commit/388ca6823493ae937134949782be1eac9f5343b9",
+          "date": "2026-10-13T18:38:20Z",
+          "subject": "USB: InitSuperSpeed before InitCommon."
+        },
+        {
+          "sha": "6f877e6a9f2acff615b09276779b0945df4e8cde",
+          "url": "https://github.com/jmgasper/haiku/commit/6f877e6a9f2acff615b09276779b0945df4e8cde",
+          "date": "2026-10-13T18:46:10Z",
+          "subject": "Audio output: the speakers by default, not a graphics card's HDMI"
         },
         {
           "sha": "7b142195e50505e79f6f9810c0091cba632196e1",
@@ -7776,6 +8112,12 @@
           "subject": "Merge amdgpu-drm: thread notifications name the thread and the team the right way; AMDGPU-DRM.md on the X399's hangs"
         },
         {
+          "sha": "e2277b0002a07295203eb48b9ddb13cecfdc2df8",
+          "url": "https://github.com/jmgasper/haiku/commit/e2277b0002a07295203eb48b9ddb13cecfdc2df8",
+          "date": "2026-10-13T20:41:12Z",
+          "subject": "WIP: power management for the Framework 13 (s2idle, ACPI C-states, power policy)"
+        },
+        {
           "sha": "8b5d641ad3160eea568a183a22db13304229f153",
           "url": "https://github.com/jmgasper/haiku/commit/8b5d641ad3160eea568a183a22db13304229f153",
           "date": "2026-10-13T23:11:26Z",
@@ -7786,6 +8128,90 @@
           "url": "https://github.com/jmgasper/haiku/commit/83135330a0e2b9eb3d0fcc5a910296fb87075f65",
           "date": "2026-10-13T23:11:38Z",
           "subject": "Merge amdgpu-drm: kdl_capture (kernel debugger sessions to a file); AMDGPU-DRM.md on the installation-boot reloads"
+        },
+        {
+          "sha": "928a9b46459b9097c002c71910d933236e5c6e71",
+          "url": "https://github.com/jmgasper/haiku/commit/928a9b46459b9097c002c71910d933236e5c6e71",
+          "date": "2026-10-13T23:23:26Z",
+          "subject": "kernel: choose the cpuidle and cpufreq modules before using one"
+        },
+        {
+          "sha": "fad19736c29ee832802d1e4d801be4da412d41dc",
+          "url": "https://github.com/jmgasper/haiku/commit/fad19736c29ee832802d1e4d801be4da412d41dc",
+          "date": "2026-10-13T23:33:30Z",
+          "subject": "acpi_lid, acpi_ac: read the state when attaching"
+        },
+        {
+          "sha": "c74422ef43d91ec426b34e6bc22df7a2a100d762",
+          "url": "https://github.com/jmgasper/haiku/commit/c74422ef43d91ec426b34e6bc22df7a2a100d762",
+          "date": "2026-10-13T23:33:30Z",
+          "subject": "acpi: enable ACPICA's interpreter slack, as Linux and Windows"
+        },
+        {
+          "sha": "7cdc5288d91346e6c717ce4329e9c19a593cb736",
+          "url": "https://github.com/jmgasper/haiku/commit/7cdc5288d91346e6c717ce4329e9c19a593cb736",
+          "date": "2026-10-13T23:33:30Z",
+          "subject": "fixup! WIP: power management for the Framework 13 (s2idle, ACPI C-states, power policy)"
+        },
+        {
+          "sha": "34fe9cf4ab39d21092052ae90bd058ada6416a8f",
+          "url": "https://github.com/jmgasper/haiku/commit/34fe9cf4ab39d21092052ae90bd058ada6416a8f",
+          "date": "2026-10-13T23:39:25Z",
+          "subject": "bt_le: inquiry lists the devices, and no longer crashes"
+        },
+        {
+          "sha": "8654902c6d4fc065a35ea5f144c08bbffdcae055",
+          "url": "https://github.com/jmgasper/haiku/commit/8654902c6d4fc065a35ea5f144c08bbffdcae055",
+          "date": "2026-10-13T23:41:29Z",
+          "subject": "kernel: choose the cpuidle and cpufreq modules before using one"
+        },
+        {
+          "sha": "e1719e4e5fdb2900815e8fd559b8f3db455800bd",
+          "url": "https://github.com/jmgasper/haiku/commit/e1719e4e5fdb2900815e8fd559b8f3db455800bd",
+          "date": "2026-10-13T23:41:29Z",
+          "subject": "x86: ACPI processor IDs only from enabled MADT entries"
+        },
+        {
+          "sha": "544f3f8992c3fe5576989e4a19ffa78fb88bc4ec",
+          "url": "https://github.com/jmgasper/haiku/commit/544f3f8992c3fe5576989e4a19ffa78fb88bc4ec",
+          "date": "2026-10-13T23:42:00Z",
+          "subject": "x86_acpi_cstates: processor devices, AMD, and a simpler idle routine"
+        },
+        {
+          "sha": "d5abdc1262ceb865780369d1e18b3c9c03d9714e",
+          "url": "https://github.com/jmgasper/haiku/commit/d5abdc1262ceb865780369d1e18b3c9c03d9714e",
+          "date": "2026-10-13T23:42:05Z",
+          "subject": "acpi_lid, acpi_ac: read the state when attaching, and in the image"
+        },
+        {
+          "sha": "c1c792378ecd52d45bac5f44bf7f0e2dc384d088",
+          "url": "https://github.com/jmgasper/haiku/commit/c1c792378ecd52d45bac5f44bf7f0e2dc384d088",
+          "date": "2026-10-13T23:42:05Z",
+          "subject": "acpi: enable ACPICA's interpreter slack, as Linux and Windows"
+        },
+        {
+          "sha": "936b1d3c97d96b27159eb31e8fa3406eeb008039",
+          "url": "https://github.com/jmgasper/haiku/commit/936b1d3c97d96b27159eb31e8fa3406eeb008039",
+          "date": "2026-10-13T23:42:05Z",
+          "subject": "bt_le: inquiry lists the devices, and no longer crashes"
+        },
+        {
+          "sha": "5583f4549a249755056bb87a6cc1cba329e72826",
+          "url": "https://github.com/jmgasper/haiku/commit/5583f4549a249755056bb87a6cc1cba329e72826",
+          "date": "2026-10-13T23:42:05Z",
+          "subject": "amd_pstates: power saving asks the hardware for efficiency"
+        },
+        {
+          "sha": "625ffb7645c49911b808171855212e094431ff1c",
+          "url": "https://github.com/jmgasper/haiku/commit/625ffb7645c49911b808171855212e094431ff1c",
+          "date": "2026-10-13T23:42:05Z",
+          "subject": "x86: suspend to idle (S0ix), for machines without S3"
+        },
+        {
+          "sha": "34bc9ae9a49930e73f38159fc84b6909d7e59641",
+          "url": "https://github.com/jmgasper/haiku/commit/34bc9ae9a49930e73f38159fc84b6909d7e59641",
+          "date": "2026-10-13T23:42:05Z",
+          "subject": "power_daemon: a power policy, and Power preferences"
         },
         {
           "sha": "3683cfbe472de49119fdb85ad45539cb2a82e132",
@@ -7866,6 +8292,12 @@
           "subject": "Merge fw13-sleep: suspend to idle, the power daemon's policy (AC/battery, lid), Power preferences"
         },
         {
+          "sha": "99181eb3f2e70b6898cf386520b41570a2564640",
+          "url": "https://github.com/jmgasper/haiku/commit/99181eb3f2e70b6898cf386520b41570a2564640",
+          "date": "2026-10-14T00:54:51Z",
+          "subject": "amdgpu_kms: the cursor comes back after the screen saver"
+        },
+        {
           "sha": "8a2292c25bc1f8f98384b610c9c5b52fb69dcaef",
           "url": "https://github.com/jmgasper/haiku/commit/8a2292c25bc1f8f98384b610c9c5b52fb69dcaef",
           "date": "2026-10-14T00:55:04Z",
@@ -7906,6 +8338,24 @@
           "url": "https://github.com/jmgasper/haiku/commit/b366d9fe22326e32898caf7ee8c2d5e676b027b8",
           "date": "2026-10-14T02:06:48Z",
           "subject": "cubie-a7s: images take Mesa release bf5eca2c19"
+        },
+        {
+          "sha": "bc6efe956b992cacee7bfe4021eb6d88707dd5dc",
+          "url": "https://github.com/jmgasper/haiku/commit/bc6efe956b992cacee7bfe4021eb6d88707dd5dc",
+          "date": "2026-10-14T04:55:49Z",
+          "subject": "input: no pointer jump when a touchpad finger comes or goes"
+        },
+        {
+          "sha": "a75a5a19344bc7f284b6c65681ad554d5084ad5c",
+          "url": "https://github.com/jmgasper/haiku/commit/a75a5a19344bc7f284b6c65681ad554d5084ad5c",
+          "date": "2026-10-14T04:55:49Z",
+          "subject": "x86_acpi_cstates: choose the C-state by how long the CPU stays idle"
+        },
+        {
+          "sha": "623462007e22da8e0753e4b6992aa72eb7bdc34d",
+          "url": "https://github.com/jmgasper/haiku/commit/623462007e22da8e0753e4b6992aa72eb7bdc34d",
+          "date": "2026-10-14T05:00:51Z",
+          "subject": "input: the finger left of a touchpad gesture is no tap"
         },
         {
           "sha": "94736a44f1ba8dc144a1e4d8f9284a2fc73627a3",
@@ -7992,10 +8442,94 @@
           "subject": "Merge cubie-a7s: GLES reads RGB8 and RGBA4 frame buffers in their own formats (Cubie A7S)"
         },
         {
+          "sha": "a3a77485ce57ebcc531500f98a4c93853b89b3d8",
+          "url": "https://github.com/jmgasper/haiku/commit/a3a77485ce57ebcc531500f98a4c93853b89b3d8",
+          "date": "2026-10-14T10:41:48Z",
+          "subject": "amdgpu_kms: a monitor mode is chosen by its refresh rate"
+        },
+        {
           "sha": "b0e15246a4380d47c8d3547f5ae87721f478a1bc",
           "url": "https://github.com/jmgasper/haiku/commit/b0e15246a4380d47c8d3547f5ae87721f478a1bc",
           "date": "2026-10-14T10:50:28Z",
           "subject": "amdgpu_kms: a monitor mode is chosen by its refresh rate"
+        },
+        {
+          "sha": "bec555c25918d855f0d0bcac7cc9c3d190aa8eda",
+          "url": "https://github.com/jmgasper/haiku/commit/bec555c25918d855f0d0bcac7cc9c3d190aa8eda",
+          "date": "2026-10-14T16:03:09Z",
+          "subject": "usb_midi: add support for reading more than one byte at once"
+        },
+        {
+          "sha": "daf39216a23ea9b914feab43d510c3d05012cf81",
+          "url": "https://github.com/jmgasper/haiku/commit/daf39216a23ea9b914feab43d510c3d05012cf81",
+          "date": "2026-10-14T16:03:23Z",
+          "subject": "midi_server: fix SysEx buffer leaks"
+        },
+        {
+          "sha": "54bf705bb60f0478269ca53783599b91b5fb1c20",
+          "url": "https://github.com/jmgasper/haiku/commit/54bf705bb60f0478269ca53783599b91b5fb1c20",
+          "date": "2026-10-14T16:03:39Z",
+          "subject": "midi: give unique BMidiLocalConsumer event thread name"
+        },
+        {
+          "sha": "f0b22698b0213b5fae8f607c40768f76ee803237",
+          "url": "https://github.com/jmgasper/haiku/commit/f0b22698b0213b5fae8f607c40768f76ee803237",
+          "date": "2026-10-14T17:04:36Z",
+          "subject": "mail_utils: fix spelling in error messages"
+        },
+        {
+          "sha": "a4afe8234e2f7b23427a0184921bd52a062070f3",
+          "url": "https://github.com/jmgasper/haiku/commit/a4afe8234e2f7b23427a0184921bd52a062070f3",
+          "date": "2026-10-14T17:21:02Z",
+          "subject": "userlandfs: fix gcc15 error"
+        },
+        {
+          "sha": "957a13795481d8c8bd721921c1fb66686c001963",
+          "url": "https://github.com/jmgasper/haiku/commit/957a13795481d8c8bd721921c1fb66686c001963",
+          "date": "2026-10-14T17:21:02Z",
+          "subject": "poorman: gcc15 complains about missing syslog function"
+        },
+        {
+          "sha": "45aa18d02271c65f698b0e932e90aa33da3d5574",
+          "url": "https://github.com/jmgasper/haiku/commit/45aa18d02271c65f698b0e932e90aa33da3d5574",
+          "date": "2026-10-14T17:21:02Z",
+          "subject": "math.h: don't redefine NAN and INFINITY"
+        },
+        {
+          "sha": "be6a3365c9b9cd92243c8838ecb60d97cecac929",
+          "url": "https://github.com/jmgasper/haiku/commit/be6a3365c9b9cd92243c8838ecb60d97cecac929",
+          "date": "2026-10-14T17:21:02Z",
+          "subject": "libiconv: fix build with gcc15"
+        },
+        {
+          "sha": "74d9d06b40ba11a2d8723fe88fa59b2c4e09ac01",
+          "url": "https://github.com/jmgasper/haiku/commit/74d9d06b40ba11a2d8723fe88fa59b2c4e09ac01",
+          "date": "2026-10-14T17:21:02Z",
+          "subject": "kernel/util: fix inet_ntop parameters style for gcc15"
+        },
+        {
+          "sha": "14c29e9fb73a4870fd48c6b5ed2302db7f95e453",
+          "url": "https://github.com/jmgasper/haiku/commit/14c29e9fb73a4870fd48c6b5ed2302db7f95e453",
+          "date": "2026-10-14T17:21:02Z",
+          "subject": "libroot/musl: fix incompatible pointer type for gcc15"
+        },
+        {
+          "sha": "7cc639f6bdf26fca4838d38a1b05c6fdeb1896dd",
+          "url": "https://github.com/jmgasper/haiku/commit/7cc639f6bdf26fca4838d38a1b05c6fdeb1896dd",
+          "date": "2026-10-14T17:21:02Z",
+          "subject": "kernel/slab: avoid potential NULL value passed to kprintf"
+        },
+        {
+          "sha": "51497686f18c75b6e5d6dda70c079189ecfe05f4",
+          "url": "https://github.com/jmgasper/haiku/commit/51497686f18c75b6e5d6dda70c079189ecfe05f4",
+          "date": "2026-10-14T18:08:42Z",
+          "subject": "kernel/file_cache: Multiple fixes to the cache_io fallback path."
+        },
+        {
+          "sha": "c74d249db11e0579ad6d784b03bc4a7685980444",
+          "url": "https://github.com/jmgasper/haiku/commit/c74d249db11e0579ad6d784b03bc4a7685980444",
+          "date": "2026-10-14T18:19:08Z",
+          "subject": "tests: Add test for reading a mmap's backing file into itself."
         },
         {
           "sha": "c60b137b4c2ec81fcd51890ac3bb13b2fda34399",
@@ -8058,10 +8592,46 @@
           "subject": "Merge cubie-a7s: sunxi_thermal slower steps above the passive trip while the temperature holds"
         },
         {
+          "sha": "28a933369dcc6cd8b636be5ecc6bf0546e8cb8f6",
+          "url": "https://github.com/jmgasper/haiku/commit/28a933369dcc6cd8b636be5ecc6bf0546e8cb8f6",
+          "date": "2026-10-15T01:12:20Z",
+          "subject": "power_daemon: log to syslog when the AC adapter is plugged or unplugged"
+        },
+        {
+          "sha": "da51075c78d7478a3acd4034e34b125573d24bba",
+          "url": "https://github.com/jmgasper/haiku/commit/da51075c78d7478a3acd4034e34b125573d24bba",
+          "date": "2026-10-15T14:37:05Z",
+          "subject": "NVMM: RemoveAndPut in vmspace_destroy, not just Put."
+        },
+        {
+          "sha": "cf7389ad85157fd9389df406d0679a76ae002565",
+          "url": "https://github.com/jmgasper/haiku/commit/cf7389ad85157fd9389df406d0679a76ae002565",
+          "date": "2026-10-15T18:05:12Z",
+          "subject": "hyperv: Add keyboard support"
+        },
+        {
+          "sha": "b2c6cf88fe69937712dd7923c8de1ba3ebbd77bf",
+          "url": "https://github.com/jmgasper/haiku/commit/b2c6cf88fe69937712dd7923c8de1ba3ebbd77bf",
+          "date": "2026-10-15T18:05:12Z",
+          "subject": "hyperv_hid: Move to input/hyperv"
+        },
+        {
+          "sha": "d9c54a4d66c5060f49a6928e6b594cd331fa3e37",
+          "url": "https://github.com/jmgasper/haiku/commit/d9c54a4d66c5060f49a6928e6b594cd331fa3e37",
+          "date": "2026-10-15T00:24:24Z",
+          "subject": "Merge BUrl tests"
+        },
+        {
           "sha": "244d0f223eb84ab3da60ea2f474511b92a6e534e",
           "url": "https://github.com/jmgasper/haiku/commit/244d0f223eb84ab3da60ea2f474511b92a6e534e",
           "date": "2026-10-15T04:23:34Z",
           "subject": "bluetooth_server: reset the controller when it is opened and when the server quits"
+        },
+        {
+          "sha": "cad8e5412f39bdf2b049fed560110ea1d5805e4a",
+          "url": "https://github.com/jmgasper/haiku/commit/cad8e5412f39bdf2b049fed560110ea1d5805e4a",
+          "date": "2026-10-15T04:26:27Z",
+          "subject": "sunxi_display: answer USB PD Requests within tSenderResponse"
         },
         {
           "sha": "ccb53c59616b10497e937891442e18ebb8d29e3b",
@@ -8112,6 +8682,18 @@
           "subject": "Quick Look: PDF, XPS, EPUB and comic book previews through MuPDF"
         },
         {
+          "sha": "09a2ed58f43d11757b1ab06d94ef103c870bbc33",
+          "url": "https://github.com/jmgasper/haiku/commit/09a2ed58f43d11757b1ab06d94ef103c870bbc33",
+          "date": "2026-10-15T06:42:35Z",
+          "subject": "xhci: the Allwinner A733's USB-C DWC3 core (Cubie A7S)"
+        },
+        {
+          "sha": "ccb223e5feb586e4d29a02cf998c6d88e7eafd10",
+          "url": "https://github.com/jmgasper/haiku/commit/ccb223e5feb586e4d29a02cf998c6d88e7eafd10",
+          "date": "2026-10-15T06:42:35Z",
+          "subject": "sunxi_display: lab aids for the USB-C port"
+        },
+        {
           "sha": "9581413be9b368588117a974a98c0572f9872ae2",
           "url": "https://github.com/jmgasper/haiku/commit/9581413be9b368588117a974a98c0572f9872ae2",
           "date": "2026-10-15T06:42:36Z",
@@ -8126,6 +8708,12 @@
         {
           "sha": "22e8b1d8db5d4e3f9b9561852e9d15b3186adce3",
           "url": "https://github.com/jmgasper/haiku/commit/22e8b1d8db5d4e3f9b9561852e9d15b3186adce3",
+          "date": "2026-10-15T06:49:24Z",
+          "subject": "cubie-a7s: hubport, hub-class port requests for lab checks"
+        },
+        {
+          "sha": "33e42970f8ce48c49cc8188a353892986d512ac9",
+          "url": "https://github.com/jmgasper/haiku/commit/33e42970f8ce48c49cc8188a353892986d512ac9",
           "date": "2026-10-15T06:49:24Z",
           "subject": "cubie-a7s: hubport, hub-class port requests for lab checks"
         },
@@ -8158,6 +8746,18 @@
           "url": "https://github.com/jmgasper/haiku/commit/a8585767258debc8a31b72fc2d7afeac7c7d60eb",
           "date": "2026-10-15T07:46:12Z",
           "subject": "media_server: a saved default device that is gone no longer means none"
+        },
+        {
+          "sha": "7d5520daf1f59250fe7a89779e12e975aa137539",
+          "url": "https://github.com/jmgasper/haiku/commit/7d5520daf1f59250fe7a89779e12e975aa137539",
+          "date": "2026-10-15T08:39:38Z",
+          "subject": "sunxi_cedar: half size pictures, copying on the slow cores, decoding ahead"
+        },
+        {
+          "sha": "9dfcc052e92cb57a3ff8afa4ae50d0199a3ddc68",
+          "url": "https://github.com/jmgasper/haiku/commit/9dfcc052e92cb57a3ff8afa4ae50d0199a3ddc68",
+          "date": "2026-10-15T08:39:38Z",
+          "subject": "sunxi_thermal: the video engine stays at 300 MHz down to throttle level 7"
         },
         {
           "sha": "892149dbfc266b79e2ac378d6d008b77f01341f0",
@@ -8254,6 +8854,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/d789fb4f662a60a1cc3991f961f02283a1c8eba7",
           "date": "2026-10-15T09:51:53Z",
           "subject": "app_server: copy to the screen once a frame, at the vertical blank"
+        },
+        {
+          "sha": "7966d1535276dd048f37365296344cc444a2809e",
+          "url": "https://github.com/jmgasper/haiku/commit/7966d1535276dd048f37365296344cc444a2809e",
+          "date": "2026-10-15T09:56:01Z",
+          "subject": "sunxi_thermal: the video engine keeps its full speed but at the hot trip"
         },
         {
           "sha": "8610307d5ef30f629d7565fac71a4550bfcca4d4",
@@ -8482,6 +9088,18 @@
           "url": "https://github.com/jmgasper/haiku/commit/9da983ef4c6df177c685735cae186c6ac0e8f97b",
           "date": "2026-10-15T19:27:06Z",
           "subject": "Merge vblank-flush: the flush wakes from the hardware's scan-start time (DCN's blank interrupt comes after the scan began); retrace_test --jump"
+        },
+        {
+          "sha": "96f746da8ca3ec20fc16c4f420f1db23bac43ee9",
+          "url": "https://github.com/jmgasper/haiku/commit/96f746da8ca3ec20fc16c4f420f1db23bac43ee9",
+          "date": "2026-10-15T19:33:26Z",
+          "subject": "Refactor support/BlockCacheExerciseTest"
+        },
+        {
+          "sha": "b5307db8ed76386442527c86ec40b52c9f021789",
+          "url": "https://github.com/jmgasper/haiku/commit/b5307db8ed76386442527c86ec40b52c9f021789",
+          "date": "2026-10-15T19:36:42Z",
+          "subject": "Refactor translation tests"
         },
         {
           "sha": "066a3d0018811bd34505168e8aa4256ab1e0ca28",
@@ -8868,6 +9486,12 @@
           "subject": "Merge fractional-scaling: even scroll bar, box, tab and status bar frames at fractional scales"
         },
         {
+          "sha": "e6f1ffe2805bc6c7a9c700c1915978b08fda84a5",
+          "url": "https://github.com/jmgasper/haiku/commit/e6f1ffe2805bc6c7a9c700c1915978b08fda84a5",
+          "date": "2026-10-16T11:04:18Z",
+          "subject": "Merge master into cubie-a7s: the rebuilt Media preferences, fractional scaling, Deskbar window icons and the rest of master"
+        },
+        {
           "sha": "68de2723834bcc196b6fd5fdad8aee9f58b89025",
           "url": "https://github.com/jmgasper/haiku/commit/68de2723834bcc196b6fd5fdad8aee9f58b89025",
           "date": "2026-10-16T11:07:11Z",
@@ -9006,6 +9630,18 @@
           "subject": "docs/airos: SCALING.md, the Wayland server follows scale changes and ships"
         },
         {
+          "sha": "ae25f101ad1b77749be21dd1dad21571eaeee18d",
+          "url": "https://github.com/jmgasper/haiku/commit/ae25f101ad1b77749be21dd1dad21571eaeee18d",
+          "date": "2026-10-16T20:19:44Z",
+          "subject": "freebsd_network: use generic bus.h and cpufunc.h for all non-x86 architectures"
+        },
+        {
+          "sha": "5f79cf3d8e9be510a98fc481fe3be9ed65cfca0b",
+          "url": "https://github.com/jmgasper/haiku/commit/5f79cf3d8e9be510a98fc481fe3be9ed65cfca0b",
+          "date": "2026-10-16T20:19:44Z",
+          "subject": "freebsd_network: add missing bpf stub"
+        },
+        {
           "sha": "877d36ac32c61d6769b7c8d24dc70061a6dd7c0a",
           "url": "https://github.com/jmgasper/haiku/commit/877d36ac32c61d6769b7c8d24dc70061a6dd7c0a",
           "date": "2026-10-16T23:43:12Z",
@@ -9058,6 +9694,12 @@
           "url": "https://github.com/jmgasper/haiku/commit/ccfdf31bf0651337f3dcc519f5768fecfbf01197",
           "date": "2026-10-17T00:54:28Z",
           "subject": "Merge rpi4: rpi_dsi probes the DSI panel's touch controller over the connector's I2C"
+        },
+        {
+          "sha": "ac9aaea72eb11a8c425dbdd2d1f47fc9761c70c9",
+          "url": "https://github.com/jmgasper/haiku/commit/ac9aaea72eb11a8c425dbdd2d1f47fc9761c70c9",
+          "date": "2026-10-17T01:04:19Z",
+          "subject": "usb_midi: fix regression I've introduced in hrev60248"
         },
         {
           "sha": "4043bc6430c97a209ecf0445954a73347c255edf",
@@ -9348,6 +9990,12 @@
           "subject": "Merge mediaconverter-hw: worker processes, subtitle files, closed captions, AV1 on VCN 4"
         },
         {
+          "sha": "fe7e6e95e4d0509496f540cc9a9700cc8fe0dc4c",
+          "url": "https://github.com/jmgasper/haiku/commit/fe7e6e95e4d0509496f540cc9a9700cc8fe0dc4c",
+          "date": "2026-10-17T08:25:49Z",
+          "subject": "Update translations from Pootle"
+        },
+        {
           "sha": "9a61f566a64580a2e627e0945a2c15b6845ae082",
           "url": "https://github.com/jmgasper/haiku/commit/9a61f566a64580a2e627e0945a2c15b6845ae082",
           "date": "2026-10-17T08:48:38Z",
@@ -9396,16 +10044,40 @@
           "subject": "Merge display-placement: menus and tool tips stay on the monitor they open on"
         },
         {
+          "sha": "1c674e81ae228a8ad79ca181eb29a52949a398e2",
+          "url": "https://github.com/jmgasper/haiku/commit/1c674e81ae228a8ad79ca181eb29a52949a398e2",
+          "date": "2026-10-17T19:24:23Z",
+          "subject": "libbsd: remove stringlist.c"
+        },
+        {
+          "sha": "18f5da1a8a99c49214ce42b05f3b10b60d0df5e3",
+          "url": "https://github.com/jmgasper/haiku/commit/18f5da1a8a99c49214ce42b05f3b10b60d0df5e3",
+          "date": "2026-10-17T19:24:23Z",
+          "subject": "net80211: define IEEE80211_CRYPTO_MODULE_ADD"
+        },
+        {
           "sha": "696fee62c95f047ab5546dbf16f8f74d9c05c45f",
           "url": "https://github.com/jmgasper/haiku/commit/696fee62c95f047ab5546dbf16f8f74d9c05c45f",
           "date": "2026-10-17T21:13:07Z",
           "subject": "kernel/vm: page runs take cached pages only when free ones are scarce"
         },
         {
+          "sha": "a5a76dfa3f35e83360ae289f417a89ba8aa09278",
+          "url": "https://github.com/jmgasper/haiku/commit/a5a76dfa3f35e83360ae289f417a89ba8aa09278",
+          "date": "2026-10-17T21:30:57Z",
+          "subject": "amdgpu_kms: offer the frame buffer to renderers that draw into the screen"
+        },
+        {
           "sha": "8053c8aa7d89f8704de7fececd7cade0ef32420f",
           "url": "https://github.com/jmgasper/haiku/commit/8053c8aa7d89f8704de7fececd7cade0ef32420f",
           "date": "2026-10-17T22:21:37Z",
           "subject": "Merge page-run-cached: page runs take cached pages only when free ones are scarce"
+        },
+        {
+          "sha": "8673bcc8645a85a13997f86b00e7fe9c223fc0b8",
+          "url": "https://github.com/jmgasper/haiku/commit/8673bcc8645a85a13997f86b00e7fe9c223fc0b8",
+          "date": "2026-10-17T23:10:19Z",
+          "subject": "midi_server: read up to 256 bytes at once."
         },
         {
           "sha": "2de146d688b2274bf3b3201c34217d8a229af740",
@@ -9418,6 +10090,90 @@
           "url": "https://github.com/jmgasper/haiku/commit/8ac21bf43f93e874179559f2a03a0735c35389cc",
           "date": "2026-10-17T23:48:37Z",
           "subject": "Merge bt-page-scan: page scan every 320 ms, interlaced, for waking keyboards"
+        },
+        {
+          "sha": "b26e7b3d54d27310942bcb9362fdd89f6ac5a5fb",
+          "url": "https://github.com/jmgasper/haiku/commit/b26e7b3d54d27310942bcb9362fdd89f6ac5a5fb",
+          "date": "2026-10-17T23:57:35Z",
+          "subject": "Merge Framework 13 hardware support into master"
+        },
+        {
+          "sha": "ad8cddcdbcf50b6dd76f02879a9a125adf4e99b1",
+          "url": "https://github.com/jmgasper/haiku/commit/ad8cddcdbcf50b6dd76f02879a9a125adf4e99b1",
+          "date": "2026-10-17T23:57:35Z",
+          "subject": "Merge Cubie USB-C, video decoding and thermal updates"
+        },
+        {
+          "sha": "91e405e0008956ba0f24ff7b0010dbd9d36d973f",
+          "url": "https://github.com/jmgasper/haiku/commit/91e405e0008956ba0f24ff7b0010dbd9d36d973f",
+          "date": "2026-10-17T23:57:36Z",
+          "subject": "Merge AMD GPU scanout framebuffer support"
+        },
+        {
+          "sha": "3f1288cf8d46a677f36a6b84d7c17b8f1b2d013c",
+          "url": "https://github.com/jmgasper/haiku/commit/3f1288cf8d46a677f36a6b84d7c17b8f1b2d013c",
+          "date": "2026-10-17T23:57:36Z",
+          "subject": "Merge EFI disk and boot diagnostics"
+        },
+        {
+          "sha": "3fd4a13421984107cf7a1a75fefaeb4037f96b1b",
+          "url": "https://github.com/jmgasper/haiku/commit/3fd4a13421984107cf7a1a75fefaeb4037f96b1b",
+          "date": "2026-10-17T23:57:56Z",
+          "subject": "Merge X399 WX5100 hardware documentation"
+        },
+        {
+          "sha": "928297fac5ff50f489119b2c853fd232876033cc",
+          "url": "https://github.com/jmgasper/haiku/commit/928297fac5ff50f489119b2c853fd232876033cc",
+          "date": "2026-10-17T23:57:56Z",
+          "subject": "Record superseded Framework power development history"
+        },
+        {
+          "sha": "7594257c57a14e1b20e496b13e5567ea225b4940",
+          "url": "https://github.com/jmgasper/haiku/commit/7594257c57a14e1b20e496b13e5567ea225b4940",
+          "date": "2026-10-17T23:59:00Z",
+          "subject": "Merge upstream Haiku through 18f5da1a8a"
+        },
+        {
+          "sha": "4e92ead7e89afa4639b04aba0319d7a61f685170",
+          "url": "https://github.com/jmgasper/haiku/commit/4e92ead7e89afa4639b04aba0319d7a61f685170",
+          "date": "2026-10-18T00:08:16Z",
+          "subject": "Deskbar: add Office between Applications and Utilities"
+        },
+        {
+          "sha": "c6588691c10d03e056e527c1b53e3c8739a81c8d",
+          "url": "https://github.com/jmgasper/haiku/commit/c6588691c10d03e056e527c1b53e3c8739a81c8d",
+          "date": "2026-10-18T00:14:45Z",
+          "subject": "Build Cubie release images through the shared CI pipeline"
+        },
+        {
+          "sha": "3924e99b3502926afdf35deef8d5cfdc2eb7f8bf",
+          "url": "https://github.com/jmgasper/haiku/commit/3924e99b3502926afdf35deef8d5cfdc2eb7f8bf",
+          "date": "2026-10-18T00:35:11Z",
+          "subject": "Merge amdgpu-scanout: renderers can draw straight into the screen on amdgpu"
+        },
+        {
+          "sha": "3057ad39bbef30404e76fa90ce0c0f29d552d2ba",
+          "url": "https://github.com/jmgasper/haiku/commit/3057ad39bbef30404e76fa90ce0c0f29d552d2ba",
+          "date": "2026-10-18T00:36:18Z",
+          "subject": "Document Office menu and native app launch checks on both architectures"
+        },
+        {
+          "sha": "158bc125d88b6b62529d7234b86b5ac869f14eed",
+          "url": "https://github.com/jmgasper/haiku/commit/158bc125d88b6b62529d7234b86b5ac869f14eed",
+          "date": "2026-10-18T00:48:30Z",
+          "subject": "Merge concurrent scanout integration history"
+        },
+        {
+          "sha": "ea650d9960dc709e48c421f88ac9de0f37b8d00b",
+          "url": "https://github.com/jmgasper/haiku/commit/ea650d9960dc709e48c421f88ac9de0f37b8d00b",
+          "date": "2026-10-18T00:48:30Z",
+          "subject": "Merge upstream Haiku through 8673bcc864"
+        },
+        {
+          "sha": "afa363cef3b53492e14aa361993aaa000c239398",
+          "url": "https://github.com/jmgasper/haiku/commit/afa363cef3b53492e14aa361993aaa000c239398",
+          "date": "2026-10-18T01:23:30Z",
+          "subject": "Record verification of all four release images and Office apps"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -9428,8 +10184,20 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "91cb94eec8e825026e02d83e8d2dbbcd2c36dd95",
+      "head": "3e02433120733035305a401ff6347916fc2c12f4",
       "commits": [
+        {
+          "sha": "3e02433120733035305a401ff6347916fc2c12f4",
+          "url": "https://github.com/jmgasper/airos-ci/commit/3e02433120733035305a401ff6347916fc2c12f4",
+          "date": "2026-10-18T00:57:45Z",
+          "subject": "Honor the configured temporary directory in image smoke tests"
+        },
+        {
+          "sha": "a039686b4874b9badfca529b87fc381b31e1a4bc",
+          "url": "https://github.com/jmgasper/airos-ci/commit/a039686b4874b9badfca529b87fc381b31e1a4bc",
+          "date": "2026-10-18T00:49:59Z",
+          "subject": "Build Office on both architectures and add Cubie release images"
+        },
         {
           "sha": "91cb94eec8e825026e02d83e8d2dbbcd2c36dd95",
           "url": "https://github.com/jmgasper/airos-ci/commit/91cb94eec8e825026e02d83e8d2dbbcd2c36dd95",
@@ -68064,10 +68832,16 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "x86_64 images: the amdgpu_drm kernel driver and its amdgpu_drm package (deps/build-amdgpu.sh; the amdgpu_kms accelerant is in haiku.hpkg)",
-      "pinned": "65ff842cac50dbbd321ce5b51d4015e861fc371f",
+      "pinned": "901e5872aa1d3224e2ed6db52585e39b6eccfc40",
       "upstream": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git",
-      "head": "901e5872aa1d3224e2ed6db52585e39b6eccfc40",
+      "head": "d3554b385af80bb2f191d08b8ffe223039d8169a",
       "commits": [
+        {
+          "sha": "d3554b385af80bb2f191d08b8ffe223039d8169a",
+          "url": "https://github.com/jmgasper/linux-drm/commit/d3554b385af80bb2f191d08b8ffe223039d8169a",
+          "date": "2026-10-18T00:34:59Z",
+          "subject": "Tests: vkscanout reads the frame buffer at a given place"
+        },
         {
           "sha": "901e5872aa1d3224e2ed6db52585e39b6eccfc40",
           "url": "https://github.com/jmgasper/linux-drm/commit/901e5872aa1d3224e2ed6db52585e39b6eccfc40",
@@ -68554,7 +69328,7 @@
       "description": "x86_64 images: libdrm and libdrm_amdgpu of the AMD GPU user land (deps/build-amdgpu-userland.sh)",
       "pinned": "2310822c6ff14696125a5278d721031fa70317bb",
       "upstream": "https://gitlab.freedesktop.org/mesa/drm.git",
-      "head": "2310822c6ff14696125a5278d721031fa70317bb",
+      "head": "eec11b92d6d3b4115f58c5cc9d82b71f450e9952",
       "commits": [
         {
           "sha": "ff5fd1575bf07c90c8775b4cef9deaff1b57b45d",
@@ -68603,6 +69377,12 @@
           "url": "https://github.com/jmgasper/libdrm/commit/2310822c6ff14696125a5278d721031fa70317bb",
           "date": "2026-10-12T22:51:56Z",
           "subject": "README: the air/OS (Haiku) branch and its licence"
+        },
+        {
+          "sha": "eec11b92d6d3b4115f58c5cc9d82b71f450e9952",
+          "url": "https://github.com/jmgasper/libdrm/commit/eec11b92d6d3b4115f58c5cc9d82b71f450e9952",
+          "date": "2026-10-17T21:34:10Z",
+          "subject": "Haiku: import the screen's frame buffer as a KMS handle"
         }
       ],
       "url": "https://github.com/jmgasper/libdrm/tree/airos-2.4.134"
@@ -68634,9 +69414,9 @@
       "base": "33656fb53639a447733ed926a00843db898e28c7",
       "group": "Libraries & firmware",
       "description": "x86_64 images: radeonsi (OpenGL, GLES, EGL), RADV (Vulkan) and the VA-API driver of the AMD GPU user land (deps/build-amdgpu-userland.sh)",
-      "pinned": "dce808ad918f5a768b749e75b0c92104ae4664fe",
+      "pinned": "66d514becc8356c00afd16215ad1cb61c3511f36",
       "upstream": null,
-      "head": "dce808ad918f5a768b749e75b0c92104ae4664fe",
+      "head": "66d514becc8356c00afd16215ad1cb61c3511f36",
       "commits": [
         {
           "sha": "9400afdf4da53d0e6618fc2d7df0ed0c53df4fcf",
@@ -68685,6 +69465,18 @@
           "url": "https://github.com/jmgasper/mesa/commit/dce808ad918f5a768b749e75b0c92104ae4664fe",
           "date": "2026-10-16T05:02:04Z",
           "subject": "util: find the Haiku program name from the application image"
+        },
+        {
+          "sha": "006c0504b98412eb45e48ce861b70c32bee78b5d",
+          "url": "https://github.com/jmgasper/mesa/commit/006c0504b98412eb45e48ce861b70c32bee78b5d",
+          "date": "2026-10-17T21:34:10Z",
+          "subject": "radv: let a renderer draw into the screen's frame buffer (Haiku)"
+        },
+        {
+          "sha": "66d514becc8356c00afd16215ad1cb61c3511f36",
+          "url": "https://github.com/jmgasper/mesa/commit/66d514becc8356c00afd16215ad1cb61c3511f36",
+          "date": "2026-10-18T00:34:42Z",
+          "subject": "Merge RADV scanout framebuffer import support"
         }
       ],
       "url": "https://github.com/jmgasper/mesa/tree/airos-amdgpu"
@@ -68994,76 +69786,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261017223937-8053c8aa7d",
-      "published": "2026-10-17T22:42:45Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261018004921-3924e99b35",
+      "published": "2026-10-18T00:52:56Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 845217200,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261017223937-8053c8aa7d/airos-x86_64.iso.xz",
-          "digest": "sha256:efdeaad3b18f06e0f990842e9ecb374a6a0dc564f3e8cd96d659661737ccdeb0"
+          "size": 845216108,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261018004921-3924e99b35/airos-x86_64.iso.xz",
+          "digest": "sha256:e92b4a34800930615694ced44d4e7f550289796f9bb9087cda0299b69981c974"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261017223937-8053c8aa7d/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:0693e13ae6dbf8f9e509266efe0a901778666677c32fab8c3b840f213fb7fdc5"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261018004921-3924e99b35/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:77aaa7c403575bfd8e409e988f221b9489833c75b766890a859b34c2252f066c"
         },
         {
           "name": "manifest.json",
           "size": 7108,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261017223937-8053c8aa7d/manifest.json",
-          "digest": "sha256:2d4ec01a88d409a47dc5abc780893e4f449ccf3b2852727f9f1ae5f63257f3e6"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261018004921-3924e99b35/manifest.json",
+          "digest": "sha256:eb3874e49be9023df244c8df8117a18614aafdd902cba8d105713aa156c0604a"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261017235633-8ac21bf43f",
-      "published": "2026-10-17T23:59:15Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261018005635-3924e99b35",
+      "published": "2026-10-18T00:59:20Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 328783512,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261017235633-8ac21bf43f/airos-arm64.iso.xz",
-          "digest": "sha256:23a59c2b8e81851676f7bc6e886310da70790d5d2e7d7d5e259895ea5d8cb71c"
+          "size": 328782852,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261018005635-3924e99b35/airos-arm64.iso.xz",
+          "digest": "sha256:0b7f48dcab110a6259ed76a7461eb326cd0986dfaa301de44fe05a3b5a3dd740"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261017235633-8ac21bf43f/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:5fac55b34d4c8f935cbf40957a65808a4ff5f51823dcd280e44ece8cf3c04f50"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261018005635-3924e99b35/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:843cfb759315d6011c459d4ae7ca606ba8ce8903075fa109735d1714f0494f13"
         },
         {
           "name": "manifest.json",
           "size": 5622,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261017235633-8ac21bf43f/manifest.json",
-          "digest": "sha256:9e9f5418df2576d4ccaac51ec95e3797c9d67ffa7135f694ae260aefb4335b9d"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261018005635-3924e99b35/manifest.json",
+          "digest": "sha256:86dffeda51d9c70741f99d86ac038d7fb5b7661120d8f327c10abc260916c96f"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261017235230-8ac21bf43f",
-      "published": "2026-10-17T23:53:27Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261018003847-3924e99b35",
+      "published": "2026-10-18T00:39:54Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 331369052,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261017235230-8ac21bf43f/airos-rpi4.img.xz",
-          "digest": "sha256:8378f9daaa332e6f0b4590ea9b8a041300c120e8b5eb8a5e0af934fcc3b44c23"
+          "size": 331365004,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261018003847-3924e99b35/airos-rpi4.img.xz",
+          "digest": "sha256:926d5d079d87faaa4642c56ab45a22d21579f83fc3c7af1e6ffe89e40504ff7d"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261017235230-8ac21bf43f/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:661f7348ebb0d6042f89b8a5a08ea53c138dcaf134783489e0ceceda2bc258d9"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261018003847-3924e99b35/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:be5cb6576f091cb00a2e8f17158e805deffc595e3f293388ba73b2432b1b3192"
         },
         {
           "name": "manifest.json",
           "size": 5756,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261017235230-8ac21bf43f/manifest.json",
-          "digest": "sha256:6c8875a1ad96de6dcc67fc9e638beaad5ac2c59a29fd5a3e612d8b77c332e35e"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261018003847-3924e99b35/manifest.json",
+          "digest": "sha256:fa6b53a07a39fc3126223547c510a95585a3b3da960022c677ef1ee5ea83d71c"
         }
       ]
     }
