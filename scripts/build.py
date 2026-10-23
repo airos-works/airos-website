@@ -25,7 +25,10 @@ def link(href, label, cls=''):
 
 def page(path, title, description, body):
     canonical = ORIGIN + '/' + path
-    nav = ''.join(link(url(p), t, 'active' if (p == path or p == 'changelog/' and path.startswith(p)) else '') for p, t in NAV)
+    current = lambda p: p == path or p == 'changelog/' and path.startswith(p)
+    nav = ''.join(link(url(p), t, 'active' if current(p) else '') for p, t in NAV if p != 'downloads/')
+    cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
+    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV)
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>air/OS</title><meta name="description" content="{e(description, quote=True)}">
@@ -34,12 +37,13 @@ def page(path, title, description, body):
 <meta property="og:url" content="{canonical}"><meta property="og:image" content="{ORIGIN}/assets/logo.png">
 <link rel="icon" href="{url('favicon.ico')}" sizes="16x16 32x32 48x48"><link rel="icon" type="image/svg+xml" href="{url('assets/favicon.svg')}" sizes="any"><link rel="stylesheet" href="{url('assets/site.css')}">
 <script src="{url('assets/site.js')}" defer></script></head>
-<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner">
+<body class="{'home' if path == '' else 'inner'}"><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="{url()}" aria-label="airOS home"><img src="{url('assets/logo.png')}" width="191" height="64" alt="air/OS"></a>
-<nav aria-label="Main navigation">{nav}</nav></div></header>
+<nav aria-label="Main navigation">{nav}</nav>{cta}</div></header>
 <main id="main" class="wrap">{body}</main>
-<footer class="wrap"><div class="footer-brand">A little more possibility.</div>
-<div>{link('https://www.haiku-os.org/', 'Discover Haiku ↗')}<span>Build data refreshed {UPDATED} UTC</span></div></footer></body></html>'''
+<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="{url('assets/logo.png')}" width="143" height="48" alt="air/OS"><p>A little more possibility.</p>{link('https://www.haiku-os.org/', 'Built on Haiku ↗', 'text-link')}</div>
+<nav aria-label="Footer"><p class="eyebrow">Explore</p><ul>{footer_links}</ul></nav>
+<div class="footer-meta"><p class="eyebrow">Status</p><p>Development builds. Independent of the Haiku project.</p><p>Build data refreshed {UPDATED} UTC</p></div></div></footer></body></html>'''
     target = OUT / path / 'index.html'
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(html)
@@ -47,19 +51,33 @@ def page(path, title, description, body):
 def intro(kicker, title, text):
     return f'<div class="page-intro"><p class="eyebrow">{kicker}</p><h1>{title}</h1><p class="lead">{text}</p></div>'
 
+# Small line icons for the home page's three principles.
+ICONS = {
+    'chip': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>',
+    'apps': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg>',
+    'loop': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 0 1-13.7 5.6M4 12a8 8 0 0 1 13.7-5.6"/><path d="M18 2.5v4.2h-4.2M6 21.5v-4.2h4.2"/></svg>',
+}
+
 def home():
+    commits = len({(s['repo'], c['sha']) for s in D['sources'] for c in s['commits']})
+    apps = len(json.loads((ROOT / 'content/project.json').read_text())['apps'])
+    devices = len(json.loads((ROOT / 'content/hardware.json').read_text()))
+    stats = [(f'{apps}', 'native app packages'), (f'{devices}', 'hardware platforms with test notes'), (f'{len(D["sources"])}', 'tracked source branches'), (f'{commits:,}', 'commits in the public changelog')]
     body = f'''<section class="hero"><div class="hero-copy">
-<h1>Build on Haiku.<br>Extended with <em>AI.</em></h1>
+{link(url('apps/#proton'), '<span class="dot" aria-hidden="true"></span>New: Proton VPN and Mail Bridge <span aria-hidden="true">›</span>', 'pill-badge')}
+<h1>Build on Haiku.<br>Extended with AI.</h1>
 <p class="lead">airOS is an independent, AI-assisted exploration of what Haiku can do — on more devices, with more native apps, and with the same love for a responsive, personal desktop.</p>
-<div class="actions">{link(url('downloads/'), 'Explore the downloads <span aria-hidden="true">↗</span>', 'button primary')}{link(url('screenshots/'), 'See it in action <span aria-hidden="true">→</span>', 'text-link')}</div>
-</div><div class="hero-art" aria-hidden="true"><div class="orbit"></div><img src="{url('assets/mark.png')}" alt=""></div></section>
-<section class="about-section"><div><p class="eyebrow">The foundation</p><h2>Haiku made<br> this possible.</h2></div><div class="prose"><p>Haiku’s contributors have spent decades building an open-source operating system inspired by BeOS: fast, coherent and thoughtfully designed for personal computing. Its kernel, desktop, native APIs and community are the foundation of everything here.</p><p>airOS builds on that work with device support, desktop improvements and applications. It is an independent fork, with its own development approach.</p>{link('https://www.haiku-os.org/', 'Haiku Project ↗', 'text-link')}</div></section>
-<section class="principles"><article><span class="section-number">01 / EXPLORE</span><h3>More hardware.</h3><p>From ARM boards to a desktop workstation, new drivers and ports bring Haiku’s desktop to more places.</p>{link(url('hardware/'), 'See what works →')}</article><article><span class="section-number">02 / MAKE</span><h3>More everyday apps.</h3><p>Browse, listen, watch, capture and create with native applications that feel at home on the desktop.</p>{link(url('screenshots/'), 'Take a look →')}</article><article><span class="section-number">03 / ITERATE</span><h3>A faster feedback loop.</h3><p>AI helps investigate unfamiliar code, develop ports and test ideas quickly. Builds, hardware checks and public Git history make progress inspectable.</p>{link(url('changelog/'), 'Follow the changes →')}</article></section>
-<section class="release-highlights"><div class="section-heading"><h2>New on your desktop.</h2><span>October 2026</span></div><div class="highlight-grid">
-<article><a href="{url('apps/#office')}"><img src="{url('assets/screenshots/wordcraft.png')}" alt="WordCraft running on Haiku" loading="lazy"></a><p class="eyebrow">Write · calculate · present · read</p><h3>A new office suite.</h3><p>Meet WordCraft, GridCraft, DeckCraft and PDFCraft: four early native ports for documents, spreadsheets, presentations and PDFs.</p>{link(url('apps/#office'), 'Explore the Craft apps →')}</article>
-<article><a href="{url('summit/')}"><img src="{url('assets/screenshots/summit.png')}" alt="The Summit browser on Haiku" loading="lazy"></a><p class="eyebrow">A browser that keeps growing</p><h3>More Summit.</h3><p>Reader mode, PDFs, extensions, streaming media and native developer tools, with dedicated builds for airOS and stock Haiku.</p>{link(url('summit/'), 'Discover Summit →')}</article></div>
-<div class="update-links"><div><h3>Media, reworked.</h3><p>A clearer Media preferences app and a new MediaConverter with queues, previews and GPU encoding.</p>{link(url('apps/#media'), 'Explore the media tools →')}</div><div><h3>More of your hardware.</h3><p>AMD display and GPU acceleration, Cubie WebGL 2, and Raspberry Pi dual displays and DSI panels.</p>{link(url('hardware/'), 'See the tested configurations →')}</div></div></section>
-<section class="closing"><p class="eyebrow">An experiment you can explore</p><h2>Open source. Ongoing work.<br>A desktop with room to grow.</h2><p>Development builds are available now. Check the hardware notes, try the apps, or follow along in the source.</p>{link(url('source/'), 'Explore the code ↗', 'button')}</section>'''
+<div class="actions">{link(url('downloads/'), 'Explore the downloads', 'button primary')}{link(url('screenshots/'), 'See it in action <span aria-hidden="true">›</span>', 'button ghost')}</div>
+</div></section>
+<section class="stats" aria-label="airOS at a glance"><h2>Haiku’s desktop,<br>on more machines.</h2><dl>{''.join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for value, label in stats)}</dl></section>
+<section class="principles"><article>{ICONS['chip']}<h3>More hardware</h3><p>From ARM boards to a desktop workstation, new drivers and ports bring Haiku’s desktop to more places.</p>{link(url('hardware/'), 'See what works ›', 'text-link')}</article><article>{ICONS['apps']}<h3>More everyday apps</h3><p>Browse, listen, watch, capture and create with native applications that feel at home on the desktop.</p>{link(url('apps/'), 'Meet the apps ›', 'text-link')}</article><article>{ICONS['loop']}<h3>A faster feedback loop</h3><p>AI helps investigate unfamiliar code, develop ports and test ideas quickly. Builds, hardware checks and public Git history make progress inspectable.</p>{link(url('changelog/'), 'Follow the changes ›', 'text-link')}</article></section>
+<section class="statement"><p class="eyebrow">The foundation</p><div><p class="statement-text">Haiku’s contributors have spent decades building an open-source operating system inspired by BeOS: fast, coherent and thoughtfully designed for personal computing.</p><p class="statement-text">airOS builds on their kernel, desktop and native APIs with device support, desktop improvements and applications. It is an independent fork, with its own development approach.</p>{link('https://www.haiku-os.org/', 'The Haiku Project ↗', 'button ghost')}</div></section>
+<section class="release-highlights"><div class="section-heading"><div><p class="eyebrow">October 2026</p><h2>New on your desktop.</h2></div>{link(url('apps/'), 'All apps ›', 'button ghost')}</div><div class="highlight-grid">
+<article><a class="highlight-image" href="{url('apps/#office')}"><img src="{url('assets/screenshots/wordcraft.png')}" alt="WordCraft running on Haiku" loading="lazy"></a><span class="tag">Office Suite</span><h3>A new office suite.</h3><p>WordCraft, GridCraft, PDFCraft and DeckCraft: early native ports for documents, spreadsheets, PDFs and presentations.</p>{link(url('apps/#office'), 'Explore the Craft apps ›', 'text-link')}</article>
+<article><a class="highlight-image" href="{url('apps/#proton')}"><img src="{url('assets/screenshots/proton-vpn.png')}" alt="Proton VPN on airOS" loading="lazy"></a><span class="tag">Proton</span><h3>Proton, natively.</h3><p>Community ports of Proton VPN and Proton Mail Bridge, built by airOS CI and published as rolling releases.</p>{link(url('apps/#proton'), 'Meet the Proton ports ›', 'text-link')}</article>
+<article><a class="highlight-image" href="{url('summit/')}"><img src="{url('assets/screenshots/summit-firefox-addon.png')}" alt="Summit offering to install an extension from Firefox Add-ons" loading="lazy"></a><span class="tag">Summit Browser</span><h3>More Summit.</h3><p>Reader mode, PDFs, store extensions, streaming media and native developer tools, for airOS and stock Haiku.</p>{link(url('summit/'), 'Discover Summit ›', 'text-link')}</article>
+<article><a class="highlight-image" href="{url('apps/#media')}"><img src="{url('assets/screenshots/mediaconverter.png')}" alt="MediaConverter on airOS" loading="lazy"></a><span class="tag">Media Tools</span><h3>Media, reworked.</h3><p>A clearer Media preferences app and a new MediaConverter with queues, previews and GPU encoding.</p>{link(url('apps/#media'), 'Explore the media tools ›', 'text-link')}</article></div></section>
+<section class="closing"><img src="{url('assets/mark.png')}" alt="" aria-hidden="true"><p class="eyebrow">An experiment you can explore</p><h2>Open source. Ongoing work.<br>A desktop with room to grow.</h2><p>Development builds are available now. Check the hardware notes, try the apps, or follow along in the source.</p><div class="actions">{link(url('downloads/'), 'Get airOS', 'button light')}{link(url('source/'), 'Explore the code ↗', 'button ghost-light')}</div></section>'''
     page('', 'Build on Haiku. Extended with AI.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
 
 def capture(id):

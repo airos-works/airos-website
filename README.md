@@ -42,9 +42,16 @@ both from the repository's actual Pages configuration.
 - Source: the operating system, apps and every branch in the CI fork manifest.
 - Changelog: all collected fork changes, monthly archives and global search.
 
-The established air/OS artwork supplies the identity. Warm white, deep teal,
-muted green, sky blue and amber echo the logo. Typography and whitespace lead;
-real screenshots appear alongside features and in a filterable gallery. Navigation and content work without
+The established air/OS artwork supplies the identity. The home page opens on the
+airOS desktop's hills (`data/artwork/airos/airos-desktop.tga` in jmgasper/haiku,
+cropped above its wordmark, with its own top row of sky extended upward as
+`static/assets/hero-hills.jpg`). The layout takes cues from Duna's and T1 Energy's
+sites: large light headlines over open sky, a stats row, hairline-divided feature
+columns, small monospaced `■ LABEL` markers, two-column statements, pill-shaped
+navigation and buttons, soft warm-grey rounded panels for captures and a dark
+closing band. Warm white, deep teal, sky blue and amber echo the logo. Fonts are
+the visitor's own system fonts (Inter where installed); nothing is loaded from a
+font service. Real screenshots appear alongside features and in a filterable gallery. Navigation and content work without
 JavaScript. With JavaScript, the gallery supports filtering and an accessible
 native dialog, and the changelog searches its full local archive.
 
