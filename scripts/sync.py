@@ -101,7 +101,7 @@ def main():
                     description='Haiku kernel, desktop, drivers and airOS integration.'),
                dict(name='Build pipelines', repo='jmgasper/airos-ci', branch='main',
                     group='Build infrastructure', description='SDKs, packages, images and source provenance.')]
-    for branch in ['airos-release', 'rpi4', 'x399-workstation']:
+    for branch in ['airos-release', 'rpi4']:
         sources.append(dict(name='Haiku / ' + branch, repo='jmgasper/haiku', branch=branch,
                             base=CONFIG['haiku_base'], group='Operating system',
                             description='Active device or release branch; includes work awaiting integration into master.'))

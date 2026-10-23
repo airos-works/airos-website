@@ -31,7 +31,10 @@ both from the repository's actual Pages configuration.
 ## Content and design
 
 - Home: credit Haiku, explain the independent project and AI-assisted approach.
-- Apps: the Craft office suite, Media preferences, MediaConverter and everyday native tools.
+- Apps: six categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
+  Proton and EveryDay). A panel opens when its tab is selected; links to a panel or
+  to an app inside one open it. Without JavaScript the tabs are jump links and
+  every panel is shown.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds.
 - Screenshots: dated application and hardware captures, with full-size viewing.
 - New hardware: curated capabilities, gaps and links to the lab's test notes.
@@ -51,8 +54,14 @@ captures, CSS and JavaScript. The build produces `dist/`. Screenshots are real c
 13 on 18 October 2026; DeckCraft and PDFCraft use their same-day native validation
 captures. The Cubie and Raspberry Pi gallery entries are dated hardware-test
 captures. Earlier app images are explicitly labelled as development captures.
-No UI is reconstructed or generated. Summit is represented by a single capture
-of the airOS website, shared by its feature page and the gallery. The favicon uses the
+No UI is reconstructed or generated. Summit is represented by a capture of the
+airOS website, shared by its feature page and the gallery, and by its install card
+on a Firefox Add-ons page (X399, 23 October 2026). The Proton VPN and Proton Mail
+Bridge captures are the CI-built packages on the X399 the same day; Proton VPN is
+signed in to the repository's stand-in test API (`tools/fake-proton`) and no
+connection was made. Clipper was captured in a QEMU VM running the 23 October
+x86-64 image live. The Mail capture is its acceptance-run evidence
+(`docs/evidence/mail-final-inbox.png` in jmgasper/mail), cropped to the window. The favicon uses the
 [square airOS mark](https://github.com/jmgasper/haiku/blob/master/data/artwork/airos/airos-mark.svg),
 with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime and MediaConverter captures include Big Buck Bunny, © Blender Foundation,
@@ -97,12 +106,12 @@ Git ancestor, and libdrm uses the immutable commit behind an upstream tag that
 is absent from the public fork. These corrections keep the scheduled refresh
 working without silently discarding history on arbitrary API failures. For Haiku the recorded baseline is the common ancestor
 of the fork and upstream at initial site creation. The integration branch and
-active `airos-release`, `rpi4` and `x399-workstation` branches are all tracked. App history and imported
+active `airos-release` and `rpi4` branches are all tracked (`x399-workstation` was
+retired into master). App history and imported
 repositories have no upstream exclusion. Every API page is fetched; compare
 counts are checked, and duplicate commits across branches are displayed once.
-The Craft source entries track the port branches (`haiku` for WordCraft,
-GridCraft and DeckCraft; `feat/airos-port` for PDFCraft), so the source links and
-changelog include the Haiku work.
+The Craft ports have been merged into each fork's `main`, which the source entries
+track, so the source links and changelog include the Haiku work.
 Nothing is limited to a recent date window. SHA-keyed cache files accelerate
 unchanged histories without hiding force-pushed changes. Private repositories
 are never exported. The source page links directly to full upstream history.
@@ -119,7 +128,9 @@ commit messages.
 ## Downloads
 
 App assets come from each public repository's rolling `latest` prerelease.
-Summit lists its browser and required WebKit engine separately. The download
+Summit lists its browser and required WebKit engine separately. Proton VPN
+(x86-64 and ARM64) and Proton Mail Bridge (x86-64) publish their rolling `latest`
+releases from airos-ci's reusable app workflow on every push to their forks. The download
 page refreshes rolling app links from the public GitHub API when it opens,
 with the dated snapshot and release-page links as fallbacks. It identifies architecture and build date and links to checksums in the
 release notes. Any app without a public release is explicitly unavailable and links to its

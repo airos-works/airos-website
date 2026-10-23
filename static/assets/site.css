@@ -18,3 +18,17 @@
 @media(max-width:1000px){.header-inner{flex-wrap:wrap}.header-inner nav{gap:17px}.feature-row{gap:28px}.highlight-grid img{height:240px}}
 @media(max-width:760px){.header-inner nav{grid-template-columns:repeat(4,1fr);gap:5px 10px}.header-inner nav a{font-size:11px}.highlight-grid,.update-links,.feature-row{grid-template-columns:1fr}.highlight-grid{gap:36px}.highlight-grid img{height:auto;max-height:330px}.feature-row{gap:25px;padding:30px 0}.feature-row h3{font-size:29px}.release-highlights{margin-bottom:50px}.jump-links{font-size:13px}}
 @media(max-width:360px){.header-inner nav{grid-template-columns:repeat(3,1fr)}}
+
+/* Application categories: tabs once site.js runs, jump links without it. */
+.app-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:45px}
+.app-tabs a{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:#fcfcf8;text-decoration:none;color:var(--ink);transition:background .2s,border-color .2s}
+.app-tabs a:hover{background:#e9efea;border-color:#b9c9bf}.app-tabs strong{font-size:18px;font-weight:550;letter-spacing:-.02em}.app-tabs span{font-size:12px;line-height:1.5;color:var(--muted)}
+.app-tabs a.selected{background:var(--deep);border-color:var(--deep);color:#fff;box-shadow:inset 0 -4px var(--amber)}.app-tabs a.selected span{color:#d4e4df}
+.tab-prompt{font-size:14px;color:var(--muted);margin:-20px 0 70px}.tab-panel{scroll-margin-top:20px}.tab-panel>.section-heading{margin-top:0}.panel-actions{margin:0 0 25px}
+@media(max-width:1000px){.app-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.app-tabs{gap:8px;margin-bottom:32px}.app-tabs a{padding:14px 15px}.app-tabs strong{font-size:16px}.app-tabs span{font-size:11px}}
+@media(max-width:400px){.app-tabs{grid-template-columns:1fr}}
+/* Captures are never enlarged; tall windows keep a readable height. */
+.feature-capture>a{display:block}.feature-capture img{width:auto;height:auto;max-width:100%;max-height:640px;margin-inline:auto}
+.feature-row.wide{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}.feature-row.wide>.feature-capture{grid-column:1/-1}
+@media(max-width:760px){.feature-row.wide{grid-template-columns:1fr}}

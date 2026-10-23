@@ -1,83 +1,352 @@
 {
-  "reviewed": "2026-10-18",
-  "office": [
+  "reviewed": "2026-10-23",
+  "tabs": [
     {
-      "id": "wordcraft",
-      "title": "WordCraft",
-      "text": "A word processor for longer documents, everyday writing and page layout. The Haiku port keeps the Rust editor and adds native desktop integration.",
-      "features": [
-        "DOCX documents, styled text, tables, page layout and PDF export",
-        "Review tools and document recovery",
-        "Native Open/Save panels, clipboard and sharp text on scaled displays"
-      ],
-      "source": "https://github.com/jmgasper/wordcraft/blob/haiku/docs/haiku.md",
-      "screenshot": "wordcraft"
+      "id": "office",
+      "label": "Office Suite",
+      "heading": "The Craft office suite",
+      "tag": "Early native ports",
+      "lead": "WordCraft, GridCraft, PDFCraft and DeckCraft bring the open-source Craft applications to airOS. Their Rust editors run inside native Haiku windows, with system file panels, clipboard support and display scaling.",
+      "note": "These are early ports of alpha applications. They render on the CPU; native printing, IME composition and some desktop integrations remain unfinished. Document compatibility varies by app. The build links below state what is currently published.",
+      "items": [
+        {
+          "id": "wordcraft",
+          "title": "WordCraft",
+          "text": "A word processor for longer documents, everyday writing and page layout. The Haiku port keeps the Rust editor and adds native desktop integration.",
+          "features": [
+            "DOCX documents, styled text, tables, page layout and PDF export",
+            "Review tools and document recovery",
+            "Native Open/Save panels, clipboard and sharp text on scaled displays"
+          ],
+          "source": "https://github.com/jmgasper/wordcraft/blob/main/docs/haiku.md",
+          "screenshot": "wordcraft",
+          "download": "downloads/#wordcraft"
+        },
+        {
+          "id": "gridcraft",
+          "title": "GridCraft",
+          "text": "A spreadsheet for budgets, calculations and charts, with a familiar ribbon and formula bar.",
+          "features": [
+            "XLSX workbooks, formulas, number formats and charts",
+            "Native file panels and text/HTML clipboard integration",
+            "Tracker document handling and display-density support"
+          ],
+          "source": "https://github.com/jmgasper/gridcraft/blob/main/docs/haiku.md",
+          "screenshot": "gridcraft",
+          "download": "downloads/#gridcraft"
+        },
+        {
+          "id": "pdfcraft",
+          "title": "PDFCraft",
+          "text": "Read and work on PDFs in a native window, with the same Rust document engine used on the other platforms.",
+          "features": [
+            "Search and copy text, annotate, edit and organize pages",
+            "Fill forms, save changes and undo edits",
+            "Native file panels, document recovery and an included command-line tool"
+          ],
+          "source": "https://github.com/jmgasper/pdfcraft/blob/main/docs/haiku.md",
+          "screenshot": "pdfcraft",
+          "download": "downloads/#pdfcraft"
+        },
+        {
+          "id": "deckcraft",
+          "title": "DeckCraft",
+          "text": "Build a presentation, add speaker notes and take it fullscreen on your Haiku desktop.",
+          "features": [
+            "PPTX and DeckCraft documents, PDF and image export",
+            "Transitions, animations and a native fullscreen slide show",
+            "Media Kit audio, native file panels and recovery for unsaved work"
+          ],
+          "source": "https://github.com/jmgasper/deckcraft/blob/main/docs/haiku.md",
+          "screenshot": "deckcraft",
+          "download": "downloads/#deckcraft"
+        }
+      ]
     },
     {
-      "id": "gridcraft",
-      "title": "GridCraft",
-      "text": "A spreadsheet for budgets, calculations and charts, with a familiar ribbon and formula bar.",
-      "features": [
-        "XLSX workbooks, formulas, number formats and charts",
-        "Native file panels and text/HTML clipboard integration",
-        "Tracker document handling and display-density support"
-      ],
-      "source": "https://github.com/jmgasper/gridcraft/blob/haiku/docs/haiku.md",
-      "screenshot": "gridcraft"
+      "id": "media",
+      "label": "Media Tools",
+      "heading": "A fresh look at media",
+      "tag": "Included in airOS system builds",
+      "lead": "Reworked Haiku media tools sit beside native players and a pair of Craft apps for photos: edit layered images in PhotoCraft and develop RAW files in LightCraft.",
+      "note": "GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use. Other codecs and devices may use the CPU. Check MediaConverter’s Video hardware window for the current machine. PhotoCraft and LightCraft need a hardware Vulkan driver for GPU rendering and fall back to the CPU otherwise.",
+      "items": [
+        {
+          "id": "media-preferences",
+          "title": "Media preferences",
+          "text": "Audio and video settings have been rebuilt around a sidebar and readable cards, so devices and everyday controls are easier to find.",
+          "features": [
+            "Choose input and output devices, adjust volume and play a test sound",
+            "Control individual applications in the audio mixer, with app icons and mute controls",
+            "Check a live recording level meter and camera preview",
+            "Choose a MIDI SoundFont and restart stopped media services"
+          ],
+          "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
+          "screenshot": "media-preferences",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "mediaconverter",
+          "title": "MediaConverter",
+          "text": "A new conversion window and engine bring queues, previews and hardware-aware encoding to Haiku’s media toolbox.",
+          "features": [
+            "Queue video and audio files, preview sources and choose separate video or audio presets",
+            "Audio conversion keeps artwork, tags and chapters, with playback controls in the source preview",
+            "Use available GPU encoders, inspect video hardware and see when a job will use the CPU",
+            "Import DVD/Blu-ray sources and disc images, sidecar subtitles and embedded closed captions",
+            "Preserve HDR10 metadata where supported; conversions run in worker processes and retry on the CPU after a GPU crash",
+            "Use the mediaconvert command-line tool for scripted conversions"
+          ],
+          "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
+          "screenshot": "mediaconverter",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "airtime",
+          "title": "AirTime",
+          "text": "A movie player with a classic feel that plays anything FFmpeg reads, using the hardware video decoder where the machine has one.",
+          "features": [
+            "Hardware decoding on AMD UVD, NVIDIA NVDEC, ROCK 5 MPP, Raspberry Pi 4 and Cubie A7S, with libavcodec as the fallback",
+            "The Movie Inspector shows which decoder is in use",
+            "HDR10 and HLG tone mapping, deinterlacing and sharp drawing on scaled displays",
+            "SRT, ASS, WebVTT, PGS, VobSub and DVB subtitles, CEA-608 captions and J/K/L scanning"
+          ],
+          "source": "https://github.com/jmgasper/airTime/blob/main/README.md",
+          "screenshot": "airtime",
+          "download": "downloads/#airtime"
+        },
+        {
+          "id": "amp",
+          "title": "Amp",
+          "text": "A familiar music player for your local library, with Music Assistant streaming and playlists that sync back to the server.",
+          "features": [
+            "MP3, AAC, FLAC, WAV and OGG libraries in song, album, grid and artist views",
+            "Stream from Music Assistant over Sendspin",
+            "Artwork lookup and MiniDisc transfers on NetMD recorders",
+            "A Quick Look add-on previews songs from Tracker with the space bar"
+          ],
+          "source": "https://github.com/jmgasper/amp/blob/main/README.md",
+          "screenshot": "amp",
+          "download": "downloads/#amp"
+        },
+        {
+          "id": "photocraft",
+          "title": "PhotoCraft",
+          "text": "The Craft layered image editor as a native application, drawing its canvas and interface with Vulkan.",
+          "features": [
+            "Layers, brushes, masks, adjustments, 8/16/32-bit documents, PSD files and document recovery",
+            "Falls back to the CPU automatically, including when the GPU is lost mid-session",
+            "Native file panels, Tracker, clipboard and display-density support",
+            "A 24 MP opacity change measured 8–9× faster on the GPU than on the CPU"
+          ],
+          "source": "https://github.com/jmgasper/photocraft/blob/main/docs/haiku.md",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "lightcraft",
+          "title": "LightCraft",
+          "text": "A photo library and RAW developer that hands photos to PhotoCraft for detailed editing.",
+          "features": [
+            "Library, non-destructive developing, presets, masks and history",
+            "Vulkan compute for photo processing and a Vulkan-drawn interface, with CPU fallback",
+            "Cold previews in 65 ms instead of 455 ms on a Radeon 760M; 24 MP exports in 1.8 s instead of 4.5 s",
+            "AI models are not bundled and HEIF support is optional"
+          ],
+          "source": "https://github.com/jmgasper/lightcraft/blob/main/docs/haiku.md",
+          "download": "downloads/#system"
+        }
+      ]
     },
     {
-      "id": "deckcraft",
-      "title": "DeckCraft",
-      "text": "Build a presentation, add speaker notes and take it fullscreen on your Haiku desktop.",
-      "features": [
-        "PPTX and DeckCraft documents, PDF and image export",
-        "Transitions, animations and a native fullscreen slide show",
-        "Media Kit audio, native file panels and recovery for unsaved work"
+      "id": "developer",
+      "label": "Developer",
+      "heading": "Tools for building things",
+      "tag": "Code, databases, Git and networks",
+      "lead": "Code - OSS, pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Terminal gained a new rendering engine, and Burrow connects you to work networks.",
+      "note": "Code - OSS, pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku.",
+      "links": [
+        {"label": "About Aurora ↗", "href": "https://github.com/jmgasper/aurora/blob/main/README.md"}
       ],
-      "source": "https://github.com/jmgasper/deckcraft/blob/haiku/docs/haiku.md",
-      "screenshot": "deckcraft"
+      "items": [
+        {
+          "id": "code-oss",
+          "title": "Code - OSS",
+          "text": "The open-source build of Visual Studio Code: Node.js runs the main process and Summit’s WebKit draws the windows.",
+          "features": [
+            "Workbench, extension host, integrated terminal and file watching use the same code as the Linux build",
+            "Extensions come from Open VSX; Markdown previews and most extension webviews work",
+            "Native window tab and menu bar, ripgrep search and a code-oss command-line launcher",
+            "Extensions that ship Linux binaries, Copilot agent features and printing are unavailable"
+          ],
+          "source": "https://github.com/jmgasper/vscode/blob/haiku/build/haiku/README.md"
+        },
+        {
+          "id": "pgadmin",
+          "title": "pgAdmin 4",
+          "text": "pgAdmin 4 (version 9.18) in its desktop mode, with its Python server in a bundled environment.",
+          "features": [
+            "Native menus, file panels, runtime settings window and quit confirmation",
+            "Query Tool tested against PostgreSQL",
+            "Uses the system’s psql, pg_dump, pg_dumpall and pg_restore (PostgreSQL 18)",
+            "Kerberos sign-in and MFA QR codes are left out"
+          ],
+          "source": "https://github.com/jmgasper/aurora/tree/main/ports/pgadmin4"
+        },
+        {
+          "id": "github-desktop",
+          "title": "GitHub Desktop",
+          "text": "An unofficial port of GitHub Desktop that works with Haiku’s own Git.",
+          "features": [
+            "Uses the system git package and stores credentials in the Haiku key store",
+            "Browser sign-in returns to the app through its link handler",
+            "Opens Terminal, Tracker and native editors such as Pe, Koder and Genio",
+            "No usage statistics; updates come through pkgman. Git LFS is not supported"
+          ],
+          "source": "https://github.com/jmgasper/desktop/blob/haiku/docs/technical/haiku.md"
+        },
+        {
+          "id": "terminal",
+          "title": "Terminal",
+          "text": "Haiku’s Terminal has a new emulator core and draws into one bitmap at the screen’s density, with an OpenGL renderer beside a multithreaded software renderer.",
+          "features": [
+            "The GPU renderer (OpenGL 3.0) and the software renderer are timed against each other, and Terminal keeps whichever is faster",
+            "If the GPU is lost or a frame takes over two seconds, Terminal switches to software for good; force either one with the Renderer setting or TERMINAL_RENDERER",
+            "Up to 120 frames per second, a glyph atlas and Terminal-drawn box, braille and Powerline characters",
+            "Colour emoji, programming ligatures, Unicode 16 graphemes, reflow on resize and kitty protocol extensions",
+            "cat of a 5.7 MB file takes 0.14 s instead of 0.42 s; on the tested machines the software renderer is currently the faster path"
+          ],
+          "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/TERMINAL.md",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "burrow",
+          "title": "Burrow",
+          "text": "A native client for AWS Client VPN and other OpenVPN servers, including AWS single sign-on through your web browser.",
+          "features": [
+            "Import .ovpn profiles from a file panel, by drag and drop or from Tracker",
+            "SAML sign-in, certificates and username/password with challenges",
+            "Status, addresses, traffic, DNS and routes; split or full tunnel, several profiles at once",
+            "Deskbar tray menu and command-line control, with an OpenVPN built from source"
+          ],
+          "source": "https://github.com/jmgasper/burrow/blob/main/README.md",
+          "screenshot": "burrow",
+          "download": "downloads/#burrow"
+        }
+      ]
     },
     {
-      "id": "pdfcraft",
-      "title": "PDFCraft",
-      "text": "Read and work on PDFs in a native window, with the same Rust document engine used on the other platforms.",
-      "features": [
-        "Search and copy text, annotate, edit and organize pages",
-        "Fill forms, save changes and undo edits",
-        "Native file panels, document recovery and an included command-line tool"
-      ],
-      "source": "https://github.com/jmgasper/pdfcraft/blob/feat/airos-port/docs/haiku.md",
-      "screenshot": "pdfcraft"
-    }
-  ],
-  "media": [
-    {
-      "id": "media-preferences",
-      "title": "Media preferences",
-      "text": "Audio and video settings have been rebuilt around a sidebar and readable cards, so devices and everyday controls are easier to find.",
-      "features": [
-        "Choose input and output devices, adjust volume and play a test sound",
-        "Control individual applications in the audio mixer, with app icons and mute controls",
-        "Check a live recording level meter and camera preview",
-        "Choose a MIDI SoundFont and restart stopped media services"
-      ],
-      "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
-      "screenshot": "media-preferences"
+      "id": "summit",
+      "label": "Summit Browser",
+      "heading": "Summit: the web, at home on Haiku",
+      "tag": "Native WebKit browser",
+      "lead": "Native controls, a compact toolbar and a modern multiprocess WebKit engine. Tabs, saved sessions, bookmarks, downloads, page find, configurable search and per-site zoom are joined by tools for reading, media, extensions and debugging.",
+      "note": "Web-platform and extension compatibility are still evolving. Verified examples do not establish support for every extension or streaming service.",
+      "summit": true,
+      "links": [
+        {"label": "Get Summit for airOS ↓", "href": "downloads/#summit", "internal": true},
+        {"label": "Get Summit for Haiku R1/beta6 ↗", "href": "https://github.com/jmgasper/summit/releases/tag/latest-haiku"},
+        {"label": "More about Summit →", "href": "summit/", "internal": true}
+      ]
     },
     {
-      "id": "mediaconverter",
-      "title": "MediaConverter",
-      "text": "A new conversion window and engine bring queues, previews and hardware-aware encoding to Haiku’s media toolbox.",
-      "features": [
-        "Queue video and audio files, preview sources and choose separate video or audio presets",
-        "Audio conversion keeps artwork, tags and chapters, with playback controls in the source preview",
-        "Use available GPU encoders, inspect video hardware and see when a job will use the CPU",
-        "Import DVD/Blu-ray sources and disc images, sidecar subtitles and embedded closed captions",
-        "Preserve HDR10 metadata where supported; conversions run in worker processes and retry on the CPU after a GPU crash",
-        "Use the mediaconvert command-line tool for scripted conversions"
-      ],
-      "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
-      "screenshot": "mediaconverter"
+      "id": "proton",
+      "label": "Proton",
+      "heading": "Proton VPN and Proton Mail Bridge",
+      "tag": "Community ports",
+      "lead": "Native airOS ports of Proton’s VPN client and Mail Bridge, built from public forks. airOS CI builds each one on every push and publishes it as a rolling release with SHA-256 checksums.",
+      "note": "These are unofficial community ports; they are not published or supported by Proton AG. Proton VPN is alpha: it has been tested end to end against stand-in servers and against Proton’s real sign-in API. Bridge needs a Proton plan that includes Bridge and is x86-64 only.",
+      "items": [
+        {
+          "id": "proton-vpn",
+          "title": "Proton VPN",
+          "text": "A port of Proton’s Linux VPN app with a native Haiku interface instead of GTK. Sign in with your Proton account, pick a server and connect over WireGuard or OpenVPN.",
+          "features": [
+            "Sign in with two-factor codes; the session lives in the Haiku key store",
+            "Countries, cities and Secure Core routes with loads, P2P, Tor and smart-routing badges; search, fastest-server and pinned connections in the Deskbar tray",
+            "Built-in userspace WireGuard on Haiku’s tunnel driver, or OpenVPN over UDP or TCP",
+            "NetShield, VPN Accelerator, moderate NAT, port forwarding, kill switch, custom DNS and IPv6",
+            "x86-64 and ARM64 packages, plus a proton-vpn-cli command"
+          ],
+          "source": "https://github.com/jmgasper/proton-vpn-airos-app/blob/main/README.md",
+          "screenshot": "proton-vpn",
+          "download": "downloads/#proton-vpn-airos-app",
+          "links": [
+            {"label": "Latest release ↗", "href": "https://github.com/jmgasper/proton-vpn-airos-app/releases/tag/latest"},
+            {"label": "Source ↗", "href": "https://github.com/jmgasper/proton-vpn-airos-app"}
+          ]
+        },
+        {
+          "id": "proton-bridge",
+          "title": "Proton Mail Bridge",
+          "text": "Proton’s Bridge runs in the background and lets desktop mail apps, including airOS Mail, use your Proton Mail account over local IMAP and SMTP.",
+          "features": [
+            "The upstream Go mail engine, with its vault key in the native Haiku key store; it never falls back to an unprotected vault",
+            "Proton’s Qt Quick desktop app, drawn at the desktop’s density, with a single Deskbar tray item",
+            "Native settings and data folders, start at login and a proton-bridge command",
+            "Updates come through pkgman rather than Proton’s update feed",
+            "Included in x86-64 system images and published as its own package"
+          ],
+          "source": "https://github.com/jmgasper/proton-bridge/blob/master/docs/haiku/README.md",
+          "screenshot": "proton-bridge",
+          "download": "downloads/#proton-bridge",
+          "links": [
+            {"label": "Latest release ↗", "href": "https://github.com/jmgasper/proton-bridge/releases/tag/latest"},
+            {"label": "Source ↗", "href": "https://github.com/jmgasper/proton-bridge"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "everyday",
+      "label": "EveryDay",
+      "heading": "And the everyday favourites",
+      "tag": "Mail, clipboard and screenshots",
+      "lead": "A new Mail app, a clipboard history and a screenshot editor: small tools that are always within reach.",
+      "items": [
+        {
+          "id": "mail",
+          "title": "Mail",
+          "text": "A new native email client replaces Haiku’s Mail in x86-64 images. It keeps its own SQLite store and shows conversations formatted by Summit’s WebKit engine.",
+          "features": [
+            "IMAP, POP3/SMTP, Gmail and Proton Mail Bridge accounts in a unified inbox; passwords and tokens stay in the Haiku key store",
+            "Conversation threads, full-text search, rules, smart folders, tags and Gmail labels",
+            "Snooze with reminders, and a rich-text composer with inline images, drafts and an Outbox",
+            "Remote content and scripts are blocked in received HTML; links open in your browser",
+            "Development release: not yet tested against live Gmail or Proton accounts, and no IMAP IDLE yet"
+          ],
+          "source": "https://github.com/jmgasper/mail/blob/main/README.md",
+          "screenshot": "mail",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "clipper",
+          "title": "Clipper",
+          "text": "A clipboard manager in the Deskbar that remembers what you copy in every app.",
+          "features": [
+            "Tap Alt+V to paste; hold it, or press Shift+Alt+V, for a searchable history beside the cursor",
+            "Keeps every format: text, rich text, images and file references, with thumbnails",
+            "Pin clips, search a history of 10 to 1,000 items and pause recording",
+            "History is stored locally with owner-only permissions"
+          ],
+          "source": "https://github.com/jmgasper/clipper/blob/main/README.md",
+          "screenshot": "clipper",
+          "download": "downloads/#clipper"
+        },
+        {
+          "id": "airshot",
+          "title": "AirShot",
+          "text": "Capture a screen, window or region, mark it up, then save or copy it.",
+          "features": [
+            "Full-screen, window and region captures on Print Screen shortcuts",
+            "Arrows, shapes, pen, highlighter, text, numbered markers, blur and crop, with undo",
+            "Keeps every pixel on scaled displays, with an option for 100%",
+            "Save a time-stamped PNG or copy to the clipboard; also opens existing images for markup"
+          ],
+          "source": "https://github.com/jmgasper/airShot/blob/main/README.md",
+          "screenshot": "airshot",
+          "download": "downloads/#airshot"
+        }
+      ]
     }
   ]
 }

@@ -30,45 +30,54 @@
       "description": "A native OpenVPN and AWS Client VPN client, including browser-based single sign-on."
     },
     {
-      "name": "Turbo Chook",
-      "repo": "turbo_chook",
-      "description": "A native Git client with a branch graph, line-by-line staging, undo and GitHub pull requests."
-    },
-    {
       "name": "Clipper",
       "repo": "clipper",
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images."
     },
     {
+      "name": "Proton VPN",
+      "repo": "proton-vpn-airos-app",
+      "description": "An unofficial native port of Proton’s VPN app: WireGuard or OpenVPN, Secure Core, NetShield, kill switch and port forwarding.",
+      "note": "Alpha community port, not supported by Proton AG. Requires a Proton account."
+    },
+    {
+      "name": "Proton Mail Bridge",
+      "repo": "proton-bridge",
+      "branch": "master",
+      "description": "Use your Proton Mail account in desktop mail apps through local IMAP and SMTP, with the vault key in the Haiku key store.",
+      "note": "Community port, not supported by Proton AG. x86-64 only; needs a Proton plan that includes Bridge. Included in x86-64 system images."
+    },
+    {
       "name": "WordCraft",
       "repo": "wordcraft",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
-      "branch": "haiku"
+      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
     },
     {
       "name": "GridCraft",
       "repo": "gridcraft",
       "description": "Work with spreadsheets, formulas, charts and XLSX workbooks.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
-      "branch": "haiku"
+      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
     },
     {
       "name": "DeckCraft",
       "repo": "deckcraft",
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
-      "branch": "haiku"
+      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
     },
     {
       "name": "PDFCraft",
       "repo": "pdfcraft",
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
-      "branch": "feat/airos-port"
+      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
     }
   ],
   "extra_repos": [
+    {
+      "name": "Mail",
+      "repo": "mail",
+      "description": "Native email client that replaces Haiku’s Mail in x86-64 images."
+    },
     {
       "name": "Kiri",
       "repo": "kiri",

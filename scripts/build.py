@@ -70,34 +70,53 @@ def capture(id):
     image = url('assets/screenshots/' + shot['file'])
     return f'<figure class="feature-capture"><a href="{image}"><img src="{image}" alt="{e(shot["title"]+": "+shot["description"], quote=True)}" loading="lazy" width="{shot["width"]}" height="{shot["height"]}"></a><figcaption>{e(shot["title"])} · {e(shot["captured"])} · {link(url("screenshots/#"+id), "Capture details →")}</figcaption></figure>'
 
-def feature_row(item, download=None):
+def feature_row(item, prefix=''):
     links = link(item['source'], 'Feature and port notes ↗', 'text-link')
-    if download:
-        links += link(url(download), 'Build availability →', 'text-link')
+    if download := item.get('download'):
+        label = 'In airOS system builds →' if download == 'downloads/#system' else 'Downloads & availability →'
+        links += link(url(download), label, 'text-link')
+    links += ''.join(link(x['href'], x['label'], 'text-link') for x in item.get('links', []))
     heading = f'<h3>{e(item["title"])}</h3><p>{e(item["text"])}</p>'
     details = f'<ul class="checks">{"".join("<li>"+e(x)+"</li>" for x in item["features"])}</ul><div class="device-links">{links}</div>'
-    if item.get('screenshot'):
+    if item.get('screenshot') and item.get('wide'):
+        columns = f'<div>{heading}</div><div>{details}</div>{capture(item["screenshot"])}'
+    elif item.get('screenshot'):
         columns = f'<div>{heading}{details}</div>{capture(item["screenshot"])}'
     else:
         columns = f'<div>{heading}</div><div>{details}</div>'
-    return f'<article class="feature-row" id="{item["id"]}">{columns}</article>'
+    wide = ' wide' if item.get('wide') and item.get('screenshot') else ''
+    return f'<article class="feature-row{wide}" id="{prefix}{item["id"]}">{columns}</article>'
+
+def app_tabs():
+    return json.loads((ROOT / 'content/apps.json').read_text())
+
+def tab_summary(tab):
+    if tab.get('summit'):
+        return 'Reader mode, PDFs, extensions, media and developer tools'
+    return ' · '.join(item['title'] for item in tab['items'])
 
 def applications():
-    data = json.loads((ROOT / 'content/apps.json').read_text())
-    body = intro('Made for your desktop', 'More ways to make.', 'Write, calculate, present, convert and create. New native ports and reworked Haiku tools bring more of your day onto the desktop.')
-    body += f'<nav class="jump-links" aria-label="Application sections">{link("#office", "Craft office suite")}{link("#media", "Media tools")}{link("#everyday", "Everyday apps")}{link(url("summit/"), "Summit browser →")}</nav>'
-    body += '<section id="office"><div class="section-heading"><h2>The Craft office suite</h2><span>Early native x86-64 ports</span></div><p class="section-lead">WordCraft, GridCraft, DeckCraft and PDFCraft bring the open-source Craft applications to airOS. Their Rust editors run inside native Haiku windows, with system file panels, clipboard support and display scaling.</p><aside class="note">These are early ports of alpha applications. They render on the CPU; native printing, IME composition and some desktop integrations remain unfinished. Document compatibility varies by app. The build links below state what is currently published.</aside>'
-    body += ''.join(feature_row(a, 'downloads/#'+a['id']) for a in data['office'])
-    body += '</section><section id="media"><div class="section-heading"><h2>A fresh look at media</h2><span>Included in airOS system builds</span></div>'
-    body += ''.join(feature_row(a, 'downloads/#system') for a in data['media'])
-    body += '<p class="note">GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use. Other codecs and devices may use the CPU. Check the app’s Video hardware window for the current machine.</p></section>'
-    body += '<section id="everyday"><div class="section-heading"><h2>And the everyday favourites</h2></div><div class="app-grid">'
-    for app in json.loads((ROOT / 'content/project.json').read_text())['apps']:
-        if app['repo'] in ('summit', 'wordcraft', 'gridcraft', 'deckcraft', 'pdfcraft'):
-            continue
-        body += f'<article class="app-card"><h3>{e(app["name"])}</h3><p>{e(app["description"])}</p>{link(url("downloads/#"+app["repo"].lower()), "Latest builds →")}</article>'
-    body += '</div></section><p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations.</p>'
-    page('apps/', 'Applications', 'Meet WordCraft, GridCraft, DeckCraft, PDFCraft, the new Media preferences and MediaConverter on airOS.', body)
+    data = app_tabs()
+    summit_data = json.loads((ROOT / 'content/summit.json').read_text())
+    body = intro('Made for your desktop', 'More ways to make.', 'Write, listen, build, browse and stay private. Native ports and reworked Haiku tools bring more of your day onto the desktop. Choose a category to see its apps.')
+    # Without JavaScript these are jump links and every panel stays visible;
+    # site.js turns them into tabs whose panels open when selected.
+    body += '<nav class="app-tabs" aria-label="Application categories" data-app-tabs>'
+    body += ''.join(f'<a href="#{tab["id"]}" data-tab="{tab["id"]}"><strong>{e(tab["label"])}</strong><span>{e(tab_summary(tab))}</span></a>' for tab in data['tabs'])
+    body += '</nav><p class="tab-prompt" data-tab-prompt hidden>Select a category above to see its apps.</p>'
+    for tab in data['tabs']:
+        body += f'<section id="{tab["id"]}" class="tab-panel"><div class="section-heading"><h2>{e(tab["heading"])}</h2><span>{e(tab["tag"])}</span></div><p class="section-lead">{e(tab["lead"])}</p>'
+        if tab.get('links'):
+            body += '<div class="actions panel-actions">' + ''.join(link(url(x['href']) if x.get('internal') else x['href'], e(x['label']), 'button primary' if i == 0 and tab.get('summit') else 'button') for i, x in enumerate(tab['links'])) + '</div>'
+        if tab.get('note'):
+            body += f'<aside class="note">{e(tab["note"])}</aside>'
+        if tab.get('summit'):
+            body += capture('summit') + ''.join(feature_row(f, 'summit-') for f in summit_data['features'])
+        else:
+            body += ''.join(feature_row(item) for item in tab['items'])
+        body += '</section>'
+    body += '<p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations.</p>'
+    page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, the Summit browser, Proton VPN and Proton Mail Bridge, Mail, Clipper and AirShot.', body)
 
 def summit():
     data = json.loads((ROOT / 'content/summit.json').read_text())
@@ -159,6 +178,10 @@ def downloads():
             body += '<p class="availability">Public image coming soon</p>' + link('https://github.com/jmgasper/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
         body += '</div></article>'
     body += '</div><p class="meta"><strong>Cubie A7S:</strong> no public SD image yet. The ARM64 ISO above is for UEFI machines; see the <a href="'+url('hardware/#cubie')+'">Cubie build notes</a>.</p><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. Extract the ISO images before writing them to USB. For Pi 4, flash the SD image with a tool that supports .xz, such as Etcher.</aside>'
+    # Each package links back to its feature row on the apps page.
+    features = {item['download'].split('#')[1]: item['id'] for tab in app_tabs()['tabs'] for item in tab.get('items', [])
+                if item.get('download', 'downloads/#system') != 'downloads/#system'}
+    features['summit'] = 'summit'
     body += '<div class="section-heading apps-heading"><h2>Native applications</h2><span>Haiku .hpkg packages</span></div><div class="app-grid">'
     for i, entry in enumerate(D['apps']):
         app = {**entry, **next(a for a in json.loads((ROOT / 'content/project.json').read_text())['apps'] if a['repo'] == entry['repo'])}
@@ -181,8 +204,8 @@ def downloads():
         body += '</div>'
         if app['repo'] == 'summit':
             body += '<p class="package-note">Using stock Haiku R1/beta6? '+link('https://github.com/jmgasper/summit/releases/tag/latest-haiku', 'Get the dedicated x86-64 browser and engine ↗')+'</p>'
-        if app['repo'] in ('wordcraft', 'gridcraft', 'deckcraft', 'pdfcraft'):
-            body += link(url('apps/#'+app['repo']), 'Features, screenshots and port notes →', 'subtle')
+        if target := features.get(app['repo'].lower()):
+            body += link(url('apps/#'+target), 'Features, screenshots and port notes →', 'subtle')
         body += '</article>'
     body += '</div><section class="install"><h2>Installing an app</h2><div><p>Choose the package for your architecture. Open it with Haiku’s package installer, or run:</p><pre><code>pkgman install /path/to/package.hpkg</code></pre><p>Packages target airOS unless their release notes say otherwise. For stock Haiku, use the dedicated Summit build. Follow dependency notes and install Summit together with its matching WebKit engine.</p></div></section>'
     page('downloads/', 'Downloads', 'Download airOS images and native app packages for ARM64 and x86-64.', body)

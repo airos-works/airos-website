@@ -10,6 +10,57 @@ if (filters) {
   });
   filters.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('selected')));
 }
+// Application categories: each panel stays hidden until its tab is chosen. A
+// link to a panel or to an app inside one (apps/#proton, apps/#wordcraft) opens it.
+const appTabs = document.querySelector('[data-app-tabs]');
+if (appTabs) {
+  const tabs = [...appTabs.querySelectorAll('a[data-tab]')];
+  const panels = tabs.map(tab => document.getElementById(tab.dataset.tab));
+  const prompt = document.querySelector('[data-tab-prompt]');
+  appTabs.setAttribute('role', 'tablist');
+  tabs.forEach((tab, i) => {
+    tab.setAttribute('role', 'tab');
+    tab.id = 'tab-' + tab.dataset.tab;
+    tab.setAttribute('aria-controls', panels[i].id);
+    panels[i].setAttribute('role', 'tabpanel');
+    panels[i].setAttribute('aria-labelledby', tab.id);
+  });
+  const select = index => {
+    tabs.forEach((tab, i) => {
+      const selected = i === index;
+      tab.classList.toggle('selected', selected);
+      tab.setAttribute('aria-selected', selected);
+      tab.tabIndex = selected || (index < 0 && i === 0) ? 0 : -1;
+      panels[i].hidden = !selected;
+    });
+    prompt.hidden = index >= 0;
+  };
+  const openHash = () => {
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    const index = target ? panels.findIndex(panel => panel.contains(target)) : -1;
+    if (index < 0) return false;
+    select(index);
+    target.scrollIntoView();
+    return true;
+  };
+  if (!openHash()) select(-1);
+  window.addEventListener('hashchange', openHash);
+  tabs.forEach((tab, i) => tab.addEventListener('click', event => {
+    event.preventDefault();
+    select(i);
+    history.replaceState(null, '', '#' + tab.dataset.tab);
+  }));
+  appTabs.addEventListener('keydown', event => {
+    const current = tabs.indexOf(document.activeElement);
+    if (current < 0) return;
+    const next = {ArrowRight: current + 1, ArrowDown: current + 1, ArrowLeft: current - 1, ArrowUp: current - 1, Home: 0, End: tabs.length - 1}[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    const tab = tabs[(next + tabs.length) % tabs.length];
+    tab.focus();
+    tab.click();
+  });
+}
 const lightbox = document.querySelector('#lightbox');
 if (lightbox && typeof lightbox.showModal === 'function') {
   document.querySelectorAll('.screenshot-link').forEach(anchor => anchor.addEventListener('click', event => {

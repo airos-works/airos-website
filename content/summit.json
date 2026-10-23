@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-10-18",
+  "reviewed": "2026-10-23",
   "features": [
     {
       "id": "reading",
@@ -15,13 +15,16 @@
     {
       "id": "extensions",
       "title": "Bring your browser tools",
-      "text": "Install from Chrome Web Store or Firefox Add-ons, or load a local extension package. Review permissions in native dialogs.",
+      "text": "Open an add-on’s page on Firefox Add-ons or Chrome Web Store and Summit adds an install card to the top of the page. Review the requested access in a native dialog before anything runs, or load a local extension package.",
       "features": [
+        "Install Extension on the store page; once installed, the card offers Manage Extension",
+        "Firefox packages are checked against Mozilla’s published size and SHA-256 and update from the same store; signatures are not verified, so install only what you trust",
         "Toolbar actions, popups and restoration across restarts",
-        "uBlock Origin and Dark Reader have passed native runtime suites",
-        "1Password sign-in, inline filling and passkey integration have been verified for tested versions"
+        "uBlock Origin and Dark Reader have passed native runtime suites; 1Password sign-in, inline filling and passkeys have been verified for tested versions"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
+      "screenshot": "summit-firefox-addon",
+      "wide": true
     },
     {
       "id": "media",
