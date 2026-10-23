@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-23T06:48:31+00:00",
-  "ci_head": "cfaeb42a60ca722cd7630f4db201fd3957c6588b",
+  "updated": "2026-10-23T12:42:27+00:00",
+  "ci_head": "b86f35eae7d6a0cf09b76955e059e265e0726f81",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "bbf101b920870c3b09f5fa372b4e3dab50494aac",
+      "head": "89bebe0d8eef3bb70209b431394ee535013d3182",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -10462,6 +10462,78 @@
           "url": "https://github.com/jmgasper/haiku/commit/bbf101b920870c3b09f5fa372b4e3dab50494aac",
           "date": "2026-10-23T04:49:01Z",
           "subject": "airos: Mail (jmgasper/mail) replaces Haiku's Mail on arm64 too"
+        },
+        {
+          "sha": "1f9e1211c08fa78a488653198d51206bfa89a951",
+          "url": "https://github.com/jmgasper/haiku/commit/1f9e1211c08fa78a488653198d51206bfa89a951",
+          "date": "2026-10-23T07:35:33Z",
+          "subject": "efi/arm64: page aligned PE sections, code read-only"
+        },
+        {
+          "sha": "639ccb3a1f672b3e691fb7df9fb5f093fb7b16f1",
+          "url": "https://github.com/jmgasper/haiku/commit/639ccb3a1f672b3e691fb7df9fb5f093fb7b16f1",
+          "date": "2026-10-23T07:35:34Z",
+          "subject": "efi/arm64: register each CPU once when ACPI and the device tree both list it"
+        },
+        {
+          "sha": "c6bfa3512b2f37da9610f68dfa9fc37ecaab4a38",
+          "url": "https://github.com/jmgasper/haiku/commit/c6bfa3512b2f37da9610f68dfa9fc37ecaab4a38",
+          "date": "2026-10-23T07:35:34Z",
+          "subject": "efi: keep the firmware's display resolution"
+        },
+        {
+          "sha": "da69493a4e493b0271015a39d91c207fdde22e91",
+          "url": "https://github.com/jmgasper/haiku/commit/da69493a4e493b0271015a39d91c207fdde22e91",
+          "date": "2026-10-23T07:35:34Z",
+          "subject": "arm64: prefer the device tree over ACPI, as Linux does"
+        },
+        {
+          "sha": "ed5e523a9af2be882e909230319ed20067550bf3",
+          "url": "https://github.com/jmgasper/haiku/commit/ed5e523a9af2be882e909230319ed20067550bf3",
+          "date": "2026-10-23T07:35:34Z",
+          "subject": "arm64: on screen debug output from the start of the kernel"
+        },
+        {
+          "sha": "94a663568adeb1996ef40b462bbfd2f01bc8984b",
+          "url": "https://github.com/jmgasper/haiku/commit/94a663568adeb1996ef40b462bbfd2f01bc8984b",
+          "date": "2026-10-23T07:35:34Z",
+          "subject": "pci: translate bus addresses within the device's domain"
+        },
+        {
+          "sha": "bc7f475263501512fc13896372edb9d41ae4beb1",
+          "url": "https://github.com/jmgasper/haiku/commit/bc7f475263501512fc13896372edb9d41ae4beb1",
+          "date": "2026-10-23T07:35:34Z",
+          "subject": "qcom_pcie: host driver for the Qualcomm SC8280XP PCIe controllers"
+        },
+        {
+          "sha": "ed6e278590a43655e546ee800f9aca1907b0a63d",
+          "url": "https://github.com/jmgasper/haiku/commit/ed6e278590a43655e546ee800f9aca1907b0a63d",
+          "date": "2026-10-23T07:35:34Z",
+          "subject": "arm64: Qualcomm GENI debug UART"
+        },
+        {
+          "sha": "316e514bc9f48de5e2bf1ba308e6e16e6b53e2ad",
+          "url": "https://github.com/jmgasper/haiku/commit/316e514bc9f48de5e2bf1ba308e6e16e6b53e2ad",
+          "date": "2026-10-23T10:01:36Z",
+          "subject": "xhci: Qualcomm SC8280XP DWC3 cores, as the UEFI firmware leaves them"
+        },
+        {
+          "sha": "0ad607bb81b25da853d6b163c34cbbf10ee8fbd1",
+          "url": "https://github.com/jmgasper/haiku/commit/0ad607bb81b25da853d6b163c34cbbf10ee8fbd1",
+          "date": "2026-10-23T10:32:45Z",
+          "subject": "arm64: generic GICv3 ITS, used on the SC8280XP"
+        },
+        {
+          "sha": "9bacfc0be1840d937126aaec44098c1bd1fcf785",
+          "url": "https://github.com/jmgasper/haiku/commit/9bacfc0be1840d937126aaec44098c1bd1fcf785",
+          "date": "2026-10-23T10:32:45Z",
+          "subject": "nvme_disk, pci: say why MSI(-X) is not used"
+        },
+        {
+          "sha": "89bebe0d8eef3bb70209b431394ee535013d3182",
+          "url": "https://github.com/jmgasper/haiku/commit/89bebe0d8eef3bb70209b431394ee535013d3182",
+          "date": "2026-10-23T10:49:28Z",
+          "subject": "Merge dragon-q8b: Radxa Dragon Q8B (SC8280XP) boots air/OS from NVMe and USB"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -10472,8 +10544,32 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "cfaeb42a60ca722cd7630f4db201fd3957c6588b",
+      "head": "b86f35eae7d6a0cf09b76955e059e265e0726f81",
       "commits": [
+        {
+          "sha": "b86f35eae7d6a0cf09b76955e059e265e0726f81",
+          "url": "https://github.com/jmgasper/airos-ci/commit/b86f35eae7d6a0cf09b76955e059e265e0726f81",
+          "date": "2026-10-23T10:40:46Z",
+          "subject": "arm64: Aurora, with Node.js 22 cross-built from Linux"
+        },
+        {
+          "sha": "3769f2450dd974bf7e22941046bf00afc397b79e",
+          "url": "https://github.com/jmgasper/airos-ci/commit/3769f2450dd974bf7e22941046bf00afc397b79e",
+          "date": "2026-10-23T10:03:49Z",
+          "subject": "summit: size engine build jobs from available memory"
+        },
+        {
+          "sha": "2281e130ec4af7eed007b603c260a9ebd024b90d",
+          "url": "https://github.com/jmgasper/airos-ci/commit/2281e130ec4af7eed007b603c260a9ebd024b90d",
+          "date": "2026-10-23T09:33:48Z",
+          "subject": "images: Proton Mail Bridge on arm64 too"
+        },
+        {
+          "sha": "fd1042cdf631b02a36d69344652335ed8b238a43",
+          "url": "https://github.com/jmgasper/airos-ci/commit/fd1042cdf631b02a36d69344652335ed8b238a43",
+          "date": "2026-10-23T07:44:10Z",
+          "subject": "apps: Proton Mail Bridge for arm64"
+        },
         {
           "sha": "cfaeb42a60ca722cd7630f4db201fd3957c6588b",
           "url": "https://github.com/jmgasper/airos-ci/commit/cfaeb42a60ca722cd7630f4db201fd3957c6588b",
@@ -28795,8 +28891,32 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "8a2f10c083e22789d761d094d1907e3bcefc1346",
+      "head": "47e082fd0c3f49e4e4a847fbda7d1aea7210b3d9",
       "commits": [
+        {
+          "sha": "47e082fd0c3f49e4e4a847fbda7d1aea7210b3d9",
+          "url": "https://github.com/jmgasper/summit/commit/47e082fd0c3f49e4e4a847fbda7d1aea7210b3d9",
+          "date": "2026-10-23T10:53:45Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into zoom106"
+        },
+        {
+          "sha": "2d36b5fbd1eb04d901abd146030e1fdbcd9084ef",
+          "url": "https://github.com/jmgasper/summit/commit/2d36b5fbd1eb04d901abd146030e1fdbcd9084ef",
+          "date": "2026-10-23T10:53:42Z",
+          "subject": "Record tab zoom and duplicate results (#106)"
+        },
+        {
+          "sha": "538d83784a7d57177702cef99cc8facb6c3143b9",
+          "url": "https://github.com/jmgasper/summit/commit/538d83784a7d57177702cef99cc8facb6c3143b9",
+          "date": "2026-10-23T06:51:23Z",
+          "subject": "tabs.duplicate() (#106)"
+        },
+        {
+          "sha": "7adf61f5ee1a1dee52c18155796b0772c4f08019",
+          "url": "https://github.com/jmgasper/summit/commit/7adf61f5ee1a1dee52c18155796b0772c4f08019",
+          "date": "2026-10-23T05:26:57Z",
+          "subject": "tabs.getZoom() and tabs.setZoom() (#106)"
+        },
         {
           "sha": "8a2f10c083e22789d761d094d1907e3bcefc1346",
           "url": "https://github.com/jmgasper/summit/commit/8a2f10c083e22789d761d094d1907e3bcefc1346",
@@ -37536,8 +37656,20 @@
       "branch": "master",
       "description": "Use your Proton Mail account in desktop mail apps through local IMAP and SMTP, with the vault key in the Haiku key store.",
       "group": "Applications",
-      "head": "b900067c54c4d6b04685e969e7f2ba0ba25d803b",
+      "head": "be6261dcb24271590385492f2123f1b3babcf69f",
       "commits": [
+        {
+          "sha": "be6261dcb24271590385492f2123f1b3babcf69f",
+          "url": "https://github.com/jmgasper/proton-bridge/commit/be6261dcb24271590385492f2123f1b3babcf69f",
+          "date": "2026-10-23T09:32:12Z",
+          "subject": "README: latest air/OS builds (794b919) [skip ci]"
+        },
+        {
+          "sha": "794b91905ba10a069782e1ef2ae32b9b602ed9d3",
+          "url": "https://github.com/jmgasper/proton-bridge/commit/794b91905ba10a069782e1ef2ae32b9b602ed9d3",
+          "date": "2026-10-23T07:09:30Z",
+          "subject": "haiku: build the air/OS package for arm64"
+        },
         {
           "sha": "b900067c54c4d6b04685e969e7f2ba0ba25d803b",
           "url": "https://github.com/jmgasper/proton-bridge/commit/b900067c54c4d6b04685e969e7f2ba0ba25d803b",
@@ -79479,8 +79611,14 @@
       "branch": "main",
       "description": "A native runtime for Electron applications on Haiku.",
       "group": "Applications",
-      "head": "33ec92cb50ef1b7927f495a6495e9fdccbc735de",
+      "head": "a90e096746acbbe2734e93a921d3b19850fcd86a",
       "commits": [
+        {
+          "sha": "a90e096746acbbe2734e93a921d3b19850fcd86a",
+          "url": "https://github.com/jmgasper/aurora/commit/a90e096746acbbe2734e93a921d3b19850fcd86a",
+          "date": "2026-10-23T04:56:43Z",
+          "subject": "ci: build the arm64 air/OS package too"
+        },
         {
           "sha": "33ec92cb50ef1b7927f495a6495e9fdccbc735de",
           "url": "https://github.com/jmgasper/aurora/commit/33ec92cb50ef1b7927f495a6495e9fdccbc735de",
@@ -81636,31 +81774,31 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/jmgasper/summit/releases/tag/latest",
-      "published": "2026-10-23T05:18:37Z",
+      "published": "2026-10-23T12:42:07Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261023.0504-1-arm64.hpkg",
-          "size": 15593618,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.0504-1-arm64.hpkg",
-          "digest": "sha256:a5149adc9f13d31f7ab2bac609e2ea939efad3dc7fa3d81dd367cebeb43f9fbe"
+          "name": "summit-0.1.0.git20261023.1053-1-arm64.hpkg",
+          "size": 15595797,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.1053-1-arm64.hpkg",
+          "digest": "sha256:35e928a3a6ccd034836f93aed88f2e520b4c4eb1703e88202a426f2537a0e6f0"
         },
         {
-          "name": "summit-0.1.0.git20261023.0504-1-x86_64.hpkg",
-          "size": 14702258,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.0504-1-x86_64.hpkg",
-          "digest": "sha256:fa5521f8ad22f40b9ac673092295c5741971e649e16a3d9f287f3c61e8a1b912"
+          "name": "summit-0.1.0.git20261023.1053-1-x86_64.hpkg",
+          "size": 14698281,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.1053-1-x86_64.hpkg",
+          "digest": "sha256:f441e38e764712e126ec8176a7650861fc18b15ed12ffc3d0f021546dd3d0304"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261023.0504-1-arm64.hpkg",
-          "size": 93813390,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.0504-1-arm64.hpkg",
-          "digest": "sha256:cfa779931c7206e3ce63bc9b29d94f8798d6955844d6063eb7e2ecd26bbe418d"
+          "name": "summit_webkit-1.10.1.git20261023.1053-1-arm64.hpkg",
+          "size": 93857093,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.1053-1-arm64.hpkg",
+          "digest": "sha256:81d559d1aa1bf2ed272024ab990fa7037e165c8fd7440d6a9e8051f5c66855d4"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261023.0504-1-x86_64.hpkg",
-          "size": 87575154,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.0504-1-x86_64.hpkg",
-          "digest": "sha256:1181ca21a0157974f560c3478072830fbfdf8bc92758d4b811ff6e2967e488c8"
+          "name": "summit_webkit-1.10.1.git20261023.1053-1-x86_64.hpkg",
+          "size": 87544053,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.1053-1-x86_64.hpkg",
+          "digest": "sha256:e846ee41029235ef2d09576b14b30074b010c5d27a3287619beb18e8f238ae14"
         }
       ]
     },
@@ -81798,13 +81936,25 @@
       "description": "Use your Proton Mail account in desktop mail apps through local IMAP and SMTP, with the vault key in the Haiku key store.",
       "note": "Community port, not supported by Proton AG. x86-64 only; needs a Proton plan that includes Bridge. Included in x86-64 system images.",
       "release": "https://github.com/jmgasper/proton-bridge/releases/tag/latest",
-      "published": "2026-10-23T01:17:24Z",
+      "published": "2026-10-23T09:32:11Z",
       "assets": [
         {
-          "name": "proton_bridge-3.27.1.airos1792712285-1-x86_64.hpkg",
-          "size": 18051579,
-          "browser_download_url": "https://github.com/jmgasper/proton-bridge/releases/download/latest/proton_bridge-3.27.1.airos1792712285-1-x86_64.hpkg",
-          "digest": "sha256:9566db5623d5b12bc8ec1efb7edb143e408285c80fe97fe54041b911f9b9fdbd"
+          "name": "proton_bridge-3.27.1.airos1792739370-1-arm64.hpkg",
+          "size": 49974259,
+          "browser_download_url": "https://github.com/jmgasper/proton-bridge/releases/download/latest/proton_bridge-3.27.1.airos1792739370-1-arm64.hpkg",
+          "digest": "sha256:11f5979b2e4f229142d7debd0fed59f015e90f5a7d22b56b795d3d046375bf93"
+        },
+        {
+          "name": "proton_bridge-3.27.1.airos1792739370-1-x86_64.hpkg",
+          "size": 18052156,
+          "browser_download_url": "https://github.com/jmgasper/proton-bridge/releases/download/latest/proton_bridge-3.27.1.airos1792739370-1-x86_64.hpkg",
+          "digest": "sha256:12d21c347cfc0df7f9da43436bf4c49d7129f8fc9ba45962953a27ed6478ad14"
+        },
+        {
+          "name": "qsystray-5.15.2.14-1-arm64.hpkg",
+          "size": 35621,
+          "browser_download_url": "https://github.com/jmgasper/proton-bridge/releases/download/latest/qsystray-5.15.2.14-1-arm64.hpkg",
+          "digest": "sha256:acc6018fdfcdf58c78fc495c9c998cbb60333ed5e1e39190a2a727c06be9b5cb"
         }
       ]
     },
@@ -81858,76 +82008,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261023055759-bbf101b920",
-      "published": "2026-10-23T06:02:13Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261023123747-89bebe0d8e",
+      "published": "2026-10-23T12:41:55Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1120533336,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023055759-bbf101b920/airos-x86_64.iso.xz",
-          "digest": "sha256:1cbea004c6e7f595c456fa8ab5b7813589c6e942750a0c259427d75ed5ca9846"
+          "size": 1120361572,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023123747-89bebe0d8e/airos-x86_64.iso.xz",
+          "digest": "sha256:228c650979e57ae2d247cdf8c83418b11031c29d5e1e220cda990f19660b3475"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023055759-bbf101b920/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:6104603d4917c4904fe156a0c90bf8990413e884663af69adf7e4aea6c292764"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023123747-89bebe0d8e/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:5dbc438aa3622ec1525b5384667e175328606acf87406dc1db7c0a209f1f2175"
         },
         {
           "name": "manifest.json",
           "size": 13069,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023055759-bbf101b920/manifest.json",
-          "digest": "sha256:c2d0a2dd06800d155d6b16ffd323518e2cfcfd7497f08b786c6e268c5e62a89a"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023123747-89bebe0d8e/manifest.json",
+          "digest": "sha256:982c2d3f380f441e55db706a982e7003f05f8c0706e6a676412a0359ee7f6c9c"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261023061416-bbf101b920",
-      "published": "2026-10-23T06:17:57Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261023120102-89bebe0d8e",
+      "published": "2026-10-23T12:04:16Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 533134252,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023061416-bbf101b920/airos-arm64.iso.xz",
-          "digest": "sha256:3cb8608e80e1001794ac2e76d27019f03eb64c3536a2d831a0cbbe012863c256"
+          "size": 582637744,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023120102-89bebe0d8e/airos-arm64.iso.xz",
+          "digest": "sha256:2c7e206070cdc294e5625e2c9b8c4413e10ac3035b9477f1afee08283591bab5"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023061416-bbf101b920/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:9038b7b75673c81728941a7b21c45851dfd7d25ce2a0f2e9a9029dfefdaf3739"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023120102-89bebe0d8e/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:690a056249d3f7b1a61747a98558672ecc5ffecdc65311689b86d3c260bbf674"
         },
         {
           "name": "manifest.json",
-          "size": 9576,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023061416-bbf101b920/manifest.json",
-          "digest": "sha256:d4f98879f62a34dae0e209e3dc1857ba6d83a8add833dae318cd3c57b36d1268"
+          "size": 10393,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023120102-89bebe0d8e/manifest.json",
+          "digest": "sha256:2ee364f4b6fbe39bfe56cde2b78626ca84fff8e38b7f8516d1f9e70e590f2dfb"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261023060749-bbf101b920",
-      "published": "2026-10-23T06:09:14Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261023120847-89bebe0d8e",
+      "published": "2026-10-23T12:10:19Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 535768940,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023060749-bbf101b920/airos-rpi4.img.xz",
-          "digest": "sha256:87d90af99a0aac56145ab2cf6f9c72cc1de1397388393a9713e7fbb5496dadd2"
+          "size": 585191016,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023120847-89bebe0d8e/airos-rpi4.img.xz",
+          "digest": "sha256:a74f4672a285820112d4e921d321f6f5b416bd0fa93eb1ea9c06b457d6207de7"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023060749-bbf101b920/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:37a3404faab8e9e42e2329e1e21e1c079be2e4ad10fe7169639a1a0e807fb592"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023120847-89bebe0d8e/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:d9e5812c66e78bc044479d749633ae004e62ce5ca95816f4d1224095bba6f54f"
         },
         {
           "name": "manifest.json",
-          "size": 9710,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023060749-bbf101b920/manifest.json",
-          "digest": "sha256:45998938ee4792eb22badf1b6b382f90c85a530ea3008b1e311e9727a036975f"
+          "size": 10527,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023120847-89bebe0d8e/manifest.json",
+          "digest": "sha256:da19f8be1d663910c8ad9ac2f21a2404d0c921b733d81b3b2ea2db4619f383e9"
         }
       ]
     }
