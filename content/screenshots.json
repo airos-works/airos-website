@@ -178,7 +178,7 @@
   },
   {
     "id": "code-oss",
-    "title": "Code - OSS",
+    "title": "VS Code (Code - OSS)",
     "category": "Developer",
     "file": "code-oss.png",
     "description": "A small native Haiku C++ project in Code - OSS, with the explorer, C++ highlighting and the integrated terminal.",

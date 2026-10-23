@@ -164,8 +164,8 @@
       "label": "Developer",
       "heading": "Tools for building things",
       "tag": "Code, databases, Git and networks",
-      "lead": "Code - OSS, pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Terminal gained a new rendering engine, and Burrow connects you to work networks.",
-      "note": "Code - OSS, pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku. The captures in this section come from a virtual machine without a GPU, so Terminal is using its software renderer there.",
+      "lead": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Terminal gained a new rendering engine, and Burrow connects you to work networks.",
+      "note": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku. The captures in this section come from a virtual machine without a GPU, so Terminal is using its software renderer there.",
       "links": [
         {
           "label": "About Aurora ↗",
@@ -175,8 +175,8 @@
       "items": [
         {
           "id": "code-oss",
-          "title": "Code - OSS",
-          "text": "The open-source build of Visual Studio Code: Node.js runs the main process and Summit’s WebKit draws the windows.",
+          "title": "VS Code (Code - OSS)",
+          "text": "Visual Studio Code’s open-source build, Code - OSS: Node.js runs the main process and Summit’s WebKit draws the windows.",
           "features": [
             "Workbench, extension host, integrated terminal and file watching use the same code as the Linux build",
             "Extensions come from Open VSX; Markdown previews and most extension webviews work",
