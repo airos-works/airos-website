@@ -28,7 +28,8 @@
       "credit": "Radxa",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
-    }
+    },
+    "download": "arm64"
   },
   {
     "name": "Radxa Cubie A7S",
@@ -42,7 +43,7 @@
       "Onboard AIC8800 Wi-Fi: 5 GHz WPA2, 802.11ac, DHCP and reconnection",
       "Bluetooth Low Energy discovery; an A2DP audio implementation is available for testing"
     ],
-    "limits": "Bluetooth speaker pairing and audio over the air remain unverified on this board. Cooling matters under sustained load. A public Cubie SD image has not yet been published; the generic ARM64 ISO is not its SD image.",
+    "limits": "Bluetooth speaker pairing and audio over the air remain unverified on this board. Cooling matters under sustained load. The Cubie SD image is its own download; the generic ARM64 ISO does not boot this board.",
     "source": "tools/cubie-a7s/mesa/README.md",
     "links": [
       {
@@ -73,7 +74,8 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
     },
     "id": "cubie",
-    "screenshot": "cubie-graphics"
+    "screenshot": "cubie-graphics",
+    "download": "cubie"
   },
   {
     "name": "Raspberry Pi 4",
@@ -114,7 +116,8 @@
       "credit": "Michael H. (Laserlicht) / Wikimedia Commons",
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
-    }
+    },
+    "download": "rpi4"
   },
   {
     "name": "AMD Radeon Pro WX 5100",
@@ -141,7 +144,8 @@
         "label": "Fractional display scaling",
         "path": "docs/x399-workstation/FRACTIONAL-SCALING.md"
       }
-    ]
+    ],
+    "download": "x86_64"
   },
   {
     "id": "nvidia",
@@ -173,7 +177,8 @@
         "label": "NVDEC decoder source",
         "path": "src/add-ons/media/plugins/nvdec"
       }
-    ]
+    ],
+    "download": "x86_64"
   },
   {
     "id": "framework",
@@ -204,6 +209,7 @@
       "credit": "Thcipriani / Wikimedia Commons",
       "license": "CC BY-SA 4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
-    }
+    },
+    "download": "x86_64"
   }
 ]

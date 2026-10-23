@@ -154,7 +154,7 @@ MediaConverter are included in system builds. Summit also links to its separate
 `latest-haiku` browser/engine pair for stock Haiku R1/beta6.
 
 OS images are discovered from public `jmgasper/haiku` prereleases named
-`image-{x86_64,arm64,rpi4}-...`. The newest published release for each target
+`image-{x86_64,arm64,rpi4,cubie}-...`. The newest published release for each target
 wins. The downloads page also refreshes these image links when opened, so a
 build published between scheduled site updates appears immediately. If the
 public API is unavailable, the complete static download links remain. `airos-ci/images/publish-github.py` verifies smoke results and compressed

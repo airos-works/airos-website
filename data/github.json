@@ -82332,6 +82332,31 @@
           "digest": "sha256:2b7c185a638ad67f3b2404f82ca384e4d9c3b91a99f5c27e6399243af21654b0"
         }
       ]
+    },
+    {
+      "target": "cubie",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261023233101-31f82971d6",
+      "published": "2026-10-23T23:34:24Z",
+      "assets": [
+        {
+          "name": "manifest.json",
+          "size": 13772,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261023233101-31f82971d6/manifest.json",
+          "digest": "sha256:cf6ca1c131c27b21369ff2253c09091071b275f6e472e2e18dec7366d98a6a25"
+        },
+        {
+          "name": "airos-cubie.img.xz.sha256",
+          "size": 85,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261023233101-31f82971d6/airos-cubie.img.xz.sha256",
+          "digest": "sha256:f509532da38801cced1c43667d7f12f0b7ab9ad0a8d4ca90b9287ab83c3bf769"
+        },
+        {
+          "name": "airos-cubie.img.xz",
+          "size": 585234764,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261023233101-31f82971d6/airos-cubie.img.xz",
+          "digest": "sha256:35afeffca90f597489bfa33722969c6405cda5d8faa2e6eb4509d2b03fc1f3d7"
+        }
+      ]
     }
   ]
 }

@@ -162,6 +162,21 @@ def screenshots():
     body += '<details class="capture-credits"><summary>Capture credits</summary><p>The AirTime and MediaConverter captures include <a href="https://peach.blender.org/about/">Big Buck Bunny</a>, © Blender Foundation, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. The Cubie capture shows <a href="https://github.com/WebGLSamples/WebGLSamples.github.io/tree/master/aquarium">WebGL Aquarium</a>, © Google Inc. and contributors ('+link(url('assets/screenshots/webgl-aquarium-LICENSE.txt'), 'BSD licence notice')+').</p></details>'
     page('screenshots/', 'Screenshots', 'Explore real airOS application and desktop screenshots.', body)
 
+def image_asset(target):
+    im = next((i for i in D['images'] if i['target'] == target), None)
+    return next((a for a in im['assets'] if a['name'].endswith(('.iso.xz', '.img.xz'))), None) if im else None
+
+IMAGE_LABELS = {'x86_64': 'Download the x86-64 ISO', 'arm64': 'Download the ARM64 ISO', 'rpi4': 'Download the Pi 4 SD image', 'cubie': 'Download the Cubie SD image'}
+
+def download_button(device):
+    # The static link is the snapshot's build; site.js swaps in a newer one.
+    target = device.get('download')
+    if not target:
+        return ''
+    image = image_asset(target)
+    href = image['browser_download_url'] if image else url('downloads/#system')
+    return f'<div class="actions device-download"><a href="{e(href, quote=True)}" class="button primary" data-image-link="{target}">{IMAGE_LABELS[target]} ↓</a>{link(url("downloads/#system"), "All images", "button")}</div>'
+
 def hardware():
     body = intro('New hardware', 'New places for Haiku.', 'Device support built in the airOS forks. These notes describe tested configurations, with the remaining gaps alongside them.')
     for i, device in enumerate(json.loads((ROOT / 'content/hardware.json').read_text())):
@@ -169,7 +184,7 @@ def hardware():
         if image := device.get('image'):
             image_url = url('assets/hardware/' + image['file'])
             photo = f'''<figure class="device-photo"><a href="{e(image_url, quote=True)}"><img src="{e(image_url, quote=True)}" alt="{e(image['alt'], quote=True)}" width="{image['width']}" height="{image['height']}" loading="lazy"></a><figcaption>Photo: {link(image['source'], e(image['credit']))} · {link(image['license_url'], e(image['license']))}</figcaption></figure>'''
-        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
+        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}{download_button(device)}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
     body += '<aside class="note">Hardware notes reviewed 18 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
     page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Raspberry Pi 4, Framework 13, AMD graphics and NVIDIA graphics, NVDEC decoding and experimental NVENC encoding.', body)
 
@@ -179,7 +194,7 @@ def size(n):
 def downloads():
     body = intro('Downloads', 'Make yourself at home.', 'Get an airOS development image, or pick up an individual app for your existing installation.')
     body += '<div class="section-heading"><h2 id="system">The operating system</h2><span>Latest successful published builds</span></div><div class="image-grid">'
-    titles = {'x86_64': ('x86-64', 'Intel & AMD PCs', 'ISO image · UEFI / BIOS'), 'arm64': ('ARM64', 'ROCK 5 ITX & UEFI ARM64', 'ISO image · UEFI'), 'rpi4': ('Raspberry Pi 4', 'A desktop on an SD card', 'SD card image · Pi 4')}
+    titles = {'x86_64': ('x86-64', 'Intel & AMD PCs', 'ISO image · UEFI / BIOS'), 'arm64': ('ARM64', 'ROCK 5 ITX & UEFI ARM64', 'ISO image · UEFI'), 'rpi4': ('Raspberry Pi 4', 'A desktop on an SD card', 'SD card image · Pi 4'), 'cubie': ('Cubie A7S', 'Radxa’s Allwinner A733 board', 'SD card image · Cubie A7S')}
     for im in D['images']:
         title, subtitle, format = titles[im['target']]
         body += f'<article class="image-card" data-target="{im["target"]}"><span class="section-number">{format}</span><h3>{title}</h3><p>{subtitle}</p><div class="image-download">'
@@ -188,14 +203,14 @@ def downloads():
         if image:
             body += link(image['browser_download_url'], 'Download image ↓', 'button primary')
             body += f'<p class="meta">{size(image["size"])} compressed · {im["published"][:10]}</p><div class="asset-extras">'
-            for a in assets:
+            for a in sorted(assets, key=lambda a: a['name'] == 'manifest.json'):
                 if a['name'].endswith('.sha256') or a['name'] == 'manifest.json':
                     body += link(a['browser_download_url'], 'SHA-256' if a['name'].endswith('.sha256') else 'Build manifest')
             body += link(im['release'], 'Release notes ↗') + '</div>'
         else:
             body += '<p class="availability">Public image coming soon</p>' + link('https://github.com/jmgasper/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
         body += '</div></article>'
-    body += '</div><p class="meta"><strong>Cubie A7S:</strong> no public SD image yet. The ARM64 ISO above is for UEFI machines; see the <a href="'+url('hardware/#cubie')+'">Cubie build notes</a>.</p><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. Extract the ISO images before writing them to USB. For Pi 4, flash the SD image with a tool that supports .xz, such as Etcher.</aside>'
+    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. Extract the ISO images before writing them to USB. For Pi 4 and Cubie A7S, flash the SD image with a tool that supports .xz, such as Etcher; the ARM64 ISO is for UEFI machines and does not boot either board.</aside>'
     # Each package links back to its feature row on the apps page.
     features = {item['download'].split('#')[1]: item['id'] for tab in app_tabs()['tabs'] for item in tab.get('items', [])
                 if item.get('download', 'downloads/#system') != 'downloads/#system'}

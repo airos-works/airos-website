@@ -151,7 +151,8 @@ document.querySelectorAll('.app-card[data-repo]').forEach(card => {
 // Pick up image builds published since the scheduled snapshot. Immutable image
 // URLs keep the static links usable if JavaScript or the public API is offline.
 const imageCards = [...document.querySelectorAll('.image-card[data-target]')];
-if (imageCards.length) {
+const imageLinks = [...document.querySelectorAll('a[data-image-link]')];
+if (imageCards.length || imageLinks.length) {
   (async () => {
     const releases = [];
     for (let page = 1; ; page++) {
@@ -162,13 +163,24 @@ if (imageCards.length) {
       releases.push(...batch);
       if (batch.length < 100) break;
     }
-    for (const card of imageCards) {
-      const target = card.dataset.target;
+    // SD card boards get .img.xz images; UEFI targets get .iso.xz.
+    const latest = target => {
       const release = releases.filter(r => !r.draft && r.tag_name.startsWith(`image-${target}-`))
         .sort((a,b) => b.published_at.localeCompare(a.published_at))[0];
-      if (!release) continue;
-      const filename = target === 'rpi4' ? 'airos-rpi4.img.xz' : `airos-${target}.iso.xz`;
-      const assets = release.assets.filter(a => a.state === 'uploaded');
+      if (!release) return null;
+      const filename = ['rpi4', 'cubie'].includes(target) ? `airos-${target}.img.xz` : `airos-${target}.iso.xz`;
+      return {release, filename, assets: release.assets.filter(a => a.state === 'uploaded')};
+    };
+    for (const link of imageLinks) {
+      const found = latest(link.dataset.imageLink);
+      const image = found && found.assets.find(a => a.name === found.filename);
+      if (image && new URL(image.browser_download_url).origin === 'https://github.com') link.href = image.browser_download_url;
+    }
+    for (const card of imageCards) {
+      const target = card.dataset.target;
+      const found = latest(target);
+      if (!found) continue;
+      const {release, filename, assets} = found;
       const image = assets.find(a => a.name === filename);
       const checksum = assets.find(a => a.name === filename+'.sha256');
       const manifest = assets.find(a => a.name === 'manifest.json');

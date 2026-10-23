@@ -143,7 +143,7 @@ def main():
         if len(batch) < 100:
             break
         page += 1
-    for target in ['x86_64', 'arm64', 'rpi4']:
+    for target in ['x86_64', 'arm64', 'rpi4', 'cubie']:
         candidates = [r for r in releases if not r['draft'] and r['tag_name'].startswith(f'image-{target}-')]
         result = max(candidates, key=lambda r: r['published_at']) if candidates else None
         images.append({'target': target, 'release': result['html_url'] if result else None,
