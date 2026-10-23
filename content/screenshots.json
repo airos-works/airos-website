@@ -120,6 +120,30 @@
     "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits."
   },
   {
+    "id": "photocraft",
+    "title": "PhotoCraft",
+    "category": "Media",
+    "file": "photocraft.png",
+    "description": "The airOS hills artwork open in PhotoCraft, with its tools, colour, properties and layers panels.",
+    "source": "https://github.com/jmgasper/photocraft/blob/main/docs/haiku.md",
+    "captured": "2026-10-23",
+    "width": 1186,
+    "height": 736,
+    "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU; the VM has no GPU, so PhotoCraft renders on the CPU; window region."
+  },
+  {
+    "id": "lightcraft",
+    "title": "LightCraft",
+    "category": "Media",
+    "file": "lightcraft.png",
+    "description": "LightCraft's develop view with a filmstrip of airOS artwork, the histogram and light controls.",
+    "source": "https://github.com/jmgasper/lightcraft/blob/main/docs/haiku.md",
+    "captured": "2026-10-23",
+    "width": 1186,
+    "height": 736,
+    "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU; the VM has no GPU, so LightCraft renders on the CPU; window region."
+  },
+  {
     "title": "AirShot",
     "file": "airshot.png",
     "category": "Apps",

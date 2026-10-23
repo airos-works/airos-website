@@ -66,7 +66,7 @@ airOS website, shared by its feature page and the gallery, and by its install ca
 on a Firefox Add-ons page (X399, 23 October 2026). The Proton VPN and Proton Mail
 Bridge captures are the CI-built packages on the X399 the same day; Proton VPN is
 signed in to the repository's stand-in test API (`tools/fake-proton`) and no
-connection was made. Clipper, Code - OSS, pgAdmin 4, GitHub Desktop and Terminal were captured in a QEMU
+connection was made. Clipper, PhotoCraft, LightCraft, Code - OSS, pgAdmin 4, GitHub Desktop and Terminal were captured in a QEMU
 VM running the 23 October x86-64 image live, with the separate developer packages
 installed and sample files written for the captures. The Mail capture is its acceptance-run evidence
 (`docs/evidence/mail-final-inbox.png` in jmgasper/mail), cropped to the window. The favicon uses the

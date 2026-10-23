@@ -140,7 +140,8 @@
             "A 24 MP opacity change measured 8–9× faster on the GPU than on the CPU"
           ],
           "source": "https://github.com/jmgasper/photocraft/blob/main/docs/haiku.md",
-          "download": "downloads/#system"
+          "download": "downloads/#system",
+          "screenshot": "photocraft"
         },
         {
           "id": "lightcraft",
@@ -153,7 +154,8 @@
             "AI models are not bundled and HEIF support is optional"
           ],
           "source": "https://github.com/jmgasper/lightcraft/blob/main/docs/haiku.md",
-          "download": "downloads/#system"
+          "download": "downloads/#system",
+          "screenshot": "lightcraft"
         }
       ]
     },
