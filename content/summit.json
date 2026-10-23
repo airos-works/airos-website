@@ -10,7 +10,8 @@
         "PDF navigation, search, zoom, password entry and original-file downloads",
         "Native color, date and time pickers"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
+      "screenshot": "summit-reader"
     },
     {
       "id": "extensions",
@@ -46,7 +47,8 @@
         "Origin-scoped permission prompts for device access",
         "WebUSB and Web Bluetooth implementations; physical transfer/GATT coverage remains limited"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
+      "screenshot": "summit-private"
     },
     {
       "id": "developer",
@@ -57,7 +59,8 @@
         "Optional built-in MCP server for local debugging tools",
         "Inspect tabs, processes, memory, rendering, media and extensions; MCP is off by default"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
+      "screenshot": "summit-devtools"
     }
   ]
 }

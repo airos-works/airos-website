@@ -62,8 +62,10 @@ captures, CSS and JavaScript. The build produces `dist/`. Screenshots are real c
 captures. The Cubie and Raspberry Pi gallery entries are dated hardware-test
 captures. Earlier app images are explicitly labelled as development captures.
 No UI is reconstructed or generated. Summit is represented by a capture of the
-airOS website, shared by its feature page and the gallery, and by its install card
-on a Firefox Add-ons page (X399, 23 October 2026). The Proton VPN and Proton Mail
+airOS website, shared by its feature page and the gallery; by its install card
+on a Firefox Add-ons page (X399, 23 October 2026); and by reader-mode,
+private-window and network-inspector captures from the Framework 13 on
+18 October 2026, showing a sample article written for those captures. The Proton VPN and Proton Mail
 Bridge captures are the CI-built packages on the X399 the same day; Proton VPN is
 signed in to the repository's stand-in test API (`tools/fake-proton`) and no
 connection was made. Clipper, PhotoCraft, LightCraft, Code - OSS, pgAdmin 4, GitHub Desktop and Terminal were captured in a QEMU

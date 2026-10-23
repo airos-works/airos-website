@@ -24,6 +24,42 @@
     "provenance": "Direct mcp_server BScreen capture from the X399 workstation; cropped to the left of the Summit window's toolbar and page header, no other edits."
   },
   {
+    "id": "summit-reader",
+    "title": "Summit · reader mode",
+    "category": "Summit",
+    "file": "summit-reader.png",
+    "captured": "2026-10-18",
+    "description": "Reader mode displaying an original sample article in the current browser on the Framework laptop.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
+    "provenance": "Direct mcp_server BScreen capture of a local sample article on Framework 13.",
+    "width": 1212,
+    "height": 874
+  },
+  {
+    "id": "summit-devtools",
+    "title": "Summit · developer tools",
+    "category": "Summit",
+    "file": "summit-devtools.png",
+    "description": "The native Network inspector showing the request for the sample reader article.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
+    "captured": "2026-10-18",
+    "width": 1051,
+    "height": 793,
+    "provenance": "Direct native window capture on Framework 13."
+  },
+  {
+    "id": "summit-private",
+    "title": "Summit · private window",
+    "category": "Summit",
+    "file": "summit-private.png",
+    "captured": "2026-10-18",
+    "description": "An original sample article in a private window, with the private-browsing indicator in the toolbar.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
+    "width": 1212,
+    "height": 874,
+    "provenance": "Direct native window capture on Framework 13."
+  },
+  {
     "id": "deckcraft",
     "title": "DeckCraft",
     "category": "Office",
