@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T12:42:27+00:00",
+  "updated": "2026-10-23T18:38:33+00:00",
   "ci_head": "b86f35eae7d6a0cf09b76955e059e265e0726f81",
   "sources": [
     {
@@ -28891,8 +28891,260 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "47e082fd0c3f49e4e4a847fbda7d1aea7210b3d9",
+      "head": "41ca2380afbdc98d1a278680d31862e7088ede15",
       "commits": [
+        {
+          "sha": "41ca2380afbdc98d1a278680d31862e7088ede15",
+          "url": "https://github.com/jmgasper/summit/commit/41ca2380afbdc98d1a278680d31862e7088ede15",
+          "date": "2026-10-23T18:32:10Z",
+          "subject": "README: latest Haiku R1/beta6 builds (cdea816) [skip ci]"
+        },
+        {
+          "sha": "8f17cd39f32e0e21b61533060c333a51ec569c0f",
+          "url": "https://github.com/jmgasper/summit/commit/8f17cd39f32e0e21b61533060c333a51ec569c0f",
+          "date": "2026-10-23T18:31:55Z",
+          "subject": "README: latest air/OS builds (cdea816) [skip ci]"
+        },
+        {
+          "sha": "cdea81679aac5270ff02159f09b5baf5a0ed8572",
+          "url": "https://github.com/jmgasper/summit/commit/cdea81679aac5270ff02159f09b5baf5a0ed8572",
+          "date": "2026-10-23T18:14:50Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into geo2"
+        },
+        {
+          "sha": "dc463b9c38483525c2de22bd4c849a3929ebfc57",
+          "url": "https://github.com/jmgasper/summit/commit/dc463b9c38483525c2de22bd4c849a3929ebfc57",
+          "date": "2026-10-23T18:14:47Z",
+          "subject": "Record onBoundsChanged and create geometry results (#106)"
+        },
+        {
+          "sha": "eb48a54be17dcc141701a844965ff1f826b73053",
+          "url": "https://github.com/jmgasper/summit/commit/eb48a54be17dcc141701a844965ff1f826b73053",
+          "date": "2026-10-23T17:47:28Z",
+          "subject": "windows.onBoundsChanged and windows.create geometry (#106)"
+        },
+        {
+          "sha": "76325de44d325d3cdb965ba71f5bc3a7420a6918",
+          "url": "https://github.com/jmgasper/summit/commit/76325de44d325d3cdb965ba71f5bc3a7420a6918",
+          "date": "2026-10-23T17:41:45Z",
+          "subject": "README: latest Haiku R1/beta6 builds (992bfa8) [skip ci]"
+        },
+        {
+          "sha": "9a7fd2963c3160d34ae502b3c6495cf7387f378f",
+          "url": "https://github.com/jmgasper/summit/commit/9a7fd2963c3160d34ae502b3c6495cf7387f378f",
+          "date": "2026-10-23T17:41:29Z",
+          "subject": "README: latest air/OS builds (992bfa8) [skip ci]"
+        },
+        {
+          "sha": "992bfa8bc05c5342a9bda6c42344fe09eb50ce6e",
+          "url": "https://github.com/jmgasper/summit/commit/992bfa8bc05c5342a9bda6c42344fe09eb50ce6e",
+          "date": "2026-10-23T17:24:50Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into geo106"
+        },
+        {
+          "sha": "fdfd1ec9671d035079d541f26791f345af5ec42f",
+          "url": "https://github.com/jmgasper/summit/commit/fdfd1ec9671d035079d541f26791f345af5ec42f",
+          "date": "2026-10-23T17:24:47Z",
+          "subject": "Record window geometry results (#106)"
+        },
+        {
+          "sha": "f3a6a054a1b33ae0c339d2b1b3efc4e821d59389",
+          "url": "https://github.com/jmgasper/summit/commit/f3a6a054a1b33ae0c339d2b1b3efc4e821d59389",
+          "date": "2026-10-23T16:58:02Z",
+          "subject": "README: latest Haiku R1/beta6 builds (72106d2) [skip ci]"
+        },
+        {
+          "sha": "1491e563328de8be614116883f11333e180946f4",
+          "url": "https://github.com/jmgasper/summit/commit/1491e563328de8be614116883f11333e180946f4",
+          "date": "2026-10-23T16:57:46Z",
+          "subject": "README: latest air/OS builds (72106d2) [skip ci]"
+        },
+        {
+          "sha": "1092fbf542d0df8d2509e2f179f454ffe21753ef",
+          "url": "https://github.com/jmgasper/summit/commit/1092fbf542d0df8d2509e2f179f454ffe21753ef",
+          "date": "2026-10-23T16:53:56Z",
+          "subject": "Window geometry for extensions (#106)"
+        },
+        {
+          "sha": "72106d2e5d1fb89710f17caaee0b31cf4ee69e64",
+          "url": "https://github.com/jmgasper/summit/commit/72106d2e5d1fb89710f17caaee0b31cf4ee69e64",
+          "date": "2026-10-23T16:48:42Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into hl106"
+        },
+        {
+          "sha": "2b09c6d073b3e4e7ed6697e2f9f2be63d9212a80",
+          "url": "https://github.com/jmgasper/summit/commit/2b09c6d073b3e4e7ed6697e2f9f2be63d9212a80",
+          "date": "2026-10-23T16:48:39Z",
+          "subject": "Record highlighted:false result (#106)"
+        },
+        {
+          "sha": "1488a68644d80b3bba5d357db59f766a7617f687",
+          "url": "https://github.com/jmgasper/summit/commit/1488a68644d80b3bba5d357db59f766a7617f687",
+          "date": "2026-10-23T16:41:11Z",
+          "subject": "Accept tabs.update({highlighted: false}) (#106)"
+        },
+        {
+          "sha": "b894240d8f31083f1a02ba7f848fe47e31361d85",
+          "url": "https://github.com/jmgasper/summit/commit/b894240d8f31083f1a02ba7f848fe47e31361d85",
+          "date": "2026-10-23T16:38:50Z",
+          "subject": "README: latest Haiku R1/beta6 builds (64b97a1) [skip ci]"
+        },
+        {
+          "sha": "5cba51e84fd1abc063601b2735199c3fb24e8302",
+          "url": "https://github.com/jmgasper/summit/commit/5cba51e84fd1abc063601b2735199c3fb24e8302",
+          "date": "2026-10-23T16:38:34Z",
+          "subject": "README: latest air/OS builds (64b97a1) [skip ci]"
+        },
+        {
+          "sha": "64b97a13d74b91e8c46b37986bedc37b7afa770b",
+          "url": "https://github.com/jmgasper/summit/commit/64b97a13d74b91e8c46b37986bedc37b7afa770b",
+          "date": "2026-10-23T16:17:10Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into dl106"
+        },
+        {
+          "sha": "b46081d41e1f092c8f4b83f312abfaac241df54f",
+          "url": "https://github.com/jmgasper/summit/commit/b46081d41e1f092c8f4b83f312abfaac241df54f",
+          "date": "2026-10-23T16:17:07Z",
+          "subject": "Record detectLanguage result (#106)"
+        },
+        {
+          "sha": "be46c9be5c877401270cbf145a5a7276bf03ba54",
+          "url": "https://github.com/jmgasper/summit/commit/be46c9be5c877401270cbf145a5a7276bf03ba54",
+          "date": "2026-10-23T15:36:23Z",
+          "subject": "tabs.detectLanguage() (#106)"
+        },
+        {
+          "sha": "194a656f5a72ebfaafa557d31e09fcd3107f1c6f",
+          "url": "https://github.com/jmgasper/summit/commit/194a656f5a72ebfaafa557d31e09fcd3107f1c6f",
+          "date": "2026-10-23T15:32:05Z",
+          "subject": "README: latest Haiku R1/beta6 builds (3cdee4a) [skip ci]"
+        },
+        {
+          "sha": "35c47ce6d8862da6c8843510b7510259199e8dca",
+          "url": "https://github.com/jmgasper/summit/commit/35c47ce6d8862da6c8843510b7510259199e8dca",
+          "date": "2026-10-23T15:31:50Z",
+          "subject": "README: latest air/OS builds (3cdee4a) [skip ci]"
+        },
+        {
+          "sha": "3cdee4ae88d43a035ee2a30b9042a17b7ecea866",
+          "url": "https://github.com/jmgasper/summit/commit/3cdee4ae88d43a035ee2a30b9042a17b7ecea866",
+          "date": "2026-10-23T15:21:38Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into rl106"
+        },
+        {
+          "sha": "e9af11a7ffc6c4e52614a27dbab374ba953c726f",
+          "url": "https://github.com/jmgasper/summit/commit/e9af11a7ffc6c4e52614a27dbab374ba953c726f",
+          "date": "2026-10-23T15:21:35Z",
+          "subject": "Record zoom settings and bypassCache results (#106)"
+        },
+        {
+          "sha": "67f1cc5818325fea0087ddf1fe6bf68224bbfd7f",
+          "url": "https://github.com/jmgasper/summit/commit/67f1cc5818325fea0087ddf1fe6bf68224bbfd7f",
+          "date": "2026-10-23T15:08:48Z",
+          "subject": "tabs.getZoomSettings/setZoomSettings and reload without the cache (#106)"
+        },
+        {
+          "sha": "179dde518bcedc3f7caf123f15c713ab18c25068",
+          "url": "https://github.com/jmgasper/summit/commit/179dde518bcedc3f7caf123f15c713ab18c25068",
+          "date": "2026-10-23T15:02:58Z",
+          "subject": "README: latest Haiku R1/beta6 builds (4e7a523) [skip ci]"
+        },
+        {
+          "sha": "da8da75be37c9fab3c59c4a4808ec5489c5287a2",
+          "url": "https://github.com/jmgasper/summit/commit/da8da75be37c9fab3c59c4a4808ec5489c5287a2",
+          "date": "2026-10-23T15:02:41Z",
+          "subject": "README: latest air/OS builds (4e7a523) [skip ci]"
+        },
+        {
+          "sha": "4e7a5234ded53f698fb09ff0da354766108159e9",
+          "url": "https://github.com/jmgasper/summit/commit/4e7a5234ded53f698fb09ff0da354766108159e9",
+          "date": "2026-10-23T14:40:10Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into zc106"
+        },
+        {
+          "sha": "116380c132b568cfd23f487d0d1a5caa2fc44442",
+          "url": "https://github.com/jmgasper/summit/commit/116380c132b568cfd23f487d0d1a5caa2fc44442",
+          "date": "2026-10-23T14:40:07Z",
+          "subject": "Record onZoomChange results (#106)"
+        },
+        {
+          "sha": "10604f256db8086b8119e729924dff1ec1a79827",
+          "url": "https://github.com/jmgasper/summit/commit/10604f256db8086b8119e729924dff1ec1a79827",
+          "date": "2026-10-23T14:03:57Z",
+          "subject": "tabs.onZoomChange (#106)"
+        },
+        {
+          "sha": "73c5d121cf0898265d72fa20c415ba917347ef3c",
+          "url": "https://github.com/jmgasper/summit/commit/73c5d121cf0898265d72fa20c415ba917347ef3c",
+          "date": "2026-10-23T13:58:12Z",
+          "subject": "README: latest Haiku R1/beta6 builds (9ce3b21) [skip ci]"
+        },
+        {
+          "sha": "66850addf9c980ad4845a573bb3bffbb7e76c29e",
+          "url": "https://github.com/jmgasper/summit/commit/66850addf9c980ad4845a573bb3bffbb7e76c29e",
+          "date": "2026-10-23T13:57:57Z",
+          "subject": "README: latest air/OS builds (9ce3b21) [skip ci]"
+        },
+        {
+          "sha": "9ce3b21cb73022dcac44d5a923ed0351c5005276",
+          "url": "https://github.com/jmgasper/summit/commit/9ce3b21cb73022dcac44d5a923ed0351c5005276",
+          "date": "2026-10-23T13:48:57Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into pin106"
+        },
+        {
+          "sha": "f4d7d7dd3df4b1271ef470c3c6c1e57279e5b9f8",
+          "url": "https://github.com/jmgasper/summit/commit/f4d7d7dd3df4b1271ef470c3c6c1e57279e5b9f8",
+          "date": "2026-10-23T13:48:54Z",
+          "subject": "Record pinned tab results (#106)"
+        },
+        {
+          "sha": "ca81f4b8538d1d224a7574a9a1b505cfc8c7329b",
+          "url": "https://github.com/jmgasper/summit/commit/ca81f4b8538d1d224a7574a9a1b505cfc8c7329b",
+          "date": "2026-10-23T13:33:46Z",
+          "subject": "Pinned tabs for extensions (#106)"
+        },
+        {
+          "sha": "54683405c187cee175aba0986ed19a0788103e76",
+          "url": "https://github.com/jmgasper/summit/commit/54683405c187cee175aba0986ed19a0788103e76",
+          "date": "2026-10-23T13:29:28Z",
+          "subject": "README: latest Haiku R1/beta6 builds (2dd7cdd) [skip ci]"
+        },
+        {
+          "sha": "fbde12fb50dc4627f545d6e77a98fb22bcffe5eb",
+          "url": "https://github.com/jmgasper/summit/commit/fbde12fb50dc4627f545d6e77a98fb22bcffe5eb",
+          "date": "2026-10-23T13:29:12Z",
+          "subject": "README: latest air/OS builds (2dd7cdd) [skip ci]"
+        },
+        {
+          "sha": "2dd7cddf13d48f717b1fe35603e16a1827be2557",
+          "url": "https://github.com/jmgasper/summit/commit/2dd7cddf13d48f717b1fe35603e16a1827be2557",
+          "date": "2026-10-23T13:11:45Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into opener106"
+        },
+        {
+          "sha": "69ec3f98a8aa4db2beb9257bf7ccb8289c5ba503",
+          "url": "https://github.com/jmgasper/summit/commit/69ec3f98a8aa4db2beb9257bf7ccb8289c5ba503",
+          "date": "2026-10-23T13:11:42Z",
+          "subject": "Record openerTabId results (#106)"
+        },
+        {
+          "sha": "111d1d5008d755e83f624424c2f40128525671ef",
+          "url": "https://github.com/jmgasper/summit/commit/111d1d5008d755e83f624424c2f40128525671ef",
+          "date": "2026-10-23T12:46:52Z",
+          "subject": "Report tabs' openerTabId (#106)"
+        },
+        {
+          "sha": "53c12d2625754d32334262665f7061caf3349372",
+          "url": "https://github.com/jmgasper/summit/commit/53c12d2625754d32334262665f7061caf3349372",
+          "date": "2026-10-23T12:42:23Z",
+          "subject": "README: latest Haiku R1/beta6 builds (47e082f) [skip ci]"
+        },
+        {
+          "sha": "0f87884afef88a9f2a76c78244d7961b445819b9",
+          "url": "https://github.com/jmgasper/summit/commit/0f87884afef88a9f2a76c78244d7961b445819b9",
+          "date": "2026-10-23T12:42:08Z",
+          "subject": "README: latest air/OS builds (47e082f) [skip ci]"
+        },
         {
           "sha": "47e082fd0c3f49e4e4a847fbda7d1aea7210b3d9",
           "url": "https://github.com/jmgasper/summit/commit/47e082fd0c3f49e4e4a847fbda7d1aea7210b3d9",
@@ -81774,31 +82026,31 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/jmgasper/summit/releases/tag/latest",
-      "published": "2026-10-23T12:42:07Z",
+      "published": "2026-10-23T18:31:53Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261023.1053-1-arm64.hpkg",
-          "size": 15595797,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.1053-1-arm64.hpkg",
-          "digest": "sha256:35e928a3a6ccd034836f93aed88f2e520b4c4eb1703e88202a426f2537a0e6f0"
+          "name": "summit-0.1.0.git20261023.1814-1-arm64.hpkg",
+          "size": 15604670,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.1814-1-arm64.hpkg",
+          "digest": "sha256:6255ba58d1f2f4bcafc5bd53b5b1dab895a857c0f0515a555c6328884be9575c"
         },
         {
-          "name": "summit-0.1.0.git20261023.1053-1-x86_64.hpkg",
-          "size": 14698281,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.1053-1-x86_64.hpkg",
-          "digest": "sha256:f441e38e764712e126ec8176a7650861fc18b15ed12ffc3d0f021546dd3d0304"
+          "name": "summit-0.1.0.git20261023.1814-1-x86_64.hpkg",
+          "size": 14701778,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261023.1814-1-x86_64.hpkg",
+          "digest": "sha256:16c1ad604f8b1675797f42fcfecbc67a6f1e08b9ce5289d7d9a4196db930b090"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261023.1053-1-arm64.hpkg",
-          "size": 93857093,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.1053-1-arm64.hpkg",
-          "digest": "sha256:81d559d1aa1bf2ed272024ab990fa7037e165c8fd7440d6a9e8051f5c66855d4"
+          "name": "summit_webkit-1.10.1.git20261023.1814-1-arm64.hpkg",
+          "size": 93873077,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.1814-1-arm64.hpkg",
+          "digest": "sha256:7dd57f057ec5eaf0af57e4e955b30e0876cfc91d431fa90a43a5653fc9643a56"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261023.1053-1-x86_64.hpkg",
-          "size": 87544053,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.1053-1-x86_64.hpkg",
-          "digest": "sha256:e846ee41029235ef2d09576b14b30074b010c5d27a3287619beb18e8f238ae14"
+          "name": "summit_webkit-1.10.1.git20261023.1814-1-x86_64.hpkg",
+          "size": 87555310,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261023.1814-1-x86_64.hpkg",
+          "digest": "sha256:420b80037f2b573758da745f2237b006c95b6ae9292c2789761727b6a67daa8e"
         }
       ]
     },
@@ -82008,76 +82260,76 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261023123747-89bebe0d8e",
-      "published": "2026-10-23T12:41:55Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261023155632-89bebe0d8e",
+      "published": "2026-10-23T16:00:22Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1120361572,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023123747-89bebe0d8e/airos-x86_64.iso.xz",
-          "digest": "sha256:228c650979e57ae2d247cdf8c83418b11031c29d5e1e220cda990f19660b3475"
+          "size": 1120402964,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023155632-89bebe0d8e/airos-x86_64.iso.xz",
+          "digest": "sha256:7ea7ef78d4b0cc89c14b2d1e3626ab73b1c2784233a71d9911c4a4319c9ceb29"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023123747-89bebe0d8e/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:5dbc438aa3622ec1525b5384667e175328606acf87406dc1db7c0a209f1f2175"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023155632-89bebe0d8e/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:c70f9a1ce141049296a4cd89416669447c042baa0704f1908e78a819e060eb28"
         },
         {
           "name": "manifest.json",
           "size": 13069,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023123747-89bebe0d8e/manifest.json",
-          "digest": "sha256:982c2d3f380f441e55db706a982e7003f05f8c0706e6a676412a0359ee7f6c9c"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261023155632-89bebe0d8e/manifest.json",
+          "digest": "sha256:b75f917c136c640e246b49efda15d487c097495b10c76ccd4d5430fa6c2fd5e5"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261023120102-89bebe0d8e",
-      "published": "2026-10-23T12:04:16Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261023154142-89bebe0d8e",
+      "published": "2026-10-23T15:44:54Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 582637744,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023120102-89bebe0d8e/airos-arm64.iso.xz",
-          "digest": "sha256:2c7e206070cdc294e5625e2c9b8c4413e10ac3035b9477f1afee08283591bab5"
+          "size": 582652748,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023154142-89bebe0d8e/airos-arm64.iso.xz",
+          "digest": "sha256:53b0f157bce546424dd02d3be98a6d23bb92ae35f7db355cdb5f9457919fec5f"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023120102-89bebe0d8e/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:690a056249d3f7b1a61747a98558672ecc5ffecdc65311689b86d3c260bbf674"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023154142-89bebe0d8e/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:e0a5f8ffc27cdf6e12629ec1611463405306c259705b8787fa7cc01051f8ab49"
         },
         {
           "name": "manifest.json",
           "size": 10393,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023120102-89bebe0d8e/manifest.json",
-          "digest": "sha256:2ee364f4b6fbe39bfe56cde2b78626ca84fff8e38b7f8516d1f9e70e590f2dfb"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261023154142-89bebe0d8e/manifest.json",
+          "digest": "sha256:3b77bef46ed3c78290117cf999341328886811f66759eecbede7d78bbf9b040c"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261023120847-89bebe0d8e",
-      "published": "2026-10-23T12:10:19Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261023160507-89bebe0d8e",
+      "published": "2026-10-23T16:06:41Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 585191016,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023120847-89bebe0d8e/airos-rpi4.img.xz",
-          "digest": "sha256:a74f4672a285820112d4e921d321f6f5b416bd0fa93eb1ea9c06b457d6207de7"
+          "size": 585220372,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023160507-89bebe0d8e/airos-rpi4.img.xz",
+          "digest": "sha256:bf7f2f73f3cc10206d8234b6f519069253161f653bccf4a2ad8c1f56bf0d8816"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023120847-89bebe0d8e/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:d9e5812c66e78bc044479d749633ae004e62ce5ca95816f4d1224095bba6f54f"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023160507-89bebe0d8e/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:48c53c27bee71cb71c21a2917e0620109eb5fea12da366710b2b0ff519d4f07d"
         },
         {
           "name": "manifest.json",
           "size": 10527,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023120847-89bebe0d8e/manifest.json",
-          "digest": "sha256:da19f8be1d663910c8ad9ac2f21a2404d0c921b733d81b3b2ea2db4619f383e9"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261023160507-89bebe0d8e/manifest.json",
+          "digest": "sha256:2b7c185a638ad67f3b2404f82ca384e4d9c3b91a99f5c27e6399243af21654b0"
         }
       ]
     }
