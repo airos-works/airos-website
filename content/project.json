@@ -124,5 +124,9 @@
       "base": "e984d448b8b17aab853369e6c203e53719f46de1",
       "reason": "CI records the upstream tag name, which is not published in this fork; use its immutable commit."
     }
+  },
+  "hidden_subjects": {
+    "pattern": "turbo[ _-]?chook",
+    "reason": "A retired project is not named on the site: commits whose subject matches are left out of the snapshot and changelog, and check.py fails if a built file matches."
   }
 }

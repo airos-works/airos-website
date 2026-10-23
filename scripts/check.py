@@ -2,6 +2,7 @@
 """Validate generated routes, assets, download coverage and complete archive."""
 from html.parser import HTMLParser
 import json
+import re
 import os
 from pathlib import Path
 from urllib.parse import unquote,urlsplit
@@ -53,5 +54,8 @@ for im in snapshot['images']:
         names={a['name'] for a in im['assets']}
         image=next((n for n in names if n.endswith(('.iso.xz','.img.xz'))),None)
         if not image or image+'.sha256' not in names or 'manifest.json' not in names:errors.append('Incomplete image release '+im['target'])
+hidden=re.compile(json.loads((ROOT/'content/project.json').read_text())['hidden_subjects']['pattern'],re.I)
+for path in OUT.rglob('*'):
+    if path.suffix in ('.html','.json','.xml','.txt','.js','.css') and hidden.search(path.read_text()):errors.append(f'{path}: names a retired project')
 if errors:raise SystemExit('\n'.join(errors))
 print(f"OK: {len(pages)} HTML files, every internal link, {len(snapshot['apps'])} app entries, {len(changes)} archived commits")

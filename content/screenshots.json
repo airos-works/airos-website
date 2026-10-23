@@ -153,6 +153,54 @@
     "captured": "Earlier development capture"
   },
   {
+    "id": "code-oss",
+    "title": "Code - OSS",
+    "category": "Developer",
+    "file": "code-oss.png",
+    "description": "A small native Haiku C++ project in Code - OSS, with the explorer, C++ highlighting and the integrated terminal.",
+    "source": "https://github.com/jmgasper/vscode/blob/haiku/build/haiku/README.md",
+    "captured": "2026-10-23",
+    "width": 1280,
+    "height": 800,
+    "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU, with code_oss-1.142.0-1 and aurora-0.3.0-5 installed; sample project written for the capture; user data on a RAM disk because the live CD cannot hold its socket."
+  },
+  {
+    "id": "pgadmin",
+    "title": "pgAdmin 4",
+    "category": "Developer",
+    "file": "pgadmin.png",
+    "description": "pgAdmin 4 in its desktop mode on Aurora, with native menus and its dashboard.",
+    "source": "https://github.com/jmgasper/aurora/tree/main/ports/pgadmin4",
+    "captured": "2026-10-23",
+    "width": 1024,
+    "height": 768,
+    "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU, with pgadmin4-9.18-1 installed; window region."
+  },
+  {
+    "id": "github-desktop",
+    "title": "GitHub Desktop",
+    "category": "Developer",
+    "file": "github-desktop.png",
+    "description": "A local repository in GitHub Desktop, with a one-line change ready to commit through the system Git.",
+    "source": "https://github.com/jmgasper/desktop/blob/haiku/docs/technical/haiku.md",
+    "captured": "2026-10-23",
+    "width": 960,
+    "height": 660,
+    "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU, with github_desktop-3.6.7-1 installed; sample repository and identity created for the capture; window region."
+  },
+  {
+    "id": "terminal",
+    "title": "Terminal",
+    "category": "Developer",
+    "file": "terminal.png",
+    "description": "The new Terminal drawing box characters itself, colour emoji with flags, skin tones and joined sequences, braille and blocks.",
+    "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/TERMINAL.md",
+    "captured": "2026-10-23",
+    "width": 589,
+    "height": 486,
+    "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU; software renderer (the VM has no GPU); window region."
+  },
+  {
     "title": "Burrow",
     "file": "burrow.png",
     "category": "Apps",

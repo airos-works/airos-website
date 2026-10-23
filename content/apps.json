@@ -163,9 +163,12 @@
       "heading": "Tools for building things",
       "tag": "Code, databases, Git and networks",
       "lead": "Code - OSS, pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Terminal gained a new rendering engine, and Burrow connects you to work networks.",
-      "note": "Code - OSS, pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku.",
+      "note": "Code - OSS, pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku. The captures in this section come from a virtual machine without a GPU, so Terminal is using its software renderer there.",
       "links": [
-        {"label": "About Aurora ↗", "href": "https://github.com/jmgasper/aurora/blob/main/README.md"}
+        {
+          "label": "About Aurora ↗",
+          "href": "https://github.com/jmgasper/aurora/blob/main/README.md"
+        }
       ],
       "items": [
         {
@@ -178,7 +181,8 @@
             "Native window tab and menu bar, ripgrep search and a code-oss command-line launcher",
             "Extensions that ship Linux binaries, Copilot agent features and printing are unavailable"
           ],
-          "source": "https://github.com/jmgasper/vscode/blob/haiku/build/haiku/README.md"
+          "source": "https://github.com/jmgasper/vscode/blob/haiku/build/haiku/README.md",
+          "screenshot": "code-oss"
         },
         {
           "id": "pgadmin",
@@ -190,7 +194,8 @@
             "Uses the system’s psql, pg_dump, pg_dumpall and pg_restore (PostgreSQL 18)",
             "Kerberos sign-in and MFA QR codes are left out"
           ],
-          "source": "https://github.com/jmgasper/aurora/tree/main/ports/pgadmin4"
+          "source": "https://github.com/jmgasper/aurora/tree/main/ports/pgadmin4",
+          "screenshot": "pgadmin"
         },
         {
           "id": "github-desktop",
@@ -202,7 +207,8 @@
             "Opens Terminal, Tracker and native editors such as Pe, Koder and Genio",
             "No usage statistics; updates come through pkgman. Git LFS is not supported"
           ],
-          "source": "https://github.com/jmgasper/desktop/blob/haiku/docs/technical/haiku.md"
+          "source": "https://github.com/jmgasper/desktop/blob/haiku/docs/technical/haiku.md",
+          "screenshot": "github-desktop"
         },
         {
           "id": "terminal",
@@ -216,7 +222,8 @@
             "cat of a 5.7 MB file takes 0.14 s instead of 0.42 s; on the tested machines the software renderer is currently the faster path"
           ],
           "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/TERMINAL.md",
-          "download": "downloads/#system"
+          "download": "downloads/#system",
+          "screenshot": "terminal"
         },
         {
           "id": "burrow",
@@ -243,9 +250,20 @@
       "note": "Web-platform and extension compatibility are still evolving. Verified examples do not establish support for every extension or streaming service.",
       "summit": true,
       "links": [
-        {"label": "Get Summit for airOS ↓", "href": "downloads/#summit", "internal": true},
-        {"label": "Get Summit for Haiku R1/beta6 ↗", "href": "https://github.com/jmgasper/summit/releases/tag/latest-haiku"},
-        {"label": "More about Summit →", "href": "summit/", "internal": true}
+        {
+          "label": "Get Summit for airOS ↓",
+          "href": "downloads/#summit",
+          "internal": true
+        },
+        {
+          "label": "Get Summit for Haiku R1/beta6 ↗",
+          "href": "https://github.com/jmgasper/summit/releases/tag/latest-haiku"
+        },
+        {
+          "label": "More about Summit →",
+          "href": "summit/",
+          "internal": true
+        }
       ]
     },
     {
@@ -271,8 +289,14 @@
           "screenshot": "proton-vpn",
           "download": "downloads/#proton-vpn-airos-app",
           "links": [
-            {"label": "Latest release ↗", "href": "https://github.com/jmgasper/proton-vpn-airos-app/releases/tag/latest"},
-            {"label": "Source ↗", "href": "https://github.com/jmgasper/proton-vpn-airos-app"}
+            {
+              "label": "Latest release ↗",
+              "href": "https://github.com/jmgasper/proton-vpn-airos-app/releases/tag/latest"
+            },
+            {
+              "label": "Source ↗",
+              "href": "https://github.com/jmgasper/proton-vpn-airos-app"
+            }
           ]
         },
         {
@@ -290,8 +314,14 @@
           "screenshot": "proton-bridge",
           "download": "downloads/#proton-bridge",
           "links": [
-            {"label": "Latest release ↗", "href": "https://github.com/jmgasper/proton-bridge/releases/tag/latest"},
-            {"label": "Source ↗", "href": "https://github.com/jmgasper/proton-bridge"}
+            {
+              "label": "Latest release ↗",
+              "href": "https://github.com/jmgasper/proton-bridge/releases/tag/latest"
+            },
+            {
+              "label": "Source ↗",
+              "href": "https://github.com/jmgasper/proton-bridge"
+            }
           ]
         }
       ]

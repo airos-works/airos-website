@@ -5,6 +5,7 @@ import datetime
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import time
 import urllib.error
@@ -77,6 +78,9 @@ def collect(source):
             raise RuntimeError(f'Duplicate Git history pages for {repo}')
         cache_path.write_text(json.dumps({'head': head, 'base': base, 'commits': records}))
     print(f"{repo}@{branch}: {len(records)} commits", flush=True)
+    # Retired projects are not named on the site (content/project.json).
+    hidden = re.compile(CONFIG['hidden_subjects']['pattern'], re.I)
+    records = [c for c in records if not hidden.search(c['subject'])]
     return {**source, 'head': head, 'commits': records,
             'url': f'https://github.com/{repo}/tree/{quote(branch)}'}
 

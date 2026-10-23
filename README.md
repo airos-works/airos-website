@@ -59,8 +59,9 @@ airOS website, shared by its feature page and the gallery, and by its install ca
 on a Firefox Add-ons page (X399, 23 October 2026). The Proton VPN and Proton Mail
 Bridge captures are the CI-built packages on the X399 the same day; Proton VPN is
 signed in to the repository's stand-in test API (`tools/fake-proton`) and no
-connection was made. Clipper was captured in a QEMU VM running the 23 October
-x86-64 image live. The Mail capture is its acceptance-run evidence
+connection was made. Clipper, Code - OSS, pgAdmin 4, GitHub Desktop and Terminal were captured in a QEMU
+VM running the 23 October x86-64 image live, with the separate developer packages
+installed and sample files written for the captures. The Mail capture is its acceptance-run evidence
 (`docs/evidence/mail-final-inbox.png` in jmgasper/mail), cropped to the window. The favicon uses the
 [square airOS mark](https://github.com/jmgasper/haiku/blob/master/data/artwork/airos/airos-mark.svg),
 with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
@@ -112,7 +113,9 @@ repositories have no upstream exclusion. Every API page is fetched; compare
 counts are checked, and duplicate commits across branches are displayed once.
 The Craft ports have been merged into each fork's `main`, which the source entries
 track, so the source links and changelog include the Haiku work.
-Nothing is limited to a recent date window. SHA-keyed cache files accelerate
+`hidden_subjects` in `content/project.json` names a retired project that the site
+does not mention: commits whose subject matches it are left out of the snapshot, and
+`check.py` fails if any built file matches. Nothing else is limited to a recent date window. SHA-keyed cache files accelerate
 unchanged histories without hiding force-pushed changes. Private repositories
 are never exported. The source page links directly to full upstream history.
 
@@ -157,4 +160,17 @@ specified. The current compressed images fit this model.
 
 ## Domain
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for the GitHub Pages and DNS configuration.
+GitHub Pages publishes the site from the Actions workflow, with `airos.works` set
+as the custom domain in the repository's Pages settings (no `CNAME` file). DNS at
+Namecheap must hold only GitHub's records:
+
+| Host | Type | Value |
+|---|---|---|
+| `@` | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| `www` | CNAME | `jmgasper.github.io.` |
+| `_github-pages-challenge-jmgasper` | TXT | the value shown in GitHub's account Pages settings |
+
+Any other `@` record, such as Namecheap's URL-redirect address `192.64.119.125`,
+sends some visitors to Namecheap and stops GitHub from issuing the HTTPS
+certificate. Once the certificate exists, turn on **Enforce HTTPS** in the
+repository's Pages settings.

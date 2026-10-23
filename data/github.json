@@ -10194,12 +10194,6 @@
           "subject": "Deskbar: add Media between Office and Utilities"
         },
         {
-          "sha": "a27cc6742cc5cb4802e9b934762d8bb723d7439d",
-          "url": "https://github.com/jmgasper/haiku/commit/a27cc6742cc5cb4802e9b934762d8bb723d7439d",
-          "date": "2026-10-18T23:56:16Z",
-          "subject": "DESKBAR-MENU.md: Media folder with PhotoCraft and LightCraft; no Turbo Chook"
-        },
-        {
           "sha": "76c3386053cea2aaf90af72c161d3733d74662a5",
           "url": "https://github.com/jmgasper/haiku/commit/76c3386053cea2aaf90af72c161d3733d74662a5",
           "date": "2026-10-18T23:56:21Z",
@@ -10563,12 +10557,6 @@
           "url": "https://github.com/jmgasper/airos-ci/commit/db403b4071118600436b8d3a9c38c6b9ee7a635b",
           "date": "2026-10-19T03:49:32Z",
           "subject": "forks: linux-drm 4fe74a3, amdgpu userptr buffers (host memory imports)"
-        },
-        {
-          "sha": "018352286819c3c0050dfed2669a9f512683f994",
-          "url": "https://github.com/jmgasper/airos-ci/commit/018352286819c3c0050dfed2669a9f512683f994",
-          "date": "2026-10-18T23:50:17Z",
-          "subject": "Media: PhotoCraft and LightCraft in every image; Turbo Chook out"
         },
         {
           "sha": "3e4ec4bcfd8d3bc2621d99003e2c590dde03d644",
