@@ -36,7 +36,8 @@
         "MediaSource streaming and direct MPEG-DASH with seeking, adaptive quality and live refresh",
         "Clear Key encrypted media with temporary sessions; Widevine, PlayReady and FairPlay are unsupported"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md"
+      "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md",
+      "screenshot": "cubie-graphics"
     },
     {
       "id": "privacy",
