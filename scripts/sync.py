@@ -52,7 +52,7 @@ def collect(source):
     key = repo.replace('/', '_') + '_' + quote(branch) + '.json'
     cache_path = CACHE / key
     previous = json.loads(cache_path.read_text()) if cache_path.exists() else {}
-    if previous.get('head') == head and previous.get('base') == base:
+    if previous.get('head') == head and previous.get('base') == base and previous.get('authors'):
         records = previous['commits']
     else:
         records = []
@@ -68,7 +68,9 @@ def collect(source):
             for c in commits:
                 records.append({'sha': c['sha'], 'url': c['html_url'],
                     'date': c['commit']['committer']['date'],
-                    'subject': c['commit']['message'].splitlines()[0]})
+                    'subject': c['commit']['message'].splitlines()[0],
+                    'author': (c.get('author') or {}).get('login'),
+                    'email': c['commit']['author']['email']})
             if (expected is not None and len(records) >= expected) or len(commits) < 100:
                 break
             page += 1
@@ -76,8 +78,14 @@ def collect(source):
             raise RuntimeError(f'Incomplete Git history for {repo}: {len(records)}/{expected}')
         if len({c['sha'] for c in records}) != len(records):
             raise RuntimeError(f'Duplicate Git history pages for {repo}')
-        cache_path.write_text(json.dumps({'head': head, 'base': base, 'commits': records}))
-    print(f"{repo}@{branch}: {len(records)} commits", flush=True)
+        cache_path.write_text(json.dumps({'head': head, 'base': base, 'authors': True, 'commits': records}))
+    # The changelog covers the owner's own work on each fork, not the upstream or
+    # imported history it builds on (content/project.json).
+    total = len(records)
+    owner = CONFIG['changelog_authors']
+    records = [{k: c[k] for k in ('sha', 'url', 'date', 'subject')} for c in records
+               if c['author'] in owner['logins'] or c['email'].lower() in owner['emails']]
+    print(f"{repo}@{branch}: {len(records)} of {total} commits", flush=True)
     # Retired projects are not named on the site (content/project.json).
     hidden = re.compile(CONFIG['hidden_subjects']['pattern'], re.I)
     records = [c for c in records if not hidden.search(c['subject'])]

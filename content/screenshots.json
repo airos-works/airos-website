@@ -3,13 +3,13 @@
     "title": "Summit · airos.works",
     "file": "summit.png",
     "category": "Summit",
-    "description": "The refreshed airOS website in the current Summit browser, captured from a local preview on the Framework laptop.",
+    "description": "The new airos.works home page in Summit, from a local preview of the site.",
     "source": "https://github.com/jmgasper/summit",
     "id": "summit",
-    "width": 1212,
-    "height": 874,
-    "captured": "2026-10-18",
-    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region."
+    "width": 1291,
+    "height": 910,
+    "captured": "2026-10-24",
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; native window region below the title tab."
   },
   {
     "id": "summit-firefox-addon",
@@ -28,36 +28,36 @@
     "title": "Summit · reader mode",
     "category": "Summit",
     "file": "summit-reader.png",
-    "captured": "2026-10-18",
-    "description": "Reader mode displaying an original sample article in the current browser on the Framework laptop.",
+    "captured": "2026-10-24",
+    "description": "Reader mode showing the new airos.works home page as clean, readable text.",
     "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
-    "provenance": "Direct mcp_server BScreen capture of a local sample article on Framework 13.",
-    "width": 1212,
-    "height": 874
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation of a local preview of the site; native window region below the title tab.",
+    "width": 1291,
+    "height": 910
   },
   {
     "id": "summit-devtools",
     "title": "Summit · developer tools",
     "category": "Summit",
     "file": "summit-devtools.png",
-    "description": "The native Network inspector showing the request for the sample reader article.",
+    "description": "The native Network inspector with the airos.works page request selected, showing its response and request headers.",
     "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
-    "captured": "2026-10-18",
-    "width": 1051,
-    "height": 793,
-    "provenance": "Direct native window capture on Framework 13."
+    "captured": "2026-10-24",
+    "width": 1050,
+    "height": 769,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation of a local preview of the site; native window region below the title tab."
   },
   {
     "id": "summit-private",
     "title": "Summit · private window",
     "category": "Summit",
     "file": "summit-private.png",
-    "captured": "2026-10-18",
-    "description": "An original sample article in a private window, with the private-browsing indicator in the toolbar.",
+    "captured": "2026-10-24",
+    "description": "A new private window, drawn in purple, with its Private badge in the toolbar.",
     "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
-    "width": 1212,
-    "height": 874,
-    "provenance": "Direct native window capture on Framework 13."
+    "width": 1291,
+    "height": 910,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; native window region below the title tab."
   },
   {
     "id": "deckcraft",
@@ -93,7 +93,8 @@
     "captured": "2026-10-11",
     "width": 1920,
     "height": 1080,
-    "provenance": "/mnt/HaikuWork/cubie/evidence/gpu/m5/final1-aquarium5.jpg"
+    "provenance": "/mnt/HaikuWork/cubie/evidence/gpu/m5/final1-aquarium5.jpg",
+    "credit": "Shows <a href=\"https://github.com/WebGLSamples/WebGLSamples.github.io/tree/master/aquarium\">WebGL Aquarium</a>, © Google Inc. and contributors (<a href=\"{base}/assets/screenshots/webgl-aquarium-LICENSE.txt\">BSD licence</a>)"
   },
   {
     "id": "rpi4-airtop",
@@ -153,7 +154,8 @@
     "captured": "2026-10-18",
     "width": 1112,
     "height": 949,
-    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits."
+    "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits.",
+    "credit": "Includes <a href=\"https://peach.blender.org/about/\">Big Buck Bunny</a>, © Blender Foundation, <a href=\"https://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>"
   },
   {
     "id": "photocraft",
@@ -182,35 +184,39 @@
   {
     "title": "AirShot",
     "file": "airshot.png",
-    "category": "Apps",
-    "description": "The capture editor, with drawing tools, colours, crop and clipboard export.",
+    "category": "Everyday",
+    "description": "AirShot marking up a capture of a Tracker window with a highlight, a box, an arrow, numbered markers and a label.",
     "source": "https://github.com/jmgasper/airShot",
     "id": "airshot",
-    "width": 1020,
+    "width": 986,
     "height": 690,
-    "captured": "Earlier development capture"
+    "captured": "2026-10-24",
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation, cropped to the window; the marked-up image is a capture of a Tracker window taken for this screenshot."
   },
   {
     "title": "AirTime",
     "file": "airtime.jpg",
-    "category": "Apps",
-    "description": "HEVC 10-bit playback on Raspberry Pi 4.",
+    "category": "Media",
+    "description": "Big Buck Bunny paused in AirTime on the X399 workstation.",
     "source": "https://github.com/jmgasper/airTime",
     "id": "airtime",
-    "width": 1920,
-    "height": 1080,
-    "captured": "Earlier development capture"
+    "width": 1290,
+    "height": 812,
+    "captured": "2026-10-24",
+    "credit": "Includes <a href=\"https://peach.blender.org/about/\">Big Buck Bunny</a>, © Blender Foundation, <a href=\"https://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>",
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation, cropped to the window; AIRTIME_NO_DIRECT=1 so the video frame is drawn where a screen capture can read it."
   },
   {
     "title": "Amp",
     "file": "amp.png",
-    "category": "Apps",
-    "description": "A familiar music library, with playlists and Music Assistant integration.",
+    "category": "Media",
+    "description": "Amp’s Albums view: a local music library as a grid of artwork, with song counts and years.",
     "source": "https://github.com/jmgasper/amp",
     "id": "amp",
-    "width": 1280,
-    "height": 800,
-    "captured": "Earlier development capture"
+    "width": 1290,
+    "height": 810,
+    "captured": "2026-10-24",
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation, cropped to the window below its title tab."
   },
   {
     "id": "code-oss",
@@ -300,12 +306,12 @@
     "title": "Mail",
     "category": "Apps",
     "file": "mail.png",
-    "description": "A test conversation with emoji and an attachment in the new Mail app, from its acceptance run.",
-    "source": "https://github.com/jmgasper/mail/blob/main/docs/ACCEPTANCE.md",
-    "captured": "2026-10-23 · validation capture",
-    "width": 1012,
-    "height": 687,
-    "provenance": "jmgasper/mail docs/evidence/mail-final-inbox.png (commit 9c78526), cropped to the Mail window."
+    "description": "A sample conversation in the new Mail app’s unified inbox, with the thread shown in its WebKit reader.",
+    "source": "https://github.com/jmgasper/mail/blob/main/README.md",
+    "captured": "2026-10-24",
+    "width": 1191,
+    "height": 770,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; Mail run with a separate --database holding sample messages written for this capture, cropped to the window."
   },
   {
     "id": "clipper",
@@ -318,5 +324,30 @@
     "width": 501,
     "height": 706,
     "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live; window region cropped, sample clips set for the capture."
+  },
+  {
+    "id": "summit-extensions",
+    "title": "Summit · Extensions",
+    "category": "Summit",
+    "file": "summit-extensions.png",
+    "description": "Summit’s Extensions window managing extensions installed from Firefox Add-ons and the Chrome Web Store, with updates, toolbar and private-window options.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
+    "captured": "2026-10-24",
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; native window region below the title tab.",
+    "width": 700,
+    "height": 622
+  },
+  {
+    "id": "summit-webgl",
+    "title": "Summit · WebGL Aquarium",
+    "category": "Summit",
+    "file": "summit-webgl.jpg",
+    "description": "Summit running the WebGL Aquarium with 500 fish on the X399 workstation’s GPU. The frame rate shown is an illustration, not a benchmark.",
+    "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md",
+    "captured": "2026-10-24",
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; native window region below the title tab.",
+    "credit": "Shows <a href=\"https://github.com/WebGLSamples/WebGLSamples.github.io/tree/master/aquarium\">WebGL Aquarium</a>, © Google Inc. and contributors (<a href=\"{base}/assets/screenshots/webgl-aquarium-LICENSE.txt\">BSD licence</a>)",
+    "width": 1291,
+    "height": 910
   }
 ]

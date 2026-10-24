@@ -32,15 +32,14 @@ both from the repository's actual Pages configuration.
 
 - Home: credit Haiku, explain the independent project and AI-assisted approach.
 - Apps: six categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
-  Proton and EveryDay). A panel opens when its tab is selected; links to a panel or
-  to an app inside one open it. Without JavaScript the tabs are jump links and
-  every panel is shown.
+  Proton and Everyday), each tab and app row showing the apps' own icons. A panel
+  opens when its tab is selected; links to a panel or to an app inside one open it.
+  Without JavaScript the tabs are jump links and every panel is shown.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds.
-- Screenshots: dated application and hardware captures, with full-size viewing.
 - New hardware: curated capabilities, gaps and links to the lab's test notes.
 - Downloads: actual public `.hpkg` release assets, plus immutable OS images.
 - Source: the operating system, apps and every branch in the CI fork manifest.
-- Changelog: all collected fork changes, monthly archives and global search.
+- Changelog: the owner's own commits to the forks and apps, monthly archives and global search.
 
 The established air/OS artwork supplies the identity. The home page opens on the
 airOS desktop's hills (`data/artwork/airos/airos-desktop.tga` in jmgasper/haiku,
@@ -51,33 +50,46 @@ columns, small monospaced `■ LABEL` markers, two-column statements, pill-shape
 navigation and buttons, soft warm-grey rounded panels for captures and a dark
 closing band. Warm white, deep teal, sky blue and amber echo the logo. Fonts are
 the visitor's own system fonts (Inter where installed); nothing is loaded from a
-font service. Real screenshots appear alongside features and in a filterable gallery. Navigation and content work without
-JavaScript. With JavaScript, the gallery supports filtering and an accessible
-native dialog, and the changelog searches its full local archive.
+font service. Real screenshots appear alongside the features they show, each
+linking to its full-size image. Navigation and content work without JavaScript.
+With JavaScript, the apps page opens one category at a time and the changelog
+searches its full local archive.
+
+App icons in `static/assets/icons/` are each app's own HVIF icon (the `BEOS:ICON`
+attribute of the installed app on the X399, or the `.hvif` resource in the app's
+source for the Craft apps, Code - OSS, GitHub Desktop and Clipper), rendered to
+PNG by Haiku's `BIconUtils` on the X399.
 
 Curated content lives in `content/`. `static/assets/` holds the logo, original
 captures, CSS and JavaScript. The build produces `dist/`. Screenshots are real captures, with capture dates, dimensions and provenance in
 `content/screenshots.json`. Fresh native window captures were taken on the Framework
 13 on 18 October 2026; DeckCraft and PDFCraft use their same-day native validation
-captures. The Cubie and Raspberry Pi gallery entries are dated hardware-test
+captures. The Cubie and Raspberry Pi entries are dated hardware-test
 captures. Earlier app images are explicitly labelled as development captures.
-No UI is reconstructed or generated. Summit is represented by a capture of the
-airOS website, shared by its feature page and the gallery; by its install card
-on a Firefox Add-ons page (X399, 23 October 2026); and by reader-mode,
-private-window and network-inspector captures from the Framework 13 on
-18 October 2026, showing a sample article written for those captures. The Proton VPN and Proton Mail
+No UI is reconstructed or generated. Summit is represented by captures of the
+new airOS website (a local preview of this site) in a normal window, in reader
+mode and in the Network inspector with a request's headers selected, taken on the
+X399 on 24 October 2026; by its install card on a Firefox Add-ons page (X399,
+23 October 2026); and by its Extensions window, a bare private window and the
+WebGL Aquarium, also from the X399 on 24 October 2026. Those three and Amp's
+Albums view were planned for the Framework 13, which was offline. AirTime (Big Buck Bunny, run with
+`AIRTIME_NO_DIRECT=1` so the frame is visible to a screen capture) and AirShot
+(marking up a capture of a Tracker window) were captured on the X399 on
+24 October 2026. The Proton VPN and Proton Mail
 Bridge captures are the CI-built packages on the X399 the same day; Proton VPN is
 signed in to the repository's stand-in test API (`tools/fake-proton`) and no
 connection was made. Clipper, PhotoCraft, LightCraft, Code - OSS, pgAdmin 4, GitHub Desktop and Terminal were captured in a QEMU
 VM running the 23 October x86-64 image live, with the separate developer packages
-installed and sample files written for the captures. The Mail capture is its acceptance-run evidence
-(`docs/evidence/mail-final-inbox.png` in jmgasper/mail), cropped to the window. The favicon uses the
+installed and sample files written for the captures. Mail was captured on the X399
+on 24 October 2026 with a separate `--database` holding sample messages written
+for the capture, never the machine's own mailbox. Third-party content in a capture
+is credited in its caption. The favicon uses the
 [square airOS mark](https://github.com/jmgasper/haiku/blob/master/data/artwork/airos/airos-mark.svg),
 with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime and MediaConverter captures include Big Buck Bunny, © Blender Foundation,
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
 
-The Cubie graphics capture includes WebGL Aquarium, © Google Inc. and contributors,
+The Cubie graphics and Summit WebGL captures include WebGL Aquarium, © Google Inc. and contributors,
 from [WebGL Samples](https://github.com/WebGLSamples/WebGLSamples.github.io/tree/master/aquarium).
 Its BSD licence notice is retained in `static/assets/screenshots/webgl-aquarium-LICENSE.txt`.
 
@@ -94,7 +106,12 @@ no cropping or other edits; the ROCK 5 ITX image is reproduced unchanged.
 | --- | --- | --- |
 | `rock-5-itx.webp` | [Radxa Docs](https://docs.radxa.com/en/rock5), [source image](https://docs.radxa.com/home/product-pictures/rock5itx.webp) | © Radxa Computer (Shenzhen) Co.,Ltd., [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `raspberry-pi-4.jpg` | [Raspberry Pi 4 Model B – Side](https://commons.wikimedia.org/wiki/File:Raspberry_Pi_4_Model_B_-_Side.jpg) | Michael H. (Laserlicht) / Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `dragon-q8b.webp` | [Radxa Docs](https://docs.radxa.com/en/dragon/q8b), [source image](https://github.com/radxa-docs/docs/blob/47c9cf94faa2c221309d24f2eec6c5821475ea06/static/img/dragon/q8b/dragon-q8b-view.webp) | © Radxa Computer (Shenzhen) Co.,Ltd., [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `framework-13.jpg` | [Framework laptop AMD 13](https://commons.wikimedia.org/wiki/File:Framework_laptop_AMD_13.jpg) | Thcipriani / Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+
+The Radxa Dragon Q8B entry describes bring-up on the `dragon-q8b` branch of
+jmgasper/haiku and links to that branch's history; it is not counted among the
+home page's supported ARM64 boards until its status is `Tested on hardware`.
 
 The NVIDIA hardware entry distinguishes the recorded Pascal graphics and NVDEC
 tests from the experimental NVENC implementation. Its sources are the
@@ -117,9 +134,12 @@ is absent from the public fork. These corrections keep the scheduled refresh
 working without silently discarding history on arbitrary API failures. For Haiku the recorded baseline is the common ancestor
 of the fork and upstream at initial site creation. The integration branch and
 active `airos-release` and `rpi4` branches are all tracked (`x399-workstation` was
-retired into master). App history and imported
-repositories have no upstream exclusion. Every API page is fetched; compare
-counts are checked, and duplicate commits across branches are displayed once.
+retired into master). Every API page is fetched; compare counts are checked,
+and duplicate commits across branches are displayed once. The changelog then
+keeps only the owner's own commits (`changelog_authors` in `content/project.json`,
+matched by GitHub login or author email), so upstream history, the history of
+imported apps such as the Craft suite, and airOS CI's automated commits are left
+out; the cache keeps every commit, so the filter can change without refetching.
 The Craft ports have been merged into each fork's `main`, which the source entries
 track, so the source links and changelog include the Haiku work.
 `hidden_subjects` in `content/project.json` names a retired project that the site
@@ -141,7 +161,7 @@ commit messages.
 
 App assets come from each public repository's rolling `latest` prerelease.
 Summit lists its browser and required WebKit engine separately. Proton VPN
-(x86-64 and ARM64) and Proton Mail Bridge (x86-64) publish their rolling `latest`
+and Proton Mail Bridge (each x86-64 and ARM64) publish their rolling `latest`
 releases from airos-ci's reusable app workflow on every push to their forks. The download
 page refreshes rolling app links from the public GitHub API when it opens,
 with the dated snapshot and release-page links as fallbacks. It identifies architecture and build date and links to checksums in the

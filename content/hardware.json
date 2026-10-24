@@ -78,6 +78,33 @@
     "download": "cubie"
   },
   {
+    "name": "Radxa Dragon Q8B",
+    "chip": "ARM64 · Qualcomm Snapdragon 8cx Gen 3 (SC8280XP)",
+    "status": "Bring-up in progress",
+    "summary": "A Snapdragon desktop board, booting airOS through its UEFI firmware.",
+    "features_title": "Working so far",
+    "features": [
+      "UEFI boot with the firmware’s display resolution and on-screen kernel output",
+      "All eight Kryo CPU cores, from the device tree",
+      "Native PCIe host driver and GICv3 ITS: NVMe on MSI-X, reading at 795 MB/s",
+      "USB 3 through the Qualcomm DWC3 controllers",
+      "Kernel serial console on the GENI debug UART"
+    ],
+    "limits": "Adreno graphics, video decoding, Ethernet, Wi-Fi, Bluetooth and audio are not yet working, and there is no public image. This work lives on the <code>dragon-q8b</code> branch until it is merged.",
+    "source_url": "https://github.com/jmgasper/haiku/commits/dragon-q8b",
+    "id": "dragon",
+    "image": {
+      "file": "dragon-q8b.webp",
+      "alt": "Radxa Dragon Q8B board shown from the front, side and back",
+      "width": 1200,
+      "height": 431,
+      "source": "https://docs.radxa.com/en/dragon/q8b",
+      "credit": "Radxa",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  {
     "name": "Raspberry Pi 4",
     "chip": "ARM64 · Broadcom BCM2711",
     "status": "Tested on hardware",
@@ -193,7 +220,6 @@
     ],
     "limits": "This is the tested Radeon 760M configuration, not a claim about every Framework model. Suspend and resume remain development work. See the driver source and current package notes for device-specific coverage.",
     "source": "docs/x399-workstation/AMDGPU-DRM.md",
-    "screenshot": "mediaconverter",
     "links": [
       {
         "label": "Hardware-aware conversion engine",

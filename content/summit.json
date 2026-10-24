@@ -18,13 +18,13 @@
       "title": "Bring your browser tools",
       "text": "Open an add-on’s page on Firefox Add-ons or Chrome Web Store and Summit adds an install card to the top of the page. Review the requested access in a native dialog before anything runs, or load a local extension package.",
       "features": [
-        "Install Extension on the store page; once installed, the card offers Manage Extension",
+        "Install Chrome and Firefox extensions from their extension stores. Once installed, they can be managed as regular extensions",
         "Firefox packages are checked against Mozilla’s published size and SHA-256 and update from the same store; signatures are not verified, so install only what you trust",
         "Toolbar actions, popups and restoration across restarts",
         "uBlock Origin and Dark Reader have passed native runtime suites; 1Password sign-in, inline filling and passkeys have been verified for tested versions"
       ],
       "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
-      "screenshot": "summit-firefox-addon",
+      "screenshots": ["summit-firefox-addon", "summit-extensions"],
       "wide": true
     },
     {
@@ -37,7 +37,7 @@
         "Clear Key encrypted media with temporary sessions; Widevine, PlayReady and FairPlay are unsupported"
       ],
       "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md",
-      "screenshot": "cubie-graphics"
+      "screenshot": "summit-webgl"
     },
     {
       "id": "privacy",

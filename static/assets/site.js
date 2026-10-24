@@ -1,22 +1,10 @@
-// Progressive enhancement: links, galleries and the complete archive work without JS.
-const filters = document.querySelector('[data-gallery-filters]');
-if (filters) {
-  filters.hidden = false;
-  filters.addEventListener('click', event => {
-    const button = event.target.closest('button');
-    if (!button) return;
-    filters.querySelectorAll('button').forEach(b => { b.classList.toggle('selected', b === button); b.setAttribute('aria-pressed', b === button); });
-    document.querySelectorAll('[data-category]').forEach(card => { card.hidden = button.dataset.filter !== 'All' && card.dataset.category !== button.dataset.filter; });
-  });
-  filters.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('selected')));
-}
+// Progressive enhancement: links, app panels and the complete archive work without JS.
 // Application categories: each panel stays hidden until its tab is chosen. A
 // link to a panel or to an app inside one (apps/#proton, apps/#wordcraft) opens it.
 const appTabs = document.querySelector('[data-app-tabs]');
 if (appTabs) {
   const tabs = [...appTabs.querySelectorAll('a[data-tab]')];
   const panels = tabs.map(tab => document.getElementById(tab.dataset.tab));
-  const prompt = document.querySelector('[data-tab-prompt]');
   appTabs.setAttribute('role', 'tablist');
   tabs.forEach((tab, i) => {
     tab.setAttribute('role', 'tab');
@@ -33,7 +21,6 @@ if (appTabs) {
       tab.tabIndex = selected || (index < 0 && i === 0) ? 0 : -1;
       panels[i].hidden = !selected;
     });
-    prompt.hidden = index >= 0;
   };
   const openHash = () => {
     const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
@@ -60,18 +47,6 @@ if (appTabs) {
     tab.focus();
     tab.click();
   });
-}
-const lightbox = document.querySelector('#lightbox');
-if (lightbox && typeof lightbox.showModal === 'function') {
-  document.querySelectorAll('.screenshot-link').forEach(anchor => anchor.addEventListener('click', event => {
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    lightbox.querySelector('img').src = anchor.href;
-    lightbox.querySelector('img').alt = anchor.querySelector('img').alt;
-    lightbox.querySelector('p').textContent = anchor.dataset.caption;
-    lightbox.showModal();
-  }));
-  lightbox.addEventListener('click', event => { if (event.target === lightbox) { const r = lightbox.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) lightbox.close(); } });
 }
 const search = document.querySelector('[data-changes]');
 if (search) {

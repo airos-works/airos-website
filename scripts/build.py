@@ -15,7 +15,7 @@ BASE = os.getenv('BASE_PATH', '').rstrip('/')
 ORIGIN = os.getenv('SITE_URL', 'https://airos.works').rstrip('/')
 D = json.loads((ROOT / 'data/github.json').read_text())
 UPDATED = D['updated'][:10]
-NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('screenshots/', 'Screenshots'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('changelog/', 'Changelog')]
+NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('changelog/', 'Changelog')]
 
 def url(path=''):
     return BASE + '/' + path
@@ -41,7 +41,7 @@ def page(path, title, description, body):
 <a class="brand" href="{url()}" aria-label="airOS home"><img src="{url('assets/logo.png')}" width="191" height="64" alt="air/OS"></a>
 <nav aria-label="Main navigation">{nav}</nav>{cta}</div></header>
 <main id="main" class="wrap">{body}</main>
-<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="{url('assets/logo.png')}" width="143" height="48" alt="air/OS"><p>A little more possibility.</p>{link('https://www.haiku-os.org/', 'Built on Haiku ↗', 'text-link')}</div>
+<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="{url('assets/logo.png')}" width="143" height="48" alt="air/OS">{link('https://www.haiku-os.org/', 'Built on Haiku ↗', 'text-link')}</div>
 <nav aria-label="Footer"><p class="eyebrow">Explore</p><ul>{footer_links}</ul></nav>
 <div class="footer-meta"><p class="eyebrow">Status</p><p>Development builds. Independent of the Haiku project.</p><p>Build data refreshed {UPDATED} UTC</p></div></div></footer></body></html>'''
     target = OUT / path / 'index.html'
@@ -61,24 +61,25 @@ ICONS = {
 def home():
     commits = len({(s['repo'], c['sha']) for s in D['sources'] for c in s['commits']})
     apps = len(json.loads((ROOT / 'content/project.json').read_text())['apps'])
-    devices = len(json.loads((ROOT / 'content/hardware.json').read_text()))
-    stats = [(f'{apps}', 'native app packages'), (f'{devices}', 'hardware platforms with test notes'), (f'{len(D["sources"])}', 'tracked source branches'), (f'{commits:,}', 'commits in the public changelog')]
+    # ARM64 boards with a hardware-tested port; boards still in bring-up are not counted.
+    boards = sum(1 for d in json.loads((ROOT / 'content/hardware.json').read_text()) if d['chip'].startswith('ARM64') and d['status'] == 'Tested on hardware')
+    stats = [(f'{apps}', 'new native apps'), (f'{boards}', 'new ARM64 SBCs supported'), (f'{len(D["sources"])}', 'tracked source branches'), (f'{commits:,}', 'commits in the public changelog')]
     body = f'''<section class="hero"><div class="hero-copy">
 {link(url('apps/#proton'), '<span class="dot" aria-hidden="true"></span>New: Proton VPN and Mail Bridge <span aria-hidden="true">›</span>', 'pill-badge')}
-<h1>Build on Haiku.<br>Extended with AI.</h1>
+<h1>Built on Haiku.<br>Extended with AI.</h1>
 <p class="lead">airOS is an independent, AI-assisted exploration of what Haiku can do — on more devices, with more native apps, and with the same love for a responsive, personal desktop.</p>
-<div class="actions">{link(url('downloads/'), 'Explore the downloads', 'button primary')}{link(url('screenshots/'), 'See it in action <span aria-hidden="true">›</span>', 'button ghost')}</div>
+<div class="actions">{link(url('downloads/'), 'Explore the downloads', 'button primary')}{link(url('apps/'), 'See it in action <span aria-hidden="true">›</span>', 'button ghost')}</div>
 </div></section>
-<section class="stats" aria-label="airOS at a glance"><h2>Haiku’s desktop,<br>on more machines.</h2><dl>{''.join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for value, label in stats)}</dl></section>
-<section class="principles"><article>{ICONS['chip']}<h3>More hardware</h3><p>From ARM boards to a desktop workstation, new drivers and ports bring Haiku’s desktop to more places.</p>{link(url('hardware/'), 'See what works ›', 'text-link')}</article><article>{ICONS['apps']}<h3>More everyday apps</h3><p>Browse, listen, watch, capture and create with native applications that feel at home on the desktop.</p>{link(url('apps/'), 'Meet the apps ›', 'text-link')}</article><article>{ICONS['loop']}<h3>A faster feedback loop</h3><p>AI helps investigate unfamiliar code, develop ports and test ideas quickly. Builds, hardware checks and public Git history make progress inspectable.</p>{link(url('changelog/'), 'Follow the changes ›', 'text-link')}</article></section>
+<section class="stats" aria-label="airOS at a glance"><h2>BeOS’s desktop,<br>on more machines.</h2><dl>{''.join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for value, label in stats)}</dl></section>
+<section class="principles"><article>{ICONS['chip']}<h3>More hardware</h3><p>From ARM boards to a desktop workstation, new drivers and ports bring BeOS’s desktop to more places.</p>{link(url('hardware/'), 'See what works ›', 'text-link')}</article><article>{ICONS['apps']}<h3>More everyday apps</h3><p>Browse, listen, watch, capture and create with native applications that feel at home on the desktop.</p>{link(url('apps/'), 'Meet the apps ›', 'text-link')}</article><article>{ICONS['loop']}<h3>A faster feedback loop</h3><p>AI helps investigate unfamiliar code, develop ports and test ideas quickly. Builds, hardware checks and public Git history make progress inspectable.</p>{link(url('changelog/'), 'Follow the changes ›', 'text-link')}</article></section>
 <section class="statement"><p class="eyebrow">The foundation</p><div><p class="statement-text">Haiku’s contributors have spent decades building an open-source operating system inspired by BeOS: fast, coherent and thoughtfully designed for personal computing.</p><p class="statement-text">airOS builds on their kernel, desktop and native APIs with device support, desktop improvements and applications. It is an independent fork, with its own development approach.</p>{link('https://www.haiku-os.org/', 'The Haiku Project ↗', 'button ghost')}</div></section>
-<section class="release-highlights"><div class="section-heading"><div><p class="eyebrow">October 2026</p><h2>New on your desktop.</h2></div>{link(url('apps/'), 'All apps ›', 'button ghost')}</div><div class="highlight-grid">
+<section class="release-highlights"><div class="section-heading"><div><p class="eyebrow">October 2026</p><h2>New apps.</h2></div>{link(url('apps/'), 'All apps ›', 'button ghost')}</div><div class="highlight-grid">
 <article><a class="highlight-image" href="{url('apps/#office')}"><img src="{url('assets/screenshots/wordcraft.png')}" alt="WordCraft running on Haiku" loading="lazy"></a><span class="tag">Office Suite</span><h3>A new office suite.</h3><p>WordCraft, GridCraft, PDFCraft and DeckCraft: early native ports for documents, spreadsheets, PDFs and presentations.</p>{link(url('apps/#office'), 'Explore the Craft apps ›', 'text-link')}</article>
-<article><a class="highlight-image" href="{url('apps/#proton')}"><img src="{url('assets/screenshots/proton-vpn.png')}" alt="Proton VPN on airOS" loading="lazy"></a><span class="tag">Proton</span><h3>Proton, natively.</h3><p>Community ports of Proton VPN and Proton Mail Bridge, built by airOS CI and published as rolling releases.</p>{link(url('apps/#proton'), 'Meet the Proton ports ›', 'text-link')}</article>
-<article><a class="highlight-image" href="{url('summit/')}"><img src="{url('assets/screenshots/summit-firefox-addon.png')}" alt="Summit offering to install an extension from Firefox Add-ons" loading="lazy"></a><span class="tag">Summit Browser</span><h3>More Summit.</h3><p>Reader mode, PDFs, store extensions, streaming media and native developer tools, for airOS and stock Haiku.</p>{link(url('summit/'), 'Discover Summit ›', 'text-link')}</article>
+<article><a class="highlight-image" href="{url('apps/#proton')}"><img src="{url('assets/screenshots/proton-vpn.png')}" alt="Proton VPN on airOS" loading="lazy"></a><span class="tag">Proton</span><h3>Proton apps.</h3><p>Community ports of Proton VPN and Proton Mail Bridge, built by airOS CI and published as rolling releases.</p>{link(url('apps/#proton'), 'Meet the Proton ports ›', 'text-link')}</article>
+<article><a class="highlight-image" href="{url('summit/')}"><img src="{url('assets/screenshots/summit-firefox-addon.png')}" alt="Summit offering to install an extension from Firefox Add-ons" loading="lazy"></a><span class="tag">Summit Browser</span><h3>Native WebKit browser called Summit.</h3><p>Reader mode, PDFs, store extensions, streaming media and native developer tools, for airOS and stock Haiku.</p>{link(url('summit/'), 'Discover Summit ›', 'text-link')}</article>
 <article><a class="highlight-image" href="{url('apps/#media')}"><img src="{url('assets/screenshots/mediaconverter.png')}" alt="MediaConverter on airOS" loading="lazy"></a><span class="tag">Media Tools</span><h3>Media, reworked.</h3><p>A clearer Media preferences app and a new MediaConverter with queues, previews and GPU encoding.</p>{link(url('apps/#media'), 'Explore the media tools ›', 'text-link')}</article></div></section>
 <section class="closing"><img src="{url('assets/mark.png')}" alt="" aria-hidden="true"><p class="eyebrow">An experiment you can explore</p><h2>Open source. Ongoing work.<br>A desktop with room to grow.</h2><p>Development builds are available now. Check the hardware notes, try the apps, or follow along in the source.</p><div class="actions">{link(url('downloads/'), 'Get airOS', 'button light')}{link(url('source/'), 'Explore the code ↗', 'button ghost-light')}</div></section>'''
-    page('', 'Build on Haiku. Extended with AI.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
+    page('', 'Built on Haiku. Extended with AI.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
 
 def capture(id):
     shots = json.loads((ROOT / 'content/screenshots.json').read_text())
@@ -86,7 +87,15 @@ def capture(id):
     if shot is None:
         raise ValueError('Missing screenshot: '+id)
     image = url('assets/screenshots/' + shot['file'])
-    return f'<figure class="feature-capture"><a href="{image}"><img src="{image}" alt="{e(shot["title"]+": "+shot["description"], quote=True)}" loading="lazy" width="{shot["width"]}" height="{shot["height"]}"></a><figcaption>{e(shot["title"])} · {e(shot["captured"])} · {link(url("screenshots/#"+id), "Capture details →")}</figcaption></figure>'
+    # Third-party content shown in a capture is credited beside it.
+    credit = ' · ' + shot['credit'].replace('{base}', BASE) if shot.get('credit') else ''
+    return f'<figure class="feature-capture"><a href="{image}"><img src="{image}" alt="{e(shot["title"]+": "+shot["description"], quote=True)}" loading="lazy" width="{shot["width"]}" height="{shot["height"]}"></a><figcaption>{e(shot["title"])} · {e(shot["captured"])} · {link(shot["source"], "About this capture ↗")}{credit}</figcaption></figure>'
+
+def app_icon(id, size):
+    # Real app icons, rendered from each app's HVIF resource by Haiku's icon renderer.
+    if not (ROOT / 'static/assets/icons' / (id + '.png')).exists():
+        return ''
+    return f'<img class="app-icon" src="{url("assets/icons/"+id+".png")}" width="{size}" height="{size}" alt="" loading="lazy">'
 
 def feature_row(item, prefix=''):
     links = link(item['source'], 'Feature and port notes ↗', 'text-link')
@@ -94,15 +103,19 @@ def feature_row(item, prefix=''):
         label = 'In airOS system builds →' if download == 'downloads/#system' else 'Downloads & availability →'
         links += link(url(download), label, 'text-link')
     links += ''.join(link(x['href'], x['label'], 'text-link') for x in item.get('links', []))
-    heading = f'<h3>{e(item["title"])}</h3><p>{e(item["text"])}</p>'
+    heading = f'{app_icon(item["id"], 56)}<h3>{e(item["title"])}</h3><p>{e(item["text"])}</p>'
     details = f'<ul class="checks">{"".join("<li>"+e(x)+"</li>" for x in item["features"])}</ul><div class="device-links">{links}</div>'
-    if item.get('screenshot') and item.get('wide'):
-        columns = f'<div>{heading}</div><div>{details}</div>{capture(item["screenshot"])}'
-    elif item.get('screenshot'):
-        columns = f'<div>{heading}{details}</div>{capture(item["screenshot"])}'
+    shots = item.get('screenshots') or ([item['screenshot']] if item.get('screenshot') else [])
+    captures = ''.join(capture(id) for id in shots)
+    if len(shots) > 1:
+        captures = f'<div class="capture-pair">{captures}</div>'
+    if shots and item.get('wide'):
+        columns = f'<div>{heading}</div><div>{details}</div>{captures}'
+    elif shots:
+        columns = f'<div>{heading}{details}</div>{captures}'
     else:
         columns = f'<div>{heading}</div><div>{details}</div>'
-    wide = ' wide' if item.get('wide') and item.get('screenshot') else ''
+    wide = ' wide' if item.get('wide') and shots else ''
     return f'<article class="feature-row{wide}" id="{prefix}{item["id"]}">{columns}</article>'
 
 def app_tabs():
@@ -110,18 +123,19 @@ def app_tabs():
 
 def tab_summary(tab):
     if tab.get('summit'):
-        return 'Reader mode, PDFs, extensions, media and developer tools'
+        return 'Chrome and Firefox extension support, hardware-accelerated WebGL and media decoding, developer tools, reader mode, PDF viewing, WebHID and more.'
     return ' · '.join(item['title'] for item in tab['items'])
 
 def applications():
     data = app_tabs()
     summit_data = json.loads((ROOT / 'content/summit.json').read_text())
-    body = intro('Made for your desktop', 'More ways to make.', 'Write, listen, build, browse and stay private. Native ports and reworked Haiku tools bring more of your day onto the desktop. Choose a category to see its apps.')
+    body = intro('Made for your desktop', 'Modern support of common tools.', 'Write, listen, build, browse and stay private. Native ports and reworked Haiku tools bring more of your day onto the desktop. Choose a category to see its apps.')
     # Without JavaScript these are jump links and every panel stays visible;
     # site.js turns them into tabs whose panels open when selected.
     body += '<nav class="app-tabs" aria-label="Application categories" data-app-tabs>'
-    body += ''.join(f'<a href="#{tab["id"]}" data-tab="{tab["id"]}"><strong>{e(tab["label"])}</strong><span>{e(tab_summary(tab))}</span></a>' for tab in data['tabs'])
-    body += '</nav><p class="tab-prompt" data-tab-prompt hidden>Select a category above to see its apps.</p>'
+    icons = lambda tab: ''.join(app_icon(id, 24) for id in (['summit'] if tab.get('summit') else [item['id'] for item in tab['items']]))
+    body += ''.join(f'<a href="#{tab["id"]}" data-tab="{tab["id"]}"><span class="tab-icons">{icons(tab)}</span><strong>{e(tab["label"])}</strong><span>{e(tab_summary(tab))}</span></a>' for tab in data['tabs'])
+    body += '</nav>'
     for tab in data['tabs']:
         body += f'<section id="{tab["id"]}" class="tab-panel"><div class="section-heading"><h2>{e(tab["heading"])}</h2><span>{e(tab["tag"])}</span></div><p class="section-lead">{e(tab["lead"])}</p>'
         if tab.get('links'):
@@ -147,21 +161,6 @@ def summit():
     body += '<aside class="note">Web-platform and extension compatibility are still evolving. Verified examples do not establish support for every extension or streaming service. The <a href="https://github.com/jmgasper/summit">Summit feature notes</a> describe supported subsets and the build tables identify their source commits.</aside>'
     page('summit/', 'Summit browser', 'Explore Summit reader mode, PDFs, extensions, streaming media, privacy controls and native developer tools for airOS and Haiku.', body)
 
-def screenshots():
-    shots = json.loads((ROOT / 'content/screenshots.json').read_text())
-    body = intro('A look around', 'Screenshots', 'Real captures from our applications and development machines.')
-    categories = list(dict.fromkeys(shot['category'] for shot in shots))
-    if len(categories) > 1:
-        body += '<div class="filter-bar" data-gallery-filters hidden><button class="selected" data-filter="All">All captures</button>'
-        body += ''.join(f'<button data-filter="{e(category, quote=True)}">{e(category)}</button>' for category in categories) + '</div>'
-    body += '<div class="gallery">'
-    for i, shot in enumerate(shots):
-        image = url('assets/screenshots/' + shot['file'])
-        body += f'''<figure id="{shot['id']}" data-category="{shot['category']}"><a class="screenshot-link" href="{image}" data-caption="{e(shot['title'])}"><img src="{image}" alt="{e(shot['title'] + ': ' + shot['description'], quote=True)}" loading="lazy" width="{shot['width']}" height="{shot['height']}"></a><figcaption><span class="section-number">{i+1:02d} / {shot['category']}</span><h2>{shot['title']}</h2><p>{shot['description']}</p><p class="capture-date">{e(shot['captured'])}</p>{link(shot['source'], 'About this capture ↗', 'subtle')}</figcaption></figure>'''
-    body += '</div><dialog id="lightbox"><form method="dialog"><button aria-label="Close full-size screenshot">Close ×</button></form><img alt=""><p></p></dialog>'
-    body += '<details class="capture-credits"><summary>Capture credits</summary><p>The AirTime and MediaConverter captures include <a href="https://peach.blender.org/about/">Big Buck Bunny</a>, © Blender Foundation, licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. The Cubie capture shows <a href="https://github.com/WebGLSamples/WebGLSamples.github.io/tree/master/aquarium">WebGL Aquarium</a>, © Google Inc. and contributors ('+link(url('assets/screenshots/webgl-aquarium-LICENSE.txt'), 'BSD licence notice')+').</p></details>'
-    page('screenshots/', 'Screenshots', 'Explore real airOS application and desktop screenshots.', body)
-
 def image_asset(target):
     im = next((i for i in D['images'] if i['target'] == target), None)
     return next((a for a in im['assets'] if a['name'].endswith(('.iso.xz', '.img.xz'))), None) if im else None
@@ -184,9 +183,9 @@ def hardware():
         if image := device.get('image'):
             image_url = url('assets/hardware/' + image['file'])
             photo = f'''<figure class="device-photo"><a href="{e(image_url, quote=True)}"><img src="{e(image_url, quote=True)}" alt="{e(image['alt'], quote=True)}" width="{image['width']}" height="{image['height']}" loading="lazy"></a><figcaption>Photo: {link(image['source'], e(image['credit']))} · {link(image['license_url'], e(image['license']))}</figcaption></figure>'''
-        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}{download_button(device)}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
+        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link(device['source_url'], 'Follow the bring-up history ↗') if device.get('source_url') else link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}{download_button(device)}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
     body += '<aside class="note">Hardware notes reviewed 18 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
-    page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Raspberry Pi 4, Framework 13, AMD graphics and NVIDIA graphics, NVDEC decoding and experimental NVENC encoding.', body)
+    page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Radxa Dragon Q8B, Raspberry Pi 4, Framework 13, AMD graphics and NVIDIA graphics, NVDEC decoding and experimental NVENC encoding.', body)
 
 def size(n):
     return f'{n / 1048576:.1f} MB' if n >= 1048576 else f'{n / 1024:.0f} KB'
@@ -274,9 +273,9 @@ def changelog():
         records = commits[:100] if month is None else months[month]
         path = 'changelog/' + (month+'/' if month else '')
         title = 'Follow the work.' if month is None else datetime.strptime(month, '%Y-%m').strftime('%B %Y')
-        body = intro('Changelog · refreshed every 6 hours', title, 'From the Git history of our public forks and apps. Every entry links to the original commit, including fixes, experiments, documentation and merges.')
+        body = intro('Changelog · refreshed every 6 hours', title, 'The airOS work itself: every commit made to our public forks and apps since the project began. Every entry links to the original commit, including fixes, experiments, documentation and merges.')
         body += f'<div class="change-stats"><span><strong>{len(commits):,}</strong> commits archived</span><span><strong>{len(D["sources"])}</strong> source branches</span><span>Updated <strong>{UPDATED}</strong> UTC</span></div>'
-        body += '<details class="archive"><summary>Browse the complete archive & scope</summary><p>The main page shows the latest 100 commits. Monthly archives include every collected commit. Fork history starts at the recorded upstream baseline; original apps and imported sources include their complete history. Upstream history before those baselines is available in each source repository.</p><div class="month-links">'
+        body += '<details class="archive"><summary>Browse the complete archive & scope</summary><p>The main page shows the latest 100 commits. Monthly archives include every collected commit. Only airOS’s own commits are listed: upstream history, the history of imported projects and automated build commits are left out, and remain available in each source repository.</p><div class="month-links">'
         body += ''.join(link(url('changelog/'+m+'/'), f'{m} <small>({len(v)})</small>') for m, v in months.items())
         body += '</div>'+link(url('source/'), 'View all tracked sources →')+'</details>'
         if month is None:
@@ -296,11 +295,15 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / 'static', OUT)
-    for build in [home, applications, summit, screenshots, hardware, downloads, sources, changelog]:
+    for build in [home, applications, summit, hardware, downloads, sources, changelog]:
         build()
     page('404/', 'Page not found', 'This airOS page could not be found.', intro('404', 'A little off course.', 'This page has moved or does not exist.') + link(url(), 'Back to the project →', 'button primary'))
     shutil.copy(OUT / '404/index.html', OUT / '404.html')
-    paths = sorted(p.parent.relative_to(OUT).as_posix().strip('.') for p in OUT.rglob('index.html') if '/404/' not in str(p))
+    # The screenshots now live beside their features on the apps page. Older links
+    # (including Summit's start page) are sent there rather than to a 404.
+    (OUT / 'screenshots').mkdir()
+    (OUT / 'screenshots/index.html').write_text(f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>air/OS</title><link rel="canonical" href="{ORIGIN}/apps/"><meta http-equiv="refresh" content="0; url={url("apps/")}"></head><body><h1>Screenshots have moved</h1><p>{link(url("apps/"), "See them on the apps page →")}</p></body></html>')
+    paths = sorted(p.parent.relative_to(OUT).as_posix().strip('.') for p in OUT.rglob('index.html') if '/404/' not in str(p) and '/screenshots/' not in str(p))
     (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{ORIGIN}/{p+"/" if p else ""}</loc></url>' for p in paths)+'</urlset>')
     (OUT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {ORIGIN}/sitemap.xml\n')
     (OUT / '.nojekyll').touch()

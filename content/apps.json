@@ -274,7 +274,7 @@
       "heading": "Proton VPN and Proton Mail Bridge",
       "tag": "Community ports",
       "lead": "Native airOS ports of Proton’s VPN client and Mail Bridge, built from public forks. airOS CI builds each one on every push and publishes it as a rolling release with SHA-256 checksums.",
-      "note": "These are unofficial community ports; they are not published or supported by Proton AG. Proton VPN is alpha: it has been tested end to end against stand-in servers and against Proton’s real sign-in API. Bridge needs a Proton plan that includes Bridge and is x86-64 only.",
+      "note": "These are unofficial community ports; they are not published or supported by Proton AG. Proton VPN is alpha: it has been tested end to end against stand-in servers and against Proton’s real sign-in API. Bridge needs a Proton plan that includes Bridge.",
       "items": [
         {
           "id": "proton-vpn",
@@ -310,7 +310,7 @@
             "Proton’s Qt Quick desktop app, drawn at the desktop’s density, with a single Deskbar tray item",
             "Native settings and data folders, start at login and a proton-bridge command",
             "Updates come through pkgman rather than Proton’s update feed",
-            "Included in x86-64 system images and published as its own package"
+            "x86-64 and ARM64 packages, also included in x86-64 system images"
           ],
           "source": "https://github.com/jmgasper/proton-bridge/blob/master/docs/haiku/README.md",
           "screenshot": "proton-bridge",
@@ -330,7 +330,7 @@
     },
     {
       "id": "everyday",
-      "label": "EveryDay",
+      "label": "Everyday",
       "heading": "And the everyday favourites",
       "tag": "Mail, clipboard and screenshots",
       "lead": "A new Mail app, a clipboard history and a screenshot editor: small tools that are always within reach.",

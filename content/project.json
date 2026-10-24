@@ -1,6 +1,10 @@
 {
   "owner": "jmgasper",
   "domain": "airos.works",
+  "changelog_authors": {
+    "logins": ["jmgasper"],
+    "emails": ["jmgasper@gmail.com", "jmgasper@users.noreply.github.com"]
+  },
   "haiku_base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
   "apps": [
     {
@@ -45,7 +49,7 @@
       "repo": "proton-bridge",
       "branch": "master",
       "description": "Use your Proton Mail account in desktop mail apps through local IMAP and SMTP, with the vault key in the Haiku key store.",
-      "note": "Community port, not supported by Proton AG. x86-64 only; needs a Proton plan that includes Bridge. Included in x86-64 system images."
+      "note": "Community port, not supported by Proton AG. Needs a Proton plan that includes Bridge. x86-64 and ARM64 packages; included in x86-64 system images."
     },
     {
       "name": "WordCraft",

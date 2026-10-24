@@ -38,7 +38,7 @@ for path,p in pages.items():
         if dest.is_dir():dest=dest/'index.html'
         if not dest.exists():errors.append(f'{path}: broken link {href}')
         elif u.fragment and dest in pages and u.fragment not in pages[dest].ids:errors.append(f'{path}: missing anchor {href}')
-for route in ['', 'apps', 'summit', 'screenshots', 'hardware','downloads','source','changelog']:
+for route in ['', 'apps', 'summit', 'hardware','downloads','source','changelog']:
     if not (OUT/route/'index.html').is_file():errors.append('Missing route '+route)
 snapshot=json.loads((ROOT/'data/github.json').read_text())
 changes=json.loads((OUT/'changes.json').read_text())
