@@ -31,8 +31,11 @@ both from the repository's actual Pages configuration.
 ## Content and design
 
 - Home: credit Haiku, explain the independent project and AI-assisted approach.
-- Apps: six categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
-  Proton and Everyday), each tab and app row showing the apps' own icons. A panel
+- Apps: seven categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
+  Proton, Everyday and System), each tab and app row showing the apps' own icons.
+  System gathers the reworked Haiku apps and preferences (Media preferences,
+  MediaConverter, Bluetooth, Wi-Fi, Quick Look and network shares in Tracker, Mail,
+  Terminal), so no app appears in two tabs. A panel
   opens when its tab is selected; links to a panel or to an app inside one open it.
   Without JavaScript the tabs are jump links and every panel is shown.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds.
@@ -78,12 +81,18 @@ Albums view were planned for the Framework 13, which was offline. AirTime (Big B
 24 October 2026. The Proton VPN and Proton Mail
 Bridge captures are the CI-built packages on the X399 the same day; Proton VPN is
 signed in to the repository's stand-in test API (`tools/fake-proton`) and no
-connection was made. Clipper, PhotoCraft, LightCraft, Code - OSS, pgAdmin 4, GitHub Desktop and Terminal were captured in a QEMU
+connection was made. Clipper, PhotoCraft, LightCraft, Code - OSS, pgAdmin 4 and GitHub Desktop were captured in a QEMU
 VM running the 23 October x86-64 image live, with the separate developer packages
 installed and sample files written for the captures. Mail was captured on the X399
 on 24 October 2026 with a separate `--database` holding sample messages written
 for the capture, never the machine's own mailbox. Third-party content in a capture
-is credited in its caption. The favicon uses the
+is credited in its caption. The System tab's Wi-Fi, Bluetooth, Quick Look, network
+shares and Terminal captures are from the X399 on 24 October 2026. The Wi-Fi capture's
+network names are pixelated, the only edit to any capture. The Bluetooth panel shows
+no adapter because the MT7922's Bluetooth was not attached to USB at the time.
+Quick Look previews a 640 × 360 copy of the desktop artwork in a folder made for the
+capture. The Wi-Fi, Bluetooth and Tracker icons are rendered the same way as the app
+icons. The favicon uses the
 [square airOS mark](https://github.com/jmgasper/haiku/blob/master/data/artwork/airos/airos-mark.svg),
 with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime and MediaConverter captures include Big Buck Bunny, © Blender Foundation,

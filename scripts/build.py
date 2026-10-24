@@ -48,8 +48,9 @@ def page(path, title, description, body):
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(html)
 
-def intro(kicker, title, text):
-    return f'<div class="page-intro"><p class="eyebrow">{kicker}</p><h1>{title}</h1><p class="lead">{text}</p></div>'
+def intro(kicker, title, text, wide=False):
+    # A wide intro lets a long title use the full content width.
+    return f'<div class="page-intro{" wide" if wide else ""}"><p class="eyebrow">{kicker}</p><h1>{title}</h1><p class="lead">{text}</p></div>'
 
 # Small line icons for the home page's three principles.
 ICONS = {
@@ -77,7 +78,7 @@ def home():
 <article><a class="highlight-image" href="{url('apps/#office')}"><img src="{url('assets/screenshots/wordcraft.png')}" alt="WordCraft running on Haiku" loading="lazy"></a><span class="tag">Office Suite</span><h3>A new office suite.</h3><p>WordCraft, GridCraft, PDFCraft and DeckCraft: early native ports for documents, spreadsheets, PDFs and presentations.</p>{link(url('apps/#office'), 'Explore the Craft apps ›', 'text-link')}</article>
 <article><a class="highlight-image" href="{url('apps/#proton')}"><img src="{url('assets/screenshots/proton-vpn.png')}" alt="Proton VPN on airOS" loading="lazy"></a><span class="tag">Proton</span><h3>Proton apps.</h3><p>Community ports of Proton VPN and Proton Mail Bridge, built by airOS CI and published as rolling releases.</p>{link(url('apps/#proton'), 'Meet the Proton ports ›', 'text-link')}</article>
 <article><a class="highlight-image" href="{url('summit/')}"><img src="{url('assets/screenshots/summit-firefox-addon.png')}" alt="Summit offering to install an extension from Firefox Add-ons" loading="lazy"></a><span class="tag">Summit Browser</span><h3>Native WebKit browser called Summit.</h3><p>Reader mode, PDFs, store extensions, streaming media and native developer tools, for airOS and stock Haiku.</p>{link(url('summit/'), 'Discover Summit ›', 'text-link')}</article>
-<article><a class="highlight-image" href="{url('apps/#media')}"><img src="{url('assets/screenshots/mediaconverter.png')}" alt="MediaConverter on airOS" loading="lazy"></a><span class="tag">Media Tools</span><h3>Media, reworked.</h3><p>A clearer Media preferences app and a new MediaConverter with queues, previews and GPU encoding.</p>{link(url('apps/#media'), 'Explore the media tools ›', 'text-link')}</article></div></section>
+<article><a class="highlight-image" href="{url('apps/#system')}"><img src="{url('assets/screenshots/mediaconverter.png')}" alt="MediaConverter on airOS" loading="lazy"></a><span class="tag">System</span><h3>The system, reworked.</h3><p>A new MediaConverter with GPU encoding, clearer Media preferences, new Wi-Fi and Bluetooth panels, and Quick Look and network shares in Tracker.</p>{link(url('apps/#system'), 'Explore the system apps ›', 'text-link')}</article></div></section>
 <section class="closing"><img src="{url('assets/mark.png')}" alt="" aria-hidden="true"><p class="eyebrow">An experiment you can explore</p><h2>Open source. Ongoing work.<br>A desktop with room to grow.</h2><p>Development builds are available now. Check the hardware notes, try the apps, or follow along in the source.</p><div class="actions">{link(url('downloads/'), 'Get airOS', 'button light')}{link(url('source/'), 'Explore the code ↗', 'button ghost-light')}</div></section>'''
     page('', 'Built on Haiku. Extended with AI.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
 
@@ -103,7 +104,7 @@ def feature_row(item, prefix=''):
         label = 'In airOS system builds →' if download == 'downloads/#system' else 'Downloads & availability →'
         links += link(url(download), label, 'text-link')
     links += ''.join(link(x['href'], x['label'], 'text-link') for x in item.get('links', []))
-    heading = f'{app_icon(item["id"], 56)}<h3>{e(item["title"])}</h3><p>{e(item["text"])}</p>'
+    heading = f'{app_icon(item.get("icon", item["id"]), 56)}<h3>{e(item["title"])}</h3><p>{e(item["text"])}</p>'
     details = f'<ul class="checks">{"".join("<li>"+e(x)+"</li>" for x in item["features"])}</ul><div class="device-links">{links}</div>'
     shots = item.get('screenshots') or ([item['screenshot']] if item.get('screenshot') else [])
     captures = ''.join(capture(id) for id in shots)
@@ -124,16 +125,19 @@ def app_tabs():
 def tab_summary(tab):
     if tab.get('summit'):
         return 'Chrome and Firefox extension support, hardware-accelerated WebGL and media decoding, developer tools, reader mode, PDF viewing, WebHID and more.'
+    if tab.get('summary'):
+        return tab['summary']
     return ' · '.join(item['title'] for item in tab['items'])
 
 def applications():
     data = app_tabs()
     summit_data = json.loads((ROOT / 'content/summit.json').read_text())
-    body = intro('Made for your desktop', 'Modern support of common tools.', 'Write, listen, build, browse and stay private. Native ports and reworked Haiku tools bring more of your day onto the desktop. Choose a category to see its apps.')
+    body = intro('Made for your desktop', 'Modern support of common tools.', 'Write, listen, build, browse and stay private. Native ports and reworked Haiku tools bring more of your day onto the desktop. Choose a category to see its apps.', wide=True)
     # Without JavaScript these are jump links and every panel stays visible;
     # site.js turns them into tabs whose panels open when selected.
     body += '<nav class="app-tabs" aria-label="Application categories" data-app-tabs>'
-    icons = lambda tab: ''.join(app_icon(id, 24) for id in (['summit'] if tab.get('summit') else [item['id'] for item in tab['items']]))
+    # Items that share an icon (Tracker's features) show it once on the tab.
+    icons = lambda tab: ''.join(app_icon(id, 24) for id in (['summit'] if tab.get('summit') else dict.fromkeys(item.get('icon', item['id']) for item in tab['items'])))
     body += ''.join(f'<a href="#{tab["id"]}" data-tab="{tab["id"]}"><span class="tab-icons">{icons(tab)}</span><strong>{e(tab["label"])}</strong><span>{e(tab_summary(tab))}</span></a>' for tab in data['tabs'])
     body += '</nav>'
     for tab in data['tabs']:
@@ -148,7 +152,7 @@ def applications():
             body += ''.join(feature_row(item) for item in tab['items'])
         body += '</section>'
     body += '<p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations.</p>'
-    page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, the Summit browser, Proton VPN and Proton Mail Bridge, Mail, Clipper and AirShot.', body)
+    page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, the Summit browser, Proton VPN and Proton Mail Bridge, Clipper, AirShot, and the reworked system apps and preferences.', body)
 
 def summit():
     data = json.loads((ROOT / 'content/summit.json').read_text())

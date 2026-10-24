@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-10-23",
+  "reviewed": "2026-10-24",
   "tabs": [
     {
       "id": "office",
@@ -67,40 +67,10 @@
       "id": "media",
       "label": "Media Tools",
       "heading": "A fresh look at media",
-      "tag": "Included in airOS system builds",
-      "lead": "Reworked Haiku media tools sit beside native players and a pair of Craft apps for photos: edit layered images in PhotoCraft and develop RAW files in LightCraft.",
-      "note": "GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use. Other codecs and devices may use the CPU. Check MediaConverter’s Video hardware window for the current machine. PhotoCraft and LightCraft need a hardware Vulkan driver for GPU rendering and fall back to the CPU otherwise.",
+      "tag": "Players and photo tools",
+      "lead": "Native players and a pair of Craft apps for photos: watch films in AirTime, play your music library in Amp, edit layered images in PhotoCraft and develop RAW files in LightCraft.",
+      "note": "PhotoCraft and LightCraft need a hardware Vulkan driver for GPU rendering and fall back to the CPU otherwise.",
       "items": [
-        {
-          "id": "media-preferences",
-          "title": "Media preferences",
-          "text": "Audio and video settings have been rebuilt around a sidebar and readable cards, so devices and everyday controls are easier to find.",
-          "features": [
-            "Choose input and output devices, adjust volume and play a test sound",
-            "Control individual applications in the audio mixer, with app icons and mute controls",
-            "Check a live recording level meter and camera preview",
-            "Choose a MIDI SoundFont and restart stopped media services"
-          ],
-          "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
-          "screenshot": "media-preferences",
-          "download": "downloads/#system"
-        },
-        {
-          "id": "mediaconverter",
-          "title": "MediaConverter",
-          "text": "A new conversion window and engine bring queues, previews and hardware-aware encoding to Haiku’s media toolbox.",
-          "features": [
-            "Queue video and audio files, preview sources and choose separate video or audio presets",
-            "Audio conversion keeps artwork, tags and chapters, with playback controls in the source preview",
-            "Use available GPU encoders, inspect video hardware and see when a job will use the CPU",
-            "Import DVD/Blu-ray sources and disc images, sidecar subtitles and embedded closed captions",
-            "Preserve HDR10 metadata where supported; conversions run in worker processes and retry on the CPU after a GPU crash",
-            "Use the mediaconvert command-line tool for scripted conversions"
-          ],
-          "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
-          "screenshot": "mediaconverter",
-          "download": "downloads/#system"
-        },
         {
           "id": "airtime",
           "title": "AirTime",
@@ -164,8 +134,8 @@
       "label": "Developer",
       "heading": "Tools for building things",
       "tag": "Code, databases, Git and networks",
-      "lead": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Terminal gained a new rendering engine, and Burrow connects you to work networks.",
-      "note": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku. The captures in this section come from a virtual machine without a GPU, so Terminal is using its software renderer there.",
+      "lead": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Burrow connects you to work networks.",
+      "note": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku.",
       "links": [
         {
           "label": "About Aurora ↗",
@@ -211,21 +181,6 @@
           ],
           "source": "https://github.com/jmgasper/desktop/blob/haiku/docs/technical/haiku.md",
           "screenshot": "github-desktop"
-        },
-        {
-          "id": "terminal",
-          "title": "Terminal",
-          "text": "Haiku’s Terminal has a new emulator core and draws into one bitmap at the screen’s density, with an OpenGL renderer beside a multithreaded software renderer.",
-          "features": [
-            "The GPU renderer (OpenGL 3.0) and the software renderer are timed against each other, and Terminal keeps whichever is faster",
-            "If the GPU is lost or a frame takes over two seconds, Terminal switches to software for good; force either one with the Renderer setting or TERMINAL_RENDERER",
-            "Up to 120 frames per second, a glyph atlas and Terminal-drawn box, braille and Powerline characters",
-            "Colour emoji, programming ligatures, Unicode 16 graphemes, reflow on resize and kitty protocol extensions",
-            "cat of a 5.7 MB file takes 0.14 s instead of 0.42 s; on the tested machines the software renderer is currently the faster path"
-          ],
-          "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/TERMINAL.md",
-          "download": "downloads/#system",
-          "screenshot": "terminal"
         },
         {
           "id": "burrow",
@@ -332,24 +287,9 @@
       "id": "everyday",
       "label": "Everyday",
       "heading": "And the everyday favourites",
-      "tag": "Mail, clipboard and screenshots",
-      "lead": "A new Mail app, a clipboard history and a screenshot editor: small tools that are always within reach.",
+      "tag": "Clipboard and screenshots",
+      "lead": "A clipboard history and a screenshot editor: small tools that are always within reach.",
       "items": [
-        {
-          "id": "mail",
-          "title": "Mail",
-          "text": "A new native email client replaces Haiku’s Mail in x86-64 images. It keeps its own SQLite store and shows conversations formatted by Summit’s WebKit engine.",
-          "features": [
-            "IMAP, POP3/SMTP, Gmail and Proton Mail Bridge accounts in a unified inbox; passwords and tokens stay in the Haiku key store",
-            "Conversation threads, full-text search, rules, smart folders, tags and Gmail labels",
-            "Snooze with reminders, and a rich-text composer with inline images, drafts and an Outbox",
-            "Remote content and scripts are blocked in received HTML; links open in your browser",
-            "Development release: not yet tested against live Gmail or Proton accounts, and no IMAP IDLE yet"
-          ],
-          "source": "https://github.com/jmgasper/mail/blob/main/README.md",
-          "screenshot": "mail",
-          "download": "downloads/#system"
-        },
         {
           "id": "clipper",
           "title": "Clipper",
@@ -377,6 +317,139 @@
           "source": "https://github.com/jmgasper/airShot/blob/main/README.md",
           "screenshot": "airshot",
           "download": "downloads/#airshot"
+        }
+      ]
+    },
+    {
+      "id": "system",
+      "label": "System",
+      "summary": "Media preferences · MediaConverter · Bluetooth · Wi-Fi · Quick Look · Network shares · Mail · Terminal",
+      "heading": "Haiku’s own apps, reworked",
+      "tag": "Included in airOS system builds",
+      "lead": "The apps and preferences that come with the system have been rebuilt or added: clearer Media preferences, a new MediaConverter, new Wi-Fi and Bluetooth panels, Quick Look and network shares in Tracker, a new Mail app and a faster Terminal.",
+      "note": "GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use. Other codecs and devices may use the CPU. Check MediaConverter’s Video hardware window for the current machine. Wi-Fi and Bluetooth have been tested with Intel AX210, MediaTek MT7922 and AIC8800 radios; see the hardware notes for other cards.",
+      "items": [
+        {
+          "id": "media-preferences",
+          "title": "Media preferences",
+          "text": "Audio and video settings have been rebuilt around a sidebar and readable cards, so devices and everyday controls are easier to find.",
+          "features": [
+            "Choose input and output devices, adjust volume and play a test sound",
+            "Control individual applications in the audio mixer, with app icons and mute controls",
+            "Check a live recording level meter and camera preview",
+            "Choose a MIDI SoundFont and restart stopped media services"
+          ],
+          "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
+          "screenshot": "media-preferences",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "mediaconverter",
+          "title": "MediaConverter",
+          "text": "A new conversion window and engine bring queues, previews and hardware-aware encoding to Haiku’s media toolbox.",
+          "features": [
+            "Queue video and audio files, preview sources and choose separate video or audio presets",
+            "Audio conversion keeps artwork, tags and chapters, with playback controls in the source preview",
+            "Use available GPU encoders, inspect video hardware and see when a job will use the CPU",
+            "Import DVD/Blu-ray sources and disc images, sidecar subtitles and embedded closed captions",
+            "Preserve HDR10 metadata where supported; conversions run in worker processes and retry on the CPU after a GPU crash",
+            "Use the mediaconvert command-line tool for scripted conversions"
+          ],
+          "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
+          "screenshot": "mediaconverter",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "bluetooth",
+          "title": "Bluetooth preferences",
+          "text": "A rebuilt Bluetooth panel for pairing mice, keyboards and audio devices, with a Bluetooth menu in the Deskbar. Adapters come up by themselves when the system starts.",
+          "features": [
+            "My devices lists paired devices by kind, with Connect, Disconnect and Remove; Nearby devices finds Classic and Low Energy devices",
+            "Pair Classic and Low Energy mice and keyboards, which then reconnect automatically",
+            "Speakers and headsets can take over the system’s sound (A2DP with SBC) from the panel or the Deskbar menu; audio is still in testing",
+            "Firmware is loaded at start-up for Intel, Realtek and MediaTek USB adapters",
+            "Advanced settings for the adapter’s name, discoverability and incoming connections, plus a pairing log for diagnostics"
+          ],
+          "source": "https://github.com/jmgasper/haiku/blob/master/docs/rock5-itx/WIRELESS-DEVICES.md",
+          "screenshot": "bluetooth",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "wifi",
+          "title": "Wi-Fi preferences",
+          "text": "A new Wi-Fi panel shows nearby networks and joins them, with a Wi-Fi menu in the Deskbar for quick changes.",
+          "features": [
+            "Turn Wi-Fi on or off and see the current network, its signal, address and whether it reaches the Internet",
+            "Known and nearby networks with signal strength and security; join with a password, remember it or forget it later",
+            "Join a hidden network by name with WEP, WPA/WPA2 Personal or WPA Enterprise",
+            "Remembered networks are joined again automatically",
+            "The Deskbar’s Wi-Fi menu lists networks and shows the channel, BSSID, PHY mode and router of the current one"
+          ],
+          "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/wifi",
+          "screenshot": "wifi",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "quick-look",
+          "title": "Quick Look in Tracker",
+          "icon": "tracker",
+          "text": "Press the space bar on a file in Tracker and a floating panel previews it, without opening an app.",
+          "features": [
+            "Text and source code, CSV tables, pictures, PDFs, EPUBs and comic book archives",
+            "Films play with AirTime’s engine, hardware-decoded where possible; songs play with Amp’s decoder and artwork",
+            "The arrow keys move to the next file while the panel is up; several selected files are shown one at a time",
+            "The panel zooms out of the file’s icon; Open hands the file to its preferred app",
+            "Applications can add previews for their own file types through Quick Look add-ons"
+          ],
+          "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/QUICK-LOOK.md",
+          "screenshot": "quick-look",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "network-shares",
+          "title": "Network shares in Tracker",
+          "icon": "tracker",
+          "text": "Mount folders shared by Windows, Samba and NAS servers. Tracker remembers each share and mounts it again when the system starts.",
+          "features": [
+            "A Network shares page in Tracker’s preferences adds, edits, mounts and unmounts shares; Tracker’s Mount menu lists the ones not mounted",
+            "Passwords are kept in the Haiku key store; each share can mount at start-up, read-only or with SMB3 encryption",
+            "At start-up, shares are retried until the network is up, and again when the network changes; a wrong password or missing share is reported in a notification",
+            "A new smbfs file system speaks SMB2 and SMB3 and reconnects lost sessions, reopening files that were open",
+            "Kerberos, SMB1 and file attributes are not supported"
+          ],
+          "source": "https://github.com/jmgasper/haiku/tree/master/src/add-ons/kernel/file_systems/smbfs",
+          "screenshot": "network-shares",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "mail",
+          "title": "Mail",
+          "text": "A new native email client replaces Haiku’s Mail in x86-64 images. It keeps its own SQLite store and shows conversations formatted by Summit’s WebKit engine.",
+          "features": [
+            "IMAP, POP3/SMTP, Gmail and Proton Mail Bridge accounts in a unified inbox; passwords and tokens stay in the Haiku key store",
+            "Conversation threads, full-text search, rules, smart folders, tags and Gmail labels",
+            "Snooze with reminders, and a rich-text composer with inline images, drafts and an Outbox",
+            "Remote content and scripts are blocked in received HTML; links open in your browser",
+            "Development release: not yet tested against live Gmail or Proton accounts, and no IMAP IDLE yet"
+          ],
+          "source": "https://github.com/jmgasper/mail/blob/main/README.md",
+          "screenshot": "mail",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "terminal",
+          "title": "Terminal",
+          "text": "Haiku’s Terminal has a new emulator core and draws into one bitmap at the screen’s density, with an OpenGL renderer beside a multithreaded software renderer.",
+          "features": [
+            "The GPU renderer (OpenGL 3.0) and the software renderer are timed against each other, and Terminal keeps whichever is faster",
+            "If the GPU is lost or a frame takes over two seconds, Terminal switches to software for good; force either one with the Renderer setting or TERMINAL_RENDERER",
+            "Up to 120 frames per second, a glyph atlas and Terminal-drawn box, braille and Powerline characters",
+            "Colour emoji, programming ligatures, Unicode 16 graphemes, reflow on resize and kitty protocol extensions",
+            "cat of a 5.7 MB file takes 0.14 s instead of 0.42 s; on the tested machines the software renderer is currently the faster path"
+          ],
+          "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/TERMINAL.md",
+          "download": "downloads/#system",
+          "screenshot": "terminal"
         }
       ]
     }

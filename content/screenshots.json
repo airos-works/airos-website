@@ -135,7 +135,7 @@
   {
     "id": "media-preferences",
     "title": "Media preferences",
-    "category": "Media",
+    "category": "System",
     "file": "media-preferences.png",
     "description": "The new sound-output page, device sidebar, volume control and test-sound action on the Framework laptop.",
     "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
@@ -147,7 +147,7 @@
   {
     "id": "mediaconverter",
     "title": "MediaConverter",
-    "category": "Media",
+    "category": "System",
     "file": "mediaconverter.png",
     "description": "A Big Buck Bunny clip in the new conversion queue, with a source preview and H.264 GPU encoding selected on the AMD Radeon 760M.",
     "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
@@ -156,6 +156,54 @@
     "height": 949,
     "provenance": "Direct mcp_server BScreen capture from Framework 13; native window region, no image edits.",
     "credit": "Includes <a href=\"https://peach.blender.org/about/\">Big Buck Bunny</a>, © Blender Foundation, <a href=\"https://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>"
+  },
+  {
+    "id": "bluetooth",
+    "title": "Bluetooth preferences",
+    "category": "System",
+    "file": "bluetooth.png",
+    "description": "The rebuilt Bluetooth panel with a paired Low Energy mouse under My devices; the workstation’s MediaTek adapter was not attached when this was captured, so the banner reports no adapter.",
+    "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/bluetooth",
+    "captured": "2026-10-24",
+    "width": 471,
+    "height": 715,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; native window region below the title tab, no image edits."
+  },
+  {
+    "id": "wifi",
+    "title": "Wi-Fi preferences",
+    "category": "System",
+    "file": "wifi.png",
+    "description": "The new Wi-Fi panel connected to a WPA network, with known and nearby networks and their signal strength.",
+    "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/wifi",
+    "captured": "2026-10-24",
+    "width": 450,
+    "height": 571,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation (MediaTek MT7922); native window region below the title tab. Network names are pixelated for privacy; nothing else is edited."
+  },
+  {
+    "id": "quick-look",
+    "title": "Quick Look",
+    "category": "System",
+    "file": "quick-look.png",
+    "description": "A picture previewed with the space bar in a Tracker window, with its size and kind in the panel’s footer.",
+    "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/QUICK-LOOK.md",
+    "captured": "2026-10-24",
+    "width": 911,
+    "height": 630,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; the Tracker window region below the title tab, with the Quick Look panel over it. The preview is a 640 × 360 copy of the airOS desktop artwork, written with sample files for the capture."
+  },
+  {
+    "id": "network-shares",
+    "title": "Network shares",
+    "category": "System",
+    "file": "network-shares.png",
+    "description": "The Network shares page in Tracker’s preferences, listing three shares from a NAS that are mounted when the system starts.",
+    "source": "https://github.com/jmgasper/haiku/tree/master/src/add-ons/kernel/file_systems/smbfs",
+    "captured": "2026-10-24",
+    "width": 721,
+    "height": 336,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; native window region below the title tab, no image edits."
   },
   {
     "id": "photocraft",
@@ -257,14 +305,14 @@
   {
     "id": "terminal",
     "title": "Terminal",
-    "category": "Developer",
+    "category": "System",
     "file": "terminal.png",
-    "description": "The new Terminal drawing box characters itself, colour emoji with flags, skin tones and joined sequences, braille and blocks.",
+    "description": "The new Terminal drawing box characters itself, colour emoji with flags, skin tones and joined sequences, braille, blocks and coloured ls output.",
     "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/TERMINAL.md",
-    "captured": "2026-10-23",
-    "width": 589,
-    "height": 486,
-    "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU; software renderer (the VM has no GPU); window region."
+    "captured": "2026-10-24",
+    "width": 590,
+    "height": 462,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation (NVIDIA GeForce GTX 1070); Terminal picks its faster renderer; native window region below the title tab."
   },
   {
     "title": "Burrow",
@@ -304,7 +352,7 @@
   {
     "id": "mail",
     "title": "Mail",
-    "category": "Apps",
+    "category": "System",
     "file": "mail.png",
     "description": "A sample conversation in the new Mail app’s unified inbox, with the thread shown in its WebKit reader.",
     "source": "https://github.com/jmgasper/mail/blob/main/README.md",
