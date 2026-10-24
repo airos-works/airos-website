@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-24T06:44:31+00:00",
-  "ci_head": "b5cd402c2488384070271f7505a01b7ad08ae9ad",
+  "updated": "2026-10-24T12:38:42+00:00",
+  "ci_head": "e410f7201b24ad95f25be458a34b4f828118cbb5",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "15dfb01b9a0d9439ef22d6f918d5d33ce31a56b8",
+      "head": "4b51752942ceee7ce8af5f369c38f023907da85e",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -10288,6 +10288,228 @@
           "url": "https://github.com/jmgasper/haiku/commit/15dfb01b9a0d9439ef22d6f918d5d33ce31a56b8",
           "date": "2026-10-24T06:00:19Z",
           "subject": "Merge dragon-q8b: Adreno GPU address window per process, fault reports"
+        },
+        {
+          "sha": "b1351d227ac152018f52c033350c1f48d68f3fa6",
+          "url": "https://github.com/jmgasper/haiku/commit/b1351d227ac152018f52c033350c1f48d68f3fa6",
+          "date": "2026-10-24T06:16:21Z",
+          "subject": "qcom: the SCM call and PAS firmware loader as shared code"
+        },
+        {
+          "sha": "d20f292b198b18530a1e04b528cdf16ca8c5dbcc",
+          "url": "https://github.com/jmgasper/haiku/commit/d20f292b198b18530a1e04b528cdf16ca8c5dbcc",
+          "date": "2026-10-24T06:52:12Z",
+          "subject": "qcom_iris: the SC8280XP's video codec firmware runs"
+        },
+        {
+          "sha": "79cb5b3e2875bb2c29d21503f262432d6200a743",
+          "url": "https://github.com/jmgasper/haiku/commit/79cb5b3e2875bb2c29d21503f262432d6200a743",
+          "date": "2026-10-24T06:58:19Z",
+          "subject": "qcom_iris: HFI for userland, an H.264 session opens and closes"
+        },
+        {
+          "sha": "ddd7d285cc0decb1a905cdc3d911f87009f50ca0",
+          "url": "https://github.com/jmgasper/haiku/commit/ddd7d285cc0decb1a905cdc3d911f87009f50ca0",
+          "date": "2026-10-24T07:04:21Z",
+          "subject": "adreno: a lost GPU fails its work instead of leaving it waiting"
+        },
+        {
+          "sha": "cefe6a0ca9808370a60b95e91ca03145a34b19bd",
+          "url": "https://github.com/jmgasper/haiku/commit/cefe6a0ca9808370a60b95e91ca03145a34b19bd",
+          "date": "2026-10-24T07:05:42Z",
+          "subject": "docs/dragon-q8b: the board's status"
+        },
+        {
+          "sha": "c94749dd0bb81ad4c6fea857a85f93527928d555",
+          "url": "https://github.com/jmgasper/haiku/commit/c94749dd0bb81ad4c6fea857a85f93527928d555",
+          "date": "2026-10-24T07:09:23Z",
+          "subject": "Merge dragon-q8b: Dragon Q8B video codec firmware, lost GPU handling"
+        },
+        {
+          "sha": "03c7c9f4dea37f9ea97ba4b17865e5fa1471fa36",
+          "url": "https://github.com/jmgasper/haiku/commit/03c7c9f4dea37f9ea97ba4b17865e5fa1471fa36",
+          "date": "2026-10-24T07:17:35Z",
+          "subject": "airos CI: system fontconfig configuration on arm64 images"
+        },
+        {
+          "sha": "fe2aa84456dfcd0fe1a9ec33f37ffa71ab206947",
+          "url": "https://github.com/jmgasper/haiku/commit/fe2aa84456dfcd0fe1a9ec33f37ffa71ab206947",
+          "date": "2026-10-24T07:42:32Z",
+          "subject": "qcom_iris: H.264 and HEVC decoding (Dragon Q8B)"
+        },
+        {
+          "sha": "17e9383f1864fa6e719826ab00b131012964fae6",
+          "url": "https://github.com/jmgasper/haiku/commit/17e9383f1864fa6e719826ab00b131012964fae6",
+          "date": "2026-10-24T08:11:52Z",
+          "subject": "qcom_video: Media Kit decoder add-on for the Dragon Q8B's video codec"
+        },
+        {
+          "sha": "15b8706d9f130221afe5d6097e1edc4fd4d6ae99",
+          "url": "https://github.com/jmgasper/haiku/commit/15b8706d9f130221afe5d6097e1edc4fd4d6ae99",
+          "date": "2026-10-24T08:12:32Z",
+          "subject": "Merge dragon-q8b: Dragon Q8B hardware video decoding (qcom_iris, qcom_video), arm64 system fontconfig"
+        },
+        {
+          "sha": "8718d6fb5438394029b2ac198339ccd04a49d1d3",
+          "url": "https://github.com/jmgasper/haiku/commit/8718d6fb5438394029b2ac198339ccd04a49d1d3",
+          "date": "2026-10-24T08:31:32Z",
+          "subject": "airos CI: only the Adreno EGL vendor on the Dragon Q8B"
+        },
+        {
+          "sha": "49355b5aa3c95bab7242a03202fca08a60f10d05",
+          "url": "https://github.com/jmgasper/haiku/commit/49355b5aa3c95bab7242a03202fca08a60f10d05",
+          "date": "2026-10-24T08:36:12Z",
+          "subject": "Merge dragon-q8b: only the Adreno EGL vendor on the Dragon Q8B (Snap), app status"
+        },
+        {
+          "sha": "2252fdb856d4efc9cfaac941b19866e05decff9f",
+          "url": "https://github.com/jmgasper/haiku/commit/2252fdb856d4efc9cfaac941b19866e05decff9f",
+          "date": "2026-10-24T08:38:59Z",
+          "subject": "dragon-q8b mesa: the MANIFEST hashes only the output's files"
+        },
+        {
+          "sha": "e173f30341345f9b71b17761d47cbc43aa221347",
+          "url": "https://github.com/jmgasper/haiku/commit/e173f30341345f9b71b17761d47cbc43aa221347",
+          "date": "2026-10-24T08:39:06Z",
+          "subject": "Merge dragon-q8b: fix the arm64 image build (Dragon Mesa MANIFEST)"
+        },
+        {
+          "sha": "bf95cdaf29cde5907b83a58a7e7d9157c0a11469",
+          "url": "https://github.com/jmgasper/haiku/commit/bf95cdaf29cde5907b83a58a7e7d9157c0a11469",
+          "date": "2026-10-24T08:53:25Z",
+          "subject": "qcom_video: H.264 and HEVC encoding on the Dragon Q8B's codec"
+        },
+        {
+          "sha": "6526409dcef84c8d8332ddb4d212d78f81009005",
+          "url": "https://github.com/jmgasper/haiku/commit/6526409dcef84c8d8332ddb4d212d78f81009005",
+          "date": "2026-10-24T08:58:40Z",
+          "subject": "MediaConverter: hardware encoding on the Qualcomm SC8280XP (Iris)"
+        },
+        {
+          "sha": "3cda43d896ea1f2a7b656a6dcf31f3832a348ed0",
+          "url": "https://github.com/jmgasper/haiku/commit/3cda43d896ea1f2a7b656a6dcf31f3832a348ed0",
+          "date": "2026-10-24T08:58:48Z",
+          "subject": "Merge dragon-q8b: Dragon Q8B hardware video encoding (qcom_video, MediaConverter Iris backend)"
+        },
+        {
+          "sha": "a5e4ef125d6d2a59c51b9b0571bd9288adf8b20a",
+          "url": "https://github.com/jmgasper/haiku/commit/a5e4ef125d6d2a59c51b9b0571bd9288adf8b20a",
+          "date": "2026-10-24T09:08:35Z",
+          "subject": "qcom_iris: several opens, each with its own sessions"
+        },
+        {
+          "sha": "d26af8a74a6fc4ef3f6ffc8c6d7bee7b449ce561",
+          "url": "https://github.com/jmgasper/haiku/commit/d26af8a74a6fc4ef3f6ffc8c6d7bee7b449ce561",
+          "date": "2026-10-24T09:08:42Z",
+          "subject": "Merge dragon-q8b: the Dragon Q8B's video codec for several teams at once"
+        },
+        {
+          "sha": "08911713b20c30145f6ea64a0c18a74ee1617c80",
+          "url": "https://github.com/jmgasper/haiku/commit/08911713b20c30145f6ea64a0c18a74ee1617c80",
+          "date": "2026-10-24T09:22:37Z",
+          "subject": "adreno: the GPU recovers from a fault or hang"
+        },
+        {
+          "sha": "58c04731584487ac89aee1893ccfb71476b77307",
+          "url": "https://github.com/jmgasper/haiku/commit/58c04731584487ac89aee1893ccfb71476b77307",
+          "date": "2026-10-24T09:22:44Z",
+          "subject": "Merge dragon-q8b: Adreno GPU recovery after a fault or hang"
+        },
+        {
+          "sha": "03a92d9ab05525b82c7df36d49586781412364f3",
+          "url": "https://github.com/jmgasper/haiku/commit/03a92d9ab05525b82c7df36d49586781412364f3",
+          "date": "2026-10-24T09:27:18Z",
+          "subject": "docs/dragon-q8b: Bluetooth (AX210) comes up"
+        },
+        {
+          "sha": "95a56683f9c258becc97d8fd288cfcf6cfdac5ba",
+          "url": "https://github.com/jmgasper/haiku/commit/95a56683f9c258becc97d8fd288cfcf6cfdac5ba",
+          "date": "2026-10-24T09:34:24Z",
+          "subject": "adreno: the GPU's clock follows its load"
+        },
+        {
+          "sha": "abac2ffbdaff399550b681114f0843d2f1b83136",
+          "url": "https://github.com/jmgasper/haiku/commit/abac2ffbdaff399550b681114f0843d2f1b83136",
+          "date": "2026-10-24T09:34:33Z",
+          "subject": "Merge dragon-q8b: the Adreno GPU's clock follows its load"
+        },
+        {
+          "sha": "728d4a6838107d3333bfaf041007a9171a6365ac",
+          "url": "https://github.com/jmgasper/haiku/commit/728d4a6838107d3333bfaf041007a9171a6365ac",
+          "date": "2026-10-24T10:28:15Z",
+          "subject": "qcom_video: ahead of FFmpeg's decoders; Iris encoding in microseconds"
+        },
+        {
+          "sha": "8d3edd7ebd6ce36002364abba224dfa33ac18237",
+          "url": "https://github.com/jmgasper/haiku/commit/8d3edd7ebd6ce36002364abba224dfa33ac18237",
+          "date": "2026-10-24T10:28:28Z",
+          "subject": "Merge dragon-q8b: qcom_video ahead of FFmpeg, Iris encoding times"
+        },
+        {
+          "sha": "ba4e21bf47460536b71fb3b96f1f02be54499f6d",
+          "url": "https://github.com/jmgasper/haiku/commit/ba4e21bf47460536b71fb3b96f1f02be54499f6d",
+          "date": "2026-10-24T10:31:07Z",
+          "subject": "docs/dragon-q8b: a fresh install of today's CI image"
+        },
+        {
+          "sha": "f6ae2f4c768da05a8bebd6283e35cbcf0472de6f",
+          "url": "https://github.com/jmgasper/haiku/commit/f6ae2f4c768da05a8bebd6283e35cbcf0472de6f",
+          "date": "2026-10-24T10:32:47Z",
+          "subject": "media_probe: -s seeks in the middle of decoding"
+        },
+        {
+          "sha": "b83ae7f9eb410534a566371e0c9020f96fc84756",
+          "url": "https://github.com/jmgasper/haiku/commit/b83ae7f9eb410534a566371e0c9020f96fc84756",
+          "date": "2026-10-24T11:22:24Z",
+          "subject": "dragon-q8b: SD controller bring-up in the lab probe"
+        },
+        {
+          "sha": "aec836ac2fedc87770d78f333a517de0bf510841",
+          "url": "https://github.com/jmgasper/haiku/commit/aec836ac2fedc87770d78f333a517de0bf510841",
+          "date": "2026-10-24T11:22:42Z",
+          "subject": "nvme_disk: arm64, clean the cached alias of what the controller reads"
+        },
+        {
+          "sha": "e834c5d026e663492217a242745a3d6c507792e1",
+          "url": "https://github.com/jmgasper/haiku/commit/e834c5d026e663492217a242745a3d6c507792e1",
+          "date": "2026-10-24T11:22:49Z",
+          "subject": "Merge dragon-q8b: NVMe cached-alias cleaning on arm64, SD bring-up probe, seek checks"
+        },
+        {
+          "sha": "fb129ada88e30fbb2276e1b8b46d5ae1f20f794b",
+          "url": "https://github.com/jmgasper/haiku/commit/fb129ada88e30fbb2276e1b8b46d5ae1f20f794b",
+          "date": "2026-10-24T12:02:24Z",
+          "subject": "dragon-q8b: the SD clock as the RCG gives it; CPU clock domains"
+        },
+        {
+          "sha": "dc2ab432feba987d09cd1b6fba1aa15f0cc8cb61",
+          "url": "https://github.com/jmgasper/haiku/commit/dc2ab432feba987d09cd1b6fba1aa15f0cc8cb61",
+          "date": "2026-10-24T12:02:32Z",
+          "subject": "Merge dragon-q8b: Dragon Q8B status (SD clock, CPU clocks, NVMe boots)"
+        },
+        {
+          "sha": "b3563dafa35e73ba7d1ac8c550591cc13f3cb057",
+          "url": "https://github.com/jmgasper/haiku/commit/b3563dafa35e73ba7d1ac8c550591cc13f3cb057",
+          "date": "2026-10-24T12:15:20Z",
+          "subject": "qcom_thermal: the Dragon Q8B's SoC temperature"
+        },
+        {
+          "sha": "8b9fefbcb331d300deb6eb4475df64f8ee297406",
+          "url": "https://github.com/jmgasper/haiku/commit/8b9fefbcb331d300deb6eb4475df64f8ee297406",
+          "date": "2026-10-24T12:15:28Z",
+          "subject": "Merge dragon-q8b: Dragon Q8B SoC temperature (qcom_thermal)"
+        },
+        {
+          "sha": "55b22d0a763b50f233248c2d87bc53fbd9b3e778",
+          "url": "https://github.com/jmgasper/haiku/commit/55b22d0a763b50f233248c2d87bc53fbd9b3e778",
+          "date": "2026-10-24T12:22:07Z",
+          "subject": "sunxi_cedar: name the add-on 00_sunxi_cedar"
+        },
+        {
+          "sha": "4b51752942ceee7ce8af5f369c38f023907da85e",
+          "url": "https://github.com/jmgasper/haiku/commit/4b51752942ceee7ce8af5f369c38f023907da85e",
+          "date": "2026-10-24T12:22:33Z",
+          "subject": "Merge dragon-q8b: Cedar add-on sorts ahead of FFmpeg"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -10298,8 +10520,14 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "b5cd402c2488384070271f7505a01b7ad08ae9ad",
+      "head": "e410f7201b24ad95f25be458a34b4f828118cbb5",
       "commits": [
+        {
+          "sha": "e410f7201b24ad95f25be458a34b4f828118cbb5",
+          "url": "https://github.com/jmgasper/airos-ci/commit/e410f7201b24ad95f25be458a34b4f828118cbb5",
+          "date": "2026-10-24T08:12:02Z",
+          "subject": "Dragon: the video codec's firmware into the image"
+        },
         {
           "sha": "b5cd402c2488384070271f7505a01b7ad08ae9ad",
           "url": "https://github.com/jmgasper/airos-ci/commit/b5cd402c2488384070271f7505a01b7ad08ae9ad",
@@ -28657,8 +28885,38 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "c447b7a98cb08775f0b8cefcb3498f80758efa64",
+      "head": "2db4a778ab8ff90ea2e3308fafc6098f14795bd1",
       "commits": [
+        {
+          "sha": "2db4a778ab8ff90ea2e3308fafc6098f14795bd1",
+          "url": "https://github.com/jmgasper/summit/commit/2db4a778ab8ff90ea2e3308fafc6098f14795bd1",
+          "date": "2026-10-24T12:05:06Z",
+          "subject": "Docs: WebCodecs colours verified on the main build (#112) [skip ci]"
+        },
+        {
+          "sha": "90a658160a18f4c9522c5f9ba98d30e16960d7cb",
+          "url": "https://github.com/jmgasper/summit/commit/90a658160a18f4c9522c5f9ba98d30e16960d7cb",
+          "date": "2026-10-24T11:34:52Z",
+          "subject": "Merge remote-tracking branch 'origin/main' into wc112"
+        },
+        {
+          "sha": "bc1cc0b7e100afc4fd0f7036513450f88a32190b",
+          "url": "https://github.com/jmgasper/summit/commit/bc1cc0b7e100afc4fd0f7036513450f88a32190b",
+          "date": "2026-10-24T11:34:49Z",
+          "subject": "WebCodecs: decoded pictures default to BT.601 (#112)"
+        },
+        {
+          "sha": "ee0641d10a98728943581e58f6e9cbb7095e8281",
+          "url": "https://github.com/jmgasper/summit/commit/ee0641d10a98728943581e58f6e9cbb7095e8281",
+          "date": "2026-10-24T07:57:06Z",
+          "subject": "Build the released engines with WebCodecs (#112)"
+        },
+        {
+          "sha": "648292f80064bebee2ac56b48875b33beae079cf",
+          "url": "https://github.com/jmgasper/summit/commit/648292f80064bebee2ac56b48875b33beae079cf",
+          "date": "2026-10-24T05:19:54Z",
+          "subject": "WebCodecs video on WebRTC's codecs (#112)"
+        },
         {
           "sha": "de49da3a76cab1e99fe4e14abc16265e0f46bcfa",
           "url": "https://github.com/jmgasper/summit/commit/de49da3a76cab1e99fe4e14abc16265e0f46bcfa",
@@ -35465,8 +35723,26 @@
       "branch": "main",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "group": "Applications",
-      "head": "4d2eaeae09e69cd0c7c4a6268d290691d883298c",
+      "head": "feffab25cb2c54164e6f54624348d2cf660abbfb",
       "commits": [
+        {
+          "sha": "b8bf4d3e694801993673f0555d0ea457affa6e11",
+          "url": "https://github.com/jmgasper/airTime/commit/b8bf4d3e694801993673f0555d0ea457affa6e11",
+          "date": "2026-10-24T12:22:23Z",
+          "subject": "Cedar: the add-on is now 00_sunxi_cedar"
+        },
+        {
+          "sha": "13158f14665df204aa3996e9f78cb654ac015a15",
+          "url": "https://github.com/jmgasper/airTime/commit/13158f14665df204aa3996e9f78cb654ac015a15",
+          "date": "2026-10-24T10:28:22Z",
+          "subject": "Qualcomm Iris: the add-on is 00_qcom_video now"
+        },
+        {
+          "sha": "0227545d315eb4a0d1548a8d118a75209ea22318",
+          "url": "https://github.com/jmgasper/airTime/commit/0227545d315eb4a0d1548a8d118a75209ea22318",
+          "date": "2026-10-24T08:12:14Z",
+          "subject": "Hardware decoding on the Qualcomm SC8280XP (qcom_video)"
+        },
         {
           "sha": "a6d464f947f91ffad5f37eaf8dc2c7921733b9f0",
           "url": "https://github.com/jmgasper/airTime/commit/a6d464f947f91ffad5f37eaf8dc2c7921733b9f0",
@@ -38789,19 +39065,19 @@
       "repo": "airTime",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "release": "https://github.com/jmgasper/airTime/releases/tag/latest",
-      "published": "2026-10-16T03:01:35Z",
+      "published": "2026-10-24T12:26:38Z",
       "assets": [
         {
           "name": "airtime-1.0.0-22-arm64.hpkg",
-          "size": 238890,
+          "size": 238950,
           "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-22-arm64.hpkg",
-          "digest": "sha256:981003efd9a93ec54729ea42c3441e4c717f5986025e92b33bfd2defe0f0118a"
+          "digest": "sha256:9317465243dd7defbcf9bd859e72a2215add7962bc33edd7f51db7fbea6b18ea"
         },
         {
           "name": "airtime-1.0.0-22-x86_64.hpkg",
-          "size": 236387,
+          "size": 236454,
           "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-22-x86_64.hpkg",
-          "digest": "sha256:38bd29a8d793bab10fbe6fc1f42e14dcb2dda90aa1e743486e34091c6b8abaa5"
+          "digest": "sha256:f987a4b23ee234ab3fa696ce206db86fd52f29ed1e88593f904362d83bffda29"
         }
       ]
     },
@@ -38969,101 +39245,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261024063708-15dfb01b9a",
-      "published": "2026-10-24T06:40:58Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261024115823-e834c5d026",
+      "published": "2026-10-24T12:02:14Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1120588172,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024063708-15dfb01b9a/airos-x86_64.iso.xz",
-          "digest": "sha256:4bfb8fc5cc5ac851fe9eed96bac3bbcd5de5e66a009ab3d8c9f1647e3578392d"
+          "size": 1120866868,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024115823-e834c5d026/airos-x86_64.iso.xz",
+          "digest": "sha256:25e50adc6e2cdba59a5dd783b781f97a8507be727f58ef8a3f4231e20005fc74"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024063708-15dfb01b9a/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:8ab2c338d30be374ceeccd69c413e8fa9917f36c2bc43524b6641d005f8f249c"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024115823-e834c5d026/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:d194566ade6d74a3f76ef3dbeb7e215eff89549b39e9638056841777f127b83c"
         },
         {
           "name": "manifest.json",
           "size": 13069,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024063708-15dfb01b9a/manifest.json",
-          "digest": "sha256:dec574e452e35b64b36b1b9928e32e67ea729488dbb66267e082ec036479951c"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024115823-e834c5d026/manifest.json",
+          "digest": "sha256:de52d37923c33d53cee4b19a427ee5fccc82f7092a2a705543d35c8e61549d22"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261024034805-efc2b8d62f",
-      "published": "2026-10-24T03:51:17Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261024121832-e834c5d026",
+      "published": "2026-10-24T12:21:38Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 587220100,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024034805-efc2b8d62f/airos-arm64.iso.xz",
-          "digest": "sha256:bbbed682955a148f4a46bdef38e7c9411aea03980589123d5a544d2fd280d708"
+          "size": 588214884,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024121832-e834c5d026/airos-arm64.iso.xz",
+          "digest": "sha256:56b9ff32e81e849cf56d06a9d7a9044fd298266d4d074e19a1389668c9239036"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024034805-efc2b8d62f/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:8332ad696a52900c8840975f09a81256885126e76ad51a53bceea226e5ca9fff"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024121832-e834c5d026/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:67fbf26713de50ab118dfebdf56349b8fc52ee8bf488e91f512b8f1902ab78c6"
         },
         {
           "name": "manifest.json",
-          "size": 13064,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024034805-efc2b8d62f/manifest.json",
-          "digest": "sha256:993dc2a75b79a563c4cefe6a119eba4f3a3f2d7201e6c1cce3467c9f0f4701ad"
+          "size": 12452,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024121832-e834c5d026/manifest.json",
+          "digest": "sha256:1f975d0bd18650448f980f08dd769b6325a956f8609977f7ef9980e66b9f37a9"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261024055635-e23bbe22b6",
-      "published": "2026-10-24T05:57:59Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261024121102-e834c5d026",
+      "published": "2026-10-24T12:12:28Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 585476848,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024055635-e23bbe22b6/airos-rpi4.img.xz",
-          "digest": "sha256:9bc6f7f3f192c0d7108edbd0462aee26ba174ad1c2b5b496e7491ba7e228147a"
+          "size": 585930316,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024121102-e834c5d026/airos-rpi4.img.xz",
+          "digest": "sha256:faef50f3ae16c34bb7f6f709d2025f36f5e7dcb17d1632b9b5d1585ba79477e7"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024055635-e23bbe22b6/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:7cc6d5259e7e2e83f06002fd104479c7e773e6ebbef67a66edcd16ec0e74f2dd"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024121102-e834c5d026/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:52edb936f148bf021eb2fad0a7c38d7622acaa6ce7e587338156aa1b2fc7d82c"
         },
         {
           "name": "manifest.json",
           "size": 10527,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024055635-e23bbe22b6/manifest.json",
-          "digest": "sha256:4a34e231297b7cbfe731b73e5093fe2dafbff2265ca73ebce425d85e5ed134f2"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024121102-e834c5d026/manifest.json",
+          "digest": "sha256:6277be982f189a25e4d0fc03126f598938864526f1e0e670995cc101bf4c73f2"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261024061328-15dfb01b9a",
-      "published": "2026-10-24T06:16:45Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261024122623-e834c5d026",
+      "published": "2026-10-24T12:29:33Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 585301868,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024061328-15dfb01b9a/airos-cubie.img.xz",
-          "digest": "sha256:1f21476c49fcd044a9a58cff86cb3b29efdbc126e2910f78cfbd180ec6d1c1e7"
+          "size": 585759924,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024122623-e834c5d026/airos-cubie.img.xz",
+          "digest": "sha256:888a20b4debcb98ae379aa115964bc8296a9d3b7b0d2bb9f55961f190e84bb38"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024061328-15dfb01b9a/airos-cubie.img.xz.sha256",
-          "digest": "sha256:a798810c845a778c11b270af3e6ba1269d2a2004295b1148b35891c316d0b147"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024122623-e834c5d026/airos-cubie.img.xz.sha256",
+          "digest": "sha256:ddf2634a6071ee668ef9f652890f1ae107d4e1fc33bda5d23f28974be7f31121"
         },
         {
           "name": "manifest.json",
           "size": 13772,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024061328-15dfb01b9a/manifest.json",
-          "digest": "sha256:df9b3a768fe83fe46bc7077a43ff5c93e776d813f8f6fca6cc0b0039310f5db0"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024122623-e834c5d026/manifest.json",
+          "digest": "sha256:1fc3cc0998c04265300acfad79416b33db3aa55fc37fa7ebfc62832b6d288bab"
         }
       ]
     }
