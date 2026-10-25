@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T01:06:28+00:00",
+  "updated": "2026-10-25T06:44:46+00:00",
   "ci_head": "538d38e75a11e4ec114b36253e1fdda68bb5b281",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "3277742a23d337e37761a23a8a4c2ded2fef5a88",
+      "head": "6bdbd50bafb8910bc429fb8ebf5b62541afd6cbd",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -10780,6 +10780,138 @@
           "url": "https://github.com/jmgasper/haiku/commit/3277742a23d337e37761a23a8a4c2ded2fef5a88",
           "date": "2026-10-24T20:07:11Z",
           "subject": "Merge dragon-q8b: qcom_gpr, qcom_audio (lab, off by default), GLINK intents"
+        },
+        {
+          "sha": "78364e1aeea8c394417722faa41bf981ce6c396e",
+          "url": "https://github.com/jmgasper/haiku/commit/78364e1aeea8c394417722faa41bf981ce6c396e",
+          "date": "2026-10-24T20:50:15Z",
+          "subject": "Dragon Q8B: real USB-C reports, DP over a hub, SD card detect, SuperSpeed"
+        },
+        {
+          "sha": "28c8a2e3516f4cbb7084c978436aadae35b01fe5",
+          "url": "https://github.com/jmgasper/haiku/commit/28c8a2e3516f4cbb7084c978436aadae35b01fe5",
+          "date": "2026-10-24T22:51:44Z",
+          "subject": "qcom_display, mmc: USB-C DP gets pixels; SD identification survives"
+        },
+        {
+          "sha": "baf74627a6b45457b6ef4fd2f813f76184fa0851",
+          "url": "https://github.com/jmgasper/haiku/commit/baf74627a6b45457b6ef4fd2f813f76184fa0851",
+          "date": "2026-10-24T23:26:56Z",
+          "subject": "qcom_display: keep a running USB 3 PHY beside DisplayPort (untested)"
+        },
+        {
+          "sha": "7ab329cb068262b0c5ea0b2adc043bd7e308fa90",
+          "url": "https://github.com/jmgasper/haiku/commit/7ab329cb068262b0c5ea0b2adc043bd7e308fa90",
+          "date": "2026-10-24T23:28:32Z",
+          "subject": "qcom_display: read a USB-C sink's EDID when it connects (untested)"
+        },
+        {
+          "sha": "94e3db5a84a54abafa1d7c8c77d482912e69a408",
+          "url": "https://github.com/jmgasper/haiku/commit/94e3db5a84a54abafa1d7c8c77d482912e69a408",
+          "date": "2026-10-25T00:33:58Z",
+          "subject": "Dragon Q8B: SD card reads and writes; no crash dump mode; SMMU domains"
+        },
+        {
+          "sha": "0b46e8561a8f2676d963ae9c3f964e60ed839877",
+          "url": "https://github.com/jmgasper/haiku/commit/0b46e8561a8f2676d963ae9c3f964e60ed839877",
+          "date": "2026-10-25T01:21:56Z",
+          "subject": "qcom_display: a clean controller and DP PHY for each USB-C sink"
+        },
+        {
+          "sha": "e7af0e03b1fe41ce0ed3fb056eff0022ac5a03c1",
+          "url": "https://github.com/jmgasper/haiku/commit/e7af0e03b1fe41ce0ed3fb056eff0022ac5a03c1",
+          "date": "2026-10-25T01:32:41Z",
+          "subject": "usb: ask a hub that does not answer less often"
+        },
+        {
+          "sha": "fcc46092ffc9233aaf3bba603a4d769b3fdc0200",
+          "url": "https://github.com/jmgasper/haiku/commit/fcc46092ffc9233aaf3bba603a4d769b3fdc0200",
+          "date": "2026-10-25T01:32:49Z",
+          "subject": "Merge dragon-q8b: USB-C DisplayPort pictures, SD card, SMMU domains, no crash dump mode"
+        },
+        {
+          "sha": "e7d3421654904aee44d6b729e2effcff31944f56",
+          "url": "https://github.com/jmgasper/haiku/commit/e7d3421654904aee44d6b729e2effcff31944f56",
+          "date": "2026-10-25T01:36:05Z",
+          "subject": "sdhci: the ADMA table size only where it is used (arm64)"
+        },
+        {
+          "sha": "6683d5f6e66a6f158d4ea24defb1d3dbc59031eb",
+          "url": "https://github.com/jmgasper/haiku/commit/6683d5f6e66a6f158d4ea24defb1d3dbc59031eb",
+          "date": "2026-10-25T01:36:09Z",
+          "subject": "Merge dragon-q8b: sdhci x86_64 build fix"
+        },
+        {
+          "sha": "3aec71a3b9dc3d394a77e2b85571ab8139feea00",
+          "url": "https://github.com/jmgasper/haiku/commit/3aec71a3b9dc3d394a77e2b85571ab8139feea00",
+          "date": "2026-10-25T01:40:42Z",
+          "subject": "docs/dragon-q8b: USB SuperSpeed, SD card, USB-C monitors, audio state"
+        },
+        {
+          "sha": "5025d8aa6ef8f097cf6f6a757b32134cbf3cdec0",
+          "url": "https://github.com/jmgasper/haiku/commit/5025d8aa6ef8f097cf6f6a757b32134cbf3cdec0",
+          "date": "2026-10-25T02:10:28Z",
+          "subject": "qcom_audio: lab: the DSP's own SMMU bank in the one-buffer probe"
+        },
+        {
+          "sha": "01e2036af28ef692585487434a6b247d9d332922",
+          "url": "https://github.com/jmgasper/haiku/commit/01e2036af28ef692585487434a6b247d9d332922",
+          "date": "2026-10-25T02:21:33Z",
+          "subject": "usb, xhci: warm reset a SuperSpeed link stuck in SS.Inactive"
+        },
+        {
+          "sha": "f397bce68d935155b3837dfd0ff544b25d9d8a6f",
+          "url": "https://github.com/jmgasper/haiku/commit/f397bce68d935155b3837dfd0ff544b25d9d8a6f",
+          "date": "2026-10-25T02:42:08Z",
+          "subject": "qcom_display: set the combo PHY's USB 3 half up beside DisplayPort"
+        },
+        {
+          "sha": "3978d8471560902e6f2b23819a172e615583afd1",
+          "url": "https://github.com/jmgasper/haiku/commit/3978d8471560902e6f2b23819a172e615583afd1",
+          "date": "2026-10-25T02:42:22Z",
+          "subject": "Merge dragon-q8b: USB-C hub DP stable, SuperSpeed warm reset, USB 3 PHY beside DP"
+        },
+        {
+          "sha": "5b34b278f6746d690cfd150cd4c6395eb8292078",
+          "url": "https://github.com/jmgasper/haiku/commit/5b34b278f6746d690cfd150cd4c6395eb8292078",
+          "date": "2026-10-25T03:22:57Z",
+          "subject": "qcom_display: a DP to HDMI converter set to HDMI output"
+        },
+        {
+          "sha": "61a492953ee3a7abe9ad06ac6a2b84d96cd9a43c",
+          "url": "https://github.com/jmgasper/haiku/commit/61a492953ee3a7abe9ad06ac6a2b84d96cd9a43c",
+          "date": "2026-10-25T03:24:25Z",
+          "subject": "docs/dragon-q8b: the USB-C DisplayPort monitor shows the desktop"
+        },
+        {
+          "sha": "abee2504a5fcc9da748f6c74b3a7e5a73f57fbc1",
+          "url": "https://github.com/jmgasper/haiku/commit/abee2504a5fcc9da748f6c74b3a7e5a73f57fbc1",
+          "date": "2026-10-25T03:45:04Z",
+          "subject": "qcom_display: the USB 3 half of the combo PHY as the firmware set it"
+        },
+        {
+          "sha": "e1163bb3ce599847160e5ac5e222bfeacced857d",
+          "url": "https://github.com/jmgasper/haiku/commit/e1163bb3ce599847160e5ac5e222bfeacced857d",
+          "date": "2026-10-25T03:45:18Z",
+          "subject": "Merge dragon-q8b: hub converter in HDMI mode, USB 3 PHY values from the firmware"
+        },
+        {
+          "sha": "2ae6e2c26b60f6840fb7f9bbf5368f8cdccc1f8a",
+          "url": "https://github.com/jmgasper/haiku/commit/2ae6e2c26b60f6840fb7f9bbf5368f8cdccc1f8a",
+          "date": "2026-10-25T04:29:50Z",
+          "subject": "xhci: warm port reset is PORTSC bit 31; hub re-enumerates after it"
+        },
+        {
+          "sha": "5a09c6bbf3e2211cea7820729c5b869fe3296f1a",
+          "url": "https://github.com/jmgasper/haiku/commit/5a09c6bbf3e2211cea7820729c5b869fe3296f1a",
+          "date": "2026-10-25T04:29:50Z",
+          "subject": "qcom_display: keep a USB-C PHY whose USB 3 half runs"
+        },
+        {
+          "sha": "6bdbd50bafb8910bc429fb8ebf5b62541afd6cbd",
+          "url": "https://github.com/jmgasper/haiku/commit/6bdbd50bafb8910bc429fb8ebf5b62541afd6cbd",
+          "date": "2026-10-25T04:30:03Z",
+          "subject": "Merge branch 'dragon-q8b': xhci warm port reset, USB-C PHY kept"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -29161,8 +29293,74 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "c9077b2d05844ff7f4fceaa58d74e3efe3d43e31",
+      "head": "7715453c30d554cdb3014ad5bc8ddb28a9a507f6",
       "commits": [
+        {
+          "sha": "7715453c30d554cdb3014ad5bc8ddb28a9a507f6",
+          "url": "https://github.com/jmgasper/summit/commit/7715453c30d554cdb3014ad5bc8ddb28a9a507f6",
+          "date": "2026-10-25T06:39:18Z",
+          "subject": "Docs: AV1 and HEVC decoding verified on the X399 (#112)"
+        },
+        {
+          "sha": "8c9166670d97af64687a1bff7d689d3043aabc3a",
+          "url": "https://github.com/jmgasper/summit/commit/8c9166670d97af64687a1bff7d689d3043aabc3a",
+          "date": "2026-10-25T06:39:18Z",
+          "subject": "WebCodecs: AV1 and HEVC decoding through FFmpeg (#112)"
+        },
+        {
+          "sha": "ab4a792df96b0ac4dbdc88caa0944c4e30eb3a2f",
+          "url": "https://github.com/jmgasper/summit/commit/ab4a792df96b0ac4dbdc88caa0944c4e30eb3a2f",
+          "date": "2026-10-25T04:30:13Z",
+          "subject": "Fixture and docs: FLAC and Vorbis round trips use the encoder's description (#112)"
+        },
+        {
+          "sha": "28263189c26382be06f08b0335553c507fd3e8fd",
+          "url": "https://github.com/jmgasper/summit/commit/28263189c26382be06f08b0335553c507fd3e8fd",
+          "date": "2026-10-25T04:30:13Z",
+          "subject": "WebCodecs: FLAC and Vorbis encoding through FFmpeg (#112)"
+        },
+        {
+          "sha": "612b1b063d65c9036c46100a5e38f11ae313669b",
+          "url": "https://github.com/jmgasper/summit/commit/612b1b063d65c9036c46100a5e38f11ae313669b",
+          "date": "2026-10-25T03:48:31Z",
+          "subject": "Docs: PCM, FLAC and Vorbis verified on the X399 (#112)"
+        },
+        {
+          "sha": "b391f655db8755cb1209ce8d571e436327f3ed82",
+          "url": "https://github.com/jmgasper/summit/commit/b391f655db8755cb1209ce8d571e436327f3ed82",
+          "date": "2026-10-25T03:48:31Z",
+          "subject": "WebCodecs: PCM codecs, and FLAC and Vorbis decoding (#112)"
+        },
+        {
+          "sha": "b6573b6e6c5e3b947c80d5b20fcacdad2286fef7",
+          "url": "https://github.com/jmgasper/summit/commit/b6573b6e6c5e3b947c80d5b20fcacdad2286fef7",
+          "date": "2026-10-25T02:37:09Z",
+          "subject": "Docs: W3C player, track processing and flush verified on the X399 (#112)"
+        },
+        {
+          "sha": "daa53677eeff7e93102faf20175190368904b6fa",
+          "url": "https://github.com/jmgasper/summit/commit/daa53677eeff7e93102faf20175190368904b6fa",
+          "date": "2026-10-25T02:37:09Z",
+          "subject": "Fixture: track-processor falls back to a canvas track without a camera"
+        },
+        {
+          "sha": "fd9dab55a8545a6b93f76d5661fd22cc058e96e6",
+          "url": "https://github.com/jmgasper/summit/commit/fd9dab55a8545a6b93f76d5661fd22cc058e96e6",
+          "date": "2026-10-25T02:37:09Z",
+          "subject": "WebCodecs: H.264 B-frame pictures keep their own timestamps; flush drains (#112)"
+        },
+        {
+          "sha": "2a7524dcf48dc7d007355665775389aeeafc9a1b",
+          "url": "https://github.com/jmgasper/summit/commit/2a7524dcf48dc7d007355665775389aeeafc9a1b",
+          "date": "2026-10-25T02:37:09Z",
+          "subject": "Engine: MediaStreamTrackProcessor and VideoTrackGenerator in workers (#112, #126)"
+        },
+        {
+          "sha": "bc7e53f5e0a15c4d21e696960cb6f72e9c637072",
+          "url": "https://github.com/jmgasper/summit/commit/bc7e53f5e0a15c4d21e696960cb6f72e9c637072",
+          "date": "2026-10-25T02:37:09Z",
+          "subject": "Engine: SharedArrayBuffer in cross-origin isolated pages (#112)"
+        },
         {
           "sha": "9cc27657ad59e21e7f26f1b23bc30a29d91560a4",
           "url": "https://github.com/jmgasper/summit/commit/9cc27657ad59e21e7f26f1b23bc30a29d91560a4",
@@ -39407,31 +39605,31 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/jmgasper/summit/releases/tag/latest",
-      "published": "2026-10-25T00:18:53Z",
+      "published": "2026-10-25T04:41:13Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261025.0009-1-arm64.hpkg",
-          "size": 15714164,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261025.0009-1-arm64.hpkg",
-          "digest": "sha256:3718de8da9cf4d4d61dd9ee79c6f2b68dbe1cb32f191d7d51bdc8422af3c93da"
+          "name": "summit-0.1.0.git20261025.0430-1-arm64.hpkg",
+          "size": 15718424,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261025.0430-1-arm64.hpkg",
+          "digest": "sha256:d93f84ad3c7a5ce35794e60445735014c23db20d74f8e54f3e4b0faad8a3e613"
         },
         {
-          "name": "summit-0.1.0.git20261025.0009-1-x86_64.hpkg",
-          "size": 14806796,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261025.0009-1-x86_64.hpkg",
-          "digest": "sha256:5a1c6d4f0148a2f479deece5bb43ce85e1e2ab7f401b4a50bef9b334112411b1"
+          "name": "summit-0.1.0.git20261025.0430-1-x86_64.hpkg",
+          "size": 14806916,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit-0.1.0.git20261025.0430-1-x86_64.hpkg",
+          "digest": "sha256:07ef898e35fbe49091c06257ce8628017253deb0ecfabfa911408ea8d4e9acb5"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261025.0009-1-arm64.hpkg",
-          "size": 94364606,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261025.0009-1-arm64.hpkg",
-          "digest": "sha256:dc5f772fc139367086a9ece3413069f6a93a90fac27f75427ade6d1939e49db5"
+          "name": "summit_webkit-1.10.1.git20261025.0430-1-arm64.hpkg",
+          "size": 94380552,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261025.0430-1-arm64.hpkg",
+          "digest": "sha256:397a3d470c71088678499fae389615c160c88caeeac8fd02ce82488a21be29ba"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261025.0009-1-x86_64.hpkg",
-          "size": 88001978,
-          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261025.0009-1-x86_64.hpkg",
-          "digest": "sha256:195b2d5b7896945967e8e07683b6ceda6392ecc1ffb27669d3150d996b2a37ea"
+          "name": "summit_webkit-1.10.1.git20261025.0430-1-x86_64.hpkg",
+          "size": 88013606,
+          "browser_download_url": "https://github.com/jmgasper/summit/releases/download/latest/summit_webkit-1.10.1.git20261025.0430-1-x86_64.hpkg",
+          "digest": "sha256:a1e07d500f75b3fb43853bbfde3f513dff6ab614b255b8f49103a8a3c3a3dfbe"
         }
       ]
     },
@@ -39641,101 +39839,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261024203212-3277742a23",
-      "published": "2026-10-24T20:35:59Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261025051452-6bdbd50baf",
+      "published": "2026-10-25T05:18:49Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1120909264,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024203212-3277742a23/airos-x86_64.iso.xz",
-          "digest": "sha256:236b1f59dfc9c29bc268c12e86f83b2941f3701b4ba922c68d483d768d22a710"
+          "size": 1121009248,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261025051452-6bdbd50baf/airos-x86_64.iso.xz",
+          "digest": "sha256:ecc4e35652595a678454949c6327f3cbdde84922a30dece75f7f0f0fb8d34039"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024203212-3277742a23/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:caa4401f8159b92e82d7cd5b3611ac693f5dbfc7e4c3d4a9915c91ed2b0d1752"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261025051452-6bdbd50baf/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:414035bae81d5547b59dd347c4a19b9e7557b0ef75e616df68d4ebc1ba19ae7d"
         },
         {
           "name": "manifest.json",
           "size": 13069,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261024203212-3277742a23/manifest.json",
-          "digest": "sha256:d2a0f7a2704f7ecb2639ba7731c458cc4c7c40602529b764dc36b42a5aa8f563"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261025051452-6bdbd50baf/manifest.json",
+          "digest": "sha256:ac8822e261ae4837c4805888df312f132fd7305d47ee637bb9569762d3d8acc4"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261024204612-3277742a23",
-      "published": "2026-10-24T20:49:23Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261025044507-6bdbd50baf",
+      "published": "2026-10-25T04:48:18Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 592868560,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024204612-3277742a23/airos-arm64.iso.xz",
-          "digest": "sha256:9427c11086515d914e406c1009228bed5911d39444a8569e39eee4b4d96d52ce"
+          "size": 592855032,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261025044507-6bdbd50baf/airos-arm64.iso.xz",
+          "digest": "sha256:522a7f00752d260884fa6978967270320b483a4ba4a5c5069c642efdb438ed28"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024204612-3277742a23/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:3c3051327277efbe9b2e21441907e11defe1b1e4ec17a7833f46b9fa5c1212d2"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261025044507-6bdbd50baf/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:5fba24c10a6dfc7f858faa2dbaf69d33256d653577ba3cbb6ed4cc92a2eab200"
         },
         {
           "name": "manifest.json",
           "size": 12452,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261024204612-3277742a23/manifest.json",
-          "digest": "sha256:107ff556e8593613591088a57c1b8e3e0c9800083bd42f36ee76c20370f81cdb"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261025044507-6bdbd50baf/manifest.json",
+          "digest": "sha256:dda6234d77e63763bb78876531d8aacf982e1a6cf7c1271291ddd32d5c9b04a6"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261024210233-3277742a23",
-      "published": "2026-10-24T21:03:58Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261025045254-6bdbd50baf",
+      "published": "2026-10-25T04:54:16Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 586095556,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024210233-3277742a23/airos-rpi4.img.xz",
-          "digest": "sha256:7ab6ef84246bbb0f62469c41e56433485fbdba863fe0b10526881e7eb507366a"
+          "size": 586165808,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261025045254-6bdbd50baf/airos-rpi4.img.xz",
+          "digest": "sha256:1a7227a7860e2a4ad0228f80315d8a0b6f348d46530e90fa22fe8659692b57fc"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024210233-3277742a23/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:4d0e9628a74f97d41fcffe030f3de0458394de8a924bce38cdb33e213b6a71e8"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261025045254-6bdbd50baf/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:7a4bc87166a6759320a76800f976429a265c46d3cc14468df183d042fa7b7fdd"
         },
         {
           "name": "manifest.json",
           "size": 10527,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261024210233-3277742a23/manifest.json",
-          "digest": "sha256:c966a0f5e1901f1b13e6e748b5e7908c8cc42991c30d3a56c3fa9af477890667"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261025045254-6bdbd50baf/manifest.json",
+          "digest": "sha256:a5666b9d6fe16cfeb6d08325a80b4937b3423ac6087b3c621f86e7e061109a61"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261024205429-3277742a23",
-      "published": "2026-10-24T20:57:40Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261025052343-6bdbd50baf",
+      "published": "2026-10-25T05:27:00Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 585991136,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024205429-3277742a23/airos-cubie.img.xz",
-          "digest": "sha256:dc14822b870626fc2ee1a34550544f41b7e5d3ae27f076798eda490e2909d09f"
+          "size": 586008336,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261025052343-6bdbd50baf/airos-cubie.img.xz",
+          "digest": "sha256:9273ddbdd88cb75cd4c539be3dd4b8aa873378c77dd2df4c8563bafb8b4a9995"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024205429-3277742a23/airos-cubie.img.xz.sha256",
-          "digest": "sha256:6a0e03d353cdd1e520b6cbdeafaa82c21dfcaf67835759c2f94f1fa261159cc0"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261025052343-6bdbd50baf/airos-cubie.img.xz.sha256",
+          "digest": "sha256:35ff190d74b8caec5d984d629ff08eae9f0f068d9866e039f01f98349b179935"
         },
         {
           "name": "manifest.json",
           "size": 13772,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261024205429-3277742a23/manifest.json",
-          "digest": "sha256:8ea867fb930ac641c7a64295834a462109e8f3905b1d6d8f9b39da3917bb04ec"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261025052343-6bdbd50baf/manifest.json",
+          "digest": "sha256:ab299a152eaa1d3a5f09001595262b75be4b74fbd423328ceed3f0d4256202a5"
         }
       ]
     }
