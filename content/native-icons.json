@@ -31,10 +31,10 @@
     {
       "app": "amp",
       "author": "Amp contributors",
-      "source": "https://github.com/jmgasper/amp/blob/2adfaf749cca6d84754b365ba6a779ba3240d4b3/resources/branding/amp-icon.hvif",
-      "hvif_sha256": "f9e26ae28974f5fdbadb16bde7ae90d70fcd9f123548cc6ce4d1ce892e845c23",
+      "source": "https://github.com/jmgasper/amp/blob/33405245e5698c568dc5012d80d22c0c45924d67/resources/branding/amp-icon.hvif",
+      "hvif_sha256": "4f706eff6ce4db06ee3b78dd94b968a5b5b48ba80ad55c2a1339931a25ef73d8",
       "png": "static/assets/icons/amp.png",
-      "png_sha256": "0af03a99bede6118185ebf7a8a27adb4311c224b020ba79f375edf96ff5aaf6a"
+      "png_sha256": "202a553b7062f6d5ae840d5d06094063b0448f4820f476504627f4c8d225232f"
     }
   ]
 }
