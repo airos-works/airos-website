@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-26T01:06:00+00:00",
-  "ci_head": "2e0aa095338967dd21f563d31f641ebc1c318a42",
+  "updated": "2026-10-26T07:02:26+00:00",
+  "ci_head": "bf77d522af1ec5c44645c3cc09a0565eac4fe309",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "859f7f5957e3bc86130801a824d718659004ebed",
+      "head": "1d16269a73d48e58859e7b811244faf00f888bb7",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -10200,6 +10200,18 @@
           "subject": "adreno: zap shader through TrustZone, the GPU leaves secure mode"
         },
         {
+          "sha": "8b5494869c321e228808d072baafb290da0ee87c",
+          "url": "https://github.com/jmgasper/haiku/commit/8b5494869c321e228808d072baafb290da0ee87c",
+          "date": "2026-10-24T02:26:14Z",
+          "subject": "atomic_test_and_set: strong exchange; arm64 FreeTable flushes the full address"
+        },
+        {
+          "sha": "67c05d7d5b0df021a961ceeeb9bc1fae2ccc8eae",
+          "url": "https://github.com/jmgasper/haiku/commit/67c05d7d5b0df021a961ceeeb9bc1fae2ccc8eae",
+          "date": "2026-10-24T02:26:14Z",
+          "subject": "rpi4: opt-in Cortex-A72 build profile, atomics benchmark"
+        },
+        {
           "sha": "d07450389d0064848b6d0f3ce823273fe90efc66",
           "url": "https://github.com/jmgasper/haiku/commit/d07450389d0064848b6d0f3ce823273fe90efc66",
           "date": "2026-10-24T02:38:32Z",
@@ -10264,6 +10276,18 @@
           "url": "https://github.com/jmgasper/haiku/commit/581e812e5c4d882d2d7ee5c6729c892834c580ea",
           "date": "2026-10-24T04:26:39Z",
           "subject": "nvme_disk: report a completion for no outstanding command, do not panic"
+        },
+        {
+          "sha": "d4376c889682e3de43f6510abe6d3cd4eda3417c",
+          "url": "https://github.com/jmgasper/haiku/commit/d4376c889682e3de43f6510abe6d3cd4eda3417c",
+          "date": "2026-10-24T04:30:26Z",
+          "subject": "kernel: synchronise the instruction cache after loading an add-on"
+        },
+        {
+          "sha": "48fa8830fecad8593e42f00dc56e1a355d8b6faf",
+          "url": "https://github.com/jmgasper/haiku/commit/48fa8830fecad8593e42f00dc56e1a355d8b6faf",
+          "date": "2026-10-24T04:30:26Z",
+          "subject": "rpi4: Cortex-A72 profile by default; QEMU check with one insn per block"
         },
         {
           "sha": "359ad191baf010ac50307535910d3e1ba326377f",
@@ -11158,6 +11182,240 @@
           "url": "https://github.com/jmgasper/haiku/commit/859f7f5957e3bc86130801a824d718659004ebed",
           "date": "2026-10-25T22:57:22Z",
           "subject": "ReadMe: supported machines, drivers, images and building"
+        },
+        {
+          "sha": "83506072221115c0150078259b9883531b1c759e",
+          "url": "https://github.com/jmgasper/haiku/commit/83506072221115c0150078259b9883531b1c759e",
+          "date": "2026-10-26T00:52:43Z",
+          "subject": "System Updater: update air/OS from CI builds, with trial starts and older versions"
+        },
+        {
+          "sha": "3ce1231df0499a5297ccafeb43ef55311c805af8",
+          "url": "https://github.com/jmgasper/haiku/commit/3ce1231df0499a5297ccafeb43ef55311c805af8",
+          "date": "2026-10-26T01:10:53Z",
+          "subject": "System Updater: release packages, payload links, Raspberry Pi boot files"
+        },
+        {
+          "sha": "1d18a97bc847e75235741704969be10bde4625cb",
+          "url": "https://github.com/jmgasper/haiku/commit/1d18a97bc847e75235741704969be10bde4625cb",
+          "date": "2026-10-26T01:25:01Z",
+          "subject": "launch_daemon: launch every job that waits for a requirement"
+        },
+        {
+          "sha": "9acc48f988dcc075f23ea99488e201aa17ebb38f",
+          "url": "https://github.com/jmgasper/haiku/commit/9acc48f988dcc075f23ea99488e201aa17ebb38f",
+          "date": "2026-10-26T01:41:00Z",
+          "subject": "System Updater: optional packages, journal-safe boot records, UI fixes"
+        },
+        {
+          "sha": "33bc689de2a475c1d59ddb93b12917740e74790c",
+          "url": "https://github.com/jmgasper/haiku/commit/33bc689de2a475c1d59ddb93b12917740e74790c",
+          "date": "2026-10-26T01:41:51Z",
+          "subject": "System Updater: confirm an update only after the desktop stayed up"
+        },
+        {
+          "sha": "f26dfec823b2c627c70aff1e990616152870749c",
+          "url": "https://github.com/jmgasper/haiku/commit/f26dfec823b2c627c70aff1e990616152870749c",
+          "date": "2026-10-26T02:07:04Z",
+          "subject": "System Updater: versions by release, failed releases, going back from an older state"
+        },
+        {
+          "sha": "c093cce6cd7619150d666a5a74e5e59cbab30fb1",
+          "url": "https://github.com/jmgasper/haiku/commit/c093cce6cd7619150d666a5a74e5e59cbab30fb1",
+          "date": "2026-10-26T02:25:08Z",
+          "subject": "System Updater: repair after a transaction cut short"
+        },
+        {
+          "sha": "83a8a1614ee20b834375a462b8bce5a1cf56c06d",
+          "url": "https://github.com/jmgasper/haiku/commit/83a8a1614ee20b834375a462b8bce5a1cf56c06d",
+          "date": "2026-10-26T02:50:02Z",
+          "subject": "System Updater: a clock that is about right; Pi boot files by their FAT names"
+        },
+        {
+          "sha": "a77b49776be5dde75a38ff37354a5a5201578bed",
+          "url": "https://github.com/jmgasper/haiku/commit/a77b49776be5dde75a38ff37354a5a5201578bed",
+          "date": "2026-10-26T02:52:24Z",
+          "subject": "System Updater: restart to finish after going back; no empty changes list"
+        },
+        {
+          "sha": "d9bcdfa743f96aa6d3654b5b0721960b0180f7cb",
+          "url": "https://github.com/jmgasper/haiku/commit/d9bcdfa743f96aa6d3654b5b0721960b0180f7cb",
+          "date": "2026-10-26T02:53:31Z",
+          "subject": "System Updater: read whole activation files in the kernel; keep the newer EFI loader"
+        },
+        {
+          "sha": "098c8b2df866bc4d48b7206b5bfd706462eaa5d0",
+          "url": "https://github.com/jmgasper/haiku/commit/098c8b2df866bc4d48b7206b5bfd706462eaa5d0",
+          "date": "2026-10-26T02:54:08Z",
+          "subject": "docs/airos/SYSTEM-UPDATER: using it, the clock, what was tested"
+        },
+        {
+          "sha": "589af13ac16d7646f3672bcf2b39475501798d07",
+          "url": "https://github.com/jmgasper/haiku/commit/589af13ac16d7646f3672bcf2b39475501798d07",
+          "date": "2026-10-26T02:55:29Z",
+          "subject": "air/OS release images: no Haiku repository"
+        },
+        {
+          "sha": "7ae85ccb570b67f1dc1eca1011332a6de5e31bcf",
+          "url": "https://github.com/jmgasper/haiku/commit/7ae85ccb570b67f1dc1eca1011332a6de5e31bcf",
+          "date": "2026-10-26T03:01:49Z",
+          "subject": "Merge system-updater: System Updater, release feeds, trial starts and older versions"
+        },
+        {
+          "sha": "a839c776d7d15bb107276a7d7ac2b2adfd793e14",
+          "url": "https://github.com/jmgasper/haiku/commit/a839c776d7d15bb107276a7d7ac2b2adfd793e14",
+          "date": "2026-10-26T03:04:45Z",
+          "subject": "System Updater: an icon of its own"
+        },
+        {
+          "sha": "d78b3dba3e979830d9bdca2091a1c0c07967e40e",
+          "url": "https://github.com/jmgasper/haiku/commit/d78b3dba3e979830d9bdca2091a1c0c07967e40e",
+          "date": "2026-10-26T03:14:08Z",
+          "subject": "Merge master into rpi4-cpu-tuning"
+        },
+        {
+          "sha": "85848dd14eb9bb636f60a3e82a582ce8d6a72672",
+          "url": "https://github.com/jmgasper/haiku/commit/85848dd14eb9bb636f60a3e82a582ce8d6a72672",
+          "date": "2026-10-26T03:17:45Z",
+          "subject": "System Updater: real download size; one file per package name"
+        },
+        {
+          "sha": "8a145c91dd9b875b8ccd14eac81f30e97faaec30",
+          "url": "https://github.com/jmgasper/haiku/commit/8a145c91dd9b875b8ccd14eac81f30e97faaec30",
+          "date": "2026-10-26T03:18:03Z",
+          "subject": "System Updater: the boot check waits for the network to look for a release"
+        },
+        {
+          "sha": "b2bcd3bbb38a3310b98d7f16e33a0cfe6a98e30c",
+          "url": "https://github.com/jmgasper/haiku/commit/b2bcd3bbb38a3310b98d7f16e33a0cfe6a98e30c",
+          "date": "2026-10-26T03:18:27Z",
+          "subject": "Merge system-updater: System Updater icon, real download sizes, duplicate packages, network wait"
+        },
+        {
+          "sha": "d61a7c633c6e8c811054db38f272b2d78139e700",
+          "url": "https://github.com/jmgasper/haiku/commit/d61a7c633c6e8c811054db38f272b2d78139e700",
+          "date": "2026-10-26T03:40:38Z",
+          "subject": "Release images: no SoftwareUpdater menu entry"
+        },
+        {
+          "sha": "eeb939aa0b1091165d8c69375a2594edb3909b2b",
+          "url": "https://github.com/jmgasper/haiku/commit/eeb939aa0b1091165d8c69375a2594edb3909b2b",
+          "date": "2026-10-26T03:41:22Z",
+          "subject": "System Updater: the command line shows progress every tenth"
+        },
+        {
+          "sha": "1e251ab68e4818fbff78aadcc6c3f23d071437c5",
+          "url": "https://github.com/jmgasper/haiku/commit/1e251ab68e4818fbff78aadcc6c3f23d071437c5",
+          "date": "2026-10-26T03:41:41Z",
+          "subject": "Merge system-updater: no SoftwareUpdater menu entry in release images, quieter command line"
+        },
+        {
+          "sha": "a92c578ef42da6ecb326a4820c0d63dc6424e6e4",
+          "url": "https://github.com/jmgasper/haiku/commit/a92c578ef42da6ecb326a4820c0d63dc6424e6e4",
+          "date": "2026-10-26T03:54:12Z",
+          "subject": "ReadMe: write images with dd or Rufus, not balenaEtcher"
+        },
+        {
+          "sha": "0c0b0093e81af5b220b5bd6b9e538d33c423ec80",
+          "url": "https://github.com/jmgasper/haiku/commit/0c0b0093e81af5b220b5bd6b9e538d33c423ec80",
+          "date": "2026-10-26T04:11:48Z",
+          "subject": "air/OS CI: build the Pi 4 image with the Cortex-A72 profile"
+        },
+        {
+          "sha": "b1aa7ef0f9479e5b94189b967f41cd2ee5d57217",
+          "url": "https://github.com/jmgasper/haiku/commit/b1aa7ef0f9479e5b94189b967f41cd2ee5d57217",
+          "date": "2026-10-26T04:21:20Z",
+          "subject": "app_server: draw emoji in color, with their sequences"
+        },
+        {
+          "sha": "ae7aeaff4dab3699613a8d97ee981c6f00c16be4",
+          "url": "https://github.com/jmgasper/haiku/commit/ae7aeaff4dab3699613a8d97ee981c6f00c16be4",
+          "date": "2026-10-26T04:26:22Z",
+          "subject": "app_server: build ColorGlyphRenderer without COLR v1 before FreeType 2.13"
+        },
+        {
+          "sha": "8ee0ba601e391b13e4bfa6d6a525dffa3dddaa26",
+          "url": "https://github.com/jmgasper/haiku/commit/8ee0ba601e391b13e4bfa6d6a525dffa3dddaa26",
+          "date": "2026-10-26T04:26:22Z",
+          "subject": "Merge color-emoji: emoji in color everywhere, with their sequences"
+        },
+        {
+          "sha": "8c672d0d68dabc3be91d7b047e7ac9c3d0499af6",
+          "url": "https://github.com/jmgasper/haiku/commit/8c672d0d68dabc3be91d7b047e7ac9c3d0499af6",
+          "date": "2026-10-26T04:41:02Z",
+          "subject": "docs/rpi4/CPU-TUNING: native measurement; -O2 with the A72 profile kept, -O3 rejected"
+        },
+        {
+          "sha": "0896809a2ef31be6646b3e9d79151e98303c0645",
+          "url": "https://github.com/jmgasper/haiku/commit/0896809a2ef31be6646b3e9d79151e98303c0645",
+          "date": "2026-10-26T04:41:13Z",
+          "subject": "Merge rpi4-cpu-tuning: Pi 4 images built for the Cortex-A72 (lab and CI), measured natively; strong atomic_test_and_set, add-on icache sync"
+        },
+        {
+          "sha": "4b1023ab95b4916e7c06731c21d9f70d4f288d8c",
+          "url": "https://github.com/jmgasper/haiku/commit/4b1023ab95b4916e7c06731c21d9f70d4f288d8c",
+          "date": "2026-10-26T04:59:54Z",
+          "subject": "System Updater: keep installed packages a release lists as equivalent"
+        },
+        {
+          "sha": "2cf94638105d03ca50c863fb54fbc40a05f70152",
+          "url": "https://github.com/jmgasper/haiku/commit/2cf94638105d03ca50c863fb54fbc40a05f70152",
+          "date": "2026-10-26T05:00:21Z",
+          "subject": "Merge system-updater: keep installed packages a release lists as equivalent"
+        },
+        {
+          "sha": "4ba0263183c19b07bbeaea0433c2beec24a9cb3b",
+          "url": "https://github.com/jmgasper/haiku/commit/4ba0263183c19b07bbeaea0433c2beec24a9cb3b",
+          "date": "2026-10-26T05:26:27Z",
+          "subject": "packagefs: directories take the time of their newest package"
+        },
+        {
+          "sha": "04a91e6ffb4a0d156464ea4e7af9b8a9a31c5c2f",
+          "url": "https://github.com/jmgasper/haiku/commit/04a91e6ffb4a0d156464ea4e7af9b8a9a31c5c2f",
+          "date": "2026-10-26T05:26:36Z",
+          "subject": "docs: color emoji and fontconfig's font caches"
+        },
+        {
+          "sha": "8b76d8f26b76166d51267ed829be72da342ff902",
+          "url": "https://github.com/jmgasper/haiku/commit/8b76d8f26b76166d51267ed829be72da342ff902",
+          "date": "2026-10-26T05:26:39Z",
+          "subject": "Merge packagefs-dir-mtime: font packages installed later reach fontconfig"
+        },
+        {
+          "sha": "9d2bdbfd9ea70c149cd9fcb126a5ff74f99bd345",
+          "url": "https://github.com/jmgasper/haiku/commit/9d2bdbfd9ea70c149cd9fcb126a5ff74f99bd345",
+          "date": "2026-10-26T05:39:22Z",
+          "subject": "System Updater: try a transfer that failed on the way again"
+        },
+        {
+          "sha": "2f1ef5dcbf35aa9d8f5c5ae6bb7300df594ca171",
+          "url": "https://github.com/jmgasper/haiku/commit/2f1ef5dcbf35aa9d8f5c5ae6bb7300df594ca171",
+          "date": "2026-10-26T05:39:31Z",
+          "subject": "Merge system-updater: try a transfer that failed on the way again"
+        },
+        {
+          "sha": "8dffc3fcde9e65f216b8eeea7c4b4b04ad18b475",
+          "url": "https://github.com/jmgasper/haiku/commit/8dffc3fcde9e65f216b8eeea7c4b4b04ad18b475",
+          "date": "2026-10-26T06:02:15Z",
+          "subject": "media_server: keep the chosen audio and video devices across reboots"
+        },
+        {
+          "sha": "fa1767ec78ac5e2db26392341b5871bc8101785c",
+          "url": "https://github.com/jmgasper/haiku/commit/fa1767ec78ac5e2db26392341b5871bc8101785c",
+          "date": "2026-10-26T06:10:52Z",
+          "subject": "docs/rpi4/CPU-TUNING: the first tuned CI image, checked on the Pi"
+        },
+        {
+          "sha": "6f7801195ec68fd292073917695464af4aa172c0",
+          "url": "https://github.com/jmgasper/haiku/commit/6f7801195ec68fd292073917695464af4aa172c0",
+          "date": "2026-10-26T07:00:26Z",
+          "subject": "docs/airos/SYSTEM-UPDATER: equivalent packages on the live feed, pruning"
+        },
+        {
+          "sha": "1d16269a73d48e58859e7b811244faf00f888bb7",
+          "url": "https://github.com/jmgasper/haiku/commit/1d16269a73d48e58859e7b811244faf00f888bb7",
+          "date": "2026-10-26T07:00:30Z",
+          "subject": "Merge system-updater: System Updater test notes"
         }
       ],
       "url": "https://github.com/jmgasper/haiku/tree/master"
@@ -11168,8 +11426,62 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "2e0aa095338967dd21f563d31f641ebc1c318a42",
+      "head": "23b1d1732de21e38a80e86410d4a7f9b980ce374",
       "commits": [
+        {
+          "sha": "23b1d1732de21e38a80e86410d4a7f9b980ce374",
+          "url": "https://github.com/jmgasper/airos-ci/commit/23b1d1732de21e38a80e86410d4a7f9b980ce374",
+          "date": "2026-10-26T07:01:54Z",
+          "subject": "images: Proton VPN in every image"
+        },
+        {
+          "sha": "bf77d522af1ec5c44645c3cc09a0565eac4fe309",
+          "url": "https://github.com/jmgasper/airos-ci/commit/bf77d522af1ec5c44645c3cc09a0565eac4fe309",
+          "date": "2026-10-26T06:06:06Z",
+          "subject": "fix(images): pin Mail with system color emoji and fast list counts"
+        },
+        {
+          "sha": "169c2047ce30e79bb0c6c8a1a519c845f97457bd",
+          "url": "https://github.com/jmgasper/airos-ci/commit/169c2047ce30e79bb0c6c8a1a519c845f97457bd",
+          "date": "2026-10-26T05:00:08Z",
+          "subject": "release-feed: packages built again with only new file times are equivalent"
+        },
+        {
+          "sha": "bedb176c8d2d82534c506f5436b9ad098c0da8eb",
+          "url": "https://github.com/jmgasper/airos-ci/commit/bedb176c8d2d82534c506f5436b9ad098c0da8eb",
+          "date": "2026-10-26T04:11:41Z",
+          "subject": "Pi 4: Cortex-A72 tuned Mesa V3D/V3DV; rebuild Pi objects on a flags change"
+        },
+        {
+          "sha": "17c229bb8209494b0523805b8e02064cddf21506",
+          "url": "https://github.com/jmgasper/airos-ci/commit/17c229bb8209494b0523805b8e02064cddf21506",
+          "date": "2026-10-26T02:55:42Z",
+          "subject": "System Updater feed: tools of the image's own build; README"
+        },
+        {
+          "sha": "96826e5c8f9bc2e006f016ca734d98f36829feda",
+          "url": "https://github.com/jmgasper/airos-ci/commit/96826e5c8f9bc2e006f016ca734d98f36829feda",
+          "date": "2026-10-26T02:55:42Z",
+          "subject": "release-feed: boot files under their names on the boot partition"
+        },
+        {
+          "sha": "4a8f7217c34b90aea39653f2635498c2aafad1ae",
+          "url": "https://github.com/jmgasper/airos-ci/commit/4a8f7217c34b90aea39653f2635498c2aafad1ae",
+          "date": "2026-10-26T02:55:42Z",
+          "subject": "release-feed: optional packages, the Haiku source of a release"
+        },
+        {
+          "sha": "476001b76afb0ff62fd80b0f0efc0e912b17e5bc",
+          "url": "https://github.com/jmgasper/airos-ci/commit/476001b76afb0ff62fd80b0f0efc0e912b17e5bc",
+          "date": "2026-10-26T02:55:42Z",
+          "subject": "System Updater feed: release packages, per-target update feed"
+        },
+        {
+          "sha": "44baf2a9137cab98f559d29c28d1e6545391d162",
+          "url": "https://github.com/jmgasper/airos-ci/commit/44baf2a9137cab98f559d29c28d1e6545391d162",
+          "date": "2026-10-26T01:15:39Z",
+          "subject": "apps: AirTop and Code - OSS packages for x86_64 and arm64"
+        },
         {
           "sha": "2e0aa095338967dd21f563d31f641ebc1c318a42",
           "url": "https://github.com/jmgasper/airos-ci/commit/2e0aa095338967dd21f563d31f641ebc1c318a42",
@@ -29545,8 +29857,92 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "1c5a0eca2ec1aca2ba116f776c137e5fdf406ebe",
+      "head": "a08f88632607dba581462a71aacbbe2661d470ae",
       "commits": [
+        {
+          "sha": "a08f88632607dba581462a71aacbbe2661d470ae",
+          "url": "https://github.com/jmgasper/summit/commit/a08f88632607dba581462a71aacbbe2661d470ae",
+          "date": "2026-10-26T05:44:28Z",
+          "subject": "Extensions: a Safari extension's .app or .appex imports the web extension inside it (#106)"
+        },
+        {
+          "sha": "ecbbbf1a066cd8ba4bf9cf7c7bc9ddf6cd221131",
+          "url": "https://github.com/jmgasper/summit/commit/ecbbbf1a066cd8ba4bf9cf7c7bc9ddf6cd221131",
+          "date": "2026-10-26T05:38:23Z",
+          "subject": "Media: canPlayType says nothing for HLS while Media Source is on, so script players play live and encrypted streams (#115)"
+        },
+        {
+          "sha": "26b2052d7b1128b2c49164842ac81b6ca36aae99",
+          "url": "https://github.com/jmgasper/summit/commit/26b2052d7b1128b2c49164842ac81b6ca36aae99",
+          "date": "2026-10-26T05:24:08Z",
+          "subject": "Animations: off-screen animations of pseudo-elements are held back too; docs (#117)"
+        },
+        {
+          "sha": "6c29b906db2aef63b13160fe99239ba601a50845",
+          "url": "https://github.com/jmgasper/summit/commit/6c29b906db2aef63b13160fe99239ba601a50845",
+          "date": "2026-10-26T05:10:19Z",
+          "subject": "Animations: off-screen transform animations restyle every 200 ms; geometry queries move them first (#117)"
+        },
+        {
+          "sha": "9747c2810777c34d02b8bd25d133829bc27a217f",
+          "url": "https://github.com/jmgasper/summit/commit/9747c2810777c34d02b8bd25d133829bc27a217f",
+          "date": "2026-10-26T05:10:19Z",
+          "subject": "Animations: KeyframeEffect.cpp includes ContainerNodeInlines.h for Element::renderer() (#117)"
+        },
+        {
+          "sha": "4ba5825199a1b94a4c5236e1cb653d6afde95b0d",
+          "url": "https://github.com/jmgasper/summit/commit/4ba5825199a1b94a4c5236e1cb653d6afde95b0d",
+          "date": "2026-10-26T05:10:19Z",
+          "subject": "Animations: off-screen animations of paint-only properties do not restyle every tick (#117)"
+        },
+        {
+          "sha": "d1bcd11c7a21a69488d5f052629ca44c04f988f4",
+          "url": "https://github.com/jmgasper/summit/commit/d1bcd11c7a21a69488d5f052629ca44c04f988f4",
+          "date": "2026-10-26T05:09:59Z",
+          "subject": "DevTools: Cache Storage of frames from other sites (#108)"
+        },
+        {
+          "sha": "f14877c75e208f60fbc6749d297033bae8fe9f6d",
+          "url": "https://github.com/jmgasper/summit/commit/f14877c75e208f60fbc6749d297033bae8fe9f6d",
+          "date": "2026-10-26T05:00:40Z",
+          "subject": "DevTools: dragging nodes in the Elements tree moves them (#108)"
+        },
+        {
+          "sha": "e2489a43aaeb03f82c3eda8e21c036c7196e94fb",
+          "url": "https://github.com/jmgasper/summit/commit/e2489a43aaeb03f82c3eda8e21c036c7196e94fb",
+          "date": "2026-10-26T04:51:05Z",
+          "subject": "DevTools: a flame chart in Performance, and the panel shows at all (#108)"
+        },
+        {
+          "sha": "686b82a01e1b237fd55e1743d9cf816b3be2a7c1",
+          "url": "https://github.com/jmgasper/summit/commit/686b82a01e1b237fd55e1743d9cf816b3be2a7c1",
+          "date": "2026-10-26T03:44:52Z",
+          "subject": "Docs: network throttling and connections after a network change, checked on the X399 (#108, #129)"
+        },
+        {
+          "sha": "9dfc2106b9d9faae60e277c5c20fe61169ea35a1",
+          "url": "https://github.com/jmgasper/summit/commit/9dfc2106b9d9faae60e277c5c20fe61169ea35a1",
+          "date": "2026-10-26T03:44:52Z",
+          "subject": "Network: dead connections are ended by replacing their socket; Haiku's shutdown() waits for the peer (#129)"
+        },
+        {
+          "sha": "feadb3a39ea8cb2ac45622907632c19a92781bfd",
+          "url": "https://github.com/jmgasper/summit/commit/feadb3a39ea8cb2ac45622907632c19a92781bfd",
+          "date": "2026-10-26T03:44:52Z",
+          "subject": "Network: connections whose local address went away are closed, and their requests sent again (#129)"
+        },
+        {
+          "sha": "08f0506f1f59338305a13c0dc7fd4b0b19f43856",
+          "url": "https://github.com/jmgasper/summit/commit/08f0506f1f59338305a13c0dc7fd4b0b19f43856",
+          "date": "2026-10-26T03:44:52Z",
+          "subject": "DevTools: throttling latency holds curl requests back until resumed (#108)"
+        },
+        {
+          "sha": "83dbf9d4b95df3ff631129fb17c778f36ae52365",
+          "url": "https://github.com/jmgasper/summit/commit/83dbf9d4b95df3ff631129fb17c778f36ae52365",
+          "date": "2026-10-26T03:44:52Z",
+          "subject": "DevTools: network throttling (#108)"
+        },
         {
           "sha": "eee10a2c6accb778e3b1e489812a208655336b0a",
           "url": "https://github.com/jmgasper/summit/commit/eee10a2c6accb778e3b1e489812a208655336b0a",
@@ -36930,8 +37326,20 @@
       "branch": "main",
       "description": "Capture a screen, window or region. Add arrows, labels and markup, then save or copy.",
       "group": "Applications",
-      "head": "8f7f7944408126bc3beb6fe6b5671b8a83caf97a",
+      "head": "f1408e8a91d950dde81390c1b20498d5efa61f5b",
       "commits": [
+        {
+          "sha": "a2a67b5d3a3f485e80582a9bf2fc7a0ec80833cc",
+          "url": "https://github.com/jmgasper/airShot/commit/a2a67b5d3a3f485e80582a9bf2fc7a0ec80833cc",
+          "date": "2026-10-26T05:02:44Z",
+          "subject": "icons: refine silhouettes and restore the snapshot camera"
+        },
+        {
+          "sha": "6793940a06bcf5555a905239480827fdc5432854",
+          "url": "https://github.com/jmgasper/airShot/commit/6793940a06bcf5555a905239480827fdc5432854",
+          "date": "2026-10-26T04:30:17Z",
+          "subject": "icons: redraw the application icon to Haiku guidelines"
+        },
         {
           "sha": "a3e6ff7c520ed3154425dc4a4976f43f854cce36",
           "url": "https://github.com/jmgasper/airShot/commit/a3e6ff7c520ed3154425dc4a4976f43f854cce36",
@@ -36989,8 +37397,20 @@
       "branch": "main",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "group": "Applications",
-      "head": "feffab25cb2c54164e6f54624348d2cf660abbfb",
+      "head": "24b9cb6e96af5262319aa8c40cfcd8e5f0b5bf44",
       "commits": [
+        {
+          "sha": "7bd4b98afdbcc383183d77bcc6189569acb842dc",
+          "url": "https://github.com/jmgasper/airTime/commit/7bd4b98afdbcc383183d77bcc6189569acb842dc",
+          "date": "2026-10-26T05:02:44Z",
+          "subject": "icons: refine silhouettes and restore the snapshot camera"
+        },
+        {
+          "sha": "1ba8cb31621b3f38078df82b15234d920ea108ff",
+          "url": "https://github.com/jmgasper/airTime/commit/1ba8cb31621b3f38078df82b15234d920ea108ff",
+          "date": "2026-10-26T04:30:18Z",
+          "subject": "icons: redraw the application icon to Haiku guidelines"
+        },
         {
           "sha": "b8bf4d3e694801993673f0555d0ea457affa6e11",
           "url": "https://github.com/jmgasper/airTime/commit/b8bf4d3e694801993673f0555d0ea457affa6e11",
@@ -37318,8 +37738,26 @@
       "branch": "main",
       "description": "Your music library, playlists and Music Assistant streams in a native desktop player.",
       "group": "Applications",
-      "head": "71846ca0e46cc0583cc6ee7bc5f16e3bd75668f1",
+      "head": "5554e0f630bd049b5de85e976474323a863d17ce",
       "commits": [
+        {
+          "sha": "33405245e5698c568dc5012d80d22c0c45924d67",
+          "url": "https://github.com/jmgasper/amp/commit/33405245e5698c568dc5012d80d22c0c45924d67",
+          "date": "2026-10-26T05:13:29Z",
+          "subject": "icons: give Amp a distinct loudspeaker cone and surround"
+        },
+        {
+          "sha": "2adfaf749cca6d84754b365ba6a779ba3240d4b3",
+          "url": "https://github.com/jmgasper/amp/commit/2adfaf749cca6d84754b365ba6a779ba3240d4b3",
+          "date": "2026-10-26T05:02:44Z",
+          "subject": "icons: refine silhouettes and restore the snapshot camera"
+        },
+        {
+          "sha": "ef501ee05179d608fbed83097bd5f240b29eed71",
+          "url": "https://github.com/jmgasper/amp/commit/ef501ee05179d608fbed83097bd5f240b29eed71",
+          "date": "2026-10-26T04:30:18Z",
+          "subject": "icons: redraw the application icon to Haiku guidelines"
+        },
         {
           "sha": "f3696cd288025cc36ea9491bcb08b675fe42deee",
           "url": "https://github.com/jmgasper/amp/commit/f3696cd288025cc36ea9491bcb08b675fe42deee",
@@ -37574,8 +38012,20 @@
       "branch": "main",
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images.",
       "group": "Applications",
-      "head": "66bdd163eddc980f53ac49ed0a014d504ecdf12b",
+      "head": "31e955214004b137bd204c61ac4983a61c38fa83",
       "commits": [
+        {
+          "sha": "56f3b9d57f0ce9c3f64bb70c1e55a259af0a392e",
+          "url": "https://github.com/jmgasper/clipper/commit/56f3b9d57f0ce9c3f64bb70c1e55a259af0a392e",
+          "date": "2026-10-26T05:02:44Z",
+          "subject": "icons: refine silhouettes and restore the snapshot camera"
+        },
+        {
+          "sha": "138bfff0ed057b3ad67b164cb573ec0c2d27ca76",
+          "url": "https://github.com/jmgasper/clipper/commit/138bfff0ed057b3ad67b164cb573ec0c2d27ca76",
+          "date": "2026-10-26T04:30:17Z",
+          "subject": "icons: redraw the application icon to Haiku guidelines"
+        },
         {
           "sha": "2d0e0cf20e77c71d8ffb97364de698a581f6d482",
           "url": "https://github.com/jmgasper/clipper/commit/2d0e0cf20e77c71d8ffb97364de698a581f6d482",
@@ -37811,8 +38261,14 @@
       "branch": "main",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "group": "Applications",
-      "head": "d533472e4562530877fb8e35fb55feb5bb271fa8",
+      "head": "57823e1adcea2144ad8d25d2ee80fbe7d7320836",
       "commits": [
+        {
+          "sha": "4cbcc7fea619e454921a9715cbbfdc7921250fbc",
+          "url": "https://github.com/jmgasper/wordcraft/commit/4cbcc7fea619e454921a9715cbbfdc7921250fbc",
+          "date": "2026-10-26T04:14:33Z",
+          "subject": "HAIKU2: adopt an original Haiku-style application icon"
+        },
         {
           "sha": "3622b336528d5af21045f127751dcfda24259cd8",
           "url": "https://github.com/jmgasper/wordcraft/commit/3622b336528d5af21045f127751dcfda24259cd8",
@@ -37858,8 +38314,14 @@
       "branch": "main",
       "description": "Work with spreadsheets, formulas, charts and XLSX workbooks.",
       "group": "Applications",
-      "head": "86f9b2112e612b768c67a92cec422b4a52c1947d",
+      "head": "45e5d79a26179250a185f96c23644bb0ad43ee3d",
       "commits": [
+        {
+          "sha": "45e5d79a26179250a185f96c23644bb0ad43ee3d",
+          "url": "https://github.com/jmgasper/gridcraft/commit/45e5d79a26179250a185f96c23644bb0ad43ee3d",
+          "date": "2026-10-26T04:14:33Z",
+          "subject": "HAIKU2: adopt an original Haiku-style application icon"
+        },
         {
           "sha": "86f9b2112e612b768c67a92cec422b4a52c1947d",
           "url": "https://github.com/jmgasper/gridcraft/commit/86f9b2112e612b768c67a92cec422b4a52c1947d",
@@ -37887,8 +38349,14 @@
       "branch": "main",
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
       "group": "Applications",
-      "head": "d517c2437bd938ff4833e29f67c9895e39249500",
+      "head": "e70b460d58efa04dcc692a3eb94f7caa65d24d7a",
       "commits": [
+        {
+          "sha": "e70b460d58efa04dcc692a3eb94f7caa65d24d7a",
+          "url": "https://github.com/jmgasper/deckcraft/commit/e70b460d58efa04dcc692a3eb94f7caa65d24d7a",
+          "date": "2026-10-26T04:14:33Z",
+          "subject": "HAIKU2: adopt an original Haiku-style application icon"
+        },
         {
           "sha": "d517c2437bd938ff4833e29f67c9895e39249500",
           "url": "https://github.com/jmgasper/deckcraft/commit/d517c2437bd938ff4833e29f67c9895e39249500",
@@ -37910,8 +38378,14 @@
       "branch": "main",
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
       "group": "Applications",
-      "head": "4aedbb568b5b5807ecf0ca864b376e0205e52cba",
+      "head": "2553db3cfc6d3879897b9cb1c45d616bd8d0cf6f",
       "commits": [
+        {
+          "sha": "2553db3cfc6d3879897b9cb1c45d616bd8d0cf6f",
+          "url": "https://github.com/jmgasper/pdfcraft/commit/2553db3cfc6d3879897b9cb1c45d616bd8d0cf6f",
+          "date": "2026-10-26T04:14:33Z",
+          "subject": "HAIKU2: adopt an original Haiku-style application icon"
+        },
         {
           "sha": "4aedbb568b5b5807ecf0ca864b376e0205e52cba",
           "url": "https://github.com/jmgasper/pdfcraft/commit/4aedbb568b5b5807ecf0ca864b376e0205e52cba",
@@ -37933,8 +38407,26 @@
       "branch": "main",
       "description": "Native email client that replaces Haiku\u2019s Mail in x86-64 images.",
       "group": "Applications",
-      "head": "4d8c5188fd8cdbb9dfcc215bc83969ba89f24b66",
+      "head": "8051c470235c6d183085cf8a74fd5fdfece68434",
       "commits": [
+        {
+          "sha": "8051c470235c6d183085cf8a74fd5fdfece68434",
+          "url": "https://github.com/jmgasper/mail/commit/8051c470235c6d183085cf8a74fd5fdfece68434",
+          "date": "2026-10-26T05:41:51Z",
+          "subject": "Count and list conversations from an index, not the messages"
+        },
+        {
+          "sha": "741ad83bf4bb48cd0feb8534f05bd7a9ff19b935",
+          "url": "https://github.com/jmgasper/mail/commit/741ad83bf4bb48cd0feb8534f05bd7a9ff19b935",
+          "date": "2026-10-26T05:19:11Z",
+          "subject": "Reader: prefer the color emoji font in plain text"
+        },
+        {
+          "sha": "3eaadef2f90ff14284bc91c03064291c6d8ec493",
+          "url": "https://github.com/jmgasper/mail/commit/3eaadef2f90ff14284bc91c03064291c6d8ec493",
+          "date": "2026-10-26T04:34:05Z",
+          "subject": "Leave emoji to the system where it draws them in color"
+        },
         {
           "sha": "4d8c5188fd8cdbb9dfcc215bc83969ba89f24b66",
           "url": "https://github.com/jmgasper/mail/commit/4d8c5188fd8cdbb9dfcc215bc83969ba89f24b66",
@@ -37974,8 +38466,14 @@
       "branch": "main",
       "description": "Native code editor, Git tools and terminal.",
       "group": "Applications",
-      "head": "0950f3897a5133a42a50b9a2edaa0f098621b7b5",
+      "head": "4145a174215d001cbccd5066d86f17923d899d1f",
       "commits": [
+        {
+          "sha": "549d1832e0131ff4a319786bc4c6c017f67c84e4",
+          "url": "https://github.com/jmgasper/kiri/commit/549d1832e0131ff4a319786bc4c6c017f67c84e4",
+          "date": "2026-10-26T05:07:41Z",
+          "subject": "Terminal: draw emoji sequences across cells as one glyph"
+        },
         {
           "sha": "f6f740a61c9f497d75c30c79bc1aea221ef5a6e2",
           "url": "https://github.com/jmgasper/kiri/commit/f6f740a61c9f497d75c30c79bc1aea221ef5a6e2",
@@ -40316,19 +40814,19 @@
       "repo": "airShot",
       "description": "Capture a screen, window or region. Add arrows, labels and markup, then save or copy.",
       "release": "https://github.com/jmgasper/airShot/releases/tag/latest",
-      "published": "2026-10-17T21:24:38Z",
+      "published": "2026-10-26T05:03:17Z",
       "assets": [
         {
-          "name": "airshot-0.1.0.beta-8-arm64.hpkg",
-          "size": 181861,
-          "browser_download_url": "https://github.com/jmgasper/airShot/releases/download/latest/airshot-0.1.0.beta-8-arm64.hpkg",
-          "digest": "sha256:e0555a87383e7047fe21c341d933c48196ae4e38ea66d45ebb153a2f198e4838"
+          "name": "airshot-0.1.0.beta-10-arm64.hpkg",
+          "size": 182708,
+          "browser_download_url": "https://github.com/jmgasper/airShot/releases/download/latest/airshot-0.1.0.beta-10-arm64.hpkg",
+          "digest": "sha256:5b5bdd8fb146622151d0d84cb0a05e084644fba8c0dd7bd9a2dc9df36e21c138"
         },
         {
-          "name": "airshot-0.1.0.beta-8-x86_64.hpkg",
-          "size": 170603,
-          "browser_download_url": "https://github.com/jmgasper/airShot/releases/download/latest/airshot-0.1.0.beta-8-x86_64.hpkg",
-          "digest": "sha256:6caef42e273121fcdd449f8a6ba3b46e976a8b3710b805ccc34075afa7a879be"
+          "name": "airshot-0.1.0.beta-10-x86_64.hpkg",
+          "size": 171695,
+          "browser_download_url": "https://github.com/jmgasper/airShot/releases/download/latest/airshot-0.1.0.beta-10-x86_64.hpkg",
+          "digest": "sha256:91ed9ba583c439aabddef94c750cf27e9d0f2af3d0ae5cf1e75cebe626f4029d"
         }
       ]
     },
@@ -40337,19 +40835,19 @@
       "repo": "airTime",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "release": "https://github.com/jmgasper/airTime/releases/tag/latest",
-      "published": "2026-10-24T12:26:38Z",
+      "published": "2026-10-26T05:03:17Z",
       "assets": [
         {
-          "name": "airtime-1.0.0-22-arm64.hpkg",
-          "size": 238950,
-          "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-22-arm64.hpkg",
-          "digest": "sha256:9317465243dd7defbcf9bd859e72a2215add7962bc33edd7f51db7fbea6b18ea"
+          "name": "airtime-1.0.0-24-arm64.hpkg",
+          "size": 239417,
+          "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-24-arm64.hpkg",
+          "digest": "sha256:7f4480e4a9a1cd2d3402f27faaabcbba831940ac7e8236a451344ff2b45bb51c"
         },
         {
-          "name": "airtime-1.0.0-22-x86_64.hpkg",
-          "size": 236454,
-          "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-22-x86_64.hpkg",
-          "digest": "sha256:f987a4b23ee234ab3fa696ce206db86fd52f29ed1e88593f904362d83bffda29"
+          "name": "airtime-1.0.0-24-x86_64.hpkg",
+          "size": 236888,
+          "browser_download_url": "https://github.com/jmgasper/airTime/releases/download/latest/airtime-1.0.0-24-x86_64.hpkg",
+          "digest": "sha256:64f0b0cd2082bf639dcdf0ee29cf17f5dceb5403a5b1cd3efb63bac8098d1dc7"
         }
       ]
     },
@@ -40358,19 +40856,19 @@
       "repo": "amp",
       "description": "Your music library, playlists and Music Assistant streams in a native desktop player.",
       "release": "https://github.com/jmgasper/amp/releases/tag/latest",
-      "published": "2026-10-16T07:53:01Z",
+      "published": "2026-10-26T05:24:04Z",
       "assets": [
         {
-          "name": "amp-0.3.5.alpha-5-arm64.hpkg",
-          "size": 1139727,
-          "browser_download_url": "https://github.com/jmgasper/amp/releases/download/latest/amp-0.3.5.alpha-5-arm64.hpkg",
-          "digest": "sha256:0ab03209ab27b0834aa7f20eea4307466a1616007d47108ab5cc95eed83502da"
+          "name": "amp-0.3.5.alpha-8-arm64.hpkg",
+          "size": 1132853,
+          "browser_download_url": "https://github.com/jmgasper/amp/releases/download/latest/amp-0.3.5.alpha-8-arm64.hpkg",
+          "digest": "sha256:de0b468b0db6a10371725a46e6f9cd4956d15d5b90fecf77a2b690260e69d672"
         },
         {
-          "name": "amp-0.3.5.alpha-5-x86_64.hpkg",
-          "size": 1096764,
-          "browser_download_url": "https://github.com/jmgasper/amp/releases/download/latest/amp-0.3.5.alpha-5-x86_64.hpkg",
-          "digest": "sha256:ff0562755a7eeef5fd2ace7efa28f842434fd008faa6956b7524b3ed1de768e5"
+          "name": "amp-0.3.5.alpha-8-x86_64.hpkg",
+          "size": 1093925,
+          "browser_download_url": "https://github.com/jmgasper/amp/releases/download/latest/amp-0.3.5.alpha-8-x86_64.hpkg",
+          "digest": "sha256:d07ecfbf9309ac735e81df04d7ed4329654c93bfc67d5b70fd72d270c5f7a6bf"
         }
       ]
     },
@@ -40400,19 +40898,19 @@
       "repo": "clipper",
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images.",
       "release": "https://github.com/jmgasper/clipper/releases/tag/latest",
-      "published": "2026-10-20T01:48:23Z",
+      "published": "2026-10-26T05:03:16Z",
       "assets": [
         {
-          "name": "clipper-1.0.0-3-arm64.hpkg",
-          "size": 72217,
-          "browser_download_url": "https://github.com/jmgasper/clipper/releases/download/latest/clipper-1.0.0-3-arm64.hpkg",
-          "digest": "sha256:70434c316529d718e8fb6559cb430a0663ffa1cbacb7d059514e97a8123495ea"
+          "name": "clipper-1.0.0-5-arm64.hpkg",
+          "size": 73143,
+          "browser_download_url": "https://github.com/jmgasper/clipper/releases/download/latest/clipper-1.0.0-5-arm64.hpkg",
+          "digest": "sha256:0d1ee50cacf5c4afbbfca118cfbe6e52a9e37498499abf91119c5aa3562c9099"
         },
         {
-          "name": "clipper-1.0.0-3-x86_64.hpkg",
-          "size": 65575,
-          "browser_download_url": "https://github.com/jmgasper/clipper/releases/download/latest/clipper-1.0.0-3-x86_64.hpkg",
-          "digest": "sha256:58ba5cfb64b723049900ab62328138131e616f127cec59bb935aa820aa6c3209"
+          "name": "clipper-1.0.0-5-x86_64.hpkg",
+          "size": 66272,
+          "browser_download_url": "https://github.com/jmgasper/clipper/releases/download/latest/clipper-1.0.0-5-x86_64.hpkg",
+          "digest": "sha256:4c4c90f0c1fe2692e037aa149ef2a05c1ea7403d3d0377b0fc419a59caf828b2"
         }
       ]
     },
@@ -40473,19 +40971,19 @@
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
       "release": "https://github.com/jmgasper/wordcraft/releases/tag/latest",
-      "published": "2026-10-23T04:41:34Z",
+      "published": "2026-10-26T04:31:21Z",
       "assets": [
         {
-          "name": "wordcraft-0.7.0.airos1-6-arm64.hpkg",
-          "size": 23373772,
-          "browser_download_url": "https://github.com/jmgasper/wordcraft/releases/download/latest/wordcraft-0.7.0.airos1-6-arm64.hpkg",
-          "digest": "sha256:2df6dc10cd94531802b0d976da04e46dc65969c8338f22dcd1ccb3ff6b9355ab"
+          "name": "wordcraft-0.7.0.airos1-7-arm64.hpkg",
+          "size": 23374812,
+          "browser_download_url": "https://github.com/jmgasper/wordcraft/releases/download/latest/wordcraft-0.7.0.airos1-7-arm64.hpkg",
+          "digest": "sha256:58e26e1371c46e914bb2a9ef2307a4138d0347efc637c44bf4d787e6fe8ded9c"
         },
         {
-          "name": "wordcraft-0.7.0.airos1-6-x86_64.hpkg",
-          "size": 22604933,
-          "browser_download_url": "https://github.com/jmgasper/wordcraft/releases/download/latest/wordcraft-0.7.0.airos1-6-x86_64.hpkg",
-          "digest": "sha256:c109010a609d22a9f923d0c6da635fae00ca1e30a471f6a95dfa32c9752b33da"
+          "name": "wordcraft-0.7.0.airos1-7-x86_64.hpkg",
+          "size": 22606438,
+          "browser_download_url": "https://github.com/jmgasper/wordcraft/releases/download/latest/wordcraft-0.7.0.airos1-7-x86_64.hpkg",
+          "digest": "sha256:dfbfc30a468618cf3117a56ef9e2e839a2eaabf15424233ac2ca8f63a52f82d4"
         }
       ]
     },
@@ -40517,101 +41015,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261025192547-37e268ef01",
-      "published": "2026-10-25T19:29:26Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261026065411-8dffc3fcde",
+      "published": "2026-10-26T06:58:19Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1121203016,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261025192547-37e268ef01/airos-x86_64.iso.xz",
-          "digest": "sha256:0863e7755cead20e659b7923cb92b16184a581fce6899ffc706301d1717d0010"
+          "size": 1128273936,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026065411-8dffc3fcde/airos-x86_64.iso.xz",
+          "digest": "sha256:ca09e4d27e701ff0a437c0b5800d24cc6ee23d240b474447795df4b27c9f017b"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261025192547-37e268ef01/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:d81a02be865ba4defd8789aa2ed680aa4aefc532628f4b2d3c4a9bc4c50a5faf"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026065411-8dffc3fcde/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:af726415108f8f73e161f7500d320c473db39f6f9e8712aec68e4039d0c66822"
         },
         {
           "name": "manifest.json",
-          "size": 13069,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261025192547-37e268ef01/manifest.json",
-          "digest": "sha256:1798a37b3097cc05575a0642a583091487571ca826e972b47fc370b5492867a9"
+          "size": 13070,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026065411-8dffc3fcde/manifest.json",
+          "digest": "sha256:c977201446d0ba3dbc4aee7985574d71ce054bf54b983f6520fc0471cf7e1f64"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261025190303-37e268ef01",
-      "published": "2026-10-25T19:06:53Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261026061102-2cf9463810",
+      "published": "2026-10-26T06:14:28Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 593070828,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261025190303-37e268ef01/airos-arm64.iso.xz",
-          "digest": "sha256:cfd76a26a0014a82c00b31f51ad7306c1e5a4089233b98e5003902197e683256"
+          "size": 599514752,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026061102-2cf9463810/airos-arm64.iso.xz",
+          "digest": "sha256:fb143012824858ac5b8fc8d57a1e92af05a3572bbdd603e3653d6e6aa0471766"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261025190303-37e268ef01/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:734b952bb848091da17695926f953d060108474a2d0e255b83febbdecd650c34"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026061102-2cf9463810/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:4a71ccbb38aa344b049b33232904949880de358bb1cf2d9b82aac8dc5bd6e399"
         },
         {
           "name": "manifest.json",
-          "size": 12452,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261025190303-37e268ef01/manifest.json",
-          "digest": "sha256:0dd466d41863be4f1c1ede5e893c62ffacbcad21b01c44201fa21bc26ebdfada"
+          "size": 12453,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026061102-2cf9463810/manifest.json",
+          "digest": "sha256:e86d7dcd7f882a7d012cf6965aec2096c7b9b98d0e1444b8e89bde4c0fd51157"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261025185534-37e268ef01",
-      "published": "2026-10-25T18:57:04Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261026062310-8dffc3fcde",
+      "published": "2026-10-26T06:24:49Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 586359468,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261025185534-37e268ef01/airos-rpi4.img.xz",
-          "digest": "sha256:b4dc54256cdaa997610414eaa0b2ceba56cd7490be6e24454b18710ec3dbfc4f"
+          "size": 588827448,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026062310-8dffc3fcde/airos-rpi4.img.xz",
+          "digest": "sha256:1fb0ff6ffb377e50e1475d5b3dc2a4b1cd8d687fedb99d4f0f27fa2167b00349"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261025185534-37e268ef01/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:22d00c3d6fa2b766760a468aa2ab9c760fd344a8abe6c02e6d1d8ffd961253eb"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026062310-8dffc3fcde/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:77c08878a15415d6f4d24cc936707cdd646b77fbc33d95515bf09a5980f69d33"
         },
         {
           "name": "manifest.json",
-          "size": 10527,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261025185534-37e268ef01/manifest.json",
-          "digest": "sha256:57f33b73034151004c9fd7c17631cd9ce287058f76cef3403697971c533d5811"
+          "size": 10528,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026062310-8dffc3fcde/manifest.json",
+          "digest": "sha256:2e82bc0899620b97916db95bd098c06480adeb778936d828789daf828160964a"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261025184652-37e268ef01",
-      "published": "2026-10-25T18:50:22Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261026062928-8dffc3fcde",
+      "published": "2026-10-26T06:33:57Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 586182988,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261025184652-37e268ef01/airos-cubie.img.xz",
-          "digest": "sha256:8f0d9449183bde42d97dac9cca94ee26d43d39a8a690f01eb85717055b84303b"
+          "size": 587989912,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026062928-8dffc3fcde/airos-cubie.img.xz",
+          "digest": "sha256:4d9ccccd5770d313242d5a84932b56bd14092e89c2f55aeac14ba762e131ee39"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261025184652-37e268ef01/airos-cubie.img.xz.sha256",
-          "digest": "sha256:bc9a33380db38c63b73d04a0fc7ce104c27e0d0b47d424543d4a813060d1f44b"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026062928-8dffc3fcde/airos-cubie.img.xz.sha256",
+          "digest": "sha256:f404035d59822ab9ca2411c36fe8dc2b2587f3ec70cacea3a7e3931527d28ff0"
         },
         {
           "name": "manifest.json",
-          "size": 13772,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261025184652-37e268ef01/manifest.json",
-          "digest": "sha256:fdc715ad245017f5d554d540a2f100bf1ea74cf092f2b5a3e10ec05824b9cad4"
+          "size": 13773,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026062928-8dffc3fcde/manifest.json",
+          "digest": "sha256:66b231c210ae4a39687ba04c6293aed29abcdb2ff5ed06e4507fa599e89f0979"
         }
       ]
     }
