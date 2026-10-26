@@ -65,7 +65,17 @@ searches its full local archive.
 App icons in `static/assets/icons/` are each app's own HVIF icon (the `BEOS:ICON`
 attribute of the installed app on the X399, or the `.hvif` resource in the app's
 source for the Craft apps, Code - OSS, GitHub Desktop and Clipper), rendered to
-PNG by Haiku's `BIconUtils` on the X399.
+PNG by Haiku's `BIconUtils` on the X399. The six Craft icons were redesigned on
+26 October 2026 as original Haiku-style vector artwork: WordCraft's writing page
+and pen, GridCraft's spreadsheet ledger, PDFCraft's pages and annotation pencil,
+DeckCraft's presentation screen, PhotoCraft's print and brush, and LightCraft's
+photo collection and exposure dial. Their 96-pixel transparent PNGs were rendered
+from the exact `BEOS:ICON` bytes recovered after compiling each fork's `.rdef`
+resource with Haiku's `rc` and applying it with `resattr`. This checks the same
+resource path the packages use. Native renders at 16, 32, 64 and 128 pixels were
+also reviewed on light and dark backgrounds. Each fork retains its generator,
+HVIF, editable SVG export and MIT OR Apache-2.0 attribution. Immutable source links
+and hashes are recorded in [`content/craft-icons.json`](content/craft-icons.json).
 
 Curated content lives in `content/`. `static/assets/` holds the logo, original
 captures, CSS and JavaScript. The build produces `dist/`. Screenshots are real captures, with capture dates, dimensions and provenance in
