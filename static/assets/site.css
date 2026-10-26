@@ -181,6 +181,10 @@ body.home .header-inner nav{background:rgb(255 255 255 / .55);border-color:rgb(2
 .install>*{min-width:0}.install h2{font-size:30px}.install p{font-size:14.5px;color:var(--muted)}
 pre{padding:18px 22px;border-radius:var(--r-sm);background:var(--night);color:#dfe9e6;overflow:auto;font-family:var(--mono);font-size:13px}
 .install pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.install li{font-size:14.5px;color:var(--muted);margin-bottom:8px}.install li strong,.install p strong{color:var(--ink)}
+.install :not(pre)>code,.note code{font-family:var(--mono);font-size:.9em;padding:1px 6px;background:var(--panel);border-radius:6px;overflow-wrap:anywhere}.note code{background:var(--white)}
+.note.caution{border-left:4px solid var(--sun)}
+.install+.install{margin-top:-70px}
 
 /* Source */
 .source-list{border-top:1px solid var(--line)}
@@ -261,7 +265,7 @@ summary{cursor:pointer;color:var(--deep);font-weight:600}
   .feature-capture>a{padding:14px;border-radius:var(--r)}
   .hardware-row{padding:38px 0}.hardware-row h2{font-size:32px}
   .app-card{padding:24px}.app-meta{flex-wrap:wrap}
-  .install{gap:8px;margin:44px 0 20px;padding:32px 0}
+  .install{gap:8px;margin:44px 0 20px;padding:32px 0}.install+.install{margin-top:-20px}
   .source-list article{grid-template-columns:1fr;gap:12px}
   .source-ref{flex-direction:row;align-items:center;flex-wrap:wrap;gap:14px}
   .change-stats{gap:14px;flex-wrap:wrap;font-size:12px}

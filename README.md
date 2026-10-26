@@ -41,6 +41,10 @@ both from the repository's actual Pages configuration.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds.
 - New hardware: curated capabilities, gaps and links to the lab's test notes.
 - Downloads: actual public `.hpkg` release assets, plus immutable OS images.
+- Writing an image (`downloads/write/`): `dd` on Linux and macOS, Rufus in DD mode on
+  Windows, checking the download and the written copy. It warns against balenaEtcher:
+  2.1.4 silently dropped 2 MB from the x86-64 ISO while writing a USB stick (the same
+  file via `dd` booted).
 - Source: the operating system, apps and every branch in the CI fork manifest.
 - Changelog: the owner's own commits to the forks and apps, monthly archives and global search.
 

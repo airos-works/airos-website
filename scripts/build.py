@@ -25,7 +25,7 @@ def link(href, label, cls=''):
 
 def page(path, title, description, body):
     canonical = ORIGIN + '/' + path
-    current = lambda p: p == path or p == 'changelog/' and path.startswith(p)
+    current = lambda p: p == path or p in ('changelog/', 'downloads/') and path.startswith(p)
     nav = ''.join(link(url(p), t, 'active' if current(p) else '') for p, t in NAV if p != 'downloads/')
     cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
     footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV)
@@ -213,7 +213,7 @@ def downloads():
         else:
             body += '<p class="availability">Public image coming soon</p>' + link('https://github.com/jmgasper/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
         body += '</div></article>'
-    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. Extract the ISO images before writing them to USB. For Pi 4 and Cubie A7S, flash the SD image with a tool that supports .xz, such as Etcher; the ARM64 ISO is for UEFI machines and does not boot either board.</aside>'
+    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. The ARM64 ISO is for UEFI machines and does not boot the Pi 4 or Cubie A7S. <strong>Write every image with dd or Rufus, not balenaEtcher,</strong> which has corrupted an airOS image without reporting an error. '+link(url('downloads/write/'), 'How to write an image to USB or SD safely →')+'</aside>'
     # Each package links back to its feature row on the apps page.
     features = {item['download'].split('#')[1]: item['id'] for tab in app_tabs()['tabs'] for item in tab.get('items', [])
                 if item.get('download', 'downloads/#system') != 'downloads/#system'}
@@ -245,6 +245,46 @@ def downloads():
         body += '</article>'
     body += '</div><section class="install"><h2>Installing an app</h2><div><p>Choose the package for your architecture. Open it with Haiku’s package installer, or run:</p><pre><code>pkgman install /path/to/package.hpkg</code></pre><p>Packages target airOS unless their release notes say otherwise. For stock Haiku, use the dedicated Summit build. Follow dependency notes and install Summit together with its matching WebKit engine.</p></div></section>'
     page('downloads/', 'Downloads', 'Download airOS images and native app packages for ARM64 and x86-64.', body)
+
+def write_guide():
+    pre = lambda *lines: '<pre><code>' + e('\n'.join(lines)) + '</code></pre>'
+    body = intro('Downloads · Writing an image', 'From download to first boot.', 'Every airOS image, ISO or SD, is written the same way: the whole file, byte for byte, onto the whole USB stick or SD card. Check the download first and, where you can, the copy afterwards.')
+    body += '''<aside class="note caution"><strong>Don’t use balenaEtcher.</strong> balenaEtcher 2.1.4 silently dropped 2 MB from the middle of the x86-64 image while writing it to a USB stick. It reported success; the stick started the boot loader, which then stopped with “No boot volume found”. The same file written with <code>dd</code> booted normally. Etcher wrote a Pi 4 image correctly, but because the failure gives no warning we don’t recommend it for any airOS image. Use <code>dd</code> on Linux and macOS, and Rufus in DD mode on Windows.</aside>'''
+    body += '<section class="install"><h2>Before you start</h2><div><ul>'
+    body += '<li>A USB stick or SD card of 8 GB or more. Writing erases everything on it.</li>'
+    body += '<li>The ISO images (x86-64 and ARM64) go on a USB stick; the Pi 4 and Cubie A7S images go on an SD card and boot directly.</li>'
+    body += '<li>Download the image and its <strong>SHA-256</strong> file from the ' + link(url('downloads/#system'), 'downloads page') + ' into the same folder. If your browser renamed the image, such as <code>airos-rpi4(1).img.xz</code>, an older download is in the folder: remove it so you don’t write the wrong file.</li>'
+    body += '<li>Check the download. Each command should report <code>OK</code> or print the hash in the SHA-256 file.</li></ul>'
+    body += pre('# Linux', 'sha256sum -c airos-x86_64.iso.xz.sha256', '', '# macOS', 'shasum -a 256 -c airos-x86_64.iso.xz.sha256', '', '# Windows (PowerShell)', 'Get-FileHash .\\airos-x86_64.iso.xz')
+    body += '<p>Replace <code>airos-x86_64.iso.xz</code> with the image you downloaded throughout this guide.</p></div></section>'
+    body += '<section class="install" id="linux"><h2>Linux</h2><div><ol>'
+    body += '<li>Insert the stick or card and find its device name. Match the size and model: USB devices are <code>/dev/sdX</code>, built-in card readers <code>/dev/mmcblkN</code>.</li></ol>'
+    body += pre('lsblk -o NAME,SIZE,MODEL,TRAN')
+    body += '<ol start="2"><li>Unmount any of its partitions your desktop mounted (ignore “not mounted” messages), then decompress and write the image to the <strong>whole device</strong>, not a partition such as <code>sdX1</code>:</li></ol>'
+    body += pre('sudo umount /dev/sdX?*', 'xz -dc airos-x86_64.iso.xz | sudo dd of=/dev/sdX bs=4M conv=fsync oflag=direct status=progress', 'sync')
+    body += '<p>Double-check the device name: <code>dd</code> overwrites whatever disk you give it without asking. Don’t remove the stick until the prompt returns after <code>sync</code>.</p></div></section>'
+    body += '<section class="install" id="macos"><h2>macOS</h2><div><ol>'
+    body += '<li>macOS doesn’t include <code>xz</code>. Install it with Homebrew (<code>brew install xz</code>), or extract the image with an archive app such as Keka or The Unarchiver and use <code>if=airos-x86_64.iso</code> in step 3 instead of the pipe.</li>'
+    body += '<li>Insert the stick or card, find its disk number by its size, and unmount it:</li></ol>'
+    body += pre('diskutil list external', 'diskutil unmountDisk /dev/diskN')
+    body += '<ol start="3"><li>Write to the raw device <code>/dev/rdiskN</code> (faster than <code>/dev/diskN</code>). Press Ctrl-T to see progress.</li></ol>'
+    body += pre('xz -dc airos-x86_64.iso.xz | sudo dd of=/dev/rdiskN bs=4m', 'diskutil eject /dev/diskN')
+    body += '<p>If macOS says the disk isn’t readable, choose <strong>Ignore</strong> or <strong>Eject</strong>, never <strong>Initialize</strong>: macOS can’t read Haiku’s file system, and the disk is fine.</p></div></section>'
+    body += '<section class="install" id="windows"><h2>Windows</h2><div><ol>'
+    body += '<li>Extract the image with ' + link('https://www.7-zip.org/', '7-Zip') + ': right-click the <code>.xz</code> file and choose <strong>7-Zip → Extract Here</strong>. You get <code>airos-x86_64.iso</code> or an <code>.img</code> file.</li>'
+    body += '<li>Run ' + link('https://rufus.ie/', 'Rufus') + ' and choose the stick or card under <strong>Device</strong>. Rufus lists USB devices, including SD cards in a USB reader.</li>'
+    body += '<li>Click <strong>Select</strong> and open the extracted file. Leave the other settings alone.</li>'
+    body += '<li>Click <strong>Start</strong>. If Rufus asks how to write the image, choose <strong>Write in DD Image mode</strong>. ISO Image mode copies files onto a new FAT partition and the stick won’t boot.</li>'
+    body += '<li>Confirm that the device will be erased and wait for <strong>Ready</strong>. If Windows then offers to format the disk, click <strong>Cancel</strong>: Windows can’t read Haiku’s file system, and formatting would erase the image.</li></ol></div></section>'
+    body += '<section class="install" id="verify"><h2>Check the copy</h2><div><p>A corrupted write can still look normal, so on Linux and macOS read the image back from the device and compare it with the build. Open the image’s <strong>Build manifest</strong> on the downloads page: <code>image_bytes</code> is the image’s uncompressed size and <code>image_sha256</code> its uncompressed hash.</p>'
+    body += pre('# Linux', 'sudo head -c IMAGE_BYTES /dev/sdX | sha256sum', '', '# macOS (insert the disk again if you ejected it)', 'sudo head -c IMAGE_BYTES /dev/diskN | shasum -a 256')
+    body += '<p>The printed hash must equal <code>image_sha256</code>. If it doesn’t, write the image again, and try another stick or card if it still differs.</p></div></section>'
+    body += '<section class="install" id="booting"><h2>If it doesn’t boot</h2><div><ul>'
+    body += '<li><strong>PCs:</strong> turn off Secure Boot in the firmware settings. The airOS boot loader isn’t signed.</li>'
+    body += '<li><strong>“No boot volume found”</strong> after the boot loader appears usually means the copy is damaged. Check it as above and rewrite it with <code>dd</code> or Rufus.</li>'
+    body += '<li><strong>Pi 4 and Cubie A7S:</strong> use the SD image for that board; the ARM64 ISO doesn’t boot either one. The ' + link(url('hardware/'), 'hardware notes') + ' list what each board supports.</li></ul></div></section>'
+    body += '<div class="actions">' + link(url('downloads/#system'), '← Back to the downloads', 'button') + '</div>'
+    page('downloads/write/', 'Writing an image', 'How to write airOS images to a USB stick or SD card with dd on Linux and macOS or Rufus on Windows, why not to use balenaEtcher, and how to check the copy.', body)
 
 def sources():
     body = intro('Source code', 'Every part has a story.', 'The operating system, applications, libraries and firmware that make up airOS. Explore the code, its origins and the changes we build on.')
@@ -299,7 +339,7 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / 'static', OUT)
-    for build in [home, applications, summit, hardware, downloads, sources, changelog]:
+    for build in [home, applications, summit, hardware, downloads, write_guide, sources, changelog]:
         build()
     page('404/', 'Page not found', 'This airOS page could not be found.', intro('404', 'A little off course.', 'This page has moved or does not exist.') + link(url(), 'Back to the project →', 'button primary'))
     shutil.copy(OUT / '404/index.html', OUT / '404.html')
