@@ -80,18 +80,17 @@
   {
     "name": "Radxa Dragon Q8B",
     "chip": "ARM64 · Qualcomm Snapdragon 8cx Gen 3 (SC8280XP)",
-    "status": "Bring-up in progress",
-    "summary": "A Snapdragon desktop board, booting airOS through its UEFI firmware.",
-    "features_title": "Working so far",
+    "status": "Tested on hardware",
+    "summary": "A Snapdragon desktop board with accelerated graphics, hardware video and two Ethernet ports, installed from the ARM64 ISO.",
     "features": [
-      "UEFI boot with the firmware’s display resolution and on-screen kernel output",
-      "All eight Kryo CPU cores, from the device tree",
-      "Native PCIe host driver and GICv3 ITS: NVMe on MSI-X, reading at 795 MB/s",
-      "USB 3 through the Qualcomm DWC3 controllers",
-      "Kernel serial console on the GENI debug UART"
+      "Installs from the ARM64 UEFI ISO onto the NVMe or an SD card, and boots from either",
+      "Adreno 690 graphics: Vulkan 1.3 with Mesa Turnip, OpenGL ES 3.2 and OpenGL through Zink, and WebGL 2 in Summit at 60 fps",
+      "Hardware H.264 and HEVC decoding and encoding on the Iris video codec, in airTime, Summit and MediaConverter",
+      "HDMI and both USB-C DisplayPort outputs as one desktop",
+      "Both Ethernet ports, Intel AX210 Wi-Fi 6, USB 3 and the SD card slot",
+      "Headphone and headset audio through the audio DSP, with HDMI and USB-C DisplayPort sound outputs"
     ],
-    "limits": "Adreno graphics, video decoding, Ethernet, Wi-Fi, Bluetooth and audio are not yet working, and there is no public image. This work lives on the <code>dragon-q8b</code> branch until it is merged.",
-    "source_url": "https://github.com/jmgasper/haiku/commits/dragon-q8b",
+    "limits": "Bluetooth pairing, the power button, a voice recorded on the headset microphone and sound heard from the HDMI and DisplayPort outputs are not yet verified. A USB-C hub’s HDMI port has not shown a picture yet. Ethernet is tested at 1 Gbit/s on a gigabit switch.",
     "id": "dragon",
     "image": {
       "file": "dragon-q8b.webp",
@@ -102,7 +101,15 @@
       "credit": "Radxa",
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/"
-    }
+    },
+    "source": "docs/dragon-q8b/STATUS.md",
+    "links": [
+      {
+        "label": "USB-C DisplayPort",
+        "path": "docs/dragon-q8b/USB-C-DISPLAYPORT.md"
+      }
+    ],
+    "download": "arm64"
   },
   {
     "name": "Raspberry Pi 4",

@@ -76,7 +76,7 @@
           "title": "AirTime",
           "text": "A movie player with a classic feel that plays anything FFmpeg reads, using the hardware video decoder where the machine has one.",
           "features": [
-            "Hardware decoding on AMD UVD, NVIDIA NVDEC, ROCK 5 MPP, Raspberry Pi 4 and Cubie A7S, with libavcodec as the fallback",
+            "Hardware decoding on AMD UVD, NVIDIA NVDEC, ROCK 5 MPP, Raspberry Pi 4, Cubie A7S and the Dragon Q8B’s Iris codec, with libavcodec as the fallback",
             "The Movie Inspector shows which decoder is in use",
             "HDR10 and HLG tone mapping, deinterlacing and sharp drawing on scaled displays",
             "SRT, ASS, WebVTT, PGS, VobSub and DVB subtitles, CEA-608 captions and J/K/L scanning"
@@ -327,7 +327,7 @@
       "heading": "Haiku’s own apps, reworked",
       "tag": "Included in airOS system builds",
       "lead": "The apps and preferences that come with the system have been rebuilt or added: clearer Media preferences, a new MediaConverter, new Wi-Fi and Bluetooth panels, Quick Look and network shares in Tracker, a new Mail app and a faster Terminal.",
-      "note": "GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use. Other codecs and devices may use the CPU. Check MediaConverter’s Video hardware window for the current machine. Wi-Fi and Bluetooth have been tested with Intel AX210, MediaTek MT7922 and AIC8800 radios; see the hardware notes for other cards.",
+      "note": "GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use; the Dragon Q8B encodes H.264 and HEVC on its Iris codec. Other codecs and devices may use the CPU. Check MediaConverter’s Video hardware window for the current machine. Wi-Fi and Bluetooth have been tested with Intel AX210, MediaTek MT7922 and AIC8800 radios; see the hardware notes for other cards.",
       "items": [
         {
           "id": "media-preferences",
