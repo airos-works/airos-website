@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T14:11:47+00:00",
+  "updated": "2026-10-26T18:47:51+00:00",
   "ci_head": "23b1d1732de21e38a80e86410d4a7f9b980ce374",
   "sources": [
     {
@@ -29893,8 +29893,14 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "5bba3c2f3b13ac6a23559c0c84e0a3f7eb3e2771",
+      "head": "805019bb2a6a062a53f647af3927cb252f26e623",
       "commits": [
+        {
+          "sha": "805019bb2a6a062a53f647af3927cb252f26e623",
+          "url": "https://github.com/jmgasper/summit/commit/805019bb2a6a062a53f647af3927cb252f26e623",
+          "date": "2026-10-26T18:35:04Z",
+          "subject": "Scroll bars: Haiku's classic ones, as BScrollBar draws them (#114)"
+        },
         {
           "sha": "5bba3c2f3b13ac6a23559c0c84e0a3f7eb3e2771",
           "url": "https://github.com/jmgasper/summit/commit/5bba3c2f3b13ac6a23559c0c84e0a3f7eb3e2771",
@@ -41063,101 +41069,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261026104523-1dc5d25d68",
-      "published": "2026-10-26T10:49:32Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-x86_64-20261026155943-1dc5d25d68",
+      "published": "2026-10-26T16:03:50Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1130401660,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026104523-1dc5d25d68/airos-x86_64.iso.xz",
-          "digest": "sha256:e0d77fcfeef1bbb036b2ba1a4bfe1d059f16463cd222bcda48d99db086f21882"
+          "size": 1130401932,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026155943-1dc5d25d68/airos-x86_64.iso.xz",
+          "digest": "sha256:d165cdb8b4ac0621ed93fc1b4dd77ad68e0ddb310e6fdb4a6e98afabad9ad3f9"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026104523-1dc5d25d68/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:73f526b7e998398b617a7ee0b2cfde1ef6f337d3ca85e70958068b1cd8631715"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026155943-1dc5d25d68/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:9d378dd83c239a0b2cab726a6208062de76f093e6349abfee4cbfffe891967d3"
         },
         {
           "name": "manifest.json",
           "size": 13210,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026104523-1dc5d25d68/manifest.json",
-          "digest": "sha256:3fbadda0916dd38e5d5eb543062ecdfaf189375404c3d1c413c84e2ce8277479"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-x86_64-20261026155943-1dc5d25d68/manifest.json",
+          "digest": "sha256:f92c3497b2af59a409bdfb064421463eddf4acf1bc6b88864ebc59046d360733"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261026100805-1dc5d25d68",
-      "published": "2026-10-26T10:11:34Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-arm64-20261026161515-1dc5d25d68",
+      "published": "2026-10-26T16:18:36Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 604141196,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026100805-1dc5d25d68/airos-arm64.iso.xz",
-          "digest": "sha256:468efe5b5421022572381c29c5602ec8576d4732685326300a9d4217ba669842"
+          "size": 604140016,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026161515-1dc5d25d68/airos-arm64.iso.xz",
+          "digest": "sha256:2b4cc5ab1425c45f74a267a9e84ce7a5d98bd8a95805c36da0b24107329c9e81"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026100805-1dc5d25d68/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:c6927ecba89a3d6eb4db76ff0a2d08a7ea82fb65e69887ab491d72686fd42daa"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026161515-1dc5d25d68/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:fe08aebc5589e975ccc428873bd0f702c58afb33ef0ce0fc5dcdb027642c0169"
         },
         {
           "name": "manifest.json",
           "size": 12592,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026100805-1dc5d25d68/manifest.json",
-          "digest": "sha256:244c2642822cc2dbcfb91d81b8d9a19261338e5e88e955edbf8d7a30b41c209e"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-arm64-20261026161515-1dc5d25d68/manifest.json",
+          "digest": "sha256:a8e371359293a38642ec7a71b3d254562bf7eb2dd03a5a8500eace6029d88512"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261026101552-1dc5d25d68",
-      "published": "2026-10-26T10:17:35Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-rpi4-20261026160806-1dc5d25d68",
+      "published": "2026-10-26T16:09:41Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 593389568,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026101552-1dc5d25d68/airos-rpi4.img.xz",
-          "digest": "sha256:8e7c51721b929ef4e5e6f0ec086034e23bce8a40e9ed2d7a58f58ad94d774f63"
+          "size": 593390472,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026160806-1dc5d25d68/airos-rpi4.img.xz",
+          "digest": "sha256:65919cf2282b31f52fe28acf862cdbccc43973cf068d3f7e1344011992635f3e"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026101552-1dc5d25d68/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:dc6d09de3d8b622f5c3110f8b45dade324e9971943298353821745b58341528c"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026160806-1dc5d25d68/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:8770b357c285d9bd83b449c6553a6d62d788720222fa338973eedb0cbf16af9e"
         },
         {
           "name": "manifest.json",
           "size": 10667,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026101552-1dc5d25d68/manifest.json",
-          "digest": "sha256:8a074f6b900a8f9eddfc7235a1d00ee40024f70566582ba9a7f517055c1d3260"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-rpi4-20261026160806-1dc5d25d68/manifest.json",
+          "digest": "sha256:185a3aff802b032173173de44acf226ec6e919ecc5036b4fa2afa1d4338b830d"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261026102208-1dc5d25d68",
-      "published": "2026-10-26T10:25:40Z",
+      "release": "https://github.com/jmgasper/haiku/releases/tag/image-cubie-20261026154456-1dc5d25d68",
+      "published": "2026-10-26T15:48:18Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 592588644,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026102208-1dc5d25d68/airos-cubie.img.xz",
-          "digest": "sha256:92ad4ddfc6a54c986e8334e847795ff6b7a80d9241189f8a294e941260211f96"
+          "size": 592589452,
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026154456-1dc5d25d68/airos-cubie.img.xz",
+          "digest": "sha256:efcdec67da35d3c0fb14493606503bf9e884b11d6489ce04fc2bec9e58615f86"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026102208-1dc5d25d68/airos-cubie.img.xz.sha256",
-          "digest": "sha256:db1778c00c0aaaba042e4b81c64d186911c5598692f1fbc01e955b5439ea2012"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026154456-1dc5d25d68/airos-cubie.img.xz.sha256",
+          "digest": "sha256:38ee31885f480b0e0cabb9804194ac85015c614cca2c2d31ffae52bfc40f39c8"
         },
         {
           "name": "manifest.json",
           "size": 13912,
-          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026102208-1dc5d25d68/manifest.json",
-          "digest": "sha256:351b218019338bedbee2f10af884f4da4cb76c7ca854d18ab4ace79373b9ad7c"
+          "browser_download_url": "https://github.com/jmgasper/haiku/releases/download/image-cubie-20261026154456-1dc5d25d68/manifest.json",
+          "digest": "sha256:fd9713176047872b01acd8b5c9613b58fb80c337edb507da75612c1d6f6cfab3"
         }
       ]
     }
