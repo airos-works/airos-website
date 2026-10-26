@@ -7,34 +7,34 @@
     {
       "app": "clipper",
       "author": "Clipper contributors",
-      "source": "https://github.com/jmgasper/clipper/blob/138bfff0ed057b3ad67b164cb573ec0c2d27ca76/resources/clipper.hvif",
-      "hvif_sha256": "0f9b42dff9375393f62ff95480b886d6b33f57ad5611ee8385f49fcb841ea04c",
+      "source": "https://github.com/jmgasper/clipper/blob/56f3b9d57f0ce9c3f64bb70c1e55a259af0a392e/resources/clipper.hvif",
+      "hvif_sha256": "82ebe1e4648d6d939d8b4ca3a9be337aadb0ea39793e56f8985a6d9d3b276577",
       "png": "static/assets/icons/clipper.png",
-      "png_sha256": "4108fee60ac77cfc36d5ee318224fd8d1418d9b34cf730e1770650058dd58734"
+      "png_sha256": "6758016c7f497de412460b2c33e8c797c49ef9453063ca155ae5dbf53b829a49"
     },
     {
       "app": "airshot",
       "author": "airShot contributors",
-      "source": "https://github.com/jmgasper/airShot/blob/6793940a06bcf5555a905239480827fdc5432854/resources/branding/airshot-icon.hvif",
-      "hvif_sha256": "588f0920e7ac0d7fdd7ee29efdc6b6c077e85c50cc2ff3249a103f837b2b5719",
+      "source": "https://github.com/jmgasper/airShot/blob/a2a67b5d3a3f485e80582a9bf2fc7a0ec80833cc/resources/branding/airshot-icon.hvif",
+      "hvif_sha256": "6ebaf32ee4114f79c69b84be802473395ec2da20ef6af603ff0c828098c22865",
       "png": "static/assets/icons/airshot.png",
-      "png_sha256": "5c6b718cdabe85fd313795c96d73320838415b849d954af254bd41c9e443fe03"
+      "png_sha256": "0193118d005f9cea1b34670dab8f4c0d100ea61928dc386ad92c9d18df419f51"
     },
     {
       "app": "airtime",
       "author": "airTime contributors",
-      "source": "https://github.com/jmgasper/airTime/blob/1ba8cb31621b3f38078df82b15234d920ea108ff/resources/branding/airtime-icon.hvif",
-      "hvif_sha256": "2c7c801bc3381944adafa7308beb62e5f7d073e03c6008ea134570602ff64b54",
+      "source": "https://github.com/jmgasper/airTime/blob/7bd4b98afdbcc383183d77bcc6189569acb842dc/resources/branding/airtime-icon.hvif",
+      "hvif_sha256": "92f3b6b8007a41e4fbe01d9b227286889fec1085b749fedee47aaa4cc6aad894",
       "png": "static/assets/icons/airtime.png",
-      "png_sha256": "9adb4cb2bf68db29fa026f3170d544ec6a40406efecd58353ab1e8c4c7e651d4"
+      "png_sha256": "3491bf3eee7656e93823d54eef1da6e560a6284090a03135f477550852c7c383"
     },
     {
       "app": "amp",
       "author": "Amp contributors",
-      "source": "https://github.com/jmgasper/amp/blob/ef501ee05179d608fbed83097bd5f240b29eed71/resources/branding/amp-icon.hvif",
-      "hvif_sha256": "69981043872a06a41cd0210e0a1e1d26b0bcf3404afd530e5286cdd8daa0a544",
+      "source": "https://github.com/jmgasper/amp/blob/2adfaf749cca6d84754b365ba6a779ba3240d4b3/resources/branding/amp-icon.hvif",
+      "hvif_sha256": "f9e26ae28974f5fdbadb16bde7ae90d70fcd9f123548cc6ce4d1ce892e845c23",
       "png": "static/assets/icons/amp.png",
-      "png_sha256": "409a1655a11bab7303e04aea93805bf12bdc5e52c3ca931f62166d7779d11fa2"
+      "png_sha256": "0af03a99bede6118185ebf7a8a27adb4311c224b020ba79f375edf96ff5aaf6a"
     }
   ]
 }

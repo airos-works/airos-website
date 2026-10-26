@@ -78,8 +78,10 @@ HVIF, editable SVG export and MIT OR Apache-2.0 attribution. Immutable source li
 and hashes are recorded in [`content/craft-icons.json`](content/craft-icons.json).
 
 Clipper, airShot, airTime and Amp received the same native-icon treatment on
-26 October 2026: a clipboard with stacked clips, a screen capture and pencil,
-a film projector, and a speaker cabinet with a music note. Their original vector
+26 October 2026: a thin, rounded clipboard with stacked paper, a snapshot camera and pencil,
+a closed clapperboard with a play symbol, and a rounded speaker with a flowing blue
+music note. These designs were refined after visual review to soften the clipboard,
+restore the camera allegory and make the music/movie silhouettes more cohesive. Their original vector
 artwork is MIT-licensed. The 96-pixel transparent PNGs were rendered from recovered
 `BEOS:ICON` resources on the X399 and reviewed at 16–128 pixels on light and dark
 backgrounds. [`content/native-icons.json`](content/native-icons.json) pins their
