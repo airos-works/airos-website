@@ -77,6 +77,14 @@ also reviewed on light and dark backgrounds. Each fork retains its generator,
 HVIF, editable SVG export and MIT OR Apache-2.0 attribution. Immutable source links
 and hashes are recorded in [`content/craft-icons.json`](content/craft-icons.json).
 
+Clipper, airShot, airTime and Amp received the same native-icon treatment on
+26 October 2026: a clipboard with stacked clips, a screen capture and pencil,
+a film projector, and a speaker cabinet with a music note. Their original vector
+artwork is MIT-licensed. The 96-pixel transparent PNGs were rendered from recovered
+`BEOS:ICON` resources on the X399 and reviewed at 16–128 pixels on light and dark
+backgrounds. [`content/native-icons.json`](content/native-icons.json) pins their
+fork source commits and records the HVIF and PNG hashes.
+
 Curated content lives in `content/`. `static/assets/` holds the logo, original
 captures, CSS and JavaScript. The build produces `dist/`. Screenshots are real captures, with capture dates, dimensions and provenance in
 `content/screenshots.json`. Fresh native window captures were taken on the Framework
