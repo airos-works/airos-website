@@ -88,7 +88,7 @@ if (search) {
 // If the public API is unavailable, the dated snapshot and release-page fallback
 // remain usable. No token or authenticated request is sent from the browser.
 document.querySelectorAll('.app-card[data-repo]').forEach(card => {
-  fetch(`https://api.github.com/repos/jmgasper/${encodeURIComponent(card.dataset.repo)}/releases/tags/latest`, {credentials:'omit'})
+  fetch(`https://api.github.com/repos/airos-works/${encodeURIComponent(card.dataset.repo)}/releases/tags/latest`, {credentials:'omit'})
     .then(response => { if (!response.ok) throw new Error('Release lookup unavailable'); return response.json(); })
     .then(release => {
       if (release.draft || !Array.isArray(release.assets)) return;
@@ -131,7 +131,7 @@ if (imageCards.length || imageLinks.length) {
   (async () => {
     const releases = [];
     for (let page = 1; ; page++) {
-      const response = await fetch(`https://api.github.com/repos/jmgasper/haiku/releases?per_page=100&page=${page}`, {credentials:'omit'});
+      const response = await fetch(`https://api.github.com/repos/airos-works/haiku/releases?per_page=100&page=${page}`, {credentials:'omit'});
       if (!response.ok) throw new Error('Image lookup unavailable');
       const batch = await response.json();
       if (!Array.isArray(batch)) throw new Error('Invalid image release list');

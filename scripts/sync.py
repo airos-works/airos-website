@@ -14,6 +14,7 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / 'content/project.json').read_text())
+OWNER = CONFIG['owner']
 CACHE = ROOT / '.cache'
 CACHE.mkdir(exist_ok=True)
 TOKEN = os.environ.get('GH_TOKEN') or os.environ.get('GITHUB_TOKEN')
@@ -93,7 +94,7 @@ def collect(source):
             'url': f'https://github.com/{repo}/tree/{quote(branch)}'}
 
 def release(app):
-    repo = 'jmgasper/' + app['repo']
+    repo = f'{OWNER}/' + app['repo']
     metadata = api(f'repos/{repo}', missing=True)
     if metadata is None or metadata['private']:
         return {**app, 'release': None, 'assets': [], 'private': True}
@@ -105,20 +106,20 @@ def release(app):
                        for a in result['assets'] if a['name'].endswith('.hpkg') and a['state'] == 'uploaded']}
 
 def main():
-    ci_head = api('repos/jmgasper/airos-ci/commits/main')['sha']
-    manifest = contents('jmgasper/airos-ci', 'forks/forks.json', ci_head)
-    lock = contents('jmgasper/airos-ci', 'forks/forks.lock.json', ci_head)
-    sources = [dict(name='Haiku / airOS', repo='jmgasper/haiku', branch='master',
+    ci_head = api(f'repos/{OWNER}/airos-ci/commits/main')['sha']
+    manifest = contents(f'{OWNER}/airos-ci', 'forks/forks.json', ci_head)
+    lock = contents(f'{OWNER}/airos-ci', 'forks/forks.lock.json', ci_head)
+    sources = [dict(name='Haiku / airOS', repo=f'{OWNER}/haiku', branch='master',
                     base=CONFIG['haiku_base'], group='Operating system',
                     description='Haiku kernel, desktop, drivers and airOS integration.'),
-               dict(name='Build pipelines', repo='jmgasper/airos-ci', branch='main',
+               dict(name='Build pipelines', repo=f'{OWNER}/airos-ci', branch='main',
                     group='Build infrastructure', description='SDKs, packages, images and source provenance.')]
     for branch in ['airos-release', 'rpi4']:
-        sources.append(dict(name='Haiku / ' + branch, repo='jmgasper/haiku', branch=branch,
+        sources.append(dict(name='Haiku / ' + branch, repo=f'{OWNER}/haiku', branch=branch,
                             base=CONFIG['haiku_base'], group='Operating system',
                             description='Active device or release branch; includes work awaiting integration into master.'))
     for app in CONFIG['apps'] + CONFIG['extra_repos']:
-        repo = 'jmgasper/' + app['repo']
+        repo = f'{OWNER}/' + app['repo']
         metadata = api(f'repos/{repo}', missing=True)
         if metadata is None or metadata['private']:
             print('Skipping nonpublic source: ' + repo, flush=True)
@@ -133,7 +134,7 @@ def main():
         sources.append(entry)
     for component in manifest['components']:
         pin = lock[component['name']]
-        sources.append(dict(name=component['name'], repo='jmgasper/' + pin['repo'],
+        sources.append(dict(name=component['name'], repo=f'{OWNER}/' + pin['repo'],
                             branch=pin['branch'], base=CONFIG.get('history_bases', {}).get(component['name'], {}).get('base', pin.get('base_commit')),
                             group='Libraries & firmware', description=component['used_by'],
                             pinned=pin['commit'], upstream=pin.get('upstream')))
@@ -144,7 +145,7 @@ def main():
     releases = []
     page = 1
     while True:
-        batch = api(f'repos/jmgasper/haiku/releases?per_page=100&page={page}')
+        batch = api(f'repos/{OWNER}/haiku/releases?per_page=100&page={page}')
         releases.extend(batch)
         # Do not silently lose a target whose latest build is older than the
         # first page of other architectures' releases.

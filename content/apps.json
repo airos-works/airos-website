@@ -18,7 +18,7 @@
             "Review tools and document recovery",
             "Native Open/Save panels, clipboard and sharp text on scaled displays"
           ],
-          "source": "https://github.com/jmgasper/wordcraft/blob/main/docs/haiku.md",
+          "source": "https://github.com/airos-works/wordcraft/blob/main/docs/haiku.md",
           "screenshot": "wordcraft",
           "download": "downloads/#wordcraft"
         },
@@ -31,7 +31,7 @@
             "Native file panels and text/HTML clipboard integration",
             "Tracker document handling and display-density support"
           ],
-          "source": "https://github.com/jmgasper/gridcraft/blob/main/docs/haiku.md",
+          "source": "https://github.com/airos-works/gridcraft/blob/main/docs/haiku.md",
           "screenshot": "gridcraft",
           "download": "downloads/#gridcraft"
         },
@@ -44,7 +44,7 @@
             "Fill forms, save changes and undo edits",
             "Native file panels, document recovery and an included command-line tool"
           ],
-          "source": "https://github.com/jmgasper/pdfcraft/blob/main/docs/haiku.md",
+          "source": "https://github.com/airos-works/pdfcraft/blob/main/docs/haiku.md",
           "screenshot": "pdfcraft",
           "download": "downloads/#pdfcraft"
         },
@@ -57,7 +57,7 @@
             "Transitions, animations and a native fullscreen slide show",
             "Media Kit audio, native file panels and recovery for unsaved work"
           ],
-          "source": "https://github.com/jmgasper/deckcraft/blob/main/docs/haiku.md",
+          "source": "https://github.com/airos-works/deckcraft/blob/main/docs/haiku.md",
           "screenshot": "deckcraft",
           "download": "downloads/#deckcraft"
         }
@@ -81,7 +81,7 @@
             "HDR10 and HLG tone mapping, deinterlacing and sharp drawing on scaled displays",
             "SRT, ASS, WebVTT, PGS, VobSub and DVB subtitles, CEA-608 captions and J/K/L scanning"
           ],
-          "source": "https://github.com/jmgasper/airTime/blob/main/README.md",
+          "source": "https://github.com/airos-works/airTime/blob/main/README.md",
           "screenshot": "airtime",
           "download": "downloads/#airtime"
         },
@@ -95,7 +95,7 @@
             "Artwork lookup and MiniDisc transfers on NetMD recorders",
             "A Quick Look add-on previews songs from Tracker with the space bar"
           ],
-          "source": "https://github.com/jmgasper/amp/blob/main/README.md",
+          "source": "https://github.com/airos-works/amp/blob/main/README.md",
           "screenshot": "amp",
           "download": "downloads/#amp"
         },
@@ -109,7 +109,7 @@
             "Native file panels, Tracker, clipboard and display-density support",
             "A 24 MP opacity change measured 8–9× faster on the GPU than on the CPU"
           ],
-          "source": "https://github.com/jmgasper/photocraft/blob/main/docs/haiku.md",
+          "source": "https://github.com/airos-works/photocraft/blob/main/docs/haiku.md",
           "download": "downloads/#system",
           "screenshot": "photocraft"
         },
@@ -123,7 +123,7 @@
             "Cold previews in 65 ms instead of 455 ms on a Radeon 760M; 24 MP exports in 1.8 s instead of 4.5 s",
             "AI models are not bundled and HEIF support is optional"
           ],
-          "source": "https://github.com/jmgasper/lightcraft/blob/main/docs/haiku.md",
+          "source": "https://github.com/airos-works/lightcraft/blob/main/docs/haiku.md",
           "download": "downloads/#system",
           "screenshot": "lightcraft"
         }
@@ -139,7 +139,7 @@
       "links": [
         {
           "label": "About Aurora ↗",
-          "href": "https://github.com/jmgasper/aurora/blob/main/README.md"
+          "href": "https://github.com/airos-works/aurora/blob/main/README.md"
         }
       ],
       "items": [
@@ -153,7 +153,7 @@
             "Native window tab and menu bar, ripgrep search and a code-oss command-line launcher",
             "Extensions that ship Linux binaries, Copilot agent features and printing are unavailable"
           ],
-          "source": "https://github.com/jmgasper/vscode/blob/haiku/build/haiku/README.md",
+          "source": "https://github.com/airos-works/vscode/blob/haiku/build/haiku/README.md",
           "screenshot": "code-oss"
         },
         {
@@ -166,7 +166,7 @@
             "Uses the system’s psql, pg_dump, pg_dumpall and pg_restore (PostgreSQL 18)",
             "Kerberos sign-in and MFA QR codes are left out"
           ],
-          "source": "https://github.com/jmgasper/aurora/tree/main/ports/pgadmin4",
+          "source": "https://github.com/airos-works/aurora/tree/main/ports/pgadmin4",
           "screenshot": "pgadmin"
         },
         {
@@ -179,7 +179,7 @@
             "Opens Terminal, Tracker and native editors such as Pe, Koder and Genio",
             "No usage statistics; updates come through pkgman. Git LFS is not supported"
           ],
-          "source": "https://github.com/jmgasper/desktop/blob/haiku/docs/technical/haiku.md",
+          "source": "https://github.com/airos-works/desktop/blob/haiku/docs/technical/haiku.md",
           "screenshot": "github-desktop"
         },
         {
@@ -192,7 +192,7 @@
             "Status, addresses, traffic, DNS and routes; split or full tunnel, several profiles at once",
             "Deskbar tray menu and command-line control, with an OpenVPN built from source"
           ],
-          "source": "https://github.com/jmgasper/burrow/blob/main/README.md",
+          "source": "https://github.com/airos-works/burrow/blob/main/README.md",
           "screenshot": "burrow",
           "download": "downloads/#burrow"
         }
@@ -214,7 +214,7 @@
         },
         {
           "label": "Get Summit for Haiku R1/beta6 ↗",
-          "href": "https://github.com/jmgasper/summit/releases/tag/latest-haiku"
+          "href": "https://github.com/airos-works/summit/releases/tag/latest-haiku"
         },
         {
           "label": "More about Summit →",
@@ -242,17 +242,17 @@
             "NetShield, VPN Accelerator, moderate NAT, port forwarding, kill switch, custom DNS and IPv6",
             "x86-64 and ARM64 packages, plus a proton-vpn-cli command"
           ],
-          "source": "https://github.com/jmgasper/proton-vpn-airos-app/blob/main/README.md",
+          "source": "https://github.com/airos-works/proton-vpn-airos-app/blob/main/README.md",
           "screenshot": "proton-vpn",
           "download": "downloads/#proton-vpn-airos-app",
           "links": [
             {
               "label": "Latest release ↗",
-              "href": "https://github.com/jmgasper/proton-vpn-airos-app/releases/tag/latest"
+              "href": "https://github.com/airos-works/proton-vpn-airos-app/releases/tag/latest"
             },
             {
               "label": "Source ↗",
-              "href": "https://github.com/jmgasper/proton-vpn-airos-app"
+              "href": "https://github.com/airos-works/proton-vpn-airos-app"
             }
           ]
         },
@@ -267,17 +267,17 @@
             "Updates come through pkgman rather than Proton’s update feed",
             "x86-64 and ARM64 packages, also included in x86-64 system images"
           ],
-          "source": "https://github.com/jmgasper/proton-bridge/blob/master/docs/haiku/README.md",
+          "source": "https://github.com/airos-works/proton-bridge/blob/master/docs/haiku/README.md",
           "screenshot": "proton-bridge",
           "download": "downloads/#proton-bridge",
           "links": [
             {
               "label": "Latest release ↗",
-              "href": "https://github.com/jmgasper/proton-bridge/releases/tag/latest"
+              "href": "https://github.com/airos-works/proton-bridge/releases/tag/latest"
             },
             {
               "label": "Source ↗",
-              "href": "https://github.com/jmgasper/proton-bridge"
+              "href": "https://github.com/airos-works/proton-bridge"
             }
           ]
         }
@@ -300,7 +300,7 @@
             "Pin clips, search a history of 10 to 1,000 items and pause recording",
             "History is stored locally with owner-only permissions"
           ],
-          "source": "https://github.com/jmgasper/clipper/blob/main/README.md",
+          "source": "https://github.com/airos-works/clipper/blob/main/README.md",
           "screenshot": "clipper",
           "download": "downloads/#clipper"
         },
@@ -314,7 +314,7 @@
             "Keeps every pixel on scaled displays, with an option for 100%",
             "Save a time-stamped PNG or copy to the clipboard; also opens existing images for markup"
           ],
-          "source": "https://github.com/jmgasper/airShot/blob/main/README.md",
+          "source": "https://github.com/airos-works/airShot/blob/main/README.md",
           "screenshot": "airshot",
           "download": "downloads/#airshot"
         }
@@ -339,7 +339,7 @@
             "Check a live recording level meter and camera preview",
             "Choose a MIDI SoundFont and restart stopped media services"
           ],
-          "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/media",
+          "source": "https://github.com/airos-works/haiku/tree/master/src/preferences/media",
           "screenshot": "media-preferences",
           "download": "downloads/#system"
         },
@@ -355,7 +355,7 @@
             "Preserve HDR10 metadata where supported; conversions run in worker processes and retry on the CPU after a GPU crash",
             "Use the mediaconvert command-line tool for scripted conversions"
           ],
-          "source": "https://github.com/jmgasper/haiku/tree/master/src/apps/mediaconverter",
+          "source": "https://github.com/airos-works/haiku/tree/master/src/apps/mediaconverter",
           "screenshot": "mediaconverter",
           "download": "downloads/#system"
         },
@@ -370,7 +370,7 @@
             "Firmware is loaded at start-up for Intel, Realtek and MediaTek USB adapters",
             "Advanced settings for the adapter’s name, discoverability and incoming connections, plus a pairing log for diagnostics"
           ],
-          "source": "https://github.com/jmgasper/haiku/blob/master/docs/rock5-itx/WIRELESS-DEVICES.md",
+          "source": "https://github.com/airos-works/haiku/blob/master/docs/rock5-itx/WIRELESS-DEVICES.md",
           "screenshot": "bluetooth",
           "download": "downloads/#system"
         },
@@ -385,7 +385,7 @@
             "Remembered networks are joined again automatically",
             "The Deskbar’s Wi-Fi menu lists networks and shows the channel, BSSID, PHY mode and router of the current one"
           ],
-          "source": "https://github.com/jmgasper/haiku/tree/master/src/preferences/wifi",
+          "source": "https://github.com/airos-works/haiku/tree/master/src/preferences/wifi",
           "screenshot": "wifi",
           "download": "downloads/#system"
         },
@@ -401,7 +401,7 @@
             "The panel zooms out of the file’s icon; Open hands the file to its preferred app",
             "Applications can add previews for their own file types through Quick Look add-ons"
           ],
-          "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/QUICK-LOOK.md",
+          "source": "https://github.com/airos-works/haiku/blob/master/docs/airos/QUICK-LOOK.md",
           "screenshot": "quick-look",
           "download": "downloads/#system"
         },
@@ -417,7 +417,7 @@
             "A new smbfs file system speaks SMB2 and SMB3 and reconnects lost sessions, reopening files that were open",
             "Kerberos, SMB1 and file attributes are not supported"
           ],
-          "source": "https://github.com/jmgasper/haiku/tree/master/src/add-ons/kernel/file_systems/smbfs",
+          "source": "https://github.com/airos-works/haiku/tree/master/src/add-ons/kernel/file_systems/smbfs",
           "screenshot": "network-shares",
           "download": "downloads/#system"
         },
@@ -432,7 +432,7 @@
             "Remote content and scripts are blocked in received HTML; links open in your browser",
             "Development release: not yet tested against live Gmail or Proton accounts, and no IMAP IDLE yet"
           ],
-          "source": "https://github.com/jmgasper/mail/blob/main/README.md",
+          "source": "https://github.com/airos-works/mail/blob/main/README.md",
           "screenshot": "mail",
           "download": "downloads/#system"
         },
@@ -447,7 +447,7 @@
             "Colour emoji, programming ligatures, Unicode 16 graphemes, reflow on resize and kitty protocol extensions",
             "cat of a 5.7 MB file takes 0.14 s instead of 0.42 s; on the tested machines the software renderer is currently the faster path"
           ],
-          "source": "https://github.com/jmgasper/haiku/blob/master/docs/airos/TERMINAL.md",
+          "source": "https://github.com/airos-works/haiku/blob/master/docs/airos/TERMINAL.md",
           "download": "downloads/#system",
           "screenshot": "terminal"
         }

@@ -49,7 +49,7 @@ both from the repository's actual Pages configuration.
 - Changelog: the owner's own commits to the forks and apps, monthly archives and global search.
 
 The established air/OS artwork supplies the identity. The home page opens on the
-airOS desktop's hills (`data/artwork/airos/airos-desktop.tga` in jmgasper/haiku,
+airOS desktop's hills (`data/artwork/airos/airos-desktop.tga` in airos-works/haiku,
 cropped above its wordmark, with its own top row of sky extended upward as
 `static/assets/hero-hills.jpg`). The layout takes cues from Duna's and T1 Energy's
 sites: large light headlines over open sky, a stats row, hairline-divided feature
@@ -117,7 +117,7 @@ no adapter because the MT7922's Bluetooth was not attached to USB at the time.
 Quick Look previews a 640 × 360 copy of the desktop artwork in a folder made for the
 capture. The Wi-Fi, Bluetooth and Tracker icons are rendered the same way as the app
 icons. The favicon uses the
-[square airOS mark](https://github.com/jmgasper/haiku/blob/master/data/artwork/airos/airos-mark.svg),
+[square airOS mark](https://github.com/airos-works/haiku/blob/master/data/artwork/airos/airos-mark.svg),
 with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime and MediaConverter captures include Big Buck Bunny, © Blender Foundation,
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
@@ -143,13 +143,13 @@ no cropping or other edits; the ROCK 5 ITX image is reproduced unchanged.
 | `framework-13.jpg` | [Framework laptop AMD 13](https://commons.wikimedia.org/wiki/File:Framework_laptop_AMD_13.jpg) | Thcipriani / Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
 The Radxa Dragon Q8B entry describes bring-up on the `dragon-q8b` branch of
-jmgasper/haiku and links to that branch's history; it is not counted among the
+airos-works/haiku and links to that branch's history; it is not counted among the
 home page's supported ARM64 boards until its status is `Tested on hardware`.
 
 The NVIDIA hardware entry distinguishes the recorded Pascal graphics and NVDEC
 tests from the experimental NVENC implementation. Its sources are the
-[workstation test notes](https://github.com/jmgasper/haiku/blob/master/docs/x399-workstation/STATUS.md)
-and [MediaConverter NVENC notes](https://github.com/jmgasper/haiku/blob/master/docs/airos/MEDIACONVERTER.md#nvidia-nvenc).
+[workstation test notes](https://github.com/airos-works/haiku/blob/master/docs/x399-workstation/STATUS.md)
+and [MediaConverter NVENC notes](https://github.com/airos-works/haiku/blob/master/docs/airos/MEDIACONVERTER.md#nvidia-nvenc).
 
 ## Keeping Git history current
 
@@ -158,7 +158,7 @@ and on a `source-updated` repository dispatch. It refreshes the site from public
 GitHub APIs and deploys only after a complete successful sync and validation.
 Failures leave the previous deployment intact.
 
-The sync reads `jmgasper/airos-ci` at a fixed commit for each run. Its
+The sync reads `airos-works/airos-ci` at a fixed commit for each run. Its
 `forks/forks.json` and `forks/forks.lock.json` determine dependency branches
 and upstream baselines. `content/project.json` records two explicit history
 baseline corrections: linux-drm is an imported Linux subset with no upstream
@@ -206,7 +206,7 @@ listed with their current public release availability. Media preferences and
 MediaConverter are included in system builds. Summit also links to its separate
 `latest-haiku` browser/engine pair for stock Haiku R1/beta6.
 
-OS images are discovered from public `jmgasper/haiku` prereleases named
+OS images are discovered from public `airos-works/haiku` prereleases named
 `image-{x86_64,arm64,rpi4,cubie}-...`. The newest published release for each target
 wins. The downloads page also refreshes these image links when opened, so a
 build published between scheduled site updates appears immediately. If the
@@ -229,8 +229,8 @@ Namecheap must hold only GitHub's records:
 | Host | Type | Value |
 |---|---|---|
 | `@` | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
-| `www` | CNAME | `jmgasper.github.io.` |
-| `_github-pages-challenge-jmgasper` | TXT | the value shown in GitHub's account Pages settings |
+| `www` | CNAME | `airos-works.github.io.` |
+| `_github-pages-challenge-airos-works` | TXT | the value shown in the airos-works organization's Pages settings (verified domains) |
 
 Any other `@` record, such as Namecheap's URL-redirect address `192.64.119.125`,
 sends some visitors to Namecheap and stops GitHub from issuing the HTTPS

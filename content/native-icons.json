@@ -7,7 +7,7 @@
     {
       "app": "clipper",
       "author": "Clipper contributors",
-      "source": "https://github.com/jmgasper/clipper/blob/56f3b9d57f0ce9c3f64bb70c1e55a259af0a392e/resources/clipper.hvif",
+      "source": "https://github.com/airos-works/clipper/blob/56f3b9d57f0ce9c3f64bb70c1e55a259af0a392e/resources/clipper.hvif",
       "hvif_sha256": "82ebe1e4648d6d939d8b4ca3a9be337aadb0ea39793e56f8985a6d9d3b276577",
       "png": "static/assets/icons/clipper.png",
       "png_sha256": "6758016c7f497de412460b2c33e8c797c49ef9453063ca155ae5dbf53b829a49"
@@ -15,7 +15,7 @@
     {
       "app": "airshot",
       "author": "airShot contributors",
-      "source": "https://github.com/jmgasper/airShot/blob/a2a67b5d3a3f485e80582a9bf2fc7a0ec80833cc/resources/branding/airshot-icon.hvif",
+      "source": "https://github.com/airos-works/airShot/blob/a2a67b5d3a3f485e80582a9bf2fc7a0ec80833cc/resources/branding/airshot-icon.hvif",
       "hvif_sha256": "6ebaf32ee4114f79c69b84be802473395ec2da20ef6af603ff0c828098c22865",
       "png": "static/assets/icons/airshot.png",
       "png_sha256": "0193118d005f9cea1b34670dab8f4c0d100ea61928dc386ad92c9d18df419f51"
@@ -23,7 +23,7 @@
     {
       "app": "airtime",
       "author": "airTime contributors",
-      "source": "https://github.com/jmgasper/airTime/blob/7bd4b98afdbcc383183d77bcc6189569acb842dc/resources/branding/airtime-icon.hvif",
+      "source": "https://github.com/airos-works/airTime/blob/7bd4b98afdbcc383183d77bcc6189569acb842dc/resources/branding/airtime-icon.hvif",
       "hvif_sha256": "92f3b6b8007a41e4fbe01d9b227286889fec1085b749fedee47aaa4cc6aad894",
       "png": "static/assets/icons/airtime.png",
       "png_sha256": "3491bf3eee7656e93823d54eef1da6e560a6284090a03135f477550852c7c383"
@@ -31,7 +31,7 @@
     {
       "app": "amp",
       "author": "Amp contributors",
-      "source": "https://github.com/jmgasper/amp/blob/33405245e5698c568dc5012d80d22c0c45924d67/resources/branding/amp-icon.hvif",
+      "source": "https://github.com/airos-works/amp/blob/33405245e5698c568dc5012d80d22c0c45924d67/resources/branding/amp-icon.hvif",
       "hvif_sha256": "4f706eff6ce4db06ee3b78dd94b968a5b5b48ba80ad55c2a1339931a25ef73d8",
       "png": "static/assets/icons/amp.png",
       "png_sha256": "202a553b7062f6d5ae840d5d06094063b0448f4820f476504627f4c8d225232f"

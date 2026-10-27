@@ -7,7 +7,7 @@
     {
       "app": "wordcraft",
       "author": "WordCraft air/OS contributors",
-      "source": "https://github.com/jmgasper/wordcraft/blob/4cbcc7fea619e454921a9715cbbfdc7921250fbc/apps/wordcraft-haiku/resources/WordCraft.hvif",
+      "source": "https://github.com/airos-works/wordcraft/blob/4cbcc7fea619e454921a9715cbbfdc7921250fbc/apps/wordcraft-haiku/resources/WordCraft.hvif",
       "hvif_sha256": "77b0724d3d58cbd1cd934b078ef561c2faec8dccde43653c0c829c50f8447f19",
       "png": "static/assets/icons/wordcraft.png",
       "png_sha256": "16ff1e30a698aa6368070de4e8245e6fe4b52b436428d7222f642c12f7dd3f6e"
@@ -15,7 +15,7 @@
     {
       "app": "gridcraft",
       "author": "GridCraft air/OS contributors",
-      "source": "https://github.com/jmgasper/gridcraft/blob/45e5d79a26179250a185f96c23644bb0ad43ee3d/apps/gridcraft-haiku/resources/GridCraft.hvif",
+      "source": "https://github.com/airos-works/gridcraft/blob/45e5d79a26179250a185f96c23644bb0ad43ee3d/apps/gridcraft-haiku/resources/GridCraft.hvif",
       "hvif_sha256": "bc5570176e12d3faa683027ff4d8449a661a867b9b16555d49b0be7bc2eeead7",
       "png": "static/assets/icons/gridcraft.png",
       "png_sha256": "be3bb04b714b0eb36d96794e5e8ba68bbd46b85646847aa2ee575237c8ca3e9b"
@@ -23,7 +23,7 @@
     {
       "app": "pdfcraft",
       "author": "PdfCraft air/OS contributors",
-      "source": "https://github.com/jmgasper/pdfcraft/blob/2553db3cfc6d3879897b9cb1c45d616bd8d0cf6f/apps/pdfcraft-haiku/resources/PdfCraft.hvif",
+      "source": "https://github.com/airos-works/pdfcraft/blob/2553db3cfc6d3879897b9cb1c45d616bd8d0cf6f/apps/pdfcraft-haiku/resources/PdfCraft.hvif",
       "hvif_sha256": "d3dafdd36c0b51c95f62c358d5f8d7bee218c2e81c7d878467a0a60bfe241811",
       "png": "static/assets/icons/pdfcraft.png",
       "png_sha256": "6d6a2cb4d781f71550ab634c80d58ad0fec943d16066326b9a74d37ed72e45ce"
@@ -31,7 +31,7 @@
     {
       "app": "deckcraft",
       "author": "DeckCraft air/OS contributors",
-      "source": "https://github.com/jmgasper/deckcraft/blob/e70b460d58efa04dcc692a3eb94f7caa65d24d7a/apps/deckcraft-haiku/resources/DeckCraft.hvif",
+      "source": "https://github.com/airos-works/deckcraft/blob/e70b460d58efa04dcc692a3eb94f7caa65d24d7a/apps/deckcraft-haiku/resources/DeckCraft.hvif",
       "hvif_sha256": "e703cd2daa5171be42bb7711331886abd114adadb70ecdea74e2240327498bb0",
       "png": "static/assets/icons/deckcraft.png",
       "png_sha256": "9da772ce2c5280e6385a384066b9202c446536a200ac3d3e4dfb0f632e750672"
@@ -39,7 +39,7 @@
     {
       "app": "photocraft",
       "author": "PhotoCraft air/OS contributors",
-      "source": "https://github.com/jmgasper/photocraft/blob/f0e311157c251b7a1ab00ba3139c6b9d3cfd3c59/apps/photocraft-haiku/resources/PhotoCraft.hvif",
+      "source": "https://github.com/airos-works/photocraft/blob/f0e311157c251b7a1ab00ba3139c6b9d3cfd3c59/apps/photocraft-haiku/resources/PhotoCraft.hvif",
       "hvif_sha256": "394121984364a78644fb93992bdf8cc62eb70d0a2d1f8707aa491f5a01bef3ed",
       "png": "static/assets/icons/photocraft.png",
       "png_sha256": "975e74662974f0fd2790ebd416d62b86324caab217a064f60fb0b82d6572ab5a"
@@ -47,7 +47,7 @@
     {
       "app": "lightcraft",
       "author": "LightCraft air/OS contributors",
-      "source": "https://github.com/jmgasper/lightcraft/blob/442a81028d0951e0e8f38fd33c12baa12b7a3e8f/apps/lightcraft-haiku/resources/LightCraft.hvif",
+      "source": "https://github.com/airos-works/lightcraft/blob/442a81028d0951e0e8f38fd33c12baa12b7a3e8f/apps/lightcraft-haiku/resources/LightCraft.hvif",
       "hvif_sha256": "3e5c5d49a86c559707e476ea8a36ae20e8f6af572a80066662254c5b89fc9ffe",
       "png": "static/assets/icons/lightcraft.png",
       "png_sha256": "7b852c1905b2e0f8f9db23082e3214462a05be5e6dc8fe9eda94bd563609455c"

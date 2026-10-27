@@ -10,7 +10,7 @@
         "PDF navigation, search, zoom, password entry and original-file downloads",
         "Native color, date and time pickers"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/reader-mode.md",
+      "source": "https://github.com/airos-works/summit/blob/main/docs/reader-mode.md",
       "screenshot": "summit-reader"
     },
     {
@@ -23,7 +23,7 @@
         "Toolbar actions, popups and restoration across restarts",
         "uBlock Origin and Dark Reader have passed native runtime suites; 1Password sign-in, inline filling and passkeys have been verified for tested versions"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/extension-stores.md",
+      "source": "https://github.com/airos-works/summit/blob/main/docs/extension-stores.md",
       "screenshots": ["summit-firefox-addon", "summit-extensions"],
       "wide": true
     },
@@ -36,7 +36,7 @@
         "MediaSource streaming and direct MPEG-DASH with seeking, adaptive quality and live refresh",
         "Clear Key encrypted media with temporary sessions; Widevine, PlayReady and FairPlay are unsupported"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/streaming-media.md",
+      "source": "https://github.com/airos-works/summit/blob/main/docs/streaming-media.md",
       "screenshot": "summit-webgl"
     },
     {
@@ -48,7 +48,7 @@
         "Origin-scoped permission prompts for device access",
         "WebUSB and Web Bluetooth implementations; physical transfer/GATT coverage remains limited"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/browser-privacy.md",
+      "source": "https://github.com/airos-works/summit/blob/main/docs/browser-privacy.md",
       "screenshot": "summit-private"
     },
     {
@@ -60,7 +60,7 @@
         "Optional built-in MCP server for local debugging tools",
         "Inspect tabs, processes, memory, rendering, media and extensions; MCP is off by default"
       ],
-      "source": "https://github.com/jmgasper/summit/blob/main/docs/developer-tools.md",
+      "source": "https://github.com/airos-works/summit/blob/main/docs/developer-tools.md",
       "screenshot": "summit-devtools"
     }
   ]

@@ -14,6 +14,8 @@ OUT = ROOT / 'dist'
 BASE = os.getenv('BASE_PATH', '').rstrip('/')
 ORIGIN = os.getenv('SITE_URL', 'https://airos.works').rstrip('/')
 D = json.loads((ROOT / 'data/github.json').read_text())
+# GitHub organization that hosts every airOS repository (content/project.json).
+GITHUB = 'https://github.com/' + json.loads((ROOT / 'content/project.json').read_text())['owner']
 UPDATED = D['updated'][:10]
 NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('changelog/', 'Changelog')]
 
@@ -157,12 +159,12 @@ def applications():
 def summit():
     data = json.loads((ROOT / 'content/summit.json').read_text())
     body = intro('Summit · native WebKit browser', 'The web. At home on Haiku.', 'Native controls, a compact toolbar and a modern multiprocess WebKit engine. Summit keeps growing alongside the desktop it runs on.')
-    body += f'<div class="actions summit-downloads">{link(url("downloads/#summit"), "Get Summit for airOS ↓", "button primary")}{link("https://github.com/jmgasper/summit/releases/tag/latest-haiku", "Get Summit for Haiku R1/beta6 ↗", "button")}</div>'
+    body += f'<div class="actions summit-downloads">{link(url("downloads/#summit"), "Get Summit for airOS ↓", "button primary")}{link(GITHUB+"/summit/releases/tag/latest-haiku", "Get Summit for Haiku R1/beta6 ↗", "button")}</div>'
     body += '<p class="note">Install both the browser and its matching WebKit engine. airOS builds are available for x86-64 and ARM64; the stock Haiku R1/beta6 build is x86-64. Hardware acceleration, high-density displays and device integration depend on the system and driver.</p>'
     body += capture('summit')
     body += '<div class="section-heading"><h2>More than a page viewer.</h2><span>Development preview</span></div><p class="section-lead">Tabs, saved sessions, bookmarks, downloads, page find, configurable search and per-site zoom are joined by tools for reading, media, extensions and debugging.</p>'
     body += ''.join(feature_row(f) for f in data['features'])
-    body += '<aside class="note">Web-platform and extension compatibility are still evolving. Verified examples do not establish support for every extension or streaming service. The <a href="https://github.com/jmgasper/summit">Summit feature notes</a> describe supported subsets and the build tables identify their source commits.</aside>'
+    body += '<aside class="note">Web-platform and extension compatibility are still evolving. Verified examples do not establish support for every extension or streaming service. The <a href="'+GITHUB+'/summit">Summit feature notes</a> describe supported subsets and the build tables identify their source commits.</aside>'
     page('summit/', 'Summit browser', 'Explore Summit reader mode, PDFs, extensions, streaming media, privacy controls and native developer tools for airOS and Haiku.', body)
 
 def image_asset(target):
@@ -187,7 +189,7 @@ def hardware():
         if image := device.get('image'):
             image_url = url('assets/hardware/' + image['file'])
             photo = f'''<figure class="device-photo"><a href="{e(image_url, quote=True)}"><img src="{e(image_url, quote=True)}" alt="{e(image['alt'], quote=True)}" width="{image['width']}" height="{image['height']}" loading="lazy"></a><figcaption>Photo: {link(image['source'], e(image['credit']))} · {link(image['license_url'], e(image['license']))}</figcaption></figure>'''
-        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link(device['source_url'], 'Follow the bring-up history ↗') if device.get('source_url') else link('https://github.com/jmgasper/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}{download_button(device)}<div class="device-links">{''.join(link('https://github.com/jmgasper/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
+        body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link(device['source_url'], 'Follow the bring-up history ↗') if device.get('source_url') else link(GITHUB+'/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}{download_button(device)}<div class="device-links">{''.join(link(GITHUB+'/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
     body += '<aside class="note">Hardware notes reviewed 18 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
     page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Radxa Dragon Q8B, Raspberry Pi 4, Framework 13, AMD graphics and NVIDIA graphics, NVDEC decoding and experimental NVENC encoding.', body)
 
@@ -211,7 +213,7 @@ def downloads():
                     body += link(a['browser_download_url'], 'SHA-256' if a['name'].endswith('.sha256') else 'Build manifest')
             body += link(im['release'], 'Release notes ↗') + '</div>'
         else:
-            body += '<p class="availability">Public image coming soon</p>' + link('https://github.com/jmgasper/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
+            body += '<p class="availability">Public image coming soon</p>' + link(GITHUB+'/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
         body += '</div></article>'
     body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. The ARM64 ISO is for UEFI machines and does not boot the Pi 4 or Cubie A7S. <strong>Write every image with dd or Rufus, not balenaEtcher,</strong> which has corrupted an airOS image without reporting an error. '+link(url('downloads/write/'), 'How to write an image to USB or SD safely →')+'</aside>'
     # Each package links back to its feature row on the apps page.
@@ -227,7 +229,7 @@ def downloads():
         body += '<div class="app-packages">'
         if not app['assets']:
             body += '<p class="availability">No public package published yet.</p>'
-            body += link('https://github.com/jmgasper/'+app['repo']+'/releases', 'Follow public releases ↗', 'release-fallback')
+            body += link(GITHUB+'/'+app['repo']+'/releases', 'Follow public releases ↗', 'release-fallback')
         else:
             for arch, label in [('x86_64', 'x86-64'), ('arm64', 'ARM64')]:
                 assets = [a for a in app['assets'] if a['name'].endswith(arch+'.hpkg')]
@@ -239,7 +241,7 @@ def downloads():
             body += '<div class="app-meta">' + link(app['release'], 'Build details & checksums ↗') + f'<span>{app["published"][:10]}</span></div>'
         body += '</div>'
         if app['repo'] == 'summit':
-            body += '<p class="package-note">Using stock Haiku R1/beta6? '+link('https://github.com/jmgasper/summit/releases/tag/latest-haiku', 'Get the dedicated x86-64 browser and engine ↗')+'</p>'
+            body += '<p class="package-note">Using stock Haiku R1/beta6? '+link(GITHUB+'/summit/releases/tag/latest-haiku', 'Get the dedicated x86-64 browser and engine ↗')+'</p>'
         if target := features.get(app['repo'].lower()):
             body += link(url('apps/#'+target), 'Features, screenshots and port notes →', 'subtle')
         body += '</article>'
@@ -297,7 +299,7 @@ def sources():
         for s in items:
             body += f'<article><div><h3>{link(s["url"], e(s["name"])+" ↗")}</h3><p>{e(s["description"])}</p></div><div class="source-ref"><code>{e(s["branch"])}</code>'+link(f'https://github.com/{s["repo"]}/commits/{quote(s["branch"])}', 'Git history ↗')+'</div></article>'
         body += '</div>'
-    body += f'<p class="meta">Library list from {link("https://github.com/jmgasper/airos-ci/blob/"+D["ci_head"]+"/forks/forks.lock.json", "the CI source manifest")}. Only public repositories are listed.</p>'
+    body += f'<p class="meta">Library list from {link(GITHUB+"/airos-ci/blob/"+D["ci_head"]+"/forks/forks.lock.json", "the CI source manifest")}. Only public repositories are listed.</p>'
     page('source/', 'Source code', 'Public airOS source repositories, application code, forks and firmware.', body)
 
 def changelog():
