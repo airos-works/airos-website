@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-27T18:28:33+00:00",
-  "ci_head": "46118d0470082e21de322f9a5e9b3970bddec370",
+  "updated": "2026-10-27T23:04:22+00:00",
+  "ci_head": "f35ff527719458ed9102cdcefc6c166ebd975eef",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "3d3d333c0676ad118951c3a94dce1291f9e98354",
+      "head": "32337859922f1b24e1e78d6594a203f8684b1351",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -4668,16 +4668,16 @@
           "subject": "Merge Raspberry Pi AirTop process sampling improvement"
         },
         {
-          "sha": "c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
-          "url": "https://github.com/airos-works/haiku/commit/c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
-          "date": "2026-10-08T21:23:45Z",
-          "subject": "rpi4: complete twelve-hour native performance validation"
-        },
-        {
           "sha": "c382028196e6325b402f4fb3e80cf1b4a4f0e74d",
           "url": "https://github.com/airos-works/haiku/commit/c382028196e6325b402f4fb3e80cf1b4a4f0e74d",
           "date": "2026-10-08T21:23:45Z",
           "subject": "Merge completed Raspberry Pi performance validation"
+        },
+        {
+          "sha": "c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
+          "url": "https://github.com/airos-works/haiku/commit/c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
+          "date": "2026-10-08T21:23:45Z",
+          "subject": "rpi4: complete twelve-hour native performance validation"
         },
         {
           "sha": "206f54fad9be69bb3fe2325de808d2b720ee7b8d",
@@ -11712,6 +11712,12 @@
           "subject": "Merge sunxi-gpio: the Radxa Cubie A7S's pin headers for AirPins"
         },
         {
+          "sha": "f9f847b3a8f78084ae688f3a5f44ddd744f663ef",
+          "url": "https://github.com/airos-works/haiku/commit/f9f847b3a8f78084ae688f3a5f44ddd744f663ef",
+          "date": "2026-10-27T09:15:09Z",
+          "subject": "rpi_display: hardware cursor as a firmware plane"
+        },
+        {
           "sha": "247e9b9b4d6ff91f21172b59e8a765ce6452c6c1",
           "url": "https://github.com/airos-works/haiku/commit/247e9b9b4d6ff91f21172b59e8a765ce6452c6c1",
           "date": "2026-10-27T10:26:32Z",
@@ -11730,6 +11736,12 @@
           "subject": "Merge summit119: clipping in layers"
         },
         {
+          "sha": "2e0a7bbd630feb0bbdadc3ec657b4ce5bd6f63ac",
+          "url": "https://github.com/airos-works/haiku/commit/2e0a7bbd630feb0bbdadc3ec657b4ce5bd6f63ac",
+          "date": "2026-10-27T10:33:48Z",
+          "subject": "rpi_display cursor: fixed buffer stride and alpha convention"
+        },
+        {
           "sha": "6178b691d287eac6f53f4726589c29327012ee8c",
           "url": "https://github.com/airos-works/haiku/commit/6178b691d287eac6f53f4726589c29327012ee8c",
           "date": "2026-10-27T10:40:25Z",
@@ -11740,6 +11752,12 @@
           "url": "https://github.com/airos-works/haiku/commit/65feae442d6fa376ef2ca70eb5525fb856a4e22c",
           "date": "2026-10-27T10:40:29Z",
           "subject": "Merge summit119: memcpy and 4K aliasing"
+        },
+        {
+          "sha": "4e23e9fb54e52601675024db82bb9b263780bee2",
+          "url": "https://github.com/airos-works/haiku/commit/4e23e9fb54e52601675024db82bb9b263780bee2",
+          "date": "2026-10-27T10:46:12Z",
+          "subject": "rpi_display cursor: optional canvas geometry for the plane"
         },
         {
           "sha": "adebbddd30da71a24beab8414324dfd4a6d59509",
@@ -11800,6 +11818,156 @@
           "url": "https://github.com/airos-works/haiku/commit/3d3d333c0676ad118951c3a94dce1291f9e98354",
           "date": "2026-10-27T11:49:16Z",
           "subject": "Merge summit119: TLS access fast path"
+        },
+        {
+          "sha": "778738c03ea30a5f841e8f0f8c33c057a358c4ca",
+          "url": "https://github.com/airos-works/haiku/commit/778738c03ea30a5f841e8f0f8c33c057a358c4ca",
+          "date": "2026-10-27T20:42:27Z",
+          "subject": "registrar: B_REG_QUIT_USER_APPS, the first phase of a shutdown alone"
+        },
+        {
+          "sha": "01bf31843abd7566a721f24f78530383f1c73512",
+          "url": "https://github.com/airos-works/haiku/commit/01bf31843abd7566a721f24f78530383f1c73512",
+          "date": "2026-10-27T20:42:27Z",
+          "subject": "System Updater: Install and Reboot; updates from GitHub Releases"
+        },
+        {
+          "sha": "f00ebe62ee1bec95ba65409ebdd9d66b72c35e30",
+          "url": "https://github.com/airos-works/haiku/commit/f00ebe62ee1bec95ba65409ebdd9d66b72c35e30",
+          "date": "2026-10-27T20:42:27Z",
+          "subject": "arm64 images: HTTPS; System Updater's feed on GitHub Releases"
+        },
+        {
+          "sha": "f18628b0bbe198f0f8e89768f95e02425f77923c",
+          "url": "https://github.com/airos-works/haiku/commit/f18628b0bbe198f0f8e89768f95e02425f77923c",
+          "date": "2026-10-27T20:47:10Z",
+          "subject": "vfs: unlink keeps the directory in the vnode cache"
+        },
+        {
+          "sha": "01f20112656bcc3380650483011ece4a8740c667",
+          "url": "https://github.com/airos-works/haiku/commit/01f20112656bcc3380650483011ece4a8740c667",
+          "date": "2026-10-27T20:47:14Z",
+          "subject": "Merge summit119: unlink keeps the directory cached"
+        },
+        {
+          "sha": "256bee119d2916fb111d1ec343afe5a2e3bd62cf",
+          "url": "https://github.com/airos-works/haiku/commit/256bee119d2916fb111d1ec343afe5a2e3bd62cf",
+          "date": "2026-10-27T20:56:26Z",
+          "subject": "bfs: a small file takes the first free run that holds it"
+        },
+        {
+          "sha": "461d21524dcd9430f4a97ca948de75878ce03912",
+          "url": "https://github.com/airos-works/haiku/commit/461d21524dcd9430f4a97ca948de75878ce03912",
+          "date": "2026-10-27T20:56:29Z",
+          "subject": "Merge summit119: BFS first fit for small files"
+        },
+        {
+          "sha": "9af4ddfd7507edebab062a61818fe9871f41e4ef",
+          "url": "https://github.com/airos-works/haiku/commit/9af4ddfd7507edebab062a61818fe9871f41e4ef",
+          "date": "2026-10-27T21:00:08Z",
+          "subject": "System Updater: retry a transfer cut off at a redirection; no default button"
+        },
+        {
+          "sha": "542a103674ae2b87870c92a4fc4dc236ef18b1b5",
+          "url": "https://github.com/airos-works/haiku/commit/542a103674ae2b87870c92a4fc4dc236ef18b1b5",
+          "date": "2026-10-27T21:09:21Z",
+          "subject": "libbnetapi: Haiku's CA bundle also with an OpenSSL that does not name it"
+        },
+        {
+          "sha": "a768b47a00fe9d1cb144097b039d26ffb15d0aeb",
+          "url": "https://github.com/airos-works/haiku/commit/a768b47a00fe9d1cb144097b039d26ffb15d0aeb",
+          "date": "2026-10-27T21:09:22Z",
+          "subject": "System Updater: the time from the feed's host over HTTPS"
+        },
+        {
+          "sha": "687295ed45010ebdd44380ed62e4773d534e89af",
+          "url": "https://github.com/airos-works/haiku/commit/687295ed45010ebdd44380ed62e4773d534e89af",
+          "date": "2026-10-27T21:09:28Z",
+          "subject": "docs/airos/SYSTEM-UPDATER: the time over HTTPS"
+        },
+        {
+          "sha": "4fa19abace712114326411bd1fb23c4d5ed1e049",
+          "url": "https://github.com/airos-works/haiku/commit/4fa19abace712114326411bd1fb23c4d5ed1e049",
+          "date": "2026-10-27T21:09:55Z",
+          "subject": "Merge sysupdate-github: Install and Reboot closes the applications first; updates from GitHub Releases; arm64 HTTPS"
+        },
+        {
+          "sha": "a041e804ef20d1a51a673088ef3ca96b85f8bc29",
+          "url": "https://github.com/airos-works/haiku/commit/a041e804ef20d1a51a673088ef3ca96b85f8bc29",
+          "date": "2026-10-27T21:25:00Z",
+          "subject": "Merge branch 'rpi4-display-cursor': rpi_display hardware cursor as a firmware plane"
+        },
+        {
+          "sha": "5731ae13b3ba6c0a19afcea193939013cd142a29",
+          "url": "https://github.com/airos-works/haiku/commit/5731ae13b3ba6c0a19afcea193939013cd142a29",
+          "date": "2026-10-27T21:25:18Z",
+          "subject": "Merge branch 'rpi4-display-cursor': rpi_display hardware cursor as a firmware plane"
+        },
+        {
+          "sha": "a6bc6c2763ffbcfb28765e3498c56f7d92275db3",
+          "url": "https://github.com/airos-works/haiku/commit/a6bc6c2763ffbcfb28765e3498c56f7d92275db3",
+          "date": "2026-10-27T21:45:27Z",
+          "subject": "Interface Kit, app_server: BScreen::GetScanTiming(), the scan timing of the output under a frame"
+        },
+        {
+          "sha": "18abf2934f6c417509abf5cbe37c79a3ae43c2a5",
+          "url": "https://github.com/airos-works/haiku/commit/18abf2934f6c417509abf5cbe37c79a3ae43c2a5",
+          "date": "2026-10-27T21:45:39Z",
+          "subject": "Merge summit119: BScreen::GetScanTiming(), each output's scan timing for programs (haiku#39)"
+        },
+        {
+          "sha": "db38d4d9ecd2c348f7faffe25391495599531ee0",
+          "url": "https://github.com/airos-works/haiku/commit/db38d4d9ecd2c348f7faffe25391495599531ee0",
+          "date": "2026-10-27T22:06:46Z",
+          "subject": "kernel: a dying team's files are closed before its address space goes"
+        },
+        {
+          "sha": "bda9a4d288dabe4e0b3c2574ae2397a4c44aa0e5",
+          "url": "https://github.com/airos-works/haiku/commit/bda9a4d288dabe4e0b3c2574ae2397a4c44aa0e5",
+          "date": "2026-10-27T22:06:56Z",
+          "subject": "Merge summit119: a dying team's files are closed before its address space goes (GPU host-memory imports no longer hang the machine)"
+        },
+        {
+          "sha": "09620f9f23b12e3de333f004d1bdd4d119c12848",
+          "url": "https://github.com/airos-works/haiku/commit/09620f9f23b12e3de333f004d1bdd4d119c12848",
+          "date": "2026-10-27T22:16:48Z",
+          "subject": "rpi_display cursor: straight alpha, not inverted"
+        },
+        {
+          "sha": "72cbba8e21614b47b1f472da734fdcfc1f9eac2f",
+          "url": "https://github.com/airos-works/haiku/commit/72cbba8e21614b47b1f472da734fdcfc1f9eac2f",
+          "date": "2026-10-27T22:51:56Z",
+          "subject": "runtime_loader, libroot: exit() while another thread opens a library"
+        },
+        {
+          "sha": "8d02f9ae9638f8822cbdb4c183529ecf6d59acce",
+          "url": "https://github.com/airos-works/haiku/commit/8d02f9ae9638f8822cbdb4c183529ecf6d59acce",
+          "date": "2026-10-27T22:52:03Z",
+          "subject": "Merge summit119: exit() while another thread opens a library (runtime_loader + libroot)"
+        },
+        {
+          "sha": "c54457ac3af7a175605d62765cad5c8d53db215f",
+          "url": "https://github.com/airos-works/haiku/commit/c54457ac3af7a175605d62765cad5c8d53db215f",
+          "date": "2026-10-27T23:01:02Z",
+          "subject": "media kit: the shared buffer list drops the buffers of teams that are gone"
+        },
+        {
+          "sha": "3b2fa4e4f95c7e0316c61bc45ad97d7870d10843",
+          "url": "https://github.com/airos-works/haiku/commit/3b2fa4e4f95c7e0316c61bc45ad97d7870d10843",
+          "date": "2026-10-27T23:01:05Z",
+          "subject": "Merge summit119: the media kit's shared buffer list drops the buffers of dead teams"
+        },
+        {
+          "sha": "a15008aaaedd19087eece8591b222cf63e0fc5fd",
+          "url": "https://github.com/airos-works/haiku/commit/a15008aaaedd19087eece8591b222cf63e0fc5fd",
+          "date": "2026-10-27T23:02:20Z",
+          "subject": "Merge branch 'rpi4': rpi_display cursor straight alpha, not inverted"
+        },
+        {
+          "sha": "32337859922f1b24e1e78d6594a203f8684b1351",
+          "url": "https://github.com/airos-works/haiku/commit/32337859922f1b24e1e78d6594a203f8684b1351",
+          "date": "2026-10-27T23:03:05Z",
+          "subject": "Merge remote-tracking branch 'origin/master'"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -11810,8 +11978,38 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "46118d0470082e21de322f9a5e9b3970bddec370",
+      "head": "f35ff527719458ed9102cdcefc6c166ebd975eef",
       "commits": [
+        {
+          "sha": "f35ff527719458ed9102cdcefc6c166ebd975eef",
+          "url": "https://github.com/airos-works/airos-ci/commit/f35ff527719458ed9102cdcefc6c166ebd975eef",
+          "date": "2026-10-27T22:55:19Z",
+          "subject": "Repositories moved to the airos-works organization; CI status page [skip ci]"
+        },
+        {
+          "sha": "1d6eb9fa01c807162b8eebaee9e31f1995b5613b",
+          "url": "https://github.com/airos-works/airos-ci/commit/1d6eb9fa01c807162b8eebaee9e31f1995b5613b",
+          "date": "2026-10-27T21:34:14Z",
+          "subject": "apps: pgAdmin 4 (build_pgadmin4); deps: arm64 libffi, python3.12, postgresql18"
+        },
+        {
+          "sha": "17ea279129d44e208a0a401795cc7d97eaaa1a78",
+          "url": "https://github.com/airos-works/airos-ci/commit/17ea279129d44e208a0a401795cc7d97eaaa1a78",
+          "date": "2026-10-27T21:28:52Z",
+          "subject": "images: Noto for Arabic, Hebrew, Indic, Thai and other scripts"
+        },
+        {
+          "sha": "f05508eaf2cb3c580077eb286dbd37e066109653",
+          "url": "https://github.com/airos-works/airos-ci/commit/f05508eaf2cb3c580077eb286dbd37e066109653",
+          "date": "2026-10-27T21:00:22Z",
+          "subject": "System Updater's feed on GitHub Releases; arm64 HTTPS"
+        },
+        {
+          "sha": "7864736ce9bb32ca091585daf05bef5e358f9c97",
+          "url": "https://github.com/airos-works/airos-ci/commit/7864736ce9bb32ca091585daf05bef5e358f9c97",
+          "date": "2026-10-27T20:29:37Z",
+          "subject": "app.yml: a submodules input for repositories that build with theirs"
+        },
         {
           "sha": "46118d0470082e21de322f9a5e9b3970bddec370",
           "url": "https://github.com/airos-works/airos-ci/commit/46118d0470082e21de322f9a5e9b3970bddec370",
@@ -21434,7 +21632,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Active device or release branch; includes work awaiting integration into master.",
-      "head": "7c4c4c760bbea2c06348de5645beb5cb0236a971",
+      "head": "09620f9f23b12e3de333f004d1bdd4d119c12848",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -26093,16 +26291,16 @@
           "subject": "Merge Raspberry Pi AirTop process sampling improvement"
         },
         {
-          "sha": "c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
-          "url": "https://github.com/airos-works/haiku/commit/c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
-          "date": "2026-10-08T21:23:45Z",
-          "subject": "rpi4: complete twelve-hour native performance validation"
-        },
-        {
           "sha": "c382028196e6325b402f4fb3e80cf1b4a4f0e74d",
           "url": "https://github.com/airos-works/haiku/commit/c382028196e6325b402f4fb3e80cf1b4a4f0e74d",
           "date": "2026-10-08T21:23:45Z",
           "subject": "Merge completed Raspberry Pi performance validation"
+        },
+        {
+          "sha": "c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
+          "url": "https://github.com/airos-works/haiku/commit/c3716ca8f10a51919a0b9ea0393f0c6f05ea60b8",
+          "date": "2026-10-08T21:23:45Z",
+          "subject": "rpi4: complete twelve-hour native performance validation"
         },
         {
           "sha": "206f54fad9be69bb3fe2325de808d2b720ee7b8d",
@@ -30297,6 +30495,36 @@
           "url": "https://github.com/airos-works/haiku/commit/7c4c4c760bbea2c06348de5645beb5cb0236a971",
           "date": "2026-10-17T00:54:15Z",
           "subject": "rpi_dsi: probe the panel's touch controller over the connector's I2C"
+        },
+        {
+          "sha": "f9f847b3a8f78084ae688f3a5f44ddd744f663ef",
+          "url": "https://github.com/airos-works/haiku/commit/f9f847b3a8f78084ae688f3a5f44ddd744f663ef",
+          "date": "2026-10-27T09:15:09Z",
+          "subject": "rpi_display: hardware cursor as a firmware plane"
+        },
+        {
+          "sha": "2e0a7bbd630feb0bbdadc3ec657b4ce5bd6f63ac",
+          "url": "https://github.com/airos-works/haiku/commit/2e0a7bbd630feb0bbdadc3ec657b4ce5bd6f63ac",
+          "date": "2026-10-27T10:33:48Z",
+          "subject": "rpi_display cursor: fixed buffer stride and alpha convention"
+        },
+        {
+          "sha": "4e23e9fb54e52601675024db82bb9b263780bee2",
+          "url": "https://github.com/airos-works/haiku/commit/4e23e9fb54e52601675024db82bb9b263780bee2",
+          "date": "2026-10-27T10:46:12Z",
+          "subject": "rpi_display cursor: optional canvas geometry for the plane"
+        },
+        {
+          "sha": "5731ae13b3ba6c0a19afcea193939013cd142a29",
+          "url": "https://github.com/airos-works/haiku/commit/5731ae13b3ba6c0a19afcea193939013cd142a29",
+          "date": "2026-10-27T21:25:18Z",
+          "subject": "Merge branch 'rpi4-display-cursor': rpi_display hardware cursor as a firmware plane"
+        },
+        {
+          "sha": "09620f9f23b12e3de333f004d1bdd4d119c12848",
+          "url": "https://github.com/airos-works/haiku/commit/09620f9f23b12e3de333f004d1bdd4d119c12848",
+          "date": "2026-10-27T22:16:48Z",
+          "subject": "rpi_display cursor: straight alpha, not inverted"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/rpi4"
@@ -30307,8 +30535,14 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "a4df9c8dcd391f086e4be56a2fe86f25cdf5f0ae",
+      "head": "d98a1f1a9e852fa56c7e3fbd348f3cdfc972bca0",
       "commits": [
+        {
+          "sha": "d98a1f1a9e852fa56c7e3fbd348f3cdfc972bca0",
+          "url": "https://github.com/airos-works/summit/commit/d98a1f1a9e852fa56c7e3fbd348f3cdfc972bca0",
+          "date": "2026-10-27T22:57:52Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "7597f23ad5731cf8d3effe4ad5da4d4807d3277d",
           "url": "https://github.com/airos-works/summit/commit/7597f23ad5731cf8d3effe4ad5da4d4807d3277d",
@@ -37944,8 +38178,26 @@
       "branch": "main",
       "description": "Capture a screen, window or region. Add arrows, labels and markup, then save or copy.",
       "group": "Applications",
-      "head": "f1408e8a91d950dde81390c1b20498d5efa61f5b",
+      "head": "0379854cce2321e6f570d394dba1316070921515",
       "commits": [
+        {
+          "sha": "0379854cce2321e6f570d394dba1316070921515",
+          "url": "https://github.com/airos-works/airShot/commit/0379854cce2321e6f570d394dba1316070921515",
+          "date": "2026-10-27T22:55:49Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
+        {
+          "sha": "49d7749a968309fdca91c845ab2064a5be058087",
+          "url": "https://github.com/airos-works/airShot/commit/49d7749a968309fdca91c845ab2064a5be058087",
+          "date": "2026-10-27T22:40:23Z",
+          "subject": "Main window: use a whole point size for the title"
+        },
+        {
+          "sha": "d779abf5720164938148b3cc268172c481f19234",
+          "url": "https://github.com/airos-works/airShot/commit/d779abf5720164938148b3cc268172c481f19234",
+          "date": "2026-10-27T22:32:23Z",
+          "subject": "Settings: choose what plain Print Screen captures"
+        },
         {
           "sha": "a2a67b5d3a3f485e80582a9bf2fc7a0ec80833cc",
           "url": "https://github.com/airos-works/airShot/commit/a2a67b5d3a3f485e80582a9bf2fc7a0ec80833cc",
@@ -38015,8 +38267,26 @@
       "branch": "main",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "group": "Applications",
-      "head": "676153c0636db6b5c352bb48f2483b927ba8e4eb",
+      "head": "5f48fd68bd70825fc00aa32a1f70289081fe28a6",
       "commits": [
+        {
+          "sha": "5f48fd68bd70825fc00aa32a1f70289081fe28a6",
+          "url": "https://github.com/airos-works/airTime/commit/5f48fd68bd70825fc00aa32a1f70289081fe28a6",
+          "date": "2026-10-27T22:58:51Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
+        {
+          "sha": "b75ed68a77320fc4eac44f52afdc4a2186defd0d",
+          "url": "https://github.com/airos-works/airTime/commit/b75ed68a77320fc4eac44f52afdc4a2186defd0d",
+          "date": "2026-10-27T21:24:07Z",
+          "subject": "airtime 1.0.0-26: package the vertical-blank presentation"
+        },
+        {
+          "sha": "cef6d3f8948d35ff91ba500173dbc28111731fab",
+          "url": "https://github.com/airos-works/airTime/commit/cef6d3f8948d35ff91ba500173dbc28111731fab",
+          "date": "2026-10-27T21:24:07Z",
+          "subject": "VideoView: present direct pictures at the vertical blank"
+        },
         {
           "sha": "2eacaaa3e6dc1aa5f2bab108bab3ae20573b7e5e",
           "url": "https://github.com/airos-works/airTime/commit/2eacaaa3e6dc1aa5f2bab108bab3ae20573b7e5e",
@@ -38362,8 +38632,14 @@
       "branch": "main",
       "description": "Your music library, playlists and Music Assistant streams in a native desktop player.",
       "group": "Applications",
-      "head": "5554e0f630bd049b5de85e976474323a863d17ce",
+      "head": "7d1fce66918f372687fed17edb2bd43a4770aaa0",
       "commits": [
+        {
+          "sha": "7d1fce66918f372687fed17edb2bd43a4770aaa0",
+          "url": "https://github.com/airos-works/amp/commit/7d1fce66918f372687fed17edb2bd43a4770aaa0",
+          "date": "2026-10-27T22:56:11Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "33405245e5698c568dc5012d80d22c0c45924d67",
           "url": "https://github.com/airos-works/amp/commit/33405245e5698c568dc5012d80d22c0c45924d67",
@@ -38571,8 +38847,14 @@
       "branch": "main",
       "description": "A native OpenVPN and AWS Client VPN client, including browser-based single sign-on.",
       "group": "Applications",
-      "head": "e85ba3016c0532c62d80e2a025fca5fecdb6fd0f",
+      "head": "b6b5f793f7834043460272510af88ea7342008ff",
       "commits": [
+        {
+          "sha": "b6b5f793f7834043460272510af88ea7342008ff",
+          "url": "https://github.com/airos-works/burrow/commit/b6b5f793f7834043460272510af88ea7342008ff",
+          "date": "2026-10-27T22:56:34Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "42fb27b6572f8eb3ea06e5c587c4efca21fafbd4",
           "url": "https://github.com/airos-works/burrow/commit/42fb27b6572f8eb3ea06e5c587c4efca21fafbd4",
@@ -38636,8 +38918,14 @@
       "branch": "main",
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images.",
       "group": "Applications",
-      "head": "31e955214004b137bd204c61ac4983a61c38fa83",
+      "head": "9ca4a721f08808895c87d60ecc84d9fcd1dd6892",
       "commits": [
+        {
+          "sha": "9ca4a721f08808895c87d60ecc84d9fcd1dd6892",
+          "url": "https://github.com/airos-works/clipper/commit/9ca4a721f08808895c87d60ecc84d9fcd1dd6892",
+          "date": "2026-10-27T22:56:44Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "56f3b9d57f0ce9c3f64bb70c1e55a259af0a392e",
           "url": "https://github.com/airos-works/clipper/commit/56f3b9d57f0ce9c3f64bb70c1e55a259af0a392e",
@@ -38695,8 +38983,14 @@
       "branch": "main",
       "description": "An unofficial native port of Proton\u2019s VPN app: WireGuard or OpenVPN, Secure Core, NetShield, kill switch and port forwarding.",
       "group": "Applications",
-      "head": "2ca59469273e76164e6b3e2311dad000b4b6d001",
+      "head": "1eafa649ad0eb6b28607df319fb37149d15ae98b",
       "commits": [
+        {
+          "sha": "1eafa649ad0eb6b28607df319fb37149d15ae98b",
+          "url": "https://github.com/airos-works/proton-vpn-airos-app/commit/1eafa649ad0eb6b28607df319fb37149d15ae98b",
+          "date": "2026-10-27T22:57:41Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "27f4c88fb1adabd373fddd1446a45561e3058126",
           "url": "https://github.com/airos-works/proton-vpn-airos-app/commit/27f4c88fb1adabd373fddd1446a45561e3058126",
@@ -38814,8 +39108,14 @@
       "branch": "master",
       "description": "Use your Proton Mail account in desktop mail apps through local IMAP and SMTP, with the vault key in the Haiku key store.",
       "group": "Applications",
-      "head": "be6261dcb24271590385492f2123f1b3babcf69f",
+      "head": "f941ecce153ac329974fa3e3498a8f3e9167c39d",
       "commits": [
+        {
+          "sha": "f941ecce153ac329974fa3e3498a8f3e9167c39d",
+          "url": "https://github.com/airos-works/proton-bridge/commit/f941ecce153ac329974fa3e3498a8f3e9167c39d",
+          "date": "2026-10-27T22:57:30Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "794b91905ba10a069782e1ef2ae32b9b602ed9d3",
           "url": "https://github.com/airos-works/proton-bridge/commit/794b91905ba10a069782e1ef2ae32b9b602ed9d3",
@@ -38885,8 +39185,14 @@
       "branch": "main",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "group": "Applications",
-      "head": "57823e1adcea2144ad8d25d2ee80fbe7d7320836",
+      "head": "d372b2b70465021630003269a74b90720b0c4203",
       "commits": [
+        {
+          "sha": "d372b2b70465021630003269a74b90720b0c4203",
+          "url": "https://github.com/airos-works/wordcraft/commit/d372b2b70465021630003269a74b90720b0c4203",
+          "date": "2026-10-27T22:58:14Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "4cbcc7fea619e454921a9715cbbfdc7921250fbc",
           "url": "https://github.com/airos-works/wordcraft/commit/4cbcc7fea619e454921a9715cbbfdc7921250fbc",
@@ -39096,8 +39402,14 @@
       "branch": "main",
       "description": "Native code editor, Git tools and terminal.",
       "group": "Applications",
-      "head": "4145a174215d001cbccd5066d86f17923d899d1f",
+      "head": "6455ffc5b537e65e9ae1c126a1225074f67ef802",
       "commits": [
+        {
+          "sha": "6455ffc5b537e65e9ae1c126a1225074f67ef802",
+          "url": "https://github.com/airos-works/kiri/commit/6455ffc5b537e65e9ae1c126a1225074f67ef802",
+          "date": "2026-10-27T22:57:08Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "549d1832e0131ff4a319786bc4c6c017f67c84e4",
           "url": "https://github.com/airos-works/kiri/commit/549d1832e0131ff4a319786bc4c6c017f67c84e4",
@@ -39281,8 +39593,14 @@
       "branch": "main",
       "description": "Native Slack client.",
       "group": "Applications",
-      "head": "f96d02b4119e4de3e8282e11be59afc7ce97e136",
+      "head": "a6d198809b0c8c844beb56dd60fa4d515ad53d08",
       "commits": [
+        {
+          "sha": "685f29d08214cc63cd377fdb3980931d6956dc0d",
+          "url": "https://github.com/airos-works/natter/commit/685f29d08214cc63cd377fdb3980931d6956dc0d",
+          "date": "2026-10-27T22:57:19Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
         {
           "sha": "088ee71f828497363c066b87bb668b1b739b4eae",
           "url": "https://github.com/airos-works/natter/commit/088ee71f828497363c066b87bb668b1b739b4eae",
@@ -39376,8 +39694,20 @@
       "branch": "master",
       "description": "GPIO configuration, pin controls and waveforms for Raspberry Pi.",
       "group": "Applications",
-      "head": "305c8b3939cef74a77b86f7fe4db50b370e07a62",
+      "head": "b6ece3726b060cbe12b3f1c95f0c022295784f09",
       "commits": [
+        {
+          "sha": "b6ece3726b060cbe12b3f1c95f0c022295784f09",
+          "url": "https://github.com/airos-works/AirPins/commit/b6ece3726b060cbe12b3f1c95f0c022295784f09",
+          "date": "2026-10-27T22:55:38Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
+        {
+          "sha": "73e13e6d1fa1b9c726e446990aba5855bef1341f",
+          "url": "https://github.com/airos-works/AirPins/commit/73e13e6d1fa1b9c726e446990aba5855bef1341f",
+          "date": "2026-10-27T20:34:03Z",
+          "subject": "air/OS CI workflow"
+        },
         {
           "sha": "305c8b3939cef74a77b86f7fe4db50b370e07a62",
           "url": "https://github.com/airos-works/AirPins/commit/305c8b3939cef74a77b86f7fe4db50b370e07a62",
@@ -39417,8 +39747,38 @@
       "branch": "main",
       "description": "A native runtime for Electron applications on Haiku.",
       "group": "Applications",
-      "head": "6fbe77241d824c220445c07475118400223a689c",
+      "head": "1240b7644c8a96c8e8fda4105e4c2f5786d60053",
       "commits": [
+        {
+          "sha": "79b1c11ca057e0a43ef9b7ee9da8cc5c9a23dcd1",
+          "url": "https://github.com/airos-works/aurora/commit/79b1c11ca057e0a43ef9b7ee9da8cc5c9a23dcd1",
+          "date": "2026-10-27T22:56:22Z",
+          "subject": "CI: airos-ci lives in the airos-works organization [skip ci]"
+        },
+        {
+          "sha": "ad1f96d455182bed764b059c9ebec3397a91cea1",
+          "url": "https://github.com/airos-works/aurora/commit/ad1f96d455182bed764b059c9ebec3397a91cea1",
+          "date": "2026-10-27T22:21:44Z",
+          "subject": "ci: pgAdmin 4 in the same job as Aurora"
+        },
+        {
+          "sha": "7103635187e29d023e87adef834a24f6d044ed27",
+          "url": "https://github.com/airos-works/aurora/commit/7103635187e29d023e87adef834a24f6d044ed27",
+          "date": "2026-10-27T21:13:20Z",
+          "subject": "pgAdmin 4: compile the bytecode with a short TMPDIR"
+        },
+        {
+          "sha": "66ea8717318073bb09f90583c805bbbd724e93ea",
+          "url": "https://github.com/airos-works/aurora/commit/66ea8717318073bb09f90583c805bbbd724e93ea",
+          "date": "2026-10-27T20:59:08Z",
+          "subject": "pgAdmin 4: cryptography without maturin, which has no arm64 Haiku"
+        },
+        {
+          "sha": "35be2ab2dd10082fe2997265053862da3bc75769",
+          "url": "https://github.com/airos-works/aurora/commit/35be2ab2dd10082fe2997265053862da3bc75769",
+          "date": "2026-10-27T20:40:16Z",
+          "subject": "pgAdmin 4: cross-build the package on Linux for x86_64 and arm64"
+        },
         {
           "sha": "6fbe77241d824c220445c07475118400223a689c",
           "url": "https://github.com/airos-works/aurora/commit/6fbe77241d824c220445c07475118400223a689c",
@@ -41634,19 +41994,19 @@
       "repo": "airShot",
       "description": "Capture a screen, window or region. Add arrows, labels and markup, then save or copy.",
       "release": "https://github.com/airos-works/airShot/releases/tag/latest",
-      "published": "2026-10-26T05:03:17Z",
+      "published": "2026-10-27T22:41:09Z",
       "assets": [
         {
           "name": "airshot-0.1.0.beta-10-arm64.hpkg",
-          "size": 182708,
+          "size": 184698,
           "browser_download_url": "https://github.com/airos-works/airShot/releases/download/latest/airshot-0.1.0.beta-10-arm64.hpkg",
-          "digest": "sha256:5b5bdd8fb146622151d0d84cb0a05e084644fba8c0dd7bd9a2dc9df36e21c138"
+          "digest": "sha256:d7c133a4a80f5f2670dd69ddd5058b44d709d55119fd81fb14fa431770f617ea"
         },
         {
           "name": "airshot-0.1.0.beta-10-x86_64.hpkg",
-          "size": 171695,
+          "size": 174674,
           "browser_download_url": "https://github.com/airos-works/airShot/releases/download/latest/airshot-0.1.0.beta-10-x86_64.hpkg",
-          "digest": "sha256:91ed9ba583c439aabddef94c750cf27e9d0f2af3d0ae5cf1e75cebe626f4029d"
+          "digest": "sha256:2f58f56aa81ca79f503689eb12068e647fb89937f0426489b68c8163587df149"
         }
       ]
     },
@@ -41655,19 +42015,19 @@
       "repo": "airTime",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "release": "https://github.com/airos-works/airTime/releases/tag/latest",
-      "published": "2026-10-27T02:37:56Z",
+      "published": "2026-10-27T21:44:52Z",
       "assets": [
         {
-          "name": "airtime-1.0.0-25-arm64.hpkg",
-          "size": 239537,
-          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-25-arm64.hpkg",
-          "digest": "sha256:1b1110fb7f45fc986e8e10d93dfe068d5793c3f42e6f4c234197b0ed1a421f73"
+          "name": "airtime-1.0.0-26-arm64.hpkg",
+          "size": 239929,
+          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-26-arm64.hpkg",
+          "digest": "sha256:5adf5aeab3550b4635ba85b7f738a2c7465cb2d4c6236353eafd60b5e70377be"
         },
         {
-          "name": "airtime-1.0.0-25-x86_64.hpkg",
-          "size": 237134,
-          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-25-x86_64.hpkg",
-          "digest": "sha256:106840f54e728561778ad7b5b730c5c8386c1735ebbe2ae8dee096d9bf95e2fb"
+          "name": "airtime-1.0.0-26-x86_64.hpkg",
+          "size": 237375,
+          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-26-x86_64.hpkg",
+          "digest": "sha256:63f80b3e3a74215f781866663b5e44d4ea0344faf223aa59a910d9c8e563affd"
         }
       ]
     },
@@ -41835,101 +42195,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261027154222-3d3d333c06",
-      "published": "2026-10-27T15:46:34Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261027223925-18abf2934f",
+      "published": "2026-10-27T22:44:01Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1227330976,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261027154222-3d3d333c06/airos-x86_64.iso.xz",
-          "digest": "sha256:6a7b8bbb40ccb83dcea14fafef99cdfd83ceddde735297ce1db961564cbde8fc"
+          "size": 1264530784,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261027223925-18abf2934f/airos-x86_64.iso.xz",
+          "digest": "sha256:b3718c022a093c96a76f6c4ca593fa18bbe496236647257653ed62156205b301"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261027154222-3d3d333c06/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:a34712b5b66e96116b8d32efee92dab26300e943940acc247477b171e2b4f9a3"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261027223925-18abf2934f/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:6f93f3d82f20113ce6ce172ce7091e2b5d9666b27ed0d3ad83de64c006c3e8e7"
         },
         {
           "name": "manifest.json",
-          "size": 13744,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261027154222-3d3d333c06/manifest.json",
-          "digest": "sha256:1fed4f7fc49f0745455011996704c5cf517a8c60b5b7b3b4f70977b38184d91d"
+          "size": 13881,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261027223925-18abf2934f/manifest.json",
+          "digest": "sha256:65839e082444a0329bee6fee29fdb6567cf663ba2516e502d976841360d4bddf"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261027160648-3d3d333c06",
-      "published": "2026-10-27T16:10:29Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261027221020-18abf2934f",
+      "published": "2026-10-27T22:14:27Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 753412792,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261027160648-3d3d333c06/airos-arm64.iso.xz",
-          "digest": "sha256:a0ea56bd3e33e7bc56426381bf578ab6e4ad44f1fb27557c29056c74578f4bc9"
+          "size": 793308612,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261027221020-18abf2934f/airos-arm64.iso.xz",
+          "digest": "sha256:6e3480fd40c6f875260c0cedb82f5fd08841953a6412ba0f4b280221b36bedea"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261027160648-3d3d333c06/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:61298cff9959c4212430b49e859091f033eb9812d7e27bc5907943985f15d9c4"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261027221020-18abf2934f/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:04ec48a5cc2e88543809a0cce68552cbcd4c196aa76852853209db4165b9bf80"
         },
         {
           "name": "manifest.json",
-          "size": 14156,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261027160648-3d3d333c06/manifest.json",
-          "digest": "sha256:044feaf89c0652d612c558e729bbe21aec128ee0e6d55d5c9dddcea2096d61df"
+          "size": 14293,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261027221020-18abf2934f/manifest.json",
+          "digest": "sha256:bc01288aaee1262d69bdf96b29cbcf73e45e3750d18c1a584fd22f067206539a"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261027155923-3d3d333c06",
-      "published": "2026-10-27T16:01:14Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261027215944-18abf2934f",
+      "published": "2026-10-27T22:02:08Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 742752120,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261027155923-3d3d333c06/airos-rpi4.img.xz",
-          "digest": "sha256:b0e7a6e6468b33c8b37b04de3488f381a2015ac75b8b2077924b0eeb22305e3d"
+          "size": 782741700,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261027215944-18abf2934f/airos-rpi4.img.xz",
+          "digest": "sha256:d83ba10c396cf56c7e02756b5d33705280c7f2d27aef20b757ccf9ae71d1d94a"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261027155923-3d3d333c06/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:05721b5eb67374ccdc3fba959936b1295b7fce7d00c738deb31b8e7a9dc6e871"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261027215944-18abf2934f/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:ae811dc83713aaa0ae6e8689f2f20ca5c37435edeadb6de2eabe794e50107adf"
         },
         {
           "name": "manifest.json",
-          "size": 12361,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261027155923-3d3d333c06/manifest.json",
-          "digest": "sha256:963755b01a72ed9db8b4cf8abf9001eda47d825ffaef6e8012a1c28f37451a3f"
+          "size": 12498,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261027215944-18abf2934f/manifest.json",
+          "digest": "sha256:22ffc22f6a94809f8382b83ceabe20eb8c54f52ab21202f0fd6dab79cbfad1a9"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261027155122-3d3d333c06",
-      "published": "2026-10-27T15:54:58Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261027225120-18abf2934f",
+      "published": "2026-10-27T22:55:17Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 742020800,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261027155122-3d3d333c06/airos-cubie.img.xz",
-          "digest": "sha256:b1e7a9113e72594a631f28de16bdbfbd4c5f03d9d4ad9f517be523591d62ada0"
+          "size": 781929172,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261027225120-18abf2934f/airos-cubie.img.xz",
+          "digest": "sha256:9bf01d8790c25aa4a52b4cdf5b215b3b121ef27717bc7ce668615e75f9d1f6da"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261027155122-3d3d333c06/airos-cubie.img.xz.sha256",
-          "digest": "sha256:565754af3ae1f0a55e789b34323013d3ee91be95746f7e61d3e77303b17e6f5a"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261027225120-18abf2934f/airos-cubie.img.xz.sha256",
+          "digest": "sha256:f88e67856a0a5b8105e86f0867d03127d768c0fd1e216ad0c87fbde3990a06be"
         },
         {
           "name": "manifest.json",
-          "size": 15606,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261027155122-3d3d333c06/manifest.json",
-          "digest": "sha256:e2f289c1b2012cbf363487155e9509ed7fe7ed747a25da6832847ba942d33d82"
+          "size": 15743,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261027225120-18abf2934f/manifest.json",
+          "digest": "sha256:85c0126e00fe411cd2e74ee5a1968ed19826a9175776f23771da6e48daa77f97"
         }
       ]
     }
