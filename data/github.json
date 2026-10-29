@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T05:56:53+00:00",
+  "updated": "2026-10-29T13:14:21+00:00",
   "ci_head": "8788c52f19e8fdc74260260765006ffbdece710e",
   "sources": [
     {
@@ -34075,8 +34075,74 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "d619dd962604cc1c4cbf7d0f146a9efba1c61b6c",
+      "head": "24be8a0ebc90a08a7a8d8358b7a10f4660ea5754",
       "commits": [
+        {
+          "sha": "61e553125d85e05d38c9bdd79543a991d63d9bad",
+          "url": "https://github.com/airos-works/summit/commit/61e553125d85e05d38c9bdd79543a991d63d9bad",
+          "date": "2026-10-29T11:21:13Z",
+          "subject": "Extensions: cloneInto/exportFunction in content scripts, onRuleMatchedDebug (#106)"
+        },
+        {
+          "sha": "e596bbe381c9349299b210f3d608afbae1780351",
+          "url": "https://github.com/airos-works/summit/commit/e596bbe381c9349299b210f3d608afbae1780351",
+          "date": "2026-10-29T09:59:43Z",
+          "subject": "Bookmarks: the rest of Firefox's place: queries (#110)"
+        },
+        {
+          "sha": "2892da1a5aae3cb15321558519f78ad2fe94fc4b",
+          "url": "https://github.com/airos-works/summit/commit/2892da1a5aae3cb15321558519f78ad2fe94fc4b",
+          "date": "2026-10-29T09:58:52Z",
+          "subject": "Direct present timed on every driver; NVIDIA back copy; HTTP/3 (#119)"
+        },
+        {
+          "sha": "ec4164371740f6dd78e2441d5ae862ecf5d356f6",
+          "url": "https://github.com/airos-works/summit/commit/ec4164371740f6dd78e2441d5ae862ecf5d356f6",
+          "date": "2026-10-29T09:25:32Z",
+          "subject": "WebRTC: host candidates as mDNS names on air/OS (#119)"
+        },
+        {
+          "sha": "783477e73dc3d9de94f70018a988964768b7e300",
+          "url": "https://github.com/airos-works/summit/commit/783477e73dc3d9de94f70018a988964768b7e300",
+          "date": "2026-10-29T09:25:32Z",
+          "subject": "Screen sharing carries the computer's sound (#112)"
+        },
+        {
+          "sha": "dc6e272a0d7d2888f8ee50d1648568f008cf4005",
+          "url": "https://github.com/airos-works/summit/commit/dc6e272a0d7d2888f8ee50d1648568f008cf4005",
+          "date": "2026-10-29T09:25:32Z",
+          "subject": "Touchpad scrolling by the finger, notification answers, device hot-plug (#119)"
+        },
+        {
+          "sha": "b179d32327362909dd3225b0e000b8756befcccf",
+          "url": "https://github.com/airos-works/summit/commit/b179d32327362909dd3225b0e000b8756befcccf",
+          "date": "2026-10-29T08:14:51Z",
+          "subject": "Geolocation: positions from air/OS's location service (#119)"
+        },
+        {
+          "sha": "8575094aeb19c71320c7b2ac0203f6fd89b52b2a",
+          "url": "https://github.com/airos-works/summit/commit/8575094aeb19c71320c7b2ac0203f6fd89b52b2a",
+          "date": "2026-10-29T07:59:00Z",
+          "subject": "Navigation API: on, as in Chrome, Safari and WebKitGTK (#132)"
+        },
+        {
+          "sha": "7295041f1c63c1769dbc31a12967e7b43acbf327",
+          "url": "https://github.com/airos-works/summit/commit/7295041f1c63c1769dbc31a12967e7b43acbf327",
+          "date": "2026-10-29T07:13:44Z",
+          "subject": "Tiles: a tile uploaded late repaints the frame, not only its texture (#133)"
+        },
+        {
+          "sha": "729883431e2a6fd87901262019266370720982b1",
+          "url": "https://github.com/airos-works/summit/commit/729883431e2a6fd87901262019266370720982b1",
+          "date": "2026-10-29T06:38:07Z",
+          "subject": "Fonts: emoji fall back to the color font, not Noto Emoji (#131)"
+        },
+        {
+          "sha": "a34c434ab11452b6413ecec942de005e3e742f54",
+          "url": "https://github.com/airos-works/summit/commit/a34c434ab11452b6413ecec942de005e3e742f54",
+          "date": "2026-10-29T06:38:07Z",
+          "subject": "Tabs: the sound waves sit on the speaker's centre line (#134)"
+        },
         {
           "sha": "890debd82981b6953c8fe2a1808d1b41d48379e4",
           "url": "https://github.com/airos-works/summit/commit/890debd82981b6953c8fe2a1808d1b41d48379e4",
@@ -42779,8 +42845,50 @@
       "branch": "main",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "group": "Applications",
-      "head": "0c2f5ecb53e3903a47d055b7f86721670c72a7d9",
+      "head": "0e7e8a2dcc192ae3cf5758df26b31bac4aa0cca3",
       "commits": [
+        {
+          "sha": "c71c8fe0634c4ca99e68f6625de6edbf2ab12a48",
+          "url": "https://github.com/airos-works/wordcraft/commit/c71c8fe0634c4ca99e68f6625de6edbf2ab12a48",
+          "date": "2026-10-29T10:58:48Z",
+          "subject": "air/OS: print through the Be print kit (#1)"
+        },
+        {
+          "sha": "23a01d87a5209a4d3ca885b640dfc9aa6585b3ef",
+          "url": "https://github.com/airos-works/wordcraft/commit/23a01d87a5209a4d3ca885b640dfc9aa6585b3ef",
+          "date": "2026-10-29T10:36:44Z",
+          "subject": "air/OS: a BWindow for every egui viewport (#6)"
+        },
+        {
+          "sha": "3c898e858f1bab310da08469648c581b56397fe2",
+          "url": "https://github.com/airos-works/wordcraft/commit/3c898e858f1bab310da08469648c581b56397fe2",
+          "date": "2026-10-29T10:27:24Z",
+          "subject": "air/OS: one running copy; later launches and Tracker opens go to it (#2)"
+        },
+        {
+          "sha": "d0541d74e68509c3aee5b136676b524f24d58177",
+          "url": "https://github.com/airos-works/wordcraft/commit/d0541d74e68509c3aee5b136676b524f24d58177",
+          "date": "2026-10-29T10:26:53Z",
+          "subject": "air/OS: input methods compose in the editor (#5)"
+        },
+        {
+          "sha": "5b6c8af4d781ba9a296de657507a4b3e43e30f80",
+          "url": "https://github.com/airos-works/wordcraft/commit/5b6c8af4d781ba9a296de657507a4b3e43e30f80",
+          "date": "2026-10-29T10:19:25Z",
+          "subject": "air/OS: touchpad scrolling as a trackpad's, wheels as before (#3)"
+        },
+        {
+          "sha": "5a93ae32ba3d1719ccdfab795fb3e2ded6a0f14b",
+          "url": "https://github.com/airos-works/wordcraft/commit/5a93ae32ba3d1719ccdfab795fb3e2ded6a0f14b",
+          "date": "2026-10-29T10:12:38Z",
+          "subject": "air/OS: put a lone equation's MathML on the clipboard (#7)"
+        },
+        {
+          "sha": "38f254ffa09c9d132189975ff68178b1842a3b21",
+          "url": "https://github.com/airos-works/wordcraft/commit/38f254ffa09c9d132189975ff68178b1842a3b21",
+          "date": "2026-10-29T10:02:24Z",
+          "subject": "air/OS: no upstream update check; SoftwareUpdater updates the package (#4)"
+        },
         {
           "sha": "e2656b61f38aa18eadeb791e460d97201f98442f",
           "url": "https://github.com/airos-works/wordcraft/commit/e2656b61f38aa18eadeb791e460d97201f98442f",
@@ -42903,8 +43011,44 @@
       "branch": "main",
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
       "group": "Applications",
-      "head": "427562b945d28959ffb23f4a446753e553f70c87",
+      "head": "1c173190f9dd1b63ed59e3210f0293bf3be014b3",
       "commits": [
+        {
+          "sha": "1c173190f9dd1b63ed59e3210f0293bf3be014b3",
+          "url": "https://github.com/airos-works/deckcraft/commit/1c173190f9dd1b63ed59e3210f0293bf3be014b3",
+          "date": "2026-10-29T11:14:34Z",
+          "subject": "HAIKU5: one running copy; later launches and Tracker opens go to it (#2)"
+        },
+        {
+          "sha": "7ddfb9f122d1ede6be69dfa1ecc23f2d7e1125d4",
+          "url": "https://github.com/airos-works/deckcraft/commit/7ddfb9f122d1ede6be69dfa1ecc23f2d7e1125d4",
+          "date": "2026-10-29T11:08:27Z",
+          "subject": "HAIKU5: input methods compose in the slide's text (#5)"
+        },
+        {
+          "sha": "99fce4b65bfe6cf6dc388af70839fd94fac80d34",
+          "url": "https://github.com/airos-works/deckcraft/commit/99fce4b65bfe6cf6dc388af70839fd94fac80d34",
+          "date": "2026-10-29T11:08:10Z",
+          "subject": "HAIKU5: touchpad scrolling as a trackpad's, wheels as before (#3)"
+        },
+        {
+          "sha": "f6452115cd426c17e25c555da3526211bfa35e7c",
+          "url": "https://github.com/airos-works/deckcraft/commit/f6452115cd426c17e25c555da3526211bfa35e7c",
+          "date": "2026-10-29T11:07:02Z",
+          "subject": "HAIKU5: no upstream update check; SoftwareUpdater updates the package (#4)"
+        },
+        {
+          "sha": "032331f0fb1990f8dce1bc6075b119f4340a9ec9",
+          "url": "https://github.com/airos-works/deckcraft/commit/032331f0fb1990f8dce1bc6075b119f4340a9ec9",
+          "date": "2026-10-29T10:39:28Z",
+          "subject": "HAIKU5: BBitmap clipboard, background opening and remembered window (#8)"
+        },
+        {
+          "sha": "7aa7e50cc473bb79e0297c8f1ec70da7e75009f2",
+          "url": "https://github.com/airos-works/deckcraft/commit/7aa7e50cc473bb79e0297c8f1ec70da7e75009f2",
+          "date": "2026-10-29T10:39:27Z",
+          "subject": "HAIKU5: play every common movie type through the Media Kit (#7)"
+        },
         {
           "sha": "427562b945d28959ffb23f4a446753e553f70c87",
           "url": "https://github.com/airos-works/deckcraft/commit/427562b945d28959ffb23f4a446753e553f70c87",
@@ -42950,8 +43094,44 @@
       "branch": "main",
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
       "group": "Applications",
-      "head": "e56680093479ce1449ffb430978d14e5c3a04528",
+      "head": "c389de3d89af2131efffde18551efc7fe9a7b371",
       "commits": [
+        {
+          "sha": "c389de3d89af2131efffde18551efc7fe9a7b371",
+          "url": "https://github.com/airos-works/pdfcraft/commit/c389de3d89af2131efffde18551efc7fe9a7b371",
+          "date": "2026-10-29T11:13:41Z",
+          "subject": "HAIKU5: one running copy; later launches and Tracker opens open as tabs (#3)"
+        },
+        {
+          "sha": "2f176a779988d31ca99460f829dbe2b8c3855396",
+          "url": "https://github.com/airos-works/pdfcraft/commit/2f176a779988d31ca99460f829dbe2b8c3855396",
+          "date": "2026-10-29T11:13:41Z",
+          "subject": "HAIKU5: input methods compose in text fields (#6)"
+        },
+        {
+          "sha": "c112fcf8e4a046f2a99f5902d773db1595052d4f",
+          "url": "https://github.com/airos-works/pdfcraft/commit/c112fcf8e4a046f2a99f5902d773db1595052d4f",
+          "date": "2026-10-29T11:12:59Z",
+          "subject": "HAIKU5: touchpad scrolling as a trackpad's, wheels as before (#4)"
+        },
+        {
+          "sha": "0e34ab25ce056abad35284227ae9e3d77f244f66",
+          "url": "https://github.com/airos-works/pdfcraft/commit/0e34ab25ce056abad35284227ae9e3d77f244f66",
+          "date": "2026-10-29T11:12:59Z",
+          "subject": "HAIKU5: no upstream update check; SoftwareUpdater updates the package (#5)"
+        },
+        {
+          "sha": "e58d84f84d367930ab1f9fb9dc22f8cbb256b5b1",
+          "url": "https://github.com/airos-works/pdfcraft/commit/e58d84f84d367930ab1f9fb9dc22f8cbb256b5b1",
+          "date": "2026-10-29T10:44:10Z",
+          "subject": "HAIKU5: Key Store digital IDs, file panel filters, file and link clipboard (#8)"
+        },
+        {
+          "sha": "b38b0de6336349ba3030b5165ac767a642c8ae74",
+          "url": "https://github.com/airos-works/pdfcraft/commit/b38b0de6336349ba3030b5165ac767a642c8ae74",
+          "date": "2026-10-29T10:42:37Z",
+          "subject": "HAIKU5: native menu bar from craft-menu (#7)"
+        },
         {
           "sha": "e56680093479ce1449ffb430978d14e5c3a04528",
           "url": "https://github.com/airos-works/pdfcraft/commit/e56680093479ce1449ffb430978d14e5c3a04528",
@@ -45861,31 +46041,31 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-10-29T04:20:17Z",
+      "published": "2026-10-29T11:52:56Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261029.0403-1-arm64.hpkg",
-          "size": 14881581,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261029.0403-1-arm64.hpkg",
-          "digest": "sha256:72f3df7969edaad2361cfb0643bfaa4c40b3b133508e9231342920cd059ea45d"
+          "name": "summit-0.1.0.git20261029.1121-1-arm64.hpkg",
+          "size": 14899841,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261029.1121-1-arm64.hpkg",
+          "digest": "sha256:5b5c0899374041bb54f63ac5b8796e5f25cec5a8958ba853216d08e15bd8e3bb"
         },
         {
-          "name": "summit-0.1.0.git20261029.0403-1-x86_64.hpkg",
-          "size": 15082458,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261029.0403-1-x86_64.hpkg",
-          "digest": "sha256:7657f154543c8d4287fdc683659836e49a51e588fdca29baaa365b5eac101d0f"
+          "name": "summit-0.1.0.git20261029.1121-1-x86_64.hpkg",
+          "size": 15098631,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261029.1121-1-x86_64.hpkg",
+          "digest": "sha256:c8644787bf1dc554bf442a98f56fec27d4b02236bf6d93bbbb260e00362591b6"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261029.0403-1-arm64.hpkg",
-          "size": 86167192,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261029.0403-1-arm64.hpkg",
-          "digest": "sha256:d1b5043b1d61b802f085e67ec95073651d24befb5b132a4f0a8e6048a078a78c"
+          "name": "summit_webkit-1.10.1.git20261029.1121-1-arm64.hpkg",
+          "size": 86206753,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261029.1121-1-arm64.hpkg",
+          "digest": "sha256:81a20677a32491d3f52536f3c1cf6cac8b8b3bf984f2bde00e0e25fc94a1e41a"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261029.0403-1-x86_64.hpkg",
-          "size": 88166840,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261029.0403-1-x86_64.hpkg",
-          "digest": "sha256:265539cb2b0ac3d25ac16d9f35c0384969452a5e8b0209e917b148fafa4d5c4b"
+          "name": "summit_webkit-1.10.1.git20261029.1121-1-x86_64.hpkg",
+          "size": 88215562,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261029.1121-1-x86_64.hpkg",
+          "digest": "sha256:b915200a0d02452993718b5f7dde3082fb62c672b4fefee44cc702a9bb32c576"
         }
       ]
     },
@@ -46051,19 +46231,19 @@
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
       "release": "https://github.com/airos-works/wordcraft/releases/tag/latest",
-      "published": "2026-10-29T02:10:28Z",
+      "published": "2026-10-29T11:09:17Z",
       "assets": [
         {
           "name": "wordcraft-0.12.0.airos1-2-arm64.hpkg",
-          "size": 26847525,
+          "size": 29080759,
           "browser_download_url": "https://github.com/airos-works/wordcraft/releases/download/latest/wordcraft-0.12.0.airos1-2-arm64.hpkg",
-          "digest": "sha256:2dec92da155c13bbdb930914f4293772ee13f5eddc3aed28c76484297b98080a"
+          "digest": "sha256:0ae29c43b36b4f7b8393f8f5f9e135fa83af37c6cc284fc27aeeaf95b24449d9"
         },
         {
           "name": "wordcraft-0.12.0.airos1-2-x86_64.hpkg",
-          "size": 28209368,
+          "size": 30831876,
           "browser_download_url": "https://github.com/airos-works/wordcraft/releases/download/latest/wordcraft-0.12.0.airos1-2-x86_64.hpkg",
-          "digest": "sha256:54d15c81c036829cc3809bd4aac7f08b9ddcec7259e109b442fe1795aedf6ffb"
+          "digest": "sha256:94e42eff508c75906b24ca0a795a2cf9155e4fdec3ac0d0950e03d28d31ce17c"
         }
       ]
     },
@@ -46120,26 +46300,26 @@
     },
     {
       "target": "arm64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261029043138-4fa9329cbe",
-      "published": "2026-10-29T04:35:36Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261029060314-182e48b61c",
+      "published": "2026-10-29T06:07:14Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 1056693848,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261029043138-4fa9329cbe/airos-arm64.iso.xz",
-          "digest": "sha256:83f5a5e8d7cd6e9e69b3e8a6fd7bafae5e6375328152ad41447d11047aedeee0"
+          "size": 1056967480,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261029060314-182e48b61c/airos-arm64.iso.xz",
+          "digest": "sha256:f1646d4f2fb54f0e5b075455f3cefb88f16bbbb4031ec42c5c4a48649de7562d"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261029043138-4fa9329cbe/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:8423e1b3784a24117397ac014b9fc69081a0f0917af05872366467909d66cea2"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261029060314-182e48b61c/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:85af08b297cdbff98af3120d1350221bdd47cca6eb9b2a8eccc3835f0aba72bb"
         },
         {
           "name": "manifest.json",
           "size": 16035,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261029043138-4fa9329cbe/manifest.json",
-          "digest": "sha256:90abc8d0bc9efeb1f4328894bcb7295a5cde5d97a0709c7a14252dff2bce6330"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261029060314-182e48b61c/manifest.json",
+          "digest": "sha256:3e81be81e160a4240a77748ee90ec1aa9f6a88b85f1f441a8adca45ac28531f2"
         }
       ]
     },
