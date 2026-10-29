@@ -44,6 +44,13 @@ def contents(repo, path, ref):
 def quote(value):
     return urllib.parse.quote(value, safe='')
 
+def peel(repo, base):
+    # A pinned base may be an annotated tag object (moby, containerd). Git peels it
+    # to its commit; the compare API does not, and answers 404.
+    while re.fullmatch(r'[0-9a-f]{40}', base) and (tag := api(f'repos/{repo}/git/tags/{base}', missing=True)):
+        base = tag['object']['sha']
+    return base
+
 def collect(source):
     repo, branch = source['repo'], source['branch']
     if api(f'repos/{repo}')['private']:
@@ -59,9 +66,10 @@ def collect(source):
         records = []
         page = 1
         expected = None
+        compare_base = base and peel(repo, base)
         while True:
             if base:
-                response = api(f'repos/{repo}/compare/{quote(base)}...{head}?per_page=100&page={page}')
+                response = api(f'repos/{repo}/compare/{quote(compare_base)}...{head}?per_page=100&page={page}')
                 expected = response['total_commits']
                 commits = response['commits']
             else:
