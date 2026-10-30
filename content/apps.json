@@ -134,7 +134,7 @@
       "heading": "Tools for building things",
       "tag": "Code, databases, Git, containers and networks",
       "lead": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Docker Desktop manages containers on the airOS Docker Engine, and Burrow connects you to work networks.",
-      "note": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku. Docker Desktop, the Docker Engine, the docker command and Compose are in airOS system images; the Engine is an early port.",
+      "note": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku. Docker Desktop, the Docker Engine, the docker command and Compose are in airOS system images; the Engine is an early port, and Linux containers are fastest on an x86-64 CPU with AMD-V or VT-x (NVMM).",
       "links": [
         {
           "label": "About Aurora ↗",
@@ -190,7 +190,7 @@
             "Containers grouped by Compose project, with live logs, inspect, CPU and memory stats and a shell in Terminal",
             "Run, pull, tag and push images, search Docker Hub, manage volumes and networks and reclaim disk space",
             "Lists follow the Engine’s events, so containers started from Terminal or Compose appear at once",
-            "Containers run Haiku programs without namespaces: they share the host’s network and processes, and Linux images can be pulled but not run"
+            "Linux images run in a lightweight Linux VM (QEMU with NVMM, on x86-64) with their own namespaces, cgroups and networks; Haiku images run natively"
           ],
           "source": "https://github.com/airos-works/docker-desktop/blob/main/README.md",
           "screenshot": "docker-desktop",

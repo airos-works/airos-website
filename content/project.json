@@ -32,7 +32,7 @@
       "name": "Docker Desktop",
       "repo": "docker-desktop",
       "description": "A native dashboard for the airOS Docker Engine: containers, Compose projects, images, volumes, networks and disk usage.",
-      "note": "Included in airOS system images with the Docker Engine, CLI and Compose. The Engine is an early port: containers run Haiku programs and share the host’s network."
+      "note": "Included in airOS system images with the Docker Engine, CLI and Compose. The Engine is an early port: Haiku images run natively, and Linux images run in a lightweight Linux VM with their own namespaces and networks (x86-64)."
     },
     {
       "name": "Burrow",
