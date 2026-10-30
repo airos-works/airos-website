@@ -91,7 +91,6 @@
           "text": "A familiar music player for your local library, with Music Assistant streaming and playlists that sync back to the server.",
           "features": [
             "MP3, AAC, FLAC, WAV and OGG libraries in song, album, grid and artist views",
-            "Stream from Music Assistant over Sendspin",
             "Artwork lookup and MiniDisc transfers on NetMD recorders",
             "A Quick Look add-on previews songs from Tracker with the space bar"
           ],
