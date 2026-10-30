@@ -242,6 +242,18 @@
     "provenance": "Direct mcp_server BScreen capture from the X399 workstation, cropped to the window; the marked-up image is a capture of a Tracker window taken for this screenshot."
   },
   {
+    "id": "airimager",
+    "title": "airImager",
+    "category": "Everyday",
+    "file": "airimager.png",
+    "description": "The 29 October Cubie A7S image in the Downloads folder, ready to write to a Verbatim USB stick.",
+    "source": "https://github.com/airos-works/airimager",
+    "captured": "2026-10-30",
+    "width": 624,
+    "height": 406,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation, cropped to the window; airimager 1.0.0-4 package. The image and drive were chosen for the capture and nothing was written."
+  },
+  {
     "title": "AirTime",
     "file": "airtime.jpg",
     "category": "Media",
@@ -301,6 +313,18 @@
     "width": 960,
     "height": 660,
     "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU, with github_desktop-3.6.7-1 installed; sample repository and identity created for the capture; window region."
+  },
+  {
+    "id": "docker-desktop",
+    "title": "Docker Desktop",
+    "category": "Developer",
+    "file": "docker-desktop.png",
+    "description": "The Docker Engine running on the X399 workstation, with a Compose project and a single container from a Haiku Node.js image, and that container’s live request log.",
+    "source": "https://github.com/airos-works/docker-desktop",
+    "captured": "2026-10-30",
+    "width": 1091,
+    "height": 715,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; region of the main window and the container window. Docker Desktop is a local build of the package that installs it as “Docker Desktop” (dockerdesktop 0.1.0~dev-1), with docker_engine 28.5.2~git.5763. The hello-airos:1.0 image was imported for the capture from Haiku’s node binary and a small web server script."
   },
   {
     "id": "terminal",

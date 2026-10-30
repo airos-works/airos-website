@@ -29,6 +29,12 @@
       "description": "Your music library, playlists and Music Assistant streams in a native desktop player."
     },
     {
+      "name": "Docker Desktop",
+      "repo": "docker-desktop",
+      "description": "A native dashboard for the airOS Docker Engine: containers, Compose projects, images, volumes, networks and disk usage.",
+      "note": "Included in airOS system images with the Docker Engine, CLI and Compose. The Engine is an early port: containers run Haiku programs and share the host’s network."
+    },
+    {
       "name": "Burrow",
       "repo": "burrow",
       "description": "A native OpenVPN and AWS Client VPN client, including browser-based single sign-on."
@@ -37,6 +43,12 @@
       "name": "Clipper",
       "repo": "clipper",
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images."
+    },
+    {
+      "name": "airImager",
+      "repo": "airimager",
+      "description": "Write airOS images to USB sticks and SD cards from airOS, checking the download and verifying every byte written.",
+      "note": "Included in every airOS image."
     },
     {
       "name": "Proton VPN",

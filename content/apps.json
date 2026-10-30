@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-10-24",
+  "reviewed": "2026-10-30",
   "tabs": [
     {
       "id": "office",
@@ -133,9 +133,9 @@
       "id": "developer",
       "label": "Developer",
       "heading": "Tools for building things",
-      "tag": "Code, databases, Git and networks",
-      "lead": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Burrow connects you to work networks.",
-      "note": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku.",
+      "tag": "Code, databases, Git, containers and networks",
+      "lead": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop run as native airOS windows on Aurora, which reimplements Electron on Node.js with Summit’s WebKit engine and Haiku’s own menus, dialogs, clipboard and file panels. Docker Desktop manages containers on the airOS Docker Engine, and Burrow connects you to work networks.",
+      "note": "VS Code (Code - OSS), pgAdmin 4 and GitHub Desktop are separate packages that have no public release yet; their port notes describe how to build them. Aurora is in x86-64 system builds. Electron features such as printing, BrowserView and screen capture are not implemented, and Linux native modules must be rebuilt for Haiku. Docker Desktop, the Docker Engine, the docker command and Compose are in airOS system images; the Engine is an early port.",
       "links": [
         {
           "label": "About Aurora ↗",
@@ -181,6 +181,27 @@
           ],
           "source": "https://github.com/airos-works/desktop/blob/haiku/docs/technical/haiku.md",
           "screenshot": "github-desktop"
+        },
+        {
+          "id": "docker-desktop",
+          "title": "Docker Desktop",
+          "text": "A native dashboard for the airOS Docker Engine, in the spirit of Docker Desktop on other platforms. It is written with Haiku’s own toolkit and talks to the Engine over its socket.",
+          "features": [
+            "Start, stop and restart the Engine, or start it at boot, from the window or a Deskbar whale",
+            "Containers grouped by Compose project, with live logs, inspect, CPU and memory stats and a shell in Terminal",
+            "Run, pull, tag and push images, search Docker Hub, manage volumes and networks and reclaim disk space",
+            "Lists follow the Engine’s events, so containers started from Terminal or Compose appear at once",
+            "Containers run Haiku programs without namespaces: they share the host’s network and processes, and Linux images can be pulled but not run"
+          ],
+          "source": "https://github.com/airos-works/docker-desktop/blob/main/README.md",
+          "screenshot": "docker-desktop",
+          "download": "downloads/#docker-desktop",
+          "links": [
+            {
+              "label": "Docker Engine port notes ↗",
+              "href": "https://github.com/airos-works/moby/blob/airos/docs/airos.md"
+            }
+          ]
         },
         {
           "id": "burrow",
@@ -287,8 +308,8 @@
       "id": "everyday",
       "label": "Everyday",
       "heading": "And the everyday favourites",
-      "tag": "Clipboard and screenshots",
-      "lead": "A clipboard history and a screenshot editor: small tools that are always within reach.",
+      "tag": "Clipboard, screenshots and images",
+      "lead": "A clipboard history, a screenshot editor and an image writer: small tools that are always within reach.",
       "items": [
         {
           "id": "clipper",
@@ -317,6 +338,21 @@
           "source": "https://github.com/airos-works/airShot/blob/main/README.md",
           "screenshot": "airshot",
           "download": "downloads/#airshot"
+        },
+        {
+          "id": "airimager",
+          "title": "airImager",
+          "text": "Write an airOS image to a USB stick or SD card from airOS itself: choose the image, choose the drive, write.",
+          "features": [
+            "Writes the .iso.xz and .img.xz files as downloaded, decompressing them as it goes",
+            "Never offers the drive airOS is running from; internal drives stay hidden unless you ask, and nothing is written until you confirm",
+            "Checks the download against its SHA-256 file, then reads the whole drive back to verify every byte",
+            "Progress, speed and time left, a notification when it finishes, and scripting with hey",
+            "Included in every airOS image, in the Deskbar under Utilities"
+          ],
+          "source": "https://github.com/airos-works/airimager/blob/main/README.md",
+          "screenshot": "airimager",
+          "download": "downloads/#airimager"
         }
       ]
     },

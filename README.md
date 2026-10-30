@@ -109,7 +109,13 @@ connection was made. Clipper, PhotoCraft, LightCraft, Code - OSS, pgAdmin 4 and 
 VM running the 23 October x86-64 image live, with the separate developer packages
 installed and sample files written for the captures. Mail was captured on the X399
 on 24 October 2026 with a separate `--database` holding sample messages written
-for the capture, never the machine's own mailbox. Third-party content in a capture
+for the capture, never the machine's own mailbox. Docker Desktop and airImager were
+captured on the X399 on 30 October 2026. Docker Desktop shows the Engine running a
+Compose project and a container from `hello-airos:1.0`, an image imported for the
+capture from Haiku's `node` and a small web server script. airImager shows the
+29 October Cubie A7S image from the Downloads folder ready to write to the Verbatim
+USB stick; nothing was written. Their icons are each installed app's `BEOS:ICON`,
+rendered by `BIconUtils` on the X399 the same day. Third-party content in a capture
 is credited in its caption. The System tab's Wi-Fi, Bluetooth, Quick Look, network
 shares and Terminal captures are from the X399 on 24 October 2026. The Wi-Fi capture's
 network names are pixelated, the only edit to any capture. The Bluetooth panel shows
