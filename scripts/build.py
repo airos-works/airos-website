@@ -63,7 +63,8 @@ ICONS = {
 
 def home():
     commits = len({(s['repo'], c['sha']) for s in D['sources'] for c in s['commits']})
-    apps = len(json.loads((ROOT / 'content/project.json').read_text())['apps'])
+    # The new apps on the apps page: every tab but System (reworked Haiku apps); Summit's tab is one app.
+    apps = sum(1 if tab.get('summit') else len(tab['items']) for tab in app_tabs()['tabs'] if tab['id'] != 'system')
     # ARM64 boards with a hardware-tested port; boards still in bring-up are not counted.
     boards = sum(1 for d in json.loads((ROOT / 'content/hardware.json').read_text()) if d['chip'].startswith('ARM64') and d['status'] == 'Tested on hardware')
     stats = [(f'{apps}', 'new native apps'), (f'{boards}', 'new ARM64 SBCs supported'), (f'{len(D["sources"])}', 'tracked source branches'), (f'{commits:,}', 'commits in the public changelog')]
