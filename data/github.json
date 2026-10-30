@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-30T04:50:03+00:00",
-  "ci_head": "17bdc7cc3c73941438992df6e047b70d70cbdf3d",
+  "updated": "2026-10-30T05:57:44+00:00",
+  "ci_head": "0d52182ad1585812341f8082810b319422a31900",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "8e97a854640fb3aa84baff24b5e0eb8565962fe5",
+      "head": "45b97c57fe650f7f75b08422d4b5c5f3ef8b95b7",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -12274,6 +12274,18 @@
           "url": "https://github.com/airos-works/haiku/commit/8e97a854640fb3aa84baff24b5e0eb8565962fe5",
           "date": "2026-10-30T01:08:28Z",
           "subject": "Terminal: redraw a tab again after switching away during output"
+        },
+        {
+          "sha": "ecbf64480bc0e23dae6fa97ec54a4b11eb875212",
+          "url": "https://github.com/airos-works/haiku/commit/ecbf64480bc0e23dae6fa97ec54a4b11eb875212",
+          "date": "2026-10-30T05:28:52Z",
+          "subject": "qcom_video: HEVC Main 10 on the Iris, as P010"
+        },
+        {
+          "sha": "45b97c57fe650f7f75b08422d4b5c5f3ef8b95b7",
+          "url": "https://github.com/airos-works/haiku/commit/45b97c57fe650f7f75b08422d4b5c5f3ef8b95b7",
+          "date": "2026-10-30T05:29:05Z",
+          "subject": "Merge dragon-iris-formats: HEVC Main 10 on the Dragon's Iris codec"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -12284,8 +12296,14 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "17bdc7cc3c73941438992df6e047b70d70cbdf3d",
+      "head": "0d52182ad1585812341f8082810b319422a31900",
       "commits": [
+        {
+          "sha": "0d52182ad1585812341f8082810b319422a31900",
+          "url": "https://github.com/airos-works/airos-ci/commit/0d52182ad1585812341f8082810b319422a31900",
+          "date": "2026-10-30T04:53:59Z",
+          "subject": "Summit deps: dav1d and libavif for the engine's AVIF decoder"
+        },
         {
           "sha": "17bdc7cc3c73941438992df6e047b70d70cbdf3d",
           "url": "https://github.com/airos-works/airos-ci/commit/17bdc7cc3c73941438992df6e047b70d70cbdf3d",
@@ -34123,8 +34141,32 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "d6fe8c7b6c501c950c4dccef721ff3d663e5c676",
+      "head": "a4e6e5edb7302cf812f5e93dea7e55bc3dcaa2d9",
       "commits": [
+        {
+          "sha": "a4e6e5edb7302cf812f5e93dea7e55bc3dcaa2d9",
+          "url": "https://github.com/airos-works/summit/commit/a4e6e5edb7302cf812f5e93dea7e55bc3dcaa2d9",
+          "date": "2026-10-30T05:33:49Z",
+          "subject": "Compositor: opaque layers hide what's under them; backdrop blurs cached (#117)"
+        },
+        {
+          "sha": "9763b164a83e54ef1a8bd4bcf643de15118777ef",
+          "url": "https://github.com/airos-works/summit/commit/9763b164a83e54ef1a8bd4bcf643de15118777ef",
+          "date": "2026-10-30T05:12:13Z",
+          "subject": "Rendering: no whole-page repaint for html/body style or web font loads; pattern tile cache (#117)"
+        },
+        {
+          "sha": "ac00c85abe42ea1f3c85868e7e8f0d4cef26433a",
+          "url": "https://github.com/airos-works/summit/commit/ac00c85abe42ea1f3c85868e7e8f0d4cef26433a",
+          "date": "2026-10-30T04:54:39Z",
+          "subject": "Extensions: devtools_page and devtools.* in Summit's tools; cookies firstPartyDomain (#106)"
+        },
+        {
+          "sha": "087558ea5302a48c21abf22509760d1d4d8c1656",
+          "url": "https://github.com/airos-works/summit/commit/087558ea5302a48c21abf22509760d1d4d8c1656",
+          "date": "2026-10-30T04:54:39Z",
+          "subject": "Legacy BWebView docs: the X399 freeze was not the package (VM test)"
+        },
         {
           "sha": "d6fe8c7b6c501c950c4dccef721ff3d663e5c676",
           "url": "https://github.com/airos-works/summit/commit/d6fe8c7b6c501c950c4dccef721ff3d663e5c676",
@@ -42053,8 +42095,14 @@
       "branch": "main",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "group": "Applications",
-      "head": "4bf350138f7ace0579671b2b12f3a3631c835126",
+      "head": "174fb247407a6f9bc54ac6c0487cb2d93a30ebc8",
       "commits": [
+        {
+          "sha": "646c5e7d861c6303450d5dc4f0a10ff1cdb4299f",
+          "url": "https://github.com/airos-works/airTime/commit/646c5e7d861c6303450d5dc4f0a10ff1cdb4299f",
+          "date": "2026-10-30T05:29:18Z",
+          "subject": "HardwareVideoDecoder: HEVC Main 10 on the Dragon's Iris codec"
+        },
         {
           "sha": "53eb85684c1acd371830f6fefc1266b2bd899776",
           "url": "https://github.com/airos-works/airTime/commit/53eb85684c1acd371830f6fefc1266b2bd899776",
@@ -45171,6 +45219,32 @@
       "url": "https://github.com/airos-works/libepoxy/tree/airos-1.5.10"
     },
     {
+      "name": "dav1d",
+      "repo": "airos-works/dav1d",
+      "branch": "airos-1.5.4",
+      "base": "54706fc6bc0cdecab7e9593974a4039cc038fca7",
+      "group": "Libraries & firmware",
+      "description": "Summit engine dependency (arm64 build-deps.sh): the AV1 decoder of libavif (AVIF images)",
+      "pinned": "54706fc6bc0cdecab7e9593974a4039cc038fca7",
+      "upstream": "https://github.com/videolan/dav1d.git",
+      "head": "54706fc6bc0cdecab7e9593974a4039cc038fca7",
+      "commits": [],
+      "url": "https://github.com/airos-works/dav1d/tree/airos-1.5.4"
+    },
+    {
+      "name": "libavif",
+      "repo": "airos-works/libavif",
+      "branch": "airos-v1.4.2",
+      "base": "c5240fc79fe5c2407e10afd35f5505ef6333ea49",
+      "group": "Libraries & firmware",
+      "description": "Summit engine dependency (arm64 build-deps.sh): AVIF images (USE_AVIF), decoding with dav1d",
+      "pinned": "c5240fc79fe5c2407e10afd35f5505ef6333ea49",
+      "upstream": "https://github.com/AOMediaCodec/libavif.git",
+      "head": "c5240fc79fe5c2407e10afd35f5505ef6333ea49",
+      "commits": [],
+      "url": "https://github.com/airos-works/libavif/tree/airos-v1.4.2"
+    },
+    {
       "name": "open-gpu-kernel-modules",
       "repo": "airos-works/open-gpu-kernel-modules",
       "branch": "airos-570.86.16-haiku",
@@ -46501,31 +46575,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-10-30T03:32:29Z",
+      "published": "2026-10-30T04:51:46Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261030.0312-1-arm64.hpkg",
-          "size": 14988501,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.0312-1-arm64.hpkg",
-          "digest": "sha256:41e8ecb8721e307a4307174a72b3903631b778930533a5270713e313027a3857"
+          "name": "summit-0.1.0.git20261030.0419-1-arm64.hpkg",
+          "size": 14990673,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.0419-1-arm64.hpkg",
+          "digest": "sha256:ea60d149cee453dfa53a07f562a9df7fb6bf91b21d235126c49255f688e37b56"
         },
         {
-          "name": "summit-0.1.0.git20261030.0312-1-x86_64.hpkg",
-          "size": 15173523,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.0312-1-x86_64.hpkg",
-          "digest": "sha256:17aaf448deec53021024056e4ac98a9aca926ae665e1fee3f618bfd24f457db9"
+          "name": "summit-0.1.0.git20261030.0419-1-x86_64.hpkg",
+          "size": 15191306,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.0419-1-x86_64.hpkg",
+          "digest": "sha256:0c1bd1249ebab80690738650e3450a5f9d0c833daa8e18d26d25b458d03443b1"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261030.0312-1-arm64.hpkg",
-          "size": 86291039,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.0312-1-arm64.hpkg",
-          "digest": "sha256:90b723cc84d026e075eff238efdd41a24f17b1098df9b4e516468ed0d6ffc569"
+          "name": "summit_webkit-1.10.1.git20261030.0419-1-arm64.hpkg",
+          "size": 86305079,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.0419-1-arm64.hpkg",
+          "digest": "sha256:e29f715b078d31a38837af37d0514e51a249374a64aa8e95c047d4cd0a3a8d8f"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261030.0312-1-x86_64.hpkg",
-          "size": 88269420,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.0312-1-x86_64.hpkg",
-          "digest": "sha256:36d4f87ab3c1df705f8048c37c8ab265425309a50b2874612a7978b77f07659f"
+          "name": "summit_webkit-1.10.1.git20261030.0419-1-x86_64.hpkg",
+          "size": 88306584,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.0419-1-x86_64.hpkg",
+          "digest": "sha256:e4d984953edd8d8dd89afcacce0cb9208074d6065215b50d1b8d364188b5cc50"
+        },
+        {
+          "name": "summit_webkitlegacy-1.10.1.git20261030.0419-1-arm64.hpkg",
+          "size": 805216,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261030.0419-1-arm64.hpkg",
+          "digest": "sha256:9d9f8809f2574516fc805a6c9bb7a550f180f88caaf6f5a81523856668e7978f"
+        },
+        {
+          "name": "summit_webkitlegacy-1.10.1.git20261030.0419-1-x86_64.hpkg",
+          "size": 852490,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261030.0419-1-x86_64.hpkg",
+          "digest": "sha256:212212a71d9117a618a71c27ed38cd2f52e6f7b9019f3a2bb651b60864be1975"
         }
       ]
     },
@@ -46555,19 +46641,19 @@
       "repo": "airTime",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "release": "https://github.com/airos-works/airTime/releases/tag/latest",
-      "published": "2026-10-29T05:46:59Z",
+      "published": "2026-10-30T05:29:51Z",
       "assets": [
         {
           "name": "airtime-1.0.0-27-arm64.hpkg",
-          "size": 397278,
+          "size": 397277,
           "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-27-arm64.hpkg",
-          "digest": "sha256:34bcb1c6478c56ea4da0a77c5a9391726fb9505c8e4e7849b97fa41a0aff42ff"
+          "digest": "sha256:e6f946f6809eda0b0fd072b725530aa127545cc3b0cf909da267c09c725e31fc"
         },
         {
           "name": "airtime-1.0.0-27-x86_64.hpkg",
-          "size": 419641,
+          "size": 419637,
           "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-27-x86_64.hpkg",
-          "digest": "sha256:b212c83dc27593f0b190c1d5dde40546617ff66de6b14e07fba6fe980d1d0197"
+          "digest": "sha256:48ddce464058d78869a3057197864333384e0dc3095528ac58862bdb71bcc761"
         }
       ]
     },
