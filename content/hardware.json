@@ -219,18 +219,24 @@
     "name": "Framework Laptop 13",
     "chip": "x86-64 · AMD Radeon 760M",
     "status": "Tested on hardware",
-    "summary": "AMD graphics on a high-density laptop desktop.",
+    "summary": "AMD graphics, sleep and a working touchpad on a high-density laptop desktop.",
     "features": [
       "Native desktop output through amdgpu_drm",
       "Scaled desktop and native application windows; the Craft ports have been checked at 175% density",
-      "MediaConverter detects the Radeon 760M and offers hardware H.264 encoding"
+      "MediaConverter detects the Radeon 760M and offers hardware H.264 encoding",
+      "Suspend and resume: closing the lid puts the laptop to sleep (suspend to idle, S0ix) and opening it wakes it again; Power preferences choose what the lid does",
+      "The built-in touchpad works, which it does not on stock Haiku: a precision touchpad over I2C HID, with tap to click and smooth two-finger scrolling"
     ],
-    "limits": "This is the tested Radeon 760M configuration, not a claim about every Framework model. Suspend and resume remain development work. See the driver source and current package notes for device-specific coverage.",
+    "limits": "This is the tested Radeon 760M configuration, not a claim about every Framework model. See the driver source and current package notes for device-specific coverage.",
     "source": "docs/x399-workstation/AMDGPU-DRM.md",
     "links": [
       {
         "label": "Hardware-aware conversion engine",
         "path": "src/apps/mediaconverter/engine"
+      },
+      {
+        "label": "Smooth touchpad scrolling",
+        "path": "docs/airos/TOUCHPAD-SCROLLING.md"
       }
     ],
     "image": {
