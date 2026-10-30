@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-30T05:57:44+00:00",
-  "ci_head": "0d52182ad1585812341f8082810b319422a31900",
+  "updated": "2026-10-30T13:06:31+00:00",
+  "ci_head": "33a470c2d9a413bef5ce851cd6694ea684553075",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "45b97c57fe650f7f75b08422d4b5c5f3ef8b95b7",
+      "head": "e27d19d6b8bef94e04751e0795550d342773f9dd",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -12286,6 +12286,114 @@
           "url": "https://github.com/airos-works/haiku/commit/45b97c57fe650f7f75b08422d4b5c5f3ef8b95b7",
           "date": "2026-10-30T05:29:05Z",
           "subject": "Merge dragon-iris-formats: HEVC Main 10 on the Dragon's Iris codec"
+        },
+        {
+          "sha": "188fd8bff277c0199d406d6733a67e55bd39f432",
+          "url": "https://github.com/airos-works/haiku/commit/188fd8bff277c0199d406d6733a67e55bd39f432",
+          "date": "2026-10-30T06:23:01Z",
+          "subject": "qcom_video: sessions always start small; VP9 and MPEG-2 for the lab"
+        },
+        {
+          "sha": "46d29b32c4405b8b04084bee16bd9cf128d8b66c",
+          "url": "https://github.com/airos-works/haiku/commit/46d29b32c4405b8b04084bee16bd9cf128d8b66c",
+          "date": "2026-10-30T06:23:01Z",
+          "subject": "qcom_iris: log the firmware's failure reason on a system error"
+        },
+        {
+          "sha": "182a37fd968382c4375aa674423ad7383efc901e",
+          "url": "https://github.com/airos-works/haiku/commit/182a37fd968382c4375aa674423ad7383efc901e",
+          "date": "2026-10-30T06:23:09Z",
+          "subject": "Merge dragon-iris-formats: Iris sessions start small, VP9/MPEG-2 for the lab, firmware failure log"
+        },
+        {
+          "sha": "bd83e0576c4e7aceab8c2afcbafb4740c52ea852",
+          "url": "https://github.com/airos-works/haiku/commit/bd83e0576c4e7aceab8c2afcbafb4740c52ea852",
+          "date": "2026-10-30T06:24:45Z",
+          "subject": "qcom_video: no BIN buffer for fields, as venus has it"
+        },
+        {
+          "sha": "35b1bdfeeac68cc2d9780813cfbb810219779654",
+          "url": "https://github.com/airos-works/haiku/commit/35b1bdfeeac68cc2d9780813cfbb810219779654",
+          "date": "2026-10-30T06:26:06Z",
+          "subject": "Merge dragon-iris-formats: no BIN buffer for Iris fields (lab)"
+        },
+        {
+          "sha": "3a69bf587b682f504a67cfd3a882156106aa74af",
+          "url": "https://github.com/airos-works/haiku/commit/3a69bf587b682f504a67cfd3a882156106aa74af",
+          "date": "2026-10-30T07:28:37Z",
+          "subject": "qcom_video: fields up to 1440 wide, with the firmware's own crop"
+        },
+        {
+          "sha": "dbf5bda3bdcc9f16b0e27b00a1cc47ce2892b2dd",
+          "url": "https://github.com/airos-works/haiku/commit/dbf5bda3bdcc9f16b0e27b00a1cc47ce2892b2dd",
+          "date": "2026-10-30T07:28:41Z",
+          "subject": "Merge dragon-iris-formats: Iris fields up to 1440 wide"
+        },
+        {
+          "sha": "e67c732d39da4257cf7aa75a9fa697c2f268c874",
+          "url": "https://github.com/airos-works/haiku/commit/e67c732d39da4257cf7aa75a9fa697c2f268c874",
+          "date": "2026-10-30T07:37:32Z",
+          "subject": "qcom_video lab: plugin_decode harness, full packet trace, unit dump"
+        },
+        {
+          "sha": "8509e6119f4237b34854e887f99feb6383c67780",
+          "url": "https://github.com/airos-works/haiku/commit/8509e6119f4237b34854e887f99feb6383c67780",
+          "date": "2026-10-30T07:37:35Z",
+          "subject": "Merge dragon-iris-formats: Iris lab harness and traces"
+        },
+        {
+          "sha": "a0339c46ce400285851f5c5dfb71932cb40c3abe",
+          "url": "https://github.com/airos-works/haiku/commit/a0339c46ce400285851f5c5dfb71932cb40c3abe",
+          "date": "2026-10-30T08:01:05Z",
+          "subject": "Tracker, app_server: the desktop background on each monitor"
+        },
+        {
+          "sha": "a2db2637d16ec9ec175c7f72cbd4ac0adc3b5d69",
+          "url": "https://github.com/airos-works/haiku/commit/a2db2637d16ec9ec175c7f72cbd4ac0adc3b5d69",
+          "date": "2026-10-30T08:01:13Z",
+          "subject": "Merge desktop-background-per-display: the desktop background on each monitor"
+        },
+        {
+          "sha": "4bdf23eaac39c5a89e213bbb0e295c9c83dd88a6",
+          "url": "https://github.com/airos-works/haiku/commit/4bdf23eaac39c5a89e213bbb0e295c9c83dd88a6",
+          "date": "2026-10-30T08:15:20Z",
+          "subject": "qcom_video: VP9 on the Iris (up to 4096x2304)"
+        },
+        {
+          "sha": "c34693a516882b6f0ef624d43ea28613badae5da",
+          "url": "https://github.com/airos-works/haiku/commit/c34693a516882b6f0ef624d43ea28613badae5da",
+          "date": "2026-10-30T08:15:24Z",
+          "subject": "Merge dragon-iris-formats: VP9 on the Dragon's Iris codec"
+        },
+        {
+          "sha": "82058652675b127fab811b22041668c18afe4046",
+          "url": "https://github.com/airos-works/haiku/commit/82058652675b127fab811b22041668c18afe4046",
+          "date": "2026-10-30T08:29:18Z",
+          "subject": "qcom_video: 1080i H.264 and MPEG-2 fields on the Iris"
+        },
+        {
+          "sha": "3b2bcbd73ddd2b91d4e506c34656d2113dc4adb6",
+          "url": "https://github.com/airos-works/haiku/commit/3b2bcbd73ddd2b91d4e506c34656d2113dc4adb6",
+          "date": "2026-10-30T08:35:10Z",
+          "subject": "qcom_video: MPEG-2 on the Iris"
+        },
+        {
+          "sha": "f63cb5a774b7d3a0eaa72b8f8226fc68c19f2078",
+          "url": "https://github.com/airos-works/haiku/commit/f63cb5a774b7d3a0eaa72b8f8226fc68c19f2078",
+          "date": "2026-10-30T08:35:14Z",
+          "subject": "Merge dragon-iris-formats: 1080i H.264 and MPEG-2 on the Dragon's Iris codec"
+        },
+        {
+          "sha": "8f7c507773d0b5fb44e4c037a96f224848a7b0a1",
+          "url": "https://github.com/airos-works/haiku/commit/8f7c507773d0b5fb44e4c037a96f224848a7b0a1",
+          "date": "2026-10-30T13:02:21Z",
+          "subject": "qcom_video: broadcasts that switch between frames and fields"
+        },
+        {
+          "sha": "e27d19d6b8bef94e04751e0795550d342773f9dd",
+          "url": "https://github.com/airos-works/haiku/commit/e27d19d6b8bef94e04751e0795550d342773f9dd",
+          "date": "2026-10-30T13:02:25Z",
+          "subject": "Merge dragon-iris-formats: broadcasts switching between frames and fields on the Iris"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -12296,8 +12404,32 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "0d52182ad1585812341f8082810b319422a31900",
+      "head": "33a470c2d9a413bef5ce851cd6694ea684553075",
       "commits": [
+        {
+          "sha": "33a470c2d9a413bef5ce851cd6694ea684553075",
+          "url": "https://github.com/airos-works/airos-ci/commit/33a470c2d9a413bef5ce851cd6694ea684553075",
+          "date": "2026-10-30T10:38:02Z",
+          "subject": "Mesa x86_64: Summit's patch 07, deferred direct presents"
+        },
+        {
+          "sha": "816e82cedc3300a3e7ae4cd3d6932869b54215e5",
+          "url": "https://github.com/airos-works/airos-ci/commit/816e82cedc3300a3e7ae4cd3d6932869b54215e5",
+          "date": "2026-10-30T07:34:37Z",
+          "subject": "Docker CLI: a package revision per build"
+        },
+        {
+          "sha": "a6a95ffd87d3b5fcb7b2093cd0605f00659d21f6",
+          "url": "https://github.com/airos-works/airos-ci/commit/a6a95ffd87d3b5fcb7b2093cd0605f00659d21f6",
+          "date": "2026-10-30T07:19:47Z",
+          "subject": "Docker: docker build and commit with Linux images (forks: moby e042e2f131, containerd 932b93ed1, linuxvm 29d8326)"
+        },
+        {
+          "sha": "cec39f0dfd915f86ce2ad7bd41c438823cef5051",
+          "url": "https://github.com/airos-works/airos-ci/commit/cec39f0dfd915f86ce2ad7bd41c438823cef5051",
+          "date": "2026-10-30T07:07:50Z",
+          "subject": "Docker: Linux containers in the Linux VM (forks: moby a6bc149, containerd d6c2a18, linuxvm 24da936)"
+        },
         {
           "sha": "0d52182ad1585812341f8082810b319422a31900",
           "url": "https://github.com/airos-works/airos-ci/commit/0d52182ad1585812341f8082810b319422a31900",
@@ -34141,8 +34273,92 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "a4e6e5edb7302cf812f5e93dea7e55bc3dcaa2d9",
+      "head": "34a25b646284f1b2d58642c32728515667d4c62b",
       "commits": [
+        {
+          "sha": "34a25b646284f1b2d58642c32728515667d4c62b",
+          "url": "https://github.com/airos-works/summit/commit/34a25b646284f1b2d58642c32728515667d4c62b",
+          "date": "2026-10-30T11:53:21Z",
+          "subject": "Media: Clear Key EME back on, with cbcs/cens/cbc1 and encrypted WebM; DASH periods that change track sets; Permissions-Policy wildcards (#115)"
+        },
+        {
+          "sha": "a2f4797963e9cb3805257a942eb4a188e397e46a",
+          "url": "https://github.com/airos-works/summit/commit/a2f4797963e9cb3805257a942eb4a188e397e46a",
+          "date": "2026-10-30T10:57:37Z",
+          "subject": "Engine: -fno-semantic-interposition, and the WebProcess cache on Haiku (#120, #117)"
+        },
+        {
+          "sha": "440a428a9ed863504ac785665bc2378f823460cb",
+          "url": "https://github.com/airos-works/summit/commit/440a428a9ed863504ac785665bc2378f823460cb",
+          "date": "2026-10-30T10:57:37Z",
+          "subject": "Engine: AVIF on for both architectures (#115)"
+        },
+        {
+          "sha": "0751ec3640e72011799067c52eb95e0cd835aa8f",
+          "url": "https://github.com/airos-works/summit/commit/0751ec3640e72011799067c52eb95e0cd835aa8f",
+          "date": "2026-10-30T10:57:37Z",
+          "subject": "Media: native HLS live, AES-128, discontinuities and TS; DASH SegmentBase and WebM (#115)"
+        },
+        {
+          "sha": "1fe2f9344c1dd046dcabab520c52e010f173239a",
+          "url": "https://github.com/airos-works/summit/commit/1fe2f9344c1dd046dcabab520c52e010f173239a",
+          "date": "2026-10-30T10:36:22Z",
+          "subject": "Direct present: the compositor no longer waits for the copy into the screen (#117)"
+        },
+        {
+          "sha": "b0e10b49851202eef1ed6135dd6c096543c43f6d",
+          "url": "https://github.com/airos-works/summit/commit/b0e10b49851202eef1ed6135dd6c096543c43f6d",
+          "date": "2026-10-30T09:54:56Z",
+          "subject": "Layout: slot changes keep the other posts; percent-height items and stretched flex items reused (#117)"
+        },
+        {
+          "sha": "2f7c4c26c4f137e758263512385b837f5811d808",
+          "url": "https://github.com/airos-works/summit/commit/2f7c4c26c4f137e758263512385b837f5811d808",
+          "date": "2026-10-30T09:22:15Z",
+          "subject": "Page loads: fallback-font text shows the page, LCP at paint time, updates before shown (#117)"
+        },
+        {
+          "sha": "10eda8b2f0ac34196e201c24c99691845e6f4da5",
+          "url": "https://github.com/airos-works/summit/commit/10eda8b2f0ac34196e201c24c99691845e6f4da5",
+          "date": "2026-10-30T08:23:18Z",
+          "subject": "View Transitions: live root, snapshots as layer contents, GPU filters into GPU snapshots (#117)"
+        },
+        {
+          "sha": "cb8aa7557687bc92f1ab0bf6add58c36ca437c27",
+          "url": "https://github.com/airos-works/summit/commit/cb8aa7557687bc92f1ab0bf6add58c36ca437c27",
+          "date": "2026-10-30T08:05:59Z",
+          "subject": "Extensions: 1Password's background starts in half the time; shared PNG colour transforms (#117)"
+        },
+        {
+          "sha": "efba0d17c5d9787a421925278b8ecf27281b90bf",
+          "url": "https://github.com/airos-works/summit/commit/efba0d17c5d9787a421925278b8ecf27281b90bf",
+          "date": "2026-10-30T07:44:22Z",
+          "subject": "Tab groups: in the tab strip and through tabs/tabGroups (#106)"
+        },
+        {
+          "sha": "02b1ba6ed6acadd0f14d8308e1a44e39fa166ca0",
+          "url": "https://github.com/airos-works/summit/commit/02b1ba6ed6acadd0f14d8308e1a44e39fa166ca0",
+          "date": "2026-10-30T06:58:43Z",
+          "subject": "Text: kerned runs measured on the fast path in layout (#117)"
+        },
+        {
+          "sha": "15dcda3563ea3e53eb49d4aa313b35eb194f6ce4",
+          "url": "https://github.com/airos-works/summit/commit/15dcda3563ea3e53eb49d4aa313b35eb194f6ce4",
+          "date": "2026-10-30T06:36:46Z",
+          "subject": "Rendering: style sheet rebuilds keep their font faces; color-scheme without repaint (#117)"
+        },
+        {
+          "sha": "03ca86081abb5b59ca5c1a662ebfcad1abd36042",
+          "url": "https://github.com/airos-works/summit/commit/03ca86081abb5b59ca5c1a662ebfcad1abd36042",
+          "date": "2026-10-30T06:25:25Z",
+          "subject": "Extensions: Vue.js devtools works; content scripts may load their extension's own files (#106)"
+        },
+        {
+          "sha": "d912b2f556916d7b5054fe9adfa581ff25c9494c",
+          "url": "https://github.com/airos-works/summit/commit/d912b2f556916d7b5054fe9adfa581ff25c9494c",
+          "date": "2026-10-30T06:24:51Z",
+          "subject": "Video: VP9/AV1 on AMD hardware decoders, decoder timestamps trusted, WebCodecs hardware decode (#115)"
+        },
         {
           "sha": "a4e6e5edb7302cf812f5e93dea7e55bc3dcaa2d9",
           "url": "https://github.com/airos-works/summit/commit/a4e6e5edb7302cf812f5e93dea7e55bc3dcaa2d9",
@@ -42095,8 +42311,44 @@
       "branch": "main",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "group": "Applications",
-      "head": "174fb247407a6f9bc54ac6c0487cb2d93a30ebc8",
+      "head": "fd5a8ad327346ffb2041c90d44393a89a1c25edb",
       "commits": [
+        {
+          "sha": "a2a7c0975a351d93c5c3d4effbf6dd210be6a605",
+          "url": "https://github.com/airos-works/airTime/commit/a2a7c0975a351d93c5c3d4effbf6dd210be6a605",
+          "date": "2026-10-30T13:02:33Z",
+          "subject": "airtime 1.0.0-32: deinterlace broadcasts that switch to fields mid-stream"
+        },
+        {
+          "sha": "1a06914556bbc0f13b55dad984088d60bf5fb218",
+          "url": "https://github.com/airos-works/airTime/commit/1a06914556bbc0f13b55dad984088d60bf5fb218",
+          "date": "2026-10-30T08:35:22Z",
+          "subject": "airtime 1.0.0-31: interlaced films and MPEG-2 on the Dragon's Iris codec"
+        },
+        {
+          "sha": "2163eedaadbcc1b7f2281d6a00f733fedb5ee703",
+          "url": "https://github.com/airos-works/airTime/commit/2163eedaadbcc1b7f2281d6a00f733fedb5ee703",
+          "date": "2026-10-30T08:15:32Z",
+          "subject": "airtime 1.0.0-30: VP9 on the Dragon's Iris codec"
+        },
+        {
+          "sha": "3b2a1d4993d581a291ebeb00c709ebf8b6012e84",
+          "url": "https://github.com/airos-works/airTime/commit/3b2a1d4993d581a291ebeb00c709ebf8b6012e84",
+          "date": "2026-10-30T07:28:49Z",
+          "subject": "airtime 1.0.0-29: HEVC flagged as fields goes to the hardware decoder"
+        },
+        {
+          "sha": "5be3a77fbd5697a7fd12191aceb23c7585a2144b",
+          "url": "https://github.com/airos-works/airTime/commit/5be3a77fbd5697a7fd12191aceb23c7585a2144b",
+          "date": "2026-10-30T06:23:31Z",
+          "subject": "airtime 1.0.0-28: HEVC Main 10 on the Dragon's Iris codec"
+        },
+        {
+          "sha": "269e562f8f4d3b19e108a52e2bfac4abc6b4fe4d",
+          "url": "https://github.com/airos-works/airTime/commit/269e562f8f4d3b19e108a52e2bfac4abc6b4fe4d",
+          "date": "2026-10-30T06:23:16Z",
+          "subject": "HardwareVideoDecoder: note why the Iris has no VP9 yet"
+        },
         {
           "sha": "646c5e7d861c6303450d5dc4f0a10ff1cdb4299f",
           "url": "https://github.com/airos-works/airTime/commit/646c5e7d861c6303450d5dc4f0a10ff1cdb4299f",
@@ -42705,8 +42957,20 @@
       "branch": "main",
       "description": "A native dashboard for the airOS Docker Engine: containers, Compose projects, images, volumes, networks and disk usage.",
       "group": "Applications",
-      "head": "eb3f89a9131b5c854feb488803139e3ecfd2648f",
+      "head": "df7e08e93860b258befde1e910c4e3fb635f2724",
       "commits": [
+        {
+          "sha": "a7781bf25a92a3a83def3c501ec9de64b771e353",
+          "url": "https://github.com/airos-works/docker-desktop/commit/a7781bf25a92a3a83def3c501ec9de64b771e353",
+          "date": "2026-10-30T07:08:16Z",
+          "subject": "Settings: a Linux VM tab"
+        },
+        {
+          "sha": "d2b6f3314489fbddd13d37d5f069e6f8b67d38a4",
+          "url": "https://github.com/airos-works/docker-desktop/commit/d2b6f3314489fbddd13d37d5f069e6f8b67d38a4",
+          "date": "2026-10-30T07:08:16Z",
+          "subject": "README: Linux containers run in the Linux VM"
+        },
         {
           "sha": "ecd1a7d6fa7a7eb9fcd51d2328b719c6e1cc6d08",
           "url": "https://github.com/airos-works/docker-desktop/commit/ecd1a7d6fa7a7eb9fcd51d2328b719c6e1cc6d08",
@@ -44791,68 +45055,74 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "x86_64 summit_webkit: the private Mesa (llvmpipe, zink) with EGL in lib/summit-webkit/mesa (deps/build-gl-x86_64.sh)",
-      "pinned": "d7d67ef2c570ea9e64fa3db3978cf7e2be7a771a",
+      "pinned": "4472bbe162179b08de7b3a0509f1280631319c80",
       "upstream": null,
-      "head": "d7d67ef2c570ea9e64fa3db3978cf7e2be7a771a",
+      "head": "4472bbe162179b08de7b3a0509f1280631319c80",
       "commits": [
         {
-          "sha": "d7d67ef2c570ea9e64fa3db3978cf7e2be7a771a",
-          "url": "https://github.com/airos-works/mesa/commit/d7d67ef2c570ea9e64fa3db3978cf7e2be7a771a",
-          "date": "2026-10-16T05:01:48Z",
+          "sha": "4472bbe162179b08de7b3a0509f1280631319c80",
+          "url": "https://github.com/airos-works/mesa/commit/4472bbe162179b08de7b3a0509f1280631319c80",
+          "date": "2026-10-30T10:37:17Z",
           "subject": "util: find the Haiku program name from the application image"
         },
         {
-          "sha": "33656fb53639a447733ed926a00843db898e28c7",
-          "url": "https://github.com/airos-works/mesa/commit/33656fb53639a447733ed926a00843db898e28c7",
-          "date": "2026-10-05T12:05:36Z",
+          "sha": "654673bca4b53eae3a10ef2eff864430ae755e94",
+          "url": "https://github.com/airos-works/mesa/commit/654673bca4b53eae3a10ef2eff864430ae755e94",
+          "date": "2026-10-30T10:37:17Z",
           "subject": "hgl: depend on the generated format header (parallel build race)"
         },
         {
-          "sha": "f4e58bd941a334fbd4d928dcaa72fb25bc626de8",
-          "url": "https://github.com/airos-works/mesa/commit/f4e58bd941a334fbd4d928dcaa72fb25bc626de8",
-          "date": "2026-10-05T12:05:36Z",
+          "sha": "5722c8fa32595180e38f74c25bd2c1e5f6934080",
+          "url": "https://github.com/airos-works/mesa/commit/5722c8fa32595180e38f74c25bd2c1e5f6934080",
+          "date": "2026-10-30T10:37:17Z",
+          "subject": "EGL Haiku: deferred presents, copied by a helper thread (Summit)"
+        },
+        {
+          "sha": "865daa9c2a92c5cae6619bb432309254799dc508",
+          "url": "https://github.com/airos-works/mesa/commit/865daa9c2a92c5cae6619bb432309254799dc508",
+          "date": "2026-10-30T10:37:16Z",
           "subject": "EGL Haiku: present into the screen (Summit)"
         },
         {
-          "sha": "e6152fd0768f7219876644b316a7e5949af35767",
-          "url": "https://github.com/airos-works/mesa/commit/e6152fd0768f7219876644b316a7e5949af35767",
-          "date": "2026-10-05T12:05:35Z",
+          "sha": "8e989317a3203b2263f287f33df680b7f43ff780",
+          "url": "https://github.com/airos-works/mesa/commit/8e989317a3203b2263f287f33df680b7f43ff780",
+          "date": "2026-10-30T10:37:16Z",
           "subject": "EGL Haiku: fewer frame copies (Summit)"
         },
         {
-          "sha": "2c7a86bebb3beb10d80503ea60e8b6dbb0867a5e",
-          "url": "https://github.com/airos-works/mesa/commit/2c7a86bebb3beb10d80503ea60e8b6dbb0867a5e",
-          "date": "2026-10-05T12:05:34Z",
+          "sha": "4cc5f16f37e573d84a29c49ad8739b5643af81fa",
+          "url": "https://github.com/airos-works/mesa/commit/4cc5f16f37e573d84a29c49ad8739b5643af81fa",
+          "date": "2026-10-30T10:37:15Z",
           "subject": "zink: failed screen creation (Summit)"
         },
         {
-          "sha": "66c695e80d07f3ccb9edf6b29a274718b102e1e4",
-          "url": "https://github.com/airos-works/mesa/commit/66c695e80d07f3ccb9edf6b29a274718b102e1e4",
-          "date": "2026-10-05T12:05:34Z",
+          "sha": "b741881af205aba8693ecfe8961446c5f051ca2f",
+          "url": "https://github.com/airos-works/mesa/commit/b741881af205aba8693ecfe8961446c5f051ca2f",
+          "date": "2026-10-30T10:37:14Z",
           "subject": "zink: a missing Vulkan library is not fatal (Summit)"
         },
         {
-          "sha": "7fc91dcf4d9a120a584dc129b7b6896ec50d30d0",
-          "url": "https://github.com/airos-works/mesa/commit/7fc91dcf4d9a120a584dc129b7b6896ec50d30d0",
-          "date": "2026-10-05T12:05:33Z",
+          "sha": "a10db3f9a82498e0950fa9c5d9e1dc5e02e36669",
+          "url": "https://github.com/airos-works/mesa/commit/a10db3f9a82498e0950fa9c5d9e1dc5e02e36669",
+          "date": "2026-10-30T10:37:14Z",
           "subject": "EGL Haiku: zink (Summit)"
         },
         {
-          "sha": "8f699d2ebb177f1b8b0d5b0ddf100db1d6056a12",
-          "url": "https://github.com/airos-works/mesa/commit/8f699d2ebb177f1b8b0d5b0ddf100db1d6056a12",
-          "date": "2026-10-05T12:05:33Z",
+          "sha": "66f1e62a30c2168110037d678ce802b3aeb0b4a7",
+          "url": "https://github.com/airos-works/mesa/commit/66f1e62a30c2168110037d678ce802b3aeb0b4a7",
+          "date": "2026-10-30T10:37:13Z",
           "subject": "EGL Haiku: quiet (Summit)"
         },
         {
-          "sha": "5217dc4889a49a7c155a10f8e6ae865380fb8c8f",
-          "url": "https://github.com/airos-works/mesa/commit/5217dc4889a49a7c155a10f8e6ae865380fb8c8f",
-          "date": "2026-10-05T12:05:32Z",
+          "sha": "b7a516cde4a15b6b57f54153678c189f79adfa86",
+          "url": "https://github.com/airos-works/mesa/commit/b7a516cde4a15b6b57f54153678c189f79adfa86",
+          "date": "2026-10-30T10:37:12Z",
           "subject": "Haiku x86_64: EGL platform and HaikuPorts changes (Summit's mesa-25.3.6-haiku-x86_64.patch)"
         },
         {
-          "sha": "02abf1a7d0716a9eff92cc830d71f110aaade744",
-          "url": "https://github.com/airos-works/mesa/commit/02abf1a7d0716a9eff92cc830d71f110aaade744",
-          "date": "2026-10-05T12:05:31Z",
+          "sha": "33cbfbc6a1e219e6e1aa46a96ab2f34d4ab916f4",
+          "url": "https://github.com/airos-works/mesa/commit/33cbfbc6a1e219e6e1aa46a96ab2f34d4ab916f4",
+          "date": "2026-10-30T10:37:10Z",
           "subject": "Import Mesa 25.3.6 (mesa-25.3.6.tar.xz)"
         }
       ],
@@ -46304,9 +46574,9 @@
       "base": "3ef3c07c883be49a2e8097bcf6d2952fce1d70eb",
       "group": "Libraries & firmware",
       "description": "Docker Engine for air/OS (apps/build-app-packages.sh build_docker)",
-      "pinned": "70ca4e0ca615284be5314daf817ae04c2b498fae",
+      "pinned": "e042e2f131554c22c373659cab3643b451f90073",
       "upstream": "https://github.com/moby/moby.git",
-      "head": "70ca4e0ca615284be5314daf817ae04c2b498fae",
+      "head": "e042e2f131554c22c373659cab3643b451f90073",
       "commits": [
         {
           "sha": "7ef0d549cfda57a154270ffd55012e0f1317396f",
@@ -46439,6 +46709,18 @@
           "url": "https://github.com/airos-works/moby/commit/70ca4e0ca615284be5314daf817ae04c2b498fae",
           "date": "2026-10-29T22:58:13Z",
           "subject": "air/OS: document the Engine fixes (pulls, volumes, terminals, stats, hard links, top)"
+        },
+        {
+          "sha": "a6bc149e36ab34830a08784c5650e7b3664a34c9",
+          "url": "https://github.com/airos-works/moby/commit/a6bc149e36ab34830a08784c5650e7b3664a34c9",
+          "date": "2026-10-30T06:58:01Z",
+          "subject": "air/OS: run Linux images in the Linux VM"
+        },
+        {
+          "sha": "e042e2f131554c22c373659cab3643b451f90073",
+          "url": "https://github.com/airos-works/moby/commit/e042e2f131554c22c373659cab3643b451f90073",
+          "date": "2026-10-30T07:19:20Z",
+          "subject": "air/OS: docker build and commit with Linux images"
         }
       ],
       "url": "https://github.com/airos-works/moby/tree/airos"
@@ -46450,9 +46732,9 @@
       "base": "49c2af6b7b0785ff636bed8b70a86f073ce8bd6e",
       "group": "Libraries & firmware",
       "description": "containerd for air/OS (apps/build-app-packages.sh build_docker)",
-      "pinned": "6511923892107bc387ceff1f13c7693f084f4be5",
+      "pinned": "932b93ed1c3bbcf4fc49a191301ea4fac0f590cc",
       "upstream": "https://github.com/containerd/containerd.git",
-      "head": "6511923892107bc387ceff1f13c7693f084f4be5",
+      "head": "932b93ed1c3bbcf4fc49a191301ea4fac0f590cc",
       "commits": [
         {
           "sha": "5a75d378ad8858e3ec62c4be641271941b328e12",
@@ -46543,9 +46825,59 @@
           "url": "https://github.com/airos-works/containerd/commit/6511923892107bc387ceff1f13c7693f084f4be5",
           "date": "2026-10-29T22:58:24Z",
           "subject": "air/OS: shim terminals for exec, bind mounts, stats, top and clean exits"
+        },
+        {
+          "sha": "4be64681cb835c70db9c2a6d9af026ffaafc385f",
+          "url": "https://github.com/airos-works/containerd/commit/4be64681cb835c70db9c2a6d9af026ffaafc385f",
+          "date": "2026-10-30T06:58:20Z",
+          "subject": "air/OS: run Linux containers in a Linux VM"
+        },
+        {
+          "sha": "d5138d077917c33b8a2123c98ecc7b5a6b432066",
+          "url": "https://github.com/airos-works/containerd/commit/d5138d077917c33b8a2123c98ecc7b5a6b432066",
+          "date": "2026-10-30T07:05:49Z",
+          "subject": "air/OS: containerd-linuxvm stops its VM on SIGTERM, and a left-over one at start"
+        },
+        {
+          "sha": "d6c2a1800a0113d871559c22d93941b5bb3119e6",
+          "url": "https://github.com/airos-works/containerd/commit/d6c2a1800a0113d871559c22d93941b5bb3119e6",
+          "date": "2026-10-30T07:06:20Z",
+          "subject": "air/OS: containerd-linuxvm status and stop"
+        },
+        {
+          "sha": "932b93ed1c3bbcf4fc49a191301ea4fac0f590cc",
+          "url": "https://github.com/airos-works/containerd/commit/932b93ed1c3bbcf4fc49a191301ea4fac0f590cc",
+          "date": "2026-10-30T07:19:20Z",
+          "subject": "air/OS: diffs and bind mounts on Haiku, containerd-linuxvm debug"
         }
       ],
       "url": "https://github.com/airos-works/containerd/tree/airos"
+    },
+    {
+      "name": "linuxvm",
+      "repo": "airos-works/linuxvm",
+      "branch": "main",
+      "base": null,
+      "group": "Libraries & firmware",
+      "description": "the linuxvm package, the Linux VM that runs containers from Linux images (apps/build-app-packages.sh build_docker, x86_64)",
+      "pinned": "29d8326defd0df338e8ee71408e1ceab24845437",
+      "upstream": null,
+      "head": "29d8326defd0df338e8ee71408e1ceab24845437",
+      "commits": [
+        {
+          "sha": "29d8326defd0df338e8ee71408e1ceab24845437",
+          "url": "https://github.com/airos-works/linuxvm/commit/29d8326defd0df338e8ee71408e1ceab24845437",
+          "date": "2026-10-30T07:19:41Z",
+          "subject": "README: docker build, commit and save; status and stop"
+        },
+        {
+          "sha": "24da9360a805c729204951d1026796e57bcac055",
+          "url": "https://github.com/airos-works/linuxvm/commit/24da9360a805c729204951d1026796e57bcac055",
+          "date": "2026-10-30T06:52:05Z",
+          "subject": "linuxvm: the Linux VM that runs Linux containers on air/OS"
+        }
+      ],
+      "url": "https://github.com/airos-works/linuxvm/tree/main"
     },
     {
       "name": "buildx",
@@ -46575,43 +46907,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-10-30T04:51:46Z",
+      "published": "2026-10-30T10:53:58Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261030.0419-1-arm64.hpkg",
-          "size": 14990673,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.0419-1-arm64.hpkg",
-          "digest": "sha256:ea60d149cee453dfa53a07f562a9df7fb6bf91b21d235126c49255f688e37b56"
+          "name": "summit-0.1.0.git20261030.1036-1-arm64.hpkg",
+          "size": 15077550,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.1036-1-arm64.hpkg",
+          "digest": "sha256:1eaa116a621a76e2a3c9d531606bb5b02d7258d4971d89384d22a9144e1fa12b"
         },
         {
-          "name": "summit-0.1.0.git20261030.0419-1-x86_64.hpkg",
-          "size": 15191306,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.0419-1-x86_64.hpkg",
-          "digest": "sha256:0c1bd1249ebab80690738650e3450a5f9d0c833daa8e18d26d25b458d03443b1"
+          "name": "summit-0.1.0.git20261030.1036-1-x86_64.hpkg",
+          "size": 15276880,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261030.1036-1-x86_64.hpkg",
+          "digest": "sha256:519908ec5074ca0ce981c4c4ca9e3c4dda13c35098ac5201707a478489457132"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261030.0419-1-arm64.hpkg",
-          "size": 86305079,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.0419-1-arm64.hpkg",
-          "digest": "sha256:e29f715b078d31a38837af37d0514e51a249374a64aa8e95c047d4cd0a3a8d8f"
+          "name": "summit_webkit-1.10.1.git20261030.1036-1-arm64.hpkg",
+          "size": 86478123,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.1036-1-arm64.hpkg",
+          "digest": "sha256:f7eba0b825fee6d883b502601b9b339e61ccebf33d41f4b2ef90e7ecfd13df6f"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261030.0419-1-x86_64.hpkg",
-          "size": 88306584,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.0419-1-x86_64.hpkg",
-          "digest": "sha256:e4d984953edd8d8dd89afcacce0cb9208074d6065215b50d1b8d364188b5cc50"
+          "name": "summit_webkit-1.10.1.git20261030.1036-1-x86_64.hpkg",
+          "size": 88513854,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261030.1036-1-x86_64.hpkg",
+          "digest": "sha256:fc9aa6077c99b7aff28b650f71fae85492726f8252269d7b9c92f2cf6efa9630"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261030.0419-1-arm64.hpkg",
-          "size": 805216,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261030.0419-1-arm64.hpkg",
-          "digest": "sha256:9d9f8809f2574516fc805a6c9bb7a550f180f88caaf6f5a81523856668e7978f"
+          "name": "summit_webkitlegacy-1.10.1.git20261030.1036-1-arm64.hpkg",
+          "size": 823919,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261030.1036-1-arm64.hpkg",
+          "digest": "sha256:244b800fbc11dd49836ac2cbd33ea59cce589b730996b04520a06a37c6a4fde5"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261030.0419-1-x86_64.hpkg",
-          "size": 852490,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261030.0419-1-x86_64.hpkg",
-          "digest": "sha256:212212a71d9117a618a71c27ed38cd2f52e6f7b9019f3a2bb651b60864be1975"
+          "name": "summit_webkitlegacy-1.10.1.git20261030.1036-1-x86_64.hpkg",
+          "size": 873710,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261030.1036-1-x86_64.hpkg",
+          "digest": "sha256:aa890764419650739b567ee4403dedebb474bf6ae620337fc238de784b771dd5"
         }
       ]
     },
@@ -46641,19 +46973,19 @@
       "repo": "airTime",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "release": "https://github.com/airos-works/airTime/releases/tag/latest",
-      "published": "2026-10-30T05:29:51Z",
+      "published": "2026-10-30T13:03:08Z",
       "assets": [
         {
-          "name": "airtime-1.0.0-27-arm64.hpkg",
-          "size": 397277,
-          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-27-arm64.hpkg",
-          "digest": "sha256:e6f946f6809eda0b0fd072b725530aa127545cc3b0cf909da267c09c725e31fc"
+          "name": "airtime-1.0.0-32-arm64.hpkg",
+          "size": 402398,
+          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-32-arm64.hpkg",
+          "digest": "sha256:bc2d4cb7813508bf65668b8f092dcbdc5f72d5aa9f3cae70f110cfc782dc91b6"
         },
         {
-          "name": "airtime-1.0.0-27-x86_64.hpkg",
-          "size": 419637,
-          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-27-x86_64.hpkg",
-          "digest": "sha256:48ddce464058d78869a3057197864333384e0dc3095528ac58862bdb71bcc761"
+          "name": "airtime-1.0.0-32-x86_64.hpkg",
+          "size": 423141,
+          "browser_download_url": "https://github.com/airos-works/airTime/releases/download/latest/airtime-1.0.0-32-x86_64.hpkg",
+          "digest": "sha256:e177101f18c8a20962aa65a911fb7bbaed7f7c23c1ba522e8faa2ad750b6fcde"
         }
       ]
     },
@@ -46682,21 +47014,21 @@
       "name": "Docker Desktop",
       "repo": "docker-desktop",
       "description": "A native dashboard for the airOS Docker Engine: containers, Compose projects, images, volumes, networks and disk usage.",
-      "note": "Included in airOS system images with the Docker Engine, CLI and Compose. The Engine is an early port: containers run Haiku programs and share the host\u2019s network.",
+      "note": "Included in airOS system images with the Docker Engine, CLI and Compose. The Engine is an early port: Haiku images run natively, and Linux images run in a lightweight Linux VM with their own namespaces and networks (x86-64).",
       "release": "https://github.com/airos-works/docker-desktop/releases/tag/latest",
-      "published": "2026-10-30T04:41:43Z",
+      "published": "2026-10-30T07:14:10Z",
       "assets": [
         {
-          "name": "dockerdesktop-0.1.0.dev.16.ecd1a7d-1-arm64.hpkg",
-          "size": 231954,
-          "browser_download_url": "https://github.com/airos-works/docker-desktop/releases/download/latest/dockerdesktop-0.1.0.dev.16.ecd1a7d-1-arm64.hpkg",
-          "digest": "sha256:0081db41a259cd08cccb189357e1b4f36e50ff38a1c5d694188de08ed4abebb5"
+          "name": "dockerdesktop-0.1.0.dev.19.a7781bf-1-arm64.hpkg",
+          "size": 237278,
+          "browser_download_url": "https://github.com/airos-works/docker-desktop/releases/download/latest/dockerdesktop-0.1.0.dev.19.a7781bf-1-arm64.hpkg",
+          "digest": "sha256:1a1544dd6a5a984560be306a9aa5cf39e0edb7a927448266328cb9049d8326f4"
         },
         {
-          "name": "dockerdesktop-0.1.0.dev.16.ecd1a7d-1-x86_64.hpkg",
-          "size": 250109,
-          "browser_download_url": "https://github.com/airos-works/docker-desktop/releases/download/latest/dockerdesktop-0.1.0.dev.16.ecd1a7d-1-x86_64.hpkg",
-          "digest": "sha256:218f3256070e38271916a18f4e1aa6c1bc34cbf1a5682d54cc62e60662dcfba1"
+          "name": "dockerdesktop-0.1.0.dev.19.a7781bf-1-x86_64.hpkg",
+          "size": 256214,
+          "browser_download_url": "https://github.com/airos-works/docker-desktop/releases/download/latest/dockerdesktop-0.1.0.dev.19.a7781bf-1-x86_64.hpkg",
+          "digest": "sha256:8e87b539c750ac761677a212570803e198d7fde42645673a65369f7527821639"
         }
       ]
     },
