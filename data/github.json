@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-31T21:42:30+00:00",
-  "ci_head": "c456181c77201614bb4195f7cebb472f3ec67b69",
+  "updated": "2026-10-31T23:59:37+00:00",
+  "ci_head": "c3e583a414c417438ab48057e96214f549a38953",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "9ce0b7382e583a24b6c1c952f68bf48d561fd18c",
+      "head": "618db8a27c80267a389124e17eb2cc57b432e643",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -12550,6 +12550,24 @@
           "url": "https://github.com/airos-works/haiku/commit/9ce0b7382e583a24b6c1c952f68bf48d561fd18c",
           "date": "2026-10-31T11:55:37Z",
           "subject": "dragon-q8b: ir3 without per-draw preambles on Haiku"
+        },
+        {
+          "sha": "83512c1ce28efc805ce260d694087ec8a8f104b0",
+          "url": "https://github.com/airos-works/haiku/commit/83512c1ce28efc805ce260d694087ec8a8f104b0",
+          "date": "2026-10-31T22:05:15Z",
+          "subject": "x86 ioapic: PS/2 interrupts take their polarity from _CRS on AMD Zen"
+        },
+        {
+          "sha": "761d19d6d1727a702c6d704c5f8869e5b357a0ff",
+          "url": "https://github.com/airos-works/haiku/commit/761d19d6d1727a702c6d704c5f8869e5b357a0ff",
+          "date": "2026-10-31T23:24:01Z",
+          "subject": "Merge ps2-irq-polarity: built-in PS/2 keyboard on AMD boards with an active-low IRQ 1 (Framework 13 Ryzen AI 300)"
+        },
+        {
+          "sha": "618db8a27c80267a389124e17eb2cc57b432e643",
+          "url": "https://github.com/airos-works/haiku/commit/618db8a27c80267a389124e17eb2cc57b432e643",
+          "date": "2026-10-31T23:54:38Z",
+          "subject": "Issue form for airOS users [skip ci]"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -12560,8 +12578,14 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "c456181c77201614bb4195f7cebb472f3ec67b69",
+      "head": "c3e583a414c417438ab48057e96214f549a38953",
       "commits": [
+        {
+          "sha": "c3e583a414c417438ab48057e96214f549a38953",
+          "url": "https://github.com/airos-works/airos-ci/commit/c3e583a414c417438ab48057e96214f549a38953",
+          "date": "2026-10-31T23:50:30Z",
+          "subject": "App builds: PhotoCraft and LightCraft get their pinned craft-fonts"
+        },
         {
           "sha": "c456181c77201614bb4195f7cebb472f3ec67b69",
           "url": "https://github.com/airos-works/airos-ci/commit/c456181c77201614bb4195f7cebb472f3ec67b69",
@@ -34933,8 +34957,14 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "3cf36eb93a37477a5d3390372bdb28c64addf1bf",
+      "head": "f1ac8481e4ef11dc634651f94654d1e5c8c30695",
       "commits": [
+        {
+          "sha": "f1ac8481e4ef11dc634651f94654d1e5c8c30695",
+          "url": "https://github.com/airos-works/summit/commit/f1ac8481e4ef11dc634651f94654d1e5c8c30695",
+          "date": "2026-10-31T23:54:53Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "baa2b05e4939de758c1885243327173461ef709c",
           "url": "https://github.com/airos-works/summit/commit/baa2b05e4939de758c1885243327173461ef709c",
@@ -42948,8 +42978,14 @@
       "branch": "main",
       "description": "Capture a screen, window or region. Add arrows, labels and markup, then save or copy.",
       "group": "Applications",
-      "head": "0379854cce2321e6f570d394dba1316070921515",
+      "head": "fc2eb4dad154d1f4931de8a0637729c0f91b04e8",
       "commits": [
+        {
+          "sha": "fc2eb4dad154d1f4931de8a0637729c0f91b04e8",
+          "url": "https://github.com/airos-works/airShot/commit/fc2eb4dad154d1f4931de8a0637729c0f91b04e8",
+          "date": "2026-10-31T23:55:00Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "0379854cce2321e6f570d394dba1316070921515",
           "url": "https://github.com/airos-works/airShot/commit/0379854cce2321e6f570d394dba1316070921515",
@@ -43037,8 +43073,14 @@
       "branch": "main",
       "description": "A native movie player with a classic feel and hardware video decoding on supported devices.",
       "group": "Applications",
-      "head": "fd5a8ad327346ffb2041c90d44393a89a1c25edb",
+      "head": "20cb94ed1251b8e3e57de7c427644fcece01ca09",
       "commits": [
+        {
+          "sha": "20cb94ed1251b8e3e57de7c427644fcece01ca09",
+          "url": "https://github.com/airos-works/airTime/commit/20cb94ed1251b8e3e57de7c427644fcece01ca09",
+          "date": "2026-10-31T23:54:42Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "a2a7c0975a351d93c5c3d4effbf6dd210be6a605",
           "url": "https://github.com/airos-works/airTime/commit/a2a7c0975a351d93c5c3d4effbf6dd210be6a605",
@@ -43450,8 +43492,14 @@
       "branch": "main",
       "description": "Your music library, playlists and Music Assistant streams in a native desktop player.",
       "group": "Applications",
-      "head": "e0ea38e7fe7c54a5c33abac2809c0a701bafd39e",
+      "head": "7d0e36262192be8ec08ac1ca4d2bb9bbad18c50d",
       "commits": [
+        {
+          "sha": "7d0e36262192be8ec08ac1ca4d2bb9bbad18c50d",
+          "url": "https://github.com/airos-works/amp/commit/7d0e36262192be8ec08ac1ca4d2bb9bbad18c50d",
+          "date": "2026-10-31T23:54:43Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "4441e36b4fb0ed46aee6a7ef4f15b832ca613d29",
           "url": "https://github.com/airos-works/amp/commit/4441e36b4fb0ed46aee6a7ef4f15b832ca613d29",
@@ -43683,8 +43731,14 @@
       "branch": "main",
       "description": "A native dashboard for the airOS Docker Engine: containers, Compose projects, images, volumes, networks and disk usage.",
       "group": "Applications",
-      "head": "e6b0b157e9b07c4646c320b88d72bcd99e0ef020",
+      "head": "685400021b1defb280c379d3b522aa4bed512dda",
       "commits": [
+        {
+          "sha": "685400021b1defb280c379d3b522aa4bed512dda",
+          "url": "https://github.com/airos-works/docker-desktop/commit/685400021b1defb280c379d3b522aa4bed512dda",
+          "date": "2026-10-31T23:54:50Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "573d9375146745bd432ecf9ecca5d5447a248037",
           "url": "https://github.com/airos-works/docker-desktop/commit/573d9375146745bd432ecf9ecca5d5447a248037",
@@ -43796,8 +43850,14 @@
       "branch": "main",
       "description": "A native OpenVPN and AWS Client VPN client, including browser-based single sign-on.",
       "group": "Applications",
-      "head": "b6b5f793f7834043460272510af88ea7342008ff",
+      "head": "3e33a1b9d8cc0c1548a694bdcda8cd4f3381bc1b",
       "commits": [
+        {
+          "sha": "3e33a1b9d8cc0c1548a694bdcda8cd4f3381bc1b",
+          "url": "https://github.com/airos-works/burrow/commit/3e33a1b9d8cc0c1548a694bdcda8cd4f3381bc1b",
+          "date": "2026-10-31T23:54:52Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "b6b5f793f7834043460272510af88ea7342008ff",
           "url": "https://github.com/airos-works/burrow/commit/b6b5f793f7834043460272510af88ea7342008ff",
@@ -43867,8 +43927,14 @@
       "branch": "main",
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images.",
       "group": "Applications",
-      "head": "9ca4a721f08808895c87d60ecc84d9fcd1dd6892",
+      "head": "196c5992179b1a2d2631ed330e7b98bad8c3f0e6",
       "commits": [
+        {
+          "sha": "196c5992179b1a2d2631ed330e7b98bad8c3f0e6",
+          "url": "https://github.com/airos-works/clipper/commit/196c5992179b1a2d2631ed330e7b98bad8c3f0e6",
+          "date": "2026-10-31T23:54:59Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "9ca4a721f08808895c87d60ecc84d9fcd1dd6892",
           "url": "https://github.com/airos-works/clipper/commit/9ca4a721f08808895c87d60ecc84d9fcd1dd6892",
@@ -43932,8 +43998,14 @@
       "branch": "main",
       "description": "Write airOS images to USB sticks and SD cards from airOS, checking the download and verifying every byte written.",
       "group": "Applications",
-      "head": "ed1681fb6af7e7040d04f13ca0b6a7f5a22cb17c",
+      "head": "4da76372947ed6774fc2af8bf0592e27cae3a6e8",
       "commits": [
+        {
+          "sha": "4da76372947ed6774fc2af8bf0592e27cae3a6e8",
+          "url": "https://github.com/airos-works/airimager/commit/4da76372947ed6774fc2af8bf0592e27cae3a6e8",
+          "date": "2026-10-31T23:55:02Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "d31891aab4a6a0e9597e2280ce76519f58fa57a7",
           "url": "https://github.com/airos-works/airimager/commit/d31891aab4a6a0e9597e2280ce76519f58fa57a7",
@@ -43973,8 +44045,14 @@
       "branch": "main",
       "description": "An unofficial native port of Proton\u2019s VPN app: WireGuard or OpenVPN, Secure Core, NetShield, kill switch and port forwarding.",
       "group": "Applications",
-      "head": "049acd8b54da8829ef7dd071ce68687c85b1726a",
+      "head": "c6b81f8d1d81cf6cee63bc661bca1b906872ebe9",
       "commits": [
+        {
+          "sha": "c6b81f8d1d81cf6cee63bc661bca1b906872ebe9",
+          "url": "https://github.com/airos-works/proton-vpn-airos-app/commit/c6b81f8d1d81cf6cee63bc661bca1b906872ebe9",
+          "date": "2026-10-31T23:54:55Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "019141b4c56e80b1e23d8165e1744bee1bf03725",
           "url": "https://github.com/airos-works/proton-vpn-airos-app/commit/019141b4c56e80b1e23d8165e1744bee1bf03725",
@@ -44110,8 +44188,14 @@
       "branch": "master",
       "description": "Use your Proton Mail account in desktop mail apps through local IMAP and SMTP, with the vault key in the Haiku key store.",
       "group": "Applications",
-      "head": "f941ecce153ac329974fa3e3498a8f3e9167c39d",
+      "head": "b5ef3041c0aa321c2a53ccc568f4061fc2a21f83",
       "commits": [
+        {
+          "sha": "b5ef3041c0aa321c2a53ccc568f4061fc2a21f83",
+          "url": "https://github.com/airos-works/proton-bridge/commit/b5ef3041c0aa321c2a53ccc568f4061fc2a21f83",
+          "date": "2026-10-31T23:54:57Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "f941ecce153ac329974fa3e3498a8f3e9167c39d",
           "url": "https://github.com/airos-works/proton-bridge/commit/f941ecce153ac329974fa3e3498a8f3e9167c39d",
@@ -44187,8 +44271,14 @@
       "branch": "main",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "group": "Applications",
-      "head": "f4dbd49427e770b8ac224cc78a8c30ed9c893b1e",
+      "head": "6003893fa1bc6a7fbab4446abd43d33212fb5a67",
       "commits": [
+        {
+          "sha": "6003893fa1bc6a7fbab4446abd43d33212fb5a67",
+          "url": "https://github.com/airos-works/wordcraft/commit/6003893fa1bc6a7fbab4446abd43d33212fb5a67",
+          "date": "2026-10-31T23:54:36Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "71118994af9c66d71b8084de214134ca839c7e08",
           "url": "https://github.com/airos-works/wordcraft/commit/71118994af9c66d71b8084de214134ca839c7e08",
@@ -44348,8 +44438,14 @@
       "branch": "main",
       "description": "Work with spreadsheets, formulas, charts and XLSX workbooks.",
       "group": "Applications",
-      "head": "45e5d79a26179250a185f96c23644bb0ad43ee3d",
+      "head": "a2983eae9fa43b998e225f25421293eaeaeb3f14",
       "commits": [
+        {
+          "sha": "5ec4c23eb61319e2a2ca6ac285c5effc9fe6df21",
+          "url": "https://github.com/airos-works/gridcraft/commit/5ec4c23eb61319e2a2ca6ac285c5effc9fe6df21",
+          "date": "2026-10-31T23:52:18Z",
+          "subject": "air/OS: package builds and an issue form for airOS users [skip ci]"
+        },
         {
           "sha": "45e5d79a26179250a185f96c23644bb0ad43ee3d",
           "url": "https://github.com/airos-works/gridcraft/commit/45e5d79a26179250a185f96c23644bb0ad43ee3d",
@@ -44383,8 +44479,14 @@
       "branch": "main",
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
       "group": "Applications",
-      "head": "aed9d0b81b1220573191525945a71c8886ab0868",
+      "head": "eb53c3693d49750b3179ce37c795ef70a0c58c8a",
       "commits": [
+        {
+          "sha": "e3bba38d310f6a04331b41e0537f21b9d27eafab",
+          "url": "https://github.com/airos-works/deckcraft/commit/e3bba38d310f6a04331b41e0537f21b9d27eafab",
+          "date": "2026-10-31T23:52:18Z",
+          "subject": "air/OS: package builds and an issue form for airOS users [skip ci]"
+        },
         {
           "sha": "aed9d0b81b1220573191525945a71c8886ab0868",
           "url": "https://github.com/airos-works/deckcraft/commit/aed9d0b81b1220573191525945a71c8886ab0868",
@@ -44520,8 +44622,14 @@
       "branch": "main",
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
       "group": "Applications",
-      "head": "16859e24a9019f8ee74920fe997616b85d317bc7",
+      "head": "f457dfaeab32aa158ab908ffc161d3924dcf65d2",
       "commits": [
+        {
+          "sha": "5f91bcd1dfd0938f5ee68c53ab1a527abd162383",
+          "url": "https://github.com/airos-works/pdfcraft/commit/5f91bcd1dfd0938f5ee68c53ab1a527abd162383",
+          "date": "2026-10-31T23:52:19Z",
+          "subject": "air/OS: package builds and an issue form for airOS users [skip ci]"
+        },
         {
           "sha": "16859e24a9019f8ee74920fe997616b85d317bc7",
           "url": "https://github.com/airos-works/pdfcraft/commit/16859e24a9019f8ee74920fe997616b85d317bc7",
@@ -44640,13 +44748,275 @@
       "url": "https://github.com/airos-works/pdfcraft/tree/main"
     },
     {
+      "name": "PhotoCraft",
+      "repo": "airos-works/photocraft",
+      "branch": "main",
+      "description": "Edit layered images with brushes, masks and adjustments, in 8, 16 or 32 bits per channel, and open PSD files.",
+      "group": "Applications",
+      "head": "6d120ee8eff98149f28cc4f3655bda7d5abf2c83",
+      "commits": [
+        {
+          "sha": "0722cf722760c08a897b19118a8e70e6f6c53bb5",
+          "url": "https://github.com/airos-works/photocraft/commit/0722cf722760c08a897b19118a8e70e6f6c53bb5",
+          "date": "2026-10-31T23:52:19Z",
+          "subject": "air/OS: package builds and an issue form for airOS users [skip ci]"
+        },
+        {
+          "sha": "730e69fb1396a7b3ed6967bbe717cb4c3fc9d4bc",
+          "url": "https://github.com/airos-works/photocraft/commit/730e69fb1396a7b3ed6967bbe717cb4c3fc9d4bc",
+          "date": "2026-10-29T17:37:14Z",
+          "subject": "HAIKU5: package PhotoCraft 0.17.0~airos1-3"
+        },
+        {
+          "sha": "7d07568c82096e96337bf72b36c72c5fa78ca58d",
+          "url": "https://github.com/airos-works/photocraft/commit/7d07568c82096e96337bf72b36c72c5fa78ca58d",
+          "date": "2026-10-29T17:35:39Z",
+          "subject": "HAIKU5: package egui's font licences from the egui fork; add hayro's"
+        },
+        {
+          "sha": "c2b5d7ac4a978e8effb8c4aabcaea6a2f21ef664",
+          "url": "https://github.com/airos-works/photocraft/commit/c2b5d7ac4a978e8effb8c4aabcaea6a2f21ef664",
+          "date": "2026-10-29T17:26:47Z",
+          "subject": "HAIKU5: the multi-window driver answers the type tool's IME resets (#8)"
+        },
+        {
+          "sha": "327bb09d3c9f0afa783bfc420eab0d50503e84ce",
+          "url": "https://github.com/airos-works/photocraft/commit/327bb09d3c9f0afa783bfc420eab0d50503e84ce",
+          "date": "2026-10-29T17:26:46Z",
+          "subject": "HAIKU5: a copy started with images opens them once; a relaunch un-minimizes (#2)"
+        },
+        {
+          "sha": "c1fc9666aa33e3504361462c3b0f089c6f1d8e40",
+          "url": "https://github.com/airos-works/photocraft/commit/c1fc9666aa33e3504361462c3b0f089c6f1d8e40",
+          "date": "2026-10-29T16:49:06Z",
+          "subject": "HAIKU5: print through the Be print kit (#1)"
+        },
+        {
+          "sha": "8026ecd9a48ab5125fd2e0fb8ab4bbac26e9fd04",
+          "url": "https://github.com/airos-works/photocraft/commit/8026ecd9a48ab5125fd2e0fb8ab4bbac26e9fd04",
+          "date": "2026-10-29T16:14:55Z",
+          "subject": "HAIKU5: a BWindow for every egui viewport; floating panels in their own windows (#8)"
+        },
+        {
+          "sha": "1d1ce5ccfe2284a8d001dd93a84aa1103d3386d3",
+          "url": "https://github.com/airos-works/photocraft/commit/1d1ce5ccfe2284a8d001dd93a84aa1103d3386d3",
+          "date": "2026-10-29T11:04:01Z",
+          "subject": "HAIKU5: one running copy; later launches and Tracker opens go to it (#2)"
+        },
+        {
+          "sha": "590bfc0bc72cae48910d31670520d29cdaf2c6f1",
+          "url": "https://github.com/airos-works/photocraft/commit/590bfc0bc72cae48910d31670520d29cdaf2c6f1",
+          "date": "2026-10-29T11:03:53Z",
+          "subject": "HAIKU5: touchpad scrolling as a trackpad's, wheels as before (#3)"
+        },
+        {
+          "sha": "0c96cd913b621ab9423aefcef9b20a5a5e6f3596",
+          "url": "https://github.com/airos-works/photocraft/commit/0c96cd913b621ab9423aefcef9b20a5a5e6f3596",
+          "date": "2026-10-29T11:03:40Z",
+          "subject": "HAIKU5: no upstream update check; SoftwareUpdater updates the package (#4)"
+        },
+        {
+          "sha": "beaaf009217b8e5fa36b21480512d7b746946969",
+          "url": "https://github.com/airos-works/photocraft/commit/beaaf009217b8e5fa36b21480512d7b746946969",
+          "date": "2026-10-29T10:41:40Z",
+          "subject": "HAIKU5: embed craft-fonts; re-validate 0.17 on the X399 (#9)"
+        },
+        {
+          "sha": "031cb6919c03cda6676ef7df678ed37f34097fa5",
+          "url": "https://github.com/airos-works/photocraft/commit/031cb6919c03cda6676ef7df678ed37f34097fa5",
+          "date": "2026-10-29T10:41:40Z",
+          "subject": "HAIKU5: tablets, monitor profiles and the remaining services (#5, #6, #7)"
+        },
+        {
+          "sha": "c50fd7b08b7c936aaedfd8899b268e164d134df9",
+          "url": "https://github.com/airos-works/photocraft/commit/c50fd7b08b7c936aaedfd8899b268e164d134df9",
+          "date": "2026-10-29T01:21:30Z",
+          "subject": "HAIKU4: package PhotoCraft 0.17.0~airos1-2 (changed-tile presentation)"
+        },
+        {
+          "sha": "e05f73438bd2bfef58003e44687e585357897315",
+          "url": "https://github.com/airos-works/photocraft/commit/e05f73438bd2bfef58003e44687e585357897315",
+          "date": "2026-10-29T01:20:01Z",
+          "subject": "HAIKU4: read back only the tiles that changed (opt-in direct presentation)"
+        },
+        {
+          "sha": "7fd928c65e65abec263956b299dd02534fe920d9",
+          "url": "https://github.com/airos-works/photocraft/commit/7fd928c65e65abec263956b299dd02534fe920d9",
+          "date": "2026-10-28T22:45:35Z",
+          "subject": "HAIKU3: open files on packagefs, which can't clear O_NONBLOCK"
+        },
+        {
+          "sha": "6244bfc5aeab00f70dc54289caa0f6df094e8e9e",
+          "url": "https://github.com/airos-works/photocraft/commit/6244bfc5aeab00f70dc54289caa0f6df094e8e9e",
+          "date": "2026-10-28T22:30:05Z",
+          "subject": "HAIKU3: package PhotoCraft 0.17.0~airos1-1"
+        },
+        {
+          "sha": "151ab5211b328d993e0698b71fec033ab8bd7de5",
+          "url": "https://github.com/airos-works/photocraft/commit/151ab5211b328d993e0698b71fec033ab8bd7de5",
+          "date": "2026-10-28T22:30:05Z",
+          "subject": "HAIKU3: keep the software fallback when the GPU device is lost"
+        },
+        {
+          "sha": "3dfd436b6765d07f5281a77ce927bb836c5ce438",
+          "url": "https://github.com/airos-works/photocraft/commit/3dfd436b6765d07f5281a77ce927bb836c5ce438",
+          "date": "2026-10-28T22:30:05Z",
+          "subject": "HAIKU3: adapt the native host to egui 0.37 and PhotoCraft 0.17"
+        },
+        {
+          "sha": "07c9de29835582abd2461e05cd643da5de845b97",
+          "url": "https://github.com/airos-works/photocraft/commit/07c9de29835582abd2461e05cd643da5de845b97",
+          "date": "2026-10-28T22:30:03Z",
+          "subject": "Merge upstream storytold/photocraft main (69b8fd9c1)"
+        },
+        {
+          "sha": "f0e311157c251b7a1ab00ba3139c6b9d3cfd3c59",
+          "url": "https://github.com/airos-works/photocraft/commit/f0e311157c251b7a1ab00ba3139c6b9d3cfd3c59",
+          "date": "2026-10-26T04:14:33Z",
+          "subject": "HAIKU2: adopt an original Haiku-style application icon"
+        },
+        {
+          "sha": "38156b86a7dbd036c3e42eba90b756e1eead229c",
+          "url": "https://github.com/airos-works/photocraft/commit/38156b86a7dbd036c3e42eba90b756e1eead229c",
+          "date": "2026-10-18T11:10:35Z",
+          "subject": "Record air/OS release and hardware validation results"
+        },
+        {
+          "sha": "cbe6d62e62d4dcc7da28d5c35907bd4d870ae295",
+          "url": "https://github.com/airos-works/photocraft/commit/cbe6d62e62d4dcc7da28d5c35907bd4d870ae295",
+          "date": "2026-10-18T10:33:51Z",
+          "subject": "Port full editor to air/OS with native Vulkan rendering"
+        }
+      ],
+      "url": "https://github.com/airos-works/photocraft/tree/main"
+    },
+    {
+      "name": "LightCraft",
+      "repo": "airos-works/lightcraft",
+      "branch": "main",
+      "description": "Organize a photo library and develop RAW files non-destructively, with presets, masks and history; hands photos to PhotoCraft.",
+      "group": "Applications",
+      "head": "f2d4bb7e57a6f4cb93eef0551da8f21bbcdddc1a",
+      "commits": [
+        {
+          "sha": "556ab4822132d77c148d6125c1f4607b0e95333d",
+          "url": "https://github.com/airos-works/lightcraft/commit/556ab4822132d77c148d6125c1f4607b0e95333d",
+          "date": "2026-10-31T23:52:19Z",
+          "subject": "air/OS: package builds and an issue form for airOS users [skip ci]"
+        },
+        {
+          "sha": "cb900d92fc81716d59f32418f9134671486073ac",
+          "url": "https://github.com/airos-works/lightcraft/commit/cb900d92fc81716d59f32418f9134671486073ac",
+          "date": "2026-10-29T17:37:21Z",
+          "subject": "HAIKU5: package LightCraft 0.15.0~airos1-3"
+        },
+        {
+          "sha": "257293ed9e53c2436b289cc34722316197b53cae",
+          "url": "https://github.com/airos-works/lightcraft/commit/257293ed9e53c2436b289cc34722316197b53cae",
+          "date": "2026-10-29T17:11:15Z",
+          "subject": "HAIKU5: a copy started with photos imports them once; a relaunch un-minimizes (#2)"
+        },
+        {
+          "sha": "bacc54fa05f508743c2d24e96efd58a76309c357",
+          "url": "https://github.com/airos-works/lightcraft/commit/bacc54fa05f508743c2d24e96efd58a76309c357",
+          "date": "2026-10-29T16:19:26Z",
+          "subject": "HAIKU5: print through the Be print kit (#1)"
+        },
+        {
+          "sha": "e3561d0c57f3050d16f67e4bffdee3153c47d86f",
+          "url": "https://github.com/airos-works/lightcraft/commit/e3561d0c57f3050d16f67e4bffdee3153c47d86f",
+          "date": "2026-10-29T16:02:40Z",
+          "subject": "HAIKU5: AI masks on the GPU through wgpu (#5)"
+        },
+        {
+          "sha": "511e1fc20e7e2af7212884fcb6499aebeda9ddc4",
+          "url": "https://github.com/airos-works/lightcraft/commit/511e1fc20e7e2af7212884fcb6499aebeda9ddc4",
+          "date": "2026-10-29T11:09:43Z",
+          "subject": "HAIKU5: monitor profiles from ~/config/settings/ColorProfiles (#6)"
+        },
+        {
+          "sha": "a62258ba90f39097842f136e3c92b904b0e4798e",
+          "url": "https://github.com/airos-works/lightcraft/commit/a62258ba90f39097842f136e3c92b904b0e4798e",
+          "date": "2026-10-29T11:09:43Z",
+          "subject": "HAIKU5: rustfmt the touchpad wheel handler"
+        },
+        {
+          "sha": "cd32f6f687f676bf14828a025c2fcea77a5303e8",
+          "url": "https://github.com/airos-works/lightcraft/commit/cd32f6f687f676bf14828a025c2fcea77a5303e8",
+          "date": "2026-10-29T10:51:28Z",
+          "subject": "HAIKU5: Tracker reveal, GPU-lost marker, SDR report, card import (#7)"
+        },
+        {
+          "sha": "36082be220393e83de2782efcd3014b46f22c0e8",
+          "url": "https://github.com/airos-works/lightcraft/commit/36082be220393e83de2782efcd3014b46f22c0e8",
+          "date": "2026-10-29T10:51:17Z",
+          "subject": "HAIKU5: one running copy; later launches and Tracker opens import into it (#2)"
+        },
+        {
+          "sha": "db0bf7d0fd0559438eabd4ce57bbb9b00c7006e3",
+          "url": "https://github.com/airos-works/lightcraft/commit/db0bf7d0fd0559438eabd4ce57bbb9b00c7006e3",
+          "date": "2026-10-29T10:51:04Z",
+          "subject": "HAIKU5: touchpad scrolling as a trackpad's, wheels as before (#3)"
+        },
+        {
+          "sha": "a227931f1c03fb0cf2d5646107b9eb3124aa55e5",
+          "url": "https://github.com/airos-works/lightcraft/commit/a227931f1c03fb0cf2d5646107b9eb3124aa55e5",
+          "date": "2026-10-29T10:50:52Z",
+          "subject": "HAIKU5: no upstream update check; SoftwareUpdater updates the package (#4)"
+        },
+        {
+          "sha": "5dd9b360011599e1f12d6c7efd7ba9caf01d85c5",
+          "url": "https://github.com/airos-works/lightcraft/commit/5dd9b360011599e1f12d6c7efd7ba9caf01d85c5",
+          "date": "2026-10-29T01:21:36Z",
+          "subject": "HAIKU4: package LightCraft 0.15.0~airos1-2 (changed-tile presentation)"
+        },
+        {
+          "sha": "3ae0f1578105c161b27210754ac60a048b8125f0",
+          "url": "https://github.com/airos-works/lightcraft/commit/3ae0f1578105c161b27210754ac60a048b8125f0",
+          "date": "2026-10-29T01:13:13Z",
+          "subject": "HAIKU4: read back only the tiles that changed (opt-in direct presentation)"
+        },
+        {
+          "sha": "50c824134e8dd97f768609e2fe08f18beee8be7b",
+          "url": "https://github.com/airos-works/lightcraft/commit/50c824134e8dd97f768609e2fe08f18beee8be7b",
+          "date": "2026-10-28T22:09:13Z",
+          "subject": "HAIKU3: follow upstream 0.15.0 in the native air/OS host"
+        },
+        {
+          "sha": "5c7a7fb92d1e308f300b1c259b30af48ea2890cc",
+          "url": "https://github.com/airos-works/lightcraft/commit/5c7a7fb92d1e308f300b1c259b30af48ea2890cc",
+          "date": "2026-10-28T22:09:06Z",
+          "subject": "Merge upstream storytold/lightcraft main (77c0a6ad)"
+        },
+        {
+          "sha": "442a81028d0951e0e8f38fd33c12baa12b7a3e8f",
+          "url": "https://github.com/airos-works/lightcraft/commit/442a81028d0951e0e8f38fd33c12baa12b7a3e8f",
+          "date": "2026-10-26T04:14:33Z",
+          "subject": "HAIKU2: adopt an original Haiku-style application icon"
+        },
+        {
+          "sha": "0f8e655949b62de12fbab3550bdd25fccb04a0de",
+          "url": "https://github.com/airos-works/lightcraft/commit/0f8e655949b62de12fbab3550bdd25fccb04a0de",
+          "date": "2026-10-18T19:23:21Z",
+          "subject": "Haiku.1: port the full editor to air/OS with Vulkan acceleration"
+        }
+      ],
+      "url": "https://github.com/airos-works/lightcraft/tree/main"
+    },
+    {
       "name": "Mail",
       "repo": "airos-works/mail",
       "branch": "main",
       "description": "Native email client that replaces Haiku\u2019s Mail in x86-64 images.",
       "group": "Applications",
-      "head": "bca69d7b9790cf66075d9adf88b42e89ddfbb1c8",
+      "head": "4cfaa7fa97dc72cff669eddfbe14aecc08c816ff",
       "commits": [
+        {
+          "sha": "4cfaa7fa97dc72cff669eddfbe14aecc08c816ff",
+          "url": "https://github.com/airos-works/mail/commit/4cfaa7fa97dc72cff669eddfbe14aecc08c816ff",
+          "date": "2026-10-31T23:54:40Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "bca69d7b9790cf66075d9adf88b42e89ddfbb1c8",
           "url": "https://github.com/airos-works/mail/commit/bca69d7b9790cf66075d9adf88b42e89ddfbb1c8",
@@ -45055,8 +45425,14 @@
       "branch": "main",
       "description": "A native runtime for Electron applications on Haiku.",
       "group": "Applications",
-      "head": "cbce8e3d799946762a14dff1b913669ca858eaac",
+      "head": "5dafa5bbb14eb4270149eef778086b62e0d3ae61",
       "commits": [
+        {
+          "sha": "5dafa5bbb14eb4270149eef778086b62e0d3ae61",
+          "url": "https://github.com/airos-works/aurora/commit/5dafa5bbb14eb4270149eef778086b62e0d3ae61",
+          "date": "2026-10-31T23:54:47Z",
+          "subject": "Issue form for airOS users [skip ci]"
+        },
         {
           "sha": "12db0e50df931a04a9dc700b0a8a7139c6466ba5",
           "url": "https://github.com/airos-works/aurora/commit/12db0e50df931a04a9dc700b0a8a7139c6466ba5",
@@ -48021,7 +48397,7 @@
       "name": "WordCraft",
       "repo": "wordcraft",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
       "release": "https://github.com/airos-works/wordcraft/releases/tag/latest",
       "published": "2026-10-29T17:46:43Z",
       "assets": [
@@ -48043,50 +48419,136 @@
       "name": "GridCraft",
       "repo": "gridcraft",
       "description": "Work with spreadsheets, formulas, charts and XLSX workbooks.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
-      "release": null,
-      "assets": []
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
+      "release": "https://github.com/airos-works/gridcraft/releases/tag/latest",
+      "published": "2026-10-31T23:53:23Z",
+      "assets": [
+        {
+          "name": "gridcraft-0.7.0.airos1-4-arm64.hpkg",
+          "size": 8903762,
+          "browser_download_url": "https://github.com/airos-works/gridcraft/releases/download/latest/gridcraft-0.7.0.airos1-4-arm64.hpkg",
+          "digest": "sha256:dfcedd6f72f48a8ca40a85134553aa43e9bb9f2dc9c900fc1604a4fc4cc572e0"
+        },
+        {
+          "name": "gridcraft-0.7.0.airos1-4-x86_64.hpkg",
+          "size": 9525736,
+          "browser_download_url": "https://github.com/airos-works/gridcraft/releases/download/latest/gridcraft-0.7.0.airos1-4-x86_64.hpkg",
+          "digest": "sha256:03454253839168b1e61c53a2dcb363b6448bdf3d48ddbf96c1db18893e82553f"
+        }
+      ]
     },
     {
       "name": "DeckCraft",
       "repo": "deckcraft",
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
-      "release": null,
-      "assets": []
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
+      "release": "https://github.com/airos-works/deckcraft/releases/tag/latest",
+      "published": "2026-10-31T23:53:33Z",
+      "assets": [
+        {
+          "name": "deckcraft-0.12.0.airos1-3-arm64.hpkg",
+          "size": 22512346,
+          "browser_download_url": "https://github.com/airos-works/deckcraft/releases/download/latest/deckcraft-0.12.0.airos1-3-arm64.hpkg",
+          "digest": "sha256:9643d41718a87e9ed50780e4424d24ba7a32119565b4b025d35d057539d85683"
+        },
+        {
+          "name": "deckcraft-0.12.0.airos1-3-x86_64.hpkg",
+          "size": 23914125,
+          "browser_download_url": "https://github.com/airos-works/deckcraft/releases/download/latest/deckcraft-0.12.0.airos1-3-x86_64.hpkg",
+          "digest": "sha256:30756e3dbfa5869440774e6bd41e5d2f21230561f60c8dd2ede8792f36fb8034"
+        }
+      ]
     },
     {
       "name": "PDFCraft",
       "repo": "pdfcraft",
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented.",
-      "release": null,
-      "assets": []
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
+      "release": "https://github.com/airos-works/pdfcraft/releases/tag/latest",
+      "published": "2026-10-31T23:53:45Z",
+      "assets": [
+        {
+          "name": "pdfcraft-0.15.0.airos1-3-arm64.hpkg",
+          "size": 40617591,
+          "browser_download_url": "https://github.com/airos-works/pdfcraft/releases/download/latest/pdfcraft-0.15.0.airos1-3-arm64.hpkg",
+          "digest": "sha256:be053107fb32d870962f96b5a017306bc9be0186c7988d5a660dd71c68bfad8d"
+        },
+        {
+          "name": "pdfcraft-0.15.0.airos1-3-x86_64.hpkg",
+          "size": 43879492,
+          "browser_download_url": "https://github.com/airos-works/pdfcraft/releases/download/latest/pdfcraft-0.15.0.airos1-3-x86_64.hpkg",
+          "digest": "sha256:390457efb6c4c5dcd08dbeab71c8ed8891bf1a232ab8bce59b3990bfa0e6d125"
+        }
+      ]
+    },
+    {
+      "name": "PhotoCraft",
+      "repo": "photocraft",
+      "description": "Edit layered images with brushes, masks and adjustments, in 8, 16 or 32 bits per channel, and open PSD files.",
+      "note": "Early port drawn with Vulkan on a hardware driver, falling back to the CPU. Also included in airOS system images; the port notes list current limitations.",
+      "release": "https://github.com/airos-works/photocraft/releases/tag/latest",
+      "published": "2026-10-31T23:53:58Z",
+      "assets": [
+        {
+          "name": "photocraft-0.17.0.airos1-3-arm64.hpkg",
+          "size": 64311598,
+          "browser_download_url": "https://github.com/airos-works/photocraft/releases/download/latest/photocraft-0.17.0.airos1-3-arm64.hpkg",
+          "digest": "sha256:28687a810ceda20a9712c8bce4525f71fac9bc5b8b4708d68576d22da3bfe96d"
+        },
+        {
+          "name": "photocraft-0.17.0.airos1-3-x86_64.hpkg",
+          "size": 67117757,
+          "browser_download_url": "https://github.com/airos-works/photocraft/releases/download/latest/photocraft-0.17.0.airos1-3-x86_64.hpkg",
+          "digest": "sha256:b998d23293facc03858571354ad6fa7f084922a33946ad6d1afbacfa56fa6595"
+        }
+      ]
+    },
+    {
+      "name": "LightCraft",
+      "repo": "lightcraft",
+      "description": "Organize a photo library and develop RAW files non-destructively, with presets, masks and history; hands photos to PhotoCraft.",
+      "note": "Early port using Vulkan compute on a hardware driver, falling back to the CPU. AI models are not bundled. Also included in airOS system images.",
+      "release": "https://github.com/airos-works/lightcraft/releases/tag/latest",
+      "published": "2026-10-31T23:54:10Z",
+      "assets": [
+        {
+          "name": "lightcraft-0.15.0.airos1-3-arm64.hpkg",
+          "size": 56413117,
+          "browser_download_url": "https://github.com/airos-works/lightcraft/releases/download/latest/lightcraft-0.15.0.airos1-3-arm64.hpkg",
+          "digest": "sha256:3fab96e1f307ca100ee51b1851ad7208e10f5c328fc99f018107619a1b9f4c28"
+        },
+        {
+          "name": "lightcraft-0.15.0.airos1-3-x86_64.hpkg",
+          "size": 58366949,
+          "browser_download_url": "https://github.com/airos-works/lightcraft/releases/download/latest/lightcraft-0.15.0.airos1-3-x86_64.hpkg",
+          "digest": "sha256:499cb3077d6deed6df8b8451acc64d0b5beac5537895835e7b587af1c6ff035d"
+        }
+      ]
     }
   ],
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261031195953-9ce0b7382e",
-      "published": "2026-10-31T20:04:27Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261031234822-761d19d6d1",
+      "published": "2026-10-31T23:53:02Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1663451224,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261031195953-9ce0b7382e/airos-x86_64.iso.xz",
-          "digest": "sha256:cd886c6329ab68d2e7fdaff9ffe7d2d44bbaedd1890cf1bbe69ff5474173a31a"
+          "size": 1663465992,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261031234822-761d19d6d1/airos-x86_64.iso.xz",
+          "digest": "sha256:1d3e454afb0be1419bf51e2989988c22cafec6a11420c78a8bf9b598e53e834e"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261031195953-9ce0b7382e/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:16bbdad4fe0fa26b558f8e7ccd3ef7fad72d61fa8a0306af3cf212bd00e82bb0"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261031234822-761d19d6d1/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:e448f3455596f353ee4549811ba8216beb518488217dd577727b95d46dbbb2d1"
         },
         {
           "name": "manifest.json",
           "size": 17142,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261031195953-9ce0b7382e/manifest.json",
-          "digest": "sha256:32511994b1938010224cfa1cb3277322ebc7c48abc9fb339906602b0c5a452fb"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261031234822-761d19d6d1/manifest.json",
+          "digest": "sha256:b498982f74e40a30c38192925eac8ceccd676153c7585758765e3b80b20b720f"
         }
       ]
     },

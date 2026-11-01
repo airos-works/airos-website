@@ -67,25 +67,37 @@
       "name": "WordCraft",
       "repo": "wordcraft",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations."
     },
     {
       "name": "GridCraft",
       "repo": "gridcraft",
       "description": "Work with spreadsheets, formulas, charts and XLSX workbooks.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations."
     },
     {
       "name": "DeckCraft",
       "repo": "deckcraft",
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations."
     },
     {
       "name": "PDFCraft",
       "repo": "pdfcraft",
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
-      "note": "Early x86-64 port with native windows, file panels and clipboard. CPU rendering; native printing and IME composition are not implemented."
+      "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations."
+    },
+    {
+      "name": "PhotoCraft",
+      "repo": "photocraft",
+      "description": "Edit layered images with brushes, masks and adjustments, in 8, 16 or 32 bits per channel, and open PSD files.",
+      "note": "Early port drawn with Vulkan on a hardware driver, falling back to the CPU. Also included in airOS system images; the port notes list current limitations."
+    },
+    {
+      "name": "LightCraft",
+      "repo": "lightcraft",
+      "description": "Organize a photo library and develop RAW files non-destructively, with presets, masks and history; hands photos to PhotoCraft.",
+      "note": "Early port using Vulkan compute on a hardware driver, falling back to the CPU. AI models are not bundled. Also included in airOS system images."
     }
   ],
   "extra_repos": [

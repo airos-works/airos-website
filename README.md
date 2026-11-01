@@ -45,6 +45,13 @@ both from the repository's actual Pages configuration.
   Windows, checking the download and the written copy. It warns against balenaEtcher:
   2.1.4 silently dropped 2 MB from the x86-64 ISO while writing a USB stick (the same
   file via `dd` booted).
+- Report an issue (`report/`): asks where the problem was seen, the general system or one
+  of the apps (grouped as on the apps page, with their icons), and links straight to that
+  repository's new-issue form, `.github/ISSUE_TEMPLATE/airos-issue.yml`. Every listed
+  repository has the form: a description of the problem, the hardware platform and
+  details (with the airOS release from `/boot/system/data/airos/release`), and crash
+  reports, logs and screenshots. The system's apps open the airos-works/haiku form with
+  their name as the start of the title. The footer, apps page and downloads page link to it.
 - Source: the operating system, apps and every branch in the CI fork manifest.
 - Changelog: the owner's own commits to the forks and apps, monthly archives and global search.
 
@@ -207,8 +214,9 @@ with the dated snapshot and release-page links as fallbacks. It identifies archi
 release notes. Any app without a public release is explicitly unavailable and links to its
 release index. The live refresh also checks those entries, so their first
 rolling `latest` package appears without waiting for the next site deployment.
-WordCraft has an x86-64 public package; GridCraft, DeckCraft and PDFCraft are
-listed with their current public release availability. Media preferences and
+The six Craft apps (WordCraft, GridCraft, PDFCraft, DeckCraft, PhotoCraft and
+LightCraft) publish x86-64 and ARM64 packages to their rolling `latest` releases through
+airos-ci's app workflow; they are also in every system image. Media preferences and
 MediaConverter are included in system builds. Summit also links to its separate
 `latest-haiku` browser/engine pair for stock Haiku R1/beta6.
 

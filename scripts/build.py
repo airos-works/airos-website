@@ -30,7 +30,7 @@ def page(path, title, description, body):
     current = lambda p: p == path or p in ('changelog/', 'downloads/') and path.startswith(p)
     nav = ''.join(link(url(p), t, 'active' if current(p) else '') for p, t in NAV if p != 'downloads/')
     cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
-    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV)
+    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV + [('report/', 'Report an issue')])
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>air/OS</title><meta name="description" content="{e(description, quote=True)}">
@@ -154,7 +154,7 @@ def applications():
         else:
             body += ''.join(feature_row(item) for item in tab['items'])
         body += '</section>'
-    body += '<p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations.</p>'
+    body += '<p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations. Found a problem? '+link(url('report/'), 'Report an issue →')+'</p>'
     page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, Docker Desktop, the Summit browser, Proton VPN and Proton Mail Bridge, Clipper, AirShot, airImager, and the reworked system apps and preferences.', body)
 
 def summit():
@@ -246,7 +246,7 @@ def downloads():
         if target := features.get(app['repo'].lower()):
             body += link(url('apps/#'+target), 'Features, screenshots and port notes →', 'subtle')
         body += '</article>'
-    body += '</div><section class="install"><h2>Installing an app</h2><div><p>Choose the package for your architecture. Open it with Haiku’s package installer, or run:</p><pre><code>pkgman install /path/to/package.hpkg</code></pre><p>Packages target airOS unless their release notes say otherwise. For stock Haiku, use the dedicated Summit build. Follow dependency notes and install Summit together with its matching WebKit engine.</p></div></section>'
+    body += '</div><section class="install"><h2>Installing an app</h2><div><p>Choose the package for your architecture. Open it with Haiku’s package installer, or run:</p><pre><code>pkgman install /path/to/package.hpkg</code></pre><p>Packages target airOS unless their release notes say otherwise. For stock Haiku, use the dedicated Summit build. Follow dependency notes and install Summit together with its matching WebKit engine.</p><p>Something not working? '+link(url('report/'), 'Report an issue')+' with the system or the app it affects.</p></div></section>'
     page('downloads/', 'Downloads', 'Download airOS images and native app packages for ARM64 and x86-64.', body)
 
 def write_guide():
@@ -288,6 +288,52 @@ def write_guide():
     body += '<li><strong>Pi 4 and Cubie A7S:</strong> use the SD image for that board; the ARM64 ISO doesn’t boot either one. The ' + link(url('hardware/'), 'hardware notes') + ' list what each board supports.</li></ul></div></section>'
     body += '<div class="actions">' + link(url('downloads/#system'), '← Back to the downloads', 'button') + '</div>'
     page('downloads/write/', 'Writing an image', 'How to write airOS images to a USB stick or SD card with dd on Linux and macOS or Rufus on Windows, why not to use balenaEtcher, and how to check the copy.', body)
+
+REPORT_TEMPLATE = 'airos-issue.yml'
+
+def new_issue(repo, title=''):
+    # Each repository's issue form (.github/ISSUE_TEMPLATE/airos-issue.yml) asks for
+    # the problem, the hardware platform and details, and crash reports or screenshots.
+    query = 'template=' + REPORT_TEMPLATE + ('&title=' + quote(title + ': ') if title else '')
+    return f'{GITHUB}/{repo}/issues/new?{query}'
+
+def report_option(href, icon, name, detail, cls='report-option'):
+    return f'<a class="{cls}" href="{e(href, quote=True)}">{icon}<span><strong>{e(name)}</strong><small>{e(detail)}</small></span><span class="report-go" aria-hidden="true">↗</span></a>'
+
+def report():
+    prefix = GITHUB + '/'
+    def repo_of(source):
+        if not source.startswith(prefix):
+            raise ValueError('No airOS repository in ' + source)
+        return source[len(prefix):].split('/')[0]
+    groups = []
+    for tab in app_tabs()['tabs']:
+        if tab.get('summit'):
+            groups.append((tab['label'], [('summit', 'summit', 'Summit', 'Browser and WebKit engine')]))
+        else:
+            groups.append((tab['label'], [(repo_of(item['source']), item.get('icon', item['id']), item['title'], None) for item in tab['items']]))
+    # A repository with several listed parts (the system) gets the part's name as the title's start.
+    shared = defaultdict(int)
+    for _, items in groups:
+        for repo, *_ in items:
+            shared[repo] += 1
+    body = intro('Report an issue', 'Something not working?', 'Tell us where you saw it. Each part of airOS has its own issue tracker on GitHub: choose one below to open a short form for a new issue.')
+    body += '<div class="section-heading"><h2 id="where">Where did you see the problem?</h2><span>Choose one</span></div>'
+    mark = f'<img class="app-icon" src="{url("assets/favicon.svg")}" width="48" height="48" alt="">'
+    body += report_option(new_issue('haiku'), mark, 'General system', 'Starting up and installing, drivers and hardware, graphics, Wi-Fi, Bluetooth, sound, the desktop, system updates, and the preferences and system apps.', 'report-option report-system')
+    body += '<p class="report-or">Or an app:</p>'
+    for label, items in groups:
+        body += f'<h3 class="report-group">{e(label)}</h3><div class="report-grid">'
+        for repo, icon, name, detail in items:
+            href = new_issue(repo, name if shared[repo] > 1 else '')
+            body += report_option(href, app_icon(icon, 40), name, detail or 'airos-works/' + repo)
+        body += '</div>'
+    body += '<section class="install" id="checklist"><h2>What to have ready</h2><div><p>The form asks for three things. A short, specific report is the most useful.</p><ul>'
+    body += '<li><strong>A brief description.</strong> What you did, what happened, and what you expected instead.</li>'
+    body += '<li><strong>Your hardware platform and details.</strong> The machine or board, processor, graphics and memory, and your airOS release: run <code>cat /boot/system/data/airos/release</code> in Terminal, or note the image you installed from. For a driver problem, <code>listdev</code> or <code>listusb</code> shows the device.</li>'
+    body += '<li><strong>Anything that shows the problem.</strong> When an app crashes, choose <strong>Save report</strong> in the dialog: the <code>.report</code> file is saved on your Desktop. The system log is <code>/var/log/syslog</code>. A screenshot helps too. Drag files into the form to attach them.</li></ul>'
+    body += '<p>You need a free GitHub account to open an issue. Issues are public, so leave out passwords, keys and personal details, including in logs and screenshots.</p></div></section>'
+    page('report/', 'Report an issue', 'Report a problem with airOS or one of its apps: choose where you saw it and open an issue on GitHub, with your hardware details, crash reports and screenshots.', body)
 
 def sources():
     body = intro('Source code', 'Every part has a story.', 'The operating system, applications, libraries and firmware that make up airOS. Explore the code, its origins and the changes we build on.')
@@ -342,7 +388,7 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / 'static', OUT)
-    for build in [home, applications, summit, hardware, downloads, write_guide, sources, changelog]:
+    for build in [home, applications, summit, hardware, downloads, write_guide, report, sources, changelog]:
         build()
     page('404/', 'Page not found', 'This airOS page could not be found.', intro('404', 'A little off course.', 'This page has moved or does not exist.') + link(url(), 'Back to the project →', 'button primary'))
     shutil.copy(OUT / '404/index.html', OUT / '404.html')

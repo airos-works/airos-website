@@ -38,7 +38,7 @@ for path,p in pages.items():
         if dest.is_dir():dest=dest/'index.html'
         if not dest.exists():errors.append(f'{path}: broken link {href}')
         elif u.fragment and dest in pages and u.fragment not in pages[dest].ids:errors.append(f'{path}: missing anchor {href}')
-for route in ['', 'apps', 'summit', 'hardware','downloads','downloads/write','source','changelog']:
+for route in ['', 'apps', 'summit', 'hardware','downloads','downloads/write','report','source','changelog']:
     if not (OUT/route/'index.html').is_file():errors.append('Missing route '+route)
 snapshot=json.loads((ROOT/'data/github.json').read_text())
 changes=json.loads((OUT/'changes.json').read_text())
@@ -54,6 +54,10 @@ for im in snapshot['images']:
         names={a['name'] for a in im['assets']}
         image=next((n for n in names if n.endswith(('.iso.xz','.img.xz'))),None)
         if not image or image+'.sha256' not in names or 'manifest.json' not in names:errors.append('Incomplete image release '+im['target'])
+report=pages.get(OUT/'report/index.html')
+if report:
+    forms=[l for l in report.links if '/issues/new?' in l]
+    if len(forms)<10 or any(not re.match(r'https://github\.com/airos-works/[A-Za-z0-9_.-]+/issues/new\?template=airos-issue\.yml(&|$)',l) for l in forms):errors.append('Report page: every option must open an airOS issue form')
 hidden=re.compile(json.loads((ROOT/'content/project.json').read_text())['hidden_subjects']['pattern'],re.I)
 for path in OUT.rglob('*'):
     if path.suffix in ('.html','.json','.xml','.txt','.js','.css') and hidden.search(path.read_text()):errors.append(f'{path}: names a retired project')
