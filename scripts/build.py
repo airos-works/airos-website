@@ -318,10 +318,9 @@ def report():
         for repo, *_ in items:
             shared[repo] += 1
     body = intro('Report an issue', 'Something not working?', 'Tell us where you saw it. Each part of airOS has its own issue tracker on GitHub: choose one below to open a short form for a new issue.')
-    body += '<div class="section-heading"><h2 id="where">Where did you see the problem?</h2><span>Choose one</span></div>'
+    body += '<div class="section-heading"><h2 id="where">Where did you see the problem?</h2></div>'
     mark = f'<img class="app-icon" src="{url("assets/favicon.svg")}" width="48" height="48" alt="">'
     body += report_option(new_issue('haiku'), mark, 'General system', 'Starting up and installing, drivers and hardware, graphics, Wi-Fi, Bluetooth, sound, the desktop, system updates, and the preferences and system apps.', 'report-option report-system')
-    body += '<p class="report-or">Or an app:</p>'
     for label, items in groups:
         body += f'<h3 class="report-group">{e(label)}</h3><div class="report-grid">'
         for repo, icon, name, detail in items:

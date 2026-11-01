@@ -198,7 +198,7 @@ pre{padding:18px 22px;border-radius:var(--r-sm);background:var(--night);color:#d
 .report-system:hover{background:var(--panel-2);border-color:var(--panel-2)}
 .report-system strong{font-size:26px;font-weight:450;letter-spacing:-.03em}
 .report-system small{font-family:var(--sans);font-size:14.5px;line-height:1.55;max-width:760px}
-.report-or{margin:40px 0 0;font-size:15px;color:var(--muted)}
+.report-system+.report-group{margin-top:44px}
 .report-group{font-family:var(--mono);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:28px 0 12px}
 .report-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 
