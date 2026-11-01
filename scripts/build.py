@@ -17,7 +17,7 @@ D = json.loads((ROOT / 'data/github.json').read_text())
 # GitHub organization that hosts every airOS repository (content/project.json).
 GITHUB = 'https://github.com/' + json.loads((ROOT / 'content/project.json').read_text())['owner']
 UPDATED = D['updated'][:10]
-NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('changelog/', 'Changelog')]
+NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('report/', 'Report an issue'), ('changelog/', 'Changelog')]
 
 def url(path=''):
     return BASE + '/' + path
@@ -30,7 +30,7 @@ def page(path, title, description, body):
     current = lambda p: p == path or p in ('changelog/', 'downloads/') and path.startswith(p)
     nav = ''.join(link(url(p), t, 'active' if current(p) else '') for p, t in NAV if p != 'downloads/')
     cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
-    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV + [('report/', 'Report an issue')])
+    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV)
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>air/OS</title><meta name="description" content="{e(description, quote=True)}">
