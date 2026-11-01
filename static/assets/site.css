@@ -194,8 +194,7 @@ pre{padding:18px 22px;border-radius:var(--r-sm);background:var(--night);color:#d
 .report-option strong{font-size:16px;font-weight:550;letter-spacing:-.015em;line-height:1.3}
 .report-option small{font-family:var(--mono);font-size:11px;color:var(--muted);overflow-wrap:anywhere}
 .report-go{margin-left:auto;padding-left:6px;color:var(--muted);flex:none}
-.report-system{padding:28px 30px;gap:22px;background:var(--panel);border-color:var(--panel);border-radius:var(--r-lg)}
-.report-system:hover{background:var(--panel-2);border-color:var(--panel-2)}
+.report-system{padding:28px 30px;gap:22px;border-radius:var(--r-lg)}
 .report-system strong{font-size:26px;font-weight:450;letter-spacing:-.03em}
 .report-system small{font-family:var(--sans);font-size:14.5px;line-height:1.55;max-width:760px}
 .report-system+.report-group{margin-top:44px}
