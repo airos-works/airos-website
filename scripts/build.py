@@ -155,7 +155,7 @@ def applications():
             body += ''.join(feature_row(item) for item in tab['items'])
         body += '</section>'
     body += '<p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations. Found a problem? '+link(url('report/'), 'Report an issue →')+'</p>'
-    page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, Docker Desktop, the Summit browser, Proton VPN and Proton Mail Bridge, Clipper, AirShot, airImager, and the reworked system apps and preferences.', body)
+    page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, Docker Desktop, the Summit browser, Proton VPN and Proton Mail Bridge, Clipper, AirShot, AirImager, and the reworked system apps and preferences.', body)
 
 def summit():
     data = json.loads((ROOT / 'content/summit.json').read_text())

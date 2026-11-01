@@ -43993,7 +43993,7 @@
       "url": "https://github.com/airos-works/clipper/tree/main"
     },
     {
-      "name": "airImager",
+      "name": "AirImager",
       "repo": "airos-works/airimager",
       "branch": "main",
       "description": "Write airOS images to USB sticks and SD cards from airOS, checking the download and verifying every byte written.",
@@ -48321,7 +48321,7 @@
       ]
     },
     {
-      "name": "airImager",
+      "name": "AirImager",
       "repo": "airimager",
       "description": "Write airOS images to USB sticks and SD cards from airOS, checking the download and verifying every byte written.",
       "note": "Included in every airOS image.",

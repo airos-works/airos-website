@@ -340,7 +340,7 @@
         },
         {
           "id": "airimager",
-          "title": "airImager",
+          "title": "AirImager",
           "text": "Write an airOS image to a USB stick or SD card from airOS itself: choose the image, choose the drive, write.",
           "features": [
             "Writes the .iso.xz and .img.xz files as downloaded, decompressing them as it goes",

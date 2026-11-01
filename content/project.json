@@ -45,7 +45,7 @@
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images."
     },
     {
-      "name": "airImager",
+      "name": "AirImager",
       "repo": "airimager",
       "description": "Write airOS images to USB sticks and SD cards from airOS, checking the download and verifying every byte written.",
       "note": "Included in every airOS image."
