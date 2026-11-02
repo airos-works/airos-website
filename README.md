@@ -52,7 +52,8 @@ both from the repository's actual Pages configuration.
   details (with the airOS release from `/boot/system/data/airos/release`), and crash
   reports, logs and screenshots. The system's apps open the airos-works/haiku form with
   their name as the start of the title. The footer, apps page and downloads page link to it.
-- Source: the operating system, apps and every branch in the CI fork manifest.
+- Source: the operating system, apps and every branch in the CI fork manifest. Its intro is only the
+  small `■ SOURCE CODE` label (the page's one `h1`), with no headline or lead.
 - Changelog: the owner's own commits to the forks and apps, monthly archives and global search.
 
 The established air/OS artwork supplies the identity. The home page opens on the
@@ -159,8 +160,8 @@ The Radxa Dragon Q8B entry describes bring-up on the `dragon-q8b` branch of
 airos-works/haiku and links to that branch's history; it is not counted among the
 home page's supported ARM64 boards until its status is `Tested on hardware`.
 
-The NVIDIA hardware entry distinguishes the recorded Pascal graphics and NVDEC
-tests from the experimental NVENC implementation. Its sources are the
+The NVIDIA hardware entry distinguishes the recorded Pascal graphics, 2D engine
+(merged 27 October 2026) and NVDEC tests from the experimental NVENC implementation. Its sources are the
 [workstation test notes](https://github.com/airos-works/haiku/blob/master/docs/x399-workstation/STATUS.md)
 and [MediaConverter NVENC notes](https://github.com/airos-works/haiku/blob/master/docs/airos/MEDIACONVERTER.md#nvidia-nvenc).
 

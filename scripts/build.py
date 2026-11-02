@@ -335,7 +335,8 @@ def report():
     page('report/', 'Report an issue', 'Report a problem with airOS or one of its apps: choose where you saw it and open an issue on GitHub, with your hardware details, crash reports and screenshots.', body)
 
 def sources():
-    body = intro('Source code', 'Every part has a story.', 'The operating system, applications, libraries and firmware that make up airOS. Explore the code, its origins and the changes we build on.')
+    # No headline or lead: the page's one h1 is its small label.
+    body = '<div class="page-intro compact"><h1 class="eyebrow">Source code</h1></div>'
     body += '<aside class="note">Start with <a href="https://github.com/haiku/haiku">upstream Haiku</a> and <a href="https://www.haiku-os.org/">the Haiku project</a>. airOS is an independent, AI-assisted fork; its work is not presented as upstream-approved. Each repository retains its own licence and attribution.</aside>'
     groups = defaultdict(list)
     for s in D['sources']:
