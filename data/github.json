@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-01T22:08:55+00:00",
-  "ci_head": "54dd513da67f691f213af9d7fc770b26de01d2ff",
+  "updated": "2026-11-02T06:20:17+00:00",
+  "ci_head": "3a1bd7fda62e1dc39cc740947cefc6306350e688",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "02bbad282c5c0217580d9e902108d704f1f1f406",
+      "head": "7cfd578897bfee50770f9e0c2a0dea54bfbf1a96",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -12952,6 +12952,54 @@
           "url": "https://github.com/airos-works/haiku/commit/02bbad282c5c0217580d9e902108d704f1f1f406",
           "date": "2026-11-01T21:54:48Z",
           "subject": "Network: service order, faster failover and a richer interface panel"
+        },
+        {
+          "sha": "484461ad351bfd8999c116fce2484e01e969145d",
+          "url": "https://github.com/airos-works/haiku/commit/484461ad351bfd8999c116fce2484e01e969145d",
+          "date": "2026-11-01T22:25:40Z",
+          "subject": "Network: one status for the interface list and the interface view"
+        },
+        {
+          "sha": "94c99e5ee7f9ad1e68318678c45548940c2ac754",
+          "url": "https://github.com/airos-works/haiku/commit/94c99e5ee7f9ad1e68318678c45548940c2ac754",
+          "date": "2026-11-01T22:25:44Z",
+          "subject": "usb_ecm: take the link state from NetworkConnection, not speed changes"
+        },
+        {
+          "sha": "435607fd5c14048244c2327ce871403958f14e8f",
+          "url": "https://github.com/airos-works/haiku/commit/435607fd5c14048244c2327ce871403958f14e8f",
+          "date": "2026-11-02T04:51:24Z",
+          "subject": "usb: reset a hub port again when it stays disabled; power it after an over-current"
+        },
+        {
+          "sha": "931f695d8493f3342b8edcb19976c1b1d9a588c6",
+          "url": "https://github.com/airos-works/haiku/commit/931f695d8493f3342b8edcb19976c1b1d9a588c6",
+          "date": "2026-11-02T04:51:33Z",
+          "subject": "Merge branch 'usb-port-reset-enable': hub port reset/over-current fixes for Pi 4 USB"
+        },
+        {
+          "sha": "39515d87e198923306f404d02b7f05a2586aeb64",
+          "url": "https://github.com/airos-works/haiku/commit/39515d87e198923306f404d02b7f05a2586aeb64",
+          "date": "2026-11-02T05:21:33Z",
+          "subject": "xhci: route string from the hubs' own ports, not the TT's"
+        },
+        {
+          "sha": "c8bace26c4d494ac13af856f362206788ea29f26",
+          "url": "https://github.com/airos-works/haiku/commit/c8bace26c4d494ac13af856f362206788ea29f26",
+          "date": "2026-11-02T05:41:06Z",
+          "subject": "Merge branch 'qemu-fs-hub': xHCI route string behind full speed hubs, usb_hub_child_test"
+        },
+        {
+          "sha": "b63d986fa872a61edd2061e312bf191a5d6f1d0d",
+          "url": "https://github.com/airos-works/haiku/commit/b63d986fa872a61edd2061e312bf191a5d6f1d0d",
+          "date": "2026-11-02T05:43:10Z",
+          "subject": "usb_ecm: refresh the notification pipe after the alternate interface switch"
+        },
+        {
+          "sha": "7cfd578897bfee50770f9e0c2a0dea54bfbf1a96",
+          "url": "https://github.com/airos-works/haiku/commit/7cfd578897bfee50770f9e0c2a0dea54bfbf1a96",
+          "date": "2026-11-02T05:43:35Z",
+          "subject": "Merge branch 'usb-ecm-link-state': usb_ecm link state and speed from CDC notifications"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -12962,8 +13010,92 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "54dd513da67f691f213af9d7fc770b26de01d2ff",
+      "head": "3a1bd7fda62e1dc39cc740947cefc6306350e688",
       "commits": [
+        {
+          "sha": "3a1bd7fda62e1dc39cc740947cefc6306350e688",
+          "url": "https://github.com/airos-works/airos-ci/commit/3a1bd7fda62e1dc39cc740947cefc6306350e688",
+          "date": "2026-11-02T05:41:47Z",
+          "subject": "Merge branch 'qemu-usb-hub': smoke test with a full-speed hub and a mouse behind it"
+        },
+        {
+          "sha": "a742ce1aecee24fddc60336b75774e40d8c1374e",
+          "url": "https://github.com/airos-works/airos-ci/commit/a742ce1aecee24fddc60336b75774e40d8c1374e",
+          "date": "2026-11-02T05:23:55Z",
+          "subject": "smoke test: a full-speed USB hub with a mouse behind it"
+        },
+        {
+          "sha": "fe0a3403e62e6dfce568d9fbcec4466141f14e57",
+          "url": "https://github.com/airos-works/airos-ci/commit/fe0a3403e62e6dfce568d9fbcec4466141f14e57",
+          "date": "2026-11-02T04:49:45Z",
+          "subject": "office: msga c7e23d0 (wake pipe fd leak that hung MSGA)"
+        },
+        {
+          "sha": "87399363c22baa3629e9e6ef82ec5d63cc7327db",
+          "url": "https://github.com/airos-works/airos-ci/commit/87399363c22baa3629e9e6ef82ec5d63cc7327db",
+          "date": "2026-11-02T00:44:06Z",
+          "subject": "msga: pin 184784a (tray icon survives package updates)"
+        },
+        {
+          "sha": "a72cd3b256320664627491ebdaa0b30f0eaf56a9",
+          "url": "https://github.com/airos-works/airos-ci/commit/a72cd3b256320664627491ebdaa0b30f0eaf56a9",
+          "date": "2026-11-02T00:35:02Z",
+          "subject": "msga: pin 9de95c6 (settings and workspaces kept in ~/config/settings)"
+        },
+        {
+          "sha": "b02f1e372729ca54a7027406d2c4792db8aea459",
+          "url": "https://github.com/airos-works/airos-ci/commit/b02f1e372729ca54a7027406d2c4792db8aea459",
+          "date": "2026-11-02T00:29:13Z",
+          "subject": "msga: the tray icon's Deskbar add-on, pin 32eeb3a"
+        },
+        {
+          "sha": "f5cc444d306db7c9f24333149850b2d6bf853e14",
+          "url": "https://github.com/airos-works/airos-ci/commit/f5cc444d306db7c9f24333149850b2d6bf853e14",
+          "date": "2026-11-02T00:08:38Z",
+          "subject": "Office: MSGA 43~airos1-9 (msga 321d91f: Slack sessions go as the browser they belong to)"
+        },
+        {
+          "sha": "a6a75e0fcd0f56af5b659fb7ceff3d7e3de07243",
+          "url": "https://github.com/airos-works/airos-ci/commit/a6a75e0fcd0f56af5b659fb7ceff3d7e3de07243",
+          "date": "2026-11-01T23:45:00Z",
+          "subject": "Office: MSGA 43~airos1-8 (msga f238209: sign-in never presents the browser's stored tokens)"
+        },
+        {
+          "sha": "64710cdcb6b18e9bee624c68259b0392147b5a37",
+          "url": "https://github.com/airos-works/airos-ci/commit/64710cdcb6b18e9bee624c68259b0392147b5a37",
+          "date": "2026-11-01T23:36:04Z",
+          "subject": "Office: MSGA 43~airos1-7 (msga 4b211e8: sign-in watches the Summit window instead of steering it)"
+        },
+        {
+          "sha": "115f41d3f26c77a20c7d8a620709be38b317ab67",
+          "url": "https://github.com/airos-works/airos-ci/commit/115f41d3f26c77a20c7d8a620709be38b317ab67",
+          "date": "2026-11-01T23:23:21Z",
+          "subject": "Office: MSGA 43~airos1-6 (msga b996dab: sign-in tries every d cookie, logs to a file)"
+        },
+        {
+          "sha": "cc44efb92a784624b46a98909eb02dbaa79b05cb",
+          "url": "https://github.com/airos-works/airos-ci/commit/cc44efb92a784624b46a98909eb02dbaa79b05cb",
+          "date": "2026-11-01T23:09:20Z",
+          "subject": "Office: MSGA 43~airos1-5 (msga e8de287: sign in with the user's own Summit)"
+        },
+        {
+          "sha": "9bb8fa945648cd085a8ff57da2a923a2469dd44b",
+          "url": "https://github.com/airos-works/airos-ci/commit/9bb8fa945648cd085a8ff57da2a923a2469dd44b",
+          "date": "2026-11-01T22:56:52Z",
+          "subject": "Office: MSGA 43~airos1-4 (msga f579831: Summit sign-in verifies the session first)"
+        },
+        {
+          "sha": "abb974d8aa4b27560a45dc8511e973557eb37e6a",
+          "url": "https://github.com/airos-works/airos-ci/commit/abb974d8aa4b27560a45dc8511e973557eb37e6a",
+          "date": "2026-11-01T22:37:36Z",
+          "subject": "Office: MSGA 43~airos1-3 (msga 4e475f9: Summit sign-in on slow pages, long tokens in fields, quitting)"
+        },
+        {
+          "sha": "c2ff0b6f7fa72640879d4c9ba9dd828f3b807f33",
+          "url": "https://github.com/airos-works/airos-ci/commit/c2ff0b6f7fa72640879d4c9ba9dd828f3b807f33",
+          "date": "2026-11-01T22:09:26Z",
+          "subject": "server: /data3, a RAID10 of the six SAS disks, for artifacts and caches"
+        },
         {
           "sha": "54dd513da67f691f213af9d7fc770b26de01d2ff",
           "url": "https://github.com/airos-works/airos-ci/commit/54dd513da67f691f213af9d7fc770b26de01d2ff",
@@ -35395,8 +35527,80 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "f69e10c6b88de15d792edb39951b1fd244d866c7",
+      "head": "2feb886410239951b39f7109141c1e18312307ba",
       "commits": [
+        {
+          "sha": "2feb886410239951b39f7109141c1e18312307ba",
+          "url": "https://github.com/airos-works/summit/commit/2feb886410239951b39f7109141c1e18312307ba",
+          "date": "2026-11-02T06:19:16Z",
+          "subject": "Engine: webRequest listeners see http(s) loads only; blob: loads start at once (#174)"
+        },
+        {
+          "sha": "3f72e4392decba9b590f67866de9233dd399275e",
+          "url": "https://github.com/airos-works/summit/commit/3f72e4392decba9b590f67866de9233dd399275e",
+          "date": "2026-11-02T03:40:27Z",
+          "subject": "Engine: hidden pages' nested timers are throttled, as on Cocoa and GTK"
+        },
+        {
+          "sha": "9ee46e19d6fa438e0444daece3dd30008bde4df0",
+          "url": "https://github.com/airos-works/summit/commit/9ee46e19d6fa438e0444daece3dd30008bde4df0",
+          "date": "2026-11-02T02:47:33Z",
+          "subject": "Tabs: unload bloated background tabs once RAM gets tight (#172)"
+        },
+        {
+          "sha": "1ac815e271d20b23364c3a5981ead3bb946bf4e1",
+          "url": "https://github.com/airos-works/summit/commit/1ac815e271d20b23364c3a5981ead3bb946bf4e1",
+          "date": "2026-11-02T01:53:54Z",
+          "subject": "docs: the memory changes measured together (#163-#171)"
+        },
+        {
+          "sha": "7e77d887a01c2e7b9782cd3705cdc0b8ac2f34af",
+          "url": "https://github.com/airos-works/summit/commit/7e77d887a01c2e7b9782cd3705cdc0b8ac2f34af",
+          "date": "2026-11-02T01:32:39Z",
+          "subject": "Engine: a view hidden for 10 minutes drops the frame it keeps (#171)"
+        },
+        {
+          "sha": "acab9aadf73d4bed54ca0ec9638e1a638aaff1d3",
+          "url": "https://github.com/airos-works/summit/commit/acab9aadf73d4bed54ca0ec9638e1a638aaff1d3",
+          "date": "2026-11-02T01:23:27Z",
+          "subject": "Engine: memory.mimalloc drops committedMiB (wraps below zero on Haiku)"
+        },
+        {
+          "sha": "a72998de9c8ce598f31eeb373e8fbc1e3dbefeeb",
+          "url": "https://github.com/airos-works/summit/commit/a72998de9c8ce598f31eeb373e8fbc1e3dbefeeb",
+          "date": "2026-11-02T01:19:18Z",
+          "subject": "Engine: page-less web processes get the hidden release too (#164)"
+        },
+        {
+          "sha": "fe61147c180e952b8de6362879fd1c87b837ce0c",
+          "url": "https://github.com/airos-works/summit/commit/fe61147c180e952b8de6362879fd1c87b837ce0c",
+          "date": "2026-11-02T00:38:27Z",
+          "subject": "Engine: a removed content world takes its window proxies with it (#167)"
+        },
+        {
+          "sha": "8c780c67e219ad13976ebfafbd78d4cc1a66a90d",
+          "url": "https://github.com/airos-works/summit/commit/8c780c67e219ad13976ebfafbd78d4cc1a66a90d",
+          "date": "2026-11-02T00:22:28Z",
+          "subject": "Engine: a hidden process turns a memory warning critical at most every 10 minutes (#164)"
+        },
+        {
+          "sha": "4498fb161311b7d2232594aef2799597ba8e52bd",
+          "url": "https://github.com/airos-works/summit/commit/4498fb161311b7d2232594aef2799597ba8e52bd",
+          "date": "2026-11-02T00:02:56Z",
+          "subject": "Engine: containers' network processes end when idle (#165)"
+        },
+        {
+          "sha": "a787299e7bfd45d568c705bafe0d15e9d7391333",
+          "url": "https://github.com/airos-works/summit/commit/a787299e7bfd45d568c705bafe0d15e9d7391333",
+          "date": "2026-11-01T23:43:30Z",
+          "subject": "Engine: same-site tabs share a web process when memory is low (#166)"
+        },
+        {
+          "sha": "f04037a4f9f52b6786f66e85f42a27bc9eae1fbf",
+          "url": "https://github.com/airos-works/summit/commit/f04037a4f9f52b6786f66e85f42a27bc9eae1fbf",
+          "date": "2026-11-01T23:33:07Z",
+          "subject": "Memory: unload tabs when the RAM (not RAM+swap) runs low; hidden processes release memory (#163, #164)"
+        },
         {
           "sha": "c435c998235e81ce44fb9bf914bc3e0c1a53a3f8",
           "url": "https://github.com/airos-works/summit/commit/c435c998235e81ce44fb9bf914bc3e0c1a53a3f8",
@@ -45704,7 +45908,7 @@
       "branch": "main",
       "description": "Native code editor, Git tools and terminal.",
       "group": "Applications",
-      "head": "78823c94171217a12f07c911c319c719e484ae5a",
+      "head": "8d788da4a601ce82360f8916071d2e640dabe8ab",
       "commits": [
         {
           "sha": "78823c94171217a12f07c911c319c719e484ae5a",
@@ -48825,43 +49029,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-01T21:58:39Z",
+      "published": "2026-11-02T03:54:09Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261101.2109-1-arm64.hpkg",
-          "size": 15401225,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261101.2109-1-arm64.hpkg",
-          "digest": "sha256:83b5bf42b217a873b109cb99f51e3cfa444c514cfd5af2c6ab69b247901a6183"
+          "name": "summit-0.1.0.git20261102.0340-1-arm64.hpkg",
+          "size": 15403116,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261102.0340-1-arm64.hpkg",
+          "digest": "sha256:aad91ca3074a4f42507e0ec7211296becd532703c2465abed1d1a319ecebce4d"
         },
         {
-          "name": "summit-0.1.0.git20261101.2109-1-x86_64.hpkg",
-          "size": 15632994,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261101.2109-1-x86_64.hpkg",
-          "digest": "sha256:4feea235f6fd8365fae24cfea0d6c2a7637d156fb0638acbc8d360c55a90cacc"
+          "name": "summit-0.1.0.git20261102.0340-1-x86_64.hpkg",
+          "size": 15641493,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261102.0340-1-x86_64.hpkg",
+          "digest": "sha256:1287f8a7efc9bd297064ae3112e9a60760de7aed443caabe0cd50791e0edb5e6"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261101.2109-1-arm64.hpkg",
-          "size": 89092817,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261101.2109-1-arm64.hpkg",
-          "digest": "sha256:39941026d65dd8966b2e8e730957fdd6daa4773132ed2d180910e43f1e38ecd6"
+          "name": "summit_webkit-1.10.1.git20261102.0340-1-arm64.hpkg",
+          "size": 89088544,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261102.0340-1-arm64.hpkg",
+          "digest": "sha256:9623e8d80c489d07f62d8ef3b3c7566b9f33b91e60a6a18e0fb17484477ba94e"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261101.2109-1-x86_64.hpkg",
-          "size": 90676293,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261101.2109-1-x86_64.hpkg",
-          "digest": "sha256:cd1e80fde0e2d482688892cd2c7685fa3bcb59b154d3f6ca10fbaee241342235"
+          "name": "summit_webkit-1.10.1.git20261102.0340-1-x86_64.hpkg",
+          "size": 90678615,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261102.0340-1-x86_64.hpkg",
+          "digest": "sha256:6cb31e8b3eb4c06ed0dc4739c7cc93128cb41dff6d9f99439c450257932b322b"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261101.2109-1-arm64.hpkg",
-          "size": 824189,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261101.2109-1-arm64.hpkg",
-          "digest": "sha256:be7d7b5ea0a53405c0f4a13bc7645027e98ad8e4d2922deebe2354b93b7aea44"
+          "name": "summit_webkitlegacy-1.10.1.git20261102.0340-1-arm64.hpkg",
+          "size": 824190,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261102.0340-1-arm64.hpkg",
+          "digest": "sha256:c4166d5d4c7fabfd98f3a6aa2d889fe92320740a129245737ded4d4a904c7447"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261101.2109-1-x86_64.hpkg",
-          "size": 874255,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261101.2109-1-x86_64.hpkg",
-          "digest": "sha256:8efe0cc34b1f2e38f24c5a3fc3935da4d1eaf371bfbc7465a22a1b8189078c16"
+          "name": "summit_webkitlegacy-1.10.1.git20261102.0340-1-x86_64.hpkg",
+          "size": 874254,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261102.0340-1-x86_64.hpkg",
+          "digest": "sha256:b352911022c2a5a48876ea043ebad14a1be7586c73687cd9de98764d83f4a20b"
         }
       ]
     },
