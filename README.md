@@ -124,10 +124,10 @@ capture from Haiku's `node` and a small web server script. AirImager shows the
 29 October Cubie A7S image from the Downloads folder ready to write to the Verbatim
 USB stick; nothing was written. Their icons are each installed app's `BEOS:ICON`,
 rendered by `BIconUtils` on the X399 the same day. Third-party content in a capture
-is credited in its caption. The System tab's Wi-Fi, Bluetooth, Quick Look, network
-shares and Terminal captures are from the X399 on 24 October 2026. The Wi-Fi capture's
-network names are pixelated, the only edit to any capture. The Bluetooth panel shows
-no adapter because the MT7922's Bluetooth was not attached to USB at the time.
+is credited in its caption. The System tab's Wi-Fi, Quick Look, network shares and
+Terminal captures are from the X399 on 24 October 2026. The Wi-Fi capture's
+network names are pixelated, the only edit to any capture. The Bluetooth panel was
+captured on the Framework 13 (Ryzen AI 5 340) on 2 November 2026, with its adapter on.
 Quick Look previews a 640 × 360 copy of the desktop artwork in a folder made for the
 capture. The Wi-Fi, Bluetooth and Tracker icons are rendered the same way as the app
 icons. The favicon uses the

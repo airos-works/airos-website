@@ -162,12 +162,12 @@
     "title": "Bluetooth preferences",
     "category": "System",
     "file": "bluetooth.png",
-    "description": "The rebuilt Bluetooth panel with a paired Low Energy mouse under My devices; the workstation’s MediaTek adapter was not attached when this was captured, so the banner reports no adapter.",
+    "description": "The rebuilt Bluetooth panel with the adapter on, a paired Low Energy mouse under My devices and a nearby audio device found while searching.",
     "source": "https://github.com/airos-works/haiku/tree/master/src/preferences/bluetooth",
-    "captured": "2026-10-24",
-    "width": 471,
-    "height": 715,
-    "provenance": "Direct mcp_server BScreen capture from the X399 workstation; native window region below the title tab, no image edits."
+    "captured": "2026-11-02",
+    "width": 421,
+    "height": 708,
+    "provenance": "Direct mcp_server BScreen capture from the Framework 13 (Ryzen AI 5 340); native window region below the title tab, no image edits."
   },
   {
     "id": "wifi",
