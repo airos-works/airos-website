@@ -182,6 +182,18 @@
     "provenance": "Direct mcp_server BScreen capture from the X399 workstation (MediaTek MT7922); native window region below the title tab. Network names are pixelated for privacy; nothing else is edited."
   },
   {
+    "id": "screen",
+    "title": "Screen preferences",
+    "category": "System",
+    "file": "screen.png",
+    "description": "Screen on the Framework 13 with its own panel (1) and two Dell 4K monitors (2 and 3) side by side; the selected monitor shows its details, resolution, refresh rate and 175 percent scale.",
+    "source": "https://github.com/airos-works/haiku/tree/master/src/preferences/screen",
+    "captured": "2026-11-03",
+    "width": 683,
+    "height": 516,
+    "provenance": "Direct mcp_server BScreen capture from the Framework 13 (Ryzen AI 5 340, 2 November 2026 image), with two Dell U2723QE monitors attached; native window region below the title tab. The monitor’s serial number is pixelated for privacy; nothing else is edited."
+  },
+  {
     "id": "quick-look",
     "title": "Quick Look",
     "category": "System",

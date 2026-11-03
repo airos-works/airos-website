@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-10-30",
+  "reviewed": "2026-11-03",
   "tabs": [
     {
       "id": "office",
@@ -358,11 +358,11 @@
     {
       "id": "system",
       "label": "System",
-      "summary": "Media preferences · MediaConverter · Bluetooth · Wi-Fi · Quick Look · Network shares · Mail · Terminal",
+      "summary": "Media preferences · MediaConverter · Bluetooth · Wi-Fi · Screen · Quick Look · Network shares · Mail · Terminal",
       "heading": "Haiku’s own apps, reworked",
       "tag": "Included in airOS system builds",
-      "lead": "The apps and preferences that come with the system have been rebuilt or added: clearer Media preferences, a new MediaConverter, new Wi-Fi and Bluetooth panels, Quick Look and network shares in Tracker, a new Mail app and a faster Terminal.",
-      "note": "GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use; the Dragon Q8B encodes H.264 and HEVC on its Iris codec. Other codecs and devices may use the CPU. Check MediaConverter’s Video hardware window for the current machine. Wi-Fi and Bluetooth have been tested with Intel AX210, MediaTek MT7922 and AIC8800 radios; see the hardware notes for other cards.",
+      "lead": "The apps and preferences that come with the system have been rebuilt or added: clearer Media preferences, a new MediaConverter, new Wi-Fi and Bluetooth panels, a Screen panel for several monitors, Quick Look and network shares in Tracker, a new Mail app and a faster Terminal.",
+      "note": "GPU encoding depends on the installed driver and card: AMD VA-API includes AV1 on verified VCN 4 hardware; NVIDIA NVENC runs a self-test before use; the Dragon Q8B encodes H.264 and HEVC on its Iris codec. Other codecs and devices may use the CPU. Check MediaConverter’s Video hardware window for the current machine. Wi-Fi and Bluetooth have been tested with Intel AX210, MediaTek MT7922 and AIC8800 radios; see the hardware notes for other cards. Arranging and mirroring several monitors needs a graphics driver that supports display layouts, such as AMD’s and NVIDIA’s; with the VESA and frame buffer drivers, Screen sets and scales a single display.",
       "items": [
         {
           "id": "media-preferences",
@@ -422,6 +422,22 @@
           ],
           "source": "https://github.com/airos-works/haiku/tree/master/src/preferences/wifi",
           "screenshot": "wifi",
+          "download": "downloads/#system"
+        },
+        {
+          "id": "screen",
+          "title": "Screen preferences",
+          "text": "Screen now shows every connected monitor, drawn to scale where it sits on the desktop, and sets each one’s resolution, refresh rate and scale.",
+          "features": [
+            "Drag a monitor to arrange the desktop: it snaps against the others, and dropping it onto another swaps the two",
+            "Each monitor’s details come from the monitor itself: model, size in inches, dots per inch, connector, serial number and week of manufacture",
+            "Resolution, refresh rate and a scale from 100 to 250 percent for each display; turn displays on or off and choose the main display, which has the Deskbar",
+            "Identify displays puts each monitor’s number on its screen; Mirror displays shows the main display on all of them, scaling it up where a mirror has fewer pixels",
+            "Choose whether a maximized window fills its own display or the whole desktop; a new layout reverts after twelve seconds unless you keep it, and Revert returns to how things were",
+            "A Dark mode check box switches windows, menus and controls to dark colours, and apps and websites with a dark appearance follow (in builds from 3 November 2026)"
+          ],
+          "source": "https://github.com/airos-works/haiku/tree/master/src/preferences/screen",
+          "screenshot": "screen",
           "download": "downloads/#system"
         },
         {

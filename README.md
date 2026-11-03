@@ -34,8 +34,8 @@ both from the repository's actual Pages configuration.
 - Apps: seven categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
   Proton, Everyday and System), each tab and app row showing the apps' own icons.
   System gathers the reworked Haiku apps and preferences (Media preferences,
-  MediaConverter, Bluetooth, Wi-Fi, Quick Look and network shares in Tracker, Mail,
-  Terminal), so no app appears in two tabs. A panel
+  MediaConverter, Bluetooth, Wi-Fi, Screen, Quick Look and network shares in Tracker,
+  Mail, Terminal), so no app appears in two tabs. A panel
   opens when its tab is selected; links to a panel or to an app inside one open it.
   Without JavaScript the tabs are jump links and every panel is shown.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds.
@@ -125,12 +125,16 @@ capture from Haiku's `node` and a small web server script. AirImager shows the
 USB stick; nothing was written. Their icons are each installed app's `BEOS:ICON`,
 rendered by `BIconUtils` on the X399 the same day. Third-party content in a capture
 is credited in its caption. The System tab's Wi-Fi, Quick Look, network shares and
-Terminal captures are from the X399 on 24 October 2026. The Wi-Fi capture's
-network names are pixelated, the only edit to any capture. The Bluetooth panel was
+Terminal captures are from the X399 on 24 October 2026. The Bluetooth panel was
 captured on the Framework 13 (Ryzen AI 5 340) on 2 November 2026, with its adapter on.
+Screen was captured on the Framework 13 on 3 November 2026, running the 2 November
+image with two Dell U2723QE monitors beside its panel; its Dark mode check box
+reached `master` later that day, so the capture predates it. The only edits to any
+capture are pixelation for privacy: the Wi-Fi capture's network names and the Dell
+monitor's serial number in the Screen capture.
 Quick Look previews a 640 × 360 copy of the desktop artwork in a folder made for the
-capture. The Wi-Fi, Bluetooth and Tracker icons are rendered the same way as the app
-icons. The favicon uses the
+capture. The Wi-Fi, Bluetooth, Screen and Tracker icons are rendered the same way as
+the app icons (Screen's on the Framework 13). The favicon uses the
 [square airOS mark](https://github.com/airos-works/haiku/blob/master/data/artwork/airos/airos-mark.svg),
 with an SVG and 16/32/48-pixel ICO fallbacks rendered from that vector.
 The AirTime and MediaConverter captures include Big Buck Bunny, © Blender Foundation,
