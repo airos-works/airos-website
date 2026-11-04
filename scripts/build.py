@@ -69,7 +69,7 @@ def home():
     boards = sum(1 for d in json.loads((ROOT / 'content/hardware.json').read_text()) if d['chip'].startswith('ARM64') and d['status'] == 'Tested on hardware')
     stats = [(f'{apps}', 'new native apps'), (f'{boards}', 'new ARM64 SBCs supported'), (f'{len(D["sources"])}', 'tracked source branches'), (f'{commits:,}', 'commits in the public changelog')]
     body = f'''<section class="hero"><div class="hero-copy">
-{link(url('apps/#proton'), '<span class="dot" aria-hidden="true"></span>New: Proton VPN and Mail Bridge <span aria-hidden="true">›</span>', 'pill-badge')}
+{link(url('hardware/#framework'), '<span class="dot" aria-hidden="true"></span>New: Thunderbolt 4 on Framework 13 <span aria-hidden="true">›</span>', 'pill-badge')}
 <h1>Built on Haiku.<br>Extended with AI.</h1>
 <p class="lead">airOS is an independent, AI-assisted exploration of what Haiku can do — on more devices, with more native apps, and with the same love for a responsive, personal desktop.</p>
 <div class="actions">{link(url('downloads/'), 'Explore the downloads', 'button primary')}{link(url('apps/'), 'See it in action <span aria-hidden="true">›</span>', 'button ghost')}</div>
