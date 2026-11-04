@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-04T06:38:47+00:00",
-  "ci_head": "d7b6707edbc31ef9e54fd8473136f2682dc69ca8",
+  "updated": "2026-11-04T19:52:04+00:00",
+  "ci_head": "0eb4f6d75b7930d30cf777ca4654f791553c7e51",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -13628,8 +13628,14 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "d7b6707edbc31ef9e54fd8473136f2682dc69ca8",
+      "head": "0eb4f6d75b7930d30cf777ca4654f791553c7e51",
       "commits": [
+        {
+          "sha": "0eb4f6d75b7930d30cf777ca4654f791553c7e51",
+          "url": "https://github.com/airos-works/airos-ci/commit/0eb4f6d75b7930d30cf777ca4654f791553c7e51",
+          "date": "2026-11-04T12:19:09Z",
+          "subject": "summit_webkit requires OpenH264 on x86_64 (Summit #184)"
+        },
         {
           "sha": "d7b6707edbc31ef9e54fd8473136f2682dc69ca8",
           "url": "https://github.com/airos-works/airos-ci/commit/d7b6707edbc31ef9e54fd8473136f2682dc69ca8",
@@ -36211,8 +36217,26 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "58eb6fc50031949fe22e2e4c55d94b5d613a90aa",
+      "head": "9f35c6a08fe725e506c92986836f4087ff22af4e",
       "commits": [
+        {
+          "sha": "43974ce2806cd25dac352dc244c332a6d3b14bca",
+          "url": "https://github.com/airos-works/summit/commit/43974ce2806cd25dac352dc244c332a6d3b14bca",
+          "date": "2026-11-04T15:08:44Z",
+          "subject": "Engine: view transitions hold paint in their update callback, CPU snapshots, plus-lighter only where it adds up (#182)"
+        },
+        {
+          "sha": "b46f57a2f4baa9ced98af1d463b1773f7756d271",
+          "url": "https://github.com/airos-works/summit/commit/b46f57a2f4baa9ced98af1d463b1773f7756d271",
+          "date": "2026-11-04T12:52:02Z",
+          "subject": "Engine: Interop 2026 fixes for #178-#182, #191 (uploads, media ranges, wheel, paging, view transitions, untyped responses)"
+        },
+        {
+          "sha": "1aa060f91705982d1baa826db4336996ecdae8d0",
+          "url": "https://github.com/airos-works/summit/commit/1aa060f91705982d1baa826db4336996ecdae8d0",
+          "date": "2026-11-04T12:52:02Z",
+          "subject": "Interop kit: sp3.sh, Speedometer 3.1 in a test copy over MCP"
+        },
         {
           "sha": "58eb6fc50031949fe22e2e4c55d94b5d613a90aa",
           "url": "https://github.com/airos-works/summit/commit/58eb6fc50031949fe22e2e4c55d94b5d613a90aa",
@@ -45070,8 +45094,14 @@
       "branch": "main",
       "description": "Your music library, playlists and Music Assistant streams in a native desktop player.",
       "group": "Applications",
-      "head": "38c6d384244d296254d01083e7ea55e22aab33bd",
+      "head": "0f88d87676a0f11f74f73bdba22fb65332f3da3c",
       "commits": [
+        {
+          "sha": "0b8c0d98db475a120c99b1102887de7532fbdcc8",
+          "url": "https://github.com/airos-works/amp/commit/0b8c0d98db475a120c99b1102887de7532fbdcc8",
+          "date": "2026-11-04T06:46:25Z",
+          "subject": "MiniDisc: keep the capacity bar's ends round under the coloured segments"
+        },
         {
           "sha": "cbd9f3bfa0f618daa332bb9aa7eb7992db93b0b8",
           "url": "https://github.com/airos-works/amp/commit/cbd9f3bfa0f618daa332bb9aa7eb7992db93b0b8",
@@ -49965,43 +49995,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-04T02:31:57Z",
+      "published": "2026-11-04T16:21:34Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261104.0041-1-arm64.hpkg",
-          "size": 15417343,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261104.0041-1-arm64.hpkg",
-          "digest": "sha256:9fa502c0ba6b2c012caca8ca83dc39cf11821f5bc99b462986c5bd715f2361c8"
+          "name": "summit-0.1.0.git20261104.1508-1-arm64.hpkg",
+          "size": 15416637,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261104.1508-1-arm64.hpkg",
+          "digest": "sha256:0e4a6f0b771e5f1eaa6cec686e69ffb54544c68d5b785e28a4b21f7b211f0e8c"
         },
         {
-          "name": "summit-0.1.0.git20261104.0041-1-x86_64.hpkg",
-          "size": 15652929,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261104.0041-1-x86_64.hpkg",
-          "digest": "sha256:b95b6ec76b561275ab1c6b53474ce9547768921a7f2669c129d7a1e01e7e6529"
+          "name": "summit-0.1.0.git20261104.1508-1-x86_64.hpkg",
+          "size": 15653050,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261104.1508-1-x86_64.hpkg",
+          "digest": "sha256:5e4c1ceca8455dbaa05cbf055b8ed25a057fb00fc37dd3860c23109bfc62ba8f"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261104.0041-1-arm64.hpkg",
-          "size": 89196152,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261104.0041-1-arm64.hpkg",
-          "digest": "sha256:72f75ee1df59d1348e07a766b49000f1869fdc20e658cc3249ed67c557544dbc"
+          "name": "summit_webkit-1.10.1.git20261104.1508-1-arm64.hpkg",
+          "size": 89215872,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261104.1508-1-arm64.hpkg",
+          "digest": "sha256:ee973a9d69a52e7f0f3108bd03d9cbd4d64d63c812b7115d17ef5e4deea8f250"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261104.0041-1-x86_64.hpkg",
-          "size": 90767256,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261104.0041-1-x86_64.hpkg",
-          "digest": "sha256:d5ae981abfca1627e4c1a0c6d256e4a0703804075de92aa98dc89aa6ad964c61"
+          "name": "summit_webkit-1.10.1.git20261104.1508-1-x86_64.hpkg",
+          "size": 90762760,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261104.1508-1-x86_64.hpkg",
+          "digest": "sha256:e4f4d97d6411cbebd4667b9e05c73f108c6052d3226d2a59aa891c7a9a85dca1"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261104.0041-1-arm64.hpkg",
-          "size": 825538,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261104.0041-1-arm64.hpkg",
-          "digest": "sha256:64b40dfc39d23cdb673d37f5bd4d88c15e0b6cddcbc1c512be73412b2cbd819b"
+          "name": "summit_webkitlegacy-1.10.1.git20261104.1508-1-arm64.hpkg",
+          "size": 825539,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261104.1508-1-arm64.hpkg",
+          "digest": "sha256:9893f325d59521f819fe0519cd4d6846615a57542ad8a57912d7b85bb2fdc131"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261104.0041-1-x86_64.hpkg",
-          "size": 876181,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261104.0041-1-x86_64.hpkg",
-          "digest": "sha256:2870bd229b95b5792f0f7e5a1b0c0c46cb8a6a45144983f7b7133f61f5f3439e"
+          "name": "summit_webkitlegacy-1.10.1.git20261104.1508-1-x86_64.hpkg",
+          "size": 876180,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261104.1508-1-x86_64.hpkg",
+          "digest": "sha256:3f85ff3fef57299741fba8e62d7e644dee0185e62414d82da0ed0d0cc4524e6f"
         }
       ]
     },
@@ -50052,19 +50082,19 @@
       "repo": "amp",
       "description": "Your music library, playlists and Music Assistant streams in a native desktop player.",
       "release": "https://github.com/airos-works/amp/releases/tag/latest",
-      "published": "2026-11-04T05:26:16Z",
+      "published": "2026-11-04T06:47:10Z",
       "assets": [
         {
-          "name": "amp-0.3.5.alpha-16-arm64.hpkg",
-          "size": 1026722,
-          "browser_download_url": "https://github.com/airos-works/amp/releases/download/latest/amp-0.3.5.alpha-16-arm64.hpkg",
-          "digest": "sha256:774e87dea887033045abff809631ae9221b64f85c0d9251543fd8639b6ba2cff"
+          "name": "amp-0.3.5.alpha-17-arm64.hpkg",
+          "size": 1026942,
+          "browser_download_url": "https://github.com/airos-works/amp/releases/download/latest/amp-0.3.5.alpha-17-arm64.hpkg",
+          "digest": "sha256:d3f5faa6c0fb1fccf16d63a656813c9b143834252af06cec0aba22edebef5690"
         },
         {
-          "name": "amp-0.3.5.alpha-16-x86_64.hpkg",
-          "size": 1071772,
-          "browser_download_url": "https://github.com/airos-works/amp/releases/download/latest/amp-0.3.5.alpha-16-x86_64.hpkg",
-          "digest": "sha256:5d1d1c0d9b19d74210e54c460bc1fd85e5d56ba1c494c189b9d76f1567a18c0d"
+          "name": "amp-0.3.5.alpha-17-x86_64.hpkg",
+          "size": 1072194,
+          "browser_download_url": "https://github.com/airos-works/amp/releases/download/latest/amp-0.3.5.alpha-17-x86_64.hpkg",
+          "digest": "sha256:d7d2e762209867ffe75fee4794d3f872cffe5cfa47af04bd47e294b7bdc5a0e7"
         }
       ]
     },
