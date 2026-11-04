@@ -220,16 +220,19 @@
     "name": "Framework Laptop 13",
     "chip": "x86-64 · AMD Radeon 760M · Ryzen AI 5 340 with Radeon 840M",
     "status": "Tested on hardware",
-    "summary": "AMD graphics, sleep and a working touchpad on a high-density laptop desktop.",
+    "summary": "AMD graphics, Thunderbolt docks, sleep and a working touchpad on a high-density laptop desktop.",
     "features": [
       "Native desktop output through amdgpu_drm",
       "Ryzen AI 5 340 with Radeon 840M: working properly, with every feature listed here",
       "Scaled desktop and native application windows; the Craft ports have been checked at 175% density",
       "MediaConverter detects the Radeon 760M and offers hardware H.264 encoding",
       "Suspend and resume: closing the lid puts the laptop to sleep (suspend to idle, S0ix) and opening it wakes it again; Power preferences choose what the lid does",
-      "The built-in touchpad works, which it does not on stock Haiku: a precision touchpad over I2C HID, with tap to click and smooth two-finger scrolling"
+      "The built-in touchpad works, which it does not on stock Haiku: a precision touchpad over I2C HID, with tap to click and smooth two-finger scrolling",
+      "Thunderbolt and USB4: air/OS runs its own connection manager for the USB-C ports, carrying USB 3, DisplayPort and PCIe to docks and devices, which then show up as ordinary USB devices, monitors and PCI devices; plugging and unplugging works on chained devices too",
+      "Tested with a Lenovo ThinkPad Thunderbolt 4 dock: its monitors, USB devices, Ethernet and internal PCIe switch all work, with the dock attached at boot or unplugged and replugged while running",
+      "A second 4K monitor on the dock's HDMI port, behind its MST hub, comes up beside the first"
     ],
-    "limits": "These are the tested Radeon 760M and Ryzen AI 5 340 (Radeon 840M) configurations, not a claim about every Framework model. See the driver source and current package notes for device-specific coverage.",
+    "limits": "These are the tested Radeon 760M and Ryzen AI 5 340 (Radeon 840M) configurations, not a claim about every Framework model. Thunderbolt has been tested with one dock on the Ryzen AI 5 340; NVMe enclosures and external GPUs use the same PCIe tunnels but have not been tried. Not done yet for Thunderbolt: host-to-host networking, firmware updates for docks and devices, low-power link states, DisplayPort bandwidth allocation mode, and keeping Thunderbolt devices across sleep. See the driver source and current package notes for device-specific coverage.",
     "source": "docs/x399-workstation/AMDGPU-DRM.md",
     "links": [
       {
@@ -239,6 +242,10 @@
       {
         "label": "Smooth touchpad scrolling",
         "path": "docs/airos/TOUCHPAD-SCROLLING.md"
+      },
+      {
+        "label": "USB4 and Thunderbolt",
+        "path": "docs/airos/USB4.md"
       }
     ],
     "image": {
