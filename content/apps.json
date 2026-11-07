@@ -138,8 +138,7 @@
           ],
           "source": "https://github.com/airos-works/vectorcraft/blob/main/docs/haiku.md",
           "download": "downloads/#vectorcraft",
-          "screenshot": "vectorcraft",
-          "report_repo": "haiku"
+          "screenshot": "vectorcraft"
         },
         {
           "id": "effectcraft",
@@ -153,8 +152,7 @@
           ],
           "source": "https://github.com/airos-works/effectcraft/blob/main/docs/haiku.md",
           "download": "downloads/#effectcraft",
-          "screenshot": "effectcraft",
-          "report_repo": "haiku"
+          "screenshot": "effectcraft"
         },
         {
           "id": "filmcraft",
@@ -168,8 +166,7 @@
           ],
           "source": "https://github.com/airos-works/filmcraft/blob/main/docs/haiku.md",
           "download": "downloads/#filmcraft",
-          "screenshot": "filmcraft",
-          "report_repo": "haiku"
+          "screenshot": "filmcraft"
         }
       ]
     },

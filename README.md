@@ -53,9 +53,9 @@ both from the repository's actual Pages configuration.
   repository has the form: a description of the problem, the hardware platform and
   details (with the airOS release from `/boot/system/data/airos/release`), and crash
   reports, logs and screenshots. The system's apps open the airos-works/haiku form with
-  their name as the start of the title. VectorCraft, EffectCraft and FilmCraft, whose forks have
-  no issue tracker yet, use the airos-works/haiku form the same way (`report_repo` in
-  `content/apps.json`). The footer, apps page and downloads page link to it.
+  their name as the start of the title. (`report_repo` in `content/apps.json` can send an app
+  whose fork has no issue tracker to another repository's form; none needs it now.) The footer,
+  apps page and downloads page link to it.
 - Source: the operating system, apps and every branch in the CI fork manifest. Its intro is only the
   small `■ SOURCE CODE` label (the page's one `h1`), with no headline or lead.
 - Changelog: the owner's own commits to the forks and apps, monthly archives and global search.
