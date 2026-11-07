@@ -33,6 +33,8 @@ both from the repository's actual Pages configuration.
 - Home: credit Haiku, explain the independent project and AI-assisted approach.
 - Apps: seven categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
   Proton, Everyday and System), each tab and app row showing the apps' own icons.
+  Media Tools holds AirTime, Amp and the five Craft media apps (PhotoCraft, LightCraft,
+  VectorCraft, EffectCraft and FilmCraft), with a note on their Vulkan rendering and CPU fallback.
   System gathers the reworked Haiku apps and preferences (Media preferences,
   MediaConverter, Bluetooth, Wi-Fi, Screen, Quick Look and network shares in Tracker,
   Mail, Terminal), so no app appears in two tabs. A panel
@@ -51,7 +53,9 @@ both from the repository's actual Pages configuration.
   repository has the form: a description of the problem, the hardware platform and
   details (with the airOS release from `/boot/system/data/airos/release`), and crash
   reports, logs and screenshots. The system's apps open the airos-works/haiku form with
-  their name as the start of the title. The footer, apps page and downloads page link to it.
+  their name as the start of the title. VectorCraft, EffectCraft and FilmCraft, whose forks have
+  no issue tracker yet, use the airos-works/haiku form the same way (`report_repo` in
+  `content/apps.json`). The footer, apps page and downloads page link to it.
 - Source: the operating system, apps and every branch in the CI fork manifest. Its intro is only the
   small `■ SOURCE CODE` label (the page's one `h1`), with no headline or lead.
 - Changelog: the owner's own commits to the forks and apps, monthly archives and global search.
@@ -84,6 +88,11 @@ resource path the packages use. Native renders at 16, 32, 64 and 128 pixels were
 also reviewed on light and dark backgrounds. Each fork retains its generator,
 HVIF, editable SVG export and MIT OR Apache-2.0 attribution. Immutable source links
 and hashes are recorded in [`content/craft-icons.json`](content/craft-icons.json).
+VectorCraft (an artboard with a Bézier curve, its handles and a pen nib), EffectCraft (a
+composition frame with a light streak and a sparkle) and FilmCraft (a clapperboard with a play
+mark) joined them on 7 November 2026, with original vector artwork under the same licence.
+Their 96-pixel PNGs were rendered the same way on the X399; the recovered `BEOS:ICON` bytes
+match both the source `.hvif` and the icon attribute of the packaged executables.
 
 Clipper, airShot, airTime and Amp received the same native-icon treatment on
 26 October 2026: a thin, rounded clipboard with stacked paper, a snapshot camera and pencil,
@@ -132,6 +141,13 @@ image with two Dell U2723QE monitors beside its panel; its Dark mode check box
 reached `master` later that day, so the capture predates it. The only edits to any
 capture are pixelation for privacy: the Wi-Fi capture's network names and the Dell
 monitor's serial number in the Screen capture.
+VectorCraft, EffectCraft and FilmCraft were captured on the X399 (GTX 1070 on NVK) on
+7 November 2026, each from its x86-64 package extracted to a test folder and run with its own
+settings folder, drawing with Vulkan. VectorCraft and EffectCraft (0.21.0~airos1-2, from that
+day's image build) show an SVG drawing of morning hills made for the captures; FilmCraft
+(0.17.0~airos1-2) edits three landscape stills and a music bed generated for its capture, and
+was captured during playback. The scenes were set up over each app's control channel. The X399's
+display ran on the framebuffer driver at 1024 × 768 that day, so these windows fill the screen.
 Quick Look previews a 640 × 360 copy of the desktop artwork in a folder made for the
 capture. The Wi-Fi, Bluetooth, Screen and Tracker icons are rendered the same way as
 the app icons (Screen's on the Framework 13). The favicon uses the
@@ -184,8 +200,8 @@ Git ancestor, and libdrm uses the immutable commit behind an upstream tag that
 is absent from the public fork. These corrections keep the scheduled refresh
 working without silently discarding history on arbitrary API failures. For Haiku the recorded baseline is the common ancestor
 of the fork and upstream at initial site creation. The integration branch and
-active `airos-release` and `rpi4` branches are all tracked (`x399-workstation` was
-retired into master). Every API page is fetched; compare counts are checked,
+active `rpi4` branch are both tracked (`x399-workstation` was retired into master, and
+`airos-release` was retired on 5 November 2026, when every image began building from master). Every API page is fetched; compare counts are checked,
 and duplicate commits across branches are displayed once. The changelog then
 keeps only the owner's own commits (`changelog_authors` in `content/project.json`,
 matched by GitHub login or author email), so upstream history, the history of
@@ -219,9 +235,11 @@ with the dated snapshot and release-page links as fallbacks. It identifies archi
 release notes. Any app without a public release is explicitly unavailable and links to its
 release index. The live refresh also checks those entries, so their first
 rolling `latest` package appears without waiting for the next site deployment.
-The six Craft apps (WordCraft, GridCraft, PDFCraft, DeckCraft, PhotoCraft and
-LightCraft) publish x86-64 and ARM64 packages to their rolling `latest` releases through
-airos-ci's app workflow; they are also in every system image. Media preferences and
+The nine Craft apps (WordCraft, GridCraft, PDFCraft, DeckCraft, PhotoCraft, LightCraft,
+VectorCraft, EffectCraft and FilmCraft) publish x86-64 and ARM64 packages to their rolling
+`latest` releases through airos-ci's app workflow; they are also in every system image.
+Until an app's first `latest` release is published (VectorCraft, EffectCraft and FilmCraft on
+7 November 2026), its card says no public package is published yet and links to its releases. Media preferences and
 MediaConverter are included in system builds. Summit also links to its separate
 `latest-haiku` browser/engine pair for stock Haiku R1/beta6.
 

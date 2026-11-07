@@ -311,8 +311,9 @@ def report():
         if tab.get('summit'):
             groups.append((tab['label'], [('summit', 'summit', 'Summit', 'Browser and WebKit engine')]))
         else:
-            groups.append((tab['label'], [(repo_of(item['source']), item.get('icon', item['id']), item['title'], None) for item in tab['items']]))
+            groups.append((tab['label'], [(item.get('report_repo') or repo_of(item['source']), item.get('icon', item['id']), item['title'], None) for item in tab['items']]))
     # A repository with several listed parts (the system) gets the part's name as the title's start.
+    # `report_repo` sends an app whose fork has no issue tracker yet to another repository's form.
     shared = defaultdict(int)
     for _, items in groups:
         for repo, *_ in items:

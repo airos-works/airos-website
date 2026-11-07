@@ -98,6 +98,24 @@
       "repo": "lightcraft",
       "description": "Organize a photo library and develop RAW files non-destructively, with presets, masks and history; hands photos to PhotoCraft.",
       "note": "Early port using Vulkan compute on a hardware driver, falling back to the CPU. AI models are not bundled. Also included in airOS system images."
+    },
+    {
+      "name": "VectorCraft",
+      "repo": "vectorcraft",
+      "description": "Draw vector illustrations with paths, type, gradients and artboards; import and export SVG and PDF, and print through the Be print kit.",
+      "note": "Early port with a Vulkan-drawn interface on a hardware driver, falling back to the CPU. Also included in airOS system images; the port notes list current limitations."
+    },
+    {
+      "name": "EffectCraft",
+      "repo": "effectcraft",
+      "description": "Animate titles and composite motion graphics with layers, keyframes, expressions, about 280 GPU effects and Roto Brush.",
+      "note": "Early port drawing, compositing and exporting with Vulkan on a hardware driver, falling back to the CPU. Also included in airOS system images; the port notes list current limitations."
+    },
+    {
+      "name": "FilmCraft",
+      "repo": "filmcraft",
+      "description": "Edit video on a multitrack timeline with effects, colour, an audio mixer, captions and voice-over, and export finished films.",
+      "note": "Early port compositing and exporting with Vulkan on a hardware driver, falling back to the CPU; NVDEC hardware decoding on NVIDIA. Speech transcription and neural voices are off. Also included in airOS system images."
     }
   ],
   "extra_repos": [

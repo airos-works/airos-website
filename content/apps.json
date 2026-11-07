@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-11-03",
+  "reviewed": "2026-11-07",
   "tabs": [
     {
       "id": "office",
@@ -67,9 +67,9 @@
       "id": "media",
       "label": "Media Tools",
       "heading": "A fresh look at media",
-      "tag": "Players and photo tools",
-      "lead": "Native players and a pair of Craft apps for photos: watch films in AirTime, play your music library in Amp, edit layered images in PhotoCraft and develop RAW files in LightCraft.",
-      "note": "PhotoCraft and LightCraft need a hardware Vulkan driver for GPU rendering and fall back to the CPU otherwise.",
+      "tag": "Players, photo and video tools",
+      "lead": "Native players and five Craft apps for pictures and video: watch films in AirTime, play your music library in Amp, edit layered images in PhotoCraft, develop RAW files in LightCraft, draw vector illustrations in VectorCraft, animate titles and effects in EffectCraft and edit films in FilmCraft.",
+      "note": "The five Craft apps draw with Vulkan on a hardware driver and fall back to the CPU otherwise, including when the GPU is lost mid-session. EffectCraft and FilmCraft also composite, apply effects and export on the same GPU.",
       "items": [
         {
           "id": "airtime",
@@ -105,7 +105,7 @@
           "features": [
             "Layers, brushes, masks, adjustments, 8/16/32-bit documents, PSD files and document recovery",
             "Falls back to the CPU automatically, including when the GPU is lost mid-session",
-            "Native file panels, Tracker, clipboard and display-density support",
+            "Native file panels, Tracker, clipboard and display-density support, with frames paced to the screen",
             "A 24 MP opacity change measured 8–9× faster on the GPU than on the CPU"
           ],
           "source": "https://github.com/airos-works/photocraft/blob/main/docs/haiku.md",
@@ -118,13 +118,58 @@
           "text": "A photo library and RAW developer that hands photos to PhotoCraft for detailed editing.",
           "features": [
             "Library, non-destructive developing, presets, masks and history",
-            "Vulkan compute for photo processing and a Vulkan-drawn interface, with CPU fallback",
+            "Vulkan compute for photo processing and a Vulkan-drawn interface paced to the screen, with CPU fallback",
             "Cold previews in 65 ms instead of 455 ms on a Radeon 760M; 24 MP exports in 1.8 s instead of 4.5 s",
             "AI models are not bundled and HEIF support is optional"
           ],
           "source": "https://github.com/airos-works/lightcraft/blob/main/docs/haiku.md",
           "download": "downloads/#lightcraft",
           "screenshot": "lightcraft"
+        },
+        {
+          "id": "vectorcraft",
+          "title": "VectorCraft",
+          "text": "The Craft vector illustration app as a native application, with upstream’s canvas, tools and file formats under a native menu bar.",
+          "features": [
+            "A Vulkan-drawn interface with CPU fallback; the canvas is rasterised on the processor, as upstream does",
+            "Prints through the Be print kit at the printer’s resolution",
+            "Pen tablet pressure, tilt and eraser, input methods for the Type tool, and SVG, PDF and PNG on the clipboard",
+            "One running copy: documents from Tracker or Terminal open in it as tabs"
+          ],
+          "source": "https://github.com/airos-works/vectorcraft/blob/main/docs/haiku.md",
+          "download": "downloads/#vectorcraft",
+          "screenshot": "vectorcraft",
+          "report_repo": "haiku"
+        },
+        {
+          "id": "effectcraft",
+          "title": "EffectCraft",
+          "text": "A motion graphics and effects compositor with layers, keyframes, expressions and about 280 GPU effects in native windows.",
+          "features": [
+            "One Vulkan device runs the window, the GPU compositor, effects, exports and Roto Brush’s SAM 2, with CPU fallback, including when the GPU is lost",
+            "Preview audio through the Media Kit, which also imports formats its own decoders lack",
+            "Opt-in hardware decoding through the Media Kit: H.264 on NVIDIA’s NVDEC",
+            "A 60-frame 1080p H.264 export took 6.0 s on a GTX 1070"
+          ],
+          "source": "https://github.com/airos-works/effectcraft/blob/main/docs/haiku.md",
+          "download": "downloads/#effectcraft",
+          "screenshot": "effectcraft",
+          "report_repo": "haiku"
+        },
+        {
+          "id": "filmcraft",
+          "title": "FilmCraft",
+          "text": "A non-linear video editor with a timeline, monitors, effects, colour, an audio mixer, captions and export in a native window.",
+          "features": [
+            "Monitors, effects and exports run on the window’s Vulkan device, with CPU fallback",
+            "Playback through the Media Kit and voice-over recording from the system’s audio input",
+            "Opens WMV/ASF, FLV, DV, RealMedia, Theora and MPEG-4 Part 2 through the Media Kit; H.264 and HEVC decode on NVIDIA’s NVDEC by default",
+            "Speech transcription and neural voices are off, as in upstream’s releases"
+          ],
+          "source": "https://github.com/airos-works/filmcraft/blob/main/docs/haiku.md",
+          "download": "downloads/#filmcraft",
+          "screenshot": "filmcraft",
+          "report_repo": "haiku"
         }
       ]
     },

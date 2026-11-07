@@ -51,6 +51,33 @@
       "hvif_sha256": "3e5c5d49a86c559707e476ea8a36ae20e8f6af572a80066662254c5b89fc9ffe",
       "png": "static/assets/icons/lightcraft.png",
       "png_sha256": "7b852c1905b2e0f8f9db23082e3214462a05be5e6dc8fe9eda94bd563609455c"
+    },
+    {
+      "app": "vectorcraft",
+      "author": "VectorCraft for air/OS contributors",
+      "date": "2026-11-07",
+      "source": "https://github.com/airos-works/vectorcraft/blob/78b15e884d27d58cc7305f7ef8f6961134fad508/apps/vectorcraft-haiku/resources/VectorCraft.hvif",
+      "hvif_sha256": "f973555499f0c64f3915aa634d7792d393af2b2ee758fdf6f6623cea8f875161",
+      "png": "static/assets/icons/vectorcraft.png",
+      "png_sha256": "51fb792a353728c8544b8eab4c5cadf191a8bdafdd7ba785d1cb8e85a8708112"
+    },
+    {
+      "app": "effectcraft",
+      "author": "EffectCraft for air/OS contributors",
+      "date": "2026-11-07",
+      "source": "https://github.com/airos-works/effectcraft/blob/c7e54843a9e82c6ea1dfb25a2dd1d5d7b9e9c535/apps/effectcraft-haiku/resources/EffectCraft.hvif",
+      "hvif_sha256": "3fdd87aff585693f4551ab84a0e611270ad8734cfb309e28fabed893ec87c57f",
+      "png": "static/assets/icons/effectcraft.png",
+      "png_sha256": "8e4debc1e66c4720307640d41677085bd4dc36ddf5ecdbf6e65f14e94c9726bb"
+    },
+    {
+      "app": "filmcraft",
+      "author": "FilmCraft contributors (air/OS fork)",
+      "date": "2026-11-07",
+      "source": "https://github.com/airos-works/filmcraft/blob/205ce309912ee47b3938e8048c5b062897e6bc5a/apps/filmcraft-haiku/resources/FilmCraft.hvif",
+      "hvif_sha256": "ce45301ffc42f046f7fc78e46e3321c04298cf67f8a7692349861c4c6988c818",
+      "png": "static/assets/icons/filmcraft.png",
+      "png_sha256": "676af55ebf220088f15ad2e55eebe12c2616dffbdbebb5b689ce11d628ac5315"
     }
   ]
 }

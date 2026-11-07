@@ -242,6 +242,42 @@
     "provenance": "QEMU screendump of the 2026-10-23 airOS x86-64 image (hrev60207-1741-g6fde1e10f8) running live in QEMU; the VM has no GPU, so LightCraft renders on the CPU; window region."
   },
   {
+    "id": "vectorcraft",
+    "title": "VectorCraft",
+    "category": "Media",
+    "file": "vectorcraft.png",
+    "description": "An original drawing of morning hills open in VectorCraft, with the far hills selected by the Direct Selection tool to show their anchor points and handles, and the Layers panel listing the drawing’s objects.",
+    "source": "https://github.com/airos-works/vectorcraft/blob/main/docs/haiku.md",
+    "captured": "2026-11-07",
+    "width": 1016,
+    "height": 738,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation (GeForce GTX 1070 on NVK, Mesa 25.3.0-devel, hrev60207+2472); window region below the title tab, no image edits. The display ran on the framebuffer driver at 1024 × 768 that day, so the window fills the screen at 100 percent scale. VectorCraft 0.21.0~airos1-2 from the airOS x86-64 image build of 7 November 2026, extracted to a test folder and run with its own settings folder; it drew with Vulkan on the GTX 1070. The SVG drawing was written for the capture; the selection was made over VectorCraft’s control channel."
+  },
+  {
+    "id": "effectcraft",
+    "title": "EffectCraft",
+    "category": "Media",
+    "file": "effectcraft.png",
+    "description": "A 1920 × 1080 title composition in EffectCraft: the same original hills drawing under a Fractal Noise haze, and a title with Glow and Drop Shadow whose position and opacity keyframes show in the timeline.",
+    "source": "https://github.com/airos-works/effectcraft/blob/main/docs/haiku.md",
+    "captured": "2026-11-07",
+    "width": 1016,
+    "height": 738,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation (GeForce GTX 1070 on NVK, Mesa 25.3.0-devel, hrev60207+2472); window region below the title tab, no image edits. The display ran on the framebuffer driver at 1024 × 768 that day, so the window fills the screen at 100 percent scale. EffectCraft 0.21.0~airos1-2 from the airOS x86-64 image build of 7 November 2026, extracted to a test folder and run with its own settings folder; the window and the GPU compositor ran on Vulkan on the GTX 1070. The composition was built for the capture over EffectCraft’s control channel from an SVG drawing written for it."
+  },
+  {
+    "id": "filmcraft",
+    "title": "FilmCraft",
+    "category": "Media",
+    "file": "filmcraft.png",
+    "description": "A short edit in FilmCraft: three original landscape stills joined by cross dissolves under a title, with a generated music bed playing through the Media Kit and the dusk still open in the Source monitor.",
+    "source": "https://github.com/airos-works/filmcraft/blob/main/docs/haiku.md",
+    "captured": "2026-11-07",
+    "width": 1016,
+    "height": 738,
+    "provenance": "Direct mcp_server BScreen capture from the X399 workstation (GeForce GTX 1070 on NVK, Mesa 25.3.0-devel, hrev60207+2472); window region below the title tab, no image edits. The display ran on the framebuffer driver at 1024 × 768 that day, so the window fills the screen at 100 percent scale. FilmCraft 0.17.0~airos1-2, the CI-style x86-64 package build of 7 November 2026, extracted to a test folder and run with its own data folder; the window and the monitors composited on Vulkan on the GTX 1070. The three stills and the music were generated for the capture, and the sequence was built over FilmCraft’s control channel; captured during playback."
+  },
+  {
     "title": "AirShot",
     "file": "airshot.png",
     "category": "Everyday",
