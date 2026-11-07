@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-07T02:28:19+00:00",
-  "ci_head": "972eb774e8d7dbc922fefe5aef6f179c9ed3d6b4",
+  "updated": "2026-11-07T06:10:07+00:00",
+  "ci_head": "3baf77f26e657740a6b5c71d8a851580a23b06fe",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -13700,8 +13700,20 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "972eb774e8d7dbc922fefe5aef6f179c9ed3d6b4",
+      "head": "3baf77f26e657740a6b5c71d8a851580a23b06fe",
       "commits": [
+        {
+          "sha": "3baf77f26e657740a6b5c71d8a851580a23b06fe",
+          "url": "https://github.com/airos-works/airos-ci/commit/3baf77f26e657740a6b5c71d8a851580a23b06fe",
+          "date": "2026-11-07T04:05:12Z",
+          "subject": "Media: Vulkan devices on small GPUs (PhotoCraft airos1-6, LightCraft airos1-4, VectorCraft airos1-3, FilmCraft airos1-3)"
+        },
+        {
+          "sha": "d35b3354184128df9b451a362cd83ec9d8b25069",
+          "url": "https://github.com/airos-works/airos-ci/commit/d35b3354184128df9b451a362cd83ec9d8b25069",
+          "date": "2026-11-07T02:51:24Z",
+          "subject": "Office: WordCraft 0.15.0~airos1-5, GridCraft 0.16.0~airos1-5, DeckCraft 0.15.0~airos1-3, PdfCraft 0.18.0~airos1-3"
+        },
         {
           "sha": "972eb774e8d7dbc922fefe5aef6f179c9ed3d6b4",
           "url": "https://github.com/airos-works/airos-ci/commit/972eb774e8d7dbc922fefe5aef6f179c9ed3d6b4",
@@ -27505,8 +27517,14 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "e3004720c8e490528bd24cbc15bebb97b81c57f1",
+      "head": "847146366cae58e7b1cda2d8c0a6cf88d13281be",
       "commits": [
+        {
+          "sha": "847146366cae58e7b1cda2d8c0a6cf88d13281be",
+          "url": "https://github.com/airos-works/summit/commit/847146366cae58e7b1cda2d8c0a6cf88d13281be",
+          "date": "2026-11-07T05:14:41Z",
+          "subject": "Engine: fonts resolve once per missing family; captured elements' backdrop filter"
+        },
         {
           "sha": "e3004720c8e490528bd24cbc15bebb97b81c57f1",
           "url": "https://github.com/airos-works/summit/commit/e3004720c8e490528bd24cbc15bebb97b81c57f1",
@@ -37419,8 +37437,14 @@
       "branch": "main",
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "group": "Applications",
-      "head": "324108297afacca7caba9278b92d15c09b6557cd",
+      "head": "0bbf345e47b2cdf1d5f6f49b38d3a7477970fb2c",
       "commits": [
+        {
+          "sha": "5a4f1963eb3a5a1c55f27b11dbf5f6d130f85900",
+          "url": "https://github.com/airos-works/wordcraft/commit/5a4f1963eb3a5a1c55f27b11dbf5f6d130f85900",
+          "date": "2026-11-07T02:43:37Z",
+          "subject": "air/OS: remove the ArtCraft marks (brand licence), 0.15.0~airos1-5"
+        },
         {
           "sha": "def21c71166f4839c12b253aacfd9d3b032a1b5d",
           "url": "https://github.com/airos-works/wordcraft/commit/def21c71166f4839c12b253aacfd9d3b032a1b5d",
@@ -37634,7 +37658,7 @@
       "branch": "main",
       "description": "Work with spreadsheets, formulas, charts and XLSX workbooks.",
       "group": "Applications",
-      "head": "4027a5ee5750e32785c4e9eed0c1784dbe4615d8",
+      "head": "00365d219eee5e332fbee164d0af630360769804",
       "commits": [
         {
           "sha": "4027a5ee5750e32785c4e9eed0c1784dbe4615d8",
@@ -37717,8 +37741,14 @@
       "branch": "main",
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
       "group": "Applications",
-      "head": "fae5dacb59d6ebec6cfcd42a18a536f27509c214",
+      "head": "4d4a07d145e7854f315b08796d159fdf7b8b8381",
       "commits": [
+        {
+          "sha": "7bc0a01d92ec7f41e83c85083b8a393db44114f0",
+          "url": "https://github.com/airos-works/deckcraft/commit/7bc0a01d92ec7f41e83c85083b8a393db44114f0",
+          "date": "2026-11-07T02:43:59Z",
+          "subject": "air/OS: remove the ArtCraft marks (brand licence), 0.15.0~airos1-3"
+        },
         {
           "sha": "fae5dacb59d6ebec6cfcd42a18a536f27509c214",
           "url": "https://github.com/airos-works/deckcraft/commit/fae5dacb59d6ebec6cfcd42a18a536f27509c214",
@@ -37896,8 +37926,14 @@
       "branch": "main",
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
       "group": "Applications",
-      "head": "04cb7e98b48c811f5f6bd7761a621172430d0992",
+      "head": "23b409917edcff7c8f870dd04ca7da37dec85ebb",
       "commits": [
+        {
+          "sha": "24f26718f1959561e1886d1b32fe0792140a44ff",
+          "url": "https://github.com/airos-works/pdfcraft/commit/24f26718f1959561e1886d1b32fe0792140a44ff",
+          "date": "2026-11-07T02:50:20Z",
+          "subject": "HAIKU7: no ArtCraft-product wording (brand licence), 0.18.0~airos1-3"
+        },
         {
           "sha": "04cb7e98b48c811f5f6bd7761a621172430d0992",
           "url": "https://github.com/airos-works/pdfcraft/commit/04cb7e98b48c811f5f6bd7761a621172430d0992",
@@ -38051,8 +38087,14 @@
       "branch": "main",
       "description": "Edit layered images with brushes, masks and adjustments, in 8, 16 or 32 bits per channel, and open PSD files.",
       "group": "Applications",
-      "head": "79e9d51788fbd204f6e3a1638b4696fa239ff48b",
+      "head": "c08f01d8d8268bbe1d285c27e3fb952cad5ecad3",
       "commits": [
+        {
+          "sha": "c08f01d8d8268bbe1d285c27e3fb952cad5ecad3",
+          "url": "https://github.com/airos-works/photocraft/commit/c08f01d8d8268bbe1d285c27e3fb952cad5ecad3",
+          "date": "2026-11-07T03:31:18Z",
+          "subject": "HAIKU: GPU adapter choice and texture guard for small GPUs, 0.20.1~airos1-6"
+        },
         {
           "sha": "79e9d51788fbd204f6e3a1638b4696fa239ff48b",
           "url": "https://github.com/airos-works/photocraft/commit/79e9d51788fbd204f6e3a1638b4696fa239ff48b",
@@ -38260,8 +38302,14 @@
       "branch": "main",
       "description": "Organize a photo library and develop RAW files non-destructively, with presets, masks and history; hands photos to PhotoCraft.",
       "group": "Applications",
-      "head": "7f59aa18f25a077d0b206e0919b60795d804de98",
+      "head": "8fb1f41f96558761cc9217f63f76c29e405f9cc8",
       "commits": [
+        {
+          "sha": "8fb1f41f96558761cc9217f63f76c29e405f9cc8",
+          "url": "https://github.com/airos-works/lightcraft/commit/8fb1f41f96558761cc9217f63f76c29e405f9cc8",
+          "date": "2026-11-07T03:27:17Z",
+          "subject": "HAIKU8: window device on small GPUs (V3DV, PowerVR), 0.18.0~airos1-4"
+        },
         {
           "sha": "7f59aa18f25a077d0b206e0919b60795d804de98",
           "url": "https://github.com/airos-works/lightcraft/commit/7f59aa18f25a077d0b206e0919b60795d804de98",
@@ -38421,8 +38469,20 @@
       "branch": "main",
       "description": "Draw vector illustrations with paths, type, gradients and artboards; import and export SVG and PDF, and print through the Be print kit.",
       "group": "Applications",
-      "head": "78b15e884d27d58cc7305f7ef8f6961134fad508",
+      "head": "f5eb1ad0ff985d659fd924240640ac002da9173c",
       "commits": [
+        {
+          "sha": "f5eb1ad0ff985d659fd924240640ac002da9173c",
+          "url": "https://github.com/airos-works/vectorcraft/commit/f5eb1ad0ff985d659fd924240640ac002da9173c",
+          "date": "2026-11-07T03:54:41Z",
+          "subject": "HAIKU: Vulkan device on small GPUs (V3DV, PowerVR), 0.21.0~airos1-3"
+        },
+        {
+          "sha": "81048911550f1f7772cc4b3d384fa000785f8168",
+          "url": "https://github.com/airos-works/vectorcraft/commit/81048911550f1f7772cc4b3d384fa000785f8168",
+          "date": "2026-11-07T02:33:00Z",
+          "subject": "HAIKU: air/OS issue form [skip ci]"
+        },
         {
           "sha": "78b15e884d27d58cc7305f7ef8f6961134fad508",
           "url": "https://github.com/airos-works/vectorcraft/commit/78b15e884d27d58cc7305f7ef8f6961134fad508",
@@ -38474,8 +38534,14 @@
       "branch": "main",
       "description": "Animate titles and composite motion graphics with layers, keyframes, expressions, about 280 GPU effects and Roto Brush.",
       "group": "Applications",
-      "head": "c7e54843a9e82c6ea1dfb25a2dd1d5d7b9e9c535",
+      "head": "c5154fdac3445a20462460c5ec5e6e7288883879",
       "commits": [
+        {
+          "sha": "0215df40c39b3f530018c9689af4af35db8a2416",
+          "url": "https://github.com/airos-works/effectcraft/commit/0215df40c39b3f530018c9689af4af35db8a2416",
+          "date": "2026-11-07T02:33:06Z",
+          "subject": "HAIKU: air/OS issue form [skip ci]"
+        },
         {
           "sha": "c7e54843a9e82c6ea1dfb25a2dd1d5d7b9e9c535",
           "url": "https://github.com/airos-works/effectcraft/commit/c7e54843a9e82c6ea1dfb25a2dd1d5d7b9e9c535",
@@ -38515,8 +38581,14 @@
       "branch": "main",
       "description": "Edit video on a multitrack timeline with effects, colour, an audio mixer, captions and voice-over, and export finished films.",
       "group": "Applications",
-      "head": "205ce309912ee47b3938e8048c5b062897e6bc5a",
+      "head": "1baaba9410ab677acfa7830540c1db8300fd6ae4",
       "commits": [
+        {
+          "sha": "1baaba9410ab677acfa7830540c1db8300fd6ae4",
+          "url": "https://github.com/airos-works/filmcraft/commit/1baaba9410ab677acfa7830540c1db8300fd6ae4",
+          "date": "2026-11-07T04:03:49Z",
+          "subject": "HAIKU6: Vulkan device on small GPUs (V3DV, PowerVR), 0.17.0~airos1-3"
+        },
         {
           "sha": "205ce309912ee47b3938e8048c5b062897e6bc5a",
           "url": "https://github.com/airos-works/filmcraft/commit/205ce309912ee47b3938e8048c5b062897e6bc5a",
@@ -41872,43 +41944,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-06T20:07:51Z",
+      "published": "2026-11-07T03:09:14Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261106.1711-1-arm64.hpkg",
-          "size": 15448473,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261106.1711-1-arm64.hpkg",
-          "digest": "sha256:5f93218564bd182e124a136b8c9f1c3fa3391672a93c2b8a9bdd2eebe9fceb0d"
+          "name": "summit-0.1.0.git20261106.2304-1-arm64.hpkg",
+          "size": 15447947,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261106.2304-1-arm64.hpkg",
+          "digest": "sha256:ee0df8376ca2b58b06cb839a88ffd3ae742c67ee370d4fc5b7b035d8d8ea97d6"
         },
         {
-          "name": "summit-0.1.0.git20261106.1711-1-x86_64.hpkg",
-          "size": 15676294,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261106.1711-1-x86_64.hpkg",
-          "digest": "sha256:115b1bd2c88671be6e12072b7edf55e919e1b74860e7e4d57a4573163588193d"
+          "name": "summit-0.1.0.git20261106.2304-1-x86_64.hpkg",
+          "size": 15676777,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261106.2304-1-x86_64.hpkg",
+          "digest": "sha256:f0503fe3541f3cc3709812efcfdd893a3cfadb6fc4eab6188acdc9e3c1423b06"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261106.1711-1-arm64.hpkg",
-          "size": 92000294,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261106.1711-1-arm64.hpkg",
-          "digest": "sha256:a25817142b5140ccb14c8fa6b9f84f6654d5216a3ce6050705c8466f0790452c"
+          "name": "summit_webkit-1.10.1.git20261106.2304-1-arm64.hpkg",
+          "size": 97776779,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261106.2304-1-arm64.hpkg",
+          "digest": "sha256:99c4bda806b5183875c3c9b0149a79b264c27f68a2ae6e64458cd677121bd398"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261106.1711-1-x86_64.hpkg",
-          "size": 98207777,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261106.1711-1-x86_64.hpkg",
-          "digest": "sha256:98a5feb98048b942c8f9193f348fb258401e911c5553b577ce85ef56e6fee314"
+          "name": "summit_webkit-1.10.1.git20261106.2304-1-x86_64.hpkg",
+          "size": 98207791,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261106.2304-1-x86_64.hpkg",
+          "digest": "sha256:4f2f79937e73fdb00493ed1858ea6aa7e3c00aa15c26022b4f198fbe307d23fe"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261106.1711-1-arm64.hpkg",
-          "size": 825550,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261106.1711-1-arm64.hpkg",
-          "digest": "sha256:bbce7b0a2c6d93a237fbc4d7c5020d7afe4ebe48b0126c27b669bb454012f10d"
+          "name": "summit_webkitlegacy-1.10.1.git20261106.2304-1-arm64.hpkg",
+          "size": 825548,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261106.2304-1-arm64.hpkg",
+          "digest": "sha256:2b18ece15c8f7a6123c29b9063df705f4e1de2948e7e350507e15a4189296b31"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261106.1711-1-x86_64.hpkg",
+          "name": "summit_webkitlegacy-1.10.1.git20261106.2304-1-x86_64.hpkg",
           "size": 876192,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261106.1711-1-x86_64.hpkg",
-          "digest": "sha256:7d0e49727b84c40cd3cf6466539ce184628a6476bdba881754f03cb4e9d6a0e4"
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261106.2304-1-x86_64.hpkg",
+          "digest": "sha256:d594cb2fe1c714c90b7822dbeca9fd9835ebdab7099f4d7239d2e6db61513f2f"
         }
       ]
     },
@@ -42118,19 +42190,19 @@
       "description": "Write and lay out documents, work with DOCX, review changes and export to PDF.",
       "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
       "release": "https://github.com/airos-works/wordcraft/releases/tag/latest",
-      "published": "2026-11-07T01:52:59Z",
+      "published": "2026-11-07T02:50:01Z",
       "assets": [
         {
-          "name": "wordcraft-0.15.0.airos1-4-arm64.hpkg",
-          "size": 32940307,
-          "browser_download_url": "https://github.com/airos-works/wordcraft/releases/download/latest/wordcraft-0.15.0.airos1-4-arm64.hpkg",
-          "digest": "sha256:72b538b168997827f56db74ccabbdd6bbc6b62f343c508a31baae9d984d70a83"
+          "name": "wordcraft-0.15.0.airos1-5-arm64.hpkg",
+          "size": 32931865,
+          "browser_download_url": "https://github.com/airos-works/wordcraft/releases/download/latest/wordcraft-0.15.0.airos1-5-arm64.hpkg",
+          "digest": "sha256:05204d31a4077dd548047813ed66a097fcd4df0ac79c6e2528cdb057b93cb7a1"
         },
         {
-          "name": "wordcraft-0.15.0.airos1-4-x86_64.hpkg",
-          "size": 34689770,
-          "browser_download_url": "https://github.com/airos-works/wordcraft/releases/download/latest/wordcraft-0.15.0.airos1-4-x86_64.hpkg",
-          "digest": "sha256:7b5858ff657cf142d69b03fdb08703be0c2e33292884e8d7bb07da631c86d796"
+          "name": "wordcraft-0.15.0.airos1-5-x86_64.hpkg",
+          "size": 34691054,
+          "browser_download_url": "https://github.com/airos-works/wordcraft/releases/download/latest/wordcraft-0.15.0.airos1-5-x86_64.hpkg",
+          "digest": "sha256:2fb22dd8fa23aa9477d41144694cec3b06f6b008fbcd6088ddce1f510869b058"
         }
       ]
     },
@@ -42140,19 +42212,19 @@
       "description": "Work with spreadsheets, formulas, charts and XLSX workbooks.",
       "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
       "release": "https://github.com/airos-works/gridcraft/releases/tag/latest",
-      "published": "2026-11-06T22:59:02Z",
+      "published": "2026-11-07T03:12:44Z",
       "assets": [
         {
-          "name": "gridcraft-0.16.0.airos1-2-arm64.hpkg",
-          "size": 18144982,
-          "browser_download_url": "https://github.com/airos-works/gridcraft/releases/download/latest/gridcraft-0.16.0.airos1-2-arm64.hpkg",
-          "digest": "sha256:24f67b8c914837530352ccd88e48238bfa12f548be752695a2a7e15f077a512e"
+          "name": "gridcraft-0.16.0.airos1-3-arm64.hpkg",
+          "size": 18145883,
+          "browser_download_url": "https://github.com/airos-works/gridcraft/releases/download/latest/gridcraft-0.16.0.airos1-3-arm64.hpkg",
+          "digest": "sha256:fe0549c279252d07bc9536e184784ffeae9814751edbbcbb2be8910cbc9d1275"
         },
         {
-          "name": "gridcraft-0.16.0.airos1-2-x86_64.hpkg",
-          "size": 19295821,
-          "browser_download_url": "https://github.com/airos-works/gridcraft/releases/download/latest/gridcraft-0.16.0.airos1-2-x86_64.hpkg",
-          "digest": "sha256:0b3cef1d1ec1ae4d430fbbd2f906fef632b7703a4cb69b28f161ca907608500f"
+          "name": "gridcraft-0.16.0.airos1-3-x86_64.hpkg",
+          "size": 19299489,
+          "browser_download_url": "https://github.com/airos-works/gridcraft/releases/download/latest/gridcraft-0.16.0.airos1-3-x86_64.hpkg",
+          "digest": "sha256:453495b8563962b3539318ca9c146d29f4de83d4e345a287b571e94772c94654"
         }
       ]
     },
@@ -42162,19 +42234,19 @@
       "description": "Create PPTX presentations with slides, notes, transitions and a native fullscreen slide show.",
       "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
       "release": "https://github.com/airos-works/deckcraft/releases/tag/latest",
-      "published": "2026-11-04T02:38:39Z",
+      "published": "2026-11-07T03:57:03Z",
       "assets": [
         {
-          "name": "deckcraft-0.15.0.airos1-1-arm64.hpkg",
-          "size": 22960787,
-          "browser_download_url": "https://github.com/airos-works/deckcraft/releases/download/latest/deckcraft-0.15.0.airos1-1-arm64.hpkg",
-          "digest": "sha256:a6de2eccd2fee622945868e2d2bee9f88efe50d0e5c7d0835bfe8af9f60f90c8"
+          "name": "deckcraft-0.15.0.airos1-2-arm64.hpkg",
+          "size": 23003666,
+          "browser_download_url": "https://github.com/airos-works/deckcraft/releases/download/latest/deckcraft-0.15.0.airos1-2-arm64.hpkg",
+          "digest": "sha256:d9c7369a0264a66c004c0e9a8c6c1eedd3232d43eac84cb3efbf6769cfd28e22"
         },
         {
-          "name": "deckcraft-0.15.0.airos1-1-x86_64.hpkg",
-          "size": 24387316,
-          "browser_download_url": "https://github.com/airos-works/deckcraft/releases/download/latest/deckcraft-0.15.0.airos1-1-x86_64.hpkg",
-          "digest": "sha256:8cda16d5d8c81db7c10ab95e83aa1c4cc3eb5382b6f35ce1f99cb7c94315a4f6"
+          "name": "deckcraft-0.15.0.airos1-2-x86_64.hpkg",
+          "size": 24450727,
+          "browser_download_url": "https://github.com/airos-works/deckcraft/releases/download/latest/deckcraft-0.15.0.airos1-2-x86_64.hpkg",
+          "digest": "sha256:859a9dc705168ba6993822b772f96db788ddfe8b26c7fe4946d6ac9cbdd25541"
         }
       ]
     },
@@ -42184,19 +42256,19 @@
       "description": "Read, annotate and edit PDFs, organize pages and fill forms; includes a command-line tool.",
       "note": "Early port with native windows, file panels and clipboard, rendered on the CPU. Also included in airOS system images; the port notes list current limitations.",
       "release": "https://github.com/airos-works/pdfcraft/releases/tag/latest",
-      "published": "2026-11-04T03:06:37Z",
+      "published": "2026-11-07T03:52:08Z",
       "assets": [
         {
-          "name": "pdfcraft-0.18.0.airos1-1-arm64.hpkg",
-          "size": 41573218,
-          "browser_download_url": "https://github.com/airos-works/pdfcraft/releases/download/latest/pdfcraft-0.18.0.airos1-1-arm64.hpkg",
-          "digest": "sha256:07cbbd5e728556db7a533e4ff207f7a4d7f79210373a1b085708ff05c052d7ab"
+          "name": "pdfcraft-0.18.0.airos1-2-arm64.hpkg",
+          "size": 41595611,
+          "browser_download_url": "https://github.com/airos-works/pdfcraft/releases/download/latest/pdfcraft-0.18.0.airos1-2-arm64.hpkg",
+          "digest": "sha256:636ea578bb2a96476f57940f6ad6002b47326db0cfb908ff5bf906c115724933"
         },
         {
-          "name": "pdfcraft-0.18.0.airos1-1-x86_64.hpkg",
-          "size": 44881219,
-          "browser_download_url": "https://github.com/airos-works/pdfcraft/releases/download/latest/pdfcraft-0.18.0.airos1-1-x86_64.hpkg",
-          "digest": "sha256:3a228038001ea4f577018e19fef8b704cd2bc8c6f17e4e2e1ca4605498d6eca3"
+          "name": "pdfcraft-0.18.0.airos1-2-x86_64.hpkg",
+          "size": 44905383,
+          "browser_download_url": "https://github.com/airos-works/pdfcraft/releases/download/latest/pdfcraft-0.18.0.airos1-2-x86_64.hpkg",
+          "digest": "sha256:0de64112b9d7b019b21a5be080ef4c0c862b8beca24137fa98fa2c1834216ce4"
         }
       ]
     },
@@ -42249,16 +42321,44 @@
       "repo": "vectorcraft",
       "description": "Draw vector illustrations with paths, type, gradients and artboards; import and export SVG and PDF, and print through the Be print kit.",
       "note": "Early port with a Vulkan-drawn interface on a hardware driver, falling back to the CPU. Also included in airOS system images; the port notes list current limitations.",
-      "release": null,
-      "assets": []
+      "release": "https://github.com/airos-works/vectorcraft/releases/tag/latest",
+      "published": "2026-11-07T03:43:51Z",
+      "assets": [
+        {
+          "name": "vectorcraft-0.21.0.airos1-1-arm64.hpkg",
+          "size": 75388330,
+          "browser_download_url": "https://github.com/airos-works/vectorcraft/releases/download/latest/vectorcraft-0.21.0.airos1-1-arm64.hpkg",
+          "digest": "sha256:c5b6aff5af55bb07d560c2de1a4b459f600bcb4bfffe6114a7ecc1871f0b33b2"
+        },
+        {
+          "name": "vectorcraft-0.21.0.airos1-1-x86_64.hpkg",
+          "size": 78406064,
+          "browser_download_url": "https://github.com/airos-works/vectorcraft/releases/download/latest/vectorcraft-0.21.0.airos1-1-x86_64.hpkg",
+          "digest": "sha256:77eef8aac0b52c58696b0969b235bbb0ff783c920eee0094e2d740a72af738cb"
+        }
+      ]
     },
     {
       "name": "EffectCraft",
       "repo": "effectcraft",
       "description": "Animate titles and composite motion graphics with layers, keyframes, expressions, about 280 GPU effects and Roto Brush.",
       "note": "Early port drawing, compositing and exporting with Vulkan on a hardware driver, falling back to the CPU. Also included in airOS system images; the port notes list current limitations.",
-      "release": null,
-      "assets": []
+      "release": "https://github.com/airos-works/effectcraft/releases/tag/latest",
+      "published": "2026-11-07T05:20:01Z",
+      "assets": [
+        {
+          "name": "effectcraft-0.21.0.airos1-1-arm64.hpkg",
+          "size": 35427151,
+          "browser_download_url": "https://github.com/airos-works/effectcraft/releases/download/latest/effectcraft-0.21.0.airos1-1-arm64.hpkg",
+          "digest": "sha256:f28873b1b150a20b30bc87d2c1c5c4516daa15219622938fa93211925375218a"
+        },
+        {
+          "name": "effectcraft-0.21.0.airos1-1-x86_64.hpkg",
+          "size": 37794769,
+          "browser_download_url": "https://github.com/airos-works/effectcraft/releases/download/latest/effectcraft-0.21.0.airos1-1-x86_64.hpkg",
+          "digest": "sha256:5d869b9b621000f01449375588b663a9f637dbcd7c4b0db33159a6e8bd7fde55"
+        }
+      ]
     },
     {
       "name": "FilmCraft",
