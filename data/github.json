@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-09T06:48:17+00:00",
-  "ci_head": "5039fd8d19edbb641e7ae98eba81d9f84d567c56",
+  "updated": "2026-11-09T22:29:06+00:00",
+  "ci_head": "3b62551f32589ccca21a122c71c76bc4dfa6e79d",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "fc728e6dcbd4d6f3070c318ab67d29234879fdde",
+      "head": "d3a83f180806af445a4b6bc89ada7bcd3b1b1706",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -13876,6 +13876,318 @@
           "url": "https://github.com/airos-works/haiku/commit/fc728e6dcbd4d6f3070c318ab67d29234879fdde",
           "date": "2026-11-09T04:50:04Z",
           "subject": "docs/airos/scheduler: arm64 idle power-down results"
+        },
+        {
+          "sha": "14c5c5c3c537544334656c590b60ffc25c5e57f2",
+          "url": "https://github.com/airos-works/haiku/commit/14c5c5c3c537544334656c590b60ffc25c5e57f2",
+          "date": "2026-11-09T07:13:32Z",
+          "subject": "Neural Kit: public headers, graph, TFLite loader, interpreter skeleton"
+        },
+        {
+          "sha": "a2fc1d2add617b3a64595fe827519e10dbe2ac33",
+          "url": "https://github.com/airos-works/haiku/commit/a2fc1d2add617b3a64595fe827519e10dbe2ac33",
+          "date": "2026-11-09T07:38:47Z",
+          "subject": "Neural Kit: kit classes, neural tool, RK3588 NPU driver"
+        },
+        {
+          "sha": "b438a93459cb2d2ed68f28bec2476c917c922525",
+          "url": "https://github.com/airos-works/haiku/commit/b438a93459cb2d2ed68f28bec2476c917c922525",
+          "date": "2026-11-09T07:45:06Z",
+          "subject": "Neural Kit: documentation, kit test with a back end of its own"
+        },
+        {
+          "sha": "8b1552b40aab8332add49c5f2c6922afda319538",
+          "url": "https://github.com/airos-works/haiku/commit/8b1552b40aab8332add49c5f2c6922afda319538",
+          "date": "2026-11-09T07:46:38Z",
+          "subject": "Neural Kit: into the image; a MIME type for TensorFlow Lite models"
+        },
+        {
+          "sha": "6951f82230d0f9508837dc86a82a1e86f0ab7dc9",
+          "url": "https://github.com/airos-works/haiku/commit/6951f82230d0f9508837dc86a82a1e86f0ab7dc9",
+          "date": "2026-11-09T08:00:09Z",
+          "subject": "vulkan.neural: Vulkan headers of the Khronos Group"
+        },
+        {
+          "sha": "2b5b7b0f9f78ce74c00827b07ec54ca82fdc94e2",
+          "url": "https://github.com/airos-works/haiku/commit/2b5b7b0f9f78ce74c00827b07ec54ca82fdc94e2",
+          "date": "2026-11-09T08:06:35Z",
+          "subject": "Neural Kit: vulkan back end"
+        },
+        {
+          "sha": "7b6ad6afba65517ab6febbef675143104a9d18ab",
+          "url": "https://github.com/airos-works/haiku/commit/7b6ad6afba65517ab6febbef675143104a9d18ab",
+          "date": "2026-11-09T08:06:43Z",
+          "subject": "tests/kits/neural: build vulkan_backend_test"
+        },
+        {
+          "sha": "b8b92e1b5e3d4da5834a3b23ec3ed5adcf93b2c3",
+          "url": "https://github.com/airos-works/haiku/commit/b8b92e1b5e3d4da5834a3b23ec3ed5adcf93b2c3",
+          "date": "2026-11-09T08:08:47Z",
+          "subject": "rk3588_npu: Neural Kit back end for the RK3588 neural processor"
+        },
+        {
+          "sha": "4a5c6314f3846db587b0ed56ea60e0eced454e60",
+          "url": "https://github.com/airos-works/haiku/commit/4a5c6314f3846db587b0ed56ea60e0eced454e60",
+          "date": "2026-11-09T08:08:48Z",
+          "subject": "tests: rk3588_npu_backend_test, the NPU back end against the CPU"
+        },
+        {
+          "sha": "5f708b4837e02226281b5a11ce285d33781a6baa",
+          "url": "https://github.com/airos-works/haiku/commit/5f708b4837e02226281b5a11ce285d33781a6baa",
+          "date": "2026-11-09T08:20:32Z",
+          "subject": "vulkan.neural: a program times the shaders it can choose from"
+        },
+        {
+          "sha": "47a77eb13baa80bcac19ea2e8765e195e8db0a7a",
+          "url": "https://github.com/airos-works/haiku/commit/47a77eb13baa80bcac19ea2e8765e195e8db0a7a",
+          "date": "2026-11-09T08:23:49Z",
+          "subject": "Neural Kit: any failure to make a program falls back to the CPU"
+        },
+        {
+          "sha": "1b2cdb0e19bdd0efd129a8557d6134f69a827b3d",
+          "url": "https://github.com/airos-works/haiku/commit/1b2cdb0e19bdd0efd129a8557d6134f69a827b3d",
+          "date": "2026-11-09T08:32:20Z",
+          "subject": "rk3588_npu driver: a failed job no longer wedges the processor"
+        },
+        {
+          "sha": "4befe84dce926d668f3ee477b20f823349d8763d",
+          "url": "https://github.com/airos-works/haiku/commit/4befe84dce926d668f3ee477b20f823349d8763d",
+          "date": "2026-11-09T08:32:20Z",
+          "subject": "tests: rk3588_npu_test --jobs, good and bad jobs on the processor"
+        },
+        {
+          "sha": "82fafaf23bc0b7d36d53b3ce942c1b11abe34ffc",
+          "url": "https://github.com/airos-works/haiku/commit/82fafaf23bc0b7d36d53b3ce942c1b11abe34ffc",
+          "date": "2026-11-09T08:33:31Z",
+          "subject": "rk3588_npu back end: activations, saturating additions, large layers"
+        },
+        {
+          "sha": "ccb567c98bb1f14b97881132cc8a23eed0d168fb",
+          "url": "https://github.com/airos-works/haiku/commit/ccb567c98bb1f14b97881132cc8a23eed0d168fb",
+          "date": "2026-11-09T08:33:45Z",
+          "subject": "rk3588_npu_backend_test: more cases, activations, --repeat"
+        },
+        {
+          "sha": "d2a65c30f74fc8a1aa2917295735f0eb14b10e05",
+          "url": "https://github.com/airos-works/haiku/commit/d2a65c30f74fc8a1aa2917295735f0eb14b10e05",
+          "date": "2026-11-09T08:34:27Z",
+          "subject": "Neural Kit: the CPU kernels"
+        },
+        {
+          "sha": "424c64e71815d474b848a6f0537e3816e4858683",
+          "url": "https://github.com/airos-works/haiku/commit/424c64e71815d474b848a6f0537e3816e4858683",
+          "date": "2026-11-09T08:36:12Z",
+          "subject": "amdxdna: Neural Kit back end for AMD's XDNA NPU"
+        },
+        {
+          "sha": "6130d2962197d8665bd5da68a3308d0f148bf044",
+          "url": "https://github.com/airos-works/haiku/commit/6130d2962197d8665bd5da68a3308d0f148bf044",
+          "date": "2026-11-09T08:36:12Z",
+          "subject": "tests: amdxdna_backend_test, the NPU back end with a design bundle"
+        },
+        {
+          "sha": "4185d22d0370de52e0337f4289e8c61f42cbb6cc",
+          "url": "https://github.com/airos-works/haiku/commit/4185d22d0370de52e0337f4289e8c61f42cbb6cc",
+          "date": "2026-11-09T08:38:54Z",
+          "subject": "Neural Kit: a failed device run is done by the CPU, the device kept"
+        },
+        {
+          "sha": "19721788ce90c3ccb895bcfa529b8591a34f10bc",
+          "url": "https://github.com/airos-works/haiku/commit/19721788ce90c3ccb895bcfa529b8591a34f10bc",
+          "date": "2026-11-09T08:44:08Z",
+          "subject": "rk3588_npu back end: round as the CPU does where it can"
+        },
+        {
+          "sha": "618220912855a155acb31e30ab385906e8c63353",
+          "url": "https://github.com/airos-works/haiku/commit/618220912855a155acb31e30ab385906e8c63353",
+          "date": "2026-11-09T08:56:49Z",
+          "subject": "rk3588_npu back end: two multipliers for the factor of sums to outputs"
+        },
+        {
+          "sha": "7022b24e4a058b52c402e10e85baac8cb48a1a46",
+          "url": "https://github.com/airos-works/haiku/commit/7022b24e4a058b52c402e10e85baac8cb48a1a46",
+          "date": "2026-11-09T08:59:02Z",
+          "subject": "Neural Kit: status of the devices as measured; compare --float-tolerance"
+        },
+        {
+          "sha": "06929d002665c4a16bdd3f02b056285d2aa940a5",
+          "url": "https://github.com/airos-works/haiku/commit/06929d002665c4a16bdd3f02b056285d2aa940a5",
+          "date": "2026-11-09T08:59:22Z",
+          "subject": "CI guest tests: neural_kit_test"
+        },
+        {
+          "sha": "531a9f20a357f2cf48aaf71cfc4e037308c39808",
+          "url": "https://github.com/airos-works/haiku/commit/531a9f20a357f2cf48aaf71cfc4e037308c39808",
+          "date": "2026-11-09T09:02:44Z",
+          "subject": "Lookout: a picture or a camera, and what a model finds in it"
+        },
+        {
+          "sha": "f4d36babbade7e5a2e9e05c823927bf20f868c62",
+          "url": "https://github.com/airos-works/haiku/commit/f4d36babbade7e5a2e9e05c823927bf20f868c62",
+          "date": "2026-11-09T09:02:44Z",
+          "subject": "Lookout: into the image, with the demos"
+        },
+        {
+          "sha": "c7005dda4b17779aa99d9768fa1a852f842e487f",
+          "url": "https://github.com/airos-works/haiku/commit/c7005dda4b17779aa99d9768fa1a852f842e487f",
+          "date": "2026-11-09T09:02:45Z",
+          "subject": "tools: fetch-models.sh, the public test models of the Neural Kit"
+        },
+        {
+          "sha": "9a62bce84b18ba76194caa1b0d33ae5cace2e860",
+          "url": "https://github.com/airos-works/haiku/commit/9a62bce84b18ba76194caa1b0d33ae5cace2e860",
+          "date": "2026-11-09T09:04:58Z",
+          "subject": "Neural Kit: deleting a session waits for its run through interruptions"
+        },
+        {
+          "sha": "5ee9cfe756f79c87ec828fdf4dd8df22b8cbcaca",
+          "url": "https://github.com/airos-works/haiku/commit/5ee9cfe756f79c87ec828fdf4dd8df22b8cbcaca",
+          "date": "2026-11-09T09:05:36Z",
+          "subject": "docs/airos/DESKBAR-MENU: Lookout among the demos"
+        },
+        {
+          "sha": "c3c40ab7d59e649ee1e55b5a07cdf989d3666489",
+          "url": "https://github.com/airos-works/haiku/commit/c3c40ab7d59e649ee1e55b5a07cdf989d3666489",
+          "date": "2026-11-09T09:08:42Z",
+          "subject": "docs/airos/NEURAL-KIT: what was verified of Lookout, more open points"
+        },
+        {
+          "sha": "17d5641a3c2f0867b0d4175a30f30f4ea35f6893",
+          "url": "https://github.com/airos-works/haiku/commit/17d5641a3c2f0867b0d4175a30f30f4ea35f6893",
+          "date": "2026-11-09T09:08:42Z",
+          "subject": "Merge branch 'neural-kit': the Neural Kit"
+        },
+        {
+          "sha": "d58a7f4801da649e1825cbc3d6ba3468a962c8c4",
+          "url": "https://github.com/airos-works/haiku/commit/d58a7f4801da649e1825cbc3d6ba3468a962c8c4",
+          "date": "2026-11-09T09:41:31Z",
+          "subject": "docs/airos/NEURAL-KIT: the Vulkan back end on RADV (Framework 13)"
+        },
+        {
+          "sha": "a215f935f2556e89bd03e753dbc397465bb68424",
+          "url": "https://github.com/airos-works/haiku/commit/a215f935f2556e89bd03e753dbc397465bb68424",
+          "date": "2026-11-09T10:03:02Z",
+          "subject": "amdxdna.neural: wait on the context's sync object, failed runs are retried"
+        },
+        {
+          "sha": "a733ce6e83a67ccd3e9d1d324209415c88303e81",
+          "url": "https://github.com/airos-works/haiku/commit/a733ce6e83a67ccd3e9d1d324209415c88303e81",
+          "date": "2026-11-09T10:07:19Z",
+          "subject": "docs/airos/NEURAL-KIT: AMD XDNA on hardware: designs run, then a hang"
+        },
+        {
+          "sha": "6dc0b4e077690195cf5732bdd7983c14b4548d2d",
+          "url": "https://github.com/airos-works/haiku/commit/6dc0b4e077690195cf5732bdd7983c14b4548d2d",
+          "date": "2026-11-09T10:07:19Z",
+          "subject": "Merge branch 'neural-kit': amdxdna.neural waits on the sync object, docs"
+        },
+        {
+          "sha": "5b8017b744a1204f760f55cf57e33f957cdb21c8",
+          "url": "https://github.com/airos-works/haiku/commit/5b8017b744a1204f760f55cf57e33f957cdb21c8",
+          "date": "2026-11-09T10:42:31Z",
+          "subject": "Neural Kit: the operators of transformers"
+        },
+        {
+          "sha": "23a2cb62980d7894cfe511d5323ba8a028e4d332",
+          "url": "https://github.com/airos-works/haiku/commit/23a2cb62980d7894cfe511d5323ba8a028e4d332",
+          "date": "2026-11-09T11:02:24Z",
+          "subject": "tools: whisper_convert.py, speech models for the Neural Kit"
+        },
+        {
+          "sha": "2c030c184e1bc9dd4915e0e7d156bb1577626237",
+          "url": "https://github.com/airos-works/haiku/commit/2c030c184e1bc9dd4915e0e7d156bb1577626237",
+          "date": "2026-11-09T11:02:24Z",
+          "subject": "Neural Kit: BSpeechRecognizer"
+        },
+        {
+          "sha": "ac91c5f52774b0c008344ed67911baab21fc6b92",
+          "url": "https://github.com/airos-works/haiku/commit/ac91c5f52774b0c008344ed67911baab21fc6b92",
+          "date": "2026-11-09T11:02:24Z",
+          "subject": "neural: transcribe"
+        },
+        {
+          "sha": "abef1058d8c7aa62a8f623eda555724beea7a944",
+          "url": "https://github.com/airos-works/haiku/commit/abef1058d8c7aa62a8f623eda555724beea7a944",
+          "date": "2026-11-09T11:02:24Z",
+          "subject": "Neural Kit tests: speech recognition"
+        },
+        {
+          "sha": "900167cb12c4d2f4c9cd3e3e914d4d803b88b61e",
+          "url": "https://github.com/airos-works/haiku/commit/900167cb12c4d2f4c9cd3e3e914d4d803b88b61e",
+          "date": "2026-11-09T11:10:36Z",
+          "subject": "Neural Kit: tensors between operators share memory on the CPU"
+        },
+        {
+          "sha": "40717f675e4ac0412b5cc7a34ccc0d50635dca51",
+          "url": "https://github.com/airos-works/haiku/commit/40717f675e4ac0412b5cc7a34ccc0d50635dca51",
+          "date": "2026-11-09T11:10:36Z",
+          "subject": "Neural Kit: a speech decoder's step costs less"
+        },
+        {
+          "sha": "93bae02aeec624b1a2891bcf52311750323eef91",
+          "url": "https://github.com/airos-works/haiku/commit/93bae02aeec624b1a2891bcf52311750323eef91",
+          "date": "2026-11-09T11:20:04Z",
+          "subject": "BSpeechRecognizer: what the engine holds counts against Feed()'s limit"
+        },
+        {
+          "sha": "92e31b9a36d5273538854fb74351057b7c4d3b9b",
+          "url": "https://github.com/airos-works/haiku/commit/92e31b9a36d5273538854fb74351057b7c4d3b9b",
+          "date": "2026-11-09T11:20:04Z",
+          "subject": "Neural Kit tests: damaged speech model directories"
+        },
+        {
+          "sha": "fd7cac0553a3688c05224668722e1aba34735b7d",
+          "url": "https://github.com/airos-works/haiku/commit/fd7cac0553a3688c05224668722e1aba34735b7d",
+          "date": "2026-11-09T11:20:04Z",
+          "subject": "docs/airos/NEURAL-KIT: speech recognition"
+        },
+        {
+          "sha": "d7ca70ae67a0678fbe0e1ac1ab0226518a0cff48",
+          "url": "https://github.com/airos-works/haiku/commit/d7ca70ae67a0678fbe0e1ac1ab0226518a0cff48",
+          "date": "2026-11-09T11:31:27Z",
+          "subject": "Merge branch 'neural-kit': speech recognition"
+        },
+        {
+          "sha": "07e33eb9e919ab40bccd2f748ad70af8d82fdb64",
+          "url": "https://github.com/airos-works/haiku/commit/07e33eb9e919ab40bccd2f748ad70af8d82fdb64",
+          "date": "2026-11-09T11:45:08Z",
+          "subject": "Lookout: the kit's helpers, and a stand-in for a camera"
+        },
+        {
+          "sha": "f8aa145e89eb75c89e7ad58ed0fdc08c7a968b97",
+          "url": "https://github.com/airos-works/haiku/commit/f8aa145e89eb75c89e7ad58ed0fdc08c7a968b97",
+          "date": "2026-11-09T11:45:08Z",
+          "subject": "docs/airos/NEURAL-KIT: what was verified of Lookout"
+        },
+        {
+          "sha": "93bef75461a580fd327ca9277f14c08d963c37ed",
+          "url": "https://github.com/airos-works/haiku/commit/93bef75461a580fd327ca9277f14c08d963c37ed",
+          "date": "2026-11-09T11:49:08Z",
+          "subject": "Merge branch 'neural-kit': Lookout uses the kit's helpers, a stand-in camera"
+        },
+        {
+          "sha": "f2199d54bf58024964df0dceee2b768c275afff7",
+          "url": "https://github.com/airos-works/haiku/commit/f2199d54bf58024964df0dceee2b768c275afff7",
+          "date": "2026-11-09T14:10:09Z",
+          "subject": "tcp: delayed ACK after 40 ms, as Linux and FreeBSD do"
+        },
+        {
+          "sha": "37b8c2cedc09be2dd51734d2abfe7db27f19355f",
+          "url": "https://github.com/airos-works/haiku/commit/37b8c2cedc09be2dd51734d2abfe7db27f19355f",
+          "date": "2026-11-09T17:10:56Z",
+          "subject": "docs/airos/NEURAL-KIT: the RK3588 NPU as shipped, and on a photograph"
+        },
+        {
+          "sha": "532d9f7aabd8d630447a692eeda666176751c768",
+          "url": "https://github.com/airos-works/haiku/commit/532d9f7aabd8d630447a692eeda666176751c768",
+          "date": "2026-11-09T21:37:30Z",
+          "subject": "amdxdna.neural: flush the output buffers before the command, too"
+        },
+        {
+          "sha": "d3a83f180806af445a4b6bc89ada7bcd3b1b1706",
+          "url": "https://github.com/airos-works/haiku/commit/d3a83f180806af445a4b6bc89ada7bcd3b1b1706",
+          "date": "2026-11-09T22:01:38Z",
+          "subject": "amdxdna.neural: ask for the turbo power mode"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -13886,8 +14198,50 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "5039fd8d19edbb641e7ae98eba81d9f84d567c56",
+      "head": "3b62551f32589ccca21a122c71c76bc4dfa6e79d",
       "commits": [
+        {
+          "sha": "3b62551f32589ccca21a122c71c76bc4dfa6e79d",
+          "url": "https://github.com/airos-works/airos-ci/commit/3b62551f32589ccca21a122c71c76bc4dfa6e79d",
+          "date": "2026-11-09T22:08:13Z",
+          "subject": "x86_64 images: the AMD NPU driver amdxdna and its firmware"
+        },
+        {
+          "sha": "5bf82d925d79b56b3df0bc94bec4714cc7672b05",
+          "url": "https://github.com/airos-works/airos-ci/commit/5bf82d925d79b56b3df0bc94bec4714cc7672b05",
+          "date": "2026-11-09T21:23:14Z",
+          "subject": "forks: mesa-x86_64 04eee2a (fences of shared contexts no longer wait for the GPU)"
+        },
+        {
+          "sha": "c5ff3a63db650b0f32c4c70ab6b3a4d1490c3cfd",
+          "url": "https://github.com/airos-works/airos-ci/commit/c5ff3a63db650b0f32c4c70ab6b3a4d1490c3cfd",
+          "date": "2026-11-09T20:21:22Z",
+          "subject": "forks: mesa-x86_64 84ea5a2 (slabs no longer leak behind busy entries)"
+        },
+        {
+          "sha": "ba5cfcef779ccdc5ccae0be1926d6918f59b8787",
+          "url": "https://github.com/airos-works/airos-ci/commit/ba5cfcef779ccdc5ccae0be1926d6918f59b8787",
+          "date": "2026-11-09T16:03:52Z",
+          "subject": "Mesa (arm64): CsfBuffer.h as the mali_csf driver has it (airos-works/mesa 85e8c04)"
+        },
+        {
+          "sha": "2f900e8479a3255108377b232b0901616c748068",
+          "url": "https://github.com/airos-works/airos-ci/commit/2f900e8479a3255108377b232b0901616c748068",
+          "date": "2026-11-09T14:39:08Z",
+          "subject": "summit_webkit: package libsummitspeech.so where the engine build made it"
+        },
+        {
+          "sha": "01cbd4b649ac76540f5d054ccc3be1133d3fd3b8",
+          "url": "https://github.com/airos-works/airos-ci/commit/01cbd4b649ac76540f5d054ccc3be1133d3fd3b8",
+          "date": "2026-11-09T13:39:31Z",
+          "subject": "forks: mesa-nvk f61bb45 (no YCbCr lookup past a set layout's bindings)"
+        },
+        {
+          "sha": "e4d5598694a2fb1cb37b925526a5ea51e929d2f9",
+          "url": "https://github.com/airos-works/airos-ci/commit/e4d5598694a2fb1cb37b925526a5ea51e929d2f9",
+          "date": "2026-11-09T09:15:12Z",
+          "subject": "NVK: stencil-only images on Pascal (forks: mesa-nvk 8a3136b, summit#197)"
+        },
         {
           "sha": "5039fd8d19edbb641e7ae98eba81d9f84d567c56",
           "url": "https://github.com/airos-works/airos-ci/commit/5039fd8d19edbb641e7ae98eba81d9f84d567c56",
@@ -27721,8 +28075,50 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "ca75372855bd5a29d40686855c8d5e212e68213a",
+      "head": "70a32df71be0c68c051fe834bd59b41664b83ae2",
       "commits": [
+        {
+          "sha": "70a32df71be0c68c051fe834bd59b41664b83ae2",
+          "url": "https://github.com/airos-works/summit/commit/70a32df71be0c68c051fe834bd59b41664b83ae2",
+          "date": "2026-11-09T21:23:42Z",
+          "subject": "Engine: GL fences on Haiku (#198)"
+        },
+        {
+          "sha": "a6e048e7eb333020e8c25d90742b354fa0a747c3",
+          "url": "https://github.com/airos-works/summit/commit/a6e048e7eb333020e8c25d90742b354fa0a747c3",
+          "date": "2026-11-09T13:59:17Z",
+          "subject": "Merge branch 'speech-recognition': webkitSpeechRecognition on the Neural Kit's recogniser (#159)"
+        },
+        {
+          "sha": "d59a4bb8216eecd307a26fb3785a54f6d6f97997",
+          "url": "https://github.com/airos-works/summit/commit/d59a4bb8216eecd307a26fb3785a54f6d6f97997",
+          "date": "2026-11-09T13:59:03Z",
+          "subject": "Speech recognition: tests, the test page, the WebDriver script and docs (#159)"
+        },
+        {
+          "sha": "59f3151276b4a83f36b5ee3a6ec8f2215014d42d",
+          "url": "https://github.com/airos-works/summit/commit/59f3151276b4a83f36b5ee3a6ec8f2215014d42d",
+          "date": "2026-11-09T13:59:03Z",
+          "subject": "Engine: webkitSpeechRecognition on the Neural Kit's recogniser (#159)"
+        },
+        {
+          "sha": "5d561e54b132222274a2907e3d504fcc8c13bd9d",
+          "url": "https://github.com/airos-works/summit/commit/5d561e54b132222274a2907e3d504fcc8c13bd9d",
+          "date": "2026-11-09T13:40:46Z",
+          "subject": "Engine: GPU tiles on NVK by default; replay textures without a fence"
+        },
+        {
+          "sha": "19b1851cc743da8090c9d70b9f5472a13eb14c4a",
+          "url": "https://github.com/airos-works/summit/commit/19b1851cc743da8090c9d70b9f5472a13eb14c4a",
+          "date": "2026-11-09T09:14:37Z",
+          "subject": "Engine: no fresh process for a fragment navigation"
+        },
+        {
+          "sha": "308a74677f9ab2289003006d956b8f3a31e6c4c7",
+          "url": "https://github.com/airos-works/summit/commit/308a74677f9ab2289003006d956b8f3a31e6c4c7",
+          "date": "2026-11-09T07:19:57Z",
+          "subject": "Engine: Skia's A8 glyph mask blend at AVX2 width"
+        },
         {
           "sha": "a9a8901457dfeb1edfe1b9dbb83a7034b9a43b12",
           "url": "https://github.com/airos-works/summit/commit/a9a8901457dfeb1edfe1b9dbb83a7034b9a43b12",
@@ -39943,10 +40339,16 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "firmware packages and the Mali firmware in all images (deps/recipes/firmware.sh); amdgpu_firmwares for the x86_64 images (deps/build-amdgpu.sh)",
-      "pinned": "d015489326537b34c17d5c0f42c490592ce13c74",
+      "pinned": "774aa2599f8ff2a1e52aaec055afca62260cc3c8",
       "upstream": null,
-      "head": "d015489326537b34c17d5c0f42c490592ce13c74",
+      "head": "774aa2599f8ff2a1e52aaec055afca62260cc3c8",
       "commits": [
+        {
+          "sha": "774aa2599f8ff2a1e52aaec055afca62260cc3c8",
+          "url": "https://github.com/airos-works/airos-firmware/commit/774aa2599f8ff2a1e52aaec055afca62260cc3c8",
+          "date": "2026-11-09T22:05:22Z",
+          "subject": "linux-firmware 20261109 (69e51bb2): AMD NPU firmware (amdnpu)"
+        },
         {
           "sha": "d015489326537b34c17d5c0f42c490592ce13c74",
           "url": "https://github.com/airos-works/airos-firmware/commit/d015489326537b34c17d5c0f42c490592ce13c74",
@@ -40000,10 +40402,16 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "arm64 images: libEGL_mesa (Panfrost on the ROCK 5, V3D on the Pi) and libvulkan_broadcom (deps/recipes/gl.sh)",
-      "pinned": "5f40553e890a46af475cd5d3aabce3dd09a2ef14",
+      "pinned": "85e8c04df375e5b8b8e0f32301dc2902b496472c",
       "upstream": null,
-      "head": "5f40553e890a46af475cd5d3aabce3dd09a2ef14",
+      "head": "85e8c04df375e5b8b8e0f32301dc2902b496472c",
       "commits": [
+        {
+          "sha": "85e8c04df375e5b8b8e0f32301dc2902b496472c",
+          "url": "https://github.com/airos-works/mesa/commit/85e8c04df375e5b8b8e0f32301dc2902b496472c",
+          "date": "2026-11-09T16:03:34Z",
+          "subject": "panfrost (Haiku): CsfBuffer.h as the mali_csf driver has it"
+        },
         {
           "sha": "5f40553e890a46af475cd5d3aabce3dd09a2ef14",
           "url": "https://github.com/airos-works/mesa/commit/5f40553e890a46af475cd5d3aabce3dd09a2ef14",
@@ -40220,10 +40628,28 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "x86_64 summit_webkit: the private Mesa (llvmpipe, zink) with EGL in lib/summit-webkit/mesa (deps/build-gl-x86_64.sh)",
-      "pinned": "4472bbe162179b08de7b3a0509f1280631319c80",
+      "pinned": "04eee2a7769435ba698e97c20a48ad35bb1f1a18",
       "upstream": null,
-      "head": "4472bbe162179b08de7b3a0509f1280631319c80",
+      "head": "04eee2a7769435ba698e97c20a48ad35bb1f1a18",
       "commits": [
+        {
+          "sha": "04eee2a7769435ba698e97c20a48ad35bb1f1a18",
+          "url": "https://github.com/airos-works/mesa/commit/04eee2a7769435ba698e97c20a48ad35bb1f1a18",
+          "date": "2026-11-09T21:08:31Z",
+          "subject": "zink: an asynchronous flush with nothing new does not wait either"
+        },
+        {
+          "sha": "1b57b06d380fe7ab2fbc1812797bdcf5caf2ad86",
+          "url": "https://github.com/airos-works/mesa/commit/1b57b06d380fe7ab2fbc1812797bdcf5caf2ad86",
+          "date": "2026-11-09T21:08:31Z",
+          "subject": "mesa: asynchronous flush for fences of shared contexts"
+        },
+        {
+          "sha": "84ea5a2912c45b2156b9c95298262570ba0bae20",
+          "url": "https://github.com/airos-works/mesa/commit/84ea5a2912c45b2156b9c95298262570ba0bae20",
+          "date": "2026-11-09T20:20:58Z",
+          "subject": "pb_slab: move busy entries to the back of the reclaim list"
+        },
         {
           "sha": "4472bbe162179b08de7b3a0509f1280631319c80",
           "url": "https://github.com/airos-works/mesa/commit/4472bbe162179b08de7b3a0509f1280631319c80",
@@ -40758,9 +41184,9 @@
       "base": "b28d7c6866821b2a70abc0fa0e67b70461bd9da4",
       "group": "Libraries & firmware",
       "description": "x86_64: NVK (Vulkan on nvidia_rm), and the RM API and class headers of the NVDEC media plug-in",
-      "pinned": "ef7f9813e04aa20c36f667df0da9fbdd45bdbdc5",
+      "pinned": "f61bb45a76c1f7dc1c3a66c3c0d29bb3c2b1007e",
       "upstream": "https://github.com/X547/mesa.git",
-      "head": "ef7f9813e04aa20c36f667df0da9fbdd45bdbdc5",
+      "head": "f61bb45a76c1f7dc1c3a66c3c0d29bb3c2b1007e",
       "commits": [
         {
           "sha": "25d58bd7f6782ee0d4185055741898b25cb5a16c",
@@ -40797,6 +41223,18 @@
           "url": "https://github.com/airos-works/mesa-nvk/commit/ef7f9813e04aa20c36f667df0da9fbdd45bdbdc5",
           "date": "2026-10-29T02:44:16Z",
           "subject": "nvrm: keep semaphore and fence values on the processor"
+        },
+        {
+          "sha": "8a3136bb7b4c52446051c5caba34013d2a7efda7",
+          "url": "https://github.com/airos-works/mesa-nvk/commit/8a3136bb7b4c52446051c5caba34013d2a7efda7",
+          "date": "2026-11-09T09:04:31Z",
+          "subject": "nvrm: allocate S8 stencil images with the depth type"
+        },
+        {
+          "sha": "f61bb45a76c1f7dc1c3a66c3c0d29bb3c2b1007e",
+          "url": "https://github.com/airos-works/mesa-nvk/commit/f61bb45a76c1f7dc1c3a66c3c0d29bb3c2b1007e",
+          "date": "2026-11-09T13:39:12Z",
+          "subject": "nvk: no YCbCr conversion for a binding the layout lacks"
         }
       ],
       "url": "https://github.com/airos-works/mesa-nvk/tree/airos-nvk-r2"
@@ -40882,10 +41320,106 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "x86_64 images: the amdgpu_drm kernel driver and its amdgpu_drm package (deps/build-amdgpu.sh; the amdgpu_kms accelerant is in haiku.hpkg)",
-      "pinned": "7087752c9e62314b5aa4ee97eef6d18f692a4530",
+      "pinned": "eeb041739e7d3ae4bafabc4a7fe812e1b51ab812",
       "upstream": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git",
-      "head": "f6696b2446827bdde784deed31a1b4f7455b0dda",
+      "head": "eeb041739e7d3ae4bafabc4a7fe812e1b51ab812",
       "commits": [
+        {
+          "sha": "eeb041739e7d3ae4bafabc4a7fe812e1b51ab812",
+          "url": "https://github.com/airos-works/linux-drm/commit/eeb041739e7d3ae4bafabc4a7fe812e1b51ab812",
+          "date": "2026-11-09T21:38:28Z",
+          "subject": "xdna: FIRST-LOAD: what the fixed driver did on the hardware"
+        },
+        {
+          "sha": "9e957007e7897c9c0648b1c8254a42b6605b786f",
+          "url": "https://github.com/airos-works/linux-drm/commit/9e957007e7897c9c0648b1c8254a42b6605b786f",
+          "date": "2026-11-09T11:01:31Z",
+          "subject": "amdxdna: delayed power down, a bring-up log, a stand-in for the hardware"
+        },
+        {
+          "sha": "6c324131c042fb381e069071d0865cb2ad6018f5",
+          "url": "https://github.com/airos-works/linux-drm/commit/6c324131c042fb381e069071d0865cb2ad6018f5",
+          "date": "2026-11-09T11:01:21Z",
+          "subject": "compat: a build that checks kfree() (KMALLOC_DEBUG=1)"
+        },
+        {
+          "sha": "a3e02392fc9a4835cedbc9afcab79dfb3c19646b",
+          "url": "https://github.com/airos-works/linux-drm/commit/a3e02392fc9a4835cedbc9afcab79dfb3c19646b",
+          "date": "2026-11-09T10:50:54Z",
+          "subject": "compat: clflushopt() on processors without the instruction"
+        },
+        {
+          "sha": "87a53b1b0f53b7a61a56a20151faf9cfbe895dbc",
+          "url": "https://github.com/airos-works/linux-drm/commit/87a53b1b0f53b7a61a56a20151faf9cfbe895dbc",
+          "date": "2026-11-09T10:50:54Z",
+          "subject": "compat: waiting for a lock's first initialization lets go of the CPU"
+        },
+        {
+          "sha": "114cdee58b3ea76c52721ef9d403277ff81c39fd",
+          "url": "https://github.com/airos-works/linux-drm/commit/114cdee58b3ea76c52721ef9d403277ff81c39fd",
+          "date": "2026-11-09T10:50:54Z",
+          "subject": "compat: a kernel thread's task is freed by kthread_stop() only"
+        },
+        {
+          "sha": "2e934e49a3ae287dc1e31f2452055a300b22b936",
+          "url": "https://github.com/airos-works/linux-drm/commit/2e934e49a3ae287dc1e31f2452055a300b22b936",
+          "date": "2026-11-09T10:02:48Z",
+          "subject": "amdxdna: take the buffer memory when the driver is loaded, at boot"
+        },
+        {
+          "sha": "ff487e8458f7bc864de6b75d2e18896921cb4bd2",
+          "url": "https://github.com/airos-works/linux-drm/commit/ff487e8458f7bc864de6b75d2e18896921cb4bd2",
+          "date": "2026-11-09T10:02:48Z",
+          "subject": "xdna_test: wait for commands on the context's sync object"
+        },
+        {
+          "sha": "164c71a671b0df817a5d92bdf06f322644ff7390",
+          "url": "https://github.com/airos-works/linux-drm/commit/164c71a671b0df817a5d92bdf06f322644ff7390",
+          "date": "2026-11-09T08:37:17Z",
+          "subject": "amdxdna: design bundles for the Neural Kit, first-load checklist"
+        },
+        {
+          "sha": "5e4e95ea04542c19df0c585d7c3d18192b29ef53",
+          "url": "https://github.com/airos-works/linux-drm/commit/5e4e95ea04542c19df0c585d7c3d18192b29ef53",
+          "date": "2026-11-09T08:15:51Z",
+          "subject": "amdxdna tests: designs built on a Linux host, with expected output"
+        },
+        {
+          "sha": "4df8a3388f230a5bb901f1baaf1db53e636e3832",
+          "url": "https://github.com/airos-works/linux-drm/commit/4df8a3388f230a5bb901f1baaf1db53e636e3832",
+          "date": "2026-11-09T08:12:22Z",
+          "subject": "amdxdna: test program, packages, virtual machine runs, README"
+        },
+        {
+          "sha": "3e92f24a5df469846bf94678a496efbd891aaea4",
+          "url": "https://github.com/airos-works/linux-drm/commit/3e92f24a5df469846bf94678a496efbd891aaea4",
+          "date": "2026-11-09T08:12:22Z",
+          "subject": "compat, amdxdna: MSI-X configured at first use, log lines ended"
+        },
+        {
+          "sha": "0a5ef309d9b2205d3f0f4f92c635257d40b525d1",
+          "url": "https://github.com/airos-works/linux-drm/commit/0a5ef309d9b2205d3f0f4f92c635257d40b525d1",
+          "date": "2026-11-09T07:55:28Z",
+          "subject": "amdxdna: the AMD NPU driver as a Haiku add-on (make amdxdna)"
+        },
+        {
+          "sha": "5c36e73a5c97708bc6fe24cb82480261ef758783",
+          "url": "https://github.com/airos-works/linux-drm/commit/5c36e73a5c97708bc6fe24cb82480261ef758783",
+          "date": "2026-11-09T07:55:28Z",
+          "subject": "amdxdna: start without an IOMMU, firmware buffer from contiguous pages (Haiku)"
+        },
+        {
+          "sha": "c8126380d56dfdd89d04c2ead84974dce97664a7",
+          "url": "https://github.com/airos-works/linux-drm/commit/c8126380d56dfdd89d04c2ead84974dce97664a7",
+          "date": "2026-11-09T07:55:28Z",
+          "subject": "compat: what the AMD NPU driver needs beyond the GPU drivers"
+        },
+        {
+          "sha": "bdc1022f38b183a753b1815dab4142bab53dc60b",
+          "url": "https://github.com/airos-works/linux-drm/commit/bdc1022f38b183a753b1815dab4142bab53dc60b",
+          "date": "2026-11-09T07:32:27Z",
+          "subject": "Import Linux 7.4-rc2 amdxdna (AMD NPU driver) and 6.18.52 drm_accel.c"
+        },
         {
           "sha": "f6696b2446827bdde784deed31a1b4f7455b0dda",
           "url": "https://github.com/airos-works/linux-drm/commit/f6696b2446827bdde784deed31a1b4f7455b0dda",
@@ -42274,43 +42808,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-09T04:14:22Z",
+      "published": "2026-11-09T15:58:58Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261109.0331-1-arm64.hpkg",
-          "size": 15443341,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261109.0331-1-arm64.hpkg",
-          "digest": "sha256:60cdc01aed5c9a5a96408a4c65433a92a82bae82ba32e3ebfad72c2ef980cc33"
+          "name": "summit-0.1.0.git20261109.1359-1-arm64.hpkg",
+          "size": 15459488,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261109.1359-1-arm64.hpkg",
+          "digest": "sha256:66343a1b9f24f4d73d1affc546340ff4093946e1df8f208857e31295c7a4a3b1"
         },
         {
-          "name": "summit-0.1.0.git20261109.0331-1-x86_64.hpkg",
-          "size": 15684764,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261109.0331-1-x86_64.hpkg",
-          "digest": "sha256:feb69b83cbafbd21f442a913f75e00bfe7f1dd049f17505a3e10b5bf6ebb6d60"
+          "name": "summit-0.1.0.git20261109.1359-1-x86_64.hpkg",
+          "size": 15698013,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261109.1359-1-x86_64.hpkg",
+          "digest": "sha256:0e90081e69abeb5cd9ba284636dc2583f0e1ead92d77ee9f7dd0bdfdac7f7abc"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261109.0331-1-arm64.hpkg",
-          "size": 97038998,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261109.0331-1-arm64.hpkg",
-          "digest": "sha256:eb2d701288a2233a5f3ebf2191d77f324b4d5573a1d46d4426842f338442f90f"
+          "name": "summit_webkit-1.10.1.git20261109.1359-1-arm64.hpkg",
+          "size": 97059929,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261109.1359-1-arm64.hpkg",
+          "digest": "sha256:60503e134f6e4da0b0c12d636f7e1365ade5a4fea8fd988b264fbd6b70db1fe4"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261109.0331-1-x86_64.hpkg",
-          "size": 97763930,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261109.0331-1-x86_64.hpkg",
-          "digest": "sha256:d1e6c42f3f731a3ef23b8414a7ad640610ca7ae60bb09fe32204f3855cf7c511"
+          "name": "summit_webkit-1.10.1.git20261109.1359-1-x86_64.hpkg",
+          "size": 97806617,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261109.1359-1-x86_64.hpkg",
+          "digest": "sha256:3c36dc26d7e6b7cbaa899d8f8762e50ce4985e2377db202873d83508743c6b8d"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261109.0331-1-arm64.hpkg",
-          "size": 825547,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261109.0331-1-arm64.hpkg",
-          "digest": "sha256:71e1010bedbb1915b3b754725b68c9498ceb29e746ee7b4602534a55af4005ba"
+          "name": "summit_webkitlegacy-1.10.1.git20261109.1359-1-arm64.hpkg",
+          "size": 825546,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261109.1359-1-arm64.hpkg",
+          "digest": "sha256:375628500503aa6af9c9f8de2c5e4aceec37e4a94a29b01ba4848b9a737ed5de"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261109.0331-1-x86_64.hpkg",
-          "size": 876192,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261109.0331-1-x86_64.hpkg",
-          "digest": "sha256:e21fbaf72bf8a123e10be6e7777fd0b086b1a0db601054fe3d1b07ea2801c558"
+          "name": "summit_webkitlegacy-1.10.1.git20261109.1359-1-x86_64.hpkg",
+          "size": 876190,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261109.1359-1-x86_64.hpkg",
+          "digest": "sha256:e5b695f4bfb17984921a6598974977570b9f6a8f06eea2c9cc12411c08ac9e9c"
         }
       ]
     },
@@ -42702,101 +43236,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261109054424-fc728e6dcb",
-      "published": "2026-11-09T05:49:46Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261109220258-532d9f7aab",
+      "published": "2026-11-09T22:09:01Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1844967088,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109054424-fc728e6dcb/airos-x86_64.iso.xz",
-          "digest": "sha256:74c4a777b52e158ab637fca17b5c59e9bbba8aa6a92e2bc1ece5d3dc5bbab6fa"
+          "size": 1845668120,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109220258-532d9f7aab/airos-x86_64.iso.xz",
+          "digest": "sha256:919b2be5c5eec44314bf56b9aecd23c06281046cec56f27cc845937b607b1e93"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109054424-fc728e6dcb/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:ef69afe81bdb345d72a62e117c1b6af9546ac8aae2173644dcc275a4c9dd1ef7"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109220258-532d9f7aab/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:813f00305a029c5e7032087a2bbb86e1d800c73c8f447e5e616a14809115740a"
         },
         {
           "name": "manifest.json",
           "size": 18709,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109054424-fc728e6dcb/manifest.json",
-          "digest": "sha256:a263a11a66ddc79e92b41937d7806dc8c1d9045244d839ab4f31dba888d18995"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109220258-532d9f7aab/manifest.json",
+          "digest": "sha256:cfe23bf4c0e48e3bdc88b95c89ff1eda65532ac475353e1c87a34860c3c44f21"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261108195929-a4ddc48124",
-      "published": "2026-11-08T20:04:17Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261109165645-f2199d54bf",
+      "published": "2026-11-09T17:01:24Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 1322027532,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261108195929-a4ddc48124/airos-arm64.iso.xz",
-          "digest": "sha256:8fc779aac7e6492522cdc79992142436de5a88c35e662159b1a40939fd83bce1"
+          "size": 1321973680,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261109165645-f2199d54bf/airos-arm64.iso.xz",
+          "digest": "sha256:b94279c6fd5f6586d0380da75c62554fc2aecbdd9e3185da4db1d6fb3631cbd7"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261108195929-a4ddc48124/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:b8ac419dff0839d27f430b1326f5356c65566378f3dfda3a56bf2dde642b72a3"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261109165645-f2199d54bf/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:a6444bd54b24b3b38d1d558a12f4a1a8fd98170518448cbb861beaf6654fd2af"
         },
         {
           "name": "manifest.json",
           "size": 18383,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261108195929-a4ddc48124/manifest.json",
-          "digest": "sha256:ba6a3055df6123d9561a6e9e3f1037f7e682b8f69c08da0d16b0b5cb62f5fb8a"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261109165645-f2199d54bf/manifest.json",
+          "digest": "sha256:472483db9632c4200142bad7347d7e6c7c5ae0326f0a37ae961c74bf322f794b"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261108194750-a4ddc48124",
-      "published": "2026-11-08T19:50:16Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261109164444-f2199d54bf",
+      "published": "2026-11-09T16:47:27Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 1312373092,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261108194750-a4ddc48124/airos-rpi4.img.xz",
-          "digest": "sha256:41e2afea481053cf96c82b1e1f6ffbb2bd2e4c08a6646dac49d952d8735e9393"
+          "size": 1312784496,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261109164444-f2199d54bf/airos-rpi4.img.xz",
+          "digest": "sha256:975370f7cf8a337be62727aba9d835f3430e234387069713e6e960e4bfc20b30"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261108194750-a4ddc48124/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:edda50702977f72f71665a41157ecf38dd5f360247956ea6b203f11676e6dac8"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261109164444-f2199d54bf/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:4fc1c420d344c29c99806f8a79bf5a46c9882f7968730434d20788b29fa05904"
         },
         {
           "name": "manifest.json",
           "size": 16233,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261108194750-a4ddc48124/manifest.json",
-          "digest": "sha256:7bb5c2c20a78c4ce4e91d30b71ffcca6d2afff9260ac43dae6b88e1bd87ac93b"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261109164444-f2199d54bf/manifest.json",
+          "digest": "sha256:155c456480c9274674dd4b97450c0ab8fb8bce19321e6a104b86d7e37df742be"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261109061511-fc728e6dcb",
-      "published": "2026-11-09T06:19:48Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261109143515-f2199d54bf",
+      "published": "2026-11-09T14:40:11Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 1311008376,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109061511-fc728e6dcb/airos-cubie.img.xz",
-          "digest": "sha256:ada263a38e5b642d4c325862da3591e49e6f2d53f371bd62b6d0ca62c5a142b5"
+          "size": 1311332548,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109143515-f2199d54bf/airos-cubie.img.xz",
+          "digest": "sha256:eb0a9fdcddb73fed4424c2c4608880cce67501f10a229fd807e16d4b9357dc8b"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109061511-fc728e6dcb/airos-cubie.img.xz.sha256",
-          "digest": "sha256:0a9a0f444939bedf064313cd594f49e9e174de03c2159cf6f1d9cf8ac7af10c7"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109143515-f2199d54bf/airos-cubie.img.xz.sha256",
+          "digest": "sha256:2a491339e4e5f0273015907f1907c7ff3d64d1a30bb4da202768ac80df24959e"
         },
         {
           "name": "manifest.json",
           "size": 19806,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109061511-fc728e6dcb/manifest.json",
-          "digest": "sha256:a513644ef18e9147ad786c0beb05e41a90b69a0294bb652589f27966bada8040"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109143515-f2199d54bf/manifest.json",
+          "digest": "sha256:564ea1a07ae19c45ed9a821e91d4d0e73d58d5a494f76fa37d939ac86a9014a0"
         }
       ]
     }
