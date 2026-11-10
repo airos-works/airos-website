@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T07:28:35+00:00",
+  "updated": "2026-11-10T19:50:16+00:00",
   "ci_head": "162c77067922a6bb3c1b9c3bea120dac54a12f5d",
   "sources": [
     {
@@ -28129,8 +28129,26 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "fde2750202197316ae27597df4031b3c4913e6a9",
+      "head": "a4f9586646c96ac041a19ebcc56ba90df3042867",
       "commits": [
+        {
+          "sha": "70a3f1610e7e4ce0341067c7100cbd6b2db40d6c",
+          "url": "https://github.com/airos-works/summit/commit/70a3f1610e7e4ce0341067c7100cbd6b2db40d6c",
+          "date": "2026-11-10T12:44:02Z",
+          "subject": "Engine: back to CPU canvases on the ROCK 5's Mali-G610 (reverts 6a996a5's default)"
+        },
+        {
+          "sha": "6a996a590e3ddebf429a910575027955aa63926d",
+          "url": "https://github.com/airos-works/summit/commit/6a996a590e3ddebf429a910575027955aa63926d",
+          "date": "2026-11-10T11:41:39Z",
+          "subject": "Engine: GPU canvases on by default on the ROCK 5's Mali-G610 (Panfrost)"
+        },
+        {
+          "sha": "f6525b25175bf8ba21dcc0ebcd71e71355cc46dc",
+          "url": "https://github.com/airos-works/summit/commit/f6525b25175bf8ba21dcc0ebcd71e71355cc46dc",
+          "date": "2026-11-10T09:09:12Z",
+          "subject": "Engine: retrained arm64 PGO profile, Speedometer +1.5 % on the ROCK 5"
+        },
         {
           "sha": "2fcc22ad49214d8a0ba924307d5c222148e21778",
           "url": "https://github.com/airos-works/summit/commit/2fcc22ad49214d8a0ba924307d5c222148e21778",
@@ -42898,43 +42916,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-10T07:13:28Z",
+      "published": "2026-11-10T12:56:00Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261110.0625-1-arm64.hpkg",
-          "size": 15459240,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261110.0625-1-arm64.hpkg",
-          "digest": "sha256:c1daefaa7bbe0f11a200aa607beb0a7dd64b3108e3ff0ecd6b0fed5b5f19d33d"
+          "name": "summit-0.1.0.git20261110.1244-1-arm64.hpkg",
+          "size": 15459218,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261110.1244-1-arm64.hpkg",
+          "digest": "sha256:5bd9793dec761867669fcbf52622741e1c44bfa58a1c5711982962f6d4230636"
         },
         {
-          "name": "summit-0.1.0.git20261110.0625-1-x86_64.hpkg",
-          "size": 15698558,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261110.0625-1-x86_64.hpkg",
-          "digest": "sha256:9fc02c6f435c470679eede3936844ec7eb016df2b446369971ac36f559988bda"
+          "name": "summit-0.1.0.git20261110.1244-1-x86_64.hpkg",
+          "size": 15698577,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261110.1244-1-x86_64.hpkg",
+          "digest": "sha256:4f121b5c73473cb6a008264f3a2da0d313c8b03f79a74d0eef296f56b97979c1"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261110.0625-1-arm64.hpkg",
-          "size": 97109326,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261110.0625-1-arm64.hpkg",
-          "digest": "sha256:d80fce277f5dee4b415c9aad308393d882618f24f91047a4efa7b2e3770f7160"
+          "name": "summit_webkit-1.10.1.git20261110.1244-1-arm64.hpkg",
+          "size": 97335173,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261110.1244-1-arm64.hpkg",
+          "digest": "sha256:28a5abd1722c866d977b6a7d0afb9024c15ed0a0724ce933e9cbac129d8b2985"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261110.0625-1-x86_64.hpkg",
-          "size": 98050618,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261110.0625-1-x86_64.hpkg",
-          "digest": "sha256:a61aa5c7158f8b50d3c9ba82818d9ba1b74a083477779c8f3e5c8b6c6c6dfa1e"
+          "name": "summit_webkit-1.10.1.git20261110.1244-1-x86_64.hpkg",
+          "size": 98050638,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261110.1244-1-x86_64.hpkg",
+          "digest": "sha256:3eab64fef170e942126d04dafa39049bb759c5edc6b6148294e079ca5074f8a4"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261110.0625-1-arm64.hpkg",
-          "size": 825550,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261110.0625-1-arm64.hpkg",
-          "digest": "sha256:1a7bf7a841b827f5407c0f1abd804ee3de7e47a668cc83026493a2c67a347605"
+          "name": "summit_webkitlegacy-1.10.1.git20261110.1244-1-arm64.hpkg",
+          "size": 825546,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261110.1244-1-arm64.hpkg",
+          "digest": "sha256:9b45c44f1dadd9b5dc7f0b262139024d7a34b0114073ae0be8f3778f11dc0383"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261110.0625-1-x86_64.hpkg",
+          "name": "summit_webkitlegacy-1.10.1.git20261110.1244-1-x86_64.hpkg",
           "size": 876189,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261110.0625-1-x86_64.hpkg",
-          "digest": "sha256:9130ea6e37a9f3681859c566afbc1ea0a3eed7e9aed53b38f16a8aaa0e2781f1"
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261110.1244-1-x86_64.hpkg",
+          "digest": "sha256:c23b7c493e193b95f4876256306546a10c4f6b4f3838fad1954d0c7213c762c9"
         }
       ]
     },
