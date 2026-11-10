@@ -194,7 +194,7 @@ airos-works/haiku and links to that branch's history; it is not counted among th
 home page's supported ARM64 boards until its status is `Tested on hardware`.
 
 The NVIDIA hardware entry distinguishes the recorded Pascal graphics, 2D engine
-(merged 27 October 2026) and NVDEC tests from the experimental NVENC implementation. Its sources are the
+(merged 27 October 2026), NVDEC and NVENC H.264 tests (GTX 1070, 10 November 2026). Its sources are the
 [workstation test notes](https://github.com/airos-works/haiku/blob/master/docs/x399-workstation/STATUS.md)
 and [MediaConverter NVENC notes](https://github.com/airos-works/haiku/blob/master/docs/airos/MEDIACONVERTER.md#nvidia-nvenc).
 

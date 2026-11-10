@@ -185,8 +185,8 @@
     "id": "nvidia",
     "name": "NVIDIA GeForce GTX 1070 / GTX 1080 Ti",
     "chip": "x86-64 · Pascal · X399 workstation",
-    "status": "Graphics, 2D & NVDEC tested · NVENC experimental",
-    "summary": "Native NVIDIA graphics with 2D acceleration and hardware video decoding, with an experimental encoding path.",
+    "status": "Tested on hardware",
+    "summary": "Native NVIDIA graphics with 2D acceleration, hardware video decoding and hardware H.264 encoding.",
     "features_title": "Graphics and video support",
     "features": [
       "Native display output through nvidia_rm, with dual 4K monitors, per-display scaling and desktop arrangement",
@@ -194,10 +194,11 @@
       "2D acceleration on the card's 2D engine: fills, inverts, spans and blits for full-screen programs, and app_server's copies to the screen, where a 4K copy takes 2.9 ms on the engine against 7.1 ms on the CPU",
       "NVDEC hardware H.264 decoding through a system media add-on: tested GTX 1080 Ti streams match FFmpeg software decoding byte for byte",
       "NVDEC decoded the recorded 1080p test at 232 frames per second; NVPlay provides playback with audio and seeking",
-      "Experimental NVENC integration in MediaConverter for H.264, HEVC Main and HEVC Main 10 on compatible encoder generations",
-      "NVENC must pass an encode/decode self-test for each card and format before use; failed or unavailable encoding paths use the CPU"
+      "NVENC hardware H.264 encoding in MediaConverter, tested on the GTX 1070: a 10½-minute 1080p film encoded at 254 frames per second (8.5× real time) and decoded back at 43.8 dB PSNR",
+      "Tested NVENC sizes from 33×32 to 4096×4096, quality and average-bit-rate modes, DVD, Blu-ray, VP9 and 10-bit sources, and six conversions at once",
+      "NVENC must pass an encode/decode self-test for each card and format before use; formats and sizes it cannot encode go to the CPU, and MediaConverter says so"
     ],
-    "limits": "NVENC has not yet been validated on an NVIDIA card; its application integration was tested with a software stand-in. B-frame encoding is not implemented, and AV1 encoding uses the CPU, including on Ada and Blackwell. Verified NVDEC coverage is progressive 8-bit 4:2:0 H.264; interlaced, 4:2:2 and higher-bit-depth streams are unsupported and may fail to play instead of falling back. The 2D engine copies finished frames to the screen; app_server still draws its anti-aliased content on the CPU, so drawing throughput is largely unchanged. These results describe the earlier Pascal workstation configuration, not every NVIDIA GPU.",
+    "limits": "NVENC encodes H.264 with I and P pictures only; B-frame encoding is not implemented. On Pascal, H.265 is encoded on the CPU: the engine encodes H.265 I pictures but rejects P pictures, so H.265 fails the self-test. AV1 encoding uses the CPU, including on Ada and Blackwell. Other NVIDIA generations run the same NVENC code but have not been tested; the self-test decides whether each format uses the GPU. Verified NVDEC coverage is progressive 8-bit 4:2:0 H.264; interlaced, 4:2:2 and higher-bit-depth streams are unsupported and may fail to play instead of falling back. The 2D engine copies finished frames to the screen; app_server still draws its anti-aliased content on the CPU, so drawing throughput is largely unchanged. These results describe the Pascal workstation configuration, not every NVIDIA GPU.",
     "source": "docs/x399-workstation/STATUS.md",
     "links": [
       {
