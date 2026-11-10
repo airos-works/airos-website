@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-09T22:29:06+00:00",
-  "ci_head": "3b62551f32589ccca21a122c71c76bc4dfa6e79d",
+  "updated": "2026-11-10T07:28:35+00:00",
+  "ci_head": "162c77067922a6bb3c1b9c3bea120dac54a12f5d",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "d3a83f180806af445a4b6bc89ada7bcd3b1b1706",
+      "head": "bdd350fa9e86f0e7a8c27de0c518a9fa2bb5eba1",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -14188,6 +14188,54 @@
           "url": "https://github.com/airos-works/haiku/commit/d3a83f180806af445a4b6bc89ada7bcd3b1b1706",
           "date": "2026-11-09T22:01:38Z",
           "subject": "amdxdna.neural: ask for the turbo power mode"
+        },
+        {
+          "sha": "74c2804e85a5a4c91a99989c50cec45019963ac5",
+          "url": "https://github.com/airos-works/haiku/commit/74c2804e85a5a4c91a99989c50cec45019963ac5",
+          "date": "2026-11-10T00:35:28Z",
+          "subject": "docs/airos/NEURAL-KIT: the AMD NPU driver ships in the x86_64 images"
+        },
+        {
+          "sha": "9eae2a262a2f981e6ed27608b04e87d289d778c3",
+          "url": "https://github.com/airos-works/haiku/commit/9eae2a262a2f981e6ed27608b04e87d289d778c3",
+          "date": "2026-11-10T04:30:44Z",
+          "subject": "libroot: clear the thread's locale slot when its locale state is freed"
+        },
+        {
+          "sha": "41f5f1d2a786078f6b70948d3ac506b27e041c74",
+          "url": "https://github.com/airos-works/haiku/commit/41f5f1d2a786078f6b70948d3ac506b27e041c74",
+          "date": "2026-11-10T05:15:15Z",
+          "subject": "docs/airos/NEURAL-KIT: Lookout on real cameras; speech through Summit on the laptop"
+        },
+        {
+          "sha": "f5dd495c902ee0412f599ce300165a3cff2fec8e",
+          "url": "https://github.com/airos-works/haiku/commit/f5dd495c902ee0412f599ce300165a3cff2fec8e",
+          "date": "2026-11-10T05:24:49Z",
+          "subject": "multi_audio: a new connection's output starts enabled"
+        },
+        {
+          "sha": "f2f2e79f5e5d332b6afc352c3fb58c91e930ea72",
+          "url": "https://github.com/airos-works/haiku/commit/f2f2e79f5e5d332b6afc352c3fb58c91e930ea72",
+          "date": "2026-11-10T05:29:02Z",
+          "subject": "docs/airos/NEURAL-KIT: speech from a real microphone through Summit works"
+        },
+        {
+          "sha": "19511769b73aeaf4869f7813441327855374e31f",
+          "url": "https://github.com/airos-works/haiku/commit/19511769b73aeaf4869f7813441327855374e31f",
+          "date": "2026-11-10T05:31:50Z",
+          "subject": "docs/airos/NEURAL-KIT: the deferred boards (Dragon Q8B, Pi 4 with an NPU)"
+        },
+        {
+          "sha": "bf526f982bb353c09b145b1dbeb9b32757f2ec01",
+          "url": "https://github.com/airos-works/haiku/commit/bf526f982bb353c09b145b1dbeb9b32757f2ec01",
+          "date": "2026-11-10T06:02:54Z",
+          "subject": "tcp: accept a new connection's SYN on a connection in TIME_WAIT"
+        },
+        {
+          "sha": "bdd350fa9e86f0e7a8c27de0c518a9fa2bb5eba1",
+          "url": "https://github.com/airos-works/haiku/commit/bdd350fa9e86f0e7a8c27de0c518a9fa2bb5eba1",
+          "date": "2026-11-10T07:24:25Z",
+          "subject": "nvenc: tested on the GTX 1070; three blocks minimum width, no B pictures listed"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -14198,8 +14246,14 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "3b62551f32589ccca21a122c71c76bc4dfa6e79d",
+      "head": "162c77067922a6bb3c1b9c3bea120dac54a12f5d",
       "commits": [
+        {
+          "sha": "162c77067922a6bb3c1b9c3bea120dac54a12f5d",
+          "url": "https://github.com/airos-works/airos-ci/commit/162c77067922a6bb3c1b9c3bea120dac54a12f5d",
+          "date": "2026-11-10T00:36:37Z",
+          "subject": "office: msga 5d7094d (pastes pictures; no longer calls a shutdown or restart off)"
+        },
         {
           "sha": "3b62551f32589ccca21a122c71c76bc4dfa6e79d",
           "url": "https://github.com/airos-works/airos-ci/commit/3b62551f32589ccca21a122c71c76bc4dfa6e79d",
@@ -28075,8 +28129,44 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "70a32df71be0c68c051fe834bd59b41664b83ae2",
+      "head": "fde2750202197316ae27597df4031b3c4913e6a9",
       "commits": [
+        {
+          "sha": "2fcc22ad49214d8a0ba924307d5c222148e21778",
+          "url": "https://github.com/airos-works/summit/commit/2fcc22ad49214d8a0ba924307d5c222148e21778",
+          "date": "2026-11-10T06:25:34Z",
+          "subject": "Engine: one warmed pool of GPU painting threads per process, new tab -19 %"
+        },
+        {
+          "sha": "1def467434bd14c4b92baed4cffe1062c557840b",
+          "url": "https://github.com/airos-works/summit/commit/1def467434bd14c4b92baed4cffe1062c557840b",
+          "date": "2026-11-10T05:34:05Z",
+          "subject": "Capture: turn the sound card's output on after connecting (#204)"
+        },
+        {
+          "sha": "a2eb9221ce313753ee86aacc4b5cfe19c7699eab",
+          "url": "https://github.com/airos-works/summit/commit/a2eb9221ce313753ee86aacc4b5cfe19c7699eab",
+          "date": "2026-11-10T05:28:17Z",
+          "subject": "Engine: release a thread's Skia GL context before Haiku tears the thread down"
+        },
+        {
+          "sha": "210ce2e1417db6cb0d101d08ee2aaa4601806858",
+          "url": "https://github.com/airos-works/summit/commit/210ce2e1417db6cb0d101d08ee2aaa4601806858",
+          "date": "2026-11-10T03:58:53Z",
+          "subject": "Engine: keep scripts decoded from the bytecode cache in memory, Speedometer +7 %"
+        },
+        {
+          "sha": "e638b61110073df90ae4288cefad63223ace0514",
+          "url": "https://github.com/airos-works/summit/commit/e638b61110073df90ae4288cefad63223ace0514",
+          "date": "2026-11-10T02:19:41Z",
+          "subject": "Engine: retrained x86_64 PGO profile, Speedometer +4.4 % on the X399"
+        },
+        {
+          "sha": "26747a885b50987b9b770c8c15222dd0f73e64a4",
+          "url": "https://github.com/airos-works/summit/commit/26747a885b50987b9b770c8c15222dd0f73e64a4",
+          "date": "2026-11-10T02:19:41Z",
+          "subject": "interop2026: sp3.sh kills test copies whose names have digits"
+        },
         {
           "sha": "70a32df71be0c68c051fe834bd59b41664b83ae2",
           "url": "https://github.com/airos-works/summit/commit/70a32df71be0c68c051fe834bd59b41664b83ae2",
@@ -42808,43 +42898,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-09T15:58:58Z",
+      "published": "2026-11-10T07:13:28Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261109.1359-1-arm64.hpkg",
-          "size": 15459488,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261109.1359-1-arm64.hpkg",
-          "digest": "sha256:66343a1b9f24f4d73d1affc546340ff4093946e1df8f208857e31295c7a4a3b1"
+          "name": "summit-0.1.0.git20261110.0625-1-arm64.hpkg",
+          "size": 15459240,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261110.0625-1-arm64.hpkg",
+          "digest": "sha256:c1daefaa7bbe0f11a200aa607beb0a7dd64b3108e3ff0ecd6b0fed5b5f19d33d"
         },
         {
-          "name": "summit-0.1.0.git20261109.1359-1-x86_64.hpkg",
-          "size": 15698013,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261109.1359-1-x86_64.hpkg",
-          "digest": "sha256:0e90081e69abeb5cd9ba284636dc2583f0e1ead92d77ee9f7dd0bdfdac7f7abc"
+          "name": "summit-0.1.0.git20261110.0625-1-x86_64.hpkg",
+          "size": 15698558,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261110.0625-1-x86_64.hpkg",
+          "digest": "sha256:9fc02c6f435c470679eede3936844ec7eb016df2b446369971ac36f559988bda"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261109.1359-1-arm64.hpkg",
-          "size": 97059929,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261109.1359-1-arm64.hpkg",
-          "digest": "sha256:60503e134f6e4da0b0c12d636f7e1365ade5a4fea8fd988b264fbd6b70db1fe4"
+          "name": "summit_webkit-1.10.1.git20261110.0625-1-arm64.hpkg",
+          "size": 97109326,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261110.0625-1-arm64.hpkg",
+          "digest": "sha256:d80fce277f5dee4b415c9aad308393d882618f24f91047a4efa7b2e3770f7160"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261109.1359-1-x86_64.hpkg",
-          "size": 97806617,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261109.1359-1-x86_64.hpkg",
-          "digest": "sha256:3c36dc26d7e6b7cbaa899d8f8762e50ce4985e2377db202873d83508743c6b8d"
+          "name": "summit_webkit-1.10.1.git20261110.0625-1-x86_64.hpkg",
+          "size": 98050618,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261110.0625-1-x86_64.hpkg",
+          "digest": "sha256:a61aa5c7158f8b50d3c9ba82818d9ba1b74a083477779c8f3e5c8b6c6c6dfa1e"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261109.1359-1-arm64.hpkg",
-          "size": 825546,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261109.1359-1-arm64.hpkg",
-          "digest": "sha256:375628500503aa6af9c9f8de2c5e4aceec37e4a94a29b01ba4848b9a737ed5de"
+          "name": "summit_webkitlegacy-1.10.1.git20261110.0625-1-arm64.hpkg",
+          "size": 825550,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261110.0625-1-arm64.hpkg",
+          "digest": "sha256:1a7bf7a841b827f5407c0f1abd804ee3de7e47a668cc83026493a2c67a347605"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261109.1359-1-x86_64.hpkg",
-          "size": 876190,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261109.1359-1-x86_64.hpkg",
-          "digest": "sha256:e5b695f4bfb17984921a6598974977570b9f6a8f06eea2c9cc12411c08ac9e9c"
+          "name": "summit_webkitlegacy-1.10.1.git20261110.0625-1-x86_64.hpkg",
+          "size": 876189,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261110.0625-1-x86_64.hpkg",
+          "digest": "sha256:9130ea6e37a9f3681859c566afbc1ea0a3eed7e9aed53b38f16a8aaa0e2781f1"
         }
       ]
     },
@@ -43236,101 +43326,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261109220258-532d9f7aab",
-      "published": "2026-11-09T22:09:01Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261110065611-f5dd495c90",
+      "published": "2026-11-10T07:01:52Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 1845668120,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109220258-532d9f7aab/airos-x86_64.iso.xz",
-          "digest": "sha256:919b2be5c5eec44314bf56b9aecd23c06281046cec56f27cc845937b607b1e93"
+          "size": 1847437700,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261110065611-f5dd495c90/airos-x86_64.iso.xz",
+          "digest": "sha256:584d76718f4a42a9ef2f012e364f02606239d3701023de0978c7ae3456cb9ea5"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109220258-532d9f7aab/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:813f00305a029c5e7032087a2bbb86e1d800c73c8f447e5e616a14809115740a"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261110065611-f5dd495c90/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:822fc13ca0739ce5d4595a98e15e39bdd868bf11c6050c5cd80b8abc68c4da27"
         },
         {
           "name": "manifest.json",
-          "size": 18709,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261109220258-532d9f7aab/manifest.json",
-          "digest": "sha256:cfe23bf4c0e48e3bdc88b95c89ff1eda65532ac475353e1c87a34860c3c44f21"
+          "size": 19003,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261110065611-f5dd495c90/manifest.json",
+          "digest": "sha256:97b22d3e31d649b4584fabb0cb7a728725210e059e50a4b7280d8a4adfed63bf"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261109165645-f2199d54bf",
-      "published": "2026-11-09T17:01:24Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261110050325-9eae2a262a",
+      "published": "2026-11-10T05:07:51Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 1321973680,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261109165645-f2199d54bf/airos-arm64.iso.xz",
-          "digest": "sha256:b94279c6fd5f6586d0380da75c62554fc2aecbdd9e3185da4db1d6fb3631cbd7"
+          "size": 1322035588,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261110050325-9eae2a262a/airos-arm64.iso.xz",
+          "digest": "sha256:7105ae06598b6225f5b3d062517240187dbd1b57b7f2c53adb5aca7bf616c4d1"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261109165645-f2199d54bf/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:a6444bd54b24b3b38d1d558a12f4a1a8fd98170518448cbb861beaf6654fd2af"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261110050325-9eae2a262a/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:9f0e8ab47b29f14d09edb5f32954397b88a4e597fa0dc48d1a60f03ed63752b3"
         },
         {
           "name": "manifest.json",
           "size": 18383,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261109165645-f2199d54bf/manifest.json",
-          "digest": "sha256:472483db9632c4200142bad7347d7e6c7c5ae0326f0a37ae961c74bf322f794b"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261110050325-9eae2a262a/manifest.json",
+          "digest": "sha256:2e000caa48df19cacdb9be06e0acd8f92a684959ec6cd891c4eca7006019f4da"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261109164444-f2199d54bf",
-      "published": "2026-11-09T16:47:27Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261110063136-f5dd495c90",
+      "published": "2026-11-10T06:34:20Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 1312784496,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261109164444-f2199d54bf/airos-rpi4.img.xz",
-          "digest": "sha256:975370f7cf8a337be62727aba9d835f3430e234387069713e6e960e4bfc20b30"
+          "size": 1312769840,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261110063136-f5dd495c90/airos-rpi4.img.xz",
+          "digest": "sha256:ecbacabb6d25d075ddb7e91d4ed0e9981058644100df2c419d3d9d620fed7cfd"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261109164444-f2199d54bf/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:4fc1c420d344c29c99806f8a79bf5a46c9882f7968730434d20788b29fa05904"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261110063136-f5dd495c90/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:eccf98e3b985a3b0a2f6699c9a0839765dccdadc5dd3a67465b7c2307d3c613b"
         },
         {
           "name": "manifest.json",
           "size": 16233,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261109164444-f2199d54bf/manifest.json",
-          "digest": "sha256:155c456480c9274674dd4b97450c0ab8fb8bce19321e6a104b86d7e37df742be"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261110063136-f5dd495c90/manifest.json",
+          "digest": "sha256:43a3dbe001064de780376397e1bc64ad16f1fc143daf4e292a7a80afd5c68e50"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261109143515-f2199d54bf",
-      "published": "2026-11-09T14:40:11Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261110061905-f5dd495c90",
+      "published": "2026-11-10T06:23:42Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 1311332548,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109143515-f2199d54bf/airos-cubie.img.xz",
-          "digest": "sha256:eb0a9fdcddb73fed4424c2c4608880cce67501f10a229fd807e16d4b9357dc8b"
+          "size": 1311409352,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261110061905-f5dd495c90/airos-cubie.img.xz",
+          "digest": "sha256:afe47d31c558bb32db5f8d37b926f84a6712c0ada7ba972abf206db11e94f8fb"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109143515-f2199d54bf/airos-cubie.img.xz.sha256",
-          "digest": "sha256:2a491339e4e5f0273015907f1907c7ff3d64d1a30bb4da202768ac80df24959e"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261110061905-f5dd495c90/airos-cubie.img.xz.sha256",
+          "digest": "sha256:d9a30f5960c693192e4d7aee4b19ac677d5c5b391a7608ea61f7e2fbef4d532f"
         },
         {
           "name": "manifest.json",
           "size": 19806,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261109143515-f2199d54bf/manifest.json",
-          "digest": "sha256:564ea1a07ae19c45ed9a821e91d4d0e73d58d5a494f76fa37d939ac86a9014a0"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261110061905-f5dd495c90/manifest.json",
+          "digest": "sha256:af0e9791d0144525baf7436703d200e3cc3fbcde3ee8f2ad619ef18239310688"
         }
       ]
     }
