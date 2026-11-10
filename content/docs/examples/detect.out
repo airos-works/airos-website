@@ -1,0 +1,5 @@
+$ detect ssd_mobilenet_v1_quant.tflite labelmap.txt grace_hopper.png
+ 72%  person           at 4, 31, 506 × 567 pixels
+ 63%  tie              at 225, 429, 67 × 114 pixels
+ 48%  person           at 8, 9, 121 × 404 pixels
+ 44%  tie              at 233, 437, 54 × 77 pixels

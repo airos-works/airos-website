@@ -1,0 +1,20 @@
+$ devices mobilenet_v1_1.0_224_quant.tflite
+cpu            CPU CPU: quantized and float networks, back end cpu
+               runs 31 of the model's 31 operators
+BMessage(0x0) {
+        cores = int32(0x8 or 8)
+        threads = int32(0x8 or 8)
+        driver = string("Neural Kit", 11 bytes)
+}
+rk3588_npu/0   NPU Rockchip RK3588 NPU: quantized networks, back end rk3588_npu
+               runs 28 of the model's 31 operators
+BMessage(0x0) {
+        driver = string("rk3588_npu", 11 bytes)
+        version = string("0x46495245", 11 bytes)
+        cores = int32(0x1 or 1)
+        clock = int32(0xbcd3d80 or 198000000)
+        path = string("/dev/npu/rk3588/0", 18 bytes)
+}
+fastest:                     rk3588_npu/0
+least power:                 rk3588_npu/0
+whole model on the device:   cpu

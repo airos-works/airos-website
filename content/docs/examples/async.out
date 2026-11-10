@@ -1,0 +1,3 @@
+$ async mobilenet_v1_1.0_224_quant.tflite grace_hopper.png grace_hopper.bmp grace_hopper.png
+class 653 (83%) in 8.9 ms on rk3588_npu/0
+class 653 (83%) in 8.5 ms on rk3588_npu/0

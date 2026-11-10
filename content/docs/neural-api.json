@@ -1,0 +1,445 @@
+{
+  "headers": [
+    {
+      "id": "defs",
+      "header": "neural/NeuralDefs.h",
+      "title": "Types, flags, messages and errors",
+      "text": "The constants every other header uses. `<NeuralKit.h>` includes all of the kit's headers at once.",
+      "items": [
+        {
+          "kind": "enum", "name": "neural_data_type",
+          "text": "How one element of a tensor is stored.",
+          "values": [
+            ["B_NEURAL_NO_TYPE", "0: no type"],
+            ["B_NEURAL_FLOAT32", "32-bit float"],
+            ["B_NEURAL_FLOAT16", "16-bit float"],
+            ["B_NEURAL_INT8", "signed 8-bit integer, usually quantized"],
+            ["B_NEURAL_UINT8", "unsigned 8-bit integer, usually quantized"],
+            ["B_NEURAL_INT16", "signed 16-bit integer"],
+            ["B_NEURAL_INT32", "signed 32-bit integer (shapes, indices)"],
+            ["B_NEURAL_INT64", "signed 64-bit integer"],
+            ["B_NEURAL_BOOL", "boolean"]
+          ]
+        },
+        {
+          "kind": "define", "name": "B_NEURAL_MAX_RANK",
+          "sig": "#define B_NEURAL_MAX_RANK 8",
+          "text": "The most dimensions a tensor can have."
+        },
+        {
+          "kind": "enum", "name": "neural_device_kind",
+          "text": "What kind of processor a device is. `neural_device_kind_name()` returns `\"CPU\"`, `\"GPU\"` or `\"NPU\"`.",
+          "values": [
+            ["B_NEURAL_DEVICE_CPU", "the processor itself"],
+            ["B_NEURAL_DEVICE_GPU", "a graphics processor"],
+            ["B_NEURAL_DEVICE_NPU", "a neural processing unit"]
+          ]
+        },
+        {
+          "kind": "enum", "name": "Device flags",
+          "text": "Returned by `BNeuralDevice::Flags()`.",
+          "values": [
+            ["B_NEURAL_DEVICE_QUANTIZED", "runs networks of 8-bit quantized numbers"],
+            ["B_NEURAL_DEVICE_FLOAT", "runs networks of floating-point numbers"],
+            ["B_NEURAL_DEVICE_REMOVABLE", "the device is not always there (USB, hot plug)"],
+            ["B_NEURAL_DEVICE_REFERENCE", "the kit's own CPU device, which runs every operator the kit knows"]
+          ]
+        },
+        {
+          "kind": "enum", "name": "Session and device-choice flags",
+          "text": "Passed to `BNeuralRoster::GetDefaultDevice()`, `BNeuralSession::SetTo()` and `BSpeechRecognizer::SetTo()`.",
+          "values": [
+            ["B_NEURAL_PREFER_SPEED", "0, the default: the fastest kind of device (NPU, then GPU, then CPU)"],
+            ["B_NEURAL_PREFER_LOW_POWER", "the device that uses the least power (NPU, then CPU, then GPU)"],
+            ["B_NEURAL_NO_FALLBACK", "fail with `B_NEURAL_NOT_ACCELERATED` rather than run operators the device cannot run on the CPU"],
+            ["B_NEURAL_CPU_ONLY", "use the CPU only, whatever else the machine has"],
+            ["B_NEURAL_PROFILE", "keep per-operator times; see `BNeuralSession::GetOperatorInfo()`"]
+          ]
+        },
+        {
+          "kind": "enum", "name": "Messages",
+          "text": "Message codes the kit sends. The fields are listed with each one.",
+          "values": [
+            ["B_NEURAL_DEVICE_ADDED ('NRda')", "to `BNeuralRoster::StartWatching()` targets: `\"device\"` (the identifier), `\"name\"`, `\"kind\"`"],
+            ["B_NEURAL_DEVICE_REMOVED ('NRdr')", "the same fields, when a device goes away"],
+            ["B_NEURAL_RUN_COMPLETED ('NRrc')", "from `BNeuralSession::RunAsync()` unless the caller gives a message of its own. Fields added to either: `\"neural:status\"` (int32), `\"neural:token\"` (int32), `\"neural:session\"` (pointer; the session may be gone by the time the message is read), `\"neural:duration\"` (int64, µs)"],
+            ["B_SPEECH_RESULT ('NRsr')", "from a `BSpeechRecognizer`: `\"speech:text\"`, `\"speech:final\"` (bool), `\"speech:start\"` and `\"speech:end\"` (int64, µs from the start of the recording), `\"speech:token\"`, `\"speech:recognizer\"` (pointer). A result that is not final replaces the previous one."],
+            ["B_SPEECH_FINISHED ('NRsf')", "after the last result of a recording: `\"speech:status\"`, `\"speech:token\"`, `\"speech:recognizer\"`, `\"speech:audio\"` (int64, µs of audio recognized), `\"speech:duration\"` (int64, µs of work)"]
+          ]
+        },
+        {
+          "kind": "enum", "name": "Errors",
+          "text": "From `B_NEURAL_ERROR_BASE` (`B_GENERAL_ERROR_BASE + 0xb000`). The kit also returns the usual `B_NO_INIT`, `B_BAD_VALUE`, `B_NO_MEMORY`, `B_BUSY` and file errors.",
+          "values": [
+            ["B_NEURAL_BAD_MODEL", "the file is not a model, or is damaged"],
+            ["B_NEURAL_UNKNOWN_FORMAT", "no loader knows the model's format or version"],
+            ["B_NEURAL_UNSUPPORTED_OPERATOR", "the model uses an operator the kit does not implement; `BNeuralModel::ErrorDetails()` names it"],
+            ["B_NEURAL_TYPE_MISMATCH", "a tensor's type is not the one the model expects"],
+            ["B_NEURAL_SHAPE_MISMATCH", "a tensor's shape is not the one the model expects"],
+            ["B_NEURAL_NO_DEVICE", "no device of the kind asked for"],
+            ["B_NEURAL_DEVICE_LOST", "the device went away or stopped answering, and the CPU could not take over"],
+            ["B_NEURAL_NOT_ACCELERATED", "`B_NEURAL_NO_FALLBACK` was given and the device cannot run the whole model"]
+          ]
+        },
+        {
+          "kind": "functions", "name": "Functions",
+          "members": [
+            {"sig": "size_t neural_data_type_size(neural_data_type type);", "text": "Size of one element in bytes; 0 for an unknown type."},
+            {"sig": "const char* neural_data_type_name(neural_data_type type);", "text": "`\"float32\"`, `\"uint8\"` and so on."},
+            {"sig": "const char* neural_device_kind_name(neural_device_kind kind);", "text": "`\"CPU\"`, `\"GPU\"` or `\"NPU\"`."},
+            {"sig": "const char* neural_error_string(status_t error);", "text": "Describes the kit's own errors in words, and all others through `strerror()`."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tensor",
+      "header": "neural/Tensor.h",
+      "title": "BTensorInfo and BTensor",
+      "text": "What goes in and comes out of a network. Quantized tensors map stored integers to real values as `real = scale × (stored − zero point)`. Pictures are laid out batch, height, width, channels (NHWC).",
+      "items": [
+        {
+          "kind": "class", "name": "BTensorInfo",
+          "text": "The description of a tensor without its numbers: element type, shape, an optional name and, for quantized tensors, scale and zero point. Models describe their inputs and outputs with these.",
+          "members": [
+            {"sig": "BTensorInfo();\nBTensorInfo(neural_data_type type, int32 rank, const int32* dimensions, const char* name = NULL);", "text": "An empty description, or one of the given type and shape."},
+            {"sig": "status_t SetTo(neural_data_type type, int32 rank, const int32* dimensions, const char* name = NULL);\nvoid Unset();\nbool IsValid() const;", "text": "Sets or clears the description."},
+            {"sig": "bool operator==(const BTensorInfo& other) const;", "text": "Same type, shape and quantization. The name is not compared."},
+            {"sig": "const char* Name() const;\nvoid SetName(const char* name);", "text": "The tensor's name in the model, such as `\"input\"`."},
+            {"sig": "neural_data_type Type() const;\nint32 Rank() const;\nint32 DimensionAt(int32 index) const;", "text": "Element type, number of dimensions, and the size of one dimension (0 when the index is out of range)."},
+            {"sig": "int64 CountElements() const;\nsize_t ByteSize() const;", "text": "Number of elements, and the bytes they take."},
+            {"sig": "bool IsQuantized() const;\nfloat Scale() const;\nint32 ZeroPoint() const;\nvoid SetQuantization(float scale, int32 zeroPoint);", "text": "Quantization parameters. `IsQuantized()` is true when scale and zero point mean something."},
+            {"sig": "BString ToString() const;", "text": "A line for logs: `input uint8 [1, 224, 224, 3] scale 0.0078 zero 128`."},
+            {"sig": "status_t Archive(BMessage* into) const;\nstatus_t Unarchive(const BMessage* from);", "text": "Stores the description in a message and reads it back."}
+          ]
+        },
+        {
+          "kind": "class", "name": "BTensor", "base": "BArchivable",
+          "text": "A block of numbers with a shape. A tensor owns its memory unless it was given memory to use. The inputs and outputs of a `BNeuralSession` belong to the session. Tensors can be archived: put one in a `BMessage` with its numbers to send it to another team or keep it in a file.",
+          "members": [
+            {"sig": "BTensor();\nBTensor(const BTensorInfo& info);\nBTensor(const BTensorInfo& info, void* data, size_t size);\nBTensor(BMessage* archive);", "text": "An empty tensor; one with zeroed memory of its own; one that uses the caller's memory; one from an archive."},
+            {"sig": "status_t SetTo(const BTensorInfo& info);", "text": "Makes the tensor one of that description, with zeroed memory of its own."},
+            {"sig": "status_t SetTo(const BTensorInfo& info, void* data, size_t size);", "text": "Uses the caller's memory, which must stay valid while the tensor uses it and be at least `info.ByteSize()` long."},
+            {"sig": "status_t InitCheck() const;\nvoid Unset();", "text": "Whether the tensor is usable; frees or drops its memory."},
+            {"sig": "const BTensorInfo& Info() const;\nneural_data_type Type() const;\nint32 Rank() const;\nint32 DimensionAt(int32 index) const;\nint64 CountElements() const;", "text": "The description, and shortcuts into it."},
+            {"sig": "void* Data();\nconst void* Data() const;\nsize_t ByteSize() const;", "text": "The raw storage."},
+            {"sig": "status_t CopyFrom(const void* data, size_t size);\nstatus_t CopyTo(void* data, size_t size) const;\nstatus_t CopyFrom(const BTensor& other);", "text": "Copies raw bytes in or out, or the numbers of a tensor of the same type and shape."},
+            {"sig": "float ValueAt(int64 index) const;\nstatus_t SetValueAt(int64 index, float value);\nstatus_t GetValues(float* values, int64 count, int64 first = 0) const;\nstatus_t SetValues(const float* values, int64 count, int64 first = 0);", "text": "Elements as real values, whatever the storage: quantized values are converted with scale and zero point, and values that do not fit are clamped. Indices count elements in storage order (the last dimension varies fastest). The same code handles a float model and its quantized sibling."},
+            {"sig": "int64 IndexOfMaximum() const;", "text": "Index of the largest element; −1 for an empty tensor. For a classifier, the best class."},
+            {"sig": "virtual status_t Archive(BMessage* into, bool deep = true) const;\nstatic BArchivable* Instantiate(BMessage* archive);", "text": "`BArchivable` support: shape and numbers."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "header": "neural/NeuralModel.h",
+      "title": "BNeuralModel and BNeuralModelBuilder",
+      "text": "A network: its operators, its weights and the description of its inputs and outputs.",
+      "items": [
+        {
+          "kind": "class", "name": "BNeuralModel",
+          "text": "A network read from a file. The kit reads TensorFlow Lite files (`.tflite`, schema version 3) itself, with a reader that checks every offset. A model cannot be changed once it is made, and copies share the network. Files are mapped, not read, so the weights of a model used by several teams are in memory once. A model does nothing by itself: a `BNeuralSession` runs it.",
+          "members": [
+            {"sig": "BNeuralModel(const entry_ref* ref);\nBNeuralModel(const char* path);", "text": "Reads a model file."},
+            {"sig": "status_t SetTo(const entry_ref* ref);\nstatus_t SetTo(const char* path);\nstatus_t SetTo(BDataIO* source);\nstatus_t SetTo(const void* buffer, size_t size);", "text": "Reads a model from a file, a stream (read to the end) or a buffer (copied)."},
+            {"sig": "status_t InitCheck() const;\nconst char* ErrorDetails() const;", "text": "Whether the model loaded, and why not, for developers: `\"operator 126 is not supported\"`. Empty when there is nothing to say."},
+            {"sig": "const char* Name() const;\nconst char* Description() const;\nconst char* Format() const;", "text": "The name the model gives itself (or its file name), its description, and `\"tflite\"`, or `\"built\"` for a model from a `BNeuralModelBuilder`."},
+            {"sig": "int32 CountInputs() const;\nstatus_t GetInputInfo(int32 index, BTensorInfo* info) const;\nint32 FindInput(const char* name) const;", "text": "The inputs. `FindInput()` returns an index, or a negative error."},
+            {"sig": "int32 CountOutputs() const;\nstatus_t GetOutputInfo(int32 index, BTensorInfo* info) const;\nint32 FindOutput(const char* name) const;", "text": "The outputs."},
+            {"sig": "int32 CountOperators() const;\nneural_operator_code OperatorAt(int32 index) const;", "text": "The operators, in an order in which they can run."},
+            {"sig": "status_t GetInfo(BMessage* info) const;", "text": "Everything else: `\"name\"`, `\"description\"`, `\"format\"`, `\"version\"` (int32), `\"operators\"` (int32), `\"weights:bytes\"` (int64), and `\"operator\"` (one string per kind of operator used)."},
+            {"sig": "static bool IsModel(const entry_ref* ref);", "text": "Whether a file looks like a model the kit can read, without reading all of it."}
+          ]
+        },
+        {
+          "kind": "class", "name": "BNeuralModelBuilder",
+          "text": "Builds a model one operator at a time, for programs that compute their network and for tests. The `Add…()` methods return tensor numbers. A negative number is an error, which `Build()` also returns.",
+          "members": [
+            {"sig": "BNeuralModelBuilder(const char* name = NULL);", "text": "An empty network."},
+            {"sig": "int32 AddInput(const BTensorInfo& info);", "text": "A tensor the caller fills in before each run."},
+            {"sig": "int32 AddConstant(const BTensorInfo& info, const void* data, size_t size);", "text": "A tensor of fixed numbers (weights). The data is copied."},
+            {"sig": "status_t SetChannelQuantization(int32 tensor, const float* scales, int32 count, int32 axis);", "text": "Per-channel scales for the weights of a quantized convolution."},
+            {"sig": "int32 AddOperator(neural_operator_code code, const int32* inputs, int32 inputCount, const BTensorInfo& output, const void* params = NULL, size_t paramsSize = 0);", "text": "Adds an operator and returns its output. `params` must be the structure `NeuralOperators.h` names for the code."},
+            {"sig": "int32 AddOperator(neural_operator_code code, const int32* inputs, int32 inputCount, const BTensorInfo* outputs, int32 outputCount, const void* params = NULL, size_t paramsSize = 0);", "text": "For operators with several outputs; returns the first."},
+            {"sig": "status_t MarkOutput(int32 tensor);", "text": "Makes a tensor an output of the model."},
+            {"sig": "status_t Build(BNeuralModel* model);", "text": "Checks types, shapes and order, and makes the model. The builder is empty afterwards."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roster",
+      "header": "neural/NeuralRoster.h",
+      "title": "BNeuralDevice and BNeuralRoster",
+      "text": "The processors of this machine that can run networks.",
+      "items": [
+        {
+          "kind": "class", "name": "BNeuralDevice",
+          "text": "A value that names one processor: an NPU, a graphics processor, or the CPU. A device stays valid when it is unplugged, but is no longer `IsAvailable()`. The identifier is stable across restarts and is what a program should keep in its settings: `\"cpu\"`, `\"rk3588_npu/0\"`, `\"vulkan/0\"`, `\"amdxdna/0\"`.",
+          "members": [
+            {"sig": "bool IsValid() const;\nbool IsAvailable() const;", "text": "Whether the value names a device, and whether that device is there now."},
+            {"sig": "const char* ID() const;", "text": "The stable identifier."},
+            {"sig": "const char* Name() const;\nconst char* Vendor() const;", "text": "`\"Rockchip RK3588 NPU\"` and its vendor."},
+            {"sig": "neural_device_kind Kind() const;\nuint32 Flags() const;", "text": "CPU, GPU or NPU; and `B_NEURAL_DEVICE_QUANTIZED`, `B_NEURAL_DEVICE_FLOAT`, `B_NEURAL_DEVICE_REMOVABLE` and `B_NEURAL_DEVICE_REFERENCE`."},
+            {"sig": "const char* Backend() const;", "text": "The name of the back-end add-on that drives the device."},
+            {"sig": "status_t GetInfo(BMessage* info) const;", "text": "Whatever the back end knows: `\"driver\"`, `\"version\"`, `\"cores\"` (int32), `\"memory\"` (int64), `\"path\"` and more. None of the fields is guaranteed."},
+            {"sig": "int32 CountSupportedOperators(const BNeuralModel& model) const;", "text": "How many of the model's operators the device would run itself (the rest run on the CPU), or a negative error. Loads nothing onto the device."}
+          ]
+        },
+        {
+          "kind": "class", "name": "BNeuralRoster",
+          "text": "The devices of the machine. There is one roster per team, `BNeuralRoster::Default()`. It loads the back-end add-ons the first time it is asked something; a back end whose hardware is absent reports no devices and costs nothing more.",
+          "members": [
+            {"sig": "static BNeuralRoster* Default();", "text": "The team's roster."},
+            {"sig": "int32 CountDevices();\nstatus_t GetDeviceAt(int32 index, BNeuralDevice* device);\nstatus_t FindDevice(const char* id, BNeuralDevice* device);", "text": "Lists the devices, or finds one by its identifier."},
+            {"sig": "status_t GetDefaultDevice(BNeuralDevice* device, uint32 flags = 0, const BNeuralModel* model = NULL);", "text": "The device to use when a program has no reason to choose: an NPU, else a GPU, else the CPU. `B_NEURAL_PREFER_LOW_POWER` and `B_NEURAL_CPU_ONLY` change the order. Given a model, devices that would run none of it are skipped, and with `B_NEURAL_NO_FALLBACK` so are those that cannot run all of it. The user's preferred device comes first when it qualifies."},
+            {"sig": "status_t Rescan();", "text": "Asks the back ends to look for devices again."},
+            {"sig": "status_t StartWatching(const BMessenger& target);\nstatus_t StopWatching(const BMessenger& target);", "text": "Sends `B_NEURAL_DEVICE_ADDED` and `B_NEURAL_DEVICE_REMOVED` to the target. The roster watches `/dev/npu`."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session",
+      "header": "neural/NeuralSession.h",
+      "title": "BNeuralSession",
+      "text": "A model loaded onto a device and ready to run.",
+      "items": [
+        {
+          "kind": "class", "name": "BNeuralSession",
+          "text": "Setting a session up is the slow part: the device's back end translates the network and uploads its weights. Running it is fast and can be repeated as often as needed. When a session is set up, the kit asks the back end which operators the device can run, splits the network into stretches for the device and stretches for the CPU, and has the back end make a program for each of its stretches. A run the device fails is done by the CPU; a device that goes away, or fails three runs in a row, loses its stretches to the CPU for good. A session therefore always works and gives the same answers. The input and output tensors belong to the session and keep their memory between runs. A session runs one thing at a time; several sessions, including sessions of the same model, can run at once and share a device.",
+          "members": [
+            {"sig": "BNeuralSession(const BNeuralModel& model, uint32 flags = 0);\nBNeuralSession(const BNeuralModel& model, const BNeuralDevice& device, uint32 flags = 0);", "text": "Sets the session up on the default device or on a chosen one."},
+            {"sig": "status_t SetTo(const BNeuralModel& model, uint32 flags = 0);\nstatus_t SetTo(const BNeuralModel& model, const BNeuralDevice& device, uint32 flags = 0);\nvoid Unset();\nstatus_t InitCheck() const;", "text": "Sets up or ends the session. Without a device, `BNeuralRoster::GetDefaultDevice()` chooses one, passing the same flags."},
+            {"sig": "const BNeuralModel& Model() const;\nconst BNeuralDevice& Device() const;", "text": "What runs, and where."},
+            {"sig": "int32 CountInputs() const;\nBTensor* InputAt(int32 index);\nBTensor* FindInput(const char* name);", "text": "The input tensors, to fill in before a run."},
+            {"sig": "int32 CountOutputs() const;\nconst BTensor* OutputAt(int32 index) const;\nconst BTensor* FindOutput(const char* name) const;", "text": "The output tensors, filled in by a run."},
+            {"sig": "status_t Run();", "text": "Runs the network on the inputs and returns when the outputs are filled in."},
+            {"sig": "status_t RunAsync(const BMessenger& target, const BMessage* message = NULL, int32* _token = NULL);", "text": "Starts a run and returns at once. When it is over, `message` (or `B_NEURAL_RUN_COMPLETED`) goes to the target with the result in `\"neural:status\"`. Leave the inputs alone and do not read the outputs until then. `B_BUSY` while a run is in progress."},
+            {"sig": "status_t WaitForRun(bigtime_t timeout = B_INFINITE_TIMEOUT);\nbool IsRunning() const;", "text": "Waits for a run started by `RunAsync()` and returns its result. Deleting a session also waits; a run cannot be cancelled yet."},
+            {"sig": "status_t GetRunInfo(neural_run_info* info) const;", "text": "How the model was split and how long runs take."},
+            {"sig": "status_t GetOperatorInfo(int32 index, neural_operator_info* info) const;", "text": "Where one operator runs and, with `B_NEURAL_PROFILE`, how long it took."}
+          ]
+        },
+        {
+          "kind": "struct", "name": "neural_run_info",
+          "text": "Filled in by `BNeuralSession::GetRunInfo()`.",
+          "values": [
+            ["int64 runs", "runs since the session was set up"],
+            ["bigtime_t last_duration", "time the last run took, in µs"],
+            ["bigtime_t last_device_duration", "of that, the time spent in the device's parts of the model"],
+            ["bigtime_t average_duration", "mean over all runs"],
+            ["int32 device_operators", "operators the device runs itself"],
+            ["int32 cpu_operators", "operators the CPU runs"],
+            ["int32 device_partitions", "stretches of operators handed to the device at once"],
+            ["int32 device_failures", "device runs that failed and were done by the CPU instead"]
+          ]
+        },
+        {
+          "kind": "struct", "name": "neural_operator_info",
+          "text": "Filled in by `BNeuralSession::GetOperatorInfo()`.",
+          "values": [
+            ["neural_operator_code code", "what the operator does"],
+            ["bool on_device", "true: runs on the session's device; false: on the CPU"],
+            ["int32 partition", "the device partition the operator is part of, or −1"],
+            ["bigtime_t last_duration", "with `B_NEURAL_PROFILE`: the operator's own time on the CPU, or its whole partition's time on the device"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "utils",
+      "header": "neural/NeuralUtils.h",
+      "title": "BNeuralUtils: pictures, labels and results",
+      "text": "Conveniences that tie tensors to the Interface Kit and to the files models come with.",
+      "items": [
+        {
+          "kind": "class", "name": "BNeuralUtils",
+          "text": "Static functions only.",
+          "members": [
+            {"sig": "static status_t SetTensorFromBitmap(BTensor* tensor, const BBitmap* bitmap, const BRect* source = NULL, const neural_image_options* options = NULL, neural_image_mapping* _mapping = NULL);", "text": "Fills an image tensor (`[1, height, width, 3 or 1]` or `[height, width, channels]`; uint8, int8 or float32) from all or part of a bitmap of any size, scaling with bilinear filtering. Takes `B_RGB32`, `B_RGBA32`, `B_RGB24`, `B_RGB16`, `B_RGB15`, `B_GRAY8` and `B_CMAP8`. `_mapping` says where the picture went, to map results back."},
+            {"sig": "static status_t GetBitmapFromTensor(const BTensor& tensor, BBitmap** _bitmap, const neural_image_options* options = NULL);", "text": "The reverse: a `B_RGB32` bitmap of an image tensor; one channel becomes gray. The caller owns the bitmap."},
+            {"sig": "static status_t GetLabels(const entry_ref* ref, BStringList* labels);\nstatic status_t GetLabels(const char* path, BStringList* labels);", "text": "Reads a label file: one class name per line, as shipped with classification and detection models."},
+            {"sig": "static bool IsDetector(const BNeuralSession& session);", "text": "Whether the model's outputs are those of `DETECTION_POSTPROCESS` (boxes, classes, scores, count)."},
+            {"sig": "static int32 GetDetections(const BNeuralSession& session, neural_detection* detections, int32 maxCount);", "text": "What a detector found in its last run, best first. Returns how many were written, or `B_BAD_TYPE` when the model is not a detector."},
+            {"sig": "static int32 GetTopValues(const BTensor& tensor, int32 count, int64* indices, float* values = NULL);", "text": "The `count` largest elements of a tensor, best first, with their real values if wanted. The top classes of a classifier."}
+          ]
+        },
+        {
+          "kind": "struct", "name": "neural_image_options",
+          "text": "How `SetTensorFromBitmap()` prepares a picture.",
+          "values": [
+            ["neural_image_fit fit", "`B_NEURAL_FIT_STRETCH` (fill, ignoring proportions), `B_NEURAL_FIT_CROP` (cover, cutting off the overflow evenly) or `B_NEURAL_FIT_LETTERBOX` (fit inside, the rest gray)"],
+            ["bool bgr", "store blue, green, red instead of red, green, blue"],
+            ["float mean[3], deviation[3]", "float tensors get `(pixel − mean) / deviation` per channel, pixels being 0–255; the default 127.5 for both gives −1 to 1. Quantized 8-bit tensors get the pixel values as they are (int8: minus 128)."]
+          ]
+        },
+        {
+          "kind": "struct", "name": "neural_image_mapping",
+          "text": "Where the picture went, to map what a model says about its input back to the bitmap.",
+          "values": [
+            ["BRect source", "the part of the bitmap used, in bitmap coordinates"],
+            ["BRect destination", "where it was put, in tensor pixels"],
+            ["int32 tensor_width, tensor_height", "the size of the tensor's picture"],
+            ["BRect ToBitmap(float left, float top, float right, float bottom) const", "turns a box in fractions of the tensor (0–1, as detection models give them) into bitmap coordinates"]
+          ]
+        },
+        {
+          "kind": "struct", "name": "neural_detection",
+          "text": "One thing a detection model found.",
+          "values": [
+            ["float left, top, right, bottom", "where, in fractions of the model's input picture (0–1)"],
+            ["int32 class_index", "the class. Label files of detection models start with a line for \"nothing\", so the label is at `class_index + 1`."],
+            ["float score", "how sure, 0–1"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "speech",
+      "header": "neural/SpeechRecognizer.h",
+      "title": "BSpeechRecognizer",
+      "text": "Speech to text on the machine itself, with a Whisper model the kit runs. Nothing leaves the machine.",
+      "items": [
+        {
+          "kind": "class", "name": "BSpeechRecognizer",
+          "text": "Audio goes in as it is recorded, in any raw format of the Media Kit; text comes out as messages, and the caller never waits for the model. The recognizer has its own thread, which does the work. Its methods may be called from any thread, and deleting it is safe at any time: it waits for the step the model is in (at most one encoder run). Whisper works on 30-second windows and marks where phrases end; a phrase is final when the model has seen its end.",
+          "members": [
+            {"sig": "BSpeechRecognizer(const char* model, uint32 flags = 0);", "text": "Loads a model at once; see `SetTo()`."},
+            {"sig": "status_t SetTo(const char* model = NULL, uint32 flags = 0);\nstatus_t SetTo(const char* model, const BNeuralDevice& device, uint32 flags = 0);", "text": "Loads a model: a name (`\"whisper-tiny.en\"`, a directory under `neural/models` of the data directories), the path of a model directory, or `NULL` for the first one installed. The device and flags work as for `BNeuralSession`."},
+            {"sig": "void Unset();\nstatus_t InitCheck() const;\nconst char* ErrorDetails() const;", "text": "Unloads; reports whether `SetTo()` worked, and why not."},
+            {"sig": "static status_t FindModel(const char* name, BPath* _directory);\nstatic status_t GetModels(BStringList* names);", "text": "The installed models: directories with a `speech.conf` under `neural/models`. `B_ENTRY_NOT_FOUND` when none is installed."},
+            {"sig": "const char* ModelName() const;\nconst BNeuralDevice& Device() const;", "text": "`\"tiny.en\"`, and the device the encoder (the larger network) runs on."},
+            {"sig": "status_t GetLanguages(BStringList* codes) const;\nstatus_t SetLanguage(const char* code);\nconst char* Language() const;", "text": "ISO 639-1 codes. The language is `\"en\"` to begin with; a change takes effect with the next `Start()`. `B_NAME_NOT_FOUND` when the model does not know the language."},
+            {"sig": "void SetTimestamps(bool enabled);\nbool Timestamps() const;", "text": "Whether the model is asked for phrase times (the default). Without them a window is one phrase."},
+            {"sig": "status_t SetTarget(const BMessenger& target, const BMessage* message = NULL);", "text": "Where `B_SPEECH_RESULT` and `B_SPEECH_FINISHED` go. With a message of the caller's, the fields are added to it, and `\"speech:finished\"` (bool) tells the two apart."},
+            {"sig": "void SetInterimInterval(bigtime_t interval);\nbigtime_t InterimInterval() const;", "text": "How often, at most, the audio that is not final yet is read for a result that is not final. 0, the default, means never. A reading costs as much as a whole window."},
+            {"sig": "status_t Start(const media_raw_audio_format* format = NULL, int32* _token = NULL);", "text": "Begins a recording in the given format (`NULL`: 16 kHz, mono, float). A recording in progress is dropped. The token comes back in the messages of this recording."},
+            {"sig": "status_t Feed(const void* buffer, size_t size);", "text": "More audio; returns at once. `B_BUSY` when ten minutes of audio are waiting for the model."},
+            {"sig": "status_t Finish();", "text": "The recording is over. What is left is recognized, then `B_SPEECH_FINISHED` is sent. Returns at once."},
+            {"sig": "void Cancel();", "text": "Drops the recording; no more results of it are sent."},
+            {"sig": "status_t WaitUntilFinished(bigtime_t timeout = B_INFINITE_TIMEOUT);\nbool IsRecognizing() const;", "text": "For callers that do want to wait."},
+            {"sig": "status_t Transcribe(const float* samples, size_t count, BString* _text);\nstatus_t Transcribe(const media_raw_audio_format& format, const void* buffer, size_t size, BString* _text);", "text": "Recognizes a complete recording and returns when done: 16 kHz mono float samples, or any raw format. No messages are sent. `B_BUSY` while a recording is in progress."},
+            {"sig": "int32 CountSegments() const;\nstatus_t GetSegment(int32 index, speech_segment* _segment) const;", "text": "The final phrases so far: `start`, `end` (µs) and `text`."},
+            {"sig": "status_t GetInfo(speech_recognizer_info* info) const;", "text": "Audio recognized, time spent (front end, encoder, decoder), windows and tokens."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operators",
+      "header": "neural/NeuralOperators.h",
+      "title": "Operators",
+      "text": "The operators a network is made of, whatever file it came from. They follow TensorFlow Lite's, whose quantized arithmetic is specified to the bit; the CPU kernels reproduce it, which makes the CPU device the reference every back end is checked against. Each operator has a fixed list of inputs and, where noted, a parameter structure. An input index of −1 means \"not given\" (a convolution without bias). `neural_operator_name()` and `neural_operator_params_size()` describe a code.",
+      "items": [
+        {
+          "kind": "enum", "name": "neural_operator_code",
+          "text": "Inputs, then the parameter structure.",
+          "values": [
+            ["B_NEURAL_OP_CONV_2D, B_NEURAL_OP_DEPTHWISE_CONV_2D", "input, weights, bias; `neural_conv_params`"],
+            ["B_NEURAL_OP_FULLY_CONNECTED", "input, weights, bias; `neural_fully_connected_params`"],
+            ["B_NEURAL_OP_TRANSPOSE_CONV", "output shape, weights, input, bias; `neural_conv_params`"],
+            ["B_NEURAL_OP_AVERAGE_POOL_2D, B_NEURAL_OP_MAX_POOL_2D", "input; `neural_pool_params`"],
+            ["B_NEURAL_OP_ADD, _SUB, _MUL, _DIV, _MAXIMUM, _MINIMUM", "a, b (broadcast); `neural_binary_params`"],
+            ["B_NEURAL_OP_RELU, _RELU6, _LOGISTIC, _TANH, _HARD_SWISH", "input; no parameters"],
+            ["B_NEURAL_OP_LEAKY_RELU", "input; `neural_leaky_relu_params`"],
+            ["B_NEURAL_OP_PRELU", "input, slope"],
+            ["B_NEURAL_OP_SOFTMAX", "input; `neural_softmax_params`"],
+            ["B_NEURAL_OP_RESHAPE", "input, shape (optional); `neural_reshape_params`"],
+            ["B_NEURAL_OP_SQUEEZE", "input; `neural_squeeze_params`"],
+            ["B_NEURAL_OP_CONCATENATION", "any number of inputs; `neural_concat_params`"],
+            ["B_NEURAL_OP_PAD", "input, paddings `[rank, 2]`, constant value (optional)"],
+            ["B_NEURAL_OP_MEAN", "input, axes; `neural_reduce_params`"],
+            ["B_NEURAL_OP_RESIZE_BILINEAR, _RESIZE_NEAREST", "input, size `[height, width]`; `neural_resize_params`"],
+            ["B_NEURAL_OP_TRANSPOSE", "input, permutation"],
+            ["B_NEURAL_OP_STRIDED_SLICE", "input, begin, end, strides; `neural_strided_slice_params`"],
+            ["B_NEURAL_OP_QUANTIZE, _DEQUANTIZE", "input; converts between types and quantizations"],
+            ["B_NEURAL_OP_DETECTION_POSTPROCESS", "box encodings `[1, anchors, 4]`, class scores `[1, anchors, classes]`, anchors (constant). Outputs boxes `[1, n, 4]` (top, left, bottom, right), classes, scores, count; `neural_detection_params`"],
+            ["B_NEURAL_OP_SQUARED_DIFFERENCE", "a, b (broadcast): (a − b)²"],
+            ["B_NEURAL_OP_RSQRT", "input: 1 / √x"],
+            ["B_NEURAL_OP_GELU", "input; `neural_gelu_params` (exact, or the tanh approximation)"],
+            ["B_NEURAL_OP_BATCH_MATMUL", "a, b: `[…, m, k] × […, k, n]`, leading dimensions broadcast; `neural_batch_matmul_params`"],
+            ["B_NEURAL_OP_GATHER", "input, indices (int32 or int64): slices along one dimension (embeddings); an index out of range fails the run; `neural_gather_params`"]
+          ]
+        },
+        {
+          "kind": "enum", "name": "neural_activation and neural_padding",
+          "text": "What is done to an operator's result before it is stored, and how windows meet the edges.",
+          "values": [
+            ["B_NEURAL_ACTIVATION_NONE, _RELU, _RELU_N1_TO_1, _RELU6, _TANH", "fused activations; `_RELU_N1_TO_1` clamps to −1…1"],
+            ["B_NEURAL_PADDING_SAME", "as much padding as it takes to keep size / stride outputs"],
+            ["B_NEURAL_PADDING_VALID", "no padding: only positions where the whole window fits"]
+          ]
+        },
+        {
+          "kind": "struct", "name": "Parameter structures",
+          "text": "One per operator family.",
+          "values": [
+            ["neural_conv_params", "`padding`, `stride_width`, `stride_height`, `dilation_width`, `dilation_height`, `depth_multiplier` (depthwise only), `activation`"],
+            ["neural_fully_connected_params", "`activation`, `keep_dimensions`"],
+            ["neural_pool_params", "`padding`, `stride_width`, `stride_height`, `filter_width`, `filter_height`, `activation`"],
+            ["neural_binary_params", "`activation`"],
+            ["neural_leaky_relu_params", "`alpha`"],
+            ["neural_softmax_params", "`beta`"],
+            ["neural_reshape_params", "`rank`, `shape[B_NEURAL_MAX_RANK]`, used when no shape input is given"],
+            ["neural_squeeze_params", "`count` (0: every dimension of size 1), `dimensions[]`"],
+            ["neural_concat_params", "`axis`, `activation`"],
+            ["neural_reduce_params", "`keep_dimensions`"],
+            ["neural_resize_params", "`align_corners`, `half_pixel_centers`"],
+            ["neural_strided_slice_params", "`begin_mask`, `end_mask`, `ellipsis_mask`, `new_axis_mask`, `shrink_axis_mask`"],
+            ["neural_gelu_params", "`approximate`"],
+            ["neural_batch_matmul_params", "`adjoint_a`, `adjoint_b`"],
+            ["neural_gather_params", "`axis`, `batch_dimensions` (only 0)"],
+            ["neural_detection_params", "`max_detections`, `max_classes_per_detection`, `detections_per_class`, `num_classes`, `score_threshold`, `iou_threshold`, `y_scale`, `x_scale`, `h_scale`, `w_scale`, `use_regular_nms`"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "header": "add-ons/neural/NeuralBackend.h",
+      "title": "The back-end API",
+      "text": "For people adding hardware. A back end is an add-on in `add-ons/neural` that makes one kind of hardware usable: it finds its devices (usually through the kernel driver's nodes under `/dev/npu`), says which operators a device can run, and turns stretches of such operators into programs. The kit does the rest. See [Writing a back end](docs/neural/#backends) and [the example back end](docs/neural/examples/#backend).",
+      "items": [
+        {
+          "kind": "class", "name": "BNeuralBackend",
+          "text": "One per add-on, made by `instantiate_neural_backend()`, living as long as the team's roster. It must be thread safe: programs of different sessions run at the same time.",
+          "members": [
+            {"sig": "virtual const char* Name() const = 0;", "text": "Short and unique, used in device identifiers: `\"rk3588_npu\"`."},
+            {"sig": "virtual int32 CountDevices() = 0;", "text": "Looks for devices, once after loading and again on `BNeuralRoster::Rescan()`. A back end with no devices here returns 0."},
+            {"sig": "virtual status_t GetDeviceInfo(int32 device, neural_device_info* info, BMessage* details) = 0;", "text": "Describes a device; `details` (may be `NULL`) gets what `BNeuralDevice::GetInfo()` returns."},
+            {"sig": "virtual status_t GetSupportedOperators(int32 device, const BNeuralGraph& graph, bool* supported) = 0;", "text": "Sets `supported[i]` for every operator the device can compute correctly. Asked before anything is loaded, also just to choose a device: look at codes, types, shapes and parameters only."},
+            {"sig": "virtual status_t CreateProgram(int32 device, const BNeuralGraph& graph, const neural_partition& partition, uint32 flags, BNeuralProgram** _program) = 0;", "text": "Makes the program for a stretch of supported operators: converts and uploads weights. An error means \"run this stretch on the CPU\"."}
+          ]
+        },
+        {
+          "kind": "class", "name": "BNeuralProgram",
+          "text": "A stretch of a network made ready for a device.",
+          "members": [
+            {"sig": "virtual status_t Run(void* const* tensors) = 0;", "text": "Runs once. `tensors` has one entry per tensor of the graph; those of the partition's inputs and outputs point to memory in the graph's type and NHWC layout. On an error the kit computes the stretch on the CPU for this run and tries the device again next time (three failures in a row end that). Return `B_NEURAL_DEVICE_LOST` when the device is gone for good."},
+            {"sig": "virtual bigtime_t LastDeviceTime() const;", "text": "The device's own time for the last run, without copies; 0 if unknown."}
+          ]
+        },
+        {
+          "kind": "class", "name": "BNeuralGraph",
+          "text": "The network as back ends see it, operators in an order in which they can run.",
+          "members": [
+            {"sig": "int32 CountTensors() const;\nconst neural_graph_tensor* TensorAt(int32 index) const;", "text": "Type, shape, quantization (including per-channel scales) and, for constants, the numbers."},
+            {"sig": "int32 CountOperators() const;\nconst neural_graph_operator* OperatorAt(int32 index) const;", "text": "Code, input and output tensor indices, and the parameter structure."},
+            {"sig": "int32 CountInputs() const;\nint32 InputAt(int32 index) const;\nint32 CountOutputs() const;\nint32 OutputAt(int32 index) const;", "text": "The network's own inputs and outputs, as tensor indices."}
+          ]
+        },
+        {
+          "kind": "struct", "name": "neural_partition and neural_device_info",
+          "text": "What `CreateProgram()` is given, and what `GetDeviceInfo()` fills in.",
+          "values": [
+            ["neural_partition", "`operators`/`operator_count`: operators that follow one another; `inputs`: tensors they need from outside (constants are not listed); `outputs`: tensors they make that are needed outside"],
+            ["neural_device_info", "`id` (unique in the back end, stable: `\"0\"`), `name`, `vendor`, `kind`, `flags`, `priority` (100 for the device that is the reason the machine has an NPU, 50 for a general-purpose GPU)"],
+            ["BNeuralBackend* instantiate_neural_backend(image_id image)", "the one function an add-on exports; return `NULL` when the back end cannot work on this machine"]
+          ]
+        }
+      ]
+    }
+  ]
+}

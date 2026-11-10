@@ -1,0 +1,8 @@
+$ neural devices
+example/0            NPU Example Example accelerator (float)
+    driver           none
+...
+A test network relu(relu(x)) + x, run on example/0:
+supported 2 of 3
+-2 -1 0 2 4 6
+device ops 2 cpu ops 1 partitions 1 failures 0

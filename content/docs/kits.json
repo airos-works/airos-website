@@ -1,0 +1,383 @@
+{
+  "reviewed": "10 November 2026",
+  "baseline": {"commit": "1f40bf7ced00f1af488c332caf72f7d90a21fed0", "hrev": "hrev60207+139", "date": "2 November 2026"},
+  "source": {"commit": "bf526f982bb353c09b145b1dbeb9b32757f2ec01", "date": "10 November 2026"},
+  "kinds": {
+    "new": ["Added", "New API in a public header. It does not exist in Haiku."],
+    "changed": ["Changed", "An existing declaration or its documented meaning changed."],
+    "behaviour": ["Behaviour", "The same API, but it behaves differently from Haiku's."],
+    "private": ["Private", "A private header used by the system's own apps. It may still change: use it knowing that."]
+  },
+  "kits": [
+    {
+      "id": "interface", "name": "Interface Kit", "library": "libbe.so",
+      "haiku": [["Interface Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__interface.html"]],
+      "summary": "Most of the fork's API work is here: fractional scaling, frame-accurate presentation, dark mode and colour emoji, plus a private accessibility interface.",
+      "changes": [
+        {
+          "kind": "new", "title": "BScreen::DeviceScale() and B_DEVICE_PIXEL_BITMAP", "header": "interface/Screen.h, interface/InterfaceDefs.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBScreen.html",
+          "diff": "  class BScreen {\n  \t\tBRect\t\tFrame();\n+ \t\tfloat\t\tDeviceScale();\n+ \t\t\t// frame buffer pixels per coordinate unit, 1.5 at 150%\n\n  enum bitmap_drawing_options {\n  \tB_FILTER_BITMAP_BILINEAR\t= 0x00000100,\n  \tB_WAIT_FOR_RETRACE\t\t= 0x00000800,\n+ \tB_DEVICE_PIXEL_BITMAP\t\t= 0x00001000\n  };",
+          "text": "air/OS draws the desktop at the density of each monitor (100–300%, including fractional steps). Apps keep working in logical coordinates. `DeviceScale()` tells an app how many frame buffer pixels make one coordinate unit, so it can render a bitmap at full resolution. A bitmap drawn with `B_DEVICE_PIXEL_BITMAP` holds frame buffer pixels: it is placed one to one at the pixel where the destination's top-left corner falls, and is not scaled to the destination rectangle.",
+          "doc": "SCALING.md", "doc2": "FULL-DENSITY.md", "commits": ["4843681f80", "908c1fb3fb"]
+        },
+        {
+          "kind": "new", "title": "BScreen::WaitForOutputRetrace() and GetScanTiming()", "header": "interface/Screen.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBScreen.html",
+          "diff": "+ typedef struct display_scan_timing {\n+ \tuint32\t\toutput_id;\t// 0: the outputs share one blank\n+ \tuint32\t\tflags;\t\t// B_SCAN_TIMING_FROM_HARDWARE / _FROM_BLANK\n+ \tBRect\t\tframe;\t\t// the output, in screen coordinates\n+ \tclipping_rect\tdevice_frame;\t// and in frame buffer pixels\n+ \tbigtime_t\tscan_start;\t// system_time() of a frame's start\n+ \tbigtime_t\tperiod;\t\t// the next ones every period\n+ \tuint32\t\tgeneration;\t// changes with the layout and modes\n+ } display_scan_timing;\n\n  \t\tstatus_t\tWaitForRetrace(bigtime_t timeout);\n+ \t\tstatus_t\tWaitForOutputRetrace(BRect frame,\n+ \t\t\t\tbigtime_t timeout = B_INFINITE_TIMEOUT);\n+ \t\tstatus_t\tGetScanTiming(BRect frame,\n+ \t\t\t\tdisplay_scan_timing* timing);",
+          "text": "With several monitors, each has its own refresh. `WaitForOutputRetrace()` waits for the next frame of the monitor that shows `frame` (a window's frame, for example) rather than the main screen's. `GetScanTiming()` tells a video player or game when that monitor's frames start and how long they last, so it can schedule presentation instead of polling. `scan_start` comes from the hardware where the driver can read it (`B_SCAN_TIMING_FROM_HARDWARE`), or from the blank interrupt (`B_SCAN_TIMING_FROM_BLANK`).",
+          "doc": "RETRACE.md", "commits": ["b0e2b79ca0", "a6bc6c2763"]
+        },
+        {
+          "kind": "behaviour", "title": "B_WAIT_FOR_RETRACE is honoured", "header": "interface/InterfaceDefs.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBView.html",
+          "text": "Haiku accepts the `B_WAIT_FOR_RETRACE` bitmap drawing option but ignores it. In air/OS a bitmap drawn with it reaches the screen at the next vertical blank of its monitor, without tearing. app_server also copies to the screen once per frame, just after the blank, on every output. MediaPlayer already passes the flag.",
+          "doc": "RETRACE.md", "commits": ["0be2fa3e5a"]
+        },
+        {
+          "kind": "new", "title": "Dark mode: ui_dark_mode() and set_ui_dark_mode()", "header": "interface/InterfaceDefs.h",
+          "ref": "https://www.haiku-os.org/docs/api/InterfaceDefs_8h.html",
+          "diff": "  rgb_color\ttint_color(rgb_color color, float tint);\n\n+ // Light or dark appearance (air/OS). Each has its own palette of UI colors;\n+ // switching makes the other palette current, and applications get\n+ // B_COLORS_UPDATED as for any change of colors.\n+ bool\t\tui_dark_mode();\n+ void\t\tset_ui_dark_mode(bool dark);",
+          "text": "There are two complete palettes of UI colours, light and dark, switched in Screen preferences. Colours an app never set follow the current appearance. A switch arrives as an ordinary `B_COLORS_UPDATED`, which now also carries the colours being replaced in a `\"be:previous colors\"` message: `BTextView` uses it to recolour text that was in the old system text colour, and an app with custom colours can do the same. Summit uses `ui_dark_mode()` to answer the web's `prefers-color-scheme`.",
+          "commits": ["ee481831a8", "cbdd6fbb4a"]
+        },
+        {
+          "kind": "new", "title": "B_COLOR_GLYPHS_AS_SHAPES", "header": "interface/Font.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBFont.html",
+          "diff": "  enum {\n  \tB_DISABLE_ANTIALIASING\t= 0x00000001,\n  \tB_FORCE_ANTIALIASING\t= 0x00000002,\n+ \tB_COLOR_GLYPHS_AS_SHAPES = 0x00000004\n  };",
+          "text": "air/OS draws colour emoji, including sequences (ZWJ families, flags, keycaps, skin tones). This font flag draws colour glyphs in the high colour, in the shape of their pixels, for text shadows and outlines. The same happens automatically when the font has a false bold width. In `BTextView` an emoji sequence counts as one character for the caret, selection and deletion.",
+          "doc": "COLOR-EMOJI.md", "commits": ["b1aa7ef0f9"]
+        },
+        {
+          "kind": "new", "title": "Touchpad wheel phases", "header": "interface/Input.h",
+          "diff": "+ // \"be:wheel_phase\" of a B_MOUSE_WHEEL_CHANGED message from a touchpad\n+ enum input_wheel_phase {\n+ \tB_WHEEL_PHASE_NONE\t= 0,\n+ \tB_WHEEL_PHASE_BEGAN\t= 1,\n+ \tB_WHEEL_PHASE_CHANGED\t= 2,\n+ \tB_WHEEL_PHASE_ENDED\t= 3\n+ };",
+          "text": "Two-finger scrolling on a touchpad is smooth. `B_MOUSE_WHEEL_CHANGED` from a touchpad carries `\"be:wheel_precise_delta_x\"` and `\"be:wheel_precise_delta_y\"` (float) and `\"be:wheel_phase\"`. Messages in the middle of a gesture can have whole-step deltas of 0; the stock views ignore those, and an app that scrolls by the precise deltas should too.",
+          "doc": "TOUCHPAD-SCROLLING.md", "commits": ["bf91f88318"]
+        },
+        {
+          "kind": "behaviour", "title": "Drawing on a scaled desktop", "header": "BView, BBitmap, BFont",
+          "ref": "https://www.haiku-os.org/docs/api/classBView.html",
+          "text": "On a scaled desktop app_server renders text and shapes at the frame buffer's density, but bitmaps are enlarged (with area sampling), so content an app draws offscreen at logical size comes out soft. Prefer drawing directly, or render at `DeviceScale()` and draw with `B_DEVICE_PIXEL_BITMAP`. Other differences: a `BBitmap` made from a vector icon keeps its vector form and is drawn sharp at any density (writing to `Bits()` drops it); `CopyBits()` by a fraction of a pixel becomes a redraw; `B_SCREEN_CHANGED` carries `\"device scale\"` (float); subpixel anti-aliasing is off while scaled; fractional font sizes are measured at their exact size, so `StringWidth()` of 13.8-point text differs slightly from Haiku's even at 100%.",
+          "doc": "SCALING.md", "commits": ["908c1fb3fb", "6a0056c5d4", "68fa242f34"]
+        },
+        {
+          "kind": "behaviour", "title": "Windows, menus and alerts on several monitors", "header": "BWindow, BMenu, BAlert",
+          "ref": "https://www.haiku-os.org/docs/api/classBWindow.html",
+          "text": "Each monitor is its own region of the desktop. `BWindow::Zoom()` fills the monitor holding most of the window. `CenterOnScreen()` and `MoveOnScreen()` use the window's monitor (or the mouse's while the window is hidden). Alerts open on the mouse's monitor, and menus, submenus and tool tips stay on the monitor they open on. When a monitor is unplugged, its windows move to one that remains.",
+          "commits": ["94f6fc4197", "27fc7547a2"]
+        },
+        {
+          "kind": "new", "title": "B_DIRECT_DEVICE_PIXELS window flag", "header": "interface/Window.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBWindow.html",
+          "diff": "  \tB_NO_SERVER_SIDE_WINDOW_MODIFIERS\t= 0x00000200,\n+ \tB_DIRECT_DEVICE_PIXELS\t\t\t= 0x00000400\n+ \t\t// a BDirectWindow that draws in the frame buffer's own pixels,\n+ \t\t// so it stays connected when the desktop is drawn at a higher\n+ \t\t// density (see direct_buffer_info::device_scale)",
+          "text": "See the Game Kit below: without this flag a `BDirectWindow` is disconnected while the desktop is scaled.",
+          "commits": ["7a2a4f225f"]
+        },
+        {
+          "kind": "private", "title": "Accessibility: BAccessible", "header": "private/interface/Accessible.h, AccessibilityProtocol.h",
+          "diff": "+ class BAccessible {\n+ public:\n+ \tvirtual\taccessible_role\tRole() const = 0;\n+ \tvirtual\tBString\t\tName() const;\n+ \tvirtual\tBString\t\tValue() const;\n+ \tvirtual\tuint64\t\tStates() const;\n+ \tvirtual\tBRect\t\tFrame() const;\n+ \tvirtual\tint32\t\tCountChildren() const;\n+ \tvirtual\tBAccessible*\tChildAt(int32 index) const;\n+ \tvirtual\tstatus_t\tPerformAction(accessible_action action);\n+ \t\tvoid\t\tNotifyEvent(accessible_event event,\n+ \t\t\t\tconst BMessage* details = NULL);\n+ \tstatic\tstatus_t\tAttach(BView* view, BAccessible* root);\n+ \tstatic\tstatus_t\tSetName(BView* view, const char* name);\n+ \tstatic\tstatus_t\tSetDescription(BView* view, const char* description);\n+ \tstatic\tvoid\t\tAnnounce(const char* text, bool interrupt = false);\n+ \t...\n+ };",
+          "text": "A system accessibility interface for screen readers. Standard views (`BControl`, `BTextView`, `BListView`, `BMenu`, `BSlider`, `BColumnListView`, `BWindow`) report themselves and their events with no work from the app. An app can name an icon-only button with `SetName()`, or attach its own tree of nodes (a web view's document) with `Attach()`. Nothing runs until an assistive tool connects to `accessibility_server`; until then each hook costs one branch. Used by the ScreenReader app; Summit is the planned first big client.",
+          "doc": "ACCESSIBILITY.md", "commits": ["1fa68a8f2e", "5082fadeb9"]
+        },
+        {
+          "kind": "private", "title": "Window capture", "header": "private/interface/WindowInfo.h",
+          "text": "`BPrivate::read_window_bitmap()` returns a window's whole content even where other windows cover it, and `do_window_action()` with `kWindowActionCaptureStart` / `kWindowActionCaptureStop` marks the window's tab while it is being shared. Summit uses it for `getDisplayMedia()` window sharing.",
+          "commits": ["0fec0a7d2b"]
+        }
+      ]
+    },
+    {
+      "id": "app", "name": "Application Kit", "library": "libbe.so",
+      "haiku": [["Application Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__app.html"]],
+      "summary": "No public header changes. Notifications can now answer the app that posted them, and there are new system protocols for media keys and shutdown.",
+      "changes": [
+        {
+          "kind": "behaviour", "title": "Notifications that answer", "header": "BNotification (notification_server)",
+          "ref": "https://www.haiku-os.org/docs/api/classBNotification.html",
+          "text": "`BNotification` has no new methods, but the server reads extra fields from the archived notification. With `\"_reply:target\"` (a `BMessenger`) set, a click sends `\"_reply:activated\"` back (with `\"button\"`: 0 for the notification itself, 1 and up for buttons) instead of launching the app. `\"_reply:closed\"` is sent when it goes away, and `\"_buttons\"` (strings) adds buttons under the text. Terminal uses this for OSC 99 desktop notifications.",
+          "doc": "NOTIFICATIONS.md", "commits": ["37cec9713a", "8aedd194e6"]
+        },
+        {
+          "kind": "private", "title": "Media keys: kMsgMediaKey", "header": "private/shared/MediaKeys.h",
+          "text": "Play/pause, next and previous keys (including Bluetooth keyboards' consumer keys) go to the app that is playing, else to the active one. The system first sends a query (`kMsgMediaKey`, 'mkey'); an app answers with `reply_media_key_query()` and handles the key with `reply_media_key_handled()`. MediaPlayer, Amp and airTime answer it; `/bin/mediakey` sends keys from scripts.",
+          "doc": "MEDIA-CONTROLS.md", "commits": ["10522a195f"]
+        },
+        {
+          "kind": "private", "title": "B_REG_QUIT_USER_APPS", "header": "private/app/RegistrarDefs.h",
+          "text": "Runs only the first phase of a shutdown: user apps get the normal quit request and can save their work or refuse. The reply names the app that refused. System Updater uses it before installing an update.",
+          "doc": "SYSTEM-UPDATER.md", "commits": ["778738c03e"]
+        }
+      ]
+    },
+    {
+      "id": "game", "name": "Game Kit", "library": "libgame.so",
+      "haiku": [["Game Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__game.html"], ["BDirectWindow in the Be Book", "https://www.haiku-os.org/legacy-docs/bebook/BDirectWindow.html"]],
+      "summary": "BDirectWindow works on a scaled desktop, in the frame buffer's own pixels.",
+      "changes": [
+        {
+          "kind": "changed", "title": "direct_buffer_info: device_scale and app_server's drawing copy", "header": "game/DirectWindow.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBDirectWindow.html",
+          "diff": "  \tarea_id\t\t\tbits_area;\n- \tuint32\t\t\t_reserved1[10];\n+ \tuint32\t\t\tdevice_scale;\t\t// percent; 0 without the flag\n+ \tarea_id\t\t\tdrawing_bits_area;\t// app_server's copy, or -1\n+ \tint32\t\t\tdrawing_bytes_per_row;\n+ \tuint32\t\t\t_reserved1[7];\n  \tuint32\t\t\tclip_list_count;",
+          "text": "A window created with `B_DIRECT_DEVICE_PIXELS` stays connected on a scaled desktop. `device_scale` is the density in percent (200 at 200%, not 2). Above 100, `window_bounds` and the clipping are in frame buffer pixels, not window coordinates. Without the flag, direct windows are disconnected while the desktop is scaled, as before. The three fields reuse reserved space, so the structure's size and binary layout are unchanged.",
+          "commits": ["7a2a4f225f"]
+        },
+        {
+          "kind": "new", "title": "BDirectWindow::MarkDrawingBitsStale()", "header": "game/DirectWindow.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBDirectWindow.html",
+          "diff": "  \t\tstatus_t\tSetFullScreen(bool enable);\n+ \t\tvoid\t\tMarkDrawingBitsStale(const clipping_rect* rects,\n+ \t\t\t\t\tuint32 count);",
+          "text": "app_server draws into its own copy of the screen (`drawing_bits_area`, unless it is −1) and copies that to the frame buffer, so anything written only to the frame buffer is overwritten by the next copy. A direct window either draws into both, or calls `MarkDrawingBitsStale()` with the rectangles it wrote to the frame buffer alone.",
+          "commits": ["0acdbac766"]
+        }
+      ]
+    },
+    {
+      "id": "media", "name": "Media Kit", "library": "libmedia.so",
+      "haiku": [["Media Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__media.html"], ["The Media Kit in the Be Book", "https://www.haiku-os.org/legacy-docs/bebook/TheMediaKit_Overview_Introduction.html"]],
+      "summary": "No public header changes. Device selection, default-change notifications and recording now work as documented, and a private now-playing library was added.",
+      "changes": [
+        {
+          "kind": "behaviour", "title": "B_MEDIA_DEFAULT_CHANGED is sent", "header": "BMediaRoster::StartWatching()",
+          "ref": "https://www.haiku-os.org/legacy-docs/bebook/BMediaRoster.html",
+          "text": "Haiku never sent this notification. air/OS sends it with `\"default\"` (the node type) and `\"node\"` after `SetAudioOutput()`, `SetAudioInput()` and device rescans, so an app can follow the user's choice of output.",
+          "doc": "AUDIO-DEVICES.md", "commits": ["122b4ad42e"]
+        },
+        {
+          "kind": "behaviour", "title": "Choosing audio devices", "header": "media_server",
+          "text": "Changing the default output moves the system mixer while sound plays. Devices plugged in later appear, built-in speakers are preferred over a graphics card's HDMI or DisplayPort audio, and the user's choices are kept by device name across reboots and replugs. The Deskbar has Output and Input submenus.",
+          "doc": "AUDIO-DEVICES.md", "commits": ["7b142195e5", "8dffc3fcde"]
+        },
+        {
+          "kind": "behaviour", "title": "Recording: Mixer Monitor and BMediaRecorder", "header": "system mixer, BMediaRecorder",
+          "text": "The system mixer has a second output, \"Mixer Monitor\", for recording what the computer plays. `BMediaRecorder` connected straight to a sound card's input now starts that producer as its own time source, so recording from the card works without the mixer.",
+          "doc": "AUDIO-CAPTURE.md", "commits": ["ac0084ddf0", "c93031315f"]
+        },
+        {
+          "kind": "private", "title": "Now playing: MediaSession", "header": "private/media_controls/MediaSession.h, MediaControls.h",
+          "diff": "+ class MediaSession {\n+ public:\n+ \t\tstatus_t\tRegister(const BMessenger& target, ...);\n+ \t\tstatus_t\tSetMetadata(const char* title, ...);\t// with artwork\n+ \t\tstatus_t\tSetPlaybackState(media_session_state state, ...);\n+ \t\tstatus_t\tSetSupportedActions(uint32 actions);\n+ \t\tstatus_t\tParseAction(const BMessage* message, ...);\n+ };",
+          "text": "`media_controls_server` keeps a system-wide \"now playing\" list shown in a Deskbar replicant. Apps register with `MediaSession` (in the static library `libmedia_controls.a`), publish title, artist and artwork, and receive play, pause, next and seek requests. MediaPlayer uses the class; Summit and airTime speak the message protocol directly.",
+          "doc": "MEDIA-CONTROLS.md", "commits": ["6c613aff1a"]
+        }
+      ]
+    },
+    {
+      "id": "device", "name": "Device Kit", "library": "libdevice.so",
+      "haiku": [["Device Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__device.html"]],
+      "summary": "Game pad rumble, gap-free isochronous USB input, and a class for small auxiliary displays.",
+      "changes": [
+        {
+          "kind": "new", "title": "BJoystick: device IDs and rumble", "header": "device/Joystick.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBJoystick.html",
+          "diff": "+ \t\tstatus_t\tGetDeviceIDs(uint16* outVendorID,\n+ \t\t\t\t\tuint16* outProductID);\n+ \t\tbool\t\tHasRumble();\n+ \t\tbool\t\tHasTriggerRumble();\n+ \t\tstatus_t\tSetRumble(uint16 strongMagnitude,\n+ \t\t\t\t\tuint16 weakMagnitude, bigtime_t duration,\n+ \t\t\t\t\tuint16 leftTriggerMagnitude = 0,\n+ \t\t\t\t\tuint16 rightTriggerMagnitude = 0);",
+          "text": "`GetDeviceIDs()` returns the USB or Bluetooth vendor and product IDs, for controller mapping databases (0 where the transport has none). `SetRumble()` drives the force-feedback motors: magnitudes run from 0 to 65535, strong is the low-frequency (left) motor and weak the high-frequency (right) one, and the trigger motors exist where `HasTriggerRumble()` says so. A call replaces the running effect; a duration of 0 stops it, and `B_INFINITE_TIMEOUT` keeps it running until the next call or `Close()`. Xbox One/Series pads over USB and Bluetooth LE game pads now also appear as `BJoystick` devices.",
+          "doc": "GAMEPADS.md", "commits": ["38afc262ec", "a6a840afa1"]
+        },
+        {
+          "kind": "new", "title": "BUSBEndpoint: isochronous streams", "header": "device/USBKit.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBUSBEndpoint.html",
+          "diff": "+ struct usb_stream_packet_header {\n+ \tuint16\tlength;\n+ \tuint16\tflags;\t// B_USB_STREAM_PACKET_ERROR, B_USB_STREAM_PACKET_GAP\n+ };\n\n  class BUSBEndpoint {\n+ \tstatus_t\tStartIsochronousStream(size_t packetSize,\n+ \t\t\t\tuint32 packetsPerTransfer = 32,\n+ \t\t\t\tuint32 transferCount = 4,\n+ \t\t\t\tsize_t bufferSize = 0) const;\n+ \tssize_t\t\tReadIsochronousStream(void* data, size_t length,\n+ \t\t\t\tbigtime_t timeout) const;\n+ \tstatus_t\tStopIsochronousStream() const;",
+          "text": "One `IsochronousTransfer()` at a time loses whatever the device sends between calls. A stream keeps `transferCount` transfers queued in the system and buffers up to `bufferSize` bytes. `ReadIsochronousStream()` returns packets back to back, each as a `usb_stream_packet_header` followed by its data (empty packets are left out); `B_USB_STREAM_PACKET_GAP` marks lost packets. There is one stream per device. The UVC webcam driver is built on this.",
+          "commits": ["0af4c0889e"]
+        },
+        {
+          "kind": "new", "title": "BAuxDisplay", "header": "device/AuxDisplay.h, drivers/auxdisplay.h",
+          "diff": "+ class BAuxDisplay {\n+ public:\n+ \tstatic\tint32\t\tCountDisplays();\n+ \t\tstatus_t\tSetTo(int32 index = 0);\n+ \t\tint32\t\tWidth() const;\n+ \t\tint32\t\tHeight() const;\n+ \t\tbool\t\tHasTouch() const;\n+ \t\tstatus_t\tSetBacklight(float brightness);\n+ \t\tBBitmap*\tBitmap();\t// B_RGB32, accepts views\n+ \t\tstatus_t\tPresent();\n+ \t\tstatus_t\tPresent(const BBitmap* bitmap);\n+ \t\tstatus_t\tWaitForTouch(aux_display_touch_event* events,\n+ \t\t\t\t\tint32* _count, bigtime_t timeout);\n+ \t...\n+ };",
+          "text": "A small screen beside the desktop that a program draws on itself, such as a Raspberry Pi's DSI panel or a USB LCD. It is not part of app_server's desktop: one program at a time draws into `Bitmap()` (views can be attached to it) and calls `Present()`. Drivers publish these displays under `/dev/auxdisplay` with the interface in `drivers/auxdisplay.h`, which also carries touch events.",
+          "commits": ["df829acd3f"]
+        }
+      ]
+    },
+    {
+      "id": "network", "name": "Network Kit", "library": "libbnetapi.so",
+      "haiku": [["Network Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__network.html"]],
+      "summary": "Link speed, a Wi-Fi password parameter, a service order for the default route, and .local names.",
+      "changes": [
+        {
+          "kind": "new", "title": "BNetworkInterface::LinkSpeed()", "header": "net/NetworkInterface.h",
+          "ref": "https://www.haiku-os.org/docs/api/group__network.html",
+          "diff": "  \t\tuint32\t\tMetric() const;\n+ \t\tuint64\t\tLinkSpeed() const;\n+ \t\t\t\t// in bit/s, 0 if unknown",
+          "text": "The speed the driver reports (`SIOCGIFLINKSPEED`). For Wi-Fi it is the last transmit rate.",
+          "commits": ["02bbad282c"]
+        },
+        {
+          "kind": "new", "title": "BNetworkRoster::AddPersistentNetwork() with a password", "header": "net/NetworkRoster.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBNetworkRoster.html",
+          "diff": "  \t\tstatus_t\tAddPersistentNetwork(\n  \t\t\t\tconst wireless_network& network);\n+ \t\tstatus_t\tAddPersistentNetwork(\n+ \t\t\t\tconst wireless_network& network,\n+ \t\t\t\tconst char* password);",
+          "text": "Saves a Wi-Fi network together with its password, so it joins automatically later. The networks file is now written with mode 0600, because it holds passwords.",
+          "commits": ["4ba582512b"]
+        },
+        {
+          "kind": "behaviour", "title": "Service order and the default route", "header": "network stack, net_server",
+          "text": "The default route is chosen at each lookup: an interface with a link first, then the lowest metric, then the faster link. Haiku uses the order in which routes were added. Wired interfaces default to metric 1000 and wireless ones to 2000, so Ethernet is preferred over Wi-Fi. The user can reorder services in Network preferences; that sends net_server `kMsgSetServiceOrder` (private, `net/NetServer.h`). A DHCP lease is kept when the link drops briefly.",
+          "commits": ["02bbad282c", "8718cc50b1"]
+        },
+        {
+          "kind": "behaviour", "title": ".local names and HTTPS on ARM64", "header": "getaddrinfo(), BSecureSocket",
+          "ref": "https://www.haiku-os.org/docs/api/classBSecureSocket.html",
+          "text": "`getaddrinfo()` resolves `.local` names over multicast DNS. An app can publish a name with `mdns_server` (`MDNS_REGISTER_NAME`, private `net/mdns_server.h`), as Summit does for WebRTC. `BSecureSocket` finds Haiku's CA bundle even when OpenSSL was built without its path, as on ARM64.",
+          "doc": "MDNS.md", "commits": ["f38e5d8fc9", "542a103674"]
+        },
+        {
+          "kind": "private", "title": "Location service", "header": "private/net/location_server.h",
+          "text": "`location_server` answers `LOCATION_GET_POSITION` with latitude, longitude, accuracy, source and time, or `B_NOT_ALLOWED` when the user has location switched off. Intended for Summit's geolocation.",
+          "doc": "LOCATION.md", "commits": ["5a5d610564"]
+        }
+      ]
+    },
+    {
+      "id": "bluetooth", "name": "Bluetooth Kit", "library": "libbluetooth.so",
+      "haiku": [["Haiku's Bluetooth headers", "https://github.com/haiku/haiku/tree/master/headers/os/bluetooth"]],
+      "summary": "Bluetooth Low Energy, Secure Simple Pairing events, link policy and A2DP audio. The Haiku Book does not document the Bluetooth Kit; Haiku's headers are the reference.",
+      "changes": [
+        {
+          "kind": "new", "title": "LE commands and events", "header": "bluetooth/HCI/btHCI_command.h, btHCI_event.h, btHCI_acl.h",
+          "diff": "+ #define OGF_LE_CONTROL\t\t\t0x08\n+ #define OCF_LE_SET_EVENT_MASK\t\t0x0001\n+ #define OCF_LE_READ_BUFFER_SIZE\t\t0x0002\n+ #define OCF_LE_SET_SCAN_PARAMETERS\t0x000b\n+ #define OCF_LE_SET_SCAN_ENABLE\t\t0x000c\n+ #define OCF_LE_CREATE_CONN\t\t0x000d\n+ #define OCF_LE_CREATE_CONN_CANCEL\t0x000e\n+ #define OCF_LE_START_ENCRYPTION\t\t0x0019\n+ struct hci_cp_le_create_conn { ... };\n+ struct hci_cp_le_start_encryption { ... };\n+ #define HCI_EVENT_LE_META\t\t\t0x3E\n+ struct hci_ev_le_conn_complete { ... };\n+ #define HCI_ACL_PACKET_START_NON_FLUSHABLE\t0x0",
+          "text": "The HCI definitions an LE host needs: scanning, connecting, encryption, the LE meta event and connection-complete subevent, and the non-flushable start flag LE links use.",
+          "commits": ["4ba582512b"]
+        },
+        {
+          "kind": "new", "title": "Pairing, page scan and link policy", "header": "bluetooth/HCI/btHCI_command.h, btHCI_event.h",
+          "diff": "+ #define OCF_SET_EVENT_MASK\t\t0x0001\n+ #define OCF_WRITE_PAGE_SCAN_TYPE\t0x0047\n+ #define OCF_WRITE_SIMPLE_PAIRING_MODE\t0x0056\n+ #define OCF_WRITE_LE_HOST_SUPPORTED\t0x006d\n+ #define OCF_WRITE_SC_HOST_SUPPORT\t0x007a\n+ #define OCF_WRITE_PAGE_SCAN_ACTIVITY\t0x001C\n+ #define OCF_WRITE_DEFAULT_LINK_POLICY\t0x000F\n+ #define HCI_EVENT_USER_PASSKEY_NOTIFICATION\t0x3B\n+ struct hci_ev_keypress_notification { ... };",
+          "text": "Secure Simple Pairing with passkey entry (for keyboards), interlaced page scan every 320 ms so sleeping keyboards reconnect quickly, and default link policy (role switch, hold, sniff).",
+          "commits": ["0a9099e9f9", "2de146d688"]
+        },
+        {
+          "kind": "new", "title": "L2CAP on LE links and channel MTUs", "header": "bluetooth/L2CAP/btL2CAP.h",
+          "diff": "+ /* Use these values in l2cap_psm when connecting to an LE fixed channel. */\n+ #define B_L2CAP_LE_ATT_CID 0x0004\n+ #define B_L2CAP_LE_SMP_CID 0x0006\n\n+ /* getsockopt() options at level BLUETOOTH_PROTO_L2CAP, each a uint16, valid\n+    once the channel is connected. */\n+ #define B_L2CAP_OUTGOING_MTU\t1\t/* largest packet the peer accepts */\n+ #define B_L2CAP_INCOMING_MTU\t2\t/* largest packet we accept */",
+          "text": "An L2CAP socket can connect to an LE device's ATT or SMP fixed channel by putting the channel ID in `l2cap_psm`. `getsockopt()` reports the negotiated MTUs. The HCI transport now fragments ACL data at the controller's packet size (`bluetooth_device::mtu`, `leMtu`).",
+          "commits": ["4ba582512b", "950f9a7363", "1fa2d28f58"]
+        },
+        {
+          "kind": "private", "title": "LE, HID-over-GATT and A2DP libraries", "header": "private/bluetooth/LE*.h, A2dpSource.h, SbcEncoder.h",
+          "text": "libbluetooth carries a private LE stack (pairing sessions with legacy pairing, bond store, ATT client, HID-over-GATT service and mouse decoder) and an A2DP source with an SBC encoder. They are used by the LE mouse input add-on, the `bluetooth_audio` media add-on and Bluetooth preferences. `RemoteDevice::GetFriendlyName()` now returns the address rather than \"Not Valid name\" when no name is known, and connecting no longer waits for a remote-name request.",
+          "commits": ["6c07be3b2b", "da57aae976", "8225f603e6"]
+        }
+      ]
+    },
+    {
+      "id": "support", "name": "Support Kit", "library": "libroot.so, libbe.so",
+      "haiku": [["Support Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__support.html"]],
+      "summary": "One fix to an inline function that matters on ARM64.",
+      "changes": [
+        {
+          "kind": "changed", "title": "atomic_test_and_set() is a strong compare-and-swap", "header": "support/SupportDefs.h",
+          "ref": "https://www.haiku-os.org/docs/api/SupportDefs_8h.html",
+          "diff": "  atomic_test_and_set(int32* value, int32 newValue, int32 testAgainst)\n  {\n- \t__atomic_compare_exchange_n(value, &testAgainst, newValue, 1,\n+ \t/* strong: a weak exchange may fail spuriously (a store-exclusive can\n+ \t   fail for no reason) and still return testAgainst, as if it had set */\n+ \t__atomic_compare_exchange_n(value, &testAgainst, newValue, 0,\n  \t\t__ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST);",
+          "text": "The same for `atomic_test_and_set64()`. On ARM64 a weak exchange can fail spuriously and still return `testAgainst`, so callers wrongly believed they had set the value. Code compiled against air/OS's header gets the strong version; there is nothing to change in your source.",
+          "commits": ["8b5494869c"]
+        }
+      ]
+    },
+    {
+      "id": "storage", "name": "Storage Kit", "library": "libbe.so",
+      "haiku": [["Storage Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__storage.html"]],
+      "summary": "No public header changes.",
+      "changes": [
+        {
+          "kind": "behaviour", "title": "Add-ons with future modification times load at once", "header": "AddOnMonitorHandler",
+          "text": "An add-on whose modification time lies in the future (a machine with its clock behind) was treated as still being written and not loaded. It now loads immediately.",
+          "commits": ["5bfbb3cc32"]
+        }
+      ]
+    },
+    {
+      "id": "package", "name": "Package Kit", "library": "libpackage.so",
+      "haiku": [["Haiku's package management documentation", "https://www.haiku-os.org/docs/develop/packages/README.html"]],
+      "summary": "No public header changes.",
+      "changes": [
+        {
+          "kind": "private", "title": "Deferred activation", "header": "private/package/ActivationTransaction.h",
+          "text": "`BActivationTransaction::SetDeferActivation()` stages a package change that takes effect at the next boot rather than immediately. System Updater uses it to install a release and start it on trial.",
+          "doc": "SYSTEM-UPDATER.md", "commits": ["8350607222"]
+        }
+      ]
+    },
+    {
+      "id": "tracker", "name": "Tracker Kit and Quick Look", "library": "libtracker.so, libquicklook.so",
+      "haiku": [["Tracker Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__libtracker.html"]],
+      "summary": "A public add-on API for Quick Look previews, plus private protocols for network shares and the Deskbar.",
+      "changes": [
+        {
+          "kind": "new", "title": "Quick Look preview add-ons", "header": "add-ons/quick_look/QuickLook.h",
+          "diff": "+ #define B_QUICK_LOOK_PREVIEW_CHANGED 'QLpc'\n\n+ class BQuickLookPreview : public BView {\n+ \tvirtual\tBSize\t\tPreferredContentSize();\n+ \tvirtual\tBString\t\tSummary();\t// \"1920 × 1080 pixels\"\n+ \tvirtual\tvoid\t\tStart();\n+ \tvirtual\tvoid\t\tStop();\n+ \tvirtual\tvoid\t\tDirectConnected(direct_buffer_info* info);\n+ protected:\n+ \t\tvoid\t\tNotifyChanged();\n+ };\n\n+ class BQuickLookAddOn {\n+ \tvirtual\tfloat\t\tSupports(const entry_ref& ref,\n+ \t\t\t\t\tconst char* mimeType) = 0;\t// 0 .. 1\n+ \tvirtual\tBQuickLookPreview* CreatePreview(const entry_ref& ref,\n+ \t\t\t\t\tconst char* mimeType, BString* error) = 0;\n+ };\n\n+ extern \"C\" BQuickLookAddOn* instantiate_quick_look_add_on(image_id image);",
+          "text": "Pressing the space bar in Tracker previews the selected file in a panel hosted by `quick_look_server`. Add-ons in `add-ons/quick_look` bid on a file with `Supports()` (0 to 1, cheap: it is asked for every file shown); the highest bidder makes a `BQuickLookPreview` view. The panel is a `BDirectWindow`, so previews that play video can draw into the frame buffer. Apps that own playback code ship their own add-on, so there is one media stack. Link with `-lquicklook`.",
+          "doc": "QUICK-LOOK.md", "commits": ["584588df96"]
+        },
+        {
+          "kind": "private", "title": "Network shares, places and per-monitor backgrounds", "header": "private/mount/MountServer.h, private/tracker/tracker_private.h",
+          "text": "`mount_server` keeps SMB network shares and mounts them at startup; Tracker's settings and Mount menu talk to it with `kGetNetworkShares`, `kSetNetworkShare`, `kMountNetworkShare` and related messages. Deskbar asks Tracker to open Home, the boot volume and Trash on the main display (`kTrackerOpenOnMainDisplay`). The desktop background is drawn whole on each monitor.",
+          "commits": ["1d8ed8c294", "250d12cdb0", "a0339c46ce"]
+        }
+      ]
+    },
+    {
+      "id": "accelerant", "name": "Graphics drivers (accelerants)", "library": "add-ons/accelerants",
+      "haiku": [["Writing video card drivers", "https://www.haiku-os.org/legacy-docs/writing-video-card-drivers/"]],
+      "summary": "Optional hooks for several monitors on one device, per-monitor blanks, device-side copies to the screen, and resume.",
+      "changes": [
+        {
+          "kind": "new", "title": "Display outputs", "header": "add-ons/graphics/Accelerant.h",
+          "diff": "+ \tB_GET_DISPLAY_OUTPUT_COUNT = 0x600,\n+ \tB_GET_DISPLAY_OUTPUTS,\n+ \tB_GET_DISPLAY_OUTPUT_MODES,\n+ \tB_SET_DISPLAY_LAYOUT,\n+ \tB_SET_DISPLAY_CHANGE_PORT,\n+ \tB_GET_DISPLAY_OUTPUT_RETRACE_SEMAPHORE,\n+ \tB_GET_DISPLAY_OUTPUT_SCAN_LINE,\n\n+ typedef struct {\n+ \tuint32\t\tid;\t\t// the connector, stable\n+ \tchar\t\tname[32];\t// \"DP-2\"\n+ \tuint32\t\tflags;\t\t// CONNECTED, ENABLED, SCALABLE, INTERNAL, MIRROR\n+ \tint32\t\tx, y;\t\t// its region of the frame buffer\n+ \tuint16\t\twidth, height;\n+ \tuint16\t\tscale;\t\t// percent\n+ \tuint16\t\trender_scale;\t// frame buffer pixels per logical pixel, percent\n+ \tdisplay_timing\tnative_timing, timing;\n+ \tuint32\t\tedid_length;\n+ \tuint8\t\tedid[512];\n+ } display_output;",
+          "text": "A device that drives several monitors describes each as a region of one frame buffer, with its own timing, scale and EDID. `B_SET_DISPLAY_LAYOUT` arranges and enables them (outputs left out are disabled) and returns the mode for the whole frame buffer, which takes effect with `B_SET_DISPLAY_MODE`. Connect and disconnect events go to the port given with `B_SET_DISPLAY_CHANGE_PORT`. Each output has its own retrace semaphore and scan-line position, which app_server uses for tear-free flushing per monitor. A device without these hooks drives one monitor, as in Haiku. Used by the nvidia_rm, amdgpu and ARM display drivers.",
+          "commits": ["a9772093c9", "6744dd2d24", "2d6665ab1c", "a5ff69d2dc"]
+        },
+        {
+          "kind": "new", "title": "Frame buffer sources and shadows", "header": "add-ons/graphics/Accelerant.h",
+          "diff": "+ \tB_CREATE_FRAME_BUFFER_SOURCE = 0x700,\n+ \tB_DELETE_FRAME_BUFFER_SOURCE,\n+ \tB_COPY_TO_FRAME_BUFFER,\n+ \tB_CREATE_FRAME_BUFFER_SHADOW,\n+ \tB_COPY_FRAME_BUFFER_SOURCE,\n\n+ typedef struct {\n+ \tuint32\t\tid;\n+ \tvoid*\t\tbits;\t\t// in the caller's address space\n+ \tuint32\t\tbytes_per_row;\n+ \tuint16\t\twidth, height;\n+ \tcolor_space\tspace;\n+ } frame_buffer_source;",
+          "text": "A source is memory the device can read: app_server draws into it and has the device copy rectangles to the same place on screen, so the CPU never touches the frame buffer. A shadow is a source only the device reaches, normally in video memory, filled from a source and copied to the screen, so what was drawn is not copied twice by the CPU. Any error means the caller copies itself.",
+          "commits": ["c8dce0f6e5", "9a8002b931"]
+        },
+        {
+          "kind": "new", "title": "B_WAIT_FOR_DISPLAY_RESTORE", "header": "add-ons/graphics/Accelerant.h",
+          "diff": "+ typedef status_t (*wait_for_display_restore)(bigtime_t timeout);\n+ \t/* Returns B_OK when the accelerant restored the display state after it\n+ \t   was lost (e.g. when resuming from suspend) and the screen contents need\n+ \t   to be redrawn, B_TIMED_OUT when nothing happened within timeout. */",
+          "text": "Lets app_server redraw the screen after a resume from suspend.",
+          "commits": ["44ed654981"]
+        }
+      ]
+    },
+    {
+      "id": "drivers", "name": "Device drivers", "library": "kernel modules",
+      "haiku": [["Device Drivers in the Haiku Book", "https://www.haiku-os.org/docs/api/group__drivers.html"]],
+      "summary": "Power management for suspend, more PCI host topologies, USB device speed and keep-awake, and USB Audio 2.0 descriptors.",
+      "changes": [
+        {
+          "kind": "new", "title": "PCI: suspend and resume a function", "header": "drivers/bus/PCI.h, drivers/PCI.h",
+          "diff": "  typedef struct pci_device_module_info {\n+ \tstatus_t (*suspend_device)(pci_device* device, uint8 state);\n+ \tstatus_t (*resume_device)(pci_device* device);\n  } pci_device_module_info;\n\n+ #define PCI_pm_status_pme_enable\t0x0100\n+ #define PCI_pm_status_pme_status\t0x8000",
+          "text": "`suspend_device()` saves the configuration space and puts the function into D3hot; `resume_device()` returns it to D0 and restores BARs, MSI and MSI-X, which a function without No_Soft_Reset loses. For drivers that power their device down while the system sleeps.",
+          "commits": ["80c3618630", "44ed654981"]
+        },
+        {
+          "kind": "new", "title": "PCI host topologies", "header": "drivers/bus/PCI.h, drivers/bus/PCIInterrupts.h",
+          "diff": "+ #define B_PCI_MSI_CONTROLLER_ADDRESS \"pci/msi/controller_address\"\n+ #define B_PCI_MSI_REQUESTER_BASE \"pci/msi/requester_base\"\n+ #define B_PCI_MSI_REQUESTER_COUNT \"pci/msi/requester_count\"\n\n  typedef struct pci_controller_module_info {\n+ \tstatus_t\t(*get_root_bus)(void* cookie, uint32 index, uint8* bus);\n  } pci_controller_module_info;\n\n+ #define B_PCI_INTX_MODULE_NAME \"bus_managers/pci/intx/v1\"\n+ typedef struct pci_intx_module_info { ... } pci_intx_module_info;",
+          "text": "`get_root_bus()` lets a controller report several host bridges in one segment (multi-die processors). The MSI requester attributes describe a simple requester-ID translation on ARM64 hosts with an ITS. `PCIInterrupts.h` adds a module for wide legacy INTx routing.",
+          "commits": ["ff086be678", "3ce6f6c457", "c5ade157f0"]
+        },
+        {
+          "kind": "new", "title": "USB: device speed and keep-awake", "header": "drivers/USB3.h",
+          "diff": "+ #define\tB_USB_KEEP_AWAKE\t\t'kpaw'\n+ typedef struct usb_keep_awake_args {\n+ \tusb_device\tdevice;\n+ \tbool\t\tkeep_awake;\n+ } usb_keep_awake_args;\n\n+ #define\tB_USB_GET_DEVICE_SPEED\t\t'gspd'\n+ enum { B_USB_DEVICE_SPEED_LOW = 0, ..._FULL, ..._HIGH, ..._SUPER, ..._SUPER_PLUS };",
+          "text": "`usb_ioctl()` opcodes. `B_USB_KEEP_AWAKE` keeps a device's link up during suspend to idle (a network adapter keeping its link for wake-on-LAN). `B_USB_GET_DEVICE_SPEED` tells a driver whether isochronous intervals count 125 µs microframes or 1 ms frames.",
+          "commits": ["4091cd6d62", "ef85ddfc55"]
+        },
+        {
+          "kind": "new", "title": "USB Audio 2.0", "header": "drivers/usb/USB_audio.h",
+          "diff": "  enum { // Audio Interface Protocol Codes\n  \tUSB_AUDIO_PROTOCOL_UNDEFINED = 0x00,\n+ \tUSB_AUDIO_PROTOCOL_IP_VERSION_02_00 = 0x20\t// R2\n  };\n+ typedef struct { ... } usb_audio_streaming_endpoint_descriptor_r2;\n+ enum { USB_AUDIO_V2_CUR = 0x01, USB_AUDIO_V2_RANGE, USB_AUDIO_V2_MEM };\n+ enum { USB_AUDIO_CS_SAM_FREQ_CONTROL = 0x01, USB_AUDIO_CS_CLOCK_VALID_CONTROL };\n+ enum { USB_AUDIO_FORMAT_V2_PCM = 1 << 0, ... };",
+          "text": "The descriptors, request codes, clock controls and format bits of USB Audio Class 2.0, used by the `usb_audio` driver for UAC2 DACs.",
+          "commits": ["ef85ddfc55"]
+        },
+        {
+          "kind": "new", "title": "ACPI: leaving a sleep state", "header": "drivers/ACPI.h",
+          "diff": "  struct acpi_module_info {\n+ \t/* Leaving a sleep state: called with interrupts disabled and\n+ \t   \\a prepare set first, then again with interrupts enabled. */\n+ \tstatus_t\t(*leave_sleep_state)(uint8 state, bool prepare);\n  };",
+          "text": "The counterpart of entering a sleep state, used by suspend to RAM on x86-64.",
+          "commits": ["3ccc672604"]
+        }
+      ]
+    }
+  ],
+  "unchanged": [
+    ["Kernel Kit", "https://www.haiku-os.org/docs/api/group__kernel.html"],
+    ["Locale Kit", "https://www.haiku-os.org/docs/api/group__locale.html"],
+    ["Mail Kit", "https://www.haiku-os.org/docs/api/group__mail.html"],
+    ["Translation Kit", "https://www.haiku-os.org/docs/api/group__translation.html"],
+    ["MIDI 2 Kit", "https://www.haiku-os.org/docs/api/group__midi2.html"],
+    ["Layout API", "https://www.haiku-os.org/docs/api/group__layout.html"]
+  ]
+}

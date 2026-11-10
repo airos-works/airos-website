@@ -42,6 +42,19 @@ both from the repository's actual Pages configuration.
   Without JavaScript the tabs are jump links and every panel is shown.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds.
 - New hardware: curated capabilities, gaps and links to the lab's test notes.
+- Documentation (`docs/`): developer documentation built by `scripts/docs.py`. It does not
+  repeat Haiku's API reference; it links to the Haiku Book and the Be Book and documents only
+  what air/OS changes. `docs/kits/` lists every public header the fork changes, kit by kit,
+  as a diff against the upstream commit air/OS master is based on, plus behaviour changes and
+  the private APIs the system's apps use (`content/docs/kits.json`, which records both commits
+  and links each change to its airos-works/haiku commits and design notes). The Neural Kit is
+  covered in full: a guide (`docs/neural/`), a reference of every class, constant and message
+  (`docs/neural/reference/`, from `content/docs/neural-api.json`) and examples
+  (`docs/neural/examples/`). The examples in `content/docs/examples/` are complete programs. On
+  10 November 2026 they were cross-compiled against the air/OS headers and the ROCK 5 ITX's own
+  libraries and run on that board (ARM64 release hrev60207+2552, RK3588 NPU); each `.out` file is
+  the output they printed. When the kit's API changes, update the JSON and rebuild and re-run
+  the examples.
 - Downloads: actual public `.hpkg` release assets, plus immutable OS images.
 - Writing an image (`downloads/write/`): `dd` on Linux and macOS, Rufus in DD mode on
   Windows, checking the download and the written copy. It warns against balenaEtcher:

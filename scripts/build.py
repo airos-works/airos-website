@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import sys
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +18,7 @@ D = json.loads((ROOT / 'data/github.json').read_text())
 # GitHub organization that hosts every airOS repository (content/project.json).
 GITHUB = 'https://github.com/' + json.loads((ROOT / 'content/project.json').read_text())['owner']
 UPDATED = D['updated'][:10]
-NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('report/', 'Report an issue'), ('changelog/', 'Changelog')]
+NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('docs/', 'Documentation'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('report/', 'Report an issue'), ('changelog/', 'Changelog')]
 
 def url(path=''):
     return BASE + '/' + path
@@ -27,7 +28,7 @@ def link(href, label, cls=''):
 
 def page(path, title, description, body):
     canonical = ORIGIN + '/' + path
-    current = lambda p: p == path or p in ('changelog/', 'downloads/') and path.startswith(p)
+    current = lambda p: p == path or p in ('changelog/', 'downloads/', 'docs/') and path.startswith(p)
     nav = ''.join(link(url(p), t, 'active' if current(p) else '') for p, t in NAV if p != 'downloads/')
     cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
     footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV)
@@ -391,6 +392,10 @@ def main():
     shutil.copytree(ROOT / 'static', OUT)
     for build in [home, applications, summit, hardware, downloads, write_guide, report, sources, changelog]:
         build()
+    # The developer documentation: Haiku's API differences and the Neural Kit.
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    import docs
+    docs.build(page, url, link, intro, ROOT, GITHUB)
     page('404/', 'Page not found', 'This airOS page could not be found.', intro('404', 'A little off course.', 'This page has moved or does not exist.') + link(url(), 'Back to the project →', 'button primary'))
     shutil.copy(OUT / '404/index.html', OUT / '404.html')
     # The screenshots now live beside their features on the apps page. Older links

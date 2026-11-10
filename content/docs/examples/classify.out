@@ -1,0 +1,7 @@
+$ classify mobilenet_v1_1.0_224_quant.tflite labels_mobilenet_quant_v1_224.txt grace_hopper.png
+ 83.2%  military uniform
+  7.0%  Windsor tie
+  2.3%  bow tie
+  1.2%  bulletproof vest
+  1.2%  mortarboard
+on Rockchip RK3588 NPU (rk3588_npu/0): 28 operators on the device, 3 on the CPU, 8.9 ms
