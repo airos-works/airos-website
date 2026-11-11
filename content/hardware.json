@@ -260,5 +260,36 @@
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     "download": "x86_64"
+  },
+  {
+    "id": "framework-desktop",
+    "name": "Framework Desktop",
+    "chip": "x86-64 · AMD Ryzen AI Max+ 395 with Radeon 8060S",
+    "status": "Tested on hardware",
+    "summary": "A small desktop running three 4K monitors, 5-gigabit Ethernet and the Ryzen AI processor’s NPU.",
+    "features": [
+      "Installed on the internal NVMe drive and boots from it; all 32 processor threads and 64 GB of memory are in use",
+      "Radeon 8060S through amdgpu_drm: three 3840 × 2160 monitors at 60 Hz on DisplayPort as one desktop, each scaled to 175%",
+      "Mesa RADV Vulkan 1.4 on the Radeon 8060S",
+      "Onboard 5-gigabit Ethernet (Realtek RTL8126), linked at 5 Gbit/s",
+      "The Ryzen AI NPU: the Neural Kit lists it as the default device for quantized networks, with the Radeon 8060S for floating-point ones",
+      "Sound through a USB audio interface; the onboard Realtek codec and the DisplayPort and HDMI sound outputs are detected",
+      "Both USB4 host routers start with USB 3, DisplayPort and PCIe tunneling; USB hubs, keyboard and Ethernet adapter work on the USB ports",
+      "MediaTek MT7922 Wi-Fi starts and finds networks, and its Bluetooth controller comes up",
+      "Processor frequency scaling through amd_pstates, with temperature sensors"
+    ],
+    "limits": "This is one Framework Desktop with the Ryzen AI Max+ 395 and 64 GB of memory, checked on 11 November 2026 with the 10 November build. It was used on wired Ethernet: joining a Wi-Fi network and pairing a Bluetooth device have not been tried here. Also not yet tried on this machine: sleep, hardware video decoding and encoding on its video engine, running a model on the NPU, the HDMI port, and Thunderbolt docks or devices on the USB4 ports.",
+    "source": "docs/x399-workstation/AMDGPU-DRM.md",
+    "links": [
+      {
+        "label": "Neural Kit",
+        "path": "docs/airos/NEURAL-KIT.md"
+      },
+      {
+        "label": "USB4 and Thunderbolt",
+        "path": "docs/airos/USB4.md"
+      }
+    ],
+    "download": "x86_64"
   }
 ]
