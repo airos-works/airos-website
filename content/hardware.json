@@ -275,10 +275,11 @@
       "The Ryzen AI NPU: the Neural Kit lists it as the default device for quantized networks, with the Radeon 8060S for floating-point ones",
       "Sound through a USB audio interface; the onboard Realtek codec and the DisplayPort and HDMI sound outputs are detected",
       "Both USB4 host routers start with USB 3, DisplayPort and PCIe tunneling; USB hubs, keyboard and Ethernet adapter work on the USB ports",
-      "MediaTek MT7922 Wi-Fi starts and finds networks, and its Bluetooth controller comes up",
+      "Bluetooth on the MediaTek MT7922: a Bluetooth mouse pairs and is in daily use",
+      "MT7922 Wi-Fi starts and finds networks",
       "Processor frequency scaling through amd_pstates, with temperature sensors"
     ],
-    "limits": "This is one Framework Desktop with the Ryzen AI Max+ 395 and 64 GB of memory, checked on 11 November 2026 with the 10 November build. It was used on wired Ethernet: joining a Wi-Fi network and pairing a Bluetooth device have not been tried here. Also not yet tried on this machine: sleep, hardware video decoding and encoding on its video engine, running a model on the NPU, the HDMI port, and Thunderbolt docks or devices on the USB4 ports.",
+    "limits": "This is one Framework Desktop with the Ryzen AI Max+ 395 and 64 GB of memory, checked on 11 November 2026 with the 10 November build. It was used on wired Ethernet: joining a Wi-Fi network has not been tried here, and a mouse is the only Bluetooth device paired so far. Also not yet tried on this machine: sleep, hardware video decoding and encoding on its video engine, running a model on the NPU, the HDMI port, and Thunderbolt docks or devices on the USB4 ports.",
     "source": "docs/x399-workstation/AMDGPU-DRM.md",
     "links": [
       {
