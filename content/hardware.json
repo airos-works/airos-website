@@ -271,6 +271,7 @@
       "Installed on the internal NVMe drive and boots from it; all 32 processor threads and 64 GB of memory are in use",
       "Radeon 8060S through amdgpu_drm: three 3840 × 2160 monitors at 60 Hz on DisplayPort as one desktop, each scaled to 175%",
       "Mesa RADV Vulkan 1.4 on the Radeon 8060S",
+      "Hardware video decoding on the Radeon 8060S: the videos played so far decode on the GPU and play properly",
       "Onboard 5-gigabit Ethernet (Realtek RTL8126), linked at 5 Gbit/s",
       "The Ryzen AI NPU: the Neural Kit lists it as the default device for quantized networks, with the Radeon 8060S for floating-point ones",
       "Sound through a USB audio interface; the onboard Realtek codec and the DisplayPort and HDMI sound outputs are detected",
@@ -279,7 +280,7 @@
       "MT7922 Wi-Fi starts and finds networks",
       "Processor frequency scaling through amd_pstates, with temperature sensors"
     ],
-    "limits": "This is one Framework Desktop with the Ryzen AI Max+ 395 and 64 GB of memory, checked on 11 November 2026 with the 10 November build. It was used on wired Ethernet: joining a Wi-Fi network has not been tried here, and a mouse is the only Bluetooth device paired so far. Also not yet tried on this machine: sleep, hardware video decoding and encoding on its video engine, running a model on the NPU, the HDMI port, and Thunderbolt docks or devices on the USB4 ports.",
+    "limits": "This is one Framework Desktop with the Ryzen AI Max+ 395 and 64 GB of memory, checked on 11 November 2026 with the 10 November build. It was used on wired Ethernet: joining a Wi-Fi network has not been tried here, and a mouse is the only Bluetooth device paired so far. Hardware video decoding has been checked with a couple of videos, not measured across codecs and resolutions. Also not yet tried on this machine: sleep, hardware video encoding, running a model on the NPU, the HDMI port, and Thunderbolt docks or devices on the USB4 ports.",
     "source": "docs/x399-workstation/AMDGPU-DRM.md",
     "links": [
       {
