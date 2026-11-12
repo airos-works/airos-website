@@ -44,6 +44,10 @@ jobs:
         run: |
           python3 scripts/build.py
           python3 scripts/check.py
+      - name: Package repositories
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/repo.py
       - name: Save refreshed public snapshot
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: |

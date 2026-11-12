@@ -56,6 +56,14 @@ both from the repository's actual Pages configuration.
   the output they printed. When the kit's API changes, update the JSON and rebuild and re-run
   the examples.
 - Downloads: actual public `.hpkg` release assets, plus immutable OS images.
+- Package repositories (`repo/<arch>/`): HaikuPorts has no arm64 repository, so the site
+  serves one at `repo/arm64/` (`repo`, `repo.info`, `repo.sha256`, `packages/*.hpkg`): the
+  arm64 images' HaikuPorts entry points there, and HaikuDepot and pkgman install gcc, binutils,
+  make and the rest of HaikuPorts' arm64 build packages from it. `scripts/repo.py` (run in the
+  Pages workflow after the build) copies it out of the `repo-arm64` release of
+  airos-works/haiku, which airos-ci `images/package-repo.py` keeps; it checks every file
+  against the release's `index.json` and keeps the last complete set in `.cache/repo` when the
+  release is being changed.
 - Writing an image (`downloads/write/`): `dd` on Linux and macOS, Rufus in DD mode on
   Windows, checking the download and the written copy. It warns against balenaEtcher:
   2.1.4 silently dropped 2 MB from the x86-64 ISO while writing a USB stick (the same
