@@ -41,7 +41,14 @@ both from the repository's actual Pages configuration.
   Mail, Terminal), so no app appears in two tabs. A panel
   opens when its tab is selected; links to a panel or to an app inside one open it.
   Without JavaScript the tabs are jump links and every panel is shown.
-- Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds.
+- Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds. Its
+  compatibility section (`compatibility` in `content/summit.json`) gives Summit's Interop 2026 score
+  per focus area, from the 7 November 2026 full run on the X399 recorded in airos-works/summit#175
+  (`tools/interop2026` in that repository), beside the other browsers' scores from wpt.fyi's daily
+  CSVs (`interop-2026-{stable,experimental}-v2.csv` in web-platform-tests/results-analysis, 15 and
+  16 November). Its html5test.co scores (Summit, Chrome 158 and Firefox 160, 18 November) are
+  recorded with every missing row in Summit's `docs/html5test-2026-11-18.md`. Re-run both when a
+  Summit release changes them, and update the JSON with the new dates.
 - New hardware: curated capabilities, gaps and links to the lab's test notes.
 - Documentation (`docs/`): developer documentation built by `scripts/docs.py`. It does not
   repeat Haiku's API reference; it links to the Haiku Book and the Be Book and documents only
@@ -147,7 +154,9 @@ mode and in the Network inspector with a request's headers selected, taken on th
 X399 on 24 October 2026; by its install card on a Firefox Add-ons page (X399,
 23 October 2026); and by its Extensions window, a bare private window and the
 WebGL Aquarium, also from the X399 on 24 October 2026. Those three and Amp's
-Albums view were planned for the Framework 13, which was offline. AirTime (Big Buck Bunny, run with
+Albums view were planned for the Framework 13, which was offline. The HTML5test capture
+(18 November 2026) is Summit's MCP window capture in a QEMU/KVM VM running the 17 November
+x86-64 image live, with the pointer moved off the page; html5test.co is credited in its caption. AirTime (Big Buck Bunny, run with
 `AIRTIME_NO_DIRECT=1` so the frame is visible to a screen capture) and AirShot
 (marking up a capture of a Tracker window) were captured on the X399 on
 24 October 2026. The Proton VPN and Proton Mail

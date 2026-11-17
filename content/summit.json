@@ -63,5 +63,72 @@
       "source": "https://github.com/airos-works/summit/blob/main/docs/developer-tools.md",
       "screenshot": "summit-devtools"
     }
-  ]
+  ],
+  "compatibility": {
+    "interop": {
+      "run": "2026-11-07",
+      "build": "CI build 3a09b4f (air/OS packages 20261106.1711)",
+      "machine": "X399 workstation (GTX 1070), 2× display",
+      "tests": 1714,
+      "summit": 99.17,
+      "as_run": 98.43,
+      "wptfyi": {"experimental": "2026-11-16", "stable": "2026-11-15"},
+      "browsers": [
+        {"name": "Firefox Nightly 162", "score": 99.82, "kind": "experimental"},
+        {"name": "Chrome Canary 160", "score": 99.73, "kind": "experimental"},
+        {"name": "Edge Dev 159", "score": 99.58, "kind": "experimental"},
+        {"name": "Safari Technology Preview 256", "score": 99.56, "kind": "experimental"},
+        {"name": "Firefox 160", "score": 95.21, "kind": "stable"},
+        {"name": "Chrome 157", "score": 92.8, "kind": "stable"},
+        {"name": "Edge 157", "score": 92.75, "kind": "stable"},
+        {"name": "Safari 27.2", "score": 79.62, "kind": "stable"}
+      ],
+      "stp_label": "Safari TP 256",
+      "safari_label": "Safari 27.2",
+      "areas": [
+        {"id": "anchor-positioning", "name": "CSS anchor positioning", "summit": 995.7, "stp": 994, "safari": 994},
+        {"id": "attr", "name": "CSS attr()", "summit": 1000, "stp": 1000, "safari": 135},
+        {"id": "container-style-queries", "name": "Container style queries", "summit": 1000, "stp": 1000, "safari": 894},
+        {"id": "contrast-color", "name": "CSS contrast-color()", "summit": 1000, "stp": 1000, "safari": 1000},
+        {"id": "custom-highlights", "name": "Custom highlights", "summit": 990.4, "stp": 990, "safari": 681},
+        {"id": "dialogs-and-popovers", "name": "Dialogs and popovers", "summit": 993.8, "stp": 982, "safari": 553},
+        {"id": "fetch", "name": "Fetch uploads and ranges", "summit": 1000, "stp": 1000, "safari": 762},
+        {"id": "indexeddb", "name": "IndexedDB", "summit": 1000, "stp": 1000, "safari": 39},
+        {"id": "jspi-for-wasm", "name": "JSPI for WASM", "summit": 1000, "stp": 1000, "safari": 1000},
+        {"id": "media-pseudo-classes", "name": "Media pseudo-classes", "summit": 1000, "stp": 1000, "safari": 1000},
+        {"id": "navigation", "name": "Navigation API", "summit": 1000, "stp": 997, "safari": 864},
+        {"id": "scoped-custom-element-registries", "name": "Scoped custom element registries", "summit": 997.7, "stp": 995, "safari": 928},
+        {"id": "scroll-driven-animations", "name": "Scroll-driven animations", "summit": 993.2, "stp": 993, "safari": 965},
+        {"id": "scroll-snap", "name": "Scroll snap", "summit": 948.7, "stp": 974, "safari": 716},
+        {"id": "shape", "name": "CSS shape()", "summit": 958.3, "stp": 1000, "safari": 916},
+        {"id": "view-transitions", "name": "View transitions", "summit": 969.2, "stp": 1000, "safari": 990},
+        {"id": "webcompat", "name": "Web compat", "summit": 1000, "stp": 1000, "safari": 777},
+        {"id": "webrtc", "name": "WebRTC", "summit": 988.0, "stp": 987, "safari": 969},
+        {"id": "webtransport", "name": "WebTransport", "summit": 1000, "stp": 1000, "safari": 772},
+        {"id": "zoom", "name": "CSS zoom", "summit": 1000, "stp": 1000, "safari": 969}
+      ],
+      "source": "https://github.com/airos-works/summit/issues/175",
+      "wptfyi_url": "https://wpt.fyi/interop-2026",
+      "kit": "https://github.com/airos-works/summit/blob/main/tools/interop2026/README.md"
+    },
+    "html5test": {
+      "run": "2026-11-18",
+      "maximum": 588,
+      "build": "Summit 0.1.0~git20261116.1923 in the 17 November x86-64 image",
+      "results": [
+        {"browser": "Chrome 158", "score": 572},
+        {"browser": "Summit", "score": 565, "summit": true},
+        {"browser": "Firefox 160", "score": 547}
+      ],
+      "missing": [
+        "Device Orientation and Device Motion (5 points): not built for Haiku, which has no motion sensors",
+        "Generic Sensor API (5): not part of WebKit",
+        "Payment Request (5): WebKit supports only Apple Pay, so other ports leave it off",
+        "WebXR (5): not built for Haiku",
+        "Speech synthesis (2): the engine has it, but air/OS images don’t include eSpeak voices yet; speech recognition (1) is prefixed"
+      ],
+      "source": "https://github.com/airos-works/summit/blob/main/docs/html5test-2026-11-18.md",
+      "screenshot": "summit-html5test"
+    }
+  }
 }
