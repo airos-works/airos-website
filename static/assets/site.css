@@ -56,6 +56,13 @@ em{font-style:normal;color:var(--teal)}
 .header-cta{padding:10px 18px;flex:none}.header-cta.active{box-shadow:0 0 0 3px rgb(233 162 79 / .45)}
 body.home .site-header{position:absolute;inset:0 0 auto;border-bottom:0}
 body.home .header-inner nav{background:rgb(255 255 255 / .55);border-color:rgb(255 255 255 / .6)}
+/* Documentation's menu: opens below its pill on hover or keyboard focus. */
+.nav-menu{position:relative;display:flex}
+.nav-menu .caret{font-size:9px;margin-left:3px;opacity:.6;vertical-align:1px}
+.nav-dropdown{position:absolute;top:100%;left:50%;min-width:176px;padding-top:10px;transform:translate(-50%,-4px);opacity:0;visibility:hidden;transition:opacity .15s,transform .15s,visibility .15s}
+.nav-dropdown:before{content:"";position:absolute;inset:10px 0 0;border:1px solid var(--line);border-radius:18px;background:var(--white);box-shadow:0 14px 36px rgb(18 28 27 / .12)}
+.header-inner .nav-dropdown a{position:relative;display:block;margin:6px;border-radius:12px;padding:9px 14px}
+.nav-menu:hover .nav-dropdown,.nav-menu:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
 
 /* Home: the airOS hills under an open sky. */
 .hero{margin-inline:calc(50% - 50vw);min-height:max(760px,96vh);padding:172px 24px 0;display:flex;justify-content:center;text-align:center;
@@ -256,6 +263,10 @@ summary{cursor:pointer;color:var(--deep);font-weight:600}
 .doc-body .checks li strong{color:var(--ink)}
 .doc-body .note{margin-top:0}
 .doc-body .meta{margin-top:18px}
+/* Step-by-step guides (Virtualization) */
+.doc-body .guide>h3{margin:30px 0 10px}
+.doc-body .guide ol{padding-left:22px;margin:0 0 20px}.doc-body .guide ol li{margin-bottom:8px}
+.doc-body kbd{font-family:var(--mono);font-size:.82em;padding:1px 6px;border:1px solid var(--line-2);border-bottom-width:2px;border-radius:5px;background:var(--white)}
 .kit{scroll-margin-top:16px}
 .kit-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:12px}
 .kit-head h2{margin:0}.kit-head>span{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted)}
@@ -332,6 +343,7 @@ pre.output{background:#0c1413;color:#cfe3dd;font-size:12.5px}
 @media(max-width:1060px){
   .header-inner{flex-wrap:wrap;padding:18px 0;gap:14px}
   .header-inner nav{order:3;width:100%;overflow-x:auto;justify-content:flex-start}
+  .nav-dropdown,.nav-menu .caret{display:none}
 }
 @media(max-width:1000px){
   .wrap{width:calc(100% - 56px)}

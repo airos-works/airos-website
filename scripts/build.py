@@ -19,6 +19,9 @@ D = json.loads((ROOT / 'data/github.json').read_text())
 GITHUB = 'https://github.com/' + json.loads((ROOT / 'content/project.json').read_text())['owner']
 UPDATED = D['updated'][:10]
 NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('docs/', 'Documentation'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('report/', 'Report an issue'), ('changelog/', 'Changelog')]
+# Documentation's menu in the header: the API pages (docs/ and the pages under it
+# but Virtualization) and the guide to running air/OS in a virtual machine.
+DOCS_MENU = [('docs/', 'API'), ('docs/virtualization/', 'Virtualization')]
 
 def url(path=''):
     return BASE + '/' + path
@@ -29,9 +32,17 @@ def link(href, label, cls=''):
 def page(path, title, description, body):
     canonical = ORIGIN + '/' + path
     current = lambda p: p == path or p in ('changelog/', 'downloads/', 'docs/') and path.startswith(p)
-    nav = ''.join(link(url(p), t, 'active' if current(p) else '') for p, t in NAV if p != 'downloads/')
+    def nav_item(p, t):
+        if p != 'docs/':
+            return link(url(p), t, 'active' if current(p) else '')
+        # A menu that opens on hover or keyboard focus; the link itself still goes to docs/.
+        section = 'docs/virtualization/' if path.startswith('docs/virtualization/') else 'docs/'
+        items = ''.join(link(url(q), label, 'active' if current(p) and q == section else '') for q, label in DOCS_MENU)
+        label = t + ' <span class="caret" aria-hidden="true">▾</span>'
+        return f'<div class="nav-menu">{link(url(p), label, "active" if current(p) else "")}<div class="nav-dropdown">{items}</div></div>'
+    nav = ''.join(nav_item(p, t) for p, t in NAV if p != 'downloads/')
     cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
-    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV)
+    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV[:5] + [('docs/virtualization/', 'Virtualization')] + NAV[5:])
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>air/OS</title><meta name="description" content="{e(description, quote=True)}">
@@ -70,7 +81,7 @@ def home():
     boards = sum(1 for d in json.loads((ROOT / 'content/hardware.json').read_text()) if d['chip'].startswith('ARM64') and d['status'] == 'Tested on hardware')
     stats = [(f'{apps}', 'new native apps'), (f'{boards}', 'new ARM64 SBCs supported'), (f'{len(D["sources"])}', 'tracked source branches'), (f'{commits:,}', 'commits in the public changelog')]
     body = f'''<section class="hero"><div class="hero-copy">
-{link(url('hardware/#framework'), '<span class="dot" aria-hidden="true"></span>New: Thunderbolt 4 on Framework 13 <span aria-hidden="true">›</span>', 'pill-badge')}
+{link(url('hardware/#rpi5'), '<span class="dot" aria-hidden="true"></span>New: Raspberry Pi 5 support <span aria-hidden="true">›</span>', 'pill-badge')}
 <h1>Built on Haiku.<br>Extended with AI.</h1>
 <p class="lead">airOS is an independent, AI-assisted exploration of what Haiku can do — on more devices, with more native apps, and with the same love for a responsive, personal desktop.</p>
 <div class="actions">{link(url('downloads/'), 'Explore the downloads', 'button primary')}{link(url('apps/'), 'See it in action <span aria-hidden="true">›</span>', 'button ghost')}</div>
@@ -173,7 +184,7 @@ def image_asset(target):
     im = next((i for i in D['images'] if i['target'] == target), None)
     return next((a for a in im['assets'] if a['name'].endswith(('.iso.xz', '.img.xz'))), None) if im else None
 
-IMAGE_LABELS = {'x86_64': 'Download the x86-64 ISO', 'arm64': 'Download the ARM64 ISO', 'rpi4': 'Download the Pi 4 SD image', 'cubie': 'Download the Cubie SD image'}
+IMAGE_LABELS = {'x86_64': 'Download the x86-64 ISO', 'arm64': 'Download the ARM64 ISO', 'rpi4': 'Download the Raspberry Pi SD image', 'cubie': 'Download the Cubie SD image'}
 
 def download_button(device):
     # The static link is the snapshot's build; site.js swaps in a newer one.
@@ -193,7 +204,7 @@ def hardware():
             photo = f'''<figure class="device-photo"><a href="{e(image_url, quote=True)}"><img src="{e(image_url, quote=True)}" alt="{e(image['alt'], quote=True)}" width="{image['width']}" height="{image['height']}" loading="lazy"></a><figcaption>Photo: {link(image['source'], e(image['credit']))} · {link(image['license_url'], e(image['license']))}</figcaption></figure>'''
         body += f'''<article class="hardware-row" id="{device['id']}"><div class="device-title"><span class="section-number">0{i+1} / {device['chip']}</span><h2>{device['name']}</h2><p>{device['summary']}</p><span class="badge">{device['status']}</span>{photo}{capture(device['screenshot']) if device.get('screenshot') else ''}</div><div><h3>{e(device.get("features_title", "What’s working"))}</h3><ul class="checks">{''.join('<li>'+e(f)+'</li>' for f in device['features'])}</ul><p class="limitations"><strong>Still in progress</strong><br>{device['limits']}</p>{link(device['source_url'], 'Follow the bring-up history ↗') if device.get('source_url') else link(GITHUB+'/haiku/blob/master/'+device['source'], 'Read the test notes and history ↗')}{download_button(device)}<div class="device-links">{''.join(link(GITHUB+'/haiku/blob/master/'+item['path'], e(item['label'])+' ↗') for item in device.get('links', []))}</div></div></article>'''
     body += '<aside class="note">Hardware notes reviewed 18 October 2026. A working driver on one board or card does not establish support for every device in the same family. The linked test notes carry the detailed evidence and newer results.</aside>'
-    page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Radxa Dragon Q8B, Raspberry Pi 4, Framework 13, Framework Desktop, AMD graphics and NVIDIA graphics, NVDEC decoding and NVENC encoding.', body)
+    page('hardware/', 'New hardware', 'airOS hardware support for ROCK 5 ITX, Cubie A7S, Radxa Dragon Q8B, Raspberry Pi 5, Raspberry Pi 4, Framework 13, Framework Desktop, AMD graphics and NVIDIA graphics, NVDEC decoding and NVENC encoding.', body)
 
 def size(n):
     return f'{n / 1048576:.1f} MB' if n >= 1048576 else f'{n / 1024:.0f} KB'
@@ -201,7 +212,7 @@ def size(n):
 def downloads():
     body = intro('Downloads', 'Make yourself at home.', 'Get an airOS development image, or pick up an individual app for your existing installation.')
     body += '<div class="section-heading"><h2 id="system">The operating system</h2><span>Latest successful published builds</span></div><div class="image-grid">'
-    titles = {'x86_64': ('x86-64', 'Intel & AMD PCs', 'ISO image · UEFI / BIOS'), 'arm64': ('ARM64', 'ROCK 5 ITX, Dragon Q8B & UEFI ARM64', 'ISO image · UEFI'), 'rpi4': ('Raspberry Pi 4', 'A desktop on an SD card', 'SD card image · Pi 4'), 'cubie': ('Cubie A7S', 'Radxa’s Allwinner A733 board', 'SD card image · Cubie A7S')}
+    titles = {'x86_64': ('x86-64', 'Intel & AMD PCs', 'ISO image · UEFI / BIOS'), 'arm64': ('ARM64', 'ROCK 5 ITX, Dragon Q8B & UEFI ARM64', 'ISO image · UEFI'), 'rpi4': ('Raspberry Pi 4 & 5', 'A desktop on an SD card', 'SD card image · Pi 4 and Pi 5'), 'cubie': ('Cubie A7S', 'Radxa’s Allwinner A733 board', 'SD card image · Cubie A7S')}
     for im in D['images']:
         title, subtitle, format = titles[im['target']]
         body += f'<article class="image-card" data-target="{im["target"]}"><span class="section-number">{format}</span><h3>{title}</h3><p>{subtitle}</p><div class="image-download">'
@@ -217,7 +228,7 @@ def downloads():
         else:
             body += '<p class="availability">Public image coming soon</p>' + link(GITHUB+'/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
         body += '</div></article>'
-    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. The ARM64 ISO is for UEFI machines and does not boot the Pi 4 or Cubie A7S. <strong>Write every image with dd or Rufus, not balenaEtcher,</strong> which has corrupted an airOS image without reporting an error. '+link(url('downloads/write/'), 'How to write an image to USB or SD safely →')+'</aside>'
+    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. The ARM64 ISO is for UEFI machines and does not boot the Raspberry Pi or Cubie A7S; one Raspberry Pi SD image starts both the Pi 4 and the Pi 5. <strong>Write every image with dd or Rufus, not balenaEtcher,</strong> which has corrupted an airOS image without reporting an error. '+link(url('downloads/write/'), 'How to write an image to USB or SD safely →')+'</aside>'
     # Each package links back to its feature row on the apps page.
     features = {item['download'].split('#')[1]: item['id'] for tab in app_tabs()['tabs'] for item in tab.get('items', [])
                 if item.get('download', 'downloads/#system') != 'downloads/#system'}
@@ -256,7 +267,7 @@ def write_guide():
     body += '''<aside class="note caution"><strong>Don’t use balenaEtcher.</strong> balenaEtcher 2.1.4 silently dropped 2 MB from the middle of the x86-64 image while writing it to a USB stick. It reported success; the stick started the boot loader, which then stopped with “No boot volume found”. The same file written with <code>dd</code> booted normally. Etcher wrote a Pi 4 image correctly, but because the failure gives no warning we don’t recommend it for any airOS image. Use <code>dd</code> on Linux and macOS, and Rufus in DD mode on Windows.</aside>'''
     body += '<section class="install"><h2>Before you start</h2><div><ul>'
     body += '<li>A USB stick or SD card of 8 GB or more. Writing erases everything on it.</li>'
-    body += '<li>The ISO images (x86-64 and ARM64) go on a USB stick; the Pi 4 and Cubie A7S images go on an SD card and boot directly.</li>'
+    body += '<li>The ISO images (x86-64 and ARM64) go on a USB stick; the Raspberry Pi (Pi 4 and Pi 5) and Cubie A7S images go on an SD card and boot directly.</li>'
     body += '<li>Download the image and its <strong>SHA-256</strong> file from the ' + link(url('downloads/#system'), 'downloads page') + ' into the same folder. If your browser renamed the image, such as <code>airos-rpi4(1).img.xz</code>, an older download is in the folder: remove it so you don’t write the wrong file.</li>'
     body += '<li>Check the download. Each command should report <code>OK</code> or print the hash in the SHA-256 file.</li></ul>'
     body += pre('# Linux', 'sha256sum -c airos-x86_64.iso.xz.sha256', '', '# macOS', 'shasum -a 256 -c airos-x86_64.iso.xz.sha256', '', '# Windows (PowerShell)', 'Get-FileHash .\\airos-x86_64.iso.xz')
@@ -286,7 +297,7 @@ def write_guide():
     body += '<section class="install" id="booting"><h2>If it doesn’t boot</h2><div><ul>'
     body += '<li><strong>PCs:</strong> turn off Secure Boot in the firmware settings. The airOS boot loader isn’t signed.</li>'
     body += '<li><strong>“No boot volume found”</strong> after the boot loader appears usually means the copy is damaged. Check it as above and rewrite it with <code>dd</code> or Rufus.</li>'
-    body += '<li><strong>Pi 4 and Cubie A7S:</strong> use the SD image for that board; the ARM64 ISO doesn’t boot either one. The ' + link(url('hardware/'), 'hardware notes') + ' list what each board supports.</li></ul></div></section>'
+    body += '<li><strong>Raspberry Pi 4, Pi 5 and Cubie A7S:</strong> use the SD image for that board (the Raspberry Pi image starts both Pi models); the ARM64 ISO doesn’t boot any of them. The ' + link(url('hardware/'), 'hardware notes') + ' list what each board supports.</li></ul></div></section>'
     body += '<div class="actions">' + link(url('downloads/#system'), '← Back to the downloads', 'button') + '</div>'
     page('downloads/write/', 'Writing an image', 'How to write airOS images to a USB stick or SD card with dd on Linux and macOS or Rufus on Windows, why not to use balenaEtcher, and how to check the copy.', body)
 

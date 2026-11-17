@@ -112,6 +112,43 @@
     "download": "arm64"
   },
   {
+    "id": "rpi5",
+    "name": "Raspberry Pi 5",
+    "chip": "ARM64 · Broadcom BCM2712",
+    "status": "Tested on hardware",
+    "summary": "The Raspberry Pi SD image now starts the Pi 5 too: GPU acceleration, two 4K HDMI outputs, Wi-Fi and Bluetooth.",
+    "features": [
+      "Boots from the same SD image as the Pi 4 (one card starts either board) or from a USB disk; first-run setup expands the SD card",
+      "All four Cortex-A76 cores at 2.4 GHz and the board’s full memory",
+      "Both HDMI outputs as one desktop, set from each monitor’s preferred mode up to 4K at 60 Hz, with a hardware cursor and hardware scaling for high-density screens",
+      "V3D 7.1 graphics through Mesa: OpenGL ES 3.1 and Vulkan 1.3; OpenGL windows draw straight to the screen, with GLTeapot at 60 fps and the system 1% busy",
+      "The SoC’s DMA engine copies the desktop’s screen updates: dragging a window on a 4K screen keeps the system 6% busy instead of 13%",
+      "Hardware HEVC decoding: all 25 test streams decode exactly",
+      "Gigabit Ethernet, onboard Wi-Fi (WPA2) and Bluetooth, which finds nearby devices",
+      "USB 3 at full speed on the blue ports: an NVMe drive in a USB adapter reads 243–270 MB/s",
+      "Sound through either HDMI output"
+    ],
+    "limits": "Tested on one Raspberry Pi 5 with 4 GB of memory. A monitor connected after boot stays dark until a restart, and Screen preferences can’t choose a resolution yet: it comes from the monitor (or the driver settings file). The BCM2712 has no H.264 decoder and no video encoder, so H.264 playback and all video encoding run on the CPU. HDMI sound reaches the display but has not been listened to, and Bluetooth pairing is not verified. Not supported yet: the PCIe connector (NVMe HATs), I2S sound HATs, fan control, the real-time clock, the power button and CPU frequency scaling.",
+    "source": "docs/rpi5/STATUS.md",
+    "links": [
+      {
+        "label": "How the Pi 5 boots",
+        "path": "docs/rpi5/BOOT.md"
+      }
+    ],
+    "image": {
+      "file": "raspberry-pi-5.jpg",
+      "alt": "Raspberry Pi 5 board seen from above, with its two micro-HDMI ports, USB and Ethernet",
+      "width": 1280,
+      "height": 946,
+      "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_5.jpg",
+      "credit": "Simon Waldherr / Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "download": "rpi4"
+  },
+  {
     "name": "Raspberry Pi 4",
     "chip": "ARM64 · Broadcom BCM2711",
     "status": "Tested on hardware",

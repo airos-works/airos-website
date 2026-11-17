@@ -77,9 +77,10 @@ def slug(text):
     return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
 
 
-def doc_page(s, path, title, description, kicker, heading, lead, toc, body):
-    tabs = ''.join(s.link(s.url(p), label, 'active' if p == path else '') for p, label in SECTIONS)
-    nav = f'<nav class="doc-tabs" aria-label="Documentation">{tabs}</nav>'
+def doc_page(s, path, title, description, kicker, heading, lead, toc, body, tabs=True):
+    # The API pages share a row of tabs; guides such as Virtualization have none.
+    links = ''.join(s.link(s.url(p), label, 'active' if p == path else '') for p, label in SECTIONS)
+    nav = f'<nav class="doc-tabs" aria-label="Documentation">{links}</nav>' if tabs else ''
     side = ''
     if toc:
         items = ''.join(f'<li><a href="#{anchor}">{label}</a></li>' for anchor, label in toc)
@@ -106,7 +107,8 @@ def overview(s):
     body += f'<a class="doc-card feature" href="{s.url("docs/neural/")}"><span class="tag">New kit</span><strong>Neural Kit</strong><span>Run neural networks on NPUs, graphics processors and the CPU through one API, and turn speech into text on the machine itself.</span><em>Guide, reference and examples →</em></a>'
     total = sum(len(kit['changes']) for kit in k['kits'])
     body += f'<a class="doc-card feature" href="{s.url("docs/kits/")}"><span class="tag">{total} changes</span><strong>Kit differences</strong><span>Every public API the fork adds or changes, shown as a diff against Haiku, plus behaviour changes and the private APIs system apps use.</span><em>Kit by kit →</em></a>'
-    body += '</div></section>'
+    body += '</div>'
+    body += f'<p>To try your app, or air/OS itself, without a spare computer, run it in a virtual machine: {s.link(s.url("docs/virtualization/"), "QEMU and UTM set-up →")}</p></section>'
 
     body += '<section id="kits"><h2>Kit by kit</h2>'
     rows = []
@@ -527,6 +529,111 @@ recognition.start();                    // Start(), then Feed() from the microph
              'Complete programs, each compiled against air/OS and run on a ROCK 5 ITX with its NPU, with the output they printed. Copy one and change it.', toc, body)
 
 
+# ---------------------------------------------------------------- virtualization
+
+def virtualization(s):
+    """Running air/OS in a virtual machine: QEMU on Linux, UTM on a Mac.
+
+    Checked on 17 November 2026 with the published 16 November x86-64 and
+    17 November ARM64 ISOs in QEMU 10.2 on Linux, using these command lines
+    (ARM64 emulated with -cpu cortex-a72, as no ARM64 Linux host was at hand):
+    each installed onto the virtual NVMe disk and started from it, and the
+    x86-64 system reached the internet. A VirtIO disk is not seen on x86-64;
+    without bootindex, OVMF kept the boot order saved while starting the ISO and
+    never reached the installed disk. The UTM settings are UTM's own defaults,
+    read from its source (Configuration/*.swift, main, 17 November 2026); the
+    Intel Mac defaults (q35, virtio-vga, e1000, IDE/SATA) were booted in QEMU and
+    the Installer offered the SATA disk. UTM itself was not run."""
+    dl = s.url('downloads/#system')
+    body = '<aside class="note"><strong>What to expect.</strong> A virtual machine is the quickest way to try air/OS, but it isn’t the hardware air/OS is tuned for. The desktop is drawn by the processor, without graphics acceleration, and the GPU, video and NPU features on the ' + s.link(s.url('hardware/'), 'hardware page') + ' don’t apply. The desktop, the apps and the network work as they do on a PC.</aside>'
+
+    body += '<section class="guide" id="image"><h2>Pick the image</h2>'
+    body += table(['Your computer', 'Image', 'Runs as'], [
+        ['Linux PC with an Intel or AMD processor; Intel Mac', s.link(dl, 'x86-64 ISO'), 'Virtualized: close to native speed'],
+        ['Mac with Apple silicon (M1 and later); ARM64 Linux machine', s.link(dl, 'ARM64 ISO'), 'Virtualized: close to native speed'],
+        ['Any other combination', 'Either', 'Emulated: works, but several times slower'],
+    ])
+    body += '<p>Download the image and its SHA-256 file from the ' + s.link(dl, 'downloads page') + ', check it, and unpack it. The Raspberry Pi and Cubie images are for those boards and don’t start in a virtual machine.</p>'
+    body += pre("""# Linux
+sha256sum -c airos-x86_64.iso.xz.sha256
+xz -dk airos-x86_64.iso.xz
+
+# macOS (brew install xz first)
+shasum -a 256 -c airos-arm64.iso.xz.sha256
+xz -dk airos-arm64.iso.xz""")
+    body += '<p>On a Mac without Homebrew, unpack the <code>.xz</code> file with Keka or The Unarchiver instead. Give the virtual machine at least <strong>4 GB of memory</strong>, <strong>2 to 4 processor cores</strong> and a <strong>32 GB disk</strong>.</p></section>'
+
+    body += '<section class="guide" id="qemu"><h2>QEMU on Linux</h2>'
+    body += '<p>Install QEMU and its UEFI firmware. On Debian and Ubuntu:</p>'
+    body += pre('sudo apt install qemu-system-x86 qemu-system-arm qemu-utils ovmf qemu-efi-aarch64')
+    body += '<p>Fedora calls the firmware packages <code>edk2-ovmf</code> and <code>edk2-aarch64</code>; Arch Linux calls them <code>edk2-ovmf</code> and <code>edk2-aarch64</code> as well, with QEMU in <code>qemu-full</code>. The firmware file paths below are Debian’s and Ubuntu’s; elsewhere, look under <code>/usr/share/edk2/</code>. To use KVM, add yourself to the <code>kvm</code> group, then log out and in again.</p>'
+    body += '<h3 id="qemu-x86">x86-64</h3>'
+    body += '<p>Make a disk and a copy of the firmware’s settings, then start the installer:</p>'
+    body += pre("""qemu-img create -f qcow2 airos.qcow2 32G
+cp /usr/share/OVMF/OVMF_VARS_4M.fd airos-vars.fd
+
+qemu-system-x86_64 -machine q35 -accel kvm -cpu host -m 4G -smp 4 \\
+  -drive if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd \\
+  -drive if=pflash,format=raw,file=airos-vars.fd \\
+  -drive if=none,id=disk,file=airos.qcow2 -device nvme,drive=disk,serial=airos,bootindex=1 \\
+  -cdrom airos-x86_64.iso \\
+  -device qemu-xhci -device usb-tablet \\
+  -nic user,model=virtio-net-pci \\
+  -audio pa,model=hda \\
+  -vga std""")
+    body += '<h3 id="qemu-arm64">ARM64</h3>'
+    body += '<p>The ARM64 machine has no CD drive, so the ISO goes on a virtual USB stick. The firmware files must be 64 MB, which Debian’s are:</p>'
+    body += pre("""qemu-img create -f qcow2 airos.qcow2 32G
+cp /usr/share/AAVMF/AAVMF_VARS.fd airos-vars.fd
+
+qemu-system-aarch64 -machine virt -accel kvm -cpu host -m 4G -smp 4 \\
+  -drive if=pflash,format=raw,readonly=on,file=/usr/share/AAVMF/AAVMF_CODE.fd \\
+  -drive if=pflash,format=raw,file=airos-vars.fd \\
+  -drive if=none,id=disk,file=airos.qcow2 -device nvme,drive=disk,serial=airos,bootindex=1 \\
+  -device qemu-xhci -device usb-kbd -device usb-tablet \\
+  -drive if=none,id=iso,format=raw,readonly=on,file=airos-arm64.iso \\
+  -device usb-storage,drive=iso \\
+  -nic user,model=virtio-net-pci \\
+  -device ramfb""")
+    body += '<p>To run the ARM64 image on an Intel or AMD PC, replace <code>-accel kvm -cpu host</code> with <code>-cpu cortex-a72</code>. QEMU then emulates the processor: it works, but starting takes a few minutes.</p>'
+    body += '<h3 id="qemu-install">Install and start from the disk</h3><ol class="steps">'
+    body += '<li>air/OS starts from the ISO and asks for your language and keymap. Choose <strong>Install air/OS</strong> (or <strong>Try air/OS</strong> to look around first).</li>'
+    body += '<li>In the Installer, choose the 32 GB <strong>QEMU NVMe Ctrl</strong> disk under <strong>Erase a whole disk and set it up for UEFI</strong> in the <strong>Onto</strong> menu, click <strong>Begin</strong>, then <strong>Erase disk and install</strong>. The Installer partitions the disk, sets it up for UEFI and copies the system.</li>'
+    body += '<li>When it finishes, click <strong>Restart</strong>. <code>bootindex=1</code> makes the firmware try the NVMe disk first, so air/OS now starts from it even with the ISO still attached. (While the disk is empty, the firmware skips it and starts the ISO.) Drop the ISO from the command whenever you like: <code>-cdrom airos-x86_64.iso</code>, or the two lines naming <code>airos-arm64.iso</code>.</li></ol>'
+    body += '<p>Click inside the window to use the mouse; <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>G</kbd> releases it. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> toggles full screen. The network uses QEMU’s built-in address translation: air/OS reaches the internet, but other computers can’t reach it.</p></section>'
+
+    body += '<section class="guide" id="utm"><h2>UTM on a Mac</h2>'
+    body += '<p>' + s.link('https://mac.getutm.app/', 'UTM ↗') + ' is a free virtual machine app for macOS built on QEMU. Use the ARM64 ISO on a Mac with Apple silicon and the x86-64 ISO on an Intel Mac.</p>'
+    body += '<h3 id="utm-create">Create the virtual machine</h3><ol class="steps">'
+    body += '<li>Open UTM, click <strong>+</strong> (<strong>Create a New Virtual Machine</strong>) and choose <strong>Virtualize</strong>, then <strong>Other</strong>.</li>'
+    body += '<li>Under <strong>Boot ISO Image</strong>, click <strong>Browse</strong> and choose the unpacked <code>airos-arm64.iso</code> (or <code>airos-x86_64.iso</code> on an Intel Mac). Continue.</li>'
+    body += '<li>Set <strong>Memory</strong> to 4096 MB and <strong>CPU Cores</strong> to 4. Leave hardware OpenGL acceleration off. Continue.</li>'
+    body += '<li>Set the disk to 32 GB. Continue, and skip <strong>Shared Directory</strong>.</li>'
+    body += '<li>On the summary, name the machine “air/OS”, tick <strong>Open VM Settings</strong> and click <strong>Save</strong>.</li></ol>'
+    body += '<h3 id="utm-settings">Check the settings</h3>'
+    body += '<p>On a Mac with Apple silicon, UTM’s defaults for Other need two changes before the first start; on an Intel Mac, the defaults work as they are.</p>'
+    body += table(['Setting', 'Apple silicon (ARM64)', 'Intel Mac (x86-64)'], [
+        ['<strong>Display</strong> → Emulated Display Card', 'Change to <strong>ram framebuffer standalone device (ramfb)</strong>', '<code>virtio-vga</code> (the default)'],
+        ['The 32 GB drive (under <strong>Drives</strong>) → Interface', 'Change from VirtIO to <strong>NVMe</strong>', 'IDE (the default; air/OS sees it as a SATA disk)'],
+        ['<strong>Network</strong> → Emulated Network Card', '<code>virtio-net-pci</code> (the default)', '<code>Intel Gigabit Ethernet (e1000)</code> (the default)'],
+        ['<strong>QEMU</strong> → UEFI Boot', 'On (the default)', 'On (the default)'],
+    ])
+    body += '<p>Click <strong>Save</strong>, then start the machine with ▶︎. It starts from the ISO: install as in <a href="#qemu-install">Install and start from the disk</a>, choosing the 32 GB disk (<strong>QEMU NVMe Ctrl</strong> on Apple silicon, <strong>QEMU HARDDISK</strong> on an Intel Mac). When the Installer has finished, don’t click Restart: shut air/OS down from the Deskbar menu (<strong>Shutdown…</strong> → <strong>Power off</strong>), then in UTM’s window select the CD/DVD drive and choose <strong>Clear</strong>: UTM starts the drives in the order they are listed, so with the ISO still attached it would start the installer again.</p>'
+    body += '<p>UTM captures the mouse when you click in the window; press <kbd>Control</kbd>+<kbd>Option</kbd> to release it.</p></section>'
+
+    body += '<section class="guide" id="trouble"><h2>If something goes wrong</h2><ul class="checks">'
+    body += '<li><strong>The Installer doesn’t list the disk.</strong> The virtual disk probably uses the VirtIO interface: air/OS, like Haiku, has no VirtIO disk driver on x86-64. Use NVMe as above (SATA works too).</li>'
+    body += '<li><strong>A black screen on a Mac with Apple silicon.</strong> Check that the display card is <code>ramfb</code>, the display these instructions were checked with. Display cards with their own video memory, such as VGA, generally don’t work in ARM64 virtual machines on Apple silicon.</li>'
+    body += '<li><strong>The firmware tries the network (“Start PXE over IPv4”) or opens a UEFI shell.</strong> It didn’t find a disk to start. Before installing, check that the ISO is attached. After installing in QEMU, check that the disk has <code>bootindex=1</code>: without it, the firmware can keep the boot order it saved while starting the ISO and never reach the disk.</li>'
+    body += '<li><strong>It started, then stopped in the kernel debugger.</strong> ' + s.link(s.url('report/'), 'Report an issue') + ' with the virtual machine’s settings and, if you can, the serial output (QEMU: add <code>-serial file:serial.log</code>).</li>'
+    body += '</ul></section>'
+
+    toc = [('image', 'Pick the image'), ('qemu', 'QEMU on Linux'), ('qemu-install', 'Install and start'), ('utm', 'UTM on a Mac'), ('utm-settings', 'UTM settings'), ('trouble', 'If something goes wrong')]
+    doc_page(s, 'docs/virtualization/', 'Virtualization', 'Run air/OS in a virtual machine: QEMU on Linux, and UTM on a Mac with Apple silicon or an Intel processor.',
+             'Documentation · Virtualization', 'air/OS in a virtual machine.',
+             'Try air/OS without a spare computer. The x86-64 and ARM64 ISOs start in QEMU on Linux and in UTM on a Mac, and install onto a virtual disk.', toc, body, tabs=False)
+
+
 GITHUB_SUMMIT_DOC = ''
 
 
@@ -539,3 +646,4 @@ def build(page, url, link, intro, root, github):
     neural_guide(s)
     neural_reference(s)
     neural_examples(s)
+    virtualization(s)

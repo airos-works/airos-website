@@ -30,7 +30,8 @@ both from the repository's actual Pages configuration.
 
 ## Content and design
 
-- Home: credit Haiku, explain the independent project and AI-assisted approach.
+- Home: credit Haiku, explain the independent project and AI-assisted approach. The pill above
+  the headline announces the newest hardware and links to its entry (Raspberry Pi 5).
 - Apps: seven categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
   Proton, Everyday and System), each tab and app row showing the apps' own icons.
   Media Tools holds AirTime, Amp and the five Craft media apps (PhotoCraft, LightCraft,
@@ -55,6 +56,15 @@ both from the repository's actual Pages configuration.
   libraries and run on that board (ARM64 release hrev60207+2552, RK3588 NPU); each `.out` file is
   the output they printed. When the kit's API changes, update the JSON and rebuild and re-run
   the examples.
+- Virtualization (`docs/virtualization/`): running the x86-64 and ARM64 ISOs in QEMU on Linux
+  and in UTM on a Mac. In the header, Documentation opens a menu on hover or keyboard focus:
+  API (`docs/`) and Virtualization (below 1060 pixels the menu is hidden, and the docs overview
+  links to the guide). The QEMU command lines were checked on 17 November 2026 with the
+  16 November x86-64 and 17 November ARM64 ISOs in QEMU 10.2 on Linux (ARM64 emulated): each
+  installed onto the virtual NVMe disk and started from it. air/OS, like Haiku, has no VirtIO
+  disk driver on x86-64, so the guide uses NVMe; `bootindex=1` keeps OVMF from trying the
+  network before the installed disk. The UTM settings are UTM's own defaults, read from its
+  source, with the devices the QEMU runs showed are needed; UTM itself was not run.
 - Downloads: actual public `.hpkg` release assets, plus immutable OS images.
 - Package repositories (`repo/<arch>/`): HaikuPorts has no arm64 repository, so the site
   serves one at `repo/arm64/` (`repo`, `repo.info`, `repo.sha256`, `packages/*.hpkg`): the
@@ -193,6 +203,7 @@ no cropping or other edits; the ROCK 5 ITX image is reproduced unchanged.
 | Photo | Source | Credit and licence |
 | --- | --- | --- |
 | `rock-5-itx.webp` | [Radxa Docs](https://docs.radxa.com/en/rock5), [source image](https://docs.radxa.com/home/product-pictures/rock5itx.webp) | © Radxa Computer (Shenzhen) Co.,Ltd., [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `raspberry-pi-5.jpg` | [Raspberry Pi 5](https://commons.wikimedia.org/wiki/File:Raspberry_Pi_5.jpg) | Simon Waldherr / Wikimedia Commons, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `raspberry-pi-4.jpg` | [Raspberry Pi 4 Model B – Side](https://commons.wikimedia.org/wiki/File:Raspberry_Pi_4_Model_B_-_Side.jpg) | Michael H. (Laserlicht) / Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `dragon-q8b.webp` | [Radxa Docs](https://docs.radxa.com/en/dragon/q8b), [source image](https://github.com/radxa-docs/docs/blob/47c9cf94faa2c221309d24f2eec6c5821475ea06/static/img/dragon/q8b/dragon-q8b-view.webp) | © Radxa Computer (Shenzhen) Co.,Ltd., [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `framework-13.jpg` | [Framework laptop AMD 13](https://commons.wikimedia.org/wiki/File:Framework_laptop_AMD_13.jpg) | Thcipriani / Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
