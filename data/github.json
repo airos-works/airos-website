@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T07:36:01+00:00",
+  "updated": "2026-11-19T20:45:39+00:00",
   "ci_head": "b13905ef6776e269e588a6fc509f7b326af80b7d",
   "sources": [
     {
@@ -29689,8 +29689,428 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "d5436dc87373dc205550fda88845398c3ab4e994",
+      "head": "96ae4d2ccdb806e8f0eac90b5e1f5d9831d8d9f4",
       "commits": [
+        {
+          "sha": "96ae4d2ccdb806e8f0eac90b5e1f5d9831d8d9f4",
+          "url": "https://github.com/airos-works/summit/commit/96ae4d2ccdb806e8f0eac90b5e1f5d9831d8d9f4",
+          "date": "2026-11-19T20:42:44Z",
+          "subject": "Report negotiated ICE roles and retain them across peer restarts"
+        },
+        {
+          "sha": "47a276a45884fbf39b5518f16cb653f2aa1ac32c",
+          "url": "https://github.com/airos-works/summit/commit/47a276a45884fbf39b5518f16cb653f2aa1ac32c",
+          "date": "2026-11-19T20:20:27Z",
+          "subject": "Negotiate optional RTP header extensions on WebRTC transceivers"
+        },
+        {
+          "sha": "e7a5354e29cffc99c23172d339ead45986b42af7",
+          "url": "https://github.com/airos-works/summit/commit/e7a5354e29cffc99c23172d339ead45986b42af7",
+          "date": "2026-11-19T20:07:55Z",
+          "subject": "Preserve WebRTC encoded frame audio levels"
+        },
+        {
+          "sha": "037eb123d38308318aadc68390e60bf53f50eb46",
+          "url": "https://github.com/airos-works/summit/commit/037eb123d38308318aadc68390e60bf53f50eb46",
+          "date": "2026-11-19T20:02:59Z",
+          "subject": "Record Haiku WebTransport connection and worker results"
+        },
+        {
+          "sha": "40ab04998c16f1a05baee354b1619da91589dc4f",
+          "url": "https://github.com/airos-works/summit/commit/40ab04998c16f1a05baee354b1619da91589dc4f",
+          "date": "2026-11-19T19:56:21Z",
+          "subject": "Refresh scroll and view timeline ranges after layout"
+        },
+        {
+          "sha": "92daae0f098f561652f384289b2f999b4043bd33",
+          "url": "https://github.com/airos-works/summit/commit/92daae0f098f561652f384289b2f999b4043bd33",
+          "date": "2026-11-19T19:41:49Z",
+          "subject": "Schedule pending view animations on their timeline\u2019s document"
+        },
+        {
+          "sha": "72b5dd6a06da5f52223e18197d35423a77cfe9bc",
+          "url": "https://github.com/airos-works/summit/commit/72b5dd6a06da5f52223e18197d35423a77cfe9bc",
+          "date": "2026-11-19T19:36:24Z",
+          "subject": "Expose the ICE component on WebRTC transports"
+        },
+        {
+          "sha": "80db8d5e85ffca36301c153e5d0cbc30163ad47a",
+          "url": "https://github.com/airos-works/summit/commit/80db8d5e85ffca36301c153e5d0cbc30163ad47a",
+          "date": "2026-11-19T19:27:33Z",
+          "subject": "Link the Interop results to the WheelEvent interface definition"
+        },
+        {
+          "sha": "4975c45657fc7184358b7ad20df43ac4fd4711d7",
+          "url": "https://github.com/airos-works/summit/commit/4975c45657fc7184358b7ad20df43ac4fd4711d7",
+          "date": "2026-11-19T19:26:00Z",
+          "subject": "Expose mouse layer coordinates and wheel momentum"
+        },
+        {
+          "sha": "c93bbd6f6cc23db1b0741a10446af79d68dbfaae",
+          "url": "https://github.com/airos-works/summit/commit/c93bbd6f6cc23db1b0741a10446af79d68dbfaae",
+          "date": "2026-11-19T19:13:07Z",
+          "subject": "Restore hover at the pointer position after capture ends"
+        },
+        {
+          "sha": "2d85be5aaadd617b61258572f0201934af844623",
+          "url": "https://github.com/airos-works/summit/commit/2d85be5aaadd617b61258572f0201934af844623",
+          "date": "2026-11-19T18:56:14Z",
+          "subject": "Build private WebTransport libraries for stock Haiku"
+        },
+        {
+          "sha": "245786a92c456cc1d8a6b157e6548cf56090100e",
+          "url": "https://github.com/airos-works/summit/commit/245786a92c456cc1d8a6b157e6548cf56090100e",
+          "date": "2026-11-19T18:29:35Z",
+          "subject": "Measure inline anchor fragments in their physical columns"
+        },
+        {
+          "sha": "db995ed72fe5ca8d7f99c49f4713b2f5c6eb65c6",
+          "url": "https://github.com/airos-works/summit/commit/db995ed72fe5ca8d7f99c49f4713b2f5c6eb65c6",
+          "date": "2026-11-19T18:23:08Z",
+          "subject": "Let native Haiku text fields paint their frame and background"
+        },
+        {
+          "sha": "dcdcb46e56f0cc8e3faf3b5dcf451458dfe3e1e7",
+          "url": "https://github.com/airos-works/summit/commit/dcdcb46e56f0cc8e3faf3b5dcf451458dfe3e1e7",
+          "date": "2026-11-19T18:11:29Z",
+          "subject": "Keep grid baseline participation stable across sizing passes"
+        },
+        {
+          "sha": "b48e906022981698833bd02d741ac7fdf30c3798",
+          "url": "https://github.com/airos-works/summit/commit/b48e906022981698833bd02d741ac7fdf30c3798",
+          "date": "2026-11-19T18:00:47Z",
+          "subject": "Place flex rows at the scrollport edge and resolve coupled scrollbars"
+        },
+        {
+          "sha": "07a67317213c6da0f23d29c8322ad27d99e05c06",
+          "url": "https://github.com/airos-works/summit/commit/07a67317213c6da0f23d29c8322ad27d99e05c06",
+          "date": "2026-11-19T17:49:30Z",
+          "subject": "Preserve the grid area for inline static positioning in RTL"
+        },
+        {
+          "sha": "1c5b60a04934e6ed1af4e93e8fde64e2e00941eb",
+          "url": "https://github.com/airos-works/summit/commit/1c5b60a04934e6ed1af4e93e8fde64e2e00941eb",
+          "date": "2026-11-19T17:42:55Z",
+          "subject": "Measure orthogonal flex content at the constrained stretch size"
+        },
+        {
+          "sha": "bdd95e43a4eeb4902b5427e0e82cbf656127c7bc",
+          "url": "https://github.com/airos-works/summit/commit/bdd95e43a4eeb4902b5427e0e82cbf656127c7bc",
+          "date": "2026-11-19T17:31:12Z",
+          "subject": "Size intrinsic grid columns with the resolved orthogonal row space"
+        },
+        {
+          "sha": "dbc6a81c61d56b4e2e7f3b4357bf517eb9e10ff6",
+          "url": "https://github.com/airos-works/summit/commit/dbc6a81c61d56b4e2e7f3b4357bf517eb9e10ff6",
+          "date": "2026-11-19T17:13:33Z",
+          "subject": "Remeasure flex and grid items when intrinsic sizing inputs change"
+        },
+        {
+          "sha": "943b87d935ef2afa50bfc6a7c70ec73f1d37d390",
+          "url": "https://github.com/airos-works/summit/commit/943b87d935ef2afa50bfc6a7c70ec73f1d37d390",
+          "date": "2026-11-19T17:00:55Z",
+          "subject": "Honor definite flex cross sizes when computing image minimums"
+        },
+        {
+          "sha": "178e3b6908aa16ac040665d49bc8529e23ef3f21",
+          "url": "https://github.com/airos-works/summit/commit/178e3b6908aa16ac040665d49bc8529e23ef3f21",
+          "date": "2026-11-19T16:55:04Z",
+          "subject": "Refresh flex alignment when a descendant baseline moves"
+        },
+        {
+          "sha": "04f3938452729951e8eb345be93c3da4b90f9363",
+          "url": "https://github.com/airos-works/summit/commit/04f3938452729951e8eb345be93c3da4b90f9363",
+          "date": "2026-11-19T16:38:42Z",
+          "subject": "Paint layered flex and grid descendants in order-modified tree order"
+        },
+        {
+          "sha": "d6ff6c8af96e021ba62e54469e3085dbce05f86f",
+          "url": "https://github.com/airos-works/summit/commit/d6ff6c8af96e021ba62e54469e3085dbce05f86f",
+          "date": "2026-11-19T16:26:01Z",
+          "subject": "Export grid baselines from the first and last occupied tracks"
+        },
+        {
+          "sha": "7943bc98f8383195bbbf785d43f3cdcc95547af9",
+          "url": "https://github.com/airos-works/summit/commit/7943bc98f8383195bbbf785d43f3cdcc95547af9",
+          "date": "2026-11-19T16:16:03Z",
+          "subject": "Align spanning grid items and subgrids from their shared baseline edge"
+        },
+        {
+          "sha": "f7abe8be72008819ad408306e24fc97f8c640870",
+          "url": "https://github.com/airos-works/summit/commit/f7abe8be72008819ad408306e24fc97f8c640870",
+          "date": "2026-11-19T15:55:08Z",
+          "subject": "Clamp grid item baselines at scroll container edges"
+        },
+        {
+          "sha": "16f452af939f6214dbb5600dc11a05a54de28242",
+          "url": "https://github.com/airos-works/summit/commit/16f452af939f6214dbb5600dc11a05a54de28242",
+          "date": "2026-11-19T15:45:01Z",
+          "subject": "Align multicolumn baselines using the rendered column fragments"
+        },
+        {
+          "sha": "b3325331f54fd9b86327d68e916af7e0169f6691",
+          "url": "https://github.com/airos-works/summit/commit/b3325331f54fd9b86327d68e916af7e0169f6691",
+          "date": "2026-11-19T15:33:33Z",
+          "subject": "Paint backgrounds on composited inline fragments"
+        },
+        {
+          "sha": "87f72601547eed6c75809f1f313c1d818a5ba538",
+          "url": "https://github.com/airos-works/summit/commit/87f72601547eed6c75809f1f313c1d818a5ba538",
+          "date": "2026-11-19T15:30:18Z",
+          "subject": "Remeasure ratio-dependent descendants when a flex item stretches"
+        },
+        {
+          "sha": "b9cb1a4dfccc19b86243b106f990d1a1968d2bb7",
+          "url": "https://github.com/airos-works/summit/commit/b9cb1a4dfccc19b86243b106f990d1a1968d2bb7",
+          "date": "2026-11-19T15:24:20Z",
+          "subject": "Honor CSS backdrop roots and paint clip masks across composited children"
+        },
+        {
+          "sha": "d15c7345e0e1dee52315a0130c1a6471dcfef5ff",
+          "url": "https://github.com/airos-works/summit/commit/d15c7345e0e1dee52315a0130c1a6471dcfef5ff",
+          "date": "2026-11-19T15:22:51Z",
+          "subject": "Preserve flex cross-size fallbacks for percentage calculations"
+        },
+        {
+          "sha": "95c9dad87c270c8c8906e0308e252d70aabeb564",
+          "url": "https://github.com/airos-works/summit/commit/95c9dad87c270c8c8906e0308e252d70aabeb564",
+          "date": "2026-11-19T15:01:15Z",
+          "subject": "Resolve the default grid flow when reading computed style"
+        },
+        {
+          "sha": "f70f3aab16c86ca69d419be2de6b78b3ec888492",
+          "url": "https://github.com/airos-works/summit/commit/f70f3aab16c86ca69d419be2de6b78b3ec888492",
+          "date": "2026-11-19T14:46:52Z",
+          "subject": "Record the document-visible selector in Event Timing entries"
+        },
+        {
+          "sha": "d235c366ebbb686f38e07789fb0fbaf05d16e57a",
+          "url": "https://github.com/airos-works/summit/commit/d235c366ebbb686f38e07789fb0fbaf05d16e57a",
+          "date": "2026-11-19T14:34:19Z",
+          "subject": "Let flex and grid size the automatic axes of native checkable controls"
+        },
+        {
+          "sha": "6c2cf055caa41c7b461c26cd19cff7c1407c50f5",
+          "url": "https://github.com/airos-works/summit/commit/6c2cf055caa41c7b461c26cd19cff7c1407c50f5",
+          "date": "2026-11-19T14:16:50Z",
+          "subject": "Preserve native key codes when timing Haiku keypresses"
+        },
+        {
+          "sha": "227911df5cd4ec0532bf8faf49fa40c7ac22653d",
+          "url": "https://github.com/airos-works/summit/commit/227911df5cd4ec0532bf8faf49fa40c7ac22653d",
+          "date": "2026-11-19T14:10:40Z",
+          "subject": "Handle removed document roots when sampling or restoring page language"
+        },
+        {
+          "sha": "aeddf6e9802d2a6fd3f1f08a8d7a1f89ff99db18",
+          "url": "https://github.com/airos-works/summit/commit/aeddf6e9802d2a6fd3f1f08a8d7a1f89ff99db18",
+          "date": "2026-11-19T14:08:35Z",
+          "subject": "Record scroll event ordering and grid image rechecks"
+        },
+        {
+          "sha": "59f7384bd7ac1f9014c219dc3d2c798c6d3652ee",
+          "url": "https://github.com/airos-works/summit/commit/59f7384bd7ac1f9014c219dc3d2c798c6d3652ee",
+          "date": "2026-11-19T14:05:03Z",
+          "subject": "Respect writing direction and safe fallback in grid baseline alignment"
+        },
+        {
+          "sha": "41b250748952eba581202a3ebf20a604d3181ae0",
+          "url": "https://github.com/airos-works/summit/commit/41b250748952eba581202a3ebf20a604d3181ae0",
+          "date": "2026-11-19T13:52:01Z",
+          "subject": "Exclude whitespace-only text from Largest Contentful Paint"
+        },
+        {
+          "sha": "6740bf671c75f5b9bb810895fe536520a75d2679",
+          "url": "https://github.com/airos-works/summit/commit/6740bf671c75f5b9bb810895fe536520a75d2679",
+          "date": "2026-11-19T13:40:20Z",
+          "subject": "Parse flow alignment keywords and canonicalize computed values"
+        },
+        {
+          "sha": "f3e6d04b277da3968641adec1c24a81ceff5a71d",
+          "url": "https://github.com/airos-works/summit/commit/f3e6d04b277da3968641adec1c24a81ceff5a71d",
+          "date": "2026-11-19T13:39:56Z",
+          "subject": "Serialize dense row placement using the grid default direction"
+        },
+        {
+          "sha": "7306abb8fde8ced64f657a19e41b67c5caf5dbf5",
+          "url": "https://github.com/airos-works/summit/commit/7306abb8fde8ced64f657a19e41b67c5caf5dbf5",
+          "date": "2026-11-19T13:26:08Z",
+          "subject": "Restore native Space and Enter activation for form controls"
+        },
+        {
+          "sha": "b3af1df267f2bbb4590a50ce30a9b6152aa2552e",
+          "url": "https://github.com/airos-works/summit/commit/b3af1df267f2bbb4590a50ce30a9b6152aa2552e",
+          "date": "2026-11-19T13:24:14Z",
+          "subject": "Distinguish the incomplete layout observation"
+        },
+        {
+          "sha": "f2960612bdf0de51d0433192f41df9c9340cd538",
+          "url": "https://github.com/airos-works/summit/commit/f2960612bdf0de51d0433192f41df9c9340cd538",
+          "date": "2026-11-19T13:23:59Z",
+          "subject": "Record the released Haiku CSS follow-up results"
+        },
+        {
+          "sha": "614445a5611d21e1b44d23300e6b60f23c52b91c",
+          "url": "https://github.com/airos-works/summit/commit/614445a5611d21e1b44d23300e6b60f23c52b91c",
+          "date": "2026-11-19T13:15:28Z",
+          "subject": "Find stale Haiku test processes by executable path"
+        },
+        {
+          "sha": "8632008cc80fbacdeb5595636516e53926f64bba",
+          "url": "https://github.com/airos-works/summit/commit/8632008cc80fbacdeb5595636516e53926f64bba",
+          "date": "2026-11-19T13:14:52Z",
+          "subject": "Preserve movement and chorded button transitions in WebDriver"
+        },
+        {
+          "sha": "ce5beb286f7fbfdd74f80f0dbbe4ae52382212e5",
+          "url": "https://github.com/airos-works/summit/commit/ce5beb286f7fbfdd74f80f0dbbe4ae52382212e5",
+          "date": "2026-11-19T12:58:56Z",
+          "subject": "Preserve the grid row before an empty line-name list"
+        },
+        {
+          "sha": "95343d6970e908faa5a01030019e9d625c9907e5",
+          "url": "https://github.com/airos-works/summit/commit/95343d6970e908faa5a01030019e9d625c9907e5",
+          "date": "2026-11-19T12:56:59Z",
+          "subject": "Use cell content edges for table row fallback baselines"
+        },
+        {
+          "sha": "78314664f361ab258e718eb86f443714ed9642e9",
+          "url": "https://github.com/airos-works/summit/commit/78314664f361ab258e718eb86f443714ed9642e9",
+          "date": "2026-11-19T12:51:10Z",
+          "subject": "Use the assigned WebDriver port on the Haiku guest"
+        },
+        {
+          "sha": "b35325c5a73bb36edb926b08d6786f04ca586e56",
+          "url": "https://github.com/airos-works/summit/commit/b35325c5a73bb36edb926b08d6786f04ca586e56",
+          "date": "2026-11-19T12:34:55Z",
+          "subject": "Preserve exact glyph advances under FreeType light hinting"
+        },
+        {
+          "sha": "c767d729ac74a1a10d64ddec93a91f13bc2474bb",
+          "url": "https://github.com/airos-works/summit/commit/c767d729ac74a1a10d64ddec93a91f13bc2474bb",
+          "date": "2026-11-19T12:25:54Z",
+          "subject": "Record targeted Haiku reruns for all outstanding Interop URLs"
+        },
+        {
+          "sha": "e1840bae537e0a778aea322c3880c6c7b3880dfc",
+          "url": "https://github.com/airos-works/summit/commit/e1840bae537e0a778aea322c3880c6c7b3880dfc",
+          "date": "2026-11-19T12:20:51Z",
+          "subject": "Use inline fragment border edges for anchor geometry"
+        },
+        {
+          "sha": "557aa6b24ddc340ba4e0d9b30b3b6e915b797d5d",
+          "url": "https://github.com/airos-works/summit/commit/557aa6b24ddc340ba4e0d9b30b3b6e915b797d5d",
+          "date": "2026-11-19T12:14:24Z",
+          "subject": "Set the Interop viewport through WebDriver and verify its CSS size"
+        },
+        {
+          "sha": "81b1719fb1c91290618359a19894365f24201121",
+          "url": "https://github.com/airos-works/summit/commit/81b1719fb1c91290618359a19894365f24201121",
+          "date": "2026-11-19T12:10:21Z",
+          "subject": "Honor request credentials policy for curl cookie storage and lookup"
+        },
+        {
+          "sha": "68f86788760d155387a74157b89b90de76260049",
+          "url": "https://github.com/airos-works/summit/commit/68f86788760d155387a74157b89b90de76260049",
+          "date": "2026-11-19T12:04:20Z",
+          "subject": "Collect a reproducible Interop test list across years"
+        },
+        {
+          "sha": "694a82bf3be047d544c5441821be1cdc5a3d491c",
+          "url": "https://github.com/airos-works/summit/commit/694a82bf3be047d544c5441821be1cdc5a3d491c",
+          "date": "2026-11-19T11:58:45Z",
+          "subject": "Honor JSON import attributes when choosing a module type"
+        },
+        {
+          "sha": "fab18eaaf61bf8ecee619ba07de0cd77597cbbba",
+          "url": "https://github.com/airos-works/summit/commit/fab18eaaf61bf8ecee619ba07de0cd77597cbbba",
+          "date": "2026-11-19T11:56:26Z",
+          "subject": "Repaint the current page before taking a WebDriver viewport screenshot"
+        },
+        {
+          "sha": "926760da050a1515d21de5fbf08b87ba6400e45d",
+          "url": "https://github.com/airos-works/summit/commit/926760da050a1515d21de5fbf08b87ba6400e45d",
+          "date": "2026-11-19T11:52:26Z",
+          "subject": "Align static grid children against the grid content box"
+        },
+        {
+          "sha": "a43e3bf41355066490a553b4f5594c63400397ea",
+          "url": "https://github.com/airos-works/summit/commit/a43e3bf41355066490a553b4f5594c63400397ea",
+          "date": "2026-11-19T11:43:20Z",
+          "subject": "Preserve blur inputs at clips and mirror backdrop edges"
+        },
+        {
+          "sha": "0bbf81ae2f5a373f4b6a5d6b69bd22de9a4951f5",
+          "url": "https://github.com/airos-works/summit/commit/0bbf81ae2f5a373f4b6a5d6b69bd22de9a4951f5",
+          "date": "2026-11-19T11:33:14Z",
+          "subject": "Schedule pending animation work after CSS timing synchronization"
+        },
+        {
+          "sha": "c07c31e9a7f9321fb66df10a2ba63204eca4611d",
+          "url": "https://github.com/airos-works/summit/commit/c07c31e9a7f9321fb66df10a2ba63204eca4611d",
+          "date": "2026-11-19T11:27:04Z",
+          "subject": "Rank address suggestions and inline completions in one scan"
+        },
+        {
+          "sha": "ffc981621ea8bb3f96b23dbf19863242cfdc0387",
+          "url": "https://github.com/airos-works/summit/commit/ffc981621ea8bb3f96b23dbf19863242cfdc0387",
+          "date": "2026-11-19T11:20:46Z",
+          "subject": "Expose received packet time on encoded WebRTC frames"
+        },
+        {
+          "sha": "f9416572323f77ab98cf1b68171e310182402d2d",
+          "url": "https://github.com/airos-works/summit/commit/f9416572323f77ab98cf1b68171e310182402d2d",
+          "date": "2026-11-19T11:00:34Z",
+          "subject": "Report unsupported permission names to WebDriver media clients"
+        },
+        {
+          "sha": "bffaa7e4895868a50d5c4b7d22bbbb581cf345e2",
+          "url": "https://github.com/airos-works/summit/commit/bffaa7e4895868a50d5c4b7d22bbbb581cf345e2",
+          "date": "2026-11-19T10:56:19Z",
+          "subject": "Connect the WebDriver permissions endpoint to storage access automation"
+        },
+        {
+          "sha": "47fb2c12a24796a64ed68f7de0f85868f82e0183",
+          "url": "https://github.com/airos-works/summit/commit/47fb2c12a24796a64ed68f7de0f85868f82e0183",
+          "date": "2026-11-19T10:54:00Z",
+          "subject": "Queue overflow scroll events only when the position changes"
+        },
+        {
+          "sha": "40f47a368c621cae9de23cc649d1afb6fbef00bb",
+          "url": "https://github.com/airos-works/summit/commit/40f47a368c621cae9de23cc649d1afb6fbef00bb",
+          "date": "2026-11-19T10:49:14Z",
+          "subject": "Dispatch each WebDriver wheel action with its own delta"
+        },
+        {
+          "sha": "c579ef6d8ef8141bed79c4a636a0b294ab9afb40",
+          "url": "https://github.com/airos-works/summit/commit/c579ef6d8ef8141bed79c4a636a0b294ab9afb40",
+          "date": "2026-11-19T10:47:04Z",
+          "subject": "Map text-control caret hits to value offsets and painted bounds"
+        },
+        {
+          "sha": "27a50c36d06e5282f3c2ff1d8afaa7bf4e39acf3",
+          "url": "https://github.com/airos-works/summit/commit/27a50c36d06e5282f3c2ff1d8afaa7bf4e39acf3",
+          "date": "2026-11-19T10:38:53Z",
+          "subject": "Expose pointer orientation and persistent device IDs in Summit"
+        },
+        {
+          "sha": "e73ed704991ff004600715b90fdb9a5e8c7ffff0",
+          "url": "https://github.com/airos-works/summit/commit/e73ed704991ff004600715b90fdb9a5e8c7ffff0",
+          "date": "2026-11-19T10:25:46Z",
+          "subject": "Release disconnected pointer capture before further input"
+        },
+        {
+          "sha": "07010bc93646ba83aab15ceb2026870ce3c560c1",
+          "url": "https://github.com/airos-works/summit/commit/07010bc93646ba83aab15ceb2026870ce3c560c1",
+          "date": "2026-11-19T10:20:58Z",
+          "subject": "Dismiss passkey offers only while their field is tracked"
+        },
+        {
+          "sha": "3ee32e06b89a6bfb202d395da946e7b241892369",
+          "url": "https://github.com/airos-works/summit/commit/3ee32e06b89a6bfb202d395da946e7b241892369",
+          "date": "2026-11-19T10:13:05Z",
+          "subject": "Preserve clipped overflow axes in single-axis scroll containers"
+        },
         {
           "sha": "9ccbb263fcdbda272d03b87c6614879fe5864c49",
           "url": "https://github.com/airos-works/summit/commit/9ccbb263fcdbda272d03b87c6614879fe5864c49",
@@ -44884,43 +45304,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-19T07:15:20Z",
+      "published": "2026-11-19T20:00:03Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261119.0643-1-arm64.hpkg",
-          "size": 15524036,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261119.0643-1-arm64.hpkg",
-          "digest": "sha256:7acafcd27b5170ddac5397fdf528296dfb941d7f9392352531110c541a26d6c4"
+          "name": "summit-0.1.0.git20261119.1811-1-arm64.hpkg",
+          "size": 15544091,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261119.1811-1-arm64.hpkg",
+          "digest": "sha256:2dace11159c05532c5ca40e9a12cf48f156158ee15ccdf69a33307dd60f05a4f"
         },
         {
-          "name": "summit-0.1.0.git20261119.0643-1-x86_64.hpkg",
-          "size": 15759804,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261119.0643-1-x86_64.hpkg",
-          "digest": "sha256:be09b1ae82b449a0b3bb89688a4304869c029b04ac31d726d16a0bc9d33d3e09"
+          "name": "summit-0.1.0.git20261119.1811-1-x86_64.hpkg",
+          "size": 15774153,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261119.1811-1-x86_64.hpkg",
+          "digest": "sha256:0fcd461839f22e86cbc68279acdae318c32ddc7adaa1d7ea5c3c867ce4590810"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261119.0643-1-arm64.hpkg",
-          "size": 97537510,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261119.0643-1-arm64.hpkg",
-          "digest": "sha256:4b16defde45c640ae21680bfdc37f5ff715b4cf36c9ec8a08161f0d7e01e9da6"
+          "name": "summit_webkit-1.10.1.git20261119.1811-1-arm64.hpkg",
+          "size": 97569013,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261119.1811-1-arm64.hpkg",
+          "digest": "sha256:6964669526b99e9cc20e9133b1c551f16975e24100361bcdb9efbf5c04776920"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261119.0643-1-x86_64.hpkg",
-          "size": 98210174,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261119.0643-1-x86_64.hpkg",
-          "digest": "sha256:b000955e7c7947ebae2cd61de248c68cd4e243feb609f67bc00e2b90911f3eec"
+          "name": "summit_webkit-1.10.1.git20261119.1811-1-x86_64.hpkg",
+          "size": 98255338,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261119.1811-1-x86_64.hpkg",
+          "digest": "sha256:7c17047254cc82ad50d1597835f94cb3acd5aefb9a16cd0c36ea2967eaf59d0c"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261119.0643-1-arm64.hpkg",
-          "size": 826140,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261119.0643-1-arm64.hpkg",
-          "digest": "sha256:6981d0e66530ee705c52a56515739717db06ba6baf81703873d5270268ae1115"
+          "name": "summit_webkitlegacy-1.10.1.git20261119.1811-1-arm64.hpkg",
+          "size": 826138,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261119.1811-1-arm64.hpkg",
+          "digest": "sha256:66f1cdc3dbabc222eecc5a63d1ef332b402de06df7e1e72d04e7fd9da83547dd"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261119.0643-1-x86_64.hpkg",
-          "size": 875959,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261119.0643-1-x86_64.hpkg",
-          "digest": "sha256:4d34e9c66da359b51d4dd074855bef28a9ca3d5c5f65e8f9f2ad8ca4afe2ded9"
+          "name": "summit_webkitlegacy-1.10.1.git20261119.1811-1-x86_64.hpkg",
+          "size": 875964,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261119.1811-1-x86_64.hpkg",
+          "digest": "sha256:e65096034bf417c2db4e107efdccc9ee04193a4f9970273f33ea4c63e1f801f0"
         }
       ]
     },
