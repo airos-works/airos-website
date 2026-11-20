@@ -362,6 +362,7 @@ pre.output{background:#0c1413;color:#cfe3dd;font-size:12.5px}
 .compat-detail code{font-family:var(--mono);font-size:.86em;padding:1px 5px;background:var(--panel);border-radius:5px}
 .compat-table .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .compat-table td.summit{font-weight:600;color:var(--ink)}
+.compat-misses .compat-bars{margin:22px 0 44px}
 .compat-table td{padding:8px 14px}
 .compat-detail>div:first-child{position:sticky;top:24px}
 @media(max-width:1180px){

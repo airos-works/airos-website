@@ -42,11 +42,13 @@ both from the repository's actual Pages configuration.
   opens when its tab is selected; links to a panel or to an app inside one open it.
   Without JavaScript the tabs are jump links and every panel is shown.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds. Its
-  compatibility section (`compatibility` in `content/summit.json`) gives Summit's Interop 2026 score
-  per focus area, from the 7 November 2026 full run on the X399 recorded in airos-works/summit#175
-  (`tools/interop2026` in that repository), beside the other browsers' scores from wpt.fyi's daily
-  CSVs (`interop-2026-{stable,experimental}-v2.csv` in web-platform-tests/results-analysis, 15 and
-  16 November). Its html5test.co scores (Summit, Chrome 158 and Firefox 160, 18 November) are
+  compatibility section (`compatibility` in `content/summit.json`) gives Summit's Interop 2026 and
+  Interop 2025 scores per focus area, from the 21 November 2026 run of every labelled test (current
+  web-platform-tests, Summit 20261120.0103 in air/OS VMs) recorded in airos-works/summit#243
+  (`tools/interop2026` in that repository). Beside them are the other browsers' scores from wpt.fyi's
+  CSVs: `interop-2026-{stable,experimental}-v2.csv` in web-platform-tests/results-analysis (16 and
+  19 November), and for 2025 wpt.fyi's final `static/interop-2025-{stable,experimental}.csv` (12
+  February 2026). Its html5test.co scores (Summit, Chrome 158 and Firefox 160, 18 November) are
   recorded with every missing row in Summit's `docs/html5test-2026-11-18.md`. Re-run both when a
   Summit release changes them, and update the JSON with the new dates.
 - New hardware: curated capabilities, gaps and links to the lab's test notes.

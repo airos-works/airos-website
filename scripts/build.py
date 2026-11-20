@@ -181,35 +181,46 @@ WORDS = dict(enumerate('no one two three four five six seven eight nine'.split()
 
 def compatibility(data):
     interop, h5 = data['interop'], data['html5test']
+    years = interop['years']
     tenth = lambda x: f'{x:.1f}'
-    summit = {'name': 'Summit', 'score': interop['summit'], 'summit': True}
-    dev = [summit] + [b for b in interop['browsers'] if b['kind'] == 'experimental']
-    released = [b for b in interop['browsers'] if b['kind'] == 'stable']
+    # Interop totals sit within hundredths of each other; one decimal would round 99.95 up to 100.0.
+    hundredth = lambda x: f'{x:.2f}'
+    count = lambda n: WORDS.get(n, str(n))
     body = '<section class="compat" id="compatibility"><div class="section-heading"><h2>How well it keeps up.</h2><span>Measured</span></div>'
-    body += '<p class="section-lead">Two public yardsticks: the web-platform tests that browser makers agreed to fix together this year, and a long-running check of which web features a browser offers.</p>'
+    body += ('<p class="section-lead">Three public yardsticks: the web-platform tests that browser makers agreed to fix together this year and last year, '
+             'and a long-running check of which web features a browser offers.</p>')
+    # One card per Interop year: Summit's score among the browsers wpt.fyi scores.
     body += '<div class="compat-grid">'
-    body += (f'<article class="compat-card"><p class="eyebrow">Interop 2026</p><p class="compat-score"><strong>{tenth(interop["summit"])}</strong><span>of 100</span></p>'
-             f'<p>All {interop["tests"]:,} tests of the 20 focus areas in <a href="{interop["wptfyi_url"]}">Interop 2026</a>, run against Summit and scored as wpt.fyi scores each browser. '
-             f'That puts it just behind the browsers’ own development builds and ahead of every released browser.</p>'
-             f'<p class="compat-group">Development builds</p>{bars(dev, 100, tenth)}<p class="compat-group">Released browsers</p>{bars(released, 100, tenth)}</article>')
-    h5rows = [{'name': r['browser'], 'score': r['score'], 'summit': r.get('summit')} for r in h5['results']]
-    body += (f'<article class="compat-card"><p class="eyebrow">HTML5test</p><p class="compat-score"><strong>{next(r["score"] for r in h5rows if r["summit"])}</strong><span>of {h5["maximum"]} points</span></p>'
-             f'<p><a href="https://html5test.co/">html5test.co</a> awards points for each web feature a browser offers, from forms and media to storage, devices and graphics. '
-             f'It checks that a feature is there, not how well it works. The current Chrome and Firefox ran it the same day.</p>'
-             f'<p class="compat-group">Same day, same test</p>{bars(h5rows, h5["maximum"], str)}</article>')
+    for y in years:
+        summit = {'name': 'Summit', 'score': y['summit'], 'summit': True}
+        dev = sorted([summit] + [b for b in y['browsers'] if b['kind'] == 'experimental'], key=lambda b: -b['score'])
+        released = sorted([b for b in y['browsers'] if b['kind'] == 'stable'], key=lambda b: -b['score'])
+        body += (f'<article class="compat-card"><p class="eyebrow">Interop {y["year"]}</p><p class="compat-score"><strong>{hundredth(y["summit"])}</strong><span>of 100</span></p>'
+                 f'<p>All {y["tests"]:,} tests of the {len(y["areas"])} focus areas in <a href="{y["wptfyi_url"]}">Interop {y["year"]}</a>, run against Summit and scored as wpt.fyi scores each browser. '
+                 f'{e(y["summary"])}</p>'
+                 f'<p class="compat-group">Development builds</p>{bars(dev, 100, hundredth)}<p class="compat-group">Released browsers</p>{bars(released, 100, hundredth)}</article>')
     body += '</div>'
     # Per-area scores next to the two Safari releases (the same engine family).
     area = lambda x: '100' if x >= 1000 else tenth(x / 10)
-    rows = ''.join(f'<tr><td>{e(a["name"])}</td><td class="num summit">{area(a["summit"])}</td><td class="num">{area(a["stp"])}</td><td class="num">{area(a["safari"])}</td></tr>' for a in interop['areas'])
-    body += (f'<div class="compat-detail"><div><h3>Interop 2026 by focus area</h3><p>Summit’s engine follows upstream WebKit, so Safari is the natural comparison. Summit passes every test in {WORDS.get(n := sum(a["summit"] == 1000 for a in interop["areas"]), n)} of the 20 areas and matches or beats Safari Technology Preview in all but {WORDS.get(n := sum(a["summit"] < a["stp"] for a in interop["areas"]), n)}. '
-             f'Most failures left in those are pixel-level differences in reference tests, which Summit runs at twice wpt.fyi’s resolution; the scroll-snap one has been fixed since this run.</p>'
-             f'<div class="device-links">{link(interop["source"], "Results and fixes ↗", "text-link")}{link(interop["kit"], "How the tests are run ↗", "text-link")}</div></div>'
-             f'<div class="table-wrap"><table class="doc-table compat-table"><thead><tr><th scope="col">Focus area</th><th scope="col" class="num">Summit</th><th scope="col" class="num">{e(interop["stp_label"])}</th><th scope="col" class="num">{e(interop["safari_label"])}</th></tr></thead><tbody>{rows}</tbody></table></div></div>')
+    for y in years:
+        areas = y['areas']
+        rows = ''.join(f'<tr><td>{e(a["name"])}</td><td class="num summit">{area(a["summit"])}</td><td class="num">{area(a["stp"])}</td><td class="num">{area(a["safari"])}</td></tr>' for a in areas)
+        body += (f'<div class="compat-detail"><div><h3>Interop {y["year"]} by focus area</h3><p>Summit’s engine follows upstream WebKit, so Safari is the natural comparison. '
+                 f'Summit passes every test in {count(sum(a["summit"] >= 1000 for a in areas))} of the {len(areas)} areas and {f'matches or beats {e(y["stp_label"])} in all but {count(behind)}' if (behind := sum(a["summit"] < a["stp"] for a in areas)) else f'matches or beats {e(y["stp_label"])} in every one'}. '
+                 f'{e(y["detail"])}</p>'
+                 f'<div class="device-links">{link(interop["source"], "Results and open work ↗", "text-link")}{link(interop["kit"], "How the tests are run ↗", "text-link")}</div></div>'
+                 f'<div class="table-wrap"><table class="doc-table compat-table"><thead><tr><th scope="col">Focus area</th><th scope="col" class="num">Summit</th><th scope="col" class="num">{e(y["stp_label"])}</th><th scope="col" class="num">{e(y["safari_label"])}</th></tr></thead><tbody>{rows}</tbody></table></div></div>')
+    h5rows = [{'name': r['browser'], 'score': r['score'], 'summit': r.get('summit')} for r in h5['results']]
+    h5score = next(r['score'] for r in h5rows if r['summit'])
     missing = ''.join('<li>' + e(x) + '</li>' for x in h5['missing'])
-    body += (f'<article class="feature-row compat-misses"><div><h3>Where HTML5test’s points go</h3><p>Summit misses {h5["maximum"] - next(r["score"] for r in h5rows if r["summit"])} points, almost all of them for hardware or payment features with no counterpart on Haiku yet.</p>'
+    body += (f'<article class="feature-row compat-misses"><div><p class="eyebrow">HTML5test</p><p class="compat-score"><strong>{h5score}</strong><span>of {h5["maximum"]} points</span></p>'
+             f'<p><a href="https://html5test.co/">html5test.co</a> awards points for each web feature a browser offers, from forms and media to storage, devices and graphics. '
+             f'It checks that a feature is there, not how well it works. The current Chrome and Firefox ran it the same day.</p>'
+             f'{bars(h5rows, h5["maximum"], str)}'
+             f'<h3>Where its points go</h3><p>Summit misses {h5["maximum"] - h5score} points, almost all of them for hardware or payment features with no counterpart on Haiku yet.</p>'
              f'<ul class="checks">{missing}</ul><div class="device-links">{link(h5["source"], "Every result and how it was run ↗", "text-link")}</div></div>{capture(h5["screenshot"])}</article>')
-    body += (f'<p class="meta">Interop 2026: Summit run on {day(interop["run"])} ({e(interop["build"])}, {e(interop["machine"])}). Its {tenth(interop["summit"])} counts six tests that failed once in the full run and passed when run again; as run it scored {tenth(interop["as_run"])}. '
-             f'Other browsers’ scores are wpt.fyi’s for {day(interop["wptfyi"]["experimental"])} (development builds) and {day(interop["wptfyi"]["stable"])} (released). '
+    runs = ' '.join(f'Interop {y["year"]}: other browsers’ scores are wpt.fyi’s {e(y["wptfyi_note"])}.' for y in years)
+    body += (f'<p class="meta">Interop: Summit run on {day(interop["run"])} ({e(interop["build"])}, {e(interop["machine"])}). {e(interop["method"])} {runs} '
              f'HTML5test: {day(h5["run"])}, {e(h5["build"])} in a virtual machine; Chrome and Firefox ran headless on Linux, which can hide features such as Web Bluetooth. '
              f'Neither test measures how a particular site works, so if one doesn’t, {link(url("report/"), "report it")}.</p></section>')
     return body
@@ -224,7 +235,7 @@ def summit():
     body += ''.join(feature_row(f) for f in data['features'])
     body += compatibility(data['compatibility'])
     body += '<aside class="note">Web-platform and extension compatibility are still evolving. Test scores and verified examples do not establish support for every extension or streaming service. The <a href="'+GITHUB+'/summit">Summit feature notes</a> describe supported subsets and the build tables identify their source commits.</aside>'
-    page('summit/', 'Summit browser', 'Explore Summit reader mode, PDFs, extensions, streaming media, privacy controls and native developer tools for airOS and Haiku, and how it scores on Interop 2026 and HTML5test.', body)
+    page('summit/', 'Summit browser', 'Explore Summit reader mode, PDFs, extensions, streaming media, privacy controls and native developer tools for airOS and Haiku, and how it scores on Interop 2025, Interop 2026 and HTML5test.', body)
 
 def image_asset(target):
     im = next((i for i in D['images'] if i['target'] == target), None)
