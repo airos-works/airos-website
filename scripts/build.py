@@ -20,8 +20,8 @@ GITHUB = 'https://github.com/' + json.loads((ROOT / 'content/project.json').read
 UPDATED = D['updated'][:10]
 NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('docs/', 'Documentation'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('report/', 'Report an issue'), ('changelog/', 'Changelog')]
 # Documentation's menu in the header: the API pages (docs/ and the pages under it
-# but Virtualization) and the guide to running air/OS in a virtual machine.
-DOCS_MENU = [('docs/', 'API'), ('docs/virtualization/', 'Virtualization')]
+# but the guides), the installation guides and running air/OS in a virtual machine.
+DOCS_MENU = [('docs/', 'API'), ('docs/install/', 'Installation'), ('docs/virtualization/', 'Virtualization')]
 
 def url(path=''):
     return BASE + '/' + path
@@ -36,13 +36,13 @@ def page(path, title, description, body):
         if p != 'docs/':
             return link(url(p), t, 'active' if current(p) else '')
         # A menu that opens on hover or keyboard focus; the link itself still goes to docs/.
-        section = 'docs/virtualization/' if path.startswith('docs/virtualization/') else 'docs/'
+        section = next((q for q, _ in DOCS_MENU[1:] if path.startswith(q)), 'docs/')
         items = ''.join(link(url(q), label, 'active' if current(p) and q == section else '') for q, label in DOCS_MENU)
         label = t + ' <span class="caret" aria-hidden="true">▾</span>'
         return f'<div class="nav-menu">{link(url(p), label, "active" if current(p) else "")}<div class="nav-dropdown">{items}</div></div>'
     nav = ''.join(nav_item(p, t) for p, t in NAV if p != 'downloads/')
     cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
-    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV[:5] + [('docs/virtualization/', 'Virtualization')] + NAV[5:])
+    footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV[:5] + DOCS_MENU[1:] + NAV[5:])
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>air/OS</title><meta name="description" content="{e(description, quote=True)}">
@@ -274,7 +274,7 @@ def downloads():
         else:
             body += '<p class="availability">Public image coming soon</p>' + link(GITHUB+'/haiku/actions/workflows/airos-images.yml', 'Build status ↗')
         body += '</div></article>'
-    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. The ARM64 ISO is for UEFI machines and does not boot the Raspberry Pi or Cubie A7S; one Raspberry Pi SD image starts both the Pi 4 and the Pi 5. <strong>Write every image with dd or Rufus, not balenaEtcher,</strong> which has corrupted an airOS image without reporting an error. '+link(url('downloads/write/'), 'How to write an image to USB or SD safely →')+'</aside>'
+    body += '</div><aside class="note"><strong>Before installing.</strong> These are experimental development builds. Check the <a href="'+url('hardware/')+'">hardware notes</a> and back up your data. x86 means 64-bit x86 (x86-64); there is no 32-bit image. The ARM64 ISO is for UEFI machines and does not boot the Raspberry Pi or Cubie A7S; one Raspberry Pi SD image starts both the Pi 4 and the Pi 5. <strong>Write every image with dd or Rufus, not balenaEtcher,</strong> which has corrupted an airOS image without reporting an error. '+link(url('downloads/write/'), 'How to write an image to USB or SD safely →')+' '+link(url('docs/install/'), 'Installing on each platform →')+'</aside>'
     # Each package links back to its feature row on the apps page.
     features = {item['download'].split('#')[1]: item['id'] for tab in app_tabs()['tabs'] for item in tab.get('items', [])
                 if item.get('download', 'downloads/#system') != 'downloads/#system'}
@@ -344,7 +344,7 @@ def write_guide():
     body += '<li><strong>PCs:</strong> turn off Secure Boot in the firmware settings. The airOS boot loader isn’t signed.</li>'
     body += '<li><strong>“No boot volume found”</strong> after the boot loader appears usually means the copy is damaged. Check it as above and rewrite it with <code>dd</code> or Rufus.</li>'
     body += '<li><strong>Raspberry Pi 4, Pi 5 and Cubie A7S:</strong> use the SD image for that board (the Raspberry Pi image starts both Pi models); the ARM64 ISO doesn’t boot any of them. The ' + link(url('hardware/'), 'hardware notes') + ' list what each board supports.</li></ul></div></section>'
-    body += '<div class="actions">' + link(url('downloads/#system'), '← Back to the downloads', 'button') + '</div>'
+    body += '<div class="actions">' + link(url('downloads/#system'), '← Back to the downloads', 'button') + link(url('docs/install/'), 'Install on your platform →', 'button primary') + '</div>'
     page('downloads/write/', 'Writing an image', 'How to write airOS images to a USB stick or SD card with dd on Linux and macOS or Rufus on Windows, why not to use balenaEtcher, and how to check the copy.', body)
 
 REPORT_TEMPLATE = 'airos-issue.yml'

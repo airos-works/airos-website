@@ -151,6 +151,13 @@ body.home .header-inner nav{background:rgb(255 255 255 / .55);border-color:rgb(2
 .app-tabs a.selected span{color:#b9c7c4}
 .app-tabs .tab-icons{display:flex;gap:4px;flex-wrap:wrap}.app-tabs .tab-icons img{display:block}
 .tab-panel{scroll-margin-top:24px}.tab-panel>.section-heading{margin-top:0}.panel-actions{margin:0 0 26px}
+/* Installation: five platform tabs; with JavaScript only the chosen guide shows. */
+.platform-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+.doc-body>.install-panel[role=tabpanel]{border-top:0;padding-top:0}
+.install-download{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:20px 22px;margin:4px 0 22px;background:var(--panel);border-radius:var(--r)}
+.install-download .meta{margin:0}.install-download .meta code{background:var(--white)}
+.install-extras{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;font-size:13.5px}
+.step-number{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-right:12px;border-radius:50%;background:var(--night);color:#fff;font-size:13px;font-weight:600;vertical-align:3px}
 
 .capture-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;grid-column:1/-1;align-items:start}
 

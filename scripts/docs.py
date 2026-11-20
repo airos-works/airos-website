@@ -108,7 +108,7 @@ def overview(s):
     total = sum(len(kit['changes']) for kit in k['kits'])
     body += f'<a class="doc-card feature" href="{s.url("docs/kits/")}"><span class="tag">{total} changes</span><strong>Kit differences</strong><span>Every public API the fork adds or changes, shown as a diff against Haiku, plus behaviour changes and the private APIs system apps use.</span><em>Kit by kit →</em></a>'
     body += '</div>'
-    body += f'<p>To try your app, or air/OS itself, without a spare computer, run it in a virtual machine: {s.link(s.url("docs/virtualization/"), "QEMU and UTM set-up →")}</p></section>'
+    body += f'<p>To install air/OS on a PC, an ARM64 board, a Raspberry Pi, a Cubie A7S or an Intel Mac, see the {s.link(s.url("docs/install/"), "installation guides →")} To try your app, or air/OS itself, without a spare computer, run it in a virtual machine: {s.link(s.url("docs/virtualization/"), "QEMU and UTM set-up →")}</p></section>'
 
     body += '<section id="kits"><h2>Kit by kit</h2>'
     rows = []
@@ -634,6 +634,239 @@ qemu-system-aarch64 -machine virt -accel kvm -cpu host -m 4G -smp 4 \\
              'Try air/OS without a spare computer. The x86-64 and ARM64 ISOs start in QEMU on Linux and in UTM on a Mac, and install onto a virtual disk.', toc, body, tabs=False)
 
 
+# ---------------------------------------------------------------- installation
+
+def installation(s):
+    """Installing air/OS, platform by platform: a selector of five guides.
+
+    Sources, all in airos-works/haiku: the Installer (src/apps/installer and
+    docs/airos/INSTALLER.md: whole-disk UEFI installs, partition installs,
+    Tools menu), First-Boot Setup (docs/rpi4/INSTALLER.md), the Pi boot notes
+    (docs/rpi4/BOOT.md, docs/rpi5/BOOT.md and STATUS.md), the ROCK 5 ITX
+    firmware notes (docs/rock5-itx/RECOVERY.md: EDK2 v1.1 in SPI, device tree
+    only), the Dragon Q8B notes (docs/dragon-q8b/STATUS.md) and the Cubie SD
+    image (tools/cubie-a7s/build-sd-image.sh). The EFI loader opens its menu
+    on Space or Esc (platform/efi/console.cpp). The Intel Mac guide has not
+    been tried on a Mac: it follows how Intel Macs start other systems."""
+    images = {im['target']: im for im in json.loads((s.root / 'data/github.json').read_text())['images']}
+    downloads = s.url('downloads/#system')
+    write = s.url('downloads/write/')
+
+    def image_name(target):
+        im = images.get(target) or {'assets': []}
+        asset = next((a for a in im['assets'] if a['name'].endswith(('.iso.xz', '.img.xz'))), None)
+        return asset, im
+
+    def download(target, label):
+        asset, im = image_name(target)
+        if not asset:
+            return f'<div class="install-download">{s.link(downloads, "Get the " + label + " from the downloads page →", "button primary")}</div>'
+        extras = ''.join(s.link(a['browser_download_url'], 'SHA-256' if a['name'].endswith('.sha256') else 'Build manifest')
+                         for a in sorted(im['assets'], key=lambda a: a['name'] == 'manifest.json')
+                         if a['name'].endswith('.sha256') or a['name'] == 'manifest.json')
+        return (f'<div class="install-download">{s.link(asset["browser_download_url"], "Download the " + label + " ↓", "button primary")}'
+                f'<p class="meta"><code>{e(asset["name"])}</code> · {asset['size'] / 1e9:.1f} GB compressed · built {im["published"][:10]}</p>'
+                f'<p class="install-extras">{extras}{s.link(downloads, "All downloads")}</p></div>')
+
+    def name(target, fallback):
+        asset, _ = image_name(target)
+        return asset['name'] if asset else fallback
+
+    def step(id, n, title, body):
+        return f'<section class="guide" id="{id}"><h3><span class="step-number">{n}</span>{title}</h3>{body}</section>'
+
+    def write_commands(file, medium, mac_only=False):
+        mac = f"""# macOS: find the {medium} by its size, then use its disk number N
+diskutil list external
+shasum -a 256 -c {file}.sha256
+diskutil unmountDisk /dev/diskN
+xz -dc {file} | sudo dd of=/dev/rdiskN bs=4m
+diskutil eject /dev/diskN"""
+        linux = f"""# Linux: find the {medium} by its size and model, then use its whole device
+lsblk -o NAME,SIZE,MODEL,TRAN
+sha256sum -c {file}.sha256
+sudo umount /dev/sdX?*
+xz -dc {file} | sudo dd of=/dev/sdX bs=4M conv=fsync oflag=direct status=progress
+sync"""
+        html = '<p>Put the image and its SHA-256 file in one folder, check the download, and write the image to the <strong>whole</strong> ' + medium + '. Writing erases everything on it.</p>'
+        if mac_only:
+            html += pre(mac)
+            html += '<p>macOS has no <code>xz</code>: install it with Homebrew (<code>brew install xz</code>), or unpack the image with Keka or The Unarchiver and write it with <code>sudo dd if=airos-x86_64.iso of=/dev/rdiskN bs=4m</code>. Press <kbd>Ctrl</kbd>+<kbd>T</kbd> to see progress. If macOS then says the disk isn’t readable, choose <strong>Ignore</strong> or <strong>Eject</strong>, never <strong>Initialize</strong>.</p>'
+        else:
+            html += pre(linux + '\n\n' + mac)
+            html += '<p><strong>Windows:</strong> unpack the <code>.xz</code> file with 7-Zip, open the unpacked image in Rufus and, when Rufus asks, choose <strong>Write in DD Image mode</strong>.</p>'
+        html += f'<p>Double-check the device: <code>dd</code> overwrites whatever disk you name. Don’t use balenaEtcher, which has silently damaged an air/OS image. {s.link(write, "The full guide to writing an image")}, with Windows step by step and how to check the copy →</p>'
+        return html
+
+    first_start = '<p>air/OS starts and asks for your language and keymap. Choose <strong>Try air/OS</strong> to look around first (the Installer is on the Desktop and in Deskbar’s Applications menu), or <strong>Install air/OS</strong>.</p>'
+
+    def whole_disk(loader, disk_hint):
+        return ('<ol>'
+                '<li>The Installer opens with a short notice. Click <strong>Continue</strong>.</li>'
+                f'<li>Open the <strong>Onto</strong> menu. Under <strong>Erase a whole disk and set it up for UEFI</strong>, each disk is listed with its model, size, path and the volumes on it. {disk_hint} Disks it can’t use, such as the one air/OS is running from, are listed but greyed out, with the reason.</li>'
+                '<li>Click <strong>Begin</strong>. The Installer names the disk and its volumes once more: click <strong>Erase disk and install</strong>. (<strong>Cancel</strong> is the default, so pressing <kbd>Enter</kbd> erases nothing.)</li>'
+                f'<li>The Installer writes a new GUID partition map with a 256 MiB EFI system partition and a Be File System partition named <code>airOS</code> over the rest, copies the system, and puts its UEFI loader at <code>EFI/BOOT/{loader}</code>, the path firmware starts from a disk without needing a boot entry.</li>'
+                '<li>When it says the installation is complete, click <strong>Restart</strong> and remove the USB stick as the screen goes dark.</li></ol>')
+
+    partition_steps = ('<li>Start air/OS from the USB stick and open the Installer. Choose <strong>Tools → Set up partitions…</strong> to open DriveSetup.</li>'
+                       '<li>Select the empty space (or the partition you made for air/OS, after checking its size, and choose <strong>Partition → Delete</strong>). Choose <strong>Partition → Create…</strong>, set the type to <strong>Be File System</strong>, name it <code>airOS</code>, and click <strong>Create</strong>. Then choose <strong>Partition → Format → Be File System</strong> and confirm. Close DriveSetup.</li>'
+                       '<li>In the Installer’s <strong>Onto</strong> menu, choose the new partition under <strong>Install onto an existing partition</strong> and click <strong>Begin</strong>.</li>')
+
+    # ---- x86-64 PC
+    x86 = name('x86_64', 'airos-x86_64.iso.xz')
+    pc = '<div class="section-heading"><h2>An Intel or AMD PC.</h2><span>x86-64 ISO · USB stick</span></div>'
+    pc += '<p class="section-lead">The x86-64 ISO starts from a USB stick on UEFI and older BIOS PCs. The Installer then erases a disk and sets it up to start with UEFI, or installs onto a partition you prepared.</p>'
+    pc += step('pc-need', 1, 'What you need', '<ul class="checks">'
+               '<li>A 64-bit Intel or AMD PC with at least 4 GB of memory. There is no 32-bit image.</li>'
+               '<li>A USB stick of 8 GB or more.</li>'
+               '<li>A disk for air/OS of 32 GB or more: an NVMe or SATA drive, or an external USB disk. Installing onto a whole disk erases it.</li>'
+               '<li>A wired keyboard and mouse, at least for the first start: Bluetooth ones work only once paired in air/OS.</li>'
+               f'<li>A look at the {s.link(s.url("hardware/"), "hardware notes")}. Graphics acceleration is for the tested AMD and NVIDIA cards; elsewhere the desktop uses the frame buffer the firmware set up.</li></ul>')
+    pc += step('pc-write', 2, 'Download the ISO and write the USB stick', download('x86_64', 'x86-64 ISO') + write_commands(x86, 'USB stick'))
+    pc += step('pc-start', 3, 'Start from the stick', '<ol>'
+               '<li>Open the firmware settings (usually <kbd>F2</kbd> or <kbd>Del</kbd> as the PC starts) and turn off <strong>Secure Boot</strong>: the air/OS loader isn’t signed. If the SATA mode is RAID or Intel RST, set it to <strong>AHCI</strong> so air/OS sees the drive (Windows on that drive may need its own preparation first).</li>'
+               '<li>Insert the stick, restart and open the boot menu: commonly <kbd>F12</kbd> (Dell, Lenovo, Framework, Gigabyte), <kbd>F11</kbd> (MSI, ASRock), <kbd>F8</kbd> (ASUS) or <kbd>F9</kbd> (HP). Choose the stick, its <strong>UEFI:</strong> entry if it has two.</li></ol>' + first_start)
+    pc += step('pc-install', 4, 'Install onto a whole disk', whole_disk('BOOTX64.EFI', 'Pick the disk for air/OS by its model and size.') +
+               '<p>If the PC goes back to another system, choose the disk in the boot menu, or move it to the top of the boot order in the firmware settings.</p>')
+    pc += step('pc-alongside', 5, 'Or install alongside another system', '<p>To keep Windows or Linux on the same disk, give air/OS a partition of its own. Back up first.</p><ol>'
+               '<li>Make at least 32 GB of free space: in Windows, Disk Management → right-click the volume → <strong>Shrink Volume</strong>; in Linux, GParted. Leave the space unallocated.</li>'
+               + partition_steps +
+               '<li>Then choose <strong>Tools → Install EFI loader</strong> and pick the disk’s existing EFI system partition. The loader goes to <code>EFI/BOOT/BOOTX64.EFI</code>; if one is already there (Windows keeps a copy), the Installer offers to rename it. Windows still starts from its own boot entry.</li>'
+               '<li>Restart and choose the disk in the firmware’s boot menu, often listed as <strong>UEFI OS</strong> or by the disk’s name. If it lists only Windows Boot Manager, add an entry for <code>\\EFI\\BOOT\\BOOTX64.EFI</code> in the firmware settings.</li></ol>'
+               '<p><strong>A PC without UEFI</strong> (most made before 2012) starts the ISO in BIOS mode but can’t start a disk set up for UEFI. In DriveSetup, choose the disk and <strong>Disk → Initialize → Intel Partition Map</strong> (this erases it), create a Be File System partition and install onto it as above. The Installer writes the partition’s boot sector; then use <strong>Tools → Set up boot menu…</strong> to write a boot menu to the disk. This is Haiku’s own BIOS method; it hasn’t been retested on air/OS.</p>')
+    pc += step('pc-trouble', 6, 'If something goes wrong', '<ul class="checks">'
+               '<li><strong>The stick isn’t in the boot menu, or the PC ignores it.</strong> Check that Secure Boot is off, try another USB port, and write the stick again with <code>dd</code> or Rufus in DD mode.</li>'
+               '<li><strong>“No boot volume found”.</strong> The copy is damaged: check it and write it again.</li>'
+               '<li><strong>A black screen after the boot logo.</strong> Restart and press <kbd>Space</kbd> as air/OS starts to open its boot menu, choose <strong>Select safe mode options</strong> → <strong>Use fail-safe graphics driver</strong>, then <strong>Continue booting</strong>.</li>'
+               '<li><strong>The Installer doesn’t list the drive.</strong> Set the SATA mode to AHCI, as above. A drive behind a RAID controller isn’t supported.</li></ul>')
+
+    # ---- ARM64 with UEFI
+    arm = name('arm64', 'airos-arm64.iso.xz')
+    a64 = '<div class="section-heading"><h2>An ARM64 machine with UEFI.</h2><span>ARM64 ISO · USB stick</span></div>'
+    a64 += '<p class="section-lead">The ARM64 ISO starts on ARM64 boards and computers with UEFI firmware. It is installed and tested on the Radxa ROCK 5 ITX and the Radxa Dragon Q8B. It doesn’t start the Raspberry Pi or the Cubie A7S, which have SD card images of their own.</p>'
+    a64 += step('arm64-need', 1, 'What you need', '<ul class="checks">'
+                '<li>The board, with UEFI firmware (step 2).</li>'
+                '<li>A USB stick of 8 GB or more.</li>'
+                '<li>A disk for air/OS of 32 GB or more: an NVMe SSD on both boards, or an SD card on the Dragon Q8B. The ROCK 5 ITX’s eMMC is listed too.</li>'
+                '<li>An HDMI monitor, a USB keyboard and mouse, and an Ethernet cable for the first start.</li></ul>')
+    a64 += step('arm64-firmware', 2, 'Check the firmware', table(['Board', 'Firmware', 'Settings'], [
+        ['<strong>ROCK 5 ITX</strong>', 'EDK2 UEFI for the RK3588 (' + s.link('https://github.com/edk2-porting/edk2-rk3588', 'edk2-rk3588 ↗') + ') in the board’s SPI flash; release v1.1 is the one tested. Its README explains how to write it to the flash.',
+         'In the firmware setup (<kbd>Esc</kbd> at the splash): <strong>Device Manager → Rockchip Platform Configuration → ACPI / Device Tree</strong>, set the configuration table mode to <strong>Device Tree</strong> and the device tree compatibility to <strong>Mainline</strong>, the settings air/OS was tested with.'],
+        ['<strong>Dragon Q8B</strong>', 'Radxa’s UEFI firmware, as the board comes.', 'None. It tries USB, then the SD card, then the NVMe.'],
+        ['Other ARM64 UEFI machines', 'UEFI with a device tree or ACPI tables.', 'Untested: they may start, with fewer drivers.'],
+    ]) + '<p>On the ROCK 5 ITX, installing Radxa’s Debian through ROOBI replaces EDK2 in the SPI flash with U-Boot, and writing EDK2 again resets its settings: set them again afterwards.</p>')
+    a64 += step('arm64-write', 3, 'Download the ISO and write the USB stick', download('arm64', 'ARM64 ISO') + write_commands(arm, 'USB stick'))
+    a64 += step('arm64-start', 4, 'Start from the stick', '<p>Insert the stick into a USB port and switch the board on. The Dragon Q8B starts from USB by itself. On the ROCK 5 ITX, press <kbd>Esc</kbd> at the splash, choose <strong>Boot Manager</strong> and then the stick (<strong>UEFI</strong> followed by its name).</p>' + first_start)
+    a64 += step('arm64-install', 5, 'Install onto the NVMe or SD card', whole_disk('BOOTAA64.EFI', 'Pick the NVMe SSD (or, on the Dragon Q8B, the SD card) by its size.') +
+                '<p>The Dragon Q8B starts the new disk as soon as no bootable USB stick is attached. On the ROCK 5 ITX, if EDK2 starts an older system instead (a boot entry made for an earlier installation stops matching once the disk is erased), open <strong>Boot Maintenance Manager → Boot Options → Change Boot Order</strong> and move the drive (<strong>UEFI</strong> followed by the SSD’s model) to the top.</p>')
+    a64 += step('arm64-trouble', 6, 'If something goes wrong', '<ul class="checks">'
+                '<li><strong>The ROCK 5 ITX stops right after the loader.</strong> Check the device tree settings in step 2: EDK2’s defaults return whenever the firmware is written again.</li>'
+                '<li><strong>The firmware menus don’t react to the keyboard.</strong> Plug it into another USB port, directly rather than through a hub or KVM: some firmware can’t use composite USB devices.</li>'
+                '<li><strong>It started, then stopped in the kernel debugger.</strong> ' + s.link(s.url('report/'), 'Report an issue') + ' with the board and the firmware version.</li></ul>')
+
+    # ---- Raspberry Pi
+    rpi = name('rpi4', 'airos-rpi4.img.xz')
+    pi = '<div class="section-heading"><h2>Raspberry Pi 4 and Pi 5.</h2><span>Raspberry Pi image · SD card</span></div>'
+    pi += '<p class="section-lead">One SD card image starts both the Pi 4 and the Pi 5. The card is the installation: write it, start the Pi from it, and First-Boot Setup gives air/OS the rest of the card.</p>'
+    pi += step('pi-need', 1, 'What you need', '<ul class="checks">'
+               '<li>A Raspberry Pi 4 Model B or Raspberry Pi 5. Both were tested with 4 GB of memory; the Pi 400, Pi 500 and Compute Modules haven’t been tried.</li>'
+               '<li>A microSD card of 16 GB or more; 32 GB or more, rated A1 or A2, is better.</li>'
+               '<li>The official power supply: 5.1 V, 3 A USB-C for the Pi 4; 27 W (5 A) USB-C for the Pi 5.</li>'
+               '<li>A micro-HDMI cable and a monitor, a USB keyboard and mouse, and Ethernet or Wi-Fi. A heatsink or fan helps under load: air/OS doesn’t control the Pi 5’s fan yet.</li></ul>')
+    pi += step('pi-write', 2, 'Download the image and write the SD card', download('rpi4', 'Raspberry Pi image') + write_commands(rpi, 'SD card'))
+    pi += step('pi-start', 3, 'Start the Pi', '<ol>'
+               '<li>Insert the card. Connect the monitor <strong>before</strong> switching on: on the Pi 4 use <strong>HDMI0</strong>, the micro-HDMI port next to the USB-C power port; on the Pi 5 either port works. A monitor connected later stays dark until a restart.</li>'
+               '<li>Plug in the keyboard and mouse (on the Pi 5, the blue USB 3 ports are fastest) and the power. The first start takes about a minute.</li></ol>')
+    pi += step('pi-setup', 4, 'First-Boot Setup', '<p>On the first start, First-Boot Setup opens on the desktop.</p><ol>'
+               '<li><strong>Step 1, storage:</strong> it shows the card’s current and available size. Choose to use the entire card and confirm; the partition table is changed and checked, and air/OS grows into the space at the next start. Or keep the current size.</li>'
+               '<li><strong>Step 2, time zone:</strong> choose yours. The Pi has no clock that keeps time while it’s off (the Pi 5’s isn’t supported yet), so air/OS sets the time from the network.</li>'
+               '<li>Click <strong>Restart now</strong>. Setup doesn’t appear again; to change your choice later, open <strong>Applications → First-Boot Setup</strong>.</li></ol>')
+    pi += step('pi-usb', 5, 'Pi 5: start from a USB disk instead', '<p>The Pi 5 also starts the same image from a USB SSD or stick: write it as above, plug it into a blue USB 3 port and remove the SD card. With a supply that isn’t the 5 A one, the Pi 5 refuses to start from USB unless <code>config.txt</code> has <code>usb_max_current_enable=1</code> in its <code>[pi5]</code> section. That file is on the disk’s first partition, which Windows, macOS and Linux can open.</p>')
+    pi += step('pi-trouble', 6, 'If something goes wrong', '<ul class="checks">'
+               '<li><strong>No picture.</strong> On the Pi 4, use HDMI0, connect the monitor before switching on, and restart.</li>'
+               '<li><strong>The Pi doesn’t start, or stops with a lightning bolt.</strong> Use the official supply: an undersized one makes the board throttle or reset, especially with USB disks attached.</li>'
+               f'<li><strong>Not yet supported:</strong> NVMe HATs on the Pi 5’s PCIe connector, sound HATs, the power button and choosing a resolution in Screen preferences. The {s.link(s.url("hardware/#rpi5"), "hardware notes")} list the rest.</li></ul>')
+
+    # ---- Cubie A7S
+    cub = name('cubie', 'airos-cubie.img.xz')
+    cubie = '<div class="section-heading"><h2>Radxa Cubie A7S.</h2><span>Cubie image · SD card</span></div>'
+    cubie += '<p class="section-lead">The Cubie A7S starts air/OS from a microSD card that carries Radxa’s boot chain. As on the Raspberry Pi, the card is the installation; the generic ARM64 ISO doesn’t start this board.</p>'
+    cubie += step('cubie-need', 1, 'What you need', '<ul class="checks">'
+                  '<li>A Radxa Cubie A7S.</li>'
+                  '<li>A microSD card of 16 GB or more; 32 GB or more, rated A1 or A2, is better.</li>'
+                  '<li>A USB-C power supply that meets Radxa’s recommendation for the board, a monitor, and a USB keyboard and mouse (a small USB hub helps).</li>'
+                  '<li>A heatsink: cooling matters under sustained load. The onboard Wi-Fi joins 5 GHz WPA2 networks.</li></ul>')
+    cubie += step('cubie-write', 2, 'Download the image and write the SD card', download('cubie', 'Cubie A7S image') + write_commands(cub, 'SD card'))
+    cubie += step('cubie-start', 3, 'Start the board', '<p>Insert the card, connect the monitor, keyboard and mouse, then the power. The board starts Radxa’s boot loader from the card, which starts air/OS’s own U-Boot, which starts air/OS.</p>')
+    cubie += step('cubie-setup', 4, 'First-Boot Setup', '<p>First-Boot Setup opens on the desktop, as on the Raspberry Pi: <strong>Step 1</strong> offers to use the entire card (the card’s boot chain and EFI partition are left as they are), <strong>Step 2</strong> sets the time zone, then <strong>Restart now</strong>. It is in <strong>Applications → First-Boot Setup</strong> afterwards. Keep the card in the board: it is where air/OS is installed.</p>')
+    cubie += step('cubie-trouble', 5, 'If something goes wrong', '<ul class="checks">'
+                  '<li><strong>Nothing on the screen.</strong> Check the copy and write the card again with <code>dd</code> or Rufus in DD mode: the boot chain sits in the first 16 MB of the card, and a tool that copies files instead of the raw image leaves it out.</li>'
+                  '<li><strong>The system slows down under load.</strong> Check the cooling.</li>'
+                  f'<li>Bluetooth pairing and audio over Bluetooth aren’t verified yet; see the {s.link(s.url("hardware/#cubie"), "hardware notes")}.</li></ul>')
+
+    # ---- Intel Mac
+    mac = '<aside class="note caution"><strong>Not tested on a Mac yet.</strong> These steps follow how Intel Macs start other systems and how the x86-64 ISO starts PCs, but air/OS hasn’t been run on a Mac. Expect surprises, and please ' + s.link(s.url('report/'), 'report what you find') + ', including what worked.</aside>'
+    mac += '<div class="section-heading"><h2>A Mac with an Intel processor.</h2><span>x86-64 ISO · USB stick</span></div>'
+    mac += '<p class="section-lead">Intel Macs have UEFI firmware, so the x86-64 ISO should start on them as it does on a PC. The safest first installation goes onto an external disk, which leaves macOS untouched.</p>'
+    mac += step('mac-which', 1, 'Check your Mac', table(['Mac', 'What to expect'], [
+        ['Intel Macs from about 2008 on', 'Should start the ISO. To check, run <code>ioreg -l -p IODeviceTree | grep firmware-abi</code> in Terminal: it should print <code>EFI64</code>.'],
+        ['The first Intel Macs (2006–2007)', 'Many have 32-bit EFI (<code>EFI32</code>) and can’t start the 64-bit loader.'],
+        ['Macs with the T2 chip: iMac Pro, iMac 27-inch (2020), Mac mini (2018), Mac Pro (2019), MacBook Air and MacBook Pro (2018–2020)', 'Need the security changes in step 3. Their internal SSD is probably not seen, so install onto an external disk; on the laptops, the built-in keyboard and trackpad go through the T2 and probably won’t work.'],
+        ['Macs with Apple silicon (M1 and later)', 'Can’t start air/OS: run it in ' + s.link(s.url('docs/virtualization/#utm'), 'UTM') + ' instead.'],
+    ]) + '<p>Note the model identifier and graphics from <strong>Apple menu → About This Mac → More Info → System Report</strong>; they help with a report. Graphics acceleration is for the GPUs on the ' + s.link(s.url('hardware/'), 'hardware page') + '. The Radeon Pro 570–580 in 2017 and 2019 iMacs share the tested WX 5100’s Polaris design but haven’t been tried; other Macs show the desktop on the frame buffer the firmware set up, without acceleration.</p>')
+    mac += step('mac-need', 2, 'What you need', '<ul class="checks">'
+                '<li>A USB stick of 8 GB or more (with an adapter on a Mac that has only USB-C).</li>'
+                '<li>A <strong>wired USB keyboard and mouse</strong>. Apple’s wireless keyboards, mice and trackpads use Bluetooth: they work in the Mac’s startup menu, but not in air/OS until paired there.</li>'
+                '<li>An <strong>Ethernet cable</strong> (or adapter). Most Intel Macs have Broadcom Wi-Fi, which air/OS has no driver for.</li>'
+                '<li>An external SSD or disk of 32 GB or more for the recommended installation, or 32 GB of free space on the internal disk.</li>'
+                '<li>A current Time Machine backup.</li></ul>')
+    mac += step('mac-prepare', 3, 'Prepare the Mac', '<ul class="checks">'
+                '<li><strong>Macs with the T2 chip:</strong> restart holding <kbd>⌘</kbd>+<kbd>R</kbd> to open macOS Recovery, then choose <strong>Utilities → Startup Security Utility</strong>. Set Secure Boot to <strong>No Security</strong> and External Boot to <strong>Allow booting from external or removable media</strong>.</li>'
+                '<li><strong>A firmware password</strong>, if set, is asked for when you choose a startup disk. Have it ready.</li>'
+                '<li>Other Intel Macs need no changes.</li></ul>')
+    mac += step('mac-write', 4, 'Download the ISO and write the USB stick in macOS', download('x86_64', 'x86-64 ISO') + write_commands(x86, 'USB stick', mac_only=True))
+    mac += step('mac-start', 5, 'Start from the stick', '<ol>'
+                '<li>Shut the Mac down. Plug in the stick, the wired keyboard and mouse, and Ethernet.</li>'
+                '<li>Press the power button, then at once press and hold <kbd>Option</kbd> (<kbd>⌥</kbd>; <kbd>Alt</kbd> on a PC keyboard) until Startup Manager shows the startup disks.</li>'
+                '<li>Choose <strong>EFI Boot</strong>, the stick with the USB icon, and press <kbd>Return</kbd>.</li></ol>'
+                + first_start +
+                '<p>Choose <strong>Try air/OS</strong> the first time and check the screen, keyboard, mouse, network and sound before installing.</p>')
+    mac += step('mac-external', 6, 'Install onto an external disk (recommended)', whole_disk('BOOTX64.EFI', 'Pick the external disk by its model and size. The internal disk is the one with macOS’s volumes, such as <code>Macintosh HD</code>: don’t choose it.') +
+                '<p>To start air/OS, hold <kbd>Option</kbd> at power-on and choose <strong>EFI Boot</strong> on the external disk. Without it, the Mac starts macOS as before.</p>')
+    mac += step('mac-alongside', 7, 'Or install alongside macOS on the internal disk', '<p>Don’t do this on an iMac or Mac mini with a <strong>Fusion Drive</strong> (an SSD and a hard disk that macOS joins into one): air/OS sees them as two disks, and changing either breaks the pair. Use an external disk instead.</p><ol>'
+                '<li>In macOS, open Disk Utility and choose <strong>View → Show All Devices</strong>. Select the internal disk itself (the top line), click <strong>Partition</strong>, then <strong>+</strong>, and choose <strong>Add Partition</strong> (not Add Volume). Name it <code>AIROS</code>, choose the <strong>MS-DOS (FAT)</strong> format and a size of 32 GB or more, and click <strong>Apply</strong>. macOS shrinks its own partition to make room.</li>'
+                + partition_steps.replace('the partition you made for air/OS', 'the <code>AIROS</code> partition you made in macOS') +
+                '<li>Choose <strong>Tools → Install EFI loader</strong> and pick the internal disk’s EFI partition (about 200 MB, named <code>EFI</code>). This puts the loader at <code>EFI/BOOT/BOOTX64.EFI</code>, a path macOS doesn’t use. If a Boot Camp installation of Windows already put a loader there, the Installer offers to rename it.</li>'
+                '<li>Restart holding <kbd>Option</kbd>: <strong>EFI Boot</strong> starts air/OS and <strong>Macintosh HD</strong> starts macOS, which stays the default.</li></ol>'
+                '<p>To remove air/OS later, delete its partition in macOS’s Disk Utility and let macOS take the space back.</p>'
+                '<p><strong>The whole internal disk</strong> can be used too, with the whole-disk option above, but that erases macOS and its Recovery partition: macOS can then be reinstalled only through Internet Recovery (<kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>R</kbd> at power-on).</p>')
+    mac += step('mac-trouble', 8, 'If something goes wrong', '<ul class="checks">'
+                '<li><strong>Startup Manager shows no EFI Boot.</strong> Write the stick again with <code>dd</code> and try another port. On a T2 Mac, check that external booting is allowed (step 3). A Mac with 32-bit EFI can’t start it.</li>'
+                '<li><strong>A black or frozen screen after choosing EFI Boot.</strong> Start again and press <kbd>Space</kbd> repeatedly as air/OS starts, to open its boot menu: choose <strong>Select safe mode options</strong> → <strong>Use fail-safe graphics driver</strong>, then <strong>Continue booting</strong>.</li>'
+                '<li><strong>The keyboard or mouse doesn’t react in air/OS.</strong> Use wired USB ones, plugged into the Mac directly.</li>'
+                '<li><strong>No network.</strong> Use Ethernet: Broadcom Wi-Fi isn’t supported.</li>'
+                '<li><strong>Whatever happens, please tell us.</strong> ' + s.link(s.url('report/'), 'Report an issue') + ' with the model identifier, the graphics, how far it got and, if it reached the desktop, <code>/var/log/syslog</code>.</li></ul>')
+
+    platforms = [
+        ('pc', 'x86-64 PC', 'Intel and AMD desktops and laptops, UEFI or BIOS.', pc),
+        ('arm64', 'ARM64 with UEFI', 'Radxa ROCK 5 ITX, Dragon Q8B and other UEFI machines.', a64),
+        ('raspberry-pi', 'Raspberry Pi', 'Pi 4 and Pi 5, from one SD card.', pi),
+        ('cubie-a7s', 'Cubie A7S', 'Radxa’s Allwinner A733 board, from an SD card.', cubie),
+        ('intel-mac', 'Intel Mac', 'iMac, Mac mini, MacBook and Mac Pro with an Intel processor. Not tested yet.', mac),
+    ]
+    # Without JavaScript these are jump links and every guide is shown; site.js
+    # turns them into tabs, as on the apps page.
+    tabs = '<nav class="app-tabs platform-tabs" aria-label="Platforms" data-app-tabs>'
+    tabs += ''.join(f'<a href="#{id}" data-tab="{id}"><strong>{label}</strong><span>{summary}</span></a>' for id, label, summary, _ in platforms)
+    tabs += '</nav>'
+    panels = ''.join(f'<section id="{id}" class="tab-panel install-panel">{body}</section>' for id, _, _, body in platforms)
+    lead = 'Choose the computer you’re installing on. Each guide goes from the download to a system that starts on its own: writing the USB stick or SD card, starting from it, and installing.'
+    html = s.intro('Documentation · Installation', 'Install air/OS.', lead, wide=True)
+    html += '<aside class="note"><strong>Before you start.</strong> air/OS is a development build: back up anything on the disk you install onto. Every image can be tried live before installing, and you can also run air/OS in a ' + s.link(s.url('docs/virtualization/'), 'virtual machine') + ' without touching a disk.</aside>'
+    html += tabs + f'<div class="doc-layout no-toc"><div class="doc-body install-body">{panels}</div></div>'
+    s.page('docs/install/', 'Installation', 'Install air/OS on an x86-64 PC, an ARM64 machine with UEFI, a Raspberry Pi 4 or 5, a Radxa Cubie A7S or an Intel Mac: writing the USB stick or SD card, starting from it and installing.', html)
+
+
 GITHUB_SUMMIT_DOC = ''
 
 
@@ -646,4 +879,5 @@ def build(page, url, link, intro, root, github):
     neural_guide(s)
     neural_reference(s)
     neural_examples(s)
+    installation(s)
     virtualization(s)

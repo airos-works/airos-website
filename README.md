@@ -72,6 +72,16 @@ both from the repository's actual Pages configuration.
   disk driver on x86-64, so the guide uses NVMe; `bootindex=1` keeps OVMF from trying the
   network before the installed disk. The UTM settings are UTM's own defaults, read from its
   source, with the devices the QEMU runs showed are needed; UTM itself was not run.
+- Installation (`docs/install/`, under Documentation in the header menu): a platform selector
+  (the apps page's tabs) with a guide for each: x86-64 PC, ARM64 with UEFI (ROCK 5 ITX,
+  Dragon Q8B), Raspberry Pi 4 and 5, Cubie A7S and Intel Mac. Each covers the download (direct
+  links from the image snapshot), writing the USB stick or SD card, starting from it and
+  installing: the Installer's whole-disk UEFI install, a partition install beside another
+  system (DriveSetup, then Tools → Install EFI loader), or First-Boot Setup on the SD images.
+  The facts come from airos-works/haiku: `docs/airos/INSTALLER.md` and `src/apps/installer`,
+  `docs/rpi4/INSTALLER.md`, the Pi, ROCK 5 ITX and Dragon Q8B notes, and the Cubie's
+  `tools/cubie-a7s/build-sd-image.sh`. The Intel Mac guide (20 November 2026) has not been tried
+  on a Mac and says so on the page; update it, and drop that notice, once it has.
 - Downloads: actual public `.hpkg` release assets, plus immutable OS images.
 - Package repositories (`repo/<arch>/`): HaikuPorts has no arm64 repository, so the site
   serves one at `repo/arm64/` (`repo`, `repo.info`, `repo.sha256`, `packages/*.hpkg`): the

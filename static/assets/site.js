@@ -1,5 +1,5 @@
 // Progressive enhancement: links, app panels and the complete archive work without JS.
-// Application categories: each panel stays hidden until its tab is chosen. A
+// Application categories (and the installation guide's platforms): each panel stays hidden until its tab is chosen. A
 // link to a panel or to an app inside one (apps/#proton, apps/#wordcraft) opens it.
 const appTabs = document.querySelector('[data-app-tabs]');
 if (appTabs) {
