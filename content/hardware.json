@@ -330,5 +330,39 @@
       }
     ],
     "download": "x86_64"
+  },
+  {
+    "id": "imac",
+    "name": "iMac (21.5-inch, 2017)",
+    "chip": "x86-64 · Intel Core i5-7360U · Iris Plus Graphics 640",
+    "status": "Tested on hardware",
+    "summary": "An Intel Mac running air/OS from its own SSD, with accelerated Intel graphics, Wi-Fi, sound and Bluetooth.",
+    "features": [
+      "Starts from the x86-64 USB stick through Apple’s Startup Manager, shown with the air/OS icon, and installs onto the whole internal SSD (an Apple SSD with 4 KiB sectors), which then starts on its own",
+      "Iris Plus Graphics 640 through Linux’s i915 driver: the built-in 1920 × 1080 screen with a hardware cursor, OpenGL 4.6 with Mesa iris (GLTeapot at about 2,000 frames per second) and Vulkan 1.4 with ANV",
+      "Hardware H.264, HEVC and VP9 decoding and encoding through VA-API",
+      "Broadcom BCM43602 Wi-Fi: WPA2, about 300 Mbit/s down and 100 Mbit/s up, and joining the network again at start-up",
+      "Gigabit Ethernet (Broadcom BCM57766)",
+      "The built-in speakers and microphone, on the Cirrus Logic CS8409 that Apple’s 2016–2019 Macs share",
+      "Bluetooth on Apple’s built-in Broadcom radio: nearby devices are found, and an Apple Wireless Keyboard pairs and types"
+    ],
+    "limits": "This is one iMac18,1 with 8 GB of memory, checked on 21 November 2026 with that day’s release and every driver from the image. Not yet tried on it: the headphone jack, the FaceTime HD camera, the SD card slot, the Thunderbolt 3 ports, an external display, screen brightness and sleep. Other Intel Macs haven’t been run yet; the Intel Mac installation guide says what to expect on each.",
+    "source_path": "docs/install/#intel-mac",
+    "source_label": "Install on an Intel Mac, and what to expect on other Macs",
+    "links": [
+      {
+        "label": "Wi-Fi driver (broadcomfmac)",
+        "path": "src/add-ons/kernel/drivers/network/wlan/broadcomfmac"
+      },
+      {
+        "label": "CS8409 sound",
+        "path": "src/add-ons/kernel/generic/hda_cs8409_apple"
+      },
+      {
+        "label": "Installing onto 4 KiB-sector disks",
+        "path": "docs/airos/INSTALLER.md"
+      }
+    ],
+    "download": "x86_64"
   }
 ]

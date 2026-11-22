@@ -819,7 +819,7 @@ sync"""
     mac += ('<p class="section-lead">Intel Macs have UEFI firmware, so the x86-64 ISO starts on them as it does on a PC. Use an image from 21 November 2026 or later: '
             'older images don’t start on a Mac, or can’t install onto an SSD with 4 KiB sectors such as the iMac’s. The safest first installation goes onto an external disk, which leaves macOS untouched.</p>')
     mac += ('<section class="guide" id="mac-tested"><h3>Tested: iMac (21.5-inch, 2017)</h3>'
-            '<p>The lab’s iMac18,1 has a dual-core Core i5-7360U, 8 GB of memory, Intel Iris Plus Graphics 640 and a 256 GB SSD. It runs the 21 November 2026 release, installed from the USB stick onto the whole internal SSD, and every driver comes from the image: nothing was added by hand.</p>'
+            '<p>The lab’s iMac18,1 has a dual-core Core i5-7360U, 8 GB of memory, Intel Iris Plus Graphics 640 and a 256 GB SSD. It runs the 21 November 2026 release, installed from the USB stick onto the whole internal SSD, and every driver comes from the image: nothing was added by hand. ' + s.link(s.url('hardware/#imac'), 'The iMac on the hardware page →') + '</p>'
             + table(['Part', 'On the 2017 iMac'], [
                 ['Starting up', 'Startup Manager (<kbd>Option</kbd> at power-on) shows the USB stick and the installed SSD with the air/OS icon. The boot menu (<kbd>Space</kbd>) and the start-up messages (<kbd>Esc</kbd>) show on screen.'],
                 ['Installing', 'A whole-disk install onto the internal SSD (an Apple SSD SM0256L, with 4 KiB sectors), which then starts on its own. It replaced macOS.'],
