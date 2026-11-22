@@ -82,8 +82,13 @@ both from the repository's actual Pages configuration.
   system (DriveSetup, then Tools → Install EFI loader), or First-Boot Setup on the SD images.
   The facts come from airos-works/haiku: `docs/airos/INSTALLER.md` and `src/apps/installer`,
   `docs/rpi4/INSTALLER.md`, the Pi, ROCK 5 ITX and Dragon Q8B notes, and the Cubie's
-  `tools/cubie-a7s/build-sd-image.sh`. The Intel Mac guide (20 November 2026) has not been tried
-  on a Mac and says so on the page; update it, and drop that notice, once it has.
+  `tools/cubie-a7s/build-sd-image.sh`. The Intel Mac guide was tried on the lab's 2017 iMac
+  (iMac18,1, Iris Plus 640) with the 21 November 2026 release: its table of what works there
+  comes from that machine (airos-works/haiku d8118d62ea, eadea8ae2e, 4be9e78620, 6a10a3b24b,
+  d7eefef711, e7d4fcf6c0, b9c5be6d8e; linux-drm's i915_drm). Its table of what to expect on
+  other Intel Macs from 2011 on is inferred from the drivers' coverage (broadcomfmac's PCI IDs,
+  nvme_disk's class probe, i915_drm from Gen 9, amdgpu_drm from Tonga, nouveau_drm before
+  Maxwell, bge, ixgbe) and says so; correct a row when another Mac is tried.
 - Downloads: actual public `.hpkg` release assets, plus immutable OS images.
 - Package repositories (`repo/<arch>/`): HaikuPorts has no arm64 repository, so the site
   serves one at `repo/arm64/` (`repo`, `repo.info`, `repo.sha256`, `packages/*.hpkg`): the

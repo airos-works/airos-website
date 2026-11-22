@@ -646,8 +646,9 @@ def installation(s):
     firmware notes (docs/rock5-itx/RECOVERY.md: EDK2 v1.1 in SPI, device tree
     only), the Dragon Q8B notes (docs/dragon-q8b/STATUS.md) and the Cubie SD
     image (tools/cubie-a7s/build-sd-image.sh). The EFI loader opens its menu
-    on Space or Esc (platform/efi/console.cpp). The Intel Mac guide has not
-    been tried on a Mac: it follows how Intel Macs start other systems."""
+    on Space or Esc (platform/efi/console.cpp). The Intel Mac guide was
+    tried on a 2017 iMac (iMac18,1) with the 21 November 2026 release; its
+    expectations for other Macs follow from the drivers' coverage."""
     images = {im['target']: im for im in json.loads((s.root / 'data/github.json').read_text())['images']}
     downloads = s.url('downloads/#system')
     write = s.url('downloads/write/')
@@ -705,7 +706,7 @@ sync"""
                 '<li>The Installer opens with a short notice. Click <strong>Continue</strong>.</li>'
                 f'<li>Open the <strong>Onto</strong> menu. Under <strong>Erase a whole disk and set it up for UEFI</strong>, each disk is listed with its model, size, path and the volumes on it. {disk_hint} Disks it can’t use, such as the one air/OS is running from, are listed but greyed out, with the reason.</li>'
                 '<li>Click <strong>Begin</strong>. The Installer names the disk and its volumes once more: click <strong>Erase disk and install</strong>. (<strong>Cancel</strong> is the default, so pressing <kbd>Enter</kbd> erases nothing.)</li>'
-                f'<li>The Installer writes a new GUID partition map with a 256 MiB EFI system partition and a Be File System partition named <code>airOS</code> over the rest, copies the system, and puts its UEFI loader at <code>EFI/BOOT/{loader}</code>, the path firmware starts from a disk without needing a boot entry.</li>'
+                f'<li>The Installer writes a new GUID partition map with a 512 MiB EFI system partition and a Be File System partition named <code>airOS</code> over the rest, copies the system, and puts its UEFI loader at <code>EFI/BOOT/{loader}</code>, the path firmware starts from a disk without needing a boot entry.</li>'
                 '<li>When it says the installation is complete, click <strong>Restart</strong> and remove the USB stick as the screen goes dark.</li></ol>')
 
     partition_steps = ('<li>Start air/OS from the USB stick and open the Installer. Choose <strong>Tools → Set up partitions…</strong> to open DriveSetup.</li>'
@@ -805,19 +806,66 @@ sync"""
                   f'<li>Bluetooth pairing and audio over Bluetooth aren’t verified yet; see the {s.link(s.url("hardware/#cubie"), "hardware notes")}.</li></ul>')
 
     # ---- Intel Mac
-    mac = '<aside class="note caution"><strong>Not tested on a Mac yet.</strong> These steps follow how Intel Macs start other systems and how the x86-64 ISO starts PCs, but air/OS hasn’t been run on a Mac. Expect surprises, and please ' + s.link(s.url('report/'), 'report what you find') + ', including what worked.</aside>'
+    # What was tested comes from the 2017 iMac (iMac18,1) in the lab, on the
+    # 21 November 2026 releases (airos-works/haiku d8118d62ea, eadea8ae2e,
+    # 4be9e78620, 6a10a3b24b, d7eefef711, e7d4fcf6c0, b9c5be6d8e, 542e09df45;
+    # linux-drm's i915_drm). The other rows follow from the drivers' coverage:
+    # broadcomfmac's PCI table, nvme_disk's class probe, i915_drm (Gen 9 on),
+    # amdgpu_drm (Tonga on), nouveau_drm (before Maxwell), bge and ixgbe.
+    mac = ('<aside class="note caution"><strong>Tested on one Mac so far.</strong> air/OS installs and runs on a 21.5-inch iMac from 2017: '
+           'what works on it is listed below. Other Intel Macs haven’t been tried yet. Step 1 says what to expect from the parts in them. Please '
+           + s.link(s.url('report/'), 'report what you find') + ', including what worked.</aside>')
     mac += '<div class="section-heading"><h2>A Mac with an Intel processor.</h2><span>x86-64 ISO · USB stick</span></div>'
-    mac += '<p class="section-lead">Intel Macs have UEFI firmware, so the x86-64 ISO should start on them as it does on a PC. The safest first installation goes onto an external disk, which leaves macOS untouched.</p>'
-    mac += step('mac-which', 1, 'Check your Mac', table(['Mac', 'What to expect'], [
-        ['Intel Macs from about 2008 on', 'Should start the ISO. To check, run <code>ioreg -l -p IODeviceTree | grep firmware-abi</code> in Terminal: it should print <code>EFI64</code>.'],
-        ['The first Intel Macs (2006–2007)', 'Many have 32-bit EFI (<code>EFI32</code>) and can’t start the 64-bit loader.'],
-        ['Macs with the T2 chip: iMac Pro, iMac 27-inch (2020), Mac mini (2018), Mac Pro (2019), MacBook Air and MacBook Pro (2018–2020)', 'Need the security changes in step 3. Their internal SSD is probably not seen, so install onto an external disk; on the laptops, the built-in keyboard and trackpad go through the T2 and probably won’t work.'],
-        ['Macs with Apple silicon (M1 and later)', 'Can’t start air/OS: run it in ' + s.link(s.url('docs/virtualization/#utm'), 'UTM') + ' instead.'],
-    ]) + '<p>Note the model identifier and graphics from <strong>Apple menu → About This Mac → More Info → System Report</strong>; they help with a report. Graphics acceleration is for the GPUs on the ' + s.link(s.url('hardware/'), 'hardware page') + '. The Radeon Pro 570–580 in 2017 and 2019 iMacs share the tested WX 5100’s Polaris design but haven’t been tried; other Macs show the desktop on the frame buffer the firmware set up, without acceleration.</p>')
+    mac += ('<p class="section-lead">Intel Macs have UEFI firmware, so the x86-64 ISO starts on them as it does on a PC. Use an image from 21 November 2026 or later: '
+            'older images don’t start on a Mac, or can’t install onto an SSD with 4 KiB sectors such as the iMac’s. The safest first installation goes onto an external disk, which leaves macOS untouched.</p>')
+    mac += ('<section class="guide" id="mac-tested"><h3>Tested: iMac (21.5-inch, 2017)</h3>'
+            '<p>The lab’s iMac18,1 has a dual-core Core i5-7360U, 8 GB of memory, Intel Iris Plus Graphics 640 and a 256 GB SSD. It runs the 21 November 2026 release, installed from the USB stick onto the whole internal SSD, and every driver comes from the image: nothing was added by hand.</p>'
+            + table(['Part', 'On the 2017 iMac'], [
+                ['Starting up', 'Startup Manager (<kbd>Option</kbd> at power-on) shows the USB stick and the installed SSD with the air/OS icon. The boot menu (<kbd>Space</kbd>) and the start-up messages (<kbd>Esc</kbd>) show on screen.'],
+                ['Installing', 'A whole-disk install onto the internal SSD (an Apple SSD SM0256L, with 4 KiB sectors), which then starts on its own. It replaced macOS.'],
+                ['Graphics', 'Iris Plus Graphics 640 through Linux’s i915 driver: the built-in 1920 × 1080 screen with a hardware cursor, OpenGL 4.6 (GLTeapot at about 2,000 frames per second), Vulkan 1.4, and hardware H.264, HEVC and VP9 decoding and encoding.'],
+                ['Wi-Fi', 'Broadcom BCM43602: scanning, joining a WPA2 network, about 300 Mbit/s down and 100 Mbit/s up, and joining it again at start-up.'],
+                ['Ethernet', 'Broadcom BCM57766 at 1 Gbit/s.'],
+                ['Sound', 'Cirrus Logic CS8409: the built-in speakers and the built-in microphone.'],
+                ['Bluetooth', 'The built-in Broadcom radio finds nearby devices; an Apple Wireless Keyboard pairs and types.'],
+                ['Also working', 'USB keyboards, mice and disks on the USB-A ports; Windows (SMB) network shares; restarting, including the automatic restart after a crash.'],
+                ['Not tried yet', 'The headphone jack, the FaceTime HD camera (it is listed as a video source), the SD card slot, the Thunderbolt 3 ports, an external display, screen brightness and sleep.'],
+            ]) + '</section>')
+    mac += step('mac-which', 1, 'Check your Mac', '<p>What air/OS can drive depends on the chips inside, which changed every few years. This is what to expect, from the drivers air/OS has and from the parts each Mac shares with the tested iMac. Only the 2017 iMac has actually been run.</p>' + table(['Mac', 'Graphics', 'What to expect'], [
+        ['<strong>iMac (2017)</strong><br>iMac18,1–18,3',
+         '21.5-inch: Iris Plus 640, tested. Retina 4K and 5K: Radeon Pro 555–580 (Polaris), the same design as the tested Radeon Pro WX 5100 in a PC, through amdgpu; not tried on a Mac.',
+         'Tested on the iMac18,1. The Retina models have the same Wi-Fi, sound and Bluetooth, and should behave the same.'],
+        ['<strong>MacBook Pro (2016–2017)</strong><br>MacBookPro13,1–14,3',
+         'Intel HD 530–630, Iris 540–550 and Iris Plus 640–650 (Skylake, Kaby Lake) through i915, like the iMac. 15-inch: also Radeon Pro 450–560 (Polaris), through amdgpu.',
+         'The same Wi-Fi (BCM43602) and sound (CS8409) as the iMac. The built-in keyboard and trackpad are connected over SPI, which air/OS has no driver for: use USB ones. The SSD has Apple’s own controller, which probably isn’t seen: install onto an external disk. Every port is Thunderbolt 3: plug the stick and keyboard in before power-on. The Touch Bar stays dark.'],
+        ['<strong>MacBook (12-inch, 2015–2017)</strong><br>MacBook8,1–10,1',
+         '2015: HD 5300 (Broadwell), without acceleration. 2016–2017: HD 515 and HD 615 through i915.',
+         'Its BCM4350 Wi-Fi is in the driver but untried. SPI keyboard and trackpad and Apple’s own SSD controller, as on the 2016–2017 MacBook Pro. The one USB-C port needs a hub for the stick, a keyboard and a mouse.'],
+        ['<strong>iMac (2019)</strong><br>iMac19,1–19,2',
+         'Radeon Pro 555X–580X (Polaris) and Vega 48, through amdgpu; not tried on a Mac.',
+         'The same CS8409 sound as the 2017 iMac. Check the Wi-Fi chip (below).'],
+        ['<strong>2013–2015:</strong> MacBook Air (2013–2017), MacBook Pro (late 2013–2015), iMac (late 2013–2015), Mac mini (2014), Mac Pro (2013)',
+         'Intel HD 5000 to Iris Pro 6200 (Haswell, Broadwell): Haiku’s intel_extreme sets the screen mode, without acceleration. NVIDIA GeForce GT 750M–GTX 780M (Kepler): nouveau, tested on a desktop Kepler card, not a Mac. AMD: the R9 M295X and M395X (Tonga) are in amdgpu’s range; other Radeons and the Mac Pro’s FirePro stay on Haiku’s radeon_hd or the firmware’s frame buffer.',
+         'Most have Broadcom BCM4360 Wi-Fi, which isn’t supported: use Ethernet or a USB Ethernet adapter. The laptops’ keyboards and trackpads are USB devices and should work, the trackpad as a plain mouse. Sound uses Haiku’s HD Audio driver; untried.'],
+        ['<strong>2011–2012:</strong> MacBook Air, MacBook Pro, iMac and Mac mini',
+         'Intel HD 3000 and HD 4000: intel_extreme, without acceleration. Radeon HD 6000M (2011): radeon_hd or the frame buffer. GeForce GT 640M–GTX 680MX (2012, Kepler): nouveau, untried on a Mac.',
+         'Broadcom BCM4331 Wi-Fi isn’t supported. Keyboards and trackpads as on the 2013–2015 laptops. These Macs’ older firmware hasn’t been tried at all.'],
+        ['<strong>Mac Pro (2010–2012)</strong><br>MacPro5,1',
+         'A graphics card from the ' + s.link(s.url('hardware/'), 'hardware page') + ' is accelerated as in a PC. Startup Manager shows on screen only with a card that has Mac or UEFI firmware.',
+         'Its Intel gigabit Ethernet has a driver. Wi-Fi as on the 2011–2012 Macs.'],
+        ['<strong>Macs with the T2 chip:</strong> iMac Pro, iMac 27-inch (2020), Mac mini (2018), Mac Pro (2019), MacBook Air (2018–2020) and MacBook Pro (2018–2020)',
+         'Intel UHD 617–630 and Iris Plus 645–655 (Gen 9): i915. Radeon Pro, from the 555X to the W6900X (Polaris, Vega, RDNA): amdgpu. The 2020 MacBook Air’s and four-port 13-inch MacBook Pro’s Ice Lake graphics: i915 with <code>haiku_probe all</code> in its settings, untried.',
+         'Need the security changes in step 3. The T2 handles the internal SSD, sound, the camera and, on the laptops, the keyboard and trackpad: none of these work, so install onto an external disk and use USB input devices. Their Wi-Fi (BCM4364, BCM4377) isn’t supported. Gigabit Ethernet and the Mac Pro’s Intel 10-gigabit ports should work; the Aquantia 10-gigabit port of the iMac Pro (an option on the Mac mini and 2020 iMac) has no driver.'],
+        ['<strong>The first Intel Macs (2006–2007)</strong>', '—',
+         'Many have 32-bit EFI and can’t start the 64-bit loader.'],
+        ['<strong>Macs with Apple silicon</strong> (M1 and later)', '—',
+         'Can’t start air/OS: run it in ' + s.link(s.url('docs/virtualization/#utm'), 'UTM') + ' instead.'],
+    ]) + '<p><strong>Which parts are in yours.</strong> <strong>Apple menu → About This Mac → More Info → System Report</strong> gives the model identifier and the graphics; note them for a report. In Terminal, <code>ioreg -l -p IODeviceTree | grep firmware-abi</code> should print <code>EFI64</code>, and <code>ioreg -r -n ARPT | grep device-id</code> names the Wi-Fi chip on most Intel Macs: <code>&lt;ba430000&gt;</code> is the tested BCM43602; <code>&lt;a3430000&gt;</code> (BCM4350) and <code>&lt;ec430000&gt;</code> (BCM4356) are in the driver but untried; others, such as <code>&lt;a0430000&gt;</code> (BCM4360) and <code>&lt;31430000&gt;</code> (BCM4331), aren’t supported.</p>'
+       '<p><strong>Graphics without a driver</strong> still work: air/OS shows the desktop on the frame buffer the firmware set up, at the screen’s resolution, without acceleration. On a 15-inch MacBook Pro with two GPUs, the built-in screen stays on the GPU the firmware chose, and air/OS doesn’t switch between them.</p>')
     mac += step('mac-need', 2, 'What you need', '<ul class="checks">'
                 '<li>A USB stick of 8 GB or more (with an adapter on a Mac that has only USB-C).</li>'
-                '<li>A <strong>wired USB keyboard and mouse</strong>. Apple’s wireless keyboards, mice and trackpads use Bluetooth: they work in the Mac’s startup menu, but not in air/OS until paired there.</li>'
-                '<li>An <strong>Ethernet cable</strong> (or adapter). Most Intel Macs have Broadcom Wi-Fi, which air/OS has no driver for.</li>'
+                '<li>A <strong>wired USB keyboard and mouse</strong>. Apple’s wireless keyboards, mice and trackpads use Bluetooth: they work in the Mac’s startup menu, but in air/OS only once paired in its Bluetooth preferences. On a MacBook or MacBook Pro from 2015 on, the built-in keyboard and trackpad don’t work.</li>'
+                '<li>An <strong>Ethernet cable</strong> (or a USB Ethernet adapter), unless the Mac has the BCM43602 Wi-Fi of the 2017 iMac and the 2016–2017 MacBook Pro. Most other Intel Macs have Broadcom Wi-Fi that air/OS has no driver for.</li>'
                 '<li>An external SSD or disk of 32 GB or more for the recommended installation, or 32 GB of free space on the internal disk.</li>'
                 '<li>A current Time Machine backup.</li></ul>')
     mac += step('mac-prepare', 3, 'Prepare the Mac', '<ul class="checks">'
@@ -828,7 +876,7 @@ sync"""
     mac += step('mac-start', 5, 'Start from the stick', '<ol>'
                 '<li>Shut the Mac down. Plug in the stick, the wired keyboard and mouse, and Ethernet.</li>'
                 '<li>Press the power button, then at once press and hold <kbd>Option</kbd> (<kbd>⌥</kbd>; <kbd>Alt</kbd> on a PC keyboard) until Startup Manager shows the startup disks.</li>'
-                '<li>Choose <strong>EFI Boot</strong>, the stick with the USB icon, and press <kbd>Return</kbd>.</li></ol>'
+                '<li>Choose <strong>EFI Boot</strong>, the stick with the air/OS icon, and press <kbd>Return</kbd>.</li></ol>'
                 + first_start +
                 '<p>Choose <strong>Try air/OS</strong> the first time and check the screen, keyboard, mouse, network and sound before installing.</p>')
     mac += step('mac-external', 6, 'Install onto an external disk (recommended)', whole_disk('BOOTX64.EFI', 'Pick the external disk by its model and size. The internal disk is the one with macOS’s volumes, such as <code>Macintosh HD</code>: don’t choose it.') +
@@ -839,12 +887,13 @@ sync"""
                 '<li>Choose <strong>Tools → Install EFI loader</strong> and pick the internal disk’s EFI partition (about 200 MB, named <code>EFI</code>). This puts the loader at <code>EFI/BOOT/BOOTX64.EFI</code>, a path macOS doesn’t use. If a Boot Camp installation of Windows already put a loader there, the Installer offers to rename it.</li>'
                 '<li>Restart holding <kbd>Option</kbd>: <strong>EFI Boot</strong> starts air/OS and <strong>Macintosh HD</strong> starts macOS, which stays the default.</li></ol>'
                 '<p>To remove air/OS later, delete its partition in macOS’s Disk Utility and let macOS take the space back.</p>'
-                '<p><strong>The whole internal disk</strong> can be used too, with the whole-disk option above, but that erases macOS and its Recovery partition: macOS can then be reinstalled only through Internet Recovery (<kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>R</kbd> at power-on).</p>')
+                '<p><strong>The whole internal disk</strong> can be used too, with the whole-disk option above, as on the tested iMac. That erases macOS and its Recovery partition: macOS can then be reinstalled only through Internet Recovery (<kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>R</kbd> at power-on).</p>')
     mac += step('mac-trouble', 8, 'If something goes wrong', '<ul class="checks">'
                 '<li><strong>Startup Manager shows no EFI Boot.</strong> Write the stick again with <code>dd</code> and try another port. On a T2 Mac, check that external booting is allowed (step 3). A Mac with 32-bit EFI can’t start it.</li>'
-                '<li><strong>A black or frozen screen after choosing EFI Boot.</strong> Start again and press <kbd>Space</kbd> repeatedly as air/OS starts, to open its boot menu: choose <strong>Select safe mode options</strong> → <strong>Use fail-safe graphics driver</strong>, then <strong>Continue booting</strong>.</li>'
-                '<li><strong>The keyboard or mouse doesn’t react in air/OS.</strong> Use wired USB ones, plugged into the Mac directly.</li>'
-                '<li><strong>No network.</strong> Use Ethernet: Broadcom Wi-Fi isn’t supported.</li>'
+                '<li><strong>The air/OS splash stays on screen, or the screen goes black.</strong> Check that the image is from 21 November 2026 or later. Then start again and press <kbd>Space</kbd> repeatedly as air/OS starts, to open its boot menu: choose <strong>Select safe mode options</strong> → <strong>Use fail-safe graphics driver</strong>, then <strong>Continue booting</strong>. To see where it stops, press <kbd>Esc</kbd> instead: air/OS shows its start-up messages, and a photo of the last lines helps a report.</li>'
+                '<li><strong>The Installer says the partitions could not be formatted.</strong> The disk has 4 KiB sectors, like the 2017 iMac’s SSD: use an image from 21 November 2026 or later.</li>'
+                '<li><strong>The keyboard or mouse doesn’t react in air/OS.</strong> Use wired USB ones, plugged into the Mac directly. On MacBooks from 2015 on and on T2 Macs, the built-in keyboard and trackpad never do.</li>'
+                '<li><strong>No network.</strong> Use Ethernet, unless the Mac’s Wi-Fi chip is one that works (step 1).</li>'
                 '<li><strong>Whatever happens, please tell us.</strong> ' + s.link(s.url('report/'), 'Report an issue') + ' with the model identifier, the graphics, how far it got and, if it reached the desktop, <code>/var/log/syslog</code>.</li></ul>')
 
     platforms = [
@@ -852,7 +901,7 @@ sync"""
         ('arm64', 'ARM64 with UEFI', 'Radxa ROCK 5 ITX, Dragon Q8B and other UEFI machines.', a64),
         ('raspberry-pi', 'Raspberry Pi', 'Pi 4 and Pi 5, from one SD card.', pi),
         ('cubie-a7s', 'Cubie A7S', 'Radxa’s Allwinner A733 board, from an SD card.', cubie),
-        ('intel-mac', 'Intel Mac', 'iMac, Mac mini, MacBook and Mac Pro with an Intel processor. Not tested yet.', mac),
+        ('intel-mac', 'Intel Mac', 'iMac, Mac mini, MacBook and Mac Pro with an Intel processor. Tested on a 2017 iMac.', mac),
     ]
     # Without JavaScript these are jump links and every guide is shown; site.js
     # turns them into tabs, as on the apps page.
