@@ -165,9 +165,12 @@ def applications():
             body += capture('summit') + ''.join(feature_row(f, 'summit-') for f in summit_data['features'])
         else:
             body += ''.join(feature_row(item) for item in tab['items'])
+        if tab.get('how'):
+            steps = ''.join(f'<li><span class="step-number">{i}</span><h3>{e(s["title"])}</h3><p>{e(s["text"])}</p></li>' for i, s in enumerate(tab['how'], 1))
+            body += f'<div class="how-it-works"><p class="eyebrow">How it works</p><ol>{steps}</ol></div>'
         body += '</section>'
     body += '<p class="meta">Features and port notes reviewed '+data['reviewed']+'. See each project’s source for current limitations. Found a problem? '+link(url('report/'), 'Report an issue →')+'</p>'
-    page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, Docker Desktop, the Summit browser, Proton VPN and Proton Mail Bridge, Clipper, AirShot, AirImager, and the reworked system apps and preferences.', body)
+    page('apps/', 'Applications', 'The airOS apps: the Craft office suite, media tools, developer tools, Docker Desktop, the Summit browser, Proton VPN and Proton Mail Bridge, Clipper, AirShot, AirImager, airDroid for Android apps, and the reworked system apps and preferences.', body)
 
 def bars(rows, maximum, fmt):
     # Horizontal bars on a common scale; Summit's own bar is highlighted.

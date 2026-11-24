@@ -40,6 +40,12 @@
       "description": "A native OpenVPN and AWS Client VPN client, including browser-based single sign-on."
     },
     {
+      "name": "airDroid",
+      "repo": "airDroid",
+      "description": "Run Android apps in their own desktop windows: a full LineageOS Android, installed from .apk files and app bundles, with GPU acceleration.",
+      "note": "Included in x86-64 airOS system images. Needs a processor with hardware virtualization (Intel VT-x or AMD-V). The first start downloads Android (about 800 MB). Apps must include x86-64 code: ARM-only apps are refused."
+    },
+    {
       "name": "Clipper",
       "repo": "clipper",
       "description": "A native Deskbar clipboard manager with searchable history, pinned clips and previews for text and images."

@@ -398,6 +398,61 @@
       ]
     },
     {
+      "id": "emulation",
+      "label": "Emulation",
+      "heading": "Android apps on the desktop",
+      "tag": "airDroid · x86-64",
+      "summary": "airDroid · Android apps in their own desktop windows, with GPU acceleration",
+      "lead": "airDroid runs Android apps on airOS the way Waydroid runs them on Linux: a complete Android system, with each app in its own window beside your native ones. Install an app from an .apk file or an app bundle and open it from the Deskbar.",
+      "note": "airDroid is new and runs on x86-64 only. It needs a processor with hardware virtualization (Intel VT-x or AMD-V). Apps must include x86-64 code, as most universal bundles do; airDroid has no ARM translator and refuses ARM-only apps. Android comes without Google Play services, so apps that rely on them may not sign in or work. Camera and sensors are not supported, and toasts and system dialogs are not shown while apps run in their own windows.",
+      "items": [
+        {
+          "id": "airdroid",
+          "title": "airDroid",
+          "text": "A full Android 13 (LineageOS 20, from Waydroid's own images) runs alongside the desktop. Each Android app gets an airOS window that moves, resizes, zooms and minimizes like the rest, with its own Deskbar entry.",
+          "features": [
+            "Install .apk files and the app bundles download sites provide (.apkm, .xapk, .apks): open one in Tracker, drop it on airDroid's window or use airdroid app install",
+            "Each app in its own window, or the whole Android interface in one",
+            "Android's OpenGL ES runs on your GPU; Vulkan is an experimental setting",
+            "Keyboard, mouse and touch, the clipboard in both directions, sound and the microphone",
+            "Android's notifications on the desktop, networking, and ~/Android shared as /sdcard/airOS",
+            "Waydroid's command line as airdroid: shell, logcat, app install, launch and list, upgrade"
+          ],
+          "source": "https://github.com/airos-works/airDroid/blob/main/docs/STATUS.md",
+          "screenshots": [
+            "airdroid-desktop",
+            "airdroid-deskbar"
+          ],
+          "wide": true,
+          "download": "downloads/#airdroid",
+          "links": [
+            {
+              "label": "How it works ↗",
+              "href": "https://github.com/airos-works/airDroid/blob/main/docs/ARCHITECTURE.md"
+            }
+          ]
+        }
+      ],
+      "how": [
+        {
+          "title": "A small Linux VM",
+          "text": "Waydroid shares the Linux kernel; airOS has none to share. So airDroid starts a small Linux virtual machine, with QEMU and the system's hardware virtualization (NVMM), whose only job is to hold Android's container."
+        },
+        {
+          "title": "Android, unchanged",
+          "text": "Inside the VM, airDroid's own init, written in Rust, starts LineageOS from Waydroid's unmodified system and vendor images. The first start downloads and verifies them, as waydroid init does."
+        },
+        {
+          "title": "Frames read in place",
+          "text": "A minimal compositor in the VM hands each app's layers to airDroid instead of drawing them. The VM's memory is a file that airOS maps too, so the app reads Android's frames in place rather than receiving copies."
+        },
+        {
+          "title": "Native windows and GPU",
+          "text": "airDroid draws each app into a BWindow and sends input from its views back to Android. Android's OpenGL ES reaches your GPU through virgl, and finished frames go straight from GPU memory into the windows."
+        }
+      ]
+    },
+    {
       "id": "system",
       "label": "System",
       "summary": "Media preferences · MediaConverter · Bluetooth · Wi-Fi · Screen · Quick Look · Network shares · Mail · Terminal",

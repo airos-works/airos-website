@@ -160,6 +160,14 @@ body.home .header-inner nav{background:rgb(255 255 255 / .55);border-color:rgb(2
 .step-number{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin-right:12px;border-radius:50%;background:var(--night);color:#fff;font-size:13px;font-weight:600;vertical-align:3px}
 
 .capture-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;grid-column:1/-1;align-items:start}
+/* A short "how it works" strip under an app: numbered steps in hairline-divided columns */
+.how-it-works{border-top:1px solid var(--line);padding:44px 0 8px}
+.how-it-works ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.how-it-works li{padding:4px 28px 0;border-left:1px solid var(--line)}
+.how-it-works li:first-child{border-left:0;padding-left:0}
+.how-it-works .step-number{margin:0 0 18px}
+.how-it-works h3{font-size:19px;font-weight:550;letter-spacing:-.015em}
+.how-it-works p{font-size:14.5px;color:var(--muted);margin:0}
 
 /* Hardware */
 .hardware-row{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;border-top:1px solid var(--line);padding:56px 0}
@@ -379,6 +387,7 @@ pre.output{background:#0c1413;color:#cfe3dd;font-size:12.5px}
   .nav-dropdown,.nav-menu .caret{display:none}
 }
 @media(max-width:1000px){
+  .how-it-works ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 0}.how-it-works li:nth-child(odd){border-left:0;padding-left:0}
   .wrap{width:calc(100% - 56px)}
   .header-inner{flex-wrap:wrap;padding:18px 0;gap:14px}
   .header-inner nav{order:3;width:100%;overflow-x:auto;justify-content:flex-start}
@@ -401,6 +410,7 @@ pre.output{background:#0c1413;color:#cfe3dd;font-size:12.5px}
   .compat-detail>div:first-child{position:static}
 }
 @media(max-width:760px){
+  .how-it-works ol{grid-template-columns:1fr;gap:0}.how-it-works li{border-left:0;border-top:1px solid var(--line);padding:26px 0}.how-it-works li:first-child{border-top:0;padding-top:4px}
   .compat-table th,.compat-table td{padding:8px 7px;font-size:12.5px}.compat-table th{white-space:normal}.compat-table td:first-child{min-width:0}
   .wrap{width:calc(100% - 32px)}
   .brand,.brand img{width:112px;flex-basis:112px}

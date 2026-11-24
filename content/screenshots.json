@@ -482,5 +482,31 @@
     "credit": "Shows <a href=\"https://html5test.co/\">HTML5test</a>, © Niels Leenheer and Jerzy Głowacki (<a href=\"https://github.com/niutech/html5test/blob/main/LICENSE\">MIT licence</a>)",
     "width": 1291,
     "height": 910
+  },
+  {
+    "id": "airdroid-desktop",
+    "title": "airDroid",
+    "category": "Emulation",
+    "file": "airdroid-desktop.png",
+    "description": "Reddit and a Duolingo Spanish lesson running as Android apps, each in its own window on the airOS desktop, beside airDroid's list of installed apps.",
+    "source": "https://github.com/airos-works/airDroid",
+    "captured": "2026-11-25",
+    "provenance": "QMP screendump of a QEMU/KVM VM (nested virtualization, 1280×800) running the 24 November x86-64 image (hrev60207-2957) live, with the airdroid 0.1.0-199 package it includes. Reddit 2026.46.0 and Duolingo 6.106.7 were installed from APKMirror's universal app bundles (.apkm); no account was signed in. The windows were arranged for the capture and the pointer moved off screen; no other edits.",
+    "credit": "Shows the Android apps of Reddit and Duolingo; Reddit and Duolingo are trademarks of their owners, and the captures are not endorsed by them",
+    "width": 1280,
+    "height": 800
+  },
+  {
+    "id": "airdroid-deskbar",
+    "title": "airDroid · Deskbar",
+    "category": "Emulation",
+    "file": "airdroid-deskbar.png",
+    "description": "The installed Android apps under Applications › Android apps in the Deskbar, with their own icons, while Duolingo marks an answer correct.",
+    "source": "https://github.com/airos-works/airDroid",
+    "captured": "2026-11-25",
+    "provenance": "QMP screendump of the same VM and session as the airDroid desktop capture, cropped to the right-hand 760×800 pixels; no other edits.",
+    "credit": "Shows the Android apps of Reddit and Duolingo; Reddit and Duolingo are trademarks of their owners, and the captures are not endorsed by them",
+    "width": 760,
+    "height": 800
   }
 ]

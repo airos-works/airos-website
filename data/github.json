@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T22:33:57+00:00",
+  "updated": "2026-11-24T22:42:40+00:00",
   "ci_head": "95f694e472284a3be336128e34209fa2ddc65fc6",
   "sources": [
     {
@@ -41672,6 +41672,857 @@
       "url": "https://github.com/airos-works/burrow/tree/main"
     },
     {
+      "name": "airDroid",
+      "repo": "airos-works/airDroid",
+      "branch": "main",
+      "description": "Run Android apps in their own desktop windows: a full LineageOS Android, installed from .apk files and app bundles, with GPU acceleration.",
+      "group": "Applications",
+      "head": "ba3b11fd145f8c11a9b309453b645f9785c69a7f",
+      "commits": [
+        {
+          "sha": "ba3b11fd145f8c11a9b309453b645f9785c69a7f",
+          "url": "https://github.com/airos-works/airDroid/commit/ba3b11fd145f8c11a9b309453b645f9785c69a7f",
+          "date": "2026-11-24T22:04:45Z",
+          "subject": "Issue form for airOS problem reports [skip ci]"
+        },
+        {
+          "sha": "b11d11d58e2c2ac1200f8d0c5fc1f9dd0f90f971",
+          "url": "https://github.com/airos-works/airDroid/commit/b11d11d58e2c2ac1200f8d0c5fc1f9dd0f90f971",
+          "date": "2026-11-23T07:48:46Z",
+          "subject": "Merge status-toasts: STATUS says why toasts are not shown and what was tried"
+        },
+        {
+          "sha": "9689627ce81ef5cae29d1e25a991df93ebf6b1c2",
+          "url": "https://github.com/airos-works/airDroid/commit/9689627ce81ef5cae29d1e25a991df93ebf6b1c2",
+          "date": "2026-11-23T07:48:46Z",
+          "subject": "STATUS: why toasts are not shown in multi-window mode, and what was tried"
+        },
+        {
+          "sha": "64e08079906eceeceb733a0504edc1f238d78496",
+          "url": "https://github.com/airos-works/airDroid/commit/64e08079906eceeceb733a0504edc1f238d78496",
+          "date": "2026-11-23T07:06:08Z",
+          "subject": "Merge wayland-keepalive: a new Android window cannot wait for good (#3)"
+        },
+        {
+          "sha": "2c21ca0b7320e1c5d2b9279b1b9c30dbe4c54395",
+          "url": "https://github.com/airos-works/airDroid/commit/2c21ca0b7320e1c5d2b9279b1b9c30dbe4c54395",
+          "date": "2026-11-23T06:59:52Z",
+          "subject": "The guest pings Android's composer, so a new window cannot wait for good (#3)"
+        },
+        {
+          "sha": "d963631cbeabae8e9ceae94ba31efc6e92127b4d",
+          "url": "https://github.com/airos-works/airDroid/commit/d963631cbeabae8e9ceae94ba31efc6e92127b4d",
+          "date": "2026-11-23T06:46:32Z",
+          "subject": "Merge shell-as-shell-user: airdroid shell runs as Android's shell user"
+        },
+        {
+          "sha": "bb96f9bffce9fb1384729c6407403bd45161cc17",
+          "url": "https://github.com/airos-works/airDroid/commit/bb96f9bffce9fb1384729c6407403bd45161cc17",
+          "date": "2026-11-23T06:46:20Z",
+          "subject": "airdroid shell runs commands as Android's shell user, like adb shell"
+        },
+        {
+          "sha": "59ac249ca22d9a37ec4408c6f5043d02935af2aa",
+          "url": "https://github.com/airos-works/airDroid/commit/59ac249ca22d9a37ec4408c6f5043d02935af2aa",
+          "date": "2026-11-23T06:44:44Z",
+          "subject": "Merge close-ghost-window: closing an Android window no longer leaves it behind, minimized"
+        },
+        {
+          "sha": "6179a8747147dc801a0020da8f1463cdf1da8608",
+          "url": "https://github.com/airos-works/airDroid/commit/6179a8747147dc801a0020da8f1463cdf1da8608",
+          "date": "2026-11-23T06:44:38Z",
+          "subject": "Closing an Android window no longer leaves it behind, minimized"
+        },
+        {
+          "sha": "8d46d760118f1e525f3a8123e0933c9c8d2be726",
+          "url": "https://github.com/airos-works/airDroid/commit/8d46d760118f1e525f3a8123e0933c9c8d2be726",
+          "date": "2026-11-23T06:34:18Z",
+          "subject": "Merge retype-stale-bundles: app files typed before airDroid was installed are identified again"
+        },
+        {
+          "sha": "89d1b60abef8af1b3c5cb22d49adbe3ce4f85516",
+          "url": "https://github.com/airos-works/airDroid/commit/89d1b60abef8af1b3c5cb22d49adbe3ce4f85516",
+          "date": "2026-11-23T06:34:15Z",
+          "subject": "Installing airDroid identifies again the app files that were typed before it"
+        },
+        {
+          "sha": "e31de4a5c72a42a8fb9d533d97b505432af35834",
+          "url": "https://github.com/airos-works/airDroid/commit/e31de4a5c72a42a8fb9d533d97b505432af35834",
+          "date": "2026-11-23T06:07:32Z",
+          "subject": "Merge window-chrome: Android's windows move, maximize, minimize and close as air/OS windows"
+        },
+        {
+          "sha": "747fb5871daef40021128e46642b8fc8f25ee783",
+          "url": "https://github.com/airos-works/airDroid/commit/747fb5871daef40021128e46642b8fc8f25ee783",
+          "date": "2026-11-23T06:07:29Z",
+          "subject": "Android's windows move, maximize, minimize and close as air/OS windows (#1, #2)"
+        },
+        {
+          "sha": "ada97dfbfa63d9778eb8addcd3d3ced7ca05dccc",
+          "url": "https://github.com/airos-works/airDroid/commit/ada97dfbfa63d9778eb8addcd3d3ced7ca05dccc",
+          "date": "2026-11-23T06:05:21Z",
+          "subject": "Merge post-install-on-activation: file types are registered when the package is installed"
+        },
+        {
+          "sha": "31a2be5bc339615f51b162e2e06710a2dc1e07ea",
+          "url": "https://github.com/airos-works/airDroid/commit/31a2be5bc339615f51b162e2e06710a2dc1e07ea",
+          "date": "2026-11-23T06:05:19Z",
+          "subject": "The package runs its post-install script when it is installed or upgraded"
+        },
+        {
+          "sha": "bf3604966e84fe23b8318c6503471f977b349a81",
+          "url": "https://github.com/airos-works/airDroid/commit/bf3604966e84fe23b8318c6503471f977b349a81",
+          "date": "2026-11-23T02:43:18Z",
+          "subject": "Merge drop-to-install: files dropped on airDroid's window are installed"
+        },
+        {
+          "sha": "eecd8ef709c7d02450f95ba3a59c73bb47790b69",
+          "url": "https://github.com/airos-works/airDroid/commit/eecd8ef709c7d02450f95ba3a59c73bb47790b69",
+          "date": "2026-11-23T02:43:16Z",
+          "subject": "Files dropped on airDroid's window are installed"
+        },
+        {
+          "sha": "274a8640fd991453729726f21f09ca4ec1b0f486",
+          "url": "https://github.com/airos-works/airDroid/commit/274a8640fd991453729726f21f09ca4ec1b0f486",
+          "date": "2026-11-23T02:40:54Z",
+          "subject": "STATUS: the clipboard is verified on air/OS, both ways"
+        },
+        {
+          "sha": "d7747d1f6e08ecbc9a0cb1b6de4feb2d4da5323c",
+          "url": "https://github.com/airos-works/airDroid/commit/d7747d1f6e08ecbc9a0cb1b6de4feb2d4da5323c",
+          "date": "2026-11-23T02:38:47Z",
+          "subject": "Merge host-language: Android starts in air/OS's language"
+        },
+        {
+          "sha": "c45a8129964c5a0bf337320c22f0836918330044",
+          "url": "https://github.com/airos-works/airDroid/commit/c45a8129964c5a0bf337320c22f0836918330044",
+          "date": "2026-11-23T02:38:44Z",
+          "subject": "Android starts in air/OS's language"
+        },
+        {
+          "sha": "1e31123938d3e9dc71c95eb1fe61315e6cd50a8c",
+          "url": "https://github.com/airos-works/airDroid/commit/1e31123938d3e9dc71c95eb1fe61315e6cd50a8c",
+          "date": "2026-11-23T01:33:23Z",
+          "subject": "STATUS: a real APKMirror bundle installs and runs"
+        },
+        {
+          "sha": "120384aac6c287f25ee8a56695e2906bd86022af",
+          "url": "https://github.com/airos-works/airDroid/commit/120384aac6c287f25ee8a56695e2906bd86022af",
+          "date": "2026-11-23T01:28:37Z",
+          "subject": "Merge leftover-vm: a VM left by a killed app is ended before the next starts"
+        },
+        {
+          "sha": "ecba8670b8298d42b0981d4586d34ac8473d305a",
+          "url": "https://github.com/airos-works/airDroid/commit/ecba8670b8298d42b0981d4586d34ac8473d305a",
+          "date": "2026-11-23T01:28:35Z",
+          "subject": "End the VM a killed airDroid left behind before starting another"
+        },
+        {
+          "sha": "65a65b0a7f24867e162a149598cb7e5a1cce679d",
+          "url": "https://github.com/airos-works/airDroid/commit/65a65b0a7f24867e162a149598cb7e5a1cce679d",
+          "date": "2026-11-23T01:23:35Z",
+          "subject": "Merge app-bundles: install .apkm, .xapk and .apks app bundles"
+        },
+        {
+          "sha": "b161393df9a5a47defa2e4dc2a8322d704db8c04",
+          "url": "https://github.com/airos-works/airDroid/commit/b161393df9a5a47defa2e4dc2a8322d704db8c04",
+          "date": "2026-11-23T01:23:33Z",
+          "subject": "App bundles: tell the formats by what their files start with"
+        },
+        {
+          "sha": "f6d7b1c0b8fbce4cba3ec6de9889b60c2b278b42",
+          "url": "https://github.com/airos-works/airDroid/commit/f6d7b1c0b8fbce4cba3ec6de9889b60c2b278b42",
+          "date": "2026-11-23T01:20:02Z",
+          "subject": "App bundles: install .apkm, .xapk and .apks files"
+        },
+        {
+          "sha": "3f40edb9ff2ecd7dd5965995912ef36afb433a93",
+          "url": "https://github.com/airos-works/airDroid/commit/3f40edb9ff2ecd7dd5965995912ef36afb433a93",
+          "date": "2026-11-23T00:19:40Z",
+          "subject": "STATUS: Intel, from the packages of release 20261122-2357"
+        },
+        {
+          "sha": "c9459e54ff54a526b254d72533d9488ece1a216b",
+          "url": "https://github.com/airos-works/airDroid/commit/c9459e54ff54a526b254d72533d9488ece1a216b",
+          "date": "2026-11-22T23:43:53Z",
+          "subject": "Merge host-threads: two hardware threads are left to the host"
+        },
+        {
+          "sha": "38da872c8b6a73094a2f291de184f1b63ed9c788",
+          "url": "https://github.com/airos-works/airDroid/commit/38da872c8b6a73094a2f291de184f1b63ed9c788",
+          "date": "2026-11-22T23:43:50Z",
+          "subject": "Android gets all but two of the host's hardware threads by default"
+        },
+        {
+          "sha": "15565d758b895517e16bb480bf4cb3aabcb6e3b9",
+          "url": "https://github.com/airos-works/airDroid/commit/15565d758b895517e16bb480bf4cb3aabcb6e3b9",
+          "date": "2026-11-22T23:26:04Z",
+          "subject": "Merge venus-intel: Vulkan mode on Intel's ANV"
+        },
+        {
+          "sha": "fb446ba7e62750e454291446a043508844d5fc9b",
+          "url": "https://github.com/airos-works/airDroid/commit/fb446ba7e62750e454291446a043508844d5fc9b",
+          "date": "2026-11-22T23:26:01Z",
+          "subject": "Venus on Intel's ANV"
+        },
+        {
+          "sha": "880f170407e5be1b5353f0821154d29495814903",
+          "url": "https://github.com/airos-works/airDroid/commit/880f170407e5be1b5353f0821154d29495814903",
+          "date": "2026-11-22T23:04:04Z",
+          "subject": "Merge mic-level: the microphone on real hardware"
+        },
+        {
+          "sha": "1e210fb5a47ae97f0cae46168e3078b19cd23dcd",
+          "url": "https://github.com/airos-works/airDroid/commit/1e210fb5a47ae97f0cae46168e3078b19cd23dcd",
+          "date": "2026-11-22T23:04:01Z",
+          "subject": "The microphone works on real hardware"
+        },
+        {
+          "sha": "a13cce41b5e34052ab874b678fa8db8e5f9c1a31",
+          "url": "https://github.com/airos-works/airDroid/commit/a13cce41b5e34052ab874b678fa8db8e5f9c1a31",
+          "date": "2026-11-22T09:05:29Z",
+          "subject": "Merge venus-probe: the Venus check tries the device; airDroid on Intel"
+        },
+        {
+          "sha": "b89adff06261d86c038d52104e58f923088e1d8d",
+          "url": "https://github.com/airos-works/airDroid/commit/b89adff06261d86c038d52104e58f923088e1d8d",
+          "date": "2026-11-22T09:05:26Z",
+          "subject": "The Venus check tries the device; Intel results"
+        },
+        {
+          "sha": "6463af7af92c41a185f40b339532f2e5148e6751",
+          "url": "https://github.com/airos-works/airDroid/commit/6463af7af92c41a185f40b339532f2e5148e6751",
+          "date": "2026-11-22T08:43:26Z",
+          "subject": "Merge early-shell: shell and logcat during Android's start"
+        },
+        {
+          "sha": "ac7678f9c44af293cc635349678c1252eda71635",
+          "url": "https://github.com/airos-works/airDroid/commit/ac7678f9c44af293cc635349678c1252eda71635",
+          "date": "2026-11-22T08:43:24Z",
+          "subject": "airdroid shell and logcat answer while Android is starting"
+        },
+        {
+          "sha": "50d2ca324d0e45b08bdaad6cf865b24971fd2395",
+          "url": "https://github.com/airos-works/airDroid/commit/50d2ca324d0e45b08bdaad6cf865b24971fd2395",
+          "date": "2026-11-22T08:41:42Z",
+          "subject": "Merge stuck-boot: a stuck start is reported; Start With New Data"
+        },
+        {
+          "sha": "09a76b469762af11b87b0360532a7e1ac8dc2dee",
+          "url": "https://github.com/airos-works/airDroid/commit/09a76b469762af11b87b0360532a7e1ac8dc2dee",
+          "date": "2026-11-22T08:41:39Z",
+          "subject": "A start that goes nowhere is reported, and Android can be started with new data"
+        },
+        {
+          "sha": "27405aadb26fb9260491356db84caccb0a267d00",
+          "url": "https://github.com/airos-works/airDroid/commit/27405aadb26fb9260491356db84caccb0a267d00",
+          "date": "2026-11-22T08:28:34Z",
+          "subject": "Merge venus-radv: Vulkan mode on AMD's RADV"
+        },
+        {
+          "sha": "60bb2aa57f46cb4e2065132879a2cc46e0baae4a",
+          "url": "https://github.com/airos-works/airDroid/commit/60bb2aa57f46cb4e2065132879a2cc46e0baae4a",
+          "date": "2026-11-22T08:28:32Z",
+          "subject": "Venus on RADV as well"
+        },
+        {
+          "sha": "9a2ea86877ec62e977697573aece7aff05d4b562",
+          "url": "https://github.com/airos-works/airDroid/commit/9a2ea86877ec62e977697573aece7aff05d4b562",
+          "date": "2026-11-22T08:23:28Z",
+          "subject": "Merge zeroed-state: Android starts again after a crash that zeroed its state files"
+        },
+        {
+          "sha": "89e7b1f313a5e8db6fbe38f5f664672fb6baca44",
+          "url": "https://github.com/airos-works/airDroid/commit/89e7b1f313a5e8db6fbe38f5f664672fb6baca44",
+          "date": "2026-11-22T08:23:26Z",
+          "subject": "State files of only zero bytes are cleared before Android starts"
+        },
+        {
+          "sha": "70b51b983f04e9a737ca99ec71da63700766071e",
+          "url": "https://github.com/airos-works/airDroid/commit/70b51b983f04e9a737ca99ec71da63700766071e",
+          "date": "2026-11-22T08:10:24Z",
+          "subject": "Merge data-fsck: e2fsck for Android's data disk before it is mounted"
+        },
+        {
+          "sha": "b3150278019b85f46a8a048c247b5f2625d788ce",
+          "url": "https://github.com/airos-works/airDroid/commit/b3150278019b85f46a8a048c247b5f2625d788ce",
+          "date": "2026-11-22T08:10:21Z",
+          "subject": "The data disk is checked before it is mounted"
+        },
+        {
+          "sha": "0c6fc569889e9e1ff8879769fd25315277bbb93b",
+          "url": "https://github.com/airos-works/airDroid/commit/0c6fc569889e9e1ff8879769fd25315277bbb93b",
+          "date": "2026-11-22T07:03:05Z",
+          "subject": "STATUS: why Venus is NVK-only for now, after the panic turned out to be NVMM's"
+        },
+        {
+          "sha": "3a62c57378c6156e9918c63887b1df222b560612",
+          "url": "https://github.com/airos-works/airDroid/commit/3a62c57378c6156e9918c63887b1df222b560612",
+          "date": "2026-11-22T07:01:21Z",
+          "subject": "STATUS: the preempt race is the probable cause, and the patch is untested"
+        },
+        {
+          "sha": "eba14dd1ddaef3cb7fd4d6e38c02efb5170a4021",
+          "url": "https://github.com/airos-works/airDroid/commit/eba14dd1ddaef3cb7fd4d6e38c02efb5170a4021",
+          "date": "2026-11-22T07:00:42Z",
+          "subject": "STATUS: the Intel iMac run and the kernel panic under contention; tools/lab/race.sh"
+        },
+        {
+          "sha": "fb906a2e2c40dcd58845e92b5f8bb92ad7f1d741",
+          "url": "https://github.com/airos-works/airDroid/commit/fb906a2e2c40dcd58845e92b5f8bb92ad7f1d741",
+          "date": "2026-11-22T05:40:50Z",
+          "subject": "STATUS: the laptop's panic is airos-works/haiku#148"
+        },
+        {
+          "sha": "4d288b50507aafef3b16797a2ed593f708b1a1c8",
+          "url": "https://github.com/airos-works/airDroid/commit/4d288b50507aafef3b16797a2ed593f708b1a1c8",
+          "date": "2026-11-22T05:39:04Z",
+          "subject": "Merge tool-paths: tools by absolute path, Venus only on NVK for now"
+        },
+        {
+          "sha": "5a246e18371c3c43a7626978d3831f03062850ae",
+          "url": "https://github.com/airos-works/airDroid/commit/5a246e18371c3c43a7626978d3831f03062850ae",
+          "date": "2026-11-22T05:39:01Z",
+          "subject": "Venus only on NVK for now; the Framework laptop's results"
+        },
+        {
+          "sha": "830c4d296fed46b3f9a100e4925b7cb145d5e2b6",
+          "url": "https://github.com/airos-works/airDroid/commit/830c4d296fed46b3f9a100e4925b7cb145d5e2b6",
+          "date": "2026-11-22T05:14:05Z",
+          "subject": "curl and unzip by where air/OS has them, and named when they cannot be run"
+        },
+        {
+          "sha": "f161d9684dcd8a703855e0617a9387ad323bedab",
+          "url": "https://github.com/airos-works/airDroid/commit/f161d9684dcd8a703855e0617a9387ad323bedab",
+          "date": "2026-11-22T04:21:51Z",
+          "subject": "docs: Show Android numbers over all runs"
+        },
+        {
+          "sha": "8ec59539945f2839dad544a673e690a4b8693803",
+          "url": "https://github.com/airos-works/airDroid/commit/8ec59539945f2839dad544a673e690a4b8693803",
+          "date": "2026-11-22T04:13:53Z",
+          "subject": "docs: the scroll test's frame times in the comparison"
+        },
+        {
+          "sha": "d66760c9e27e0eb5cadc07803f5da227fd848d5c",
+          "url": "https://github.com/airos-works/airDroid/commit/d66760c9e27e0eb5cadc07803f5da227fd848d5c",
+          "date": "2026-11-22T04:13:39Z",
+          "subject": "Merge vsync-slack: the host reports each frame's slack"
+        },
+        {
+          "sha": "bd2b5ed554a376a54eb8a2318551b96ce8ba8be3",
+          "url": "https://github.com/airos-works/airDroid/commit/bd2b5ed554a376a54eb8a2318551b96ce8ba8be3",
+          "date": "2026-11-22T04:13:37Z",
+          "subject": "The host says how early each frame was ready; the lead stays fixed"
+        },
+        {
+          "sha": "8232dca577e7d121ad657ff27a6345fc7285fca4",
+          "url": "https://github.com/airos-works/airDroid/commit/8232dca577e7d121ad657ff27a6345fc7285fca4",
+          "date": "2026-11-22T03:14:30Z",
+          "subject": "Merge guest-hz: 250 Hz guest kernel and a vsync lead"
+        },
+        {
+          "sha": "7899254c46793def13ff4f12d1f189632817fc00",
+          "url": "https://github.com/airos-works/airDroid/commit/7899254c46793def13ff4f12d1f189632817fc00",
+          "date": "2026-11-22T03:14:27Z",
+          "subject": "Guest kernel at 250 Hz, Android told its vsync 12 ms early"
+        },
+        {
+          "sha": "cf1cad51b49b844642f72d9940fe319e0bd090d6",
+          "url": "https://github.com/airos-works/airDroid/commit/cf1cad51b49b844642f72d9940fe319e0bd090d6",
+          "date": "2026-11-22T01:54:43Z",
+          "subject": "docs: airDroid against Waydroid on the same machine"
+        },
+        {
+          "sha": "dda81f59c91079a8e86ad29a370b0b45791eec61",
+          "url": "https://github.com/airos-works/airDroid/commit/dda81f59c91079a8e86ad29a370b0b45791eec61",
+          "date": "2026-11-22T00:21:30Z",
+          "subject": "docs: the X399 panic does not come up in the test VM"
+        },
+        {
+          "sha": "cc6ce2c9e97a13017e63dab3739b9af4d3c4d81d",
+          "url": "https://github.com/airos-works/airDroid/commit/cc6ce2c9e97a13017e63dab3739b9af4d3c4d81d",
+          "date": "2026-11-21T22:29:14Z",
+          "subject": "docs: Show Android numbers over all runs"
+        },
+        {
+          "sha": "6edfed678b5ae1588c13a8bfbaf8f9076cff3755",
+          "url": "https://github.com/airos-works/airDroid/commit/6edfed678b5ae1588c13a8bfbaf8f9076cff3755",
+          "date": "2026-11-21T22:22:27Z",
+          "subject": "Merge incremental-frames: windows of several layers paint what changed"
+        },
+        {
+          "sha": "c321caf17fad581804a2ddf7d871239c4e380305",
+          "url": "https://github.com/airos-works/airDroid/commit/c321caf17fad581804a2ddf7d871239c4e380305",
+          "date": "2026-11-21T22:22:25Z",
+          "subject": "Windows of several layers paint what changed"
+        },
+        {
+          "sha": "78515724eb4a6f8adb82fcf4fc3475ed72bd0d97",
+          "url": "https://github.com/airos-works/airDroid/commit/78515724eb4a6f8adb82fcf4fc3475ed72bd0d97",
+          "date": "2026-11-21T21:42:34Z",
+          "subject": "Merge fence-poll: frames are done in 4 ms instead of 37"
+        },
+        {
+          "sha": "cf96eb3fe94c897cf77d2590b3e908a4ec1f1ee7",
+          "url": "https://github.com/airos-works/airDroid/commit/cf96eb3fe94c897cf77d2590b3e908a4ec1f1ee7",
+          "date": "2026-11-21T21:42:32Z",
+          "subject": "QEMU polls virgl fences every millisecond: frames done in 4 ms, not 37"
+        },
+        {
+          "sha": "454e4cab7dc7f217cd7b901e4f96e28fb5dfcf7c",
+          "url": "https://github.com/airos-works/airDroid/commit/454e4cab7dc7f217cd7b901e4f96e28fb5dfcf7c",
+          "date": "2026-11-21T12:38:06Z",
+          "subject": "docs: frame times over all ten scroll runs"
+        },
+        {
+          "sha": "05106f87bc6ac58a9f5859bcaf269adcfc73a99b",
+          "url": "https://github.com/airos-works/airDroid/commit/05106f87bc6ac58a9f5859bcaf269adcfc73a99b",
+          "date": "2026-11-21T12:33:12Z",
+          "subject": "Merge venus-check: Venus only on Vulkan drivers that can carry Android's windows"
+        },
+        {
+          "sha": "90f9f5d08ffb56d24ffb23ed0103c20d5dda1ac9",
+          "url": "https://github.com/airos-works/airDroid/commit/90f9f5d08ffb56d24ffb23ed0103c20d5dda1ac9",
+          "date": "2026-11-21T12:33:09Z",
+          "subject": "Venus not possible: what Automatic would do"
+        },
+        {
+          "sha": "9ebde2d32c7813b57c12be77c1521eb97b11af7d",
+          "url": "https://github.com/airos-works/airDroid/commit/9ebde2d32c7813b57c12be77c1521eb97b11af7d",
+          "date": "2026-11-21T12:22:01Z",
+          "subject": "Venus only where the host's Vulkan driver can carry Android's windows"
+        },
+        {
+          "sha": "a9f4762fee92da26fa38313e28ff026d054c3160",
+          "url": "https://github.com/airos-works/airDroid/commit/a9f4762fee92da26fa38313e28ff026d054c3160",
+          "date": "2026-11-21T11:51:56Z",
+          "subject": "README: Vulkan is a setting now"
+        },
+        {
+          "sha": "ea6fc11c64d4df305aa5943c2efa7c39ef6f906b",
+          "url": "https://github.com/airos-works/airDroid/commit/ea6fc11c64d4df305aa5943c2efa7c39ef6f906b",
+          "date": "2026-11-21T11:51:46Z",
+          "subject": "Merge vulkan-setting: the Vulkan mode is in the settings window"
+        },
+        {
+          "sha": "cc8fa69f7ef81cfa495cda5906729e2cc25672b7",
+          "url": "https://github.com/airos-works/airDroid/commit/cc8fa69f7ef81cfa495cda5906729e2cc25672b7",
+          "date": "2026-11-21T11:51:43Z",
+          "subject": "Settings: Vulkan (Venus) is a choice under Graphics, marked experimental"
+        },
+        {
+          "sha": "8b30e43acb115db2da62c7e91a50b4a0e5855edc",
+          "url": "https://github.com/airos-works/airDroid/commit/8b30e43acb115db2da62c7e91a50b4a0e5855edc",
+          "date": "2026-11-21T11:49:10Z",
+          "subject": "Merge full-ui-stall: Show Android mode survives app starts, GL reads Vulkan-drawn buffers"
+        },
+        {
+          "sha": "229b5fa48429002bb88e319a253c310578e3ae48",
+          "url": "https://github.com/airos-works/airDroid/commit/229b5fa48429002bb88e319a253c310578e3ae48",
+          "date": "2026-11-21T11:49:07Z",
+          "subject": "docs: Show Android mode fix, GL users of Vulkan buffers, provisioning"
+        },
+        {
+          "sha": "20dd4891342ecbe34fd74aed5408907cf73d328d",
+          "url": "https://github.com/airos-works/airDroid/commit/20dd4891342ecbe34fd74aed5408907cf73d328d",
+          "date": "2026-11-21T11:47:23Z",
+          "subject": "Show Android mode: imports are cached, Vulkan-drawn buffers reach OpenGL"
+        },
+        {
+          "sha": "745b2ebacb443635dba574c219c8668faf053b8b",
+          "url": "https://github.com/airos-works/airDroid/commit/745b2ebacb443635dba574c219c8668faf053b8b",
+          "date": "2026-11-21T10:50:20Z",
+          "subject": "docs: baseline numbers measured with the app's window on screen"
+        },
+        {
+          "sha": "f6a96d39c95c3db5a11f86650563eca35fe393c7",
+          "url": "https://github.com/airos-works/airDroid/commit/f6a96d39c95c3db5a11f86650563eca35fe393c7",
+          "date": "2026-11-21T10:45:09Z",
+          "subject": "build-gpu: a virglrenderer tree from other patches or options is rebuilt"
+        },
+        {
+          "sha": "7fb26fb877480241f4d1c715761e95c948769b5b",
+          "url": "https://github.com/airos-works/airDroid/commit/7fb26fb877480241f4d1c715761e95c948769b5b",
+          "date": "2026-11-21T09:48:21Z",
+          "subject": "docs: the Waydroid side of the comparison is blocked on the lab KVM's USB cable"
+        },
+        {
+          "sha": "53769699d2e5aef846ddf9f8f93f55384fa10ebf",
+          "url": "https://github.com/airos-works/airDroid/commit/53769699d2e5aef846ddf9f8f93f55384fa10ebf",
+          "date": "2026-11-21T09:36:02Z",
+          "subject": "docs: airDroid's numbers for the comparison with Waydroid (X399)"
+        },
+        {
+          "sha": "b0d4043cc87d4e28a5f0366995248cb888cc35bc",
+          "url": "https://github.com/airos-works/airDroid/commit/b0d4043cc87d4e28a5f0366995248cb888cc35bc",
+          "date": "2026-11-21T08:27:09Z",
+          "subject": "docs: a third-party Vulkan app (Godot 4.3) runs through Venus on the X399"
+        },
+        {
+          "sha": "fb80fefe466863fe964d384f5195834a16b0ec9e",
+          "url": "https://github.com/airos-works/airDroid/commit/fb80fefe466863fe964d384f5195834a16b0ec9e",
+          "date": "2026-11-21T08:20:52Z",
+          "subject": "Merge venus-wsi: Vulkan apps show their windows (gpu \"venus\")"
+        },
+        {
+          "sha": "96c0e251f84e0473c5d6feb9ac08fbfa128d9031",
+          "url": "https://github.com/airos-works/airDroid/commit/96c0e251f84e0473c5d6feb9ac08fbfa128d9031",
+          "date": "2026-11-21T08:20:47Z",
+          "subject": "docs: Vulkan window buffers work on the X399, six sessions in a row"
+        },
+        {
+          "sha": "c00ba7dda30710f2cf42dfb23454d8fe051dbe7e",
+          "url": "https://github.com/airos-works/airDroid/commit/c00ba7dda30710f2cf42dfb23454d8fe051dbe7e",
+          "date": "2026-11-21T08:11:19Z",
+          "subject": "vkr: a host memory import maps the shared area by itself"
+        },
+        {
+          "sha": "3f3d2cf6283725f13f6271fee168973108c0d74b",
+          "url": "https://github.com/airos-works/airDroid/commit/3f3d2cf6283725f13f6271fee168973108c0d74b",
+          "date": "2026-11-21T08:06:19Z",
+          "subject": "vkr: an exported semaphore is left signalled, not waited for on a queue"
+        },
+        {
+          "sha": "cb4ac543b94856a81b6a6fc8181e835051d20557",
+          "url": "https://github.com/airos-works/airDroid/commit/cb4ac543b94856a81b6a6fc8181e835051d20557",
+          "date": "2026-11-21T08:02:48Z",
+          "subject": "docs: where the Vulkan window buffer work stands (2 of 5 runs show, 2 hang, 1 crash)"
+        },
+        {
+          "sha": "a55019bef253e7db7ec876dd63f83494ecbcef6d",
+          "url": "https://github.com/airos-works/airDroid/commit/a55019bef253e7db7ec876dd63f83494ecbcef6d",
+          "date": "2026-11-21T07:51:27Z",
+          "subject": "docs: Android's UI on Vulkan shows on the X399 (window buffers through shadows)"
+        },
+        {
+          "sha": "2d6e88f60e25b12a7765ef1742cf51e135a965c4",
+          "url": "https://github.com/airos-works/airDroid/commit/2d6e88f60e25b12a7765ef1742cf51e135a965c4",
+          "date": "2026-11-21T07:33:13Z",
+          "subject": "Venus window buffers: shadows, sync fd stand-ins, limits (work in progress)"
+        },
+        {
+          "sha": "60e50c85a6e7fd8b91c6492c4804c488437e5293",
+          "url": "https://github.com/airos-works/airDroid/commit/60e50c85a6e7fd8b91c6492c4804c488437e5293",
+          "date": "2026-11-21T07:00:01Z",
+          "subject": "vkr logs what a failed vkCreateDevice was asked for; tools/dev/vkimage.c"
+        },
+        {
+          "sha": "58af606234c419a51870194c2bbc0e741f4f3e84",
+          "url": "https://github.com/airos-works/airDroid/commit/58af606234c419a51870194c2bbc0e741f4f3e84",
+          "date": "2026-11-21T06:56:17Z",
+          "subject": "vkr: stand in for sync fds where the system has none (air/OS)"
+        },
+        {
+          "sha": "896894a334f0e86afce5352c8c8b49fa695bc743",
+          "url": "https://github.com/airos-works/airDroid/commit/896894a334f0e86afce5352c8c8b49fa695bc743",
+          "date": "2026-11-21T06:51:37Z",
+          "subject": "docs: Venus layers 1-3 done, on the X399's GPU too"
+        },
+        {
+          "sha": "522b1254869c705a08c3e65faed1010cff05dcd5",
+          "url": "https://github.com/airos-works/airDroid/commit/522b1254869c705a08c3e65faed1010cff05dcd5",
+          "date": "2026-11-21T06:49:45Z",
+          "subject": "Merge venus: Vulkan through Venus, experimental (gpu \"venus\" in settings.json)"
+        },
+        {
+          "sha": "ab24e802a5a0ba81d72d3cab56892bc2528f3f59",
+          "url": "https://github.com/airos-works/airDroid/commit/ab24e802a5a0ba81d72d3cab56892bc2528f3f59",
+          "date": "2026-11-21T06:37:01Z",
+          "subject": "tools/dev/vkprobe.c: what a second Vulkan client does, step by step"
+        },
+        {
+          "sha": "5ef3a445ec1b4edafee8d0a8710d1effa730efa1",
+          "url": "https://github.com/airos-works/airDroid/commit/5ef3a445ec1b4edafee8d0a8710d1effa730efa1",
+          "date": "2026-11-21T06:36:58Z",
+          "subject": "Venus: the app starts the render server; QEMU does not fork"
+        },
+        {
+          "sha": "5eebfb2af109a7ac3afad98b3ef926b826dd8567",
+          "url": "https://github.com/airos-works/airDroid/commit/5eebfb2af109a7ac3afad98b3ef926b826dd8567",
+          "date": "2026-11-21T06:20:46Z",
+          "subject": "The app does not wait forever for QEMU to read a frame"
+        },
+        {
+          "sha": "05bff9e914b026979d5fc4450d09d98750a838be",
+          "url": "https://github.com/airos-works/airDroid/commit/05bff9e914b026979d5fc4450d09d98750a838be",
+          "date": "2026-11-21T05:14:25Z",
+          "subject": "docs: what Android's Vulkan window buffers need from the host (Venus layer 4)"
+        },
+        {
+          "sha": "4e093febbd21cada3195771f45994607c8de0e40",
+          "url": "https://github.com/airos-works/airDroid/commit/4e093febbd21cada3195771f45994607c8de0e40",
+          "date": "2026-11-21T05:10:35Z",
+          "subject": "docs: Venus layers 2-3 run in the nested VM"
+        },
+        {
+          "sha": "bf6b23ea4e5b7c1952f569309743c035f5419e79",
+          "url": "https://github.com/airos-works/airDroid/commit/bf6b23ea4e5b7c1952f569309743c035f5419e79",
+          "date": "2026-11-21T04:50:15Z",
+          "subject": "airdroid command: no abort when stderr is gone"
+        },
+        {
+          "sha": "623e48a8890275b26155cc727dc93d7ea0f3fd41",
+          "url": "https://github.com/airos-works/airDroid/commit/623e48a8890275b26155cc727dc93d7ea0f3fd41",
+          "date": "2026-11-21T04:49:46Z",
+          "subject": "0104: CPUID override with disjoint clear and set bits (the driver refuses overlap)"
+        },
+        {
+          "sha": "73ab20b47e08e6b45bb03cb593f770e5a41c5495",
+          "url": "https://github.com/airos-works/airDroid/commit/73ab20b47e08e6b45bb03cb593f770e5a41c5495",
+          "date": "2026-11-21T04:29:39Z",
+          "subject": "QEMU on NVMM: the guest's physical address width is NVMM's (37 bits)"
+        },
+        {
+          "sha": "4eb7b69e1b8c90a65ec257eff614500cce3b2e5b",
+          "url": "https://github.com/airos-works/airDroid/commit/4eb7b69e1b8c90a65ec257eff614500cce3b2e5b",
+          "date": "2026-11-21T03:45:39Z",
+          "subject": "Venus: handed-in memory is never replaced, no GL blob buffers on air/OS"
+        },
+        {
+          "sha": "618b94cd711193499d17d285f3b4ed8106db497f",
+          "url": "https://github.com/airos-works/airDroid/commit/618b94cd711193499d17d285f3b4ed8106db497f",
+          "date": "2026-11-21T03:27:08Z",
+          "subject": "The app takes gpu \"venus\" from settings.json (experimental, not in the settings window)"
+        },
+        {
+          "sha": "276dec966cfa2aa382526fb5e43344dacf7435ba",
+          "url": "https://github.com/airos-works/airDroid/commit/276dec966cfa2aa382526fb5e43344dacf7435ba",
+          "date": "2026-11-21T03:20:12Z",
+          "subject": "docs: Venus layer 1 is on Haiku master; layers 2-3 on branch venus"
+        },
+        {
+          "sha": "2a592dfbc9445e27df9211955f1d66a6112ed5db",
+          "url": "https://github.com/airos-works/airDroid/commit/2a592dfbc9445e27df9211955f1d66a6112ed5db",
+          "date": "2026-11-21T02:45:08Z",
+          "subject": "Venus: build it into virglrenderer, package and start the render server"
+        },
+        {
+          "sha": "71c71148eabc8a7c12e6ba72b5a31ba83cad4a81",
+          "url": "https://github.com/airos-works/airDroid/commit/71c71148eabc8a7c12e6ba72b5a31ba83cad4a81",
+          "date": "2026-11-21T02:44:23Z",
+          "subject": "virglrenderer: Venus memory as shared locked areas on air/OS"
+        },
+        {
+          "sha": "c201cf97d451c583b0135c738bd066517a0ef41c",
+          "url": "https://github.com/airos-works/airDroid/commit/c201cf97d451c583b0135c738bd066517a0ef41c",
+          "date": "2026-11-21T02:21:28Z",
+          "subject": "Venus groundwork: blobs through NVMM, render server builds for air/OS"
+        },
+        {
+          "sha": "446dfb7a8428511af54598cb3ce5aab7170c9153",
+          "url": "https://github.com/airos-works/airDroid/commit/446dfb7a8428511af54598cb3ce5aab7170c9153",
+          "date": "2026-11-21T02:13:49Z",
+          "subject": "docs: Venus on air/OS, layer by layer"
+        },
+        {
+          "sha": "77b5b501a29b7f484159ce6014be02d335b10526",
+          "url": "https://github.com/airos-works/airDroid/commit/77b5b501a29b7f484159ce6014be02d335b10526",
+          "date": "2026-11-21T00:50:22Z",
+          "subject": "Android follows air/OS's time zone"
+        },
+        {
+          "sha": "84f2e4f31946cf30667af9379c38863ad03c84c6",
+          "url": "https://github.com/airos-works/airDroid/commit/84f2e4f31946cf30667af9379c38863ad03c84c6",
+          "date": "2026-11-21T00:44:24Z",
+          "subject": "Present GPU frames without a trip through guest RAM"
+        },
+        {
+          "sha": "7ae8d552c5b46c203293bc59205a64f6d236e430",
+          "url": "https://github.com/airos-works/airDroid/commit/7ae8d552c5b46c203293bc59205a64f6d236e430",
+          "date": "2026-11-20T23:25:26Z",
+          "subject": "docs: host frame path measurements on the X399"
+        },
+        {
+          "sha": "24971f0904753957ef7632e0dcb6db03687d835c",
+          "url": "https://github.com/airos-works/airDroid/commit/24971f0904753957ef7632e0dcb6db03687d835c",
+          "date": "2026-11-20T23:23:28Z",
+          "subject": "Compose straight into the window's bitmap (double-buffered)"
+        },
+        {
+          "sha": "29a5d2360cb5869b0aec05440bf8624a34d7bae4",
+          "url": "https://github.com/airos-works/airDroid/commit/29a5d2360cb5869b0aec05440bf8624a34d7bae4",
+          "date": "2026-11-20T23:12:14Z",
+          "subject": "Compose faster: copy opaque rows, blend in packed lanes, skip hidden layers"
+        },
+        {
+          "sha": "d8a7abcf683c1cd9241a4e602f98694a4f58033b",
+          "url": "https://github.com/airos-works/airDroid/commit/d8a7abcf683c1cd9241a4e602f98694a4f58033b",
+          "date": "2026-11-20T22:52:44Z",
+          "subject": "Run on AMD again: the hang and the corruption were BFS (haiku 4879942cdc)"
+        },
+        {
+          "sha": "7ea23b1c68b22d9c61da1e3101a0491fb4b25cd9",
+          "url": "https://github.com/airos-works/airDroid/commit/7ea23b1c68b22d9c61da1e3101a0491fb4b25cd9",
+          "date": "2026-11-20T21:17:56Z",
+          "subject": "docs: the disk corruption was a BFS race (haiku 4879942cdc)"
+        },
+        {
+          "sha": "7441e4611de5ff5c4592f573143a14c2f0b907fd",
+          "url": "https://github.com/airos-works/airDroid/commit/7441e4611de5ff5c4592f573143a14c2f0b907fd",
+          "date": "2026-11-20T21:17:30Z",
+          "subject": "docs: the disk corruption was a BFS race (haiku 4879942cdc)"
+        },
+        {
+          "sha": "5d9e51b61657fb7633a163e0810c3c6769b04540",
+          "url": "https://github.com/airos-works/airDroid/commit/5d9e51b61657fb7633a163e0810c3c6769b04540",
+          "date": "2026-11-20T20:25:08Z",
+          "subject": "Refuse to start on AMD hosts until NVMM's SVM path is fixed; hardware results"
+        },
+        {
+          "sha": "015f83391ab1d82893891fabfa6fae701e53b61f",
+          "url": "https://github.com/airos-works/airDroid/commit/015f83391ab1d82893891fabfa6fae701e53b61f",
+          "date": "2026-11-20T18:20:38Z",
+          "subject": "Experimental gpu mode venus (Vulkan through Venus), and what blocks it"
+        },
+        {
+          "sha": "9b42edeb71aad56b7dc3f6c928fbcc630c0e4321",
+          "url": "https://github.com/airos-works/airDroid/commit/9b42edeb71aad56b7dc3f6c928fbcc630c0e4321",
+          "date": "2026-11-20T18:11:19Z",
+          "subject": "docs: status (not-yet list after microphone, notifications, resizing)"
+        },
+        {
+          "sha": "65c52870072f31d98b31d9829d9b74eacf103e47",
+          "url": "https://github.com/airos-works/airDroid/commit/65c52870072f31d98b31d9829d9b74eacf103e47",
+          "date": "2026-11-20T18:10:35Z",
+          "subject": "Quitting: no hung app, no orphaned VM, a clean data disk"
+        },
+        {
+          "sha": "a51501b99ab02f75c1bb86c5ba3894bf80a65df5",
+          "url": "https://github.com/airos-works/airDroid/commit/a51501b99ab02f75c1bb86c5ba3894bf80a65df5",
+          "date": "2026-11-20T17:31:21Z",
+          "subject": "Install flow fixes: .apk files open in airDroid, install notification, icons, remove"
+        },
+        {
+          "sha": "89cd210ad9fb7e13344269fd9edd188dd69a8a72",
+          "url": "https://github.com/airos-works/airDroid/commit/89cd210ad9fb7e13344269fd9edd188dd69a8a72",
+          "date": "2026-11-20T16:53:08Z",
+          "subject": "Settings window: memory, processors, graphics, density, touch, shared folder"
+        },
+        {
+          "sha": "6aa9bff8ea78486063ba2ec50ef6e519bd048880",
+          "url": "https://github.com/airos-works/airDroid/commit/6aa9bff8ea78486063ba2ec50ef6e519bd048880",
+          "date": "2026-11-20T16:48:42Z",
+          "subject": "Shared folder: ~/Android on air/OS is /sdcard/airOS in Android"
+        },
+        {
+          "sha": "facb3d3d8a427ff2239613ba3e7d4c1b0bd91228",
+          "url": "https://github.com/airos-works/airDroid/commit/facb3d3d8a427ff2239613ba3e7d4c1b0bd91228",
+          "date": "2026-11-20T16:35:08Z",
+          "subject": "Microphone: Android's record streams from the air/OS audio input"
+        },
+        {
+          "sha": "7c564a380fb92605c340a193d08dda564017d279",
+          "url": "https://github.com/airos-works/airDroid/commit/7c564a380fb92605c340a193d08dda564017d279",
+          "date": "2026-11-20T16:04:00Z",
+          "subject": "Multi-window: resize Android apps' windows by their edges"
+        },
+        {
+          "sha": "d914815d88916dfb01e212cbab73be3dee248611",
+          "url": "https://github.com/airos-works/airDroid/commit/d914815d88916dfb01e212cbab73be3dee248611",
+          "date": "2026-11-20T15:33:35Z",
+          "subject": "docs: building with build-all.sh and in CI [skip ci]"
+        },
+        {
+          "sha": "156af1d600c5425bf4bd39cf9a9416d582854445",
+          "url": "https://github.com/airos-works/airDroid/commit/156af1d600c5425bf4bd39cf9a9416d582854445",
+          "date": "2026-11-20T15:33:00Z",
+          "subject": "Build for airos-ci: one QEMU build, CI paths, workflow"
+        },
+        {
+          "sha": "af6a765e0d97bc797c9b7a0b814fcad3094fadf3",
+          "url": "https://github.com/airos-works/airDroid/commit/af6a765e0d97bc797c9b7a0b814fcad3094fadf3",
+          "date": "2026-11-20T15:25:21Z",
+          "subject": "Android notifications on the air/OS desktop"
+        },
+        {
+          "sha": "5c4cfeb25d6bea16d80bfb740b809165a450641e",
+          "url": "https://github.com/airos-works/airDroid/commit/5c4cfeb25d6bea16d80bfb740b809165a450641e",
+          "date": "2026-11-20T15:12:58Z",
+          "subject": "airdroid upgrade; build-all.sh; image setup tested"
+        },
+        {
+          "sha": "3e238799424a485f9884eedae452628ca4a6ebdb",
+          "url": "https://github.com/airos-works/airDroid/commit/3e238799424a485f9884eedae452628ca4a6ebdb",
+          "date": "2026-11-20T15:10:49Z",
+          "subject": "docs: status after GPU phase 1"
+        },
+        {
+          "sha": "920270537c21fc9404d8062b67af203c1b57702a",
+          "url": "https://github.com/airos-works/airDroid/commit/920270537c21fc9404d8062b67af203c1b57702a",
+          "date": "2026-11-20T15:09:51Z",
+          "subject": "GPU phase 1 works: Android renders with virgl, shown on air/OS"
+        },
+        {
+          "sha": "ec8520642c7ca0b7d32f7fa17133468a8e5bccf8",
+          "url": "https://github.com/airos-works/airDroid/commit/ec8520642c7ca0b7d32f7fa17133468a8e5bccf8",
+          "date": "2026-11-20T14:26:24Z",
+          "subject": "GPU phase 1 groundwork: virglrenderer and OpenGL QEMU for air/OS"
+        },
+        {
+          "sha": "b3f9bd46407a9d21737110a38390dbc0a4e1586c",
+          "url": "https://github.com/airos-works/airDroid/commit/b3f9bd46407a9d21737110a38390dbc0a4e1586c",
+          "date": "2026-11-20T14:13:42Z",
+          "subject": "Input focus for multi-window apps; desktop setup after boot"
+        },
+        {
+          "sha": "e06e8c5f2a2d3f3a5b1ff247f8d28ccae59ed454",
+          "url": "https://github.com/airos-works/airDroid/commit/e06e8c5f2a2d3f3a5b1ff247f8d28ccae59ed454",
+          "date": "2026-11-20T13:11:43Z",
+          "subject": "Multi-window: crop app windows to their opaque area"
+        },
+        {
+          "sha": "5e01c4f601824a819f13df10a909355b17f43021",
+          "url": "https://github.com/airos-works/airDroid/commit/5e01c4f601824a819f13df10a909355b17f43021",
+          "date": "2026-11-20T13:07:58Z",
+          "subject": "docs: building/testing and status"
+        },
+        {
+          "sha": "8d352a7554c9ef5ad8d82aeadd017c6726a1c27b",
+          "url": "https://github.com/airos-works/airDroid/commit/8d352a7554c9ef5ad8d82aeadd017c6726a1c27b",
+          "date": "2026-11-20T13:07:31Z",
+          "subject": "Audio (a PulseAudio server in the guest, Media Kit on air/OS) and the airdroid command"
+        },
+        {
+          "sha": "b9ff9fbe6ac9149401027c42571e1e8419dffb79",
+          "url": "https://github.com/airos-works/airDroid/commit/b9ff9fbe6ac9149401027c42571e1e8419dffb79",
+          "date": "2026-11-20T12:42:53Z",
+          "subject": "Keep Android's display awake; bounded app-name lookup; debug log"
+        },
+        {
+          "sha": "80009b66f1f46f17e54b8918148b94378a639b05",
+          "url": "https://github.com/airos-works/airDroid/commit/80009b66f1f46f17e54b8918148b94378a639b05",
+          "date": "2026-11-20T12:21:15Z",
+          "subject": "Guest binder client for Waydroid's platform service; drawable bitmaps"
+        },
+        {
+          "sha": "733945a71633dd6c4ace95f9c5d51eaf26177e9c",
+          "url": "https://github.com/airos-works/airDroid/commit/733945a71633dd6c4ace95f9c5d51eaf26177e9c",
+          "date": "2026-11-20T12:11:12Z",
+          "subject": "Per-app windows (Waydroid multi-window), app launch as AID_SHELL"
+        },
+        {
+          "sha": "ae436cab924c116ff8bb26b62494452bd840064a",
+          "url": "https://github.com/airos-works/airDroid/commit/ae436cab924c116ff8bb26b62494452bd840064a",
+          "date": "2026-11-20T11:43:30Z",
+          "subject": "airDroid for air/OS: Be API app, first-run setup, package"
+        },
+        {
+          "sha": "2b84677182c2e06c9c0337903941e99b6ec701c9",
+          "url": "https://github.com/airos-works/airDroid/commit/2b84677182c2e06c9c0337903941e99b6ec701c9",
+          "date": "2026-11-20T11:04:37Z",
+          "subject": "air/OS: own QEMU build with cloneable NVMM guest RAM; Haiku cross build; guest fixes"
+        },
+        {
+          "sha": "2034a31e2510f9c541915c9ced8b64f8120db637",
+          "url": "https://github.com/airos-works/airDroid/commit/2034a31e2510f9c541915c9ced8b64f8120db637",
+          "date": "2026-11-20T10:34:33Z",
+          "subject": "airDroid: Android (Waydroid images) boots in a VM; zero-copy display, touch input"
+        }
+      ],
+      "url": "https://github.com/airos-works/airDroid/tree/main"
+    },
+    {
       "name": "Clipper",
       "repo": "airos-works/clipper",
       "branch": "main",
@@ -47309,6 +48160,22 @@
           "size": 646640,
           "browser_download_url": "https://github.com/airos-works/burrow/releases/download/latest/burrow-0.1.0.alpha-6-x86_64.hpkg",
           "digest": "sha256:b0c1ea0e5f15b87d94804654cec7c8114f7803c21c1cb96d59a563682465ba95"
+        }
+      ]
+    },
+    {
+      "name": "airDroid",
+      "repo": "airDroid",
+      "description": "Run Android apps in their own desktop windows: a full LineageOS Android, installed from .apk files and app bundles, with GPU acceleration.",
+      "note": "Included in x86-64 airOS system images. Needs a processor with hardware virtualization (Intel VT-x or AMD-V). The first start downloads Android (about 800 MB). Apps must include x86-64 code: ARM-only apps are refused.",
+      "release": "https://github.com/airos-works/airDroid/releases/tag/latest",
+      "published": "2026-11-23T07:50:01Z",
+      "assets": [
+        {
+          "name": "airdroid-0.1.0-199-x86_64.hpkg",
+          "size": 22016200,
+          "browser_download_url": "https://github.com/airos-works/airDroid/releases/download/latest/airdroid-0.1.0-199-x86_64.hpkg",
+          "digest": "sha256:36fe003259418ac595a4badf4feb8a747e49f6bc0595b6ff6e4aa0b3d3bd4983"
         }
       ]
     },

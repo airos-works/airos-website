@@ -32,8 +32,11 @@ both from the repository's actual Pages configuration.
 
 - Home: credit Haiku, explain the independent project and AI-assisted approach. The pill above
   the headline announces the newest hardware and links to its entry (Raspberry Pi 5).
-- Apps: seven categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
-  Proton, Everyday and System), each tab and app row showing the apps' own icons.
+- Apps: eight categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
+  Proton, Everyday, Emulation and System), each tab and app row showing the apps' own icons.
+  Emulation holds airDroid (Android apps in their own windows), with a "How it works" strip
+  (`how` in its tab in `content/apps.json`) drawn from airDroid's `docs/ARCHITECTURE.md`; its
+  limits come from `docs/STATUS.md` there.
   Media Tools holds AirTime, Amp and the five Craft media apps (PhotoCraft, LightCraft,
   VectorCraft, EffectCraft and FilmCraft), with a note on their Vulkan rendering and CPU fallback.
   System gathers the reworked Haiku apps and preferences (Media preferences,
@@ -189,8 +192,16 @@ Compose project and a container from `hello-airos:1.0`, an image imported for th
 capture from Haiku's `node` and a small web server script. AirImager shows the
 29 October Cubie A7S image from the Downloads folder ready to write to the Verbatim
 USB stick; nothing was written. Their icons are each installed app's `BEOS:ICON`,
-rendered by `BIconUtils` on the X399 the same day. Third-party content in a capture
-is credited in its caption. The System tab's Wi-Fi, Quick Look, network shares and
+rendered by `BIconUtils` on the X399 the same day. The airDroid captures (25 November
+2026) are QMP screendumps of a QEMU/KVM VM with nested virtualization running the
+24 November x86-64 image (hrev60207-2957) live, with the airdroid 0.1.0-199 it includes:
+Reddit 2026.46.0 and Duolingo 6.106.7, installed from APKMirror's universal `.apkm`
+bundles, each in its own window, and the Deskbar's Applications › Android apps menu.
+No account was signed in; Reddit and Twitch show only their sign-in screens without
+one, so Duolingo's first lesson (which needs none) carries the in-app content.
+airDroid's icon is the installed app's `BEOS:ICON` (byte for byte the repository's
+`apps/airdroid-haiku/resources/airDroid.hvif`), rendered at 96 pixels by `BIconUtils`
+in the same VM. Third-party content in a capture is credited in its caption. The System tab's Wi-Fi, Quick Look, network shares and
 Terminal captures are from the X399 on 24 October 2026. The Bluetooth panel was
 captured on the Framework 13 (Ryzen AI 5 340) on 2 November 2026, with its adapter on.
 Screen was captured on the Framework 13 on 3 November 2026, running the 2 November
