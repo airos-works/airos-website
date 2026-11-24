@@ -32,6 +32,8 @@ both from the repository's actual Pages configuration.
 
 - Home: credit Haiku, explain the independent project and AI-assisted approach. The pill above
   the headline announces the newest hardware and links to its entry (Raspberry Pi 5).
+- Header and footer: the community subreddit, r/air_os (`REDDIT` in `scripts/build.py`), is a
+  Reddit icon to the right of the Downloads button and a link under "Built on Haiku" in the footer.
 - Apps: eight categories as tabs (Office Suite, Media Tools, Developer, Summit Browser,
   Proton, Everyday, Emulation and System), each tab and app row showing the apps' own icons.
   Emulation holds airDroid (Android apps in their own windows), with a "How it works" strip

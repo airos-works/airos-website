@@ -53,6 +53,11 @@ em{font-style:normal;color:var(--teal)}
 .header-inner nav a{font-size:13.5px;text-decoration:none;white-space:nowrap;padding:8px 14px;border-radius:999px;color:var(--ink-2)}
 .header-inner nav a:hover{background:var(--panel)}
 .header-inner nav a.active{background:var(--night);color:#fff}
+.header-actions{display:flex;align-items:center;gap:10px;flex:none}
+.header-social{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line-2);border-radius:50%;color:var(--ink);transition:background .2s,border-color .2s}
+.header-social:hover{background:var(--panel)}
+body.home .header-social{background:rgb(255 255 255 / .55);border-color:rgb(23 35 34 / .14);backdrop-filter:blur(6px)}body.home .header-social:hover{background:#fff}
+.reddit-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.reddit-icon .dot{fill:currentColor}
 .header-cta{padding:10px 18px;flex:none}.header-cta.active{box-shadow:0 0 0 3px rgb(233 162 79 / .45)}
 body.home .site-header{position:absolute;inset:0 0 auto;border-bottom:0}
 body.home .header-inner nav{background:rgb(255 255 255 / .55);border-color:rgb(255 255 255 / .6)}
@@ -344,6 +349,7 @@ pre.output{background:#0c1413;color:#cfe3dd;font-size:12.5px}
 .footer-brand p{font-size:19px;letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
 .site-footer ul{list-style:none;padding:0;margin:0;columns:2;column-gap:24px}
 .site-footer li{padding:3px 0}.site-footer li a{text-decoration:none;color:var(--ink-2)}.site-footer li a:hover{text-decoration:underline}
+.footer-brand .text-link{display:flex;width:fit-content;align-items:center;gap:7px;margin-bottom:10px}.footer-social .reddit-icon{width:18px;height:18px}
 .footer-meta p:not(.eyebrow){margin-bottom:8px}
 .site-footer .eyebrow{margin-bottom:16px}
 
@@ -414,7 +420,7 @@ pre.output{background:#0c1413;color:#cfe3dd;font-size:12.5px}
   .compat-table th,.compat-table td{padding:8px 7px;font-size:12.5px}.compat-table th{white-space:normal}.compat-table td:first-child{min-width:0}
   .wrap{width:calc(100% - 32px)}
   .brand,.brand img{width:112px;flex-basis:112px}
-  .header-cta{padding:9px 15px;font-size:13px}
+  .header-cta{padding:9px 15px;font-size:13px}.header-social{width:36px;height:36px}
   .hero{padding:180px 16px 300px;min-height:0;background-position:62% bottom}
   .hero:after{height:60px}
   .hero h1{font-size:clamp(42px,12vw,60px)}

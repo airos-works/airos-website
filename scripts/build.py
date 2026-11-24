@@ -22,6 +22,9 @@ NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 
 # Documentation's menu in the header: the API pages (docs/ and the pages under it
 # but the guides), the installation guides and running air/OS in a virtual machine.
 DOCS_MENU = [('docs/', 'API'), ('docs/install/', 'Installation'), ('docs/virtualization/', 'Virtualization')]
+# The community subreddit, linked from the header (icon) and the footer.
+REDDIT = 'https://reddit.com/r/air_os'
+REDDIT_ICON = '<svg class="reddit-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="14.6" rx="8" ry="5.6"/><circle cx="4.9" cy="10.6" r="1.7"/><circle cx="19.1" cy="10.6" r="1.7"/><path d="M12 9l1.3-4.8 3.6.9"/><circle cx="18.4" cy="5.4" r="1.4"/><circle class="dot" cx="9.1" cy="13.6" r=".6"/><circle class="dot" cx="14.9" cy="13.6" r=".6"/><path d="M9.2 17.1c1.7 1.1 3.9 1.1 5.6 0"/></svg>'
 
 def url(path=''):
     return BASE + '/' + path
@@ -42,6 +45,7 @@ def page(path, title, description, body):
         return f'<div class="nav-menu">{link(url(p), label, "active" if current(p) else "")}<div class="nav-dropdown">{items}</div></div>'
     nav = ''.join(nav_item(p, t) for p, t in NAV if p != 'downloads/')
     cta = link(url('downloads/'), 'Downloads', 'button primary header-cta' + (' active' if current('downloads/') else ''))
+    reddit = f'<a class="header-social" href="{REDDIT}" aria-label="air/OS on Reddit" title="r/air_os on Reddit">{REDDIT_ICON}</a>'
     footer_links = ''.join(f'<li>{link(url(p), t)}</li>' for p, t in NAV[:5] + DOCS_MENU[1:] + NAV[5:])
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -53,9 +57,9 @@ def page(path, title, description, body):
 <script src="{url('assets/site.js')}" defer></script></head>
 <body class="{'home' if path == '' else 'inner'}"><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="{url()}" aria-label="airOS home"><img src="{url('assets/logo.png')}" width="191" height="64" alt="air/OS"></a>
-<nav aria-label="Main navigation">{nav}</nav>{cta}</div></header>
+<nav aria-label="Main navigation">{nav}</nav><div class="header-actions">{cta}{reddit}</div></div></header>
 <main id="main" class="wrap">{body}</main>
-<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="{url('assets/logo.png')}" width="143" height="48" alt="air/OS">{link('https://www.haiku-os.org/', 'Built on Haiku ↗', 'text-link')}</div>
+<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><img src="{url('assets/logo.png')}" width="143" height="48" alt="air/OS">{link('https://www.haiku-os.org/', 'Built on Haiku ↗', 'text-link')}{link(REDDIT, REDDIT_ICON + 'r/air_os on Reddit ↗', 'text-link footer-social')}</div>
 <nav aria-label="Footer"><p class="eyebrow">Explore</p><ul>{footer_links}</ul></nav>
 <div class="footer-meta"><p class="eyebrow">Status</p><p>Development builds. Independent of the Haiku project.</p><p>Build data refreshed {UPDATED} UTC</p></div></div></footer></body></html>'''
     target = OUT / path / 'index.html'
