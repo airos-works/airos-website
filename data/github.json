@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-25T08:47:20+00:00",
-  "ci_head": "54cba9a092c43d3816d1345da587fb719193a76b",
+  "updated": "2026-11-25T21:48:53+00:00",
+  "ci_head": "224cacda9984fae56de41a576a650b2e14f1cc6d",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -16664,8 +16664,14 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "54cba9a092c43d3816d1345da587fb719193a76b",
+      "head": "224cacda9984fae56de41a576a650b2e14f1cc6d",
       "commits": [
+        {
+          "sha": "224cacda9984fae56de41a576a650b2e14f1cc6d",
+          "url": "https://github.com/airos-works/airos-ci/commit/224cacda9984fae56de41a576a650b2e14f1cc6d",
+          "date": "2026-11-25T15:12:17Z",
+          "subject": "summit: summarize PGO profile coverage in the engine build log"
+        },
         {
           "sha": "54cba9a092c43d3816d1345da587fb719193a76b",
           "url": "https://github.com/airos-works/airos-ci/commit/54cba9a092c43d3816d1345da587fb719193a76b",
@@ -31027,8 +31033,74 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "38a26317af271ea5be1248b9a5420589d42bc22c",
+      "head": "2e90f632b44dd9a5534940801b982f1d0d6b17f8",
       "commits": [
+        {
+          "sha": "2652f5f37f704d48d44f088f116c27c5a90b785a",
+          "url": "https://github.com/airos-works/summit/commit/2652f5f37f704d48d44f088f116c27c5a90b785a",
+          "date": "2026-11-25T20:26:31Z",
+          "subject": "Paint pages without compositing on softpipe (#291)"
+        },
+        {
+          "sha": "cfea6355dcbdeec4c27c909ee526345c5aa9374b",
+          "url": "https://github.com/airos-works/summit/commit/cfea6355dcbdeec4c27c909ee526345c5aa9374b",
+          "date": "2026-11-25T15:04:22Z",
+          "subject": "Recover part of the Speedometer loss with 1Password and uBlock Origin (#290)"
+        },
+        {
+          "sha": "d4d2c8bfdbe4c2e2ec673a9f20314a36375bc480",
+          "url": "https://github.com/airos-works/summit/commit/d4d2c8bfdbe4c2e2ec673a9f20314a36375bc480",
+          "date": "2026-11-25T14:36:09Z",
+          "subject": "Engine: restore the brace the #286 patch lost"
+        },
+        {
+          "sha": "bc4f468c3280ff4cd610b4409a59b76c179ca089",
+          "url": "https://github.com/airos-works/summit/commit/bc4f468c3280ff4cd610b4409a59b76c179ca089",
+          "date": "2026-11-25T14:15:58Z",
+          "subject": "Reject containment on style bits before fetching the element (#289)"
+        },
+        {
+          "sha": "0cd42a9ecc7021dda69522f925b1d8e56e90c77f",
+          "url": "https://github.com/airos-works/summit/commit/0cd42a9ecc7021dda69522f925b1d8e56e90c77f",
+          "date": "2026-11-25T14:15:33Z",
+          "subject": "Answer zero border widths before zoom and device-pixel snapping (#288)"
+        },
+        {
+          "sha": "c2a184f39bb7c5d6c79e400c7a1e4fc976a4ce36",
+          "url": "https://github.com/airos-works/summit/commit/c2a184f39bb7c5d6c79e400c7a1e4fc976a4ce36",
+          "date": "2026-11-25T14:15:08Z",
+          "subject": "Retry late non-Latin-1 JSON.stringify in the UTF-16 fast path (#287)"
+        },
+        {
+          "sha": "3778d7686eca3d77f89b6a447b2fb6619847a689",
+          "url": "https://github.com/airos-works/summit/commit/3778d7686eca3d77f89b6a447b2fb6619847a689",
+          "date": "2026-11-25T14:14:33Z",
+          "subject": "Map one border quad directly for getBoundingClientRect (#286)"
+        },
+        {
+          "sha": "80edc04eefcdbc1cbea1061a29439c608db4865a",
+          "url": "https://github.com/airos-works/summit/commit/80edc04eefcdbc1cbea1061a29439c608db4865a",
+          "date": "2026-11-25T14:14:12Z",
+          "subject": "Keep solid Skia fill and stroke paints between canvas draws (#285)"
+        },
+        {
+          "sha": "1fe33f326d84c569666982334c742c1fc22a5c53",
+          "url": "https://github.com/airos-works/summit/commit/1fe33f326d84c569666982334c742c1fc22a5c53",
+          "date": "2026-11-25T14:13:38Z",
+          "subject": "Reuse unchanged leading items when innerHTML changes partway (#284)"
+        },
+        {
+          "sha": "34990b2767cb8e9454b5b6625dd5e76468f76d00",
+          "url": "https://github.com/airos-works/summit/commit/34990b2767cb8e9454b5b6625dd5e76468f76d00",
+          "date": "2026-11-25T13:25:56Z",
+          "subject": "Parse plain decimal SVG lengths without the CSS parser (#283)"
+        },
+        {
+          "sha": "4e9adaf6d222f623cc17b46c4fb41cec8df63227",
+          "url": "https://github.com/airos-works/summit/commit/4e9adaf6d222f623cc17b46c4fb41cec8df63227",
+          "date": "2026-11-25T11:59:07Z",
+          "subject": "Use the single-child insertion path for parentless children (#281)"
+        },
         {
           "sha": "6c7f67bb0f26bb38e699a5fc0ad778c200767e36",
           "url": "https://github.com/airos-works/summit/commit/6c7f67bb0f26bb38e699a5fc0ad778c200767e36",
@@ -48095,43 +48167,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-25T05:30:48Z",
+      "published": "2026-11-25T20:43:04Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261125.0432-1-arm64.hpkg",
-          "size": 15664215,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261125.0432-1-arm64.hpkg",
-          "digest": "sha256:7e1b9c4df889e3dd07db3a03cd555c69ca01605892dfd3c991fb7ab0a7296687"
+          "name": "summit-0.1.0.git20261125.2026-1-arm64.hpkg",
+          "size": 15642939,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261125.2026-1-arm64.hpkg",
+          "digest": "sha256:968ad42e36eb38daa7f6fb70be3c542e2c2552b222e3e03e3cce8d99dd09fc63"
         },
         {
-          "name": "summit-0.1.0.git20261125.0432-1-x86_64.hpkg",
-          "size": 15884008,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261125.0432-1-x86_64.hpkg",
-          "digest": "sha256:ce2fd1bb3909b9f952f33975446031f73890697b3d97b10555a33eb6b907431f"
+          "name": "summit-0.1.0.git20261125.2026-1-x86_64.hpkg",
+          "size": 15895994,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261125.2026-1-x86_64.hpkg",
+          "digest": "sha256:278936adb9bd639505751d80859cc02bfbf125eeb12337f62440e26d56866e8e"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261125.0432-1-arm64.hpkg",
-          "size": 97707640,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261125.0432-1-arm64.hpkg",
-          "digest": "sha256:44598f6a9842748c306fb56466a6689fdc3a990ed30c016ec635d6605e1b2817"
+          "name": "summit_webkit-1.10.1.git20261125.2026-1-arm64.hpkg",
+          "size": 97712271,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261125.2026-1-arm64.hpkg",
+          "digest": "sha256:87e2b8a4f228e117b463f40f54c007fbbd74d4076f92b9523f6ab2f4ded91b2d"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261125.0432-1-x86_64.hpkg",
-          "size": 98318663,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261125.0432-1-x86_64.hpkg",
-          "digest": "sha256:cee858a90a4168a98ac29994cc046940480ec7305fb5ed61d280f26d3fceb378"
+          "name": "summit_webkit-1.10.1.git20261125.2026-1-x86_64.hpkg",
+          "size": 98285094,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261125.2026-1-x86_64.hpkg",
+          "digest": "sha256:1c55cb2cef8606cac6049f124884502884e5d87b92464edbe882d3c70e326592"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261125.0432-1-arm64.hpkg",
-          "size": 825480,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261125.0432-1-arm64.hpkg",
-          "digest": "sha256:1f3932023cb843fa541aca5130bc9e2300704da16d5ddc2d179f9bca5e8984f9"
+          "name": "summit_webkitlegacy-1.10.1.git20261125.2026-1-arm64.hpkg",
+          "size": 825552,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261125.2026-1-arm64.hpkg",
+          "digest": "sha256:8b0e4596a910d473cda55e183033de0edfac883a423973aef65d8607bebc521f"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261125.0432-1-x86_64.hpkg",
-          "size": 877077,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261125.0432-1-x86_64.hpkg",
-          "digest": "sha256:7cc7e1b4f3d9e4317d04f6b742486c170d87c77a042d5385b0398c8ba2f3608c"
+          "name": "summit_webkitlegacy-1.10.1.git20261125.2026-1-x86_64.hpkg",
+          "size": 877074,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261125.2026-1-x86_64.hpkg",
+          "digest": "sha256:1f1e15b9fba58cdb3a4d8b6f143dd8d2aafe0f97e7c94f071ddc5a5ad5f3e850"
         }
       ]
     },
