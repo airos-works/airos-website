@@ -34,8 +34,13 @@ class Site:
     def source(self, path, label=None):
         return self.link(f'{self.github}/haiku/blob/{self.commit}/{path}', label or e(path) + ' ↗')
 
-    def design(self, name):
-        return self.source('docs/airos/' + name, 'Design notes: ' + e(name) + ' ↗')
+    def design(self, name, commit=None):
+        # an entry newer than the reviewed commit pins its own (doc_commit)
+        path = 'docs/airos/' + name
+        label = 'Design notes: ' + e(name) + ' ↗'
+        if commit:
+            return self.link(f'{self.github}/haiku/blob/{commit}/{path}', label)
+        return self.source(path, label)
 
     def commit_link(self, sha):
         return f'<a class="sha" href="{self.github}/haiku/commit/{sha}">{sha[:10]}</a>'
@@ -161,7 +166,7 @@ def kit_differences(s):
             body += f'<p>{s.inline(change["text"])}</p><p class="api-links">'
             for key in ('doc', 'doc2'):
                 if change.get(key):
-                    body += s.design(change[key])
+                    body += s.design(change[key], change.get('doc_commit'))
             body += '<span>' + ' '.join(s.commit_link(c) for c in change['commits']) + '</span></p></article>'
         body += '</section>'
     body += '<section class="kit" id="neural"><div class="kit-head"><h2>Neural Kit</h2><span>libneural.so</span></div>'

@@ -62,7 +62,8 @@ both from the repository's actual Pages configuration.
   what air/OS changes. `docs/kits/` lists every public header the fork changes, kit by kit,
   as a diff against the upstream commit air/OS master is based on, plus behaviour changes and
   the private APIs the system's apps use (`content/docs/kits.json`, which records both commits
-  and links each change to its airos-works/haiku commits and design notes). The Neural Kit is
+  and links each change to its airos-works/haiku commits and design notes; design notes link at the
+  reviewed commit, or at an entry's own `doc_commit` when it is newer). The Neural Kit is
   covered in full: a guide (`docs/neural/`), a reference of every class, constant and message
   (`docs/neural/reference/`, from `content/docs/neural-api.json`) and examples
   (`docs/neural/examples/`). The examples in `content/docs/examples/` are complete programs. On

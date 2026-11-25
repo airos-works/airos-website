@@ -12,7 +12,7 @@
     {
       "id": "interface", "name": "Interface Kit", "library": "libbe.so",
       "haiku": [["Interface Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__interface.html"]],
-      "summary": "Most of the fork's API work is here: fractional scaling, frame-accurate presentation, dark mode and colour emoji, plus a private accessibility interface.",
+      "summary": "Most of the fork's API work is here: fractional scaling, frame-accurate presentation, dark mode and colour emoji, dialogs as sheets attached to their window, plus a private accessibility interface.",
       "changes": [
         {
           "kind": "new", "title": "BScreen::DeviceScale() and B_DEVICE_PIXEL_BITMAP", "header": "interface/Screen.h, interface/InterfaceDefs.h",
@@ -65,6 +65,20 @@
           "ref": "https://www.haiku-os.org/docs/api/classBWindow.html",
           "text": "Each monitor is its own region of the desktop. `BWindow::Zoom()` fills the monitor holding most of the window. `CenterOnScreen()` and `MoveOnScreen()` use the window's monitor (or the mouse's while the window is hidden). Alerts open on the mouse's monitor, and menus, submenus and tool tips stay on the monitor they open on. When a monitor is unplugged, its windows move to one that remains.",
           "commits": ["94f6fc4197", "27fc7547a2"]
+        },
+        {
+          "kind": "new", "title": "Sheets: BWindow::SetSheetParent()", "header": "interface/Window.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBWindow.html",
+          "diff": "  class BWindow : public BLooper {\n  \t\tstatus_t\tAddToSubset(BWindow* window);\n  \t\tstatus_t\tRemoveFromSubset(BWindow* window);\n+ \n+ \t\tstatus_t\tSetSheetParent(BWindow* parent);\n+ \t\tBWindow*\tSheetParent() const;\n+ \t\tbool\t\tIsSheet() const;",
+          "text": "A sheet is a dialog attached to the window it belongs to, as on macOS. It slides down from under the parent's title bar, centered, and slides back up when hidden, and the parent's content is dimmed while it is up. It is modal to the parent only. It moves, resizes, minimizes and changes workspace along with the parent, and a click into the dimmed parent brings both to the front. `SetSheetParent(parent)` makes a window the sheet of `parent`: call it before `Show()` or while the window is hidden (a shown window moves into place without sliding). The window becomes `B_MODAL_SUBSET_WINDOW_FEEL` with `parent` as its subset, takes `B_MODAL_WINDOW_LOOK` and `B_NOT_MOVABLE`, `B_NOT_CLOSABLE`, `B_NOT_ZOOMABLE` and `B_NOT_MINIMIZABLE`. `SetSheetParent(NULL)` gives back the look, feel and flags it had, and its position if it is hidden. It returns `B_BAD_VALUE` when `parent` is the window itself, not a `B_NORMAL_WINDOW_FEEL` window, a sheet itself, or a window of another application, and `B_BUSY` when `parent` shows another sheet. app_server owns a sheet's position, so `MoveTo()` on it fails and leaves `Frame()` unchanged; it can be resized and stays centered. `Hide()` returns at once while the sheet slides in. Called from the parent's thread, `Hide()` (and so `Quit()`) waits for the slide, letting the parent draw what comes out from under the sheet. The parent keeps drawing while dimmed, but only in updates (`Draw()`): drawing outside an update is dropped while a sheet is up, and a `BDirectWindow` or `BGLView` presenting directly is not dimmed.",
+          "doc": "SHEETS.md", "doc_commit": "17a4fc4986", "commits": ["17a4fc4986"]
+        },
+        {
+          "kind": "new", "title": "Alerts open as sheets: BAlert::SetSheetEnabled()", "header": "interface/Alert.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBAlert.html",
+          "diff": "  class BAlert : public BWindow {\n  \t\tint32\t\tGo();\n  \t\tstatus_t\tGo(BInvoker* invoker);\n+ \n+ \t\tvoid\t\tSetSheetEnabled(bool enabled);\n+ \t\tbool\t\tIsSheetEnabled() const;",
+          "text": "`Go()` and `Go(BInvoker*)` called from a window's thread (a \"Save changes?\" alert from `QuitRequested()`, say) show the alert as a sheet of that window, with no change to the application. The alert is then modal to that window only, not to the whole application. This applies to alerts with the default `B_MODAL_APP_WINDOW_FEEL` (or `B_MODAL_SUBSET_WINDOW_FEEL`) opened from an ordinary titled window that is shown and has no other sheet up. Other alerts, such as `B_MODAL_ALL_WINDOW_FEEL` ones, those opened from the application's thread and those opened by a sheet, stay windows of their own. Call `SetSheetEnabled(false)` before `Go()` to keep an alert a window of its own.",
+          "doc": "SHEETS.md", "doc_commit": "17a4fc4986", "commits": ["17a4fc4986"]
         },
         {
           "kind": "new", "title": "B_DIRECT_DEVICE_PIXELS window flag", "header": "interface/Window.h",
@@ -294,13 +308,20 @@
     {
       "id": "tracker", "name": "Tracker Kit and Quick Look", "library": "libtracker.so, libquicklook.so",
       "haiku": [["Tracker Kit in the Haiku Book", "https://www.haiku-os.org/docs/api/group__libtracker.html"]],
-      "summary": "A public add-on API for Quick Look previews, plus private protocols for network shares and the Deskbar.",
+      "summary": "A public add-on API for Quick Look previews, plus private protocols for network shares and the Deskbar. File panels open as sheets of their window.",
       "changes": [
         {
           "kind": "new", "title": "Quick Look preview add-ons", "header": "add-ons/quick_look/QuickLook.h",
           "diff": "+ #define B_QUICK_LOOK_PREVIEW_CHANGED 'QLpc'\n\n+ class BQuickLookPreview : public BView {\n+ \tvirtual\tBSize\t\tPreferredContentSize();\n+ \tvirtual\tBString\t\tSummary();\t// \"1920 × 1080 pixels\"\n+ \tvirtual\tvoid\t\tStart();\n+ \tvirtual\tvoid\t\tStop();\n+ \tvirtual\tvoid\t\tDirectConnected(direct_buffer_info* info);\n+ protected:\n+ \t\tvoid\t\tNotifyChanged();\n+ };\n\n+ class BQuickLookAddOn {\n+ \tvirtual\tfloat\t\tSupports(const entry_ref& ref,\n+ \t\t\t\t\tconst char* mimeType) = 0;\t// 0 .. 1\n+ \tvirtual\tBQuickLookPreview* CreatePreview(const entry_ref& ref,\n+ \t\t\t\t\tconst char* mimeType, BString* error) = 0;\n+ };\n\n+ extern \"C\" BQuickLookAddOn* instantiate_quick_look_add_on(image_id image);",
           "text": "Pressing the space bar in Tracker previews the selected file in a panel hosted by `quick_look_server`. Add-ons in `add-ons/quick_look` bid on a file with `Supports()` (0 to 1, cheap: it is asked for every file shown); the highest bidder makes a `BQuickLookPreview` view. The panel is a `BDirectWindow`, so previews that play video can draw into the frame buffer. Apps that own playback code ship their own add-on, so there is one media stack. Link with `-lquicklook`.",
           "doc": "QUICK-LOOK.md", "commits": ["584588df96"]
+        },
+        {
+          "kind": "new", "title": "File panels open as sheets: BFilePanel::SetSheetEnabled()", "header": "storage/FilePanel.h",
+          "ref": "https://www.haiku-os.org/docs/api/classBFilePanel.html",
+          "diff": "  class BFilePanel {\n  \t\tvoid\t\tSetHideWhenDone(bool hideWhenDone);\n  \t\tbool\t\tHidesWhenDone() const;\n+ \n+ \t\tvoid\t\tSetSheetEnabled(bool enabled);\n+ \t\tbool\t\tIsSheetEnabled() const;\n  \n  \tprivate:\n  \t\tBWindow*\tfWindow;\n- \t\tuint32\t\t_reserved[10];\n+ \t\tuint32\t\tfPanelFlags;\n+ \t\tuint32\t\t_reserved[9];",
+          "text": "`Show()` called from a window's thread (a Save As… or Open… menu item, say) shows the open or save panel as a sheet of that window: attached below its title bar and modal to it, with the window dimmed. Shown again from another window, the panel moves to that one. Shown from the application's thread, it is a window of its own again, with its earlier look, feel and position. A panel meant to stay open beside the window calls `SetSheetEnabled(false)` first. The class keeps its size: the flags take one of the reserved words. The panel's \"Replace the file?\" alert is a window of its own above the sheet.",
+          "doc": "SHEETS.md", "doc_commit": "17a4fc4986", "commits": ["17a4fc4986"]
         },
         {
           "kind": "private", "title": "Network shares, places and per-monitor backgrounds", "header": "private/mount/MountServer.h, private/tracker/tracker_private.h",
