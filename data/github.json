@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T21:41:22+00:00",
-  "ci_head": "0e1cfc4e7dbe4291b4a540ef1d664be91479e598",
+  "updated": "2026-11-27T08:45:28+00:00",
+  "ci_head": "951125becf9b78623304480cab917672e396adc4",
   "sources": [
     {
       "name": "Haiku / airOS",
@@ -9,7 +9,7 @@
       "base": "b42b90f5ec2839f8074400c849ee025b50d0f7f1",
       "group": "Operating system",
       "description": "Haiku kernel, desktop, drivers and airOS integration.",
-      "head": "889d5a8d43dd4d64ed5ee7ee291684ceef1671ab",
+      "head": "0450781396edaa472a722f03eacde8695132a321",
       "commits": [
         {
           "sha": "84b77e2accf45608b498de8e945d1d29e138a6fc",
@@ -16678,6 +16678,228 @@
           "url": "https://github.com/airos-works/haiku/commit/889d5a8d43dd4d64ed5ee7ee291684ceef1671ab",
           "date": "2026-11-26T10:28:11Z",
           "subject": "mali_csf: import a team's memory as a GPU buffer (haiku#71)"
+        },
+        {
+          "sha": "14e061a8f0d7c13046b09b692031caf385bc0a7f",
+          "url": "https://github.com/airos-works/haiku/commit/14e061a8f0d7c13046b09b692031caf385bc0a7f",
+          "date": "2026-11-26T23:23:56Z",
+          "subject": "app_server: no flush shadows without a retrace semaphore (#210)"
+        },
+        {
+          "sha": "3a27032fe5e0b9540cce6985384e723f08bfbf92",
+          "url": "https://github.com/airos-works/haiku/commit/3a27032fe5e0b9540cce6985384e723f08bfbf92",
+          "date": "2026-11-26T23:41:18Z",
+          "subject": "Kernel: the semaphore table takes memory as semaphores are created (#215)"
+        },
+        {
+          "sha": "6ee1472179df4dd890d8c74061b7eb7219a5c16f",
+          "url": "https://github.com/airos-works/haiku/commit/6ee1472179df4dd890d8c74061b7eb7219a5c16f",
+          "date": "2026-11-26T23:49:32Z",
+          "subject": "app_server: keep no FreeType face open for fonts nobody uses (#216)"
+        },
+        {
+          "sha": "e4ce1806129150b4f3b7d743eece131c6e8f3659",
+          "url": "https://github.com/airos-works/haiku/commit/e4ce1806129150b4f3b7d743eece131c6e8f3659",
+          "date": "2026-11-27T00:04:39Z",
+          "subject": "mcp_server: no resident team while MCP is off (#213)"
+        },
+        {
+          "sha": "2ebbaf4b543586ea87b73e6fa202937ebfe727e9",
+          "url": "https://github.com/airos-works/haiku/commit/2ebbaf4b543586ea87b73e6fa202937ebfe727e9",
+          "date": "2026-11-27T00:04:39Z",
+          "subject": "bluetooth_server: start the protocols with the first radio (#213)"
+        },
+        {
+          "sha": "66d07a1e07c6bad188c51b62f5e1e443494ab4e2",
+          "url": "https://github.com/airos-works/haiku/commit/66d07a1e07c6bad188c51b62f5e1e443494ab4e2",
+          "date": "2026-11-27T00:04:39Z",
+          "subject": "SystemUpdater: look for a new release when a network comes up, not at boot (#214)"
+        },
+        {
+          "sha": "35a4c9451a1f3bb0b436373c5d63f4caff2328e7",
+          "url": "https://github.com/airos-works/haiku/commit/35a4c9451a1f3bb0b436373c5d63f4caff2328e7",
+          "date": "2026-11-27T00:12:14Z",
+          "subject": "usb: the DMA pools grow on demand instead of taking 8 MiB each at boot (#211)"
+        },
+        {
+          "sha": "eabc6679011fbb2b3bcd543cee80ec132059a7cb",
+          "url": "https://github.com/airos-works/haiku/commit/eabc6679011fbb2b3bcd543cee80ec132059a7cb",
+          "date": "2026-11-27T00:12:14Z",
+          "subject": "kernel: a contiguous area made with CREATE_AREA_DONT_WAIT does not wait for pages (#211)"
+        },
+        {
+          "sha": "4023a9aad471017e1904494fa22fbdc256996310",
+          "url": "https://github.com/airos-works/haiku/commit/4023a9aad471017e1904494fa22fbdc256996310",
+          "date": "2026-11-27T00:12:47Z",
+          "subject": "Tracker, Deskbar: no icon preloading at login, Find types on first use (#212)"
+        },
+        {
+          "sha": "a9b49fa1a7b1cef30591b595adce83c062eec0c9",
+          "url": "https://github.com/airos-works/haiku/commit/a9b49fa1a7b1cef30591b595adce83c062eec0c9",
+          "date": "2026-11-27T00:12:48Z",
+          "subject": "Tracker: hold the desktop picture at the size it is drawn, on demand (#217)"
+        },
+        {
+          "sha": "4138c62b88c8dbec049592737fc8736665b5ad11",
+          "url": "https://github.com/airos-works/haiku/commit/4138c62b88c8dbec049592737fc8736665b5ad11",
+          "date": "2026-11-27T00:59:48Z",
+          "subject": "Kernel: read a page's physical number through an accessor (#215)"
+        },
+        {
+          "sha": "36be97f95f6e7027d25064c0b556e60e634604f2",
+          "url": "https://github.com/airos-works/haiku/commit/36be97f95f6e7027d25064c0b556e60e634604f2",
+          "date": "2026-11-27T00:59:48Z",
+          "subject": "Kernel: a page's physical number comes from its place in the page array (#215)"
+        },
+        {
+          "sha": "c3f8f65032dd23818d547aca76f878b980e2161b",
+          "url": "https://github.com/airos-works/haiku/commit/c3f8f65032dd23818d547aca76f878b980e2161b",
+          "date": "2026-11-27T07:09:40Z",
+          "subject": "dwc_eqos, tc956x: a transmit-complete interrupt is no longer lost under receive load (#218)"
+        },
+        {
+          "sha": "270e4251bf068083db74dd9f86a1522259ec4320",
+          "url": "https://github.com/airos-works/haiku/commit/270e4251bf068083db74dd9f86a1522259ec4320",
+          "date": "2026-11-27T07:09:40Z",
+          "subject": "rock5-itx/mesa: a host test of the teardown of a lost Panfrost context (#209)"
+        },
+        {
+          "sha": "bf0caa94de46a2596fbdba5fef2a161b5e1600a2",
+          "url": "https://github.com/airos-works/haiku/commit/bf0caa94de46a2596fbdba5fef2a161b5e1600a2",
+          "date": "2026-11-27T07:09:40Z",
+          "subject": "nvidia_rm: user land waits out a suspend, and a stuck GPU resume no longer wedges the system (#208)"
+        },
+        {
+          "sha": "58c95b1d92293d2f48d36fc748a2836be1fbe0f5",
+          "url": "https://github.com/airos-works/haiku/commit/58c95b1d92293d2f48d36fc748a2836be1fbe0f5",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "input_server: pointer moves handled together all count, and a click no longer moves twice (#230)"
+        },
+        {
+          "sha": "2501278db141eab94846d1140f6787872487ac2d",
+          "url": "https://github.com/airos-works/haiku/commit/2501278db141eab94846d1140f6787872487ac2d",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "app_server: a busy window gets the keys, clicks and updates sent while its port was full (#229)"
+        },
+        {
+          "sha": "59969a7993afec91335bd365d37d89e28e1fbc95",
+          "url": "https://github.com/airos-works/haiku/commit/59969a7993afec91335bd365d37d89e28e1fbc95",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "Bluetooth: a stalled bluetooth_server no longer blocks the USB controller, and one bad packet or transfer error no longer ends reception (#228)"
+        },
+        {
+          "sha": "c41e651714eb4f10ffb6e85386cdea00756c0d14",
+          "url": "https://github.com/airos-works/haiku/commit/c41e651714eb4f10ffb6e85386cdea00756c0d14",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "libnetwork: one DNS question per name and family, and a dead name server costs its timeout once (#232)"
+        },
+        {
+          "sha": "cefd76e02c928a6f723d7b3aec37085972b3536a",
+          "url": "https://github.com/airos-works/haiku/commit/cefd76e02c928a6f723d7b3aec37085972b3536a",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "Package kit: downloads give up on error answers, keep error pages out of the file and time out on a silent server (#231)"
+        },
+        {
+          "sha": "3ded0b8bfdca54055991b9166e0e0614cab88edb",
+          "url": "https://github.com/airos-works/haiku/commit/3ded0b8bfdca54055991b9166e0e0614cab88edb",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "libnetwork: name lookups work in a team with more than 1023 descriptors open (#233)"
+        },
+        {
+          "sha": "e179a4c1fe42de884ef3d0dcef6c1007d6493f8d",
+          "url": "https://github.com/airos-works/haiku/commit/e179a4c1fe42de884ef3d0dcef6c1007d6493f8d",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "libbnetapi: BNetworkAddressResolver asks again for a name after a minute (#233)"
+        },
+        {
+          "sha": "8aa699315dac2f60d1239bfd4cc4c2ee1b22713a",
+          "url": "https://github.com/airos-works/haiku/commit/8aa699315dac2f60d1239bfd4cc4c2ee1b22713a",
+          "date": "2026-11-27T07:09:41Z",
+          "subject": "net_server: resolv.conf names the servers of every connected interface, and loses those of one that goes (#233)"
+        },
+        {
+          "sha": "05cee545f5f91887add0c09be84ff8fe64251bfb",
+          "url": "https://github.com/airos-works/haiku/commit/05cee545f5f91887add0c09be84ff8fe64251bfb",
+          "date": "2026-11-27T07:23:09Z",
+          "subject": "Kernel: a signal frame is only ever written to user memory (#224)"
+        },
+        {
+          "sha": "e7f1872c8c06a3d9e4abc2e1ce387768fda259a1",
+          "url": "https://github.com/airos-works/haiku/commit/e7f1872c8c06a3d9e4abc2e1ce387768fda259a1",
+          "date": "2026-11-27T07:23:09Z",
+          "subject": "Kernel: poll() and select() with a zero timeout return without sleeping (#227)"
+        },
+        {
+          "sha": "ca687070e85435ea13c65451117ada993b98bd10",
+          "url": "https://github.com/airos-works/haiku/commit/ca687070e85435ea13c65451117ada993b98bd10",
+          "date": "2026-11-27T07:23:09Z",
+          "subject": "Kernel: poll() and select() no longer write-lock the descriptor table (#227)"
+        },
+        {
+          "sha": "33fca5f92dfef102c3d4fe98304c4433164eff5d",
+          "url": "https://github.com/airos-works/haiku/commit/33fca5f92dfef102c3d4fe98304c4433164eff5d",
+          "date": "2026-11-27T07:23:09Z",
+          "subject": "kernel/vm: a disk's page writer writes what is queued every 3 s again, not only 256 pages or more (#219)"
+        },
+        {
+          "sha": "afd258372ee19cd2fd3583b77db8002cd31bbcd4",
+          "url": "https://github.com/airos-works/haiku/commit/afd258372ee19cd2fd3583b77db8002cd31bbcd4",
+          "date": "2026-11-27T07:23:11Z",
+          "subject": "kernel/vm: fsync(), sync() and msync() wait for busy pages and report write errors (#223)"
+        },
+        {
+          "sha": "dc5e9bef7b6257641c69db7122cd4b2a2042f957",
+          "url": "https://github.com/airos-works/haiku/commit/dc5e9bef7b6257641c69db7122cd4b2a2042f957",
+          "date": "2026-11-27T07:23:12Z",
+          "subject": "usb_disk: I/O to a stick that was pulled fails instead of waiting for ever (#222)"
+        },
+        {
+          "sha": "27e3f6a35f96566f84ff4c2cf6f2d5f8ffd7b6f1",
+          "url": "https://github.com/airos-works/haiku/commit/27e3f6a35f96566f84ff4c2cf6f2d5f8ffd7b6f1",
+          "date": "2026-11-27T07:23:14Z",
+          "subject": "vfs: a vnode with pages that could not be written is freed without a panic, and a volume on a dead device can be unmounted by force (#222)"
+        },
+        {
+          "sha": "7f2b076b6200d390e12da5cbf006316230628190",
+          "url": "https://github.com/airos-works/haiku/commit/7f2b076b6200d390e12da5cbf006316230628190",
+          "date": "2026-11-27T07:41:12Z",
+          "subject": "fs_shell: removing a transaction from the block cache's table no longer drops others"
+        },
+        {
+          "sha": "cff4bc8ce57bfcd664f017ae61b6c529a780ffca",
+          "url": "https://github.com/airos-works/haiku/commit/cff4bc8ce57bfcd664f017ae61b6c529a780ffca",
+          "date": "2026-11-27T07:41:12Z",
+          "subject": "bfs: files in the double indirect range keep the blocks their size claims (#220)"
+        },
+        {
+          "sha": "c594dc63d1602f24bc600b773f4a2312b82116e5",
+          "url": "https://github.com/airos-works/haiku/commit/c594dc63d1602f24bc600b773f4a2312b82116e5",
+          "date": "2026-11-27T07:41:12Z",
+          "subject": "bfs: finished transactions reach the log within 5 seconds, also on a busy volume (#221)"
+        },
+        {
+          "sha": "909f62ea84e31cb29b28a3818ee4093913e6a113",
+          "url": "https://github.com/airos-works/haiku/commit/909f62ea84e31cb29b28a3818ee4093913e6a113",
+          "date": "2026-11-27T07:41:12Z",
+          "subject": "bfs: a growing write no longer holds the journal while it copies its data (#225)"
+        },
+        {
+          "sha": "bffd3e09648129f74e2e97c850573db16b001f5c",
+          "url": "https://github.com/airos-works/haiku/commit/bffd3e09648129f74e2e97c850573db16b001f5c",
+          "date": "2026-11-27T07:55:24Z",
+          "subject": "user mutexes: unlocking releases the mutex, lockers spin briefly (#226)"
+        },
+        {
+          "sha": "54bcdae026512008009d6f02bdca7bed92aaf063",
+          "url": "https://github.com/airos-works/haiku/commit/54bcdae026512008009d6f02bdca7bed92aaf063",
+          "date": "2026-11-27T07:55:24Z",
+          "subject": "libroot: vector string functions on x86_64, more Arm ones on arm64 (#234)"
+        },
+        {
+          "sha": "0450781396edaa472a722f03eacde8695132a321",
+          "url": "https://github.com/airos-works/haiku/commit/0450781396edaa472a722f03eacde8695132a321",
+          "date": "2026-11-27T08:23:32Z",
+          "subject": "libnetwork: getaddrinfo() asks for AAAA and A at once, one round trip instead of two (#232)"
         }
       ],
       "url": "https://github.com/airos-works/haiku/tree/master"
@@ -16688,8 +16910,32 @@
       "branch": "main",
       "group": "Build infrastructure",
       "description": "SDKs, packages, images and source provenance.",
-      "head": "0e1cfc4e7dbe4291b4a540ef1d664be91479e598",
+      "head": "951125becf9b78623304480cab917672e396adc4",
       "commits": [
+        {
+          "sha": "951125becf9b78623304480cab917672e396adc4",
+          "url": "https://github.com/airos-works/airos-ci/commit/951125becf9b78623304480cab917672e396adc4",
+          "date": "2026-11-27T07:31:25Z",
+          "subject": "forks: mesa d8bd4af (Panfrost: a lost context is torn down without an abort, haiku#209)"
+        },
+        {
+          "sha": "e279f656ca9f1896f8b6d6460cce65635f6f1d5a",
+          "url": "https://github.com/airos-works/airos-ci/commit/e279f656ca9f1896f8b6d6460cce65635f6f1d5a",
+          "date": "2026-11-27T01:04:17Z",
+          "subject": "forks: linux-drm 7d64beb (compat: a page's physical number through the kernel's accessor, haiku#215)"
+        },
+        {
+          "sha": "9cd54e04ed3cc535ab3d2c3e221249335e8f8852",
+          "url": "https://github.com/airos-works/airos-ci/commit/9cd54e04ed3cc535ab3d2c3e221249335e8f8852",
+          "date": "2026-11-26T23:19:08Z",
+          "subject": "apps: Code - OSS builds with Node.js 24.22.3 (upstream main's .nvmrc)"
+        },
+        {
+          "sha": "8403f3aa35f18001ddc3e74e372dc069590a5843",
+          "url": "https://github.com/airos-works/airos-ci/commit/8403f3aa35f18001ddc3e74e372dc069590a5843",
+          "date": "2026-11-26T22:25:46Z",
+          "subject": "apps: Code - OSS 1.148 builds with pnpm and Node.js 24.22.1"
+        },
         {
           "sha": "0e1cfc4e7dbe4291b4a540ef1d664be91479e598",
           "url": "https://github.com/airos-works/airos-ci/commit/0e1cfc4e7dbe4291b4a540ef1d664be91479e598",
@@ -31063,8 +31309,44 @@
       "branch": "main",
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "group": "Applications",
-      "head": "aa962769b9d97ed6a5bebda99d5107d190cd5300",
+      "head": "5f888bcdca9da0dd527ea73c0e664fa8989b40e8",
       "commits": [
+        {
+          "sha": "5cc3c7a6454778ca0ff4e55a5f38a38fabd15e6c",
+          "url": "https://github.com/airos-works/summit/commit/5cc3c7a6454778ca0ff4e55a5f38a38fabd15e6c",
+          "date": "2026-11-27T07:12:49Z",
+          "subject": "Engine: animated GIFs no longer race through their first loop"
+        },
+        {
+          "sha": "a7dd0651de42e213ea623b5586022b8ab9066195",
+          "url": "https://github.com/airos-works/summit/commit/a7dd0651de42e213ea623b5586022b8ab9066195",
+          "date": "2026-11-27T04:21:23Z",
+          "subject": "Borders: keep the new side placement to whole-pixel widths at fractional scales"
+        },
+        {
+          "sha": "8001e8a1c75c802c9e09157cd627ea601227601c",
+          "url": "https://github.com/airos-works/summit/commit/8001e8a1c75c802c9e09157cd627ea601227601c",
+          "date": "2026-11-27T02:33:38Z",
+          "subject": "Extensions: scripting.executeScript func source, chrome://newtab in tabs.create"
+        },
+        {
+          "sha": "89e9bd2a1a0d50aa68e18f563741ca2da7621c1f",
+          "url": "https://github.com/airos-works/summit/commit/89e9bd2a1a0d50aa68e18f563741ca2da7621c1f",
+          "date": "2026-11-27T01:28:05Z",
+          "subject": "Borders keep every side at fractional scales (1.25x, 1.5x, 1.75x)"
+        },
+        {
+          "sha": "a06e74825063fc3b5bde4c6db7a7d3de9c283a4c",
+          "url": "https://github.com/airos-works/summit/commit/a06e74825063fc3b5bde4c6db7a7d3de9c283a4c",
+          "date": "2026-11-27T00:48:34Z",
+          "subject": "chrome.debugger: JavaScript dialogs, REPL completion values, favicon permission (#305)"
+        },
+        {
+          "sha": "7a03f1320d3915f9cec0a8eac07525789289479f",
+          "url": "https://github.com/airos-works/summit/commit/7a03f1320d3915f9cec0a8eac07525789289479f",
+          "date": "2026-11-26T23:59:28Z",
+          "subject": "Chrome extension compatibility for Claude in Chrome: chrome.debugger, getContexts, enums"
+        },
         {
           "sha": "a7fcf3a61c394816999c901ecfff73f04683e7d2",
           "url": "https://github.com/airos-works/summit/commit/a7fcf3a61c394816999c901ecfff73f04683e7d2",
@@ -44452,8 +44734,242 @@
       "branch": "main",
       "description": "Native code editor, Git tools and terminal.",
       "group": "Applications",
-      "head": "573e11215ea00bbf58d81f3837c5578ad10de33b",
+      "head": "012c0c41bf75c5ea4f79ed9850d4316a094f19be",
       "commits": [
+        {
+          "sha": "4512e992c9d9f97b44173aa9bcfe3892917941c0",
+          "url": "https://github.com/airos-works/kiri/commit/4512e992c9d9f97b44173aa9bcfe3892917941c0",
+          "date": "2026-11-27T00:20:32Z",
+          "subject": "Add Back and Forward for deliberate editor jumps"
+        },
+        {
+          "sha": "f2107aaeaabdff5f25a16e3b6fa4fcf720b30170",
+          "url": "https://github.com/airos-works/kiri/commit/f2107aaeaabdff5f25a16e3b6fa4fcf720b30170",
+          "date": "2026-11-27T00:19:41Z",
+          "subject": "Files pane: update changed folders in place; add Reveal Active File"
+        },
+        {
+          "sha": "7a1c4cfba57c363cae5ea711d452c78eb8fb55a2",
+          "url": "https://github.com/airos-works/kiri/commit/7a1c4cfba57c363cae5ea711d452c78eb8fb55a2",
+          "date": "2026-11-27T00:10:59Z",
+          "subject": "Apply semantic highlighting in bounded slices off the critical path"
+        },
+        {
+          "sha": "2cfbb224ff76d950ea4d8c355afc14715d2a1b36",
+          "url": "https://github.com/airos-works/kiri/commit/2cfbb224ff76d950ea4d8c355afc14715d2a1b36",
+          "date": "2026-11-27T00:01:01Z",
+          "subject": "Find Next and single Replace: search from the caret, not a match list"
+        },
+        {
+          "sha": "6a45111fed15062493658c7b2792f5d6195ca6fb",
+          "url": "https://github.com/airos-works/kiri/commit/6a45111fed15062493658c7b2792f5d6195ca6fb",
+          "date": "2026-11-26T23:59:32Z",
+          "subject": "Git: refresh the working tree without losing history or selections"
+        },
+        {
+          "sha": "84c64ca2a1fb83c1ee652a4621baf21c4f0f6e27",
+          "url": "https://github.com/airos-works/kiri/commit/84c64ca2a1fb83c1ee652a4621baf21c4f0f6e27",
+          "date": "2026-11-26T23:50:55Z",
+          "subject": "Add Paste Without Reindenting for whitespace-sensitive text"
+        },
+        {
+          "sha": "a28fbdf5b5528adee433e98ca92814da890b7d66",
+          "url": "https://github.com/airos-works/kiri/commit/a28fbdf5b5528adee433e98ca92814da890b7d66",
+          "date": "2026-11-26T23:49:30Z",
+          "subject": "EditorConfig: check shared folders once per poll for all open tabs"
+        },
+        {
+          "sha": "25f697809525410df12546a5677dbeb919f9b9d9",
+          "url": "https://github.com/airos-works/kiri/commit/25f697809525410df12546a5677dbeb919f9b9d9",
+          "date": "2026-11-26T23:45:45Z",
+          "subject": "Keep file-open metadata checks off the workspace thread"
+        },
+        {
+          "sha": "618aad9156a1515c68832c7705368630628e6998",
+          "url": "https://github.com/airos-works/kiri/commit/618aad9156a1515c68832c7705368630628e6998",
+          "date": "2026-11-26T23:43:57Z",
+          "subject": "Workspace tests: wait for the Editing Defaults preview to update"
+        },
+        {
+          "sha": "fee1a11557f08dbf403d912b5f9f511bdbb8aa2c",
+          "url": "https://github.com/airos-works/kiri/commit/fee1a11557f08dbf403d912b5f9f511bdbb8aa2c",
+          "date": "2026-11-26T23:37:08Z",
+          "subject": "Project edits: copy only the open buffers a preview can use"
+        },
+        {
+          "sha": "74d68e14b6d59f0258c638872147ac595f0d871b",
+          "url": "https://github.com/airos-works/kiri/commit/74d68e14b6d59f0258c638872147ac595f0d871b",
+          "date": "2026-11-26T23:34:43Z",
+          "subject": "Rename Symbol: an unrelated read-only preview no longer blocks it"
+        },
+        {
+          "sha": "cfce08a8ada08e8b8f94009f9cfd22da2e970401",
+          "url": "https://github.com/airos-works/kiri/commit/cfce08a8ada08e8b8f94009f9cfd22da2e970401",
+          "date": "2026-11-26T23:25:46Z",
+          "subject": "Minimap: sample each wrapped segment from its own text"
+        },
+        {
+          "sha": "976a6d92c9a8024bf53b941f25cbd712248fd91d",
+          "url": "https://github.com/airos-works/kiri/commit/976a6d92c9a8024bf53b941f25cbd712248fd91d",
+          "date": "2026-11-26T23:25:46Z",
+          "subject": "Replacement preview: update only the rows that change"
+        },
+        {
+          "sha": "8308689ed585d06e37768ddd175afddbfa5a2a67",
+          "url": "https://github.com/airos-works/kiri/commit/8308689ed585d06e37768ddd175afddbfa5a2a67",
+          "date": "2026-11-26T23:25:46Z",
+          "subject": "Replacement preview: show the selected edit, not its line's start"
+        },
+        {
+          "sha": "2bc55d32c5cc0e1d5338cdff69d4241df73d3cf2",
+          "url": "https://github.com/airos-works/kiri/commit/2bc55d32c5cc0e1d5338cdff69d4241df73d3cf2",
+          "date": "2026-11-26T23:25:46Z",
+          "subject": "Find: start from the selection; add Find Next/Previous shortcuts"
+        },
+        {
+          "sha": "912af595433743be57e98b4d781de33e5b6a1299",
+          "url": "https://github.com/airos-works/kiri/commit/912af595433743be57e98b4d781de33e5b6a1299",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Search Project: arrow keys step over file headings"
+        },
+        {
+          "sha": "94ff706ac57e171bccefd52cd4afcadea47efdac",
+          "url": "https://github.com/airos-works/kiri/commit/94ff706ac57e171bccefd52cd4afcadea47efdac",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Keep the caret on path-only opens; apply restored views only at startup"
+        },
+        {
+          "sha": "c9d471dafb255ecc736b82b0e2ff2a7ac730b4e8",
+          "url": "https://github.com/airos-works/kiri/commit/c9d471dafb255ecc736b82b0e2ff2a7ac730b4e8",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Go to Line: use the status bar's column and validate the whole input"
+        },
+        {
+          "sha": "5e052e0603923ca17c1ed113efd911a433b53c21",
+          "url": "https://github.com/airos-works/kiri/commit/5e052e0603923ca17c1ed113efd911a433b53c21",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Recovery: retire a draft at the save point; keep previews out of it"
+        },
+        {
+          "sha": "e97d0d128728e84f20e28d750c403a0d6bffc8c2",
+          "url": "https://github.com/airos-works/kiri/commit/e97d0d128728e84f20e28d750c403a0d6bffc8c2",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Find Next: stop rewriting the search history for an unchanged query"
+        },
+        {
+          "sha": "6c444db55961ebeba18f945051db3ae8fb30fdb7",
+          "url": "https://github.com/airos-works/kiri/commit/6c444db55961ebeba18f945051db3ae8fb30fdb7",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Next Problem: tell apart problems that start at the same offset"
+        },
+        {
+          "sha": "3ffd8997d8aa61600143df0523a85080212a14a5",
+          "url": "https://github.com/airos-works/kiri/commit/3ffd8997d8aa61600143df0523a85080212a14a5",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Terminal: copy the cells that were selected, not whole rows"
+        },
+        {
+          "sha": "9622eb607ba9764dd644d54d242ca4ded9eb6ded",
+          "url": "https://github.com/airos-works/kiri/commit/9622eb607ba9764dd644d54d242ca4ded9eb6ded",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Project edits: write the recovery snapshot once, then log transitions"
+        },
+        {
+          "sha": "e086644e8437dc07317a5351d1fa9e9e39c68713",
+          "url": "https://github.com/airos-works/kiri/commit/e086644e8437dc07317a5351d1fa9e9e39c68713",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Terminal: keep input the PTY has not accepted yet"
+        },
+        {
+          "sha": "a33adf3b4da9989d78760b5550caa4a38290774b",
+          "url": "https://github.com/airos-works/kiri/commit/a33adf3b4da9989d78760b5550caa4a38290774b",
+          "date": "2026-11-26T23:06:55Z",
+          "subject": "Keep a recoverable copy when an in-place save on a share fails"
+        },
+        {
+          "sha": "070c09696230017f2a47b3ca3dcf24fdc757dde6",
+          "url": "https://github.com/airos-works/kiri/commit/070c09696230017f2a47b3ca3dcf24fdc757dde6",
+          "date": "2026-11-26T23:06:54Z",
+          "subject": "Project monitor: report a bounded watch list instead of every directory"
+        },
+        {
+          "sha": "72e6672b2b9edff9b6753262dbeff763fe3a0c4c",
+          "url": "https://github.com/airos-works/kiri/commit/72e6672b2b9edff9b6753262dbeff763fe3a0c4c",
+          "date": "2026-11-26T23:06:54Z",
+          "subject": "Open Quickly: publish paths while a slow Git index is checked"
+        },
+        {
+          "sha": "4f45863eeea393c2cf20ea39e5fb538f251ff611",
+          "url": "https://github.com/airos-works/kiri/commit/4f45863eeea393c2cf20ea39e5fb538f251ff611",
+          "date": "2026-11-26T23:06:54Z",
+          "subject": "Search Project: reuse the workspace index instead of walking per query"
+        },
+        {
+          "sha": "d5dd01ef0046b8fb7282ca802dea9b964edd7cad",
+          "url": "https://github.com/airos-works/kiri/commit/d5dd01ef0046b8fb7282ca802dea9b964edd7cad",
+          "date": "2026-11-26T23:06:54Z",
+          "subject": "Index document positions once for symbols and rename edits"
+        },
+        {
+          "sha": "ab5d74e2f416251f7a76d4dc6d147391d05b573d",
+          "url": "https://github.com/airos-works/kiri/commit/ab5d74e2f416251f7a76d4dc6d147391d05b573d",
+          "date": "2026-11-26T22:02:23Z",
+          "subject": "Explorer: name every DirectoryEntry field in placeholder rows"
+        },
+        {
+          "sha": "ba224191939d74407d5ec9367153860176cd918a",
+          "url": "https://github.com/airos-works/kiri/commit/ba224191939d74407d5ec9367153860176cd918a",
+          "date": "2026-11-26T22:02:09Z",
+          "subject": "Refuse a replacement preview when Git fails to list a repository"
+        },
+        {
+          "sha": "99fbb6efad3aab973b7d1e5334f76036454d1906",
+          "url": "https://github.com/airos-works/kiri/commit/99fbb6efad3aab973b7d1e5334f76036454d1906",
+          "date": "2026-11-26T21:59:30Z",
+          "subject": "Unstage a staged rename with both of its paths"
+        },
+        {
+          "sha": "58a341a0223059ac5baa3ac7c99e2160e39272bc",
+          "url": "https://github.com/airos-works/kiri/commit/58a341a0223059ac5baa3ac7c99e2160e39272bc",
+          "date": "2026-11-26T21:58:29Z",
+          "subject": "Skip pipes, sockets and devices in project workers"
+        },
+        {
+          "sha": "289cd3df503f14db7833d87d3d71074317a9c20b",
+          "url": "https://github.com/airos-works/kiri/commit/289cd3df503f14db7833d87d3d71074317a9c20b",
+          "date": "2026-11-26T21:56:07Z",
+          "subject": "Open Quickly: match non-ASCII case variants in file names"
+        },
+        {
+          "sha": "af4f2ade6841476ab8aadb097c37cf726cc3feb9",
+          "url": "https://github.com/airos-works/kiri/commit/af4f2ade6841476ab8aadb097c37cf726cc3feb9",
+          "date": "2026-11-26T21:54:32Z",
+          "subject": "Compute project-search columns in one pass per line"
+        },
+        {
+          "sha": "cecc58418f2b344aa89a82fe739e29260c6a2d8b",
+          "url": "https://github.com/airos-works/kiri/commit/cecc58418f2b344aa89a82fe739e29260c6a2d8b",
+          "date": "2026-11-26T21:53:10Z",
+          "subject": "Let each **/ in a path filter match zero directories independently"
+        },
+        {
+          "sha": "0ae3a11355d0c66630d29e47fc5353ce24097ac5",
+          "url": "https://github.com/airos-works/kiri/commit/0ae3a11355d0c66630d29e47fc5353ce24097ac5",
+          "date": "2026-11-26T21:52:28Z",
+          "subject": "Search Project: accept regular files when the project folder is /"
+        },
+        {
+          "sha": "af2315e98456d525e5aff48a12bda91cef015b30",
+          "url": "https://github.com/airos-works/kiri/commit/af2315e98456d525e5aff48a12bda91cef015b30",
+          "date": "2026-11-26T21:51:32Z",
+          "subject": "Mix only .gitignore's own stamp into a directory's membership hash"
+        },
+        {
+          "sha": "758c19241626479d5bd0a6602e6c5ff1f5816223",
+          "url": "https://github.com/airos-works/kiri/commit/758c19241626479d5bd0a6602e6c5ff1f5816223",
+          "date": "2026-11-26T21:50:37Z",
+          "subject": "Reject C keywords as rename targets for the C profile"
+        },
         {
           "sha": "f63fe1321a496daa7f1f30c233d137a8fbb544fb",
           "url": "https://github.com/airos-works/kiri/commit/f63fe1321a496daa7f1f30c233d137a8fbb544fb",
@@ -45465,10 +45981,16 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "arm64 images: libEGL_mesa (Panfrost on the ROCK 5, V3D on the Pi) and libvulkan_broadcom (deps/recipes/gl.sh)",
-      "pinned": "cbc2178aaffe6a46648c9314e50b3f46a7fa898c",
+      "pinned": "d8bd4afaf6d7901147e6156a6ac8ebf19efe6d53",
       "upstream": null,
-      "head": "cbc2178aaffe6a46648c9314e50b3f46a7fa898c",
+      "head": "d8bd4afaf6d7901147e6156a6ac8ebf19efe6d53",
       "commits": [
+        {
+          "sha": "d8bd4afaf6d7901147e6156a6ac8ebf19efe6d53",
+          "url": "https://github.com/airos-works/mesa/commit/d8bd4afaf6d7901147e6156a6ac8ebf19efe6d53",
+          "date": "2026-11-27T06:34:37Z",
+          "subject": "panfrost (Haiku): a lost context is torn down without an abort (haiku#209)"
+        },
         {
           "sha": "cbc2178aaffe6a46648c9314e50b3f46a7fa898c",
           "url": "https://github.com/airos-works/mesa/commit/cbc2178aaffe6a46648c9314e50b3f46a7fa898c",
@@ -46473,10 +46995,16 @@
       "base": null,
       "group": "Libraries & firmware",
       "description": "x86_64 images: the amdgpu_drm kernel driver and its amdgpu_drm package (deps/build-amdgpu.sh; the amdgpu_kms accelerant is in haiku.hpkg)",
-      "pinned": "2c159421fa583cb7c64b614ddaab85d5eaa12c86",
+      "pinned": "7d64beba4370d5b8ae331662fb36f0b70c6820e7",
       "upstream": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git",
-      "head": "2c159421fa583cb7c64b614ddaab85d5eaa12c86",
+      "head": "7d64beba4370d5b8ae331662fb36f0b70c6820e7",
       "commits": [
+        {
+          "sha": "7d64beba4370d5b8ae331662fb36f0b70c6820e7",
+          "url": "https://github.com/airos-works/linux-drm/commit/7d64beba4370d5b8ae331662fb36f0b70c6820e7",
+          "date": "2026-11-26T23:44:20Z",
+          "subject": "compat: a page's physical number through the kernel's accessor (haiku#215)"
+        },
         {
           "sha": "2c159421fa583cb7c64b614ddaab85d5eaa12c86",
           "url": "https://github.com/airos-works/linux-drm/commit/2c159421fa583cb7c64b614ddaab85d5eaa12c86",
@@ -48281,43 +48809,43 @@
       "description": "A native WebKit browser with reader mode, a PDF viewer, extensions, streaming media and developer tools.",
       "note": "Install Summit and its matching summit_webkit engine together. airOS packages are below; stock Haiku R1/beta6 has a separate build.",
       "release": "https://github.com/airos-works/summit/releases/tag/latest",
-      "published": "2026-11-26T21:05:21Z",
+      "published": "2026-11-27T07:27:42Z",
       "assets": [
         {
-          "name": "summit-0.1.0.git20261126.2014-1-arm64.hpkg",
-          "size": 15659944,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261126.2014-1-arm64.hpkg",
-          "digest": "sha256:a7bbb146faac04c7cee35d713eea9a1ddde3dbec4dd33b539730f83b1c1cc313"
+          "name": "summit-0.1.0.git20261127.0712-1-arm64.hpkg",
+          "size": 15666217,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261127.0712-1-arm64.hpkg",
+          "digest": "sha256:7796edd42d37e992ac4640c443f5f8ef1abb81cdf91411507261df9de5803684"
         },
         {
-          "name": "summit-0.1.0.git20261126.2014-1-x86_64.hpkg",
-          "size": 15914476,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261126.2014-1-x86_64.hpkg",
-          "digest": "sha256:812cf44e49a269722818c6d94d47ea9917012a15c16da2773a9cdf3f39acd406"
+          "name": "summit-0.1.0.git20261127.0712-1-x86_64.hpkg",
+          "size": 15921368,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit-0.1.0.git20261127.0712-1-x86_64.hpkg",
+          "digest": "sha256:32038db10da251bb9af79c3390fde070454cbdc30be82d9b1515ecdf0b05a390"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261126.2014-1-arm64.hpkg",
-          "size": 99000801,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261126.2014-1-arm64.hpkg",
-          "digest": "sha256:93905c7f63c1b847cb795390b3de1a9cd2552c5bebed1824b0806f81667f5baf"
+          "name": "summit_webkit-1.10.1.git20261127.0712-1-arm64.hpkg",
+          "size": 99120674,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261127.0712-1-arm64.hpkg",
+          "digest": "sha256:c90567fb46aef9534ddabec9101e5368d9b434bae2aa86cb908907af793101d9"
         },
         {
-          "name": "summit_webkit-1.10.1.git20261126.2014-1-x86_64.hpkg",
-          "size": 99654517,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261126.2014-1-x86_64.hpkg",
-          "digest": "sha256:3f6e2b2fb32a33316cd146391db7123988192e24cdf03ff5389fbbf6efb6ee6f"
+          "name": "summit_webkit-1.10.1.git20261127.0712-1-x86_64.hpkg",
+          "size": 99794825,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkit-1.10.1.git20261127.0712-1-x86_64.hpkg",
+          "digest": "sha256:19b6f6912d62053f709562c3f5f802d7d46c809362691f2ba4613da4301a3c5f"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261126.2014-1-arm64.hpkg",
-          "size": 825546,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261126.2014-1-arm64.hpkg",
-          "digest": "sha256:cb557d30c4520b0ad0d3b05d09397a24cf921a4c7433771f6b4047f4737ebe6f"
+          "name": "summit_webkitlegacy-1.10.1.git20261127.0712-1-arm64.hpkg",
+          "size": 825262,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261127.0712-1-arm64.hpkg",
+          "digest": "sha256:eab0cd6fdc2b41897721a408bd89226218f507b8437d42eaed094a4f5044f2aa"
         },
         {
-          "name": "summit_webkitlegacy-1.10.1.git20261126.2014-1-x86_64.hpkg",
-          "size": 877075,
-          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261126.2014-1-x86_64.hpkg",
-          "digest": "sha256:1272c4a51397592933c4a67097b5e043601024ad785468b6dfb254d039bea71c"
+          "name": "summit_webkitlegacy-1.10.1.git20261127.0712-1-x86_64.hpkg",
+          "size": 877078,
+          "browser_download_url": "https://github.com/airos-works/summit/releases/download/latest/summit_webkitlegacy-1.10.1.git20261127.0712-1-x86_64.hpkg",
+          "digest": "sha256:cc99c4d3e5320261bd83c0e5b4a2d61bb691712fef7c7b566dda2c6042ecce91"
         }
       ]
     },
@@ -48725,101 +49253,101 @@
   "images": [
     {
       "target": "x86_64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261126115336-889d5a8d43",
-      "published": "2026-11-26T12:00:05Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-x86_64-20261127025638-36be97f95f",
+      "published": "2026-11-27T03:03:34Z",
       "assets": [
         {
           "name": "airos-x86_64.iso.xz",
-          "size": 2082561356,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261126115336-889d5a8d43/airos-x86_64.iso.xz",
-          "digest": "sha256:f9fdf8bbca5afc9892c9a0e45a10dd7c4306f14093db9e01f6d51baf9dec541b"
+          "size": 2082844852,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261127025638-36be97f95f/airos-x86_64.iso.xz",
+          "digest": "sha256:22b9f89e91d40bd2884ee8f5d762c775fb4cfea424a5fef9515f489c99309ec7"
         },
         {
           "name": "airos-x86_64.iso.xz.sha256",
           "size": 86,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261126115336-889d5a8d43/airos-x86_64.iso.xz.sha256",
-          "digest": "sha256:cdd2da65fe682f100b9284e676dc29e16cdeab3176736b12952e204b5e7ee7c0"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261127025638-36be97f95f/airos-x86_64.iso.xz.sha256",
+          "digest": "sha256:444a2d4980e0e2a823a038211286f1eaa616ba385ee35d235f1682fbc0060284"
         },
         {
           "name": "manifest.json",
           "size": 21067,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261126115336-889d5a8d43/manifest.json",
-          "digest": "sha256:5bc7ca6f5eb3e647ce23d07059157f250919ce702de77543def8173d1bfc66cf"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-x86_64-20261127025638-36be97f95f/manifest.json",
+          "digest": "sha256:9fc7f4b427384270a3472984c5972d12bc57a32ddc85083cb37c0564f3c692d2"
         }
       ]
     },
     {
       "target": "arm64",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261126113401-889d5a8d43",
-      "published": "2026-11-26T11:39:16Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-arm64-20261127080316-27e3f6a35f",
+      "published": "2026-11-27T08:09:25Z",
       "assets": [
         {
           "name": "airos-arm64.iso.xz",
-          "size": 1515221596,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261126113401-889d5a8d43/airos-arm64.iso.xz",
-          "digest": "sha256:0f713e17c84647c4893adb202c19a909cd6eabb34261b5fc825d9a1042f8c7f2"
+          "size": 1515683908,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261127080316-27e3f6a35f/airos-arm64.iso.xz",
+          "digest": "sha256:aded11d940d54cc5d5c158f63b794adebac2013c5ecf9f9b7a4102d30b280554"
         },
         {
           "name": "airos-arm64.iso.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261126113401-889d5a8d43/airos-arm64.iso.xz.sha256",
-          "digest": "sha256:02d75bcbe17a693a16256ace1de7ef80a89fcc9fff480772070fe7ba711c5c43"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261127080316-27e3f6a35f/airos-arm64.iso.xz.sha256",
+          "digest": "sha256:a15a29432bae07cadbf0649feb4efa2c696a822ba3c36beb78a618439a3306f6"
         },
         {
           "name": "manifest.json",
           "size": 20800,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261126113401-889d5a8d43/manifest.json",
-          "digest": "sha256:3d86bc1120d28c05e4b49ca1362981e8f1be3955bd05e8a617721af2aa419916"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-arm64-20261127080316-27e3f6a35f/manifest.json",
+          "digest": "sha256:864138bfa15330d14015e0c92f39d4143ebc5b45f085f9e9c2412a77e29816d3"
         }
       ]
     },
     {
       "target": "rpi4",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261126112547-889d5a8d43",
-      "published": "2026-11-26T11:28:47Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-rpi4-20261127081439-27e3f6a35f",
+      "published": "2026-11-27T08:18:10Z",
       "assets": [
         {
           "name": "airos-rpi4.img.xz",
-          "size": 1506645352,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261126112547-889d5a8d43/airos-rpi4.img.xz",
-          "digest": "sha256:0264ec42c9eb64a4ecf7bcf2f362e44bb8b1966962360ade310120de6ebf8ff1"
+          "size": 1507036168,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261127081439-27e3f6a35f/airos-rpi4.img.xz",
+          "digest": "sha256:2dc11802a4c59c0a16087011f2971e2af92788aa34f04a8044e6ef9e8f79905c"
         },
         {
           "name": "airos-rpi4.img.xz.sha256",
           "size": 84,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261126112547-889d5a8d43/airos-rpi4.img.xz.sha256",
-          "digest": "sha256:b89266b47152a411a9c76e7457d4ffab015488ee6ad798f5001d80d07dd0d772"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261127081439-27e3f6a35f/airos-rpi4.img.xz.sha256",
+          "digest": "sha256:92088f1cffc3e615b4b340552395e6f040bababeed09db9bb17128420ed7e668"
         },
         {
           "name": "manifest.json",
           "size": 18650,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261126112547-889d5a8d43/manifest.json",
-          "digest": "sha256:cefff7d23886a3b503760e12e06add5cdd6f8bc96c495770efac0ee6c3d7ef85"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-rpi4-20261127081439-27e3f6a35f/manifest.json",
+          "digest": "sha256:22349758b092cc8848ec60e30c7faedac06b113d71090c4521e4b9e97eff11e8"
         }
       ]
     },
     {
       "target": "cubie",
-      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261126111741-889d5a8d43",
-      "published": "2026-11-26T11:23:09Z",
+      "release": "https://github.com/airos-works/haiku/releases/tag/image-cubie-20261127031815-36be97f95f",
+      "published": "2026-11-27T03:24:04Z",
       "assets": [
         {
           "name": "airos-cubie.img.xz",
-          "size": 1505184876,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261126111741-889d5a8d43/airos-cubie.img.xz",
-          "digest": "sha256:0ab6c2374c9fe944770928c83202dba1f4d9bd16f2f65b7ddf422e1d4632c034"
+          "size": 1505550832,
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261127031815-36be97f95f/airos-cubie.img.xz",
+          "digest": "sha256:4f633afb3f1959d3e7df638d17c9ec18555187b94769eac29125c2483ff46f82"
         },
         {
           "name": "airos-cubie.img.xz.sha256",
           "size": 85,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261126111741-889d5a8d43/airos-cubie.img.xz.sha256",
-          "digest": "sha256:2df17b851674a4342e46dc08b56dcef48bdc5ebf6cdeb75f1db822f6a1bf865b"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261127031815-36be97f95f/airos-cubie.img.xz.sha256",
+          "digest": "sha256:dab72285c1f9cb33808d1957e53a214fa3c03d86ecefd543a84e8c6f9bac831c"
         },
         {
           "name": "manifest.json",
           "size": 22223,
-          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261126111741-889d5a8d43/manifest.json",
-          "digest": "sha256:4584ecb42d1d9efb6355f1c373b13ca70678bef536b10d9754bdecdbac193823"
+          "browser_download_url": "https://github.com/airos-works/haiku/releases/download/image-cubie-20261127031815-36be97f95f/manifest.json",
+          "digest": "sha256:a2b0732bdf49c90da04e6af0d909a9db816c9fed1f8b2fc0dad3be019e1a90cc"
         }
       ]
     }
