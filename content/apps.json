@@ -280,8 +280,7 @@
         },
         {
           "label": "More about Summit →",
-          "href": "summit/",
-          "internal": true
+          "href": "https://summitbrowser.works"
         }
       ]
     },

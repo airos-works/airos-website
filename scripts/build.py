@@ -18,7 +18,9 @@ D = json.loads((ROOT / 'data/github.json').read_text())
 # GitHub organization that hosts every airOS repository (content/project.json).
 GITHUB = 'https://github.com/' + json.loads((ROOT / 'content/project.json').read_text())['owner']
 UPDATED = D['updated'][:10]
-NAV = [('', 'Project'), ('apps/', 'Apps'), ('summit/', 'Summit'), ('hardware/', 'New hardware'), ('docs/', 'Documentation'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('report/', 'Report an issue'), ('changelog/', 'Changelog')]
+# Summit has its own website; the Summit links in the navigation and on the home and apps pages go there.
+SUMMIT_SITE = 'https://summitbrowser.works'
+NAV = [('', 'Project'), ('apps/', 'Apps'), (SUMMIT_SITE, 'Summit'), ('hardware/', 'New hardware'), ('docs/', 'Documentation'), ('downloads/', 'Downloads'), ('source/', 'Source code'), ('report/', 'Report an issue'), ('changelog/', 'Changelog')]
 # Documentation's menu in the header: the API pages (docs/ and the pages under it
 # but the guides), the installation guides and running air/OS in a virtual machine.
 DOCS_MENU = [('docs/', 'API'), ('docs/install/', 'Installation'), ('docs/virtualization/', 'Virtualization')]
@@ -27,7 +29,8 @@ REDDIT = 'https://reddit.com/r/air_os'
 REDDIT_ICON = '<svg class="reddit-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="14.6" rx="8" ry="5.6"/><circle cx="4.9" cy="10.6" r="1.7"/><circle cx="19.1" cy="10.6" r="1.7"/><path d="M12 9l1.3-4.8 3.6.9"/><circle cx="18.4" cy="5.4" r="1.4"/><circle class="dot" cx="9.1" cy="13.6" r=".6"/><circle class="dot" cx="14.9" cy="13.6" r=".6"/><path d="M9.2 17.1c1.7 1.1 3.9 1.1 5.6 0"/></svg>'
 
 def url(path=''):
-    return BASE + '/' + path
+    # Absolute URLs (an external site in NAV) pass through unchanged.
+    return path if path.startswith('https://') else BASE + '/' + path
 
 def link(href, label, cls=''):
     return f'<a href="{e(href, quote=True)}" class="{cls}">{label}</a>'
@@ -96,7 +99,7 @@ def home():
 <section class="release-highlights"><div class="section-heading"><div><p class="eyebrow">October 2026</p><h2>New apps.</h2></div>{link(url('apps/'), 'All apps ›', 'button ghost')}</div><div class="highlight-grid">
 <article><a class="highlight-image" href="{url('apps/#office')}"><img src="{url('assets/screenshots/wordcraft.png')}" alt="WordCraft running on Haiku" loading="lazy"></a><span class="tag">Office Suite</span><h3>A new office suite.</h3><p>WordCraft, GridCraft, PDFCraft and DeckCraft: early native ports for documents, spreadsheets, PDFs and presentations.</p>{link(url('apps/#office'), 'Explore the Craft apps ›', 'text-link')}</article>
 <article><a class="highlight-image" href="{url('apps/#proton')}"><img src="{url('assets/screenshots/proton-vpn.png')}" alt="Proton VPN on airOS" loading="lazy"></a><span class="tag">Proton</span><h3>Proton apps.</h3><p>Community ports of Proton VPN and Proton Mail Bridge, built by airOS CI and published as rolling releases.</p>{link(url('apps/#proton'), 'Meet the Proton ports ›', 'text-link')}</article>
-<article><a class="highlight-image" href="{url('summit/')}"><img src="{url('assets/screenshots/summit-firefox-addon.png')}" alt="Summit offering to install an extension from Firefox Add-ons" loading="lazy"></a><span class="tag">Summit Browser</span><h3>Native WebKit browser called Summit.</h3><p>Reader mode, PDFs, store extensions, streaming media and native developer tools, for airOS and stock Haiku.</p>{link(url('summit/'), 'Discover Summit ›', 'text-link')}</article>
+<article><a class="highlight-image" href="{SUMMIT_SITE}"><img src="{url('assets/screenshots/summit-firefox-addon.png')}" alt="Summit offering to install an extension from Firefox Add-ons" loading="lazy"></a><span class="tag">Summit Browser</span><h3>Native WebKit browser called Summit.</h3><p>Reader mode, PDFs, store extensions, streaming media and native developer tools, for airOS and stock Haiku.</p>{link(SUMMIT_SITE, 'Discover Summit ›', 'text-link')}</article>
 <article><a class="highlight-image" href="{url('apps/#system')}"><img src="{url('assets/screenshots/mediaconverter.png')}" alt="MediaConverter on airOS" loading="lazy"></a><span class="tag">System</span><h3>The system, reworked.</h3><p>A new MediaConverter with GPU encoding, clearer Media preferences, new Wi-Fi and Bluetooth panels, and Quick Look and network shares in Tracker.</p>{link(url('apps/#system'), 'Explore the system apps ›', 'text-link')}</article></div></section>
 <section class="closing"><img src="{url('assets/mark.png')}" alt="" aria-hidden="true"><p class="eyebrow">An experiment you can explore</p><h2>Open source. Ongoing work.<br>A desktop with room to grow.</h2><p>Development builds are available now. Check the hardware notes, try the apps, or follow along in the source.</p><div class="actions">{link(url('downloads/'), 'Get airOS', 'button light')}{link(url('source/'), 'Explore the code ↗', 'button ghost-light')}</div></section>'''
     page('', 'Built on Haiku. Extended with AI.', 'An independent Haiku-based operating system using AI to expand hardware support and native applications.', body)
