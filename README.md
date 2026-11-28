@@ -51,8 +51,8 @@ both from the repository's actual Pages configuration.
   Without JavaScript the tabs are jump links and every panel is shown.
 - Summit: browser features, compatibility limits and separate airOS/stock-Haiku builds. Its
   compatibility section (`compatibility` in `content/summit.json`) gives Summit's Interop 2026 and
-  Interop 2025 scores per focus area, from the 21 November 2026 run of every labelled test (current
-  web-platform-tests, Summit 20261120.0103 in air/OS VMs) recorded in airos-works/summit#243
+  Interop 2025 scores per focus area, from the 28 November 2026 run of every labelled test (the
+  web-platform-tests of 23 November, Summit CI build 20261127.0048 in air/OS VMs) recorded in airos-works/summit#243
   (`tools/interop2026` in that repository). Beside them are the other browsers' scores from wpt.fyi's
   CSVs: `interop-2026-{stable,experimental}-v2.csv` in web-platform-tests/results-analysis (16 and
   19 November), and for 2025 wpt.fyi's final `static/interop-2025-{stable,experimental}.csv` (12

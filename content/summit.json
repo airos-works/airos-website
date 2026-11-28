@@ -66,18 +66,18 @@
   ],
   "compatibility": {
     "interop": {
-      "run": "2026-11-21",
-      "build": "Summit 0.1.0~git20261120.0103, as shipped in the 20 November x86-64 image",
+      "run": "2026-11-28",
+      "build": "Summit 0.1.0~git20261127.0048, the CI build of 27 November",
       "machine": "four software-rendered virtual machines at 1×",
-      "method": "Every labelled test ran against the web-platform-tests of 20 November, unmodified; the 33 that failed were run once more and each test’s better result counts.",
+      "method": "Every labelled test ran against the web-platform-tests of 23 November, unmodified; the 20 that failed were run once more and each test’s better result counts.",
       "years": [
         {
           "year": 2026,
           "tests": 1705,
-          "summit": 99.94,
-          "as_run": 99.62,
+          "summit": 99.88,
+          "as_run": 99.26,
           "summary": "Second only to Firefox’s development build, ahead of Chrome, Edge and Safari’s, and well ahead of every released browser.",
-          "detail": "The two failures left are shared with Safari Technology Preview.",
+          "detail": "Three URLs still fail: two that Safari Technology Preview fails too, and a WebRTC jitter-buffer timing test that passed in the 21 November run.",
           "wptfyi_note": "for 16 November (development builds) and 19 November (released)",
           "wptfyi_url": "https://wpt.fyi/interop-2026",
           "stp_label": "Safari TP 256",
@@ -111,18 +111,18 @@
             {"id": "scroll-driven-animations", "name": "Scroll-driven animations", "summit": 1000, "stp": 993, "safari": 965},
             {"id": "view-transitions", "name": "View transitions", "summit": 1000, "stp": 1000, "safari": 988},
             {"id": "webcompat", "name": "Web compat", "summit": 1000, "stp": 1000, "safari": 777},
-            {"id": "webrtc", "name": "WebRTC", "summit": 1000, "stp": 988, "safari": 969},
+            {"id": "webrtc", "name": "WebRTC", "summit": 988, "stp": 988, "safari": 969},
             {"id": "webtransport", "name": "WebTransport", "summit": 1000, "stp": 1000, "safari": 772}
           ]
         },
         {
           "year": 2025,
           "tests": 3805,
-          "summit": 96.85,
-          "as_run": 96.79,
-          "summary": "Last year’s areas are where most of Summit’s remaining work is. Most of the gap is one area: Storage Access.",
-          "detail": "Storage Access scores low because Summit asks before a frame may use its cookies, even when the test has already granted it; that fix, and the rest of the gaps, are listed as open work.",
-          "wptfyi_note": "final scores from 12 February 2026, when the 2025 dashboard closed; Summit ran the tests of 20 November",
+          "summit": 99.76,
+          "as_run": 99.45,
+          "summary": "Above the final Interop 2025 score of every browser’s development build; Safari Technology Preview’s 99.26 is the closest.",
+          "detail": "Storage Access, the biggest gap in November’s first runs, now passes all 22 of its tests. Five URLs still fail, and Safari Technology Preview fails four of them too.",
+          "wptfyi_note": "final scores from 12 February 2026, when the 2025 dashboard closed; Summit ran the tests of 23 November",
           "wptfyi_url": "https://wpt.fyi/interop-2025",
           "stp_label": "Safari TP 236",
           "safari_label": "Safari 26.2",
@@ -137,29 +137,29 @@
             {"name": "Safari 26.2", "score": 98.37, "kind": "stable"}
           ],
           "areas": [
-            {"id": "details", "name": "<details> element", "summit": 956, "stp": 1000, "safari": 1000},
+            {"id": "details", "name": "<details> element", "summit": 1000, "stp": 1000, "safari": 1000},
             {"id": "scope", "name": "@scope", "summit": 1000, "stp": 1000, "safari": 1000},
             {"id": "backdrop-filter", "name": "backdrop-filter", "summit": 1000, "stp": 1000, "safari": 1000},
-            {"id": "core-web-vitals", "name": "Core Web Vitals", "summit": 982, "stp": 999, "safari": 999},
+            {"id": "core-web-vitals", "name": "Core Web Vitals", "summit": 991, "stp": 999, "safari": 999},
             {"id": "anchor-positioning", "name": "CSS anchor positioning", "summit": 1000, "stp": 994, "safari": 995},
-            {"id": "layout", "name": "Layout", "summit": 998, "stp": 964, "safari": 964},
+            {"id": "layout", "name": "Layout", "summit": 999, "stp": 964, "safari": 964},
             {"id": "modules", "name": "Modules", "summit": 1000, "stp": 1000, "safari": 1000},
             {"id": "navigation", "name": "Navigation API", "summit": 997, "stp": 994, "safari": 994},
-            {"id": "events", "name": "Pointer and mouse events", "summit": 976, "stp": 957, "safari": 957},
+            {"id": "events", "name": "Pointer and mouse events", "summit": 988, "stp": 957, "safari": 957},
             {"id": "remove-mutation-events", "name": "Remove mutation events", "summit": 1000, "stp": 1000, "safari": 1000},
             {"id": "scrollend", "name": "scrollend event", "summit": 1000, "stp": 1000, "safari": 1000},
-            {"id": "storageaccess", "name": "Storage Access API", "summit": 583, "stp": 988, "safari": 977},
+            {"id": "storageaccess", "name": "Storage Access API", "summit": 1000, "stp": 988, "safari": 977},
             {"id": "textdecoration", "name": "text-decoration", "summit": 1000, "stp": 1000, "safari": 1000},
             {"id": "urlpattern", "name": "URLPattern", "summit": 1000, "stp": 1000, "safari": 1000},
             {"id": "view-transitions", "name": "View Transition API", "summit": 1000, "stp": 992, "safari": 988},
             {"id": "webcompat", "name": "Web compat", "summit": 1000, "stp": 972, "safari": 816},
             {"id": "webassembly", "name": "WebAssembly", "summit": 1000, "stp": 1000, "safari": 1000},
-            {"id": "webrtc", "name": "WebRTC", "summit": 909, "stp": 1000, "safari": 1000},
+            {"id": "webrtc", "name": "WebRTC", "summit": 979, "stp": 1000, "safari": 1000},
             {"id": "writingmodes", "name": "Writing modes", "summit": 1000, "stp": 1000, "safari": 1000}
           ]
         }
       ],
-      "source": "https://github.com/airos-works/summit/issues/243",
+      "source": "https://github.com/airos-works/summit/issues/243#issuecomment-7230746817",
       "kit": "https://github.com/airos-works/summit/blob/main/tools/interop2026/README.md"
     },
     "html5test": {
