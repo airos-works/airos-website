@@ -471,19 +471,6 @@
     "height": 910
   },
   {
-    "id": "summit-html5test",
-    "title": "Summit · HTML5test",
-    "category": "Summit",
-    "file": "summit-html5test.png",
-    "description": "html5test.co in Summit, scoring 565 out of 588 points.",
-    "source": "https://github.com/airos-works/summit/blob/main/docs/html5test-2026-11-18.md",
-    "captured": "2026-11-18",
-    "provenance": "Summit's MCP window capture in a QEMU/KVM VM running the 17 November x86-64 image live; the pointer was moved off the page, no other edits.",
-    "credit": "Shows <a href=\"https://html5test.co/\">HTML5test</a>, © Niels Leenheer and Jerzy Głowacki (<a href=\"https://github.com/niutech/html5test/blob/main/LICENSE\">MIT licence</a>)",
-    "width": 1291,
-    "height": 910
-  },
-  {
     "id": "airdroid-desktop",
     "title": "airDroid",
     "category": "Emulation",

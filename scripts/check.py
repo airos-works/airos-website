@@ -38,8 +38,10 @@ for path,p in pages.items():
         if dest.is_dir():dest=dest/'index.html'
         if not dest.exists():errors.append(f'{path}: broken link {href}')
         elif u.fragment and dest in pages and u.fragment not in pages[dest].ids:errors.append(f'{path}: missing anchor {href}')
-for route in ['', 'apps', 'summit', 'hardware','docs','docs/kits','docs/neural','docs/neural/reference','docs/neural/examples','docs/install','docs/virtualization','downloads','downloads/write','report','source','changelog']:
+for route in ['', 'apps', 'hardware','docs','docs/kits','docs/neural','docs/neural/reference','docs/neural/examples','docs/install','docs/virtualization','downloads','downloads/write','report','source','changelog']:
     if not (OUT/route/'index.html').is_file():errors.append('Missing route '+route)
+# The Summit page moved to Summit's own website; the old route redirects there.
+if 'url=https://summitbrowser.works/' not in (OUT/'summit/index.html').read_text():errors.append('summit/ must redirect to summitbrowser.works')
 snapshot=json.loads((ROOT/'data/github.json').read_text())
 changes=json.loads((OUT/'changes.json').read_text())
 expected={(s['repo'],c['sha']) for s in snapshot['sources'] for c in s['commits']}
